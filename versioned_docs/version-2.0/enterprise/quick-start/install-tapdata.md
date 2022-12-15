@@ -1,6 +1,6 @@
-# 部署 Tapdata Enterprise
+# 部署 Tapdata
 
-本文介绍如何在本地环境部署 Tapdata Enterprise。
+本文介绍如何在本地环境部署 Tapdata。
 
 ## 软硬件环境要求
 
@@ -58,7 +58,7 @@
 
    
 
-4. 安装并启动 Tapdata Enterprise，其中 license 文件可[联系我们](mailto:team@tapdata.io)获取。
+4. 安装并启动 Tapdata，其中 license 文件可[联系我们](mailto:team@tapdata.io)获取。
 
    ```shell
    cd /tapdata/

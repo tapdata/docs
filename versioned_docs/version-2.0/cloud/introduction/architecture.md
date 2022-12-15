@@ -20,6 +20,6 @@ Tapdata Cloud 采用了多种网络安全措施，确保用户数据和信息安
 
 :::tip
 
-如您的网络环境不支持访问外网，或需要本地部署，可选择使用 [Tapdata Enterprise 企业版](https://tapdata.net/tapdata-enterprise.html)，更多介绍，见[版本对比](https://tapdata.net/pricing.html)。
+如您的网络环境不支持访问外网，可选择在本地部署 [Tapdata](https://tapdata.net/tapdata-enterprise.html)，更多介绍，见[版本对比](https://tapdata.net/pricing.html)。
 
 :::

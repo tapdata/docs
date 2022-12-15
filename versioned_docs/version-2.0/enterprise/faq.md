@@ -28,12 +28,12 @@ Kafka 不能中间作为源，只能做中间节点再到目标
 
 
 
-## Tapdata Enterprise 支持试用吗？
+## Tapdata 支持试用吗？
 
 支持。您可以点击“[申请试用](https://tapdata.net/tapdata-on-prem/demo.html)‍”‍，Tapdata 工程师会联系您并协助您试用。
 
 
 
-## Tapdata Enterprise 如何收费？
+## Tapdata 如何收费？
 
-Tapdata Enterprise 采用订阅制收费，按照您部署的服务器节点数量，按年支付相应的订阅费用。
+Tapdata 采用订阅制收费，按照您部署的服务器节点数量，按年支付相应的订阅费用。

@@ -2,9 +2,47 @@
 
 本文列举 Tapdata Agent 在部署和运行遇到的常见问题。
 
-### 一个用户下面两个 Agent，会有冲突吗？
+### Agent 有什么作用？
 
-不会冲突，启动任务时，可能会调度到实例 A，也可能调度到实例 B；通常在任务比较多时，启动多个实例来解决单节点负载问题。
+您在本地环境部署的 Agent 负责通过流式技术从源系统获取数据、处理转换数据并发送到目标系统，由云上的管理端统一管理，工作流程如下：
+
+:::tip
+
+数据传输不会流转至云上管理端，保障数据安全性。
+
+:::
+
+![Agent 架构](../images/agent_introduction.png)
+
+### 为什么需要将 Agent 部署至本地环境？
+
+Agent 是数据同步、数据异构、数据开发场景中的关键程序。由于数据流转通常对时效性有较高的要求，因此，推荐将 Agent 部署在数据库所属的本地网络中，从而极大降低数据延迟。
+
+更多介绍，见[部署 Tapdata Agent](../quick-start/install-agent)。
+
+### 需要部署多少个 Agent？
+
+只需部署一个 Agent 即可，需确保该 Agent 可和数据的来源/目标端可正常通信。
+
+### 可以部署多个 Agent 吗？
+
+可以，需要确保这些 Agent 可和数据的来源/目标端可正常通信。
+
+一个任务只会在一个 Agent 上运行，任务可能会调度 Agent A，也可能调度 Agent B，通常在任务比较多时，部署多个 Agent 来解决单点负载问题。
+
+### 部署了多个 Agent，某任务的 Agent 异常宕机了如何处理？
+
+您可以编辑对应的任务，然后为其手动指定一个正常运行的 Agent，再对异常的 Agent 进行排查，设置方法如下：
+
+![指定 Agent](../images/specify_agent_cn.png)
+
+### 如果 Oracle 是 rac 模式，aix 的两节点 rac，如何部署 Agent？
+
+只要能够能连到 rac 就可以了，即 Agent 能连到 rac 的 scan/vip，无需和 Oracle 在一起。 
+
+### Agent 一直是部署状态检测中？
+
+需要根据提示安装部署 agent，如果已经安装部署，然后等待实例上线，如果超过 5 分钟还没有上线的话，可能部署失败。您可以联系在线客服，并提供日志来协助定位问题。
 
 ### 安装了DockerWindows (64 bit)，一直检测不通过？
 
@@ -21,14 +59,6 @@
 ### 输入 token 后报错： java.lang.IllegalStateException: Cannot load configuration class: io.tapdata.Application？
 
 软件包不完整，可以更换一个版本测试验证。
-
-### 安装 Agent 提示 bash: /Users/lixing/tapdata/tapdata: cannot execute binary file？
-
-暂时只提供了 Linux、Windows、Docker 三种部署方式，在MacOS 系统上建议使用 Docker 部署。
-
-### Agent 一直是部署状态检测中？
-
-需要根据提示安装部署 agent，如果已经安装部署，然后等待实例上线，如果超过 5 分钟还没有上线的话，可能部署失败。您可以联系在线客服，并提供日志来协助定位问题。
 
 ### 如何卸载重装 Agent
 
@@ -47,15 +77,6 @@
   - 删除安装目录
   - 在控制台创建新实例，根据提示完成部署
 
-
-### 为什么需要将 Tapdata Agent 部署至本地环境？
-
-Tapdata Agent 是数据同步、数据异构、数据开发场景中的关键程序。由于数据流转通常对时效性有较高的要求，因此，推荐将 Tapdata Agent 部署在数据库所属的本地网络中，从而极大降低数据延迟。
-
-更多介绍，见[部署 Tapdata Agent](../quick-start/install-agent)。
-
-
-
 ### Agent 显示离线，如何重启？
 
 Agent 每隔1分钟就会上报一次心跳，要是连续5次没有上报，就会显示离线。 离线不影响已运行任务的正常运行，但是新建任务会受到影响。 大部分情况都是网络不稳定导致，触发实例离线告警。
@@ -65,21 +86,6 @@ Agent 每隔1分钟就会上报一次心跳，要是连续5次没有上报，就
 输入 `./tapdata status` 命令可以检查agent的状态，在安装agent的电脑上输入 `tapdata start` 即可重启 Agent。
 
 如果还是无法启动，可联系在线客服协助定位问题。
-
-### 数据源和目标在两台服务器上，是否需要安装2个agent ？
-
-不需要， 只需要部署在其中一台服务器上即可。
-
-
-
-### 内网数据同步到外网服务器，Agent 应该安装在哪个服务器？
-
-内网安装 Tapdata Agent 即可。
-
-### 如果 Oracle 是 rac 模式，aix 的两节点 rac，如何部署 Agent？
-
-只要能够能连到 rac 就可以了。agent 能连到 rac 的 scan/vip 就可以了，甚至不用跟 Oracle 在一起。 
-如果想让 agent 在负载较低的 rac 节点工作，就给负载低的节点的 vip 就好了。
 
 ### Agent 运行出现 “OutOfMemoryError” 怎么处理？
 
@@ -125,13 +131,13 @@ spring:
             authenticationDatabase: ""
 ```
 
-配置文件修改完成后，重启Agent生效
+配置文件修改完成后，重启 Agent 生效
 
 ```bash
-#先停止Agent
+#先停止 Agent
 ./tapdata stop -f
 
-#然后再启动Agent
+#然后再启动 Agent
 ./tapdata start
 ```
 

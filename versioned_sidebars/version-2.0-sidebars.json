@@ -268,7 +268,8 @@
         "cloud/faq/database",
         "cloud/faq/task"
       ]
-    }
+    },
+    "cloud/faq/support"
   ],
   "enterprise": [
     "enterprise/what-is-tapdata-enterprise",
@@ -454,6 +455,7 @@
       ]
     },
     "enterprise/release-notes",
-    "enterprise/faq"
+    "enterprise/faq",
+    "enterprise/support"
   ]
 }

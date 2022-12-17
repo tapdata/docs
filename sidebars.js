@@ -249,6 +249,7 @@ const sidebars = {
              'cloud/faq/task',
       ]
      },
+     'cloud/faq/support',
   ],
 
 
@@ -402,6 +403,7 @@ const sidebars = {
     },
   'enterprise/release-notes',
   'enterprise/faq',
+  'enterprise/support',
  ]
 };
 

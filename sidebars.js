@@ -50,15 +50,7 @@ const sidebars = {
              ]
             },
             'cloud/quick-start/connect-database',
-            {
-             type: 'category',
-             label: '开始数据同步',
-             link: {type: 'doc', id: 'cloud/quick-start/create-task/README'},
-             items: [
-                    'cloud/quick-start/create-task/full-data-synchronization',
-                    'cloud/quick-start/create-task/incremental-data-synchronization',
-             ]
-            },
+            'cloud/quick-start/create-task',
      ]
     },
     {

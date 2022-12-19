@@ -30,7 +30,7 @@
 
 * **部门**：选择 **Tapdata 技术支持**。
 * **产品名称**：选择 **Tapdata 企业版**。
-* **版本号**：可在 Tapdata 平台右上角查看，具体操作，见[查看系统版本](user-guide/manage-system/check-version.md)。
+* **版本号**：可在 Tapdata 平台右上角查看，具体操作，见[查看系统版本](user-guide/other-settings/check-version.md)。
 * **支持分类**：根据您的问题类型选择，如选择**用户使用问题**。
 * **主题**：一句话描述您所遇到的问题，便于识别定位。
 * **描述**：填写您遇到的问题，推荐包含下述信息：

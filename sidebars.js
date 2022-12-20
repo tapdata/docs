@@ -93,14 +93,14 @@ const sidebars = {
                        items: [
                              'cloud/prerequisites/config-database/beta/activemq',
                              'cloud/prerequisites/config-database/beta/apache-doris',
-                             'cloud/prerequisites/config-database/beta/vika',
-                             'cloud/prerequisites/config-database/beta/tidb',
-                             'cloud/prerequisites/config-database/beta/rocketmq',
-                             'cloud/prerequisites/config-database/beta/rabbitmq',
+                             'cloud/prerequisites/config-database/beta/dmdb',
+                             'cloud/prerequisites/config-database/beta/elasticsearch',
                              'cloud/prerequisites/config-database/beta/greenplum',
                              'cloud/prerequisites/config-database/beta/mariadb',
-                             'cloud/prerequisites/config-database/beta/elasticsearch',
-                             'cloud/prerequisites/config-database/beta/dmdb',
+                             'cloud/prerequisites/config-database/beta/rabbitmq',
+                             'cloud/prerequisites/config-database/beta/rocketmq',
+                             'cloud/prerequisites/config-database/beta/tidb',
+                             'cloud/prerequisites/config-database/beta/vika',
                        ]
                       },
              ]
@@ -281,29 +281,29 @@ const sidebars = {
      items: [
             {
              type: 'category',
-             label: '通用数据库',
-             link: {type: 'doc', id: 'enterprise/prerequisites/common-database/README'},
+             label: '认证数据源',
+             link: {type: 'doc', id: 'enterprise/prerequisites/certified/README'},
              items: [
-                     'enterprise/prerequisites/common-database/mysql',
-                     'enterprise/prerequisites/common-database/mariadb',
-                     'enterprise/prerequisites/common-database/oracle',
-                     'enterprise/prerequisites/common-database/sqlserver',
-                     'enterprise/prerequisites/common-database/postgresql',
-                     'enterprise/prerequisites/common-database/mongodb',
-                     'enterprise/prerequisites/common-database/elasticsearch',
-                     'enterprise/prerequisites/common-database/apache-doris',
-                     'enterprise/prerequisites/common-database/clickhouse',
+                     'enterprise/prerequisites/certified/clickhouse',
+                     'enterprise/prerequisites/certified/kafka',
+                     'enterprise/prerequisites/certified/mysql',
+                     'enterprise/prerequisites/certified/mongodb',
+                     'enterprise/prerequisites/certified/oracle',
+                     'enterprise/prerequisites/certified/postgresql',
+                     'enterprise/prerequisites/certified/sqlserver',
              ]
             },
             {
              type: 'category',
-             label: 'MQ 数据库',
-             link: {type: 'doc', id: 'enterprise/prerequisites/mq-database/README'},
+             label: 'Beta 数据源',
+             link: {type: 'doc', id: 'enterprise/prerequisites/beta/README'},
              items: [
-                     'enterprise/prerequisites/mq-database/kafka',
-                     'enterprise/prerequisites/mq-database/activemq',
-                     'enterprise/prerequisites/mq-database/rabbitmq',
-                     'enterprise/prerequisites/mq-database/rocketmq',
+                     'enterprise/prerequisites/beta/activemq',
+                     'enterprise/prerequisites/beta/apache-doris',
+                     'enterprise/prerequisites/beta/elasticsearch',
+                     'enterprise/prerequisites/beta/mariadb',
+                     'enterprise/prerequisites/beta/rabbitmq',
+                     'enterprise/prerequisites/beta/rocketmq',
              ]
             },
      ]

@@ -1,7 +1,3 @@
-# RabbitMQ
-
-请遵循以下说明以确保在 Tapdata 中成功添加和使用 RabbitMQ。
-
 ## 支持版本
 
 3.8.x

@@ -159,7 +159,7 @@ const sidebars = {
                    'cloud/user-guide/data-development/monitor-task',
                    ]
              },
-             'cloud/user-guide/check-data',
+             'cloud/user-guide/operation-log',
              {
               type: 'category',
               label: '排查连接失败问题',
@@ -384,18 +384,25 @@ const sidebars = {
                      'enterprise/user-guide/data-service/monitor-api-request',
                     ]
              },
-             'enterprise/user-guide/manage-cluster',
-             'enterprise/user-guide/notification',
              {
               type: 'category',
               label: '系统管理',
               link: {type: 'doc', id: 'enterprise/user-guide/manage-system/README'},
               items:[
-                     'enterprise/user-guide/manage-system/system-settings',
-                     'enterprise/user-guide/manage-system/manage-license',
-                     'enterprise/user-guide/manage-system/check-version',
+                     'enterprise/user-guide/manage-system/manage-cluster',
                     ]
              },
+             {
+              type: 'category',
+              label: '其他设置',
+              link: {type: 'doc', id: 'enterprise/user-guide/other-settings/README'},
+              items:[
+                     'enterprise/user-guide/other-settings/system-settings',
+                     'enterprise/user-guide/other-settings/manage-license',
+                     'enterprise/user-guide/other-settings/check-version',
+                    ]
+             },
+             'enterprise/user-guide/notification',
         ]
     },
   'enterprise/release-notes',

@@ -127,6 +127,7 @@ const sidebars = {
                      'cloud/user-guide/connect-database/connect-adb-pg',
                      'cloud/user-guide/connect-database/connect-hazelcast-cloud',
                      'cloud/user-guide/connect-database/connect-tidb',
+                     'cloud/user-guide/connect-database/connect-tablestore',
                      'cloud/user-guide/connect-database/connect-dummydb',
               ]
              },
@@ -222,6 +223,14 @@ const sidebars = {
                     'cloud/best-practice/postgresql-as-source/postgresql-to-mongodb',
                     'cloud/best-practice/postgresql-as-source/postgresql-to-mysql',
                     'cloud/best-practice/postgresql-as-source/postgresql-to-sqlserver',
+             ]
+            },
+            {
+             type: 'category',
+             label: 'Oracle 实时同步',
+             link: {type: 'doc', id: 'cloud/best-practice/oracle-as-source/README'},
+             items:[
+                    'cloud/best-practice/oracle-as-source/oracle-to-tablestore',
              ]
             },
         ]

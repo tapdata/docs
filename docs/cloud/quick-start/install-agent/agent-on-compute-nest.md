@@ -52,3 +52,8 @@
 ## 下一步
 
 [连接数据库](../connect-database.md)
+
+## 推荐阅读
+
+* [管理 Agent](../../user-guide/manage-agent.md)
+* [安装与管理 Agent 常见问题](../../faq/agent-installation.md)

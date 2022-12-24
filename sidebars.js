@@ -39,7 +39,7 @@ const sidebars = {
      items: [
             {
              type: 'category',
-             label: '安装 Agent',
+             label: '步骤一：安装 Agent',
              link: {type: 'doc', id: 'cloud/quick-start/install-agent/README'},
              items: [
                     'cloud/quick-start/install-agent/agent-on-linux',

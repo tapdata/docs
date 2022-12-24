@@ -33,7 +33,7 @@
       "items": [
         {
           "type": "category",
-          "label": "安装 Agent",
+          "label": "步骤一：安装 Agent",
           "link": {
             "type": "doc",
             "id": "cloud/quick-start/install-agent/README"
@@ -48,7 +48,7 @@
         "cloud/quick-start/connect-database",
         {
           "type": "category",
-          "label": "开始数据同步",
+          "label": "步骤三：开始数据同步",
           "link": {
             "type": "doc",
             "id": "cloud/quick-start/create-task/README"

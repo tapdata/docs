@@ -41,3 +41,188 @@ Agent 管理列表可以对 Agent 进行创建、部署、停止、删除等操�
 ## 删除Agent
 
 已经停止的Agent用户可以删除。点击删除按钮即可完成Agent的删除。
+
+## 管理 Agent
+
+完成安装后，Agent 会自动将状态等信息上报至 Tapdata Cloud，您可以通过界面或命令行管理 Agent：
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs className="unique-tabs">
+    <TabItem value="ui" label="通过界面管理 Agent" default>
+    <ol>
+      <li>  登录 Tapdata Cloud。</li>
+      <p></p>
+      <li>  在左侧导航栏，单击 <b>Agent 管理</b>即可查看所有 Agent 的状态。</li>
+      <p></p>
+      <li>  单击目标 Agent 的名称，在右侧弹出的面板中可查看 Agent 版本、安装目录等信息，也可以执行管理操作（如停止）。<img src='https://docs.tapdata.io/img/manage_agent_cn.png'></img></li>
+    </ol>
+   </TabItem>
+   <TabItem value="cli" label="通过命令管理 Agent">
+    <p>&nbsp; &nbsp; 进入 Agent 部署目录，选择执行下述命令来管理 Agent。</p>
+    <ul>
+    <li>查看命令帮助：<code>./tapdata help</code>
+    </li>
+    <li>查看 Agent 状态：<code>./tapdata status</code>
+    </li>
+    <li>启动 Agent：<code>./tapdata start</code>
+    </li>
+    <li>停止 Agent：<code>./tapdata stop</code>
+    </li>
+    </ul>
+   </TabItem>
+  </Tabs>
+
+## 目录结构及功能介绍
+
+在完成 Tapdata Agent 的部署及启动后，Tapdata Agent 会自动在当前目录下生成其运行所需文件及目录，这些文件及目录主要用于任务信息、日志、配置文件、数据源证书文件的存放：
+
+```bash
+~/.tapdata/cert/ 
+#如果中间库存在证书，那么此目录将用来存放证书相关文件
+
+~/.tapdata/logs/ 
+#此目录用来存放日志相关文件
+
+~/.tapdata/os-monitor/
+#此目录用来存放os-monitor配置文件
+
+~/.tapdata/application.yml 
+#该文件为Tapdata Agent配置文件
+
+~/.tapdata/tapdata.conf
+#该文件为早期版本Tapdata Agent配置文件，新版已由application.yml替代
+
+~/agent.yml
+#该文件同为Tapdata Agent配置文件
+```
+
+
+
+
+
+
+
+
+
+## Windows
+
+## 管理 Tapdata Agent
+
+进入到 Tapdata Agent 的安装目录，然后通过以下方式来对 Tapdata Agent 进行管理：
+
+* 关闭 Tapdata Agent：双击 `stop.bat`
+* 启动 Tapdata Agent：双击 `start.bat` 或者直接双击 `tapdata.exe`
+* 查看 Tapdata Agent 状态：双击 `status.bat`
+
+
+
+## 调整 Tapdata Agent 运行内存
+
+在Agent部署目录下找到 `application.yml` 文件，找到 tapdataJavaOpts 配置，比如：`tapdataJavaOpts: "-Xms4G -Xmx8G"`
+
+调整该配置里内存的值，具体的运行内存大小根据服务器的可用内存自行判断设置。
+
+```yaml
+tapdata:
+    conf:
+        tapdataPort: '3030'
+        backendUrl: 'https://cloud.tapdata.net/api/'
+        apiServerPort: ""
+        tapdataJavaOpts: "-Xms4G -Xmx8G"
+        reportInterval: 20000
+        uuid: a5f266a1-a495-412f-a433-29d345713c176
+    cloud:
+        accessCode: ""
+        baseURLs: 'https://cloud.tapdata.net/api/'
+        username: null
+        token: 
+spring:
+    data:
+        mongodb:
+            username: ""
+            password: ""
+            mongoConnectionString: ""
+            uri: ""
+            ssl: ""
+            sslCA: ""
+            sslCertKey: ""
+            sslPEMKeyFilePassword: ""
+            authenticationDatabase: ""
+```
+
+配置文件修改完成后，重启Agent生效
+
+```bash
+#先停止Agent
+./tapdata stop -f
+
+#然后再启动Agent
+./tapdata start
+```
+
+
+
+
+以上目录并不会占用太多磁盘空间，为了确保 Tapdata Agent 的稳定运行及在您遇到问题时 Tapdata 技术客服能够协助您快速定位问题根因，请勿删除这些目录以及目录中的文件。
+
+
+
+
+
+
+
+## Docker
+
+### 管理 Tapdata Agent
+
+关闭Tapdata Agent：
+
+```bash
+#通过docker exec进入容器对应目录并执行下方命令
+./tapdata stop
+```
+
+启动Tapdata Agent：
+
+```bash
+#通过docker exec进入容器对应目录并执行下方命令
+./tapdata start
+```
+
+查看Tapdata Agent状态：：
+
+```bash
+#通过docker exec进入容器对应目录并执行下方命令
+./tapdata status
+```
+
+
+
+### Tapdata Agent 目录结构
+
+完成 Tapdata Agent 部署及启动后，Tapdata Agent 会自动在当前目录下生成其运行所需文件及目录，这些文件及目录主要用于任务信息、日志、配置文件、数据源证书文件的存放：
+
+```bash
+~/.tapdata/cert/ 
+#如果中间库存在证书，那么此目录将用来存放证书相关文件
+
+~/.tapdata/logs/ 
+#此目录用来存放日志相关文件
+
+~/.tapdata/os-monitor/
+#此目录用来存放os-monitor配置文件
+
+~/.tapdata/application.yml 
+#该文件为Tapdata Agent配置文件
+
+~/.tapdata/tapdata.conf
+#该文件为早期版本Tapdata Agent配置文件，新版已由application.yml替代
+
+~/agent.yml
+#该文件同为Tapdata Agent配置文件
+```
+
+
+以上目录并不会占用太多磁盘空间，为了确保 Tapdata Agent 的稳定运行及在您遇到问题时 Tapdata 技术客服能够协助您快速定位问题根因，请勿删除这些目录以及目录中的文件。

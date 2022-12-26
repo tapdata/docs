@@ -36,15 +36,12 @@ Tapdata Agent（简称 Agent）通过流式技术从源端获取数据、处理�
    mkdir tapdata&&cd tapdata
    ```
 
-4. 在容器命令行中，依次执行下述命令下载 Agent 程序并完成授权。
+4. 在容器命令行中，执行下述命令下载 Agent 程序并解压。
 
    ```shell
-   # 下载 Agent 程序
-   wget -O tapdata.zip 'https://www.yuque.com/attachments/yuque/0/2022/zip/20356562/1664509990360-9a1e28ff-0ebb-43a3-ae7a-08726787c9db.zip'
-   # 为 Agent 程序授权
-   chmod 777 tapdata
+   wget 'https://resource.tapdata.net/doc-source/tapdata.zip' && unzip tapdata.zip
    ```
-
+   
 5. 登录 [Tapdata Cloud 平台](https://auth.tapdata.net/)，获取 Agent 启动的配置信息。
 
    1. 单击左侧导航栏的 **Agent 管理**，然后单击右侧的**创建 Agent**。

@@ -1,6 +1,6 @@
 # Linux 平台上安装
 
-Tapdata Agent（简称 Agent）通过流式技术从源端获取数据、处理转换数据并发送到目标端，支持多平台安装，本文介绍如何在 Linux 平台上安装 Agent，
+Tapdata Agent（简称 Agent）通过流式技术从源端获取数据、处理转换数据并发送到目标端，支持多平台安装，本文介绍如何在 Linux 平台上安装 Agent。
 
 ## 环境要求
 

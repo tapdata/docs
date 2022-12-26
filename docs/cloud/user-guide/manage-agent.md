@@ -156,6 +156,6 @@ tapdata:
 ```bash
 # 停止 Agent
 ./tapdata stop -f
-# 启动Agent
+# 启动 Agent
 ./tapdata start
 ```

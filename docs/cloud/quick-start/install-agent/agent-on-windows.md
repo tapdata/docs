@@ -1,101 +1,37 @@
 # Windows 平台上安装
 
+Tapdata Agent（简称 Agent）通过流式技术从源端获取数据、处理转换数据并发送到目标端，支持多平台安装，本文介绍如何在 Windows 平台上安装 Agent。
+
 ## 环境要求
 
-- 系统版本：64位
-- 硬件环境：x86
-- 环境要求：Java 1.8
+- 硬件环境：x86 架构处理器
+- 操作系统：64 位
+- 网络环境：可连通公网，且可与源/目标数据库通信
+- 软件依赖：Java 1.8 版本
 
-## 安装步骤
+:::tip
 
-本手册中给出的 Tapdata Agent 下载、部署、运行代码均为示例，Tapdata Agent 实际下载、部署、运行命令可通过Agent的部署页面来获取。
+您可以在 Windows 设备上的命令行中执行 `java -version` 命令查看 Java 版本，如未安装请参见[官方文档](https://www.java.com/en/download/manual.jsp)。
 
-1. 在 Agent 管理列表，创建 Agent 后，点击Agent的部署按钮，打开 Agent 的部署页面。
+:::
 
-   ![](../../images/install_agent_windows_1.png)
+## 安装 Agent 
 
-2. 在部署页面点击【Windows(64bit)】，进入到 Windows 环境 Agent 部署页面。
+1. 登录 [Tapdata Cloud 平台](https://auth.tapdata.net/)。
 
-   ![](../../images/install_agent_windows_2.png)
+2. 单击左侧导航栏的 **Agent 管理**，然后单击右侧的**创建 Agent**。
 
-3. 点击 Agent 部署页面中的`下载Tapdata Agent`，将 Tapdata Agent 下载至本地环境。
+3. 在跳转到的部署页面选择 **Windows（64 bit）**，单击**下载 Tapdata Agent**，然后复制安装命令。
 
-   ![](../../images/install_agent_windows_3.png)
+   ![复制安装命令](../../images/agent_on_windows_cn.png)
 
-4. 在 Tapdata Agent 下载完毕后，请将其放入您的安装目录，安装路径不能有中文和特殊字符。
+4. 为方便管理，我们将下载的 Agent 安装程序移动至安装目录（如 **C:\tapdata**）。
 
-5. 双击 tapdata.exe 开始安装。
+5. 双击安装程序 **tapdata.exe**，根据提示，单击右键粘贴在步骤 3 复制的 Token 信息并按回车键，启动成功后命令窗口将自动关闭。
 
-6. 等待安装过程提示要输入 Token 时，复制部署页面的 Token（如下图所示），在命令窗口右键进行粘贴。
+6. （可选）双击 Agent 安装目录中的 **status.bat** 程序，查看 Agent 状态，正常启动的示例如下。
 
-   ![](../../images/install_agent_windows_4.png)
-
-7. 粘贴Token后按回车键，Tapdata Agent 会自动安装完成并启动。
-
-
-
-Tapdata Agent运行后会在Tapdata官网`Agent管理`页面自动注册，此时您可通过管理页面对其进行管控，也可在本地使用命令行方式对其进行管控，如果您的本地部署环境无法连通公网，那么您部署的 Agent 将无法注册成功，在`Agent管理`页面，您的 Tapdata Agent 将不会变为运行中状态。
-
-
-
-## 管理 Tapdata Agent
-
-进入到 Tapdata Agent 的安装目录，然后通过以下方式来对 Tapdata Agent 进行管理：
-
-* 关闭 Tapdata Agent：双击 `stop.bat`
-* 启动 Tapdata Agent：双击 `start.bat` 或者直接双击 `tapdata.exe`
-* 查看 Tapdata Agent 状态：双击 `status.bat`
-
-
-
-## 调整 Tapdata Agent 运行内存
-
-在Agent部署目录下找到 `application.yml` 文件，找到 tapdataJavaOpts 配置，比如：`tapdataJavaOpts: "-Xms4G -Xmx8G"`
-
-调整该配置里内存的值，具体的运行内存大小根据服务器的可用内存自行判断设置。
-
-```yaml
-tapdata:
-    conf:
-        tapdataPort: '3030'
-        backendUrl: 'https://cloud.tapdata.net/api/'
-        apiServerPort: ""
-        tapdataJavaOpts: "-Xms4G -Xmx8G"
-        reportInterval: 20000
-        uuid: a5f266a1-a495-412f-a433-29d345713c176
-    cloud:
-        accessCode: ""
-        baseURLs: 'https://cloud.tapdata.net/api/'
-        username: null
-        token: 
-spring:
-    data:
-        mongodb:
-            username: ""
-            password: ""
-            mongoConnectionString: ""
-            uri: ""
-            ssl: ""
-            sslCA: ""
-            sslCertKey: ""
-            sslPEMKeyFilePassword: ""
-            authenticationDatabase: ""
-```
-
-配置文件修改完成后，重启Agent生效
-
-```bash
-#先停止Agent
-./tapdata stop -f
-
-#然后再启动Agent
-./tapdata start
-```
-
-
-
-
-以上目录并不会占用太多磁盘空间，为了确保 Tapdata Agent 的稳定运行及在您遇到问题时 Tapdata 技术客服能够协助您快速定位问题根因，请勿删除这些目录以及目录中的文件。
+   ![Agent 启动成功](../../images/agent_started_on_windows.png)
 
 
 
@@ -106,3 +42,8 @@ spring:
 ## 下一步
 
 [连接数据库](../connect-database.md)
+
+## 推荐阅读
+
+* [管理 Agent](../../user-guide/manage-agent.md)
+* [安装与管理 Agent 常见问题](../../faq/agent-installation.md)

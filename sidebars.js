@@ -259,7 +259,9 @@ const sidebars = {
      label: '产品简介',
      link: {type: 'doc', id: 'enterprise/introduction/README'},
      items: [
+             'enterprise/introduction/architecture',
              'enterprise/introduction/features',
+             'enterprise/introduction/benefits',
              'enterprise/introduction/use-cases',
              'enterprise/introduction/supported-databases',
              'enterprise/introduction/terms',

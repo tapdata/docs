@@ -13,3 +13,9 @@
    * 账号：可以访问数据库的账号
    * 密码：数据库账号对应的密码
    * 时间类型的时区：默认使用该数据库的时区；若指定时区，则使用指定后的时区设置
+
+
+
+## 相关文档
+
+[Oracle 实时同步至 Tablestore](../../best-practice/oracle-as-source/oracle-to-tablestore.md)

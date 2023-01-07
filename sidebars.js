@@ -341,6 +341,7 @@ const sidebars = {
                      'enterprise/user-guide/connect-database/connect-mariadb',
                      'enterprise/user-guide/connect-database/connect-db2',
                      'enterprise/user-guide/connect-database/connect-dummy',
+                     'enterprise/user-guide/connect-database/connect-excel',
                     ]
              },
              {
@@ -406,6 +407,14 @@ const sidebars = {
                     ]
              },
              'enterprise/user-guide/notification',
+        ]
+    },
+    {
+     type: 'category',
+     label: '最佳实践',
+     link: {type: 'doc', id: 'enterprise/best-practice/README'},
+     items: [
+            'enterprise/best-practice/excel-to-mysql'
         ]
     },
   'enterprise/release-notes',

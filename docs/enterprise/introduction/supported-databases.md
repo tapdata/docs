@@ -179,6 +179,15 @@ Beta 版本数据源处于公测阶段，尚未通过 Tapdata 认证测试流程
     <td>5.x、6.x、7.x</td>
   </tr>
   <tr>
+    <td>Excel</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>XLS/XLSX 格式</td>
+  </tr>
+  <tr>
     <td>Gbase 8a</td>
     <td>➖</td>
     <td>➖</td>

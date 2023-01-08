@@ -342,6 +342,7 @@ const sidebars = {
                      'enterprise/user-guide/connect-database/connect-db2',
                      'enterprise/user-guide/connect-database/connect-dummy',
                      'enterprise/user-guide/connect-database/connect-excel',
+                     'enterprise/user-guide/connect-database/connect-redis'
                     ]
              },
              {
@@ -414,7 +415,8 @@ const sidebars = {
      label: '最佳实践',
      link: {type: 'doc', id: 'enterprise/best-practice/README'},
      items: [
-            'enterprise/best-practice/excel-to-mysql'
+            'enterprise/best-practice/excel-to-mysql',
+            'enterprise/best-practice/mysql-to-redis'
         ]
     },
   'enterprise/release-notes',

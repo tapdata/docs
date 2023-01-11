@@ -41,4 +41,4 @@ Redis 2.8 ~ 6.0
 
 ## 相关文档
 
-[Redis 数据开发任务](../../user-guide/connect-database/connect-redis.md)
+[Redis 数据开发任务](../../best-practice/mysql-to-redis.md)

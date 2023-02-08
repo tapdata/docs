@@ -10,9 +10,45 @@
 
 ## 准备工作
 
-1. 登录 Google Cloud 的[凭据页面](https://console.cloud.google.com/apis/credentials)。
+1. 登录 Google Cloud 的[角色页面](https://console.cloud.google.com/iam-admin/roles)，创建角色，该角色将包含 Tapdata Cloud 操作 BigQuery 所必须的权限。
 
-2. 创建服务账号，该账号将用于后续的身份验证。
+   1. 单击**创建角色**。
+
+   2. 在跳转到的页面，填写角色名称，然后单击**添加权限**。
+
+   3. 在弹出的对话框中，依次搜索并授予下述权限。
+   
+   <details>
+    <summary>最小权限列表（单击展开）</summary>
+  <div>
+    <div>
+    bigquery.datasets.create<br/>
+      bigquery.datasets.get<br/>
+      bigquery.datasets.update<br/>
+      bigquery.jobs.create<br/>
+      bigquery.jobs.get<br/>
+      bigquery.jobs.list<br/>
+      bigquery.jobs.listAll<br/>
+      bigquery.jobs.delete<br/>
+      bigquery.jobs.update<br/>
+      bigquery.routines.list<br/>
+      bigquery.routines.get<br/>
+      bigquery.tables.create<br/>
+      bigquery.tables.delete<br/>
+      bigquery.tables.get<br/>
+      bigquery.tables.getData<br/>
+      bigquery.tables.list<br/>
+      bigquery.tables.setCategory<br/>
+      bigquery.tables.update<br/>
+      bigquery.tables.updateData
+    </div>
+  </div>
+</details>
+
+   4. 权限选择完成后，单击**创建**。
+
+
+2. 登录 Google Cloud 的[凭据页面](https://console.cloud.google.com/apis/credentials)，创建服务账号，该账号将用于后续的身份验证。
 
    1. 在页面顶部，单击**创建凭据** > **服务账号**。
 
@@ -20,11 +56,11 @@
 
       ![创建访问账号](../../images/create_server_account.png)
 
-   3. 在**角色**下拉框中输入并选中 **BigQuery Admin**，单击页面底部的**完成**。
+   3. 在**角色**下拉框中输入并选中我们刚创建的角色（**bigquery-role**），单击页面底部的**完成**。
 
-      ![授予权限](../../images/grant_bigquery_admin.png)
+      ![授予权限](../../images/grant_bigquery_role.png)
 
-3. 为服务账号创建认证密钥。
+4. 为服务账号创建认证密钥。
 
    1. 在跳转到的**凭据**页面，单击页面下方刚创建的服务账号。
 
@@ -35,17 +71,17 @@
    3. 在弹出的对话框中，选择**密钥类型**为 **JSON**，然后单击**创建**。
 
       操作完成后密钥文件将自动下载保存至您的电脑，为保障账户安全性，请妥善保管密钥文件。
-   
+
    4. 登录 Google Cloud 控制台，创建数据集和表，如已存在可跳过本步骤。
-   
+
       1. [创建 BigQuery 数据集](https://cloud.google.com/bigquery/docs/datasets?hl=zh-cn)
-   
+
          :::tip
-   
+
          为保障 Tapdata Cloud 正常读取到数据集信息，创建数据集时，选择**位置类型**为**多区域**。
-   
+
          :::
-   
+
       2. [创建表](https://cloud.google.com/bigquery/docs/tables?hl=zh-cn)。
 
 

@@ -50,6 +50,15 @@ Tapdata 支持丰富的数据源，具体如下：
     <td>3.2、3.4、3.6、4.0+</td>
   </tr>
   <tr>
+    <td>Metabase</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
     <td>MySQL</td>
     <td>✅</td>
     <td>✅</td>
@@ -90,6 +99,7 @@ Tapdata 支持丰富的数据源，具体如下：
 
 
 
+
 ## Beta 数据源
 
 :::tip
@@ -125,6 +135,69 @@ Beta 版本数据源处于公测阶段，尚未通过 Tapdata 认证测试流程
     <td>5.14.x</td>
   </tr>
   <tr>
+    <td>Aliyun AnalyticDB MySQL</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>5.0、5.1、5.5、5.6、5.7、8.x</td>
+  </tr>
+  <tr>
+    <td>Aliyun AnalyticDB PostgreSQL</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>9.4、9.5、9.6、10.x、11.x、12</td>
+  </tr>
+  <tr>
+    <td>Aliyun RDS MySQL</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>5.0、5.1、5.5、5.6、5.7、8.x</td>
+  </tr>
+  <tr>
+    <td>Aliyun RDS PostgreSQL</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>9.4、9.5、9.6、10.x、11.x、12</td>
+  </tr>
+  <tr>
+    <td>Aliyun RDS SQL Server</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>2008 R2、2012、2014、2016、2017、2019</td>
+  </tr>
+  <tr>
+    <td>AWS RDS MySQL</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>MySQL 5.0、5.1、5.5、5.6、5.7、8.x</td>
+  </tr>
+  <tr>
+    <td>BigQuery</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
     <td>Coding</td>
     <td>✅</td>
     <td>✅</td>
@@ -134,16 +207,34 @@ Beta 版本数据源处于公测阶段，尚未通过 Tapdata 认证测试流程
     <td>不涉及</td>
   </tr>
   <tr>
-    <td>Dameng</td>
+    <td>CSV</td>
     <td>✅</td>
     <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>7.x、8.x</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
   </tr>
   <tr>
-    <td>DB2</td>
+    <td>Custom Connection</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
+    <td>Databend</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>0.9 及以上</td>
+  </tr>
+  <tr>
+    <td>IBM DB2</td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
@@ -255,6 +346,15 @@ Beta 版本数据源处于公测阶段，尚未通过 Tapdata 认证测试流程
     <td>10.x</td>
   </tr>
   <tr>
+    <td>MySQL PXC</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>5.0、5.1、5.5、5.6、5.7、8.x</td>
+  </tr>
+  <tr>
     <td>OceanBase（MySQL模式）</td>
     <td>➖</td>
     <td>➖</td>
@@ -262,6 +362,33 @@ Beta 版本数据源处于公测阶段，尚未通过 Tapdata 认证测试流程
     <td>✅</td>
     <td>➖</td>
     <td>3.x</td>
+  </tr>
+  <tr>
+    <td>PolarDB MySQL</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>5.6、5.7、8.0</td>
+  </tr>
+  <tr>
+    <td>PolarDB PostgreSQL</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>11</td>
+  </tr>
+   <tr>
+    <td>QuickAPI</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
   </tr>
   <tr>
     <td>RabbitMQ</td>
@@ -290,5 +417,115 @@ Beta 版本数据源处于公测阶段，尚未通过 Tapdata 认证测试流程
     <td>➖</td>
     <td>4.9.x</td>
   </tr>
+  <tr>
+    <td>SelectDB</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>MySQL 5.7/8.0</td>
+  </tr>
+  <tr>
+    <td>Tablestore</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>5.13.9</td>
+  </tr>
+  <tr>
+    <td>TDengine</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>3.x</td>
+  </tr>
+  <tr>
+    <td>TencentDB MariaDB</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>5.6、5.7、8.x</td>
+  </tr>
+  <tr>
+    <td>TencentDB MongoDB</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>3.2、3.4、3.6、4.0、4.2</td>
+  </tr>
+  <tr>
+    <td>TencentDB MySQL</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>5.5、5.6、5.7、8.x</td>
+  </tr>
+  <tr>
+    <td>TencentDB PostgreSQL</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>9.4、9.5、9.6、10.x、11.x、12</td>
+  </tr>
+  <tr>
+    <td>TencentDB SQL Server</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>2008 R2、2012、2016、2017、2019</td>
+  </tr>
+  <tr>
+    <td>TiDB</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>5.x</td>
+  </tr>
+   <tr>
+    <td>Vika</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>V1</td>
+  </tr>
+  <tr>
+    <td>XML</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
+    <td>Zoho</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
 </tbody>
 </table>
+
+

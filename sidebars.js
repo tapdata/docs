@@ -341,6 +341,7 @@ const sidebars = {
                      'enterprise/user-guide/connect-database/connect-mariadb',
                      'enterprise/user-guide/connect-database/connect-db2',
                      'enterprise/user-guide/connect-database/connect-dummy',
+                     'enterprise/user-guide/connect-database/connect-tdengine',
                      'enterprise/user-guide/connect-database/connect-excel',
                      'enterprise/user-guide/connect-database/connect-redis'
                     ]
@@ -370,6 +371,7 @@ const sidebars = {
                             'enterprise/user-guide/data-pipeline/data-development/monitor-task',
                            ]
                     },
+                    'enterprise/user-guide/data-pipeline/verify-data',
                     'enterprise/user-guide/data-pipeline/manage-function',
                     'enterprise/user-guide/data-pipeline/custom-node',
                     'enterprise/user-guide/data-pipeline/share-mining',

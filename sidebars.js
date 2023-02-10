@@ -370,6 +370,7 @@ const sidebars = {
                             'enterprise/user-guide/data-pipeline/data-development/monitor-task',
                            ]
                     },
+                    'enterprise/user-guide/data-pipeline/verify-data',
                     'enterprise/user-guide/data-pipeline/manage-function',
                     'enterprise/user-guide/data-pipeline/custom-node',
                     'enterprise/user-guide/data-pipeline/share-mining',

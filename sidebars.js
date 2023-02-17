@@ -117,6 +117,7 @@ const sidebars = {
                      'cloud/user-guide/connect-database/connect-sqlserver',
                      'cloud/user-guide/connect-database/connect-mongodb',
                      'cloud/user-guide/connect-database/connect-elasticsearch',
+                     'cloud/user-guide/connect-database/connect-bigquery',
                      'cloud/user-guide/connect-database/connect-kafka',
                      'cloud/user-guide/connect-database/connect-dmdb',
                      'cloud/user-guide/connect-database/connect-greenplum',
@@ -193,6 +194,7 @@ const sidebars = {
              label: 'MySQL 实时同步',
              link: {type: 'doc', id: 'cloud/best-practice/mysql-as-source/README'},
              items:[
+                    'cloud/best-practice/mysql-as-source/mysql-to-bigquery',
                     'cloud/best-practice/mysql-as-source/mysql-to-elasticsearch',
                     'cloud/best-practice/mysql-as-source/mysql-to-mongodb',
                     'cloud/best-practice/mysql-as-source/mysql-to-oracle',
@@ -307,6 +309,7 @@ const sidebars = {
                      'enterprise/prerequisites/beta/mariadb',
                      'enterprise/prerequisites/beta/rabbitmq',
                      'enterprise/prerequisites/beta/rocketmq',
+                     'enterprise/prerequisites/beta/selectdb',
              ]
             },
      ]
@@ -341,7 +344,10 @@ const sidebars = {
                      'enterprise/user-guide/connect-database/connect-mariadb',
                      'enterprise/user-guide/connect-database/connect-db2',
                      'enterprise/user-guide/connect-database/connect-dummy',
+                     'enterprise/user-guide/connect-database/connect-tdengine',
                      'enterprise/user-guide/connect-database/connect-excel',
+                     'enterprise/user-guide/connect-database/connect-redis'
+                     'enterprise/user-guide/connect-database/connect-selectdb',
                     ]
              },
              {
@@ -369,6 +375,7 @@ const sidebars = {
                             'enterprise/user-guide/data-pipeline/data-development/monitor-task',
                            ]
                     },
+                    'enterprise/user-guide/data-pipeline/verify-data',
                     'enterprise/user-guide/data-pipeline/manage-function',
                     'enterprise/user-guide/data-pipeline/custom-node',
                     'enterprise/user-guide/data-pipeline/share-mining',
@@ -414,7 +421,8 @@ const sidebars = {
      label: '最佳实践',
      link: {type: 'doc', id: 'enterprise/best-practice/README'},
      items: [
-            'enterprise/best-practice/excel-to-mysql'
+            'enterprise/best-practice/excel-to-mysql',
+            'enterprise/best-practice/mysql-to-redis'
         ]
     },
   'enterprise/release-notes',

@@ -53,7 +53,7 @@
 
 8. 单击**启动**，操作完成后，您可以在当前页面查看到任务的执行情况，如 QPS、延迟、任务事件统计等信息。
 
-   ![任务执行情况](../../images/task_started_cn.png)
+   ![任务执行情况](../../images/copy_data_monitor_cn.png)
 
 
 

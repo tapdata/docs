@@ -307,6 +307,7 @@ const sidebars = {
                      'enterprise/prerequisites/beta/mariadb',
                      'enterprise/prerequisites/beta/rabbitmq',
                      'enterprise/prerequisites/beta/rocketmq',
+                     'enterprise/prerequisites/beta/selectdb',
              ]
             },
      ]
@@ -344,6 +345,7 @@ const sidebars = {
                      'enterprise/user-guide/connect-database/connect-tdengine',
                      'enterprise/user-guide/connect-database/connect-excel',
                      'enterprise/user-guide/connect-database/connect-redis'
+                     'enterprise/user-guide/connect-database/connect-selectdb',
                     ]
              },
              {

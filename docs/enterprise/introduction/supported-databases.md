@@ -291,6 +291,13 @@ Beta 版本数据源处于公测阶段，尚未通过 Tapdata 认证测试流程
     <td>4.9.x</td>
   </tr>
   <tr>
+  <td>SelectDB</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>2.0.13 以上</td>
     <td>TDengine</td>
     <td>✅</td>
     <td>✅</td>

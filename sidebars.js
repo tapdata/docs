@@ -117,6 +117,7 @@ const sidebars = {
                      'cloud/user-guide/connect-database/connect-sqlserver',
                      'cloud/user-guide/connect-database/connect-mongodb',
                      'cloud/user-guide/connect-database/connect-elasticsearch',
+                     'cloud/user-guide/connect-database/connect-bigquery',
                      'cloud/user-guide/connect-database/connect-kafka',
                      'cloud/user-guide/connect-database/connect-dmdb',
                      'cloud/user-guide/connect-database/connect-greenplum',
@@ -193,6 +194,7 @@ const sidebars = {
              label: 'MySQL 实时同步',
              link: {type: 'doc', id: 'cloud/best-practice/mysql-as-source/README'},
              items:[
+                    'cloud/best-practice/mysql-as-source/mysql-to-bigquery',
                     'cloud/best-practice/mysql-as-source/mysql-to-elasticsearch',
                     'cloud/best-practice/mysql-as-source/mysql-to-mongodb',
                     'cloud/best-practice/mysql-as-source/mysql-to-oracle',

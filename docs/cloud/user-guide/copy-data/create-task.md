@@ -13,7 +13,7 @@
 
 本文以 MySQL 实时同步至 MongoDB 为例，为您演示数据复制任务的创建流程，其他数据源也可参考此流程。
 
-1. 登录 [Tapdata Cloud 平台](https://auth.tapdata.net/)。
+1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
 
 2. 在左侧导航栏，单击**数据复制**。
 

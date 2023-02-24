@@ -6,7 +6,7 @@ Tapdata Cloud 支持对 Agent 的可视化运维管理，您可以通过页面�
 
 ## 通过页面管理 Agent
 
-1. 登录 [Tapdata Cloud 平台](https://auth.tapdata.net/)。
+1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
 
 2. 单击左侧导航栏的 **Agent 管理**，在当前页面选择执行下述操作。
 

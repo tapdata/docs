@@ -42,7 +42,7 @@ Tapdata Agent（简称 Agent）通过流式技术从源端获取数据、处理�
    wget 'https://resource.tapdata.net/doc-source/tapdata.zip' && unzip tapdata.zip
    ```
    
-5. 登录 [Tapdata Cloud 平台](https://auth.tapdata.net/)，获取 Agent 启动的配置信息。
+5. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)，获取 Agent 启动的配置信息。
 
    1. 单击左侧导航栏的 **Agent 管理**，然后单击右侧的**创建 Agent**。
 

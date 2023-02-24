@@ -427,6 +427,15 @@ const sidebars = {
     },
   'enterprise/release-notes',
   'enterprise/faq',
+    {
+     type: 'category',
+     label: '附录',
+     link: {type: 'doc', id: 'enterprise/appendix/README'},
+     items: [
+            'enterprise/appendix/standard-js',
+            'enterprise/appendix/enhanced-js'
+        ]
+    },
   'enterprise/support',
  ]
 };

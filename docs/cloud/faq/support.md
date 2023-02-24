@@ -12,9 +12,9 @@
 
 ## 在线客服
 
-登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)后，单击页面左下角的 Connect，输入您遇到的问题，系统将自动匹配相关知识库中的解决方案供您参考，如未解决可转接人工服务或通过聊天窗口拨打语音电话。
+登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)后，单击页面左下角的 **Connect**，系统将为您提供常见问题及其解决方案功能参考，如未解决可转接人工服务或通过聊天窗口拨打语音电话。
 
-这里补一张图
+![在线客服](../images/online_chat_support.png)
 
 
 

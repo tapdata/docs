@@ -59,6 +59,10 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        // Google Analytics
+        gtag: {
+          trackingID: 'G-PVNR6DP305', // Measurement ID, which can be find in Data streams page on Google Analytics platform.
+        },
         blog: false, // Disable the blog plugin
       }),
     ],

@@ -249,6 +249,15 @@ const sidebars = {
              'cloud/faq/task',
       ]
      },
+     {
+      type: 'category',
+      label: '附录',
+      link: {type: 'doc', id: 'cloud/appendix/README'},
+      items: [
+              'cloud/appendix/standard-js',
+              'cloud/appendix/enhanced-js'
+              ]
+     },
      'cloud/faq/support',
   ],
 

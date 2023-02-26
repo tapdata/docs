@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs>
+<Tabs className="unique-tabs">
   <TabItem value="2023" label="2023 年" default>
     <h3>20230217</h3>
 <h4>新增功能</h4>

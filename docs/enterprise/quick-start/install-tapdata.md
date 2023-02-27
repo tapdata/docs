@@ -9,7 +9,9 @@
 * 存储空间：100 GB
 * 操作系统：CentOS 7 + 或 Ubuntu 16.04 +
 
+## 准备工作
 
+准备安装所需的 License 文件，可[联系我们](mailto:team@tapdata.io)获取。
 
 ## 操作步骤
 
@@ -58,13 +60,14 @@
 
    
 
-4. 安装并启动 Tapdata，其中 license 文件可[联系我们](mailto:team@tapdata.io)获取。
+4. 依次执行下述命令，安装并启动 Tapdata，其中 License 文件需放置在安装包解压后的文件夹中。
 
    ```shell
    cd /tapdata/
    tar -zxf tapdata-v2.4.0.tar.gz
    cd tapdata-v2.4.0
    # 将 license.txt 文件放到 tapdata-v2.4.0 下
+   ./tapdata start
    ```
 
    

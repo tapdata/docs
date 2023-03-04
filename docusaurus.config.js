@@ -124,7 +124,7 @@ const config = {
             type: 'doc',
             docId: 'cloud/what-is-tapdata-cloud',
             position: 'left',
-            label: 'Tapdata 云版',
+            label: 'Tapdata Cloud',
           },
           {
             type: 'docsVersionDropdown',

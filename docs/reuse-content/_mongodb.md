@@ -83,7 +83,7 @@ Tapdata Cloud 基于 MongoDB 的 Change Stream 实现，此特性在 MongoDB 4.0
 5. 源库为集群架构时，为提升数据同步性能，Tapdata Cloud 将会为每个分片创建一个线程并读取数据，在配置数据同步/开发任务前，您还需要执行下述操作。
 
    * 关闭源库的均衡器（Balancer），避免块迁移对数据一致性的影响。具体操作，见[如何停止平衡器](https://docs.mongodb.com/manual/reference/method/sh.stopBalancer/)。
-   * 清除源库中，因块迁移失败而产生的孤立文档，避免 _id 冲突。具体操作，见[如何清理孤儿文档](https://docs.mongodb.com/manual/reference/command/cleanupOrphaned/)。
+   * 清除源库中，因块迁移失败而产生的孤立文档，避免 _id 冲突。具体操作，见[如何清理孤立文档](https://docs.mongodb.com/manual/reference/command/cleanupOrphaned/)。
 
 
 

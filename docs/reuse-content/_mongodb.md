@@ -1,123 +1,100 @@
-:::tip
-
-MongoDB 作为源端连接时，必须是副本集。
-
-:::
-
-### 支持版本
+## 支持版本
 
 MongoDB 3.2、3.4、3.6、4.0、4.2
 
 :::tip
 
-由于 Tapdata 数据同步目前是基于 MongoDB 的 Change Stream 支持对多表合并的操作，而 MongoDB 官方是从 4.0 版本开始支持 Change Stream 的，因此，请尽量保证源端数据库和目标端数据库都是 4.0 及以上版本。
+Tapdata Cloud 基于 MongoDB 的 Change Stream 实现，此特性在 MongoDB 4.0 开始支持，因此，推荐源和目标数据库的版本为 4.0 及以上。
 
 :::
 
-### 作为源数据库
+## 作为源库
 
-#### 基本配置
+1. 保障源库的架构为副本集或分片集群，如果为单节点架构，您可以将其配置为单成员的副本集以开启 Oplog。
+   具体操作，见[如何将单节点转为副本集](https://docs.mongodb.com/manual/tutorial/convert-standalone-to-replica-set/)。
 
-- 源端 MongoDB 支持副本集和分片集群。
-- 如果源端 MongoDB 只有一个节点，您可以将其配置为单成员的复制集，以开启 oplog 功能。
-- 您应该配置足够的 oplog 空间。 我们建议至少足以容纳 24 小时的 oplog。
+2. 配置充足的 Oplog 存储空间，至少需要容纳 24 小时的 Oplog。
+   具体操作，见[修改 Oplog 大小](https://docs.mongodb.com/manual/tutorial/change-oplog-size/)。
 
-#### 帐户权限
+3. 根据权限管控需求选择下述步骤，创建用于数据同步/开发任务的账号并授予权限。
 
-如果源端 MongoDB 启用了安全身份验证，则 Tapdata 用于连接源端 MongoDB 的用户帐户必须具有以下内置角色：
+   :::tip
 
-```sql
-clusterMonitor（读取 oplog ）
-readAnyDatabase
-```
+   由于分片服务器不会向 config 数据库获取用户权限，因此，当源库为分片集群架构时，您需要在每个分片的主节点上创建相应的用户并授予权限。
 
-要创建具有上述权限的用户，您可以参考以下示例：
+   :::
 
-```sql
-use admin
- db.createUser({
-    "user" : "johndoe",
-    "pwd"  : "my_password",
-    "roles" : [
-        {
-            "role" : "clusterMonitor",
-            "db" : "admin"
-        },
-        {
-            "role" : "readAnyDatabase",
-            "db" : "admin"
-        }
-    ]
-}
-```
+   * 授予指定库（以 demodata 库为例）的读权限
+
+     ```bash
+     use admin
+     db.createUser({
+         "user" : "tapdata",
+         "pwd"  : "my_password",
+         "roles" : [
+             {
+                 "role" : "clusterMonitor",
+                 "db" : "admin"
+             },
+             {
+                 "role" : "read",
+                 "db" : "demodata"
+             }，
+             {
+                 "role" : "read",
+                 "db" : "local"
+             },
+             {
+                 "role" : "read",
+                 "db" : "config"
+             }
+         ]
+     }
+     ```
+
+     :::tip
+
+     仅当 MongoDB 为 3.2 版本时，需要授予 local 数据库的读权限。
+
+     :::
+
+   * 授予所有库的读权限。
+
+     ```bash
+     use admin
+      db.createUser({
+         "user" : "tapdata",
+         "pwd"  : "my_password",
+         "roles" : [
+             {
+                 "role" : "clusterMonitor",
+                 "db" : "admin"
+             },
+             {
+                 "role" : "readAnyDatabase",
+                 "db" : "admin"
+             }
+         ]
+     }
+     ```
+
+4. 在设置 MongoDB URI 时，推荐将写关注级别设置为大多数，即 `w=majority`，否则可能因 Primary 节点异常宕机导致的数据丢失文档。
+
+5. 源库为集群架构时，为提升数据同步性能，Tapdata Cloud 将会为每个分片创建一个线程并读取数据，在配置数据同步/开发任务前，您还需要执行下述操作。
+
+   * 关闭源库的均衡器（Balancer），避免块迁移对数据一致性的影响。具体操作，见[如何停止平衡器](https://docs.mongodb.com/manual/reference/method/sh.stopBalancer/)。
+   * 清除源库中，因块迁移失败而产生的孤立文档，避免 _id 冲突。具体操作，见[如何清理孤儿文档](https://docs.mongodb.com/manual/reference/command/cleanupOrphaned/)。
 
 
 
-如果您不希望授予`readAnyDatabase`角色，则还可以向特定的数据库以及 local 和 config 数据库赋予读取权限。例如：
+### 作为目标库
 
-```sql
-use admin
-db.createUser({
-    "user" : "johndoe",
-    "pwd"  : "my_password",
-    "roles" : [
-        {
-            "role" : "clusterMonitor",
-            "db" : "admin"
-        },
-        {
-            "role" : "read",
-            "db" : "my_db"
-        }，
-        {
-            "role" : "read",
-            "db" : "local"
-        },
-        {
-            "role" : "read",
-            "db" : "config"
-        }
-    ]
-}
-```
+授予指定库（以 demodata 库为例）的写权限，并授予 **clusterMonitor** 角色以供数据验证使用，示例如下：
 
-
-
-请注意，只有 MongoDB 版本 3.2 需要 local 数据库的读取权限。
-
-**重要事项**
-
-对于集群分片，您必须在每个分片主节点上创建适当的用户权限。 这是由于MongoDB的安全架构设计。 当登录到每个单独的分片时，分片服务器不会向config数据库获取用户权限。 相反，它将使用其本地用户数据库进行身份验证和授权。
-
-**参考**
-
-[MongoDB Documentation: 如何更改oplog的大小](https://docs.mongodb.com/manual/tutorial/change-oplog-size/)
-
-[MongoDB Documentation: 如何将单节点转为复制集](https://docs.mongodb.com/manual/tutorial/convert-standalone-to-replica-set/)
-
-:::tip
-如果 MongoDB URI 未设置 w=majority ，Tapdata 会使用默认的配置w=1，表示数据写到 primary 节点后就返回了。 如果在数据从 primary 节点同步到 secondary 节点前，primary 节点发生异常宕机，此时就会发生数据丢失。因此建议使用 w=majority 配置。 w=majority表示只有当数据写到大多数节点后才会返回客户端正确写入。
-:::
-
-### 作为目标数据库
-
-#### 基本配置
-
-- 目标端 MongoDB 支持副本集和分片集群。
-- 如果您的目标端 MongoDB 只有一个节点，您可以将其配置为单成员的复制集，以开启 oplog 功能。
-- 确保为目标 MongoDB 配置了足够的资源来处理源数据库的工作负载。
-
-#### 帐户权限
-
-如果目标 MongoDB 启用了安全身份验证，则 Tapdata 使用的用户帐户必须具有以下角色 / 权限：
-
-- `clusterMonitor`（数据验证功能需要使用）
-- `readWrite`（作为目标数据库需要拥有的角色） 要创建具有以上权限的用户，您可以参考以下示例：
-
-```sql
+```bash
 > use admin
 > db.createUser({
-  "user" : "johndoe",
+  "user" : "tapdata",
   "pwd"  : "my_password",
   "roles" : [
       {
@@ -126,7 +103,7 @@ db.createUser({
       },
       {
           "role" : "readWrite",
-          "db" : "my_db"
+          "db" : "demodata"
       },
       {
           "role" : "read",
@@ -136,28 +113,15 @@ db.createUser({
 }
 ```
 
-
-
 :::tip
 
-只有 MongoDB 版本 3.2 需要 local 数据库的读取权限。
+仅当 MongoDB 为 3.2 版本时，需要授予 local 数据库的读权限。
 
 :::
 
-### 同步 MongoDB 集群
 
-当使用 MongoDB 集群作为源库时，Tapdata 会为每个分片创建一个线程，以直接从分片主节点（或次节点）读取数据。
 
-为提高负载性能，我们认为有必要使用这种多线程并行的设计方案。但是需要注意的是，这种方法的副作用是可能会在源集群库中产生孤立文档。孤立文档是当 MongoDB 发生自动数据迁移所导致的。
+## 下一步
 
-要解决此问题，建议在使用 MongoDB 集群作为源库同步前，完成以下任务：
-
-- 停止平衡器：[如何停止平衡器](https://docs.mongodb.com/manual/reference/method/sh.stopBalancer/)
-- 使用cleanOrphan命令：[如何清理孤儿文档](https://docs.mongodb.com/manual/reference/command/cleanupOrphaned/)
-
-### MongoDB TLS/SSL配置
-
-- 启用TLS/SSL：请在左侧配置页的 “使用TLS/SSL连接”中选择“是”项进行配置
-- 设置MongoDB PemKeyFile：点击“选择文件”，选择证书文件，若证书文件有密码保护，则在“私钥密码”中填入密码
-- 设置CAFile：请在左侧配置页的 “验证服务器证书”中选择“是”，然后在下方的“认证授权”中点击“选择文件”
+[连接 MongoDB 数据库](../cloud/user-guide/connect-database/connect-mongodb.md)
 

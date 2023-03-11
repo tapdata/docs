@@ -312,13 +312,24 @@ const sidebars = {
              label: 'Beta 数据源',
              link: {type: 'doc', id: 'enterprise/prerequisites/beta/README'},
              items: [
-                     'enterprise/prerequisites/beta/activemq',
-                     'enterprise/prerequisites/beta/apache-doris',
-                     'enterprise/prerequisites/beta/elasticsearch',
-                     'enterprise/prerequisites/beta/mariadb',
-                     'enterprise/prerequisites/beta/rabbitmq',
-                     'enterprise/prerequisites/beta/rocketmq',
-                     'enterprise/prerequisites/beta/selectdb',
+                     'enterprise/prerequisites/beta/tidb',
+                     'enterprise/prerequisites/beta/larktask',
+                     'enterprise/prerequisites/beta/opengauss',
+                     'enterprise/prerequisites/beta/zoho-crm',
+             ]
+            },                        
+            {
+             type: 'category',
+             label: 'Alpha 数据源',
+             link: {type: 'doc', id: 'enterprise/prerequisites/alpha/README'},
+             items: [
+                     'enterprise/prerequisites/alpha/activemq',
+                     'enterprise/prerequisites/alpha/apache-doris',
+                     'enterprise/prerequisites/alpha/elasticsearch',
+                     'enterprise/prerequisites/alpha/mariadb',
+                     'enterprise/prerequisites/alpha/rabbitmq',
+                     'enterprise/prerequisites/alpha/rocketmq',
+                     'enterprise/prerequisites/alpha/selectdb',
              ]
             },
      ]
@@ -334,29 +345,56 @@ const sidebars = {
               label: '连接数据库',
               link: {type: 'doc', id: 'enterprise/user-guide/connect-database/README'},
               items:[
-                     'enterprise/user-guide/connect-database/custom-connection',
-                     'enterprise/user-guide/connect-database/connect-mysql',
-                     'enterprise/user-guide/connect-database/connect-oracle',
-                     'enterprise/user-guide/connect-database/connect-sqlserver',
-                     'enterprise/user-guide/connect-database/connect-postgresql',
-                     'enterprise/user-guide/connect-database/connect-mongodb',
-                     'enterprise/user-guide/connect-database/connect-kafka',
-                     'enterprise/user-guide/connect-database/connect-elasticsearch',
-                     'enterprise/user-guide/connect-database/connect-activemq',
-                     'enterprise/user-guide/connect-database/connect-rabbitmq',
-                     'enterprise/user-guide/connect-database/connect-rocketmq',
-                     'enterprise/user-guide/connect-database/connect-clickhouse',
-                     'enterprise/user-guide/connect-database/connect-doris',
-                     'enterprise/user-guide/connect-database/connect-gbase-8a',
-                     'enterprise/user-guide/connect-database/connect-gbase-8s',
-                     'enterprise/user-guide/connect-database/connect-oceanbase',
-                     'enterprise/user-guide/connect-database/connect-mariadb',
-                     'enterprise/user-guide/connect-database/connect-db2',
-                     'enterprise/user-guide/connect-database/connect-dummy',
-                     'enterprise/user-guide/connect-database/connect-tdengine',
-                     'enterprise/user-guide/connect-database/connect-excel',
-                     'enterprise/user-guide/connect-database/connect-redis',
-                     'enterprise/user-guide/connect-database/connect-selectdb'
+                    {
+                     type: 'category',
+                     label: '认证数据源',
+                     link: {type: 'doc', id: 'enterprise/user-guide/connect-database/certified/README'},
+                     items:[
+                            'enterprise/user-guide/connect-database/certified/connect-clickhouse',
+                            'enterprise/user-guide/connect-database/certified/connect-kafka',
+                            'enterprise/user-guide/connect-database/certified/connect-mysql',
+                            'enterprise/user-guide/connect-database/certified/connect-mongodb',
+                            'enterprise/user-guide/connect-database/certified/connect-oracle',
+                            'enterprise/user-guide/connect-database/certified/connect-postgresql',
+                            'enterprise/user-guide/connect-database/certified/connect-sqlserver',
+                           ]
+                    },
+                    {
+                     type: 'category',
+                     label: 'Beta 数据源',
+                     link: {type: 'doc', id: 'enterprise/user-guide/connect-database/beta/README'},
+                     items:[
+                            'enterprise/user-guide/connect-database/beta/connect-tidb',
+                            'enterprise/user-guide/connect-database/beta/connect-larktask',
+                            'enterprise/user-guide/connect-database/beta/connect-opengauss',
+                            'enterprise/user-guide/connect-database/beta/connect-zoho',
+                           ]
+                    },
+                    {
+                     type: 'category',
+                     label: 'Alpha 数据源',
+                     link: {type: 'doc', id: 'enterprise/user-guide/connect-database/alpha/README'},
+                     items:[
+                            'enterprise/user-guide/connect-database/alpha/connect-activemq',
+                            'enterprise/user-guide/connect-database/alpha/connect-doris',
+                            'enterprise/user-guide/connect-database/alpha/connect-db2',
+                            'enterprise/user-guide/connect-database/alpha/connect-dummy',
+                            'enterprise/user-guide/connect-database/alpha/connect-elasticsearch',
+                            'enterprise/user-guide/connect-database/alpha/connect-excel',
+                            'enterprise/user-guide/connect-database/alpha/connect-gbase-8a',
+                            'enterprise/user-guide/connect-database/alpha/connect-gbase-8s',                            
+                            'enterprise/user-guide/connect-database/alpha/connect-mariadb',
+                            'enterprise/user-guide/connect-database/alpha/connect-oceanbase',
+                            'enterprise/user-guide/connect-database/alpha/connect-redis',
+                            'enterprise/user-guide/connect-database/alpha/connect-rabbitmq',
+                            'enterprise/user-guide/connect-database/alpha/connect-rocketmq',
+                            'enterprise/user-guide/connect-database/alpha/connect-selectdb',
+                            'enterprise/user-guide/connect-database/alpha/connect-tdengine',
+                            'enterprise/user-guide/connect-database/alpha/custom-connection',
+
+
+                           ]
+                    },
                     ]
              },
              {
@@ -410,6 +448,7 @@ const sidebars = {
               link: {type: 'doc', id: 'enterprise/user-guide/manage-system/README'},
               items:[
                      'enterprise/user-guide/manage-system/manage-cluster',
+                     'enterprise/user-guide/manage-system/manage-external-storage',
                     ]
              },
              {

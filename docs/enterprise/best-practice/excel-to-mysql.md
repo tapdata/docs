@@ -8,8 +8,8 @@ Excel 是使用广泛的数据统计和数据分析软件，Tapdata 支持读取
 
 在创建数据开发任务前，请确保您已经配置好了相关数据源：
 
-1. [配置 Excel 连接](../user-guide/connect-database/connect-excel.md)
-2. [配置 MySQL 连接](../user-guide/connect-database/connect-mysql.md)
+1. [配置 Excel 连接](../user-guide/connect-database/alpha/connect-excel.md)
+2. [配置 MySQL 连接](../user-guide/connect-database/certified/connect-mysql.md)
 
 ## 操作步骤
 

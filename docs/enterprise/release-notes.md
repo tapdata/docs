@@ -1,5 +1,35 @@
 # 更新日志
 
+## V2.14
+
+### 新增功能
+
+- 新增任务进度里程碑展示，可展示整体任务进度
+- 新增外部缓存统一配置和管理
+- 新增全量完成耗时、最大/平均 QPS 的展示
+- 新增 [TiDB 作为源](user-guide/connect-database/beta/connect-tidb.md)，并支持通过轮询方式进行增量同步
+- 支持对 [Dummy 数据源](user-guide/connect-database/alpha/connect-dummy.md)快速增加多个字段
+- 基于自定义节点实现 [CSV 字段处理器](user-guide/data-pipeline/custom-node#csv-demo)
+
+### 功能优化
+
+- 测试连接逻辑优化，测试连接不再影响连接的修改时间
+- 数据源分级调整，将数据源分级调整为 Alpha、Beta 和 GA
+- 复制任务以表达式模式选择表时，支持重新加载模型
+- 纯增量任务设置增量时间点逻辑优化，去掉数据库时区选项
+- 任务告警的默认值设置调整，降低因为默认值太小导致的频繁告警
+- 任务进入增量阶段后，如果遇到预期之外的错误，会自动以每小时 3 次的频率重试。
+- Oracle 作为源时，新增一个节点设置，可以忽略 clob 类型的数据同步
+- 增量时间点设置逻辑优化，禁止设置未来时间点
+- 日志展示方式优化，默认直接展示 message 信息，展开可以查看更多内容
+
+### 问题修复
+
+- 修复了相同 process_id 可启动多个引擎的问题
+- 修复了任务同步过程中停止任务，任务进度统计不正确的问题
+
+
+
 
 ## V2.13
 
@@ -31,7 +61,7 @@
 ### 新增功能
 
 - 新增[数据校验功能](user-guide/data-pipeline/verify-data.md)
-- 新增 [Excel 作为源库](user-guide/connect-database/connect-excel.md)
+- 新增 [Excel 作为源库](user-guide/connect-database/alpha/connect-excel.md)
 - 新增 Redis 作为目标库
 - 支持在 JS 节点里操作源库和目标库
 - 新增[追加合并节点](user-guide/data-pipeline/data-development/process-node#union-node)，可将多个相同结构表的数据合并成一张表

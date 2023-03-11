@@ -4,9 +4,9 @@
 
 ### 新增功能
 
-- 新增任务进度里程碑展示，可展示整体任务进度
-- 新增外部缓存统一配置和管理
+- 新增任务进度里程碑展示，可展示整体任务进度，更多介绍，见[监控数据复制任务](user-guide/data-pipeline/copy-data/monitor-task.md)
 - 新增全量完成耗时、最大/平均 QPS 的展示
+- 新增外部缓存统一配置和管理，更多介绍，见[管理外存](user-guide/manage-system/manage-external-storage.md)
 - 新增 [TiDB 作为源](user-guide/connect-database/beta/connect-tidb.md)，并支持通过轮询方式进行增量同步
 - 支持对 [Dummy 数据源](user-guide/connect-database/alpha/connect-dummy.md)快速增加多个字段
 - 基于自定义节点实现 [CSV 字段处理器](user-guide/data-pipeline/custom-node#csv-demo)

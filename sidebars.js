@@ -140,6 +140,7 @@ const sidebars = {
               items:[
                     'cloud/user-guide/copy-data/create-task',
                     'cloud/user-guide/copy-data/manage-task',
+                    'cloud/user-guide/copy-data/monitor-task',
                     ]
             },
             {

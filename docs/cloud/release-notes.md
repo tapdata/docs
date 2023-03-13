@@ -5,6 +5,15 @@ import TabItem from '@theme/TabItem';
 
 <Tabs className="unique-tabs">
   <TabItem value="2023" label="2023 年" default>
+    <h3>20230302</h3>
+    <h4>新增功能</h4>
+    <ul>
+    <li>新增阿里云市场接入，可通过<a href="https://market.aliyun.com/products/56024006/cmgj00061912.html">阿里云市场</a>采购/试用 Tapdata Cloud。</li>
+</ul>
+<h4>问题修复</h4>
+<ul>
+    <li>修复一些已知问题</li>
+</ul>
     <h3>20230217</h3>
 <h4>新增功能</h4>
 <ul>

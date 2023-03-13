@@ -17,7 +17,7 @@ Tapdata Agent（简称 Agent）通过流式技术从源端获取数据、处理�
 
 ## 安装 Agent
 
-1. 登录 [Tapdata Cloud 平台](https://auth.tapdata.net/)。
+1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
 
 2. 单击左侧导航栏的 **Agent 管理**，然后单击右侧的**创建 Agent**。
 

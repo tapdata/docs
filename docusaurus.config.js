@@ -59,6 +59,10 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        // Google Analytics
+        gtag: {
+          trackingID: 'G-PVNR6DP305', // Measurement ID, which can be find in Data streams page on Google Analytics platform.
+        },
         blog: false, // Disable the blog plugin
       }),
     ],
@@ -120,7 +124,7 @@ const config = {
             type: 'doc',
             docId: 'cloud/what-is-tapdata-cloud',
             position: 'left',
-            label: 'Tapdata 云版',
+            label: 'Tapdata Cloud',
           },
           {
             type: 'docsVersionDropdown',

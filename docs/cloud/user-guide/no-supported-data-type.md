@@ -36,7 +36,7 @@
 
 :::tip
 
-受SQL Server本身机制的影响，SQL Server作为源时，如果要同步的表无主键且包含 ntext 、 text 、 image中任一字段类型，当发生更新或者删除操作时，可能会导致更新或删除多条数据（多条数据中，仅前文中字段的值不一致，其余字段值都一致的情况下）。
+受 SQL Server 本身机制的影响，如果待同步的表没有主键且包含 ntext/text/image 类型时，一旦该表发生更新或者删除操作，可能会导致更新或删除多条数据（多条数据中，仅前文中字段的值不一致，其余字段值都一致的情况下）。
 
 :::
 
@@ -44,14 +44,13 @@
 | -------------- | ----------------------------------------------- |
 | Oracle         | xml, geometry, geography                        |
 | MongoDB        | xml, geometry, geography                        |
-| SQL Server     |                                                 |
 | MySQL          | xml, geometry, geography                        |
 | PostgreSQL     | xml, geometry, geography                        |
 | Elastic Search | xml, geometry, geography                        |
 | Kafka          | xml, geometry, geography                        |
 | ClickHouse     | xml, geometry, geography,binary,varbinary,image |
 
-#### PG作为源
+#### PG 作为源
 
 | 目标           | 不支持字段                                                   |
 | -------------- | ------------------------------------------------------------ |
@@ -64,12 +63,11 @@
 | Kafka          | point, line, lseg, box, path, polygon, circle, int4range, int8range, numrange, tsrange, tstzrange, daterange, macaddr8, uuid, xml |
 | ClickHouse     | point, line, lseg, box, path, polygon, circle, int4range, int8range, numrange, tsrange, tstzrange, daterange, macaddr8, uuid, xml, bytea |
 
-#### MongoDB作为源
+#### MongoDB 作为源
 
 | 目标           | 不支持字段                                                |
 | -------------- | --------------------------------------------------------- |
 | Oracle         | JAVASCRIPT,MIN_KEY,REGULAR_EXPRESSION,MAX_KEY             |
-| MongoDB        |                                                           |
 | SQL Server     | JAVASCRIPT,MIN_KEY,REGULAR_EXPRESSION,MAX_KEY             |
 | MySQL          | JAVASCRIPT,MIN_KEY,REGULAR_EXPRESSION,MAX_KEY             |
 | PostgreSQL     | JAVASCRIPT,MIN_KEY,REGULAR_EXPRESSION,MAX_KEY             |

@@ -25,7 +25,7 @@
 
 ## 操作步骤
 
-1. 登录 [Tapdata Cloud 平台](https://auth.tapdata.net/)。
+1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
 
 2. 在左侧导航栏，单击**连接管理**。
 

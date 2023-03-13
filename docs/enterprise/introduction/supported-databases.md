@@ -50,15 +50,6 @@ Tapdata 支持丰富的数据源，具体如下：
     <td>3.2、3.4、3.6、4.0+</td>
   </tr>
   <tr>
-    <td>Metabase</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>不涉及</td>
-  </tr>
-  <tr>
     <td>MySQL</td>
     <td>✅</td>
     <td>✅</td>
@@ -104,7 +95,72 @@ Tapdata 支持丰富的数据源，具体如下：
 
 :::tip
 
-Beta 版本数据源处于公测阶段，尚未通过 Tapdata 认证测试流程，如在使用过程中有疑问，欢迎[联系我们](mailto:team@tapdata.io)。
+Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测试用例，但尚未通过 Tapdata 认证测试流程，如在使用过程中有疑问，欢迎[联系我们](mailto:team@tapdata.io)。
+
+:::
+
+<table>
+<thead>
+  <tr>
+    <th rowspan="2">类型</th>
+    <th colspan="3">作为来源</th>
+    <th colspan="2">作为目标</th>
+    <th rowspan="2">版本</th>
+  </tr>
+  <tr>
+    <th>全量</th>
+    <th>增量</th>
+    <th>DDL 采集</th>
+    <th>数据写入</th>
+    <th>DDL 应用</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>LarkTask</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
+    <td>OpenGauss</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>3.0.0 及以上</td>
+  </tr>
+  <tr>
+    <td>TiDB</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>5.x</td>
+  </tr>
+  <tr>
+    <td>Zoho-CRM</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+</tbody>
+</table>
+
+
+## Alpha 数据源
+
+:::tip
+
+Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚未通过集成测试用例和 Tapdata 认证测试流程，如在使用过程中有疑问，欢迎[联系我们](mailto:team@tapdata.io)。
 
 :::
 
@@ -346,6 +402,15 @@ Beta 版本数据源处于公测阶段，尚未通过 Tapdata 认证测试流程
     <td>10.x</td>
   </tr>
   <tr>
+    <td>Metabase</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
     <td>MySQL PXC</td>
     <td>✅</td>
     <td>✅</td>
@@ -381,7 +446,7 @@ Beta 版本数据源处于公测阶段，尚未通过 Tapdata 认证测试流程
     <td>➖</td>
     <td>11</td>
   </tr>
-   <tr>
+  <tr>
     <td>QuickAPI</td>
     <td>✅</td>
     <td>➖</td>
@@ -406,7 +471,7 @@ Beta 版本数据源处于公测阶段，尚未通过 Tapdata 认证测试流程
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>2.8 ~ 6.0</td>
+    <td>2.x、3.x、4.x</td>
   </tr>
   <tr>
     <td>RocketMQ</td>
@@ -490,15 +555,6 @@ Beta 版本数据源处于公测阶段，尚未通过 Tapdata 认证测试流程
     <td>2008 R2、2012、2016、2017、2019</td>
   </tr>
   <tr>
-    <td>TiDB</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>5.x</td>
-  </tr>
-   <tr>
     <td>Vika</td>
     <td>➖</td>
     <td>➖</td>
@@ -516,16 +572,6 @@ Beta 版本数据源处于公测阶段，尚未通过 Tapdata 认证测试流程
     <td>➖</td>
     <td>不涉及</td>
   </tr>
-  <tr>
-    <td>Zoho</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>不涉及</td>
-  </tr>
 </tbody>
 </table>
-
 

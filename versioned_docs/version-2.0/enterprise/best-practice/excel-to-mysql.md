@@ -8,8 +8,8 @@ Excel 是使用广泛的数据统计和数据分析软件，Tapdata 支持读取
 
 在创建数据开发任务前，请确保您已经配置好了相关数据源：
 
-1. [配置 Excel 连接](../user-guide/connect-database/connect-excel.md)
-2. [配置 MySQL 连接](../user-guide/connect-database/connect-mysql.md)
+1. [配置 Excel 连接](../user-guide/connect-database/alpha/connect-excel.md)
+2. [配置 MySQL 连接](../user-guide/connect-database/certified/connect-mysql.md)
 
 ## 操作步骤
 
@@ -65,6 +65,7 @@ Excel 是使用广泛的数据统计和数据分析软件，Tapdata 支持读取
    - **任务名称**：填写具有业务意义的名称。
    - **同步类型**：可选择**全量+增量**，也可单独选择**全量**或**增量**。 全量表示将源端的存量数据复制到目标端，增量表示将源端实时产生的新数据或数据变更复制到目标端，二者结合可用于实时数据同步场景。
      :::tip
+
      在增量同步的过程中，Tapdata 默认每隔 1 分钟检测 Excel 文件是否发生变更（如新增/修改文件），如发生变更则将涉及的文件全量新增后更新条件字段以完成修改，暂不支持同步删除文件或数据。
      :::
    - **任务描述**：填写任务的描述信息。

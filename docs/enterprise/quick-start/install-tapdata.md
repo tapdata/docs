@@ -96,8 +96,8 @@
    * **Please enter backend url**：设置 Tapdata 平台的登录地址，默认为 `http://127.0.0.1:3030/`
    * **Please enter tapdata port**：设置 Tapdata 平台的登录端口，默认为 `3030`。
    * **Please enter api server port**：设置 API Server 的服务端口，默认为 `3080`。
-   * **Does MongoDB require username/password?**：MongoDB 数据库是否启用了安全认证，未启用则输入 n，如果启用则输入 y，然后根据提示分别输入用户名、密码和鉴权数据库（默认为 `admin`）。
-   * **Does MongoDB require TLS/SSL?(y/n)**：MongoDB 数据库是否启用 TSL/SSL 加密，未启用则输入 n，如果启用则输入 y，然后根据提示分别输入 CA 证书和 Certificate Key 文件的绝对地址路径，以及 Certificate Key 的文件密码。
+   * **Does MongoDB require username/password?**：MongoDB 数据库是否启用了安全认证，未启用则输入 **n**，如果启用则输入 **y**，然后根据提示分别输入用户名、密码和鉴权数据库（默认为 `admin`）。
+   * **Does MongoDB require TLS/SSL?(y/n)**：MongoDB 数据库是否启用 TSL/SSL 加密，未启用则输入 **n**，如果启用则输入 **y**，然后根据提示分别输入 CA 证书和 Certificate Key 文件的绝对地址路径，以及 Certificate Key 的文件密码。
    * **Please enter MongoDB host, port, database name**：设置 MongoDB 数据库的 URI 连接信息，默认为 `127.0.0.1:27017/tapdata`。
    * **Does API Server response error code?**：是否启用 API Server 响应错误码功能。
 

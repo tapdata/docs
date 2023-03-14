@@ -1,6 +1,6 @@
 # 部署 Tapdata
 
-本文介绍如何在本地环境部署 Tapdata。
+本文介绍如何快速在本地环境部署 Tapdata 服务。
 
 ## 软硬件环境要求
 
@@ -9,15 +9,17 @@
 * 存储空间：100 GB
 * 操作系统：CentOS 7 + 或 Ubuntu 16.04 +
 
-## 准备工作
-
-准备安装所需的 License 文件，可[联系我们](mailto:team@tapdata.io)获取。
-
 ## 操作步骤
 
-1. 设置服务器系统参数。
+:::tip
 
-   ```shell
+本文以 CentOS 7 为例，演示部署流程。
+
+:::
+
+1. 登录至待部署的设备上，依次执行下述命令完成文件访问数、防火墙等系统参数设置。
+
+   ```bash
    ulimit -n 1024000 
    echo "* soft nofile 1024000" >> /etc/security/limits.conf 
    echo "* hard nofile 1024000" >> /etc/security/limits.conf 
@@ -27,69 +29,93 @@
    sed -i "s/enforcing/disabled/g" /etc/selinux/config 
    ```
 
-   
+2. 安装环境依赖。
 
-2. 安装 Java 1.8。
+   1. 执行下述命令安装 Java 1.8 版本。
 
-   ```shell
-   //查看java版本
-   java -version
-   //安装java
-   yum install java -y
+      ```bash
+      yum -y install java-1.8.0-openjdk
+      ```
+
+   2. 安装 MongoDB（4.0 及以上版本），该库将作为中间库存储任务等数据，具体操作，见[官方文档](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/)。
+
+3. 下载 Tapdata 安装包（可[联系我们](mailto:team@tapdata.io)获取），将其上传至待部署的设备中。
+
+4. 在待部署的设备上，执行下述格式的命令，解压安装包并进入解压后的路径。
+
+   ```bash
+   tar -zxvf 安装包名&&cd tapdata
    ```
 
-   
+   例如：`tar -zxvf tapdata-release-v2.14.tar.gz&&cd tapdata `
 
-3. 安装 MongoDB，并采用副本集架构，更多介绍，见 [MongoDB 副本集](https://docs.mongodb.com/manual/replication/)。
+5. 准备 License 文件。
 
-   ```shell
-   mkdir -p /tapdata/mongodb/data
-   mkdir -p /tapdata/mongodb/log
-   cp mongodb-linux-x86_64-rhel70-5.0.8.tgz  /tapdata/mongodb 
-   cd /tapdata/mongodb 
-   tar -zxf mongodb-linux-x86_64-rhel70-5.0.8.tar.gz
+   1. 执行下述命令获取申请所需的 SID 信息。
+
+      ```bash
+      java -cp components/tm.jar -Dloader.main=com.tapdata.tm.license.util.SidGenerator org.springframework.boot.loader.PropertiesLauncher
+      ```
+
+   2. 将打印出的 SID 信息提供给 Tapdata 支持团队，完成 License 申请流程。
+
+   3. 将申请到的 License 文件上传至解压后的目录（**tapdata**）中。
+
+6. 执行 `./tapdata start`，跟随命令行提示，依次设置 Tapdata 的登录地址、API 服务端口、MongoDB 连接信息等，示例及说明如下：
+
+   ```bash
+    ./tapdata start
+    _______       _____  _____       _______
+   |__   __|/\   |  __ \|  __ \   /\|__   __|/\    
+      | |  /  \  | |__) | |  | | /  \  | |  /  \   
+      | | / /\ \ |  ___/| |  | |/ /\ \ | | / /\ \  
+      | |/ ____ \| |    | |__| / ____ \| |/ ____ \ 
+      |_/_/    \_\_|    |_____/_/    \_\_/_/    \_\ 
    
-   
-   # 启动mongodb
-   nohup ./mongod --dbpath=/taptata/mongodb/data --logpath=/taptata/mongodb/log --port=27017 --replSet tapdata &
-   
-   # 启动mongodb后，进入mongo，并初始化为复制集
-   # 注意，如果是已有MongoDB，请勿执行该步骤
-   # mongo > rs.initiate()
+   WORK DIR:/root/tapdata
+   Init tapdata...
+   ✔ Please enter backend url, comma separated list. e.g.:http://127.0.0.1:3030/ (Default: http://127.0.0.1:3030/):  …
+   ✔ Please enter tapdata port. (Default: 3030):  …
+   ✔ Please enter api server port. (Default: 3080):  …
+   ✔ Does MongoDB require username/password?(y/n):  … no
+   ✔ Does MongoDB require TLS/SSL?(y/n):  … no
+   ✔ Please enter MongoDB host, port, database name(Default: 127.0.0.1:27017/tapdata):  …
+   ✔ Does API Server response error code?(y/n):  … yes
+   MongoDB uri:  mongodb://127.0.0.1:27017/tapdata
+   MongoDB connection command: mongo  mongodb://127.0.0.1:27017/tapdata
+   System initialized. To start Tapdata, run: tapdata start
+   WORK DIR:/root/tapdata
+   Testing JDK...
+   java version:1.8
+   Java environment OK.
+   Unpack the files...
+   Restart TapdataAgent ...:
+   TapdataAgent starting ...:
    ```
 
-   
+   * **Please enter backend url**：设置 Tapdata 平台的登录地址，默认为 `http://127.0.0.1:3030/`
+   * **Please enter tapdata port**：设置 Tapdata 平台的登录端口，默认为 `3030`。
+   * **Please enter api server port**：设置 API Server 的服务端口，默认为 `3080`。
+   * **Does MongoDB require username/password?**：MongoDB 数据库是否启用了安全认证，未启用则输入 n，如果启用则输入 y，然后根据提示分别输入用户名、密码和鉴权数据库（默认为 `admin`）。
+   * **Does MongoDB require TLS/SSL?(y/n)**：MongoDB 数据库是否启用 TSL/SSL 加密，未启用则输入 n，如果启用则输入 y，然后根据提示分别输入 CA 证书和 Certificate Key 文件的绝对地址路径，以及 Certificate Key 的文件密码。
+   * **Please enter MongoDB host, port, database name**：设置 MongoDB 数据库的 URI 连接信息，默认为 `127.0.0.1:27017/tapdata`。
+   * **Does API Server response error code?**：是否启用 API Server 响应错误码功能。
 
-4. 依次执行下述命令，安装并启动 Tapdata，其中 License 文件需放置在安装包解压后的文件夹中。
+8. 通过浏览器登录 Tapdata 平台，本机的登录地址为  [http://127.0.0.1:3030](http://127.0.0.1:3030)，首次登录请及时修改密码以保障安全性。
 
-   ```shell
-   cd /tapdata/
-   tar -zxf tapdata-v2.4.0.tar.gz
-   cd tapdata-v2.4.0
-   # 将 license.txt 文件放到 tapdata-v2.4.0 下
-   ./tapdata start
-   ```
+   :::tip
 
-   
+   如需在同一内网的其他设备上访问 Tapdata 服务，请确保网络可互通。
 
-5. 注册数据源。
+   :::
 
-   ```shell
-   # 解压 pdk-2.4.zip
-   # 按照 registerTapdata.md 指引操作，注册数据源后可以使用
-   # cd到pdk 目录执行注册名令
-   # 例如:
-   java -jar tapdata-pdk-cli-v1.0-SNAPSHOT-jar-with-dependencies.jar register -a 123454-7d3e-4792-dsd1-sds132e422421dsd dist/mongodb-connector-v1.0-SNAPSHOT.jar  -t http://host:port
-   ```
 
-   
 
-   
+## 部署命令执行示例
 
-:::tip
+import AsciinemaWidget from '../../../src/components/AsciinemaWidget';
 
-   安装时直接使用系统初始化功能启动 Agent，请勿复制已有 workDir 的内容到新环境启动，否则会导致 Agent 的唯一 ID 重复，任务运行不正常。
-:::
+<AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install_tapdata.cast" rows={30} idleTimeLimit={3} preload={true} />
 
 
 

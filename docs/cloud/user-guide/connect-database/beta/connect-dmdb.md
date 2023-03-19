@@ -4,4 +4,4 @@
 
 2. 在打开的连接信息配置页面依次输入需要的配置信息，配置完成后测试连接保存即可。
 
-   ![](../../images/connect_dmdb.png)
+   ![](../../../images/connect_dmdb.png)

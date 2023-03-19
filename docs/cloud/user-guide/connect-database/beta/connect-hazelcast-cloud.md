@@ -4,7 +4,7 @@
 
 2. 在打开的连接信息配置页面依次输入需要的配置信息。
 
-   ![](../../images/connect_hazelcast_cloud.png)
+   ![](../../../images/connect_hazelcast_cloud.png)
 
    * Connection Name：设置连接的名称，多个连接的名称不能重复
    * Cluster Name： database_name, string, 输入框, 必填

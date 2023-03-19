@@ -4,7 +4,7 @@
 
 2. 在打开的连接信息配置页面依次输入需要的配置信息。
 
-   ![](../../images/connect_dummydb_1.png)
+   ![](../../../images/connect_dummydb_1.png)
 
    * 连接名称：设置连接的名称，多个连接的名称不能重复
    * 连接类型：可选作为源或目标
@@ -13,4 +13,4 @@
 
 3. 测试连接，提示测试通过后保存连接即可。
 
-   ![](../../images/connect_dummydb_2.png)
+   ![](../../../images/connect_dummydb_2.png)

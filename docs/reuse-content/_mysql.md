@@ -166,4 +166,4 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 
 ## 下一步
 
-[连接 MySQL 数据库](../cloud/user-guide/connect-database/connect-mysql.md)
+[连接 MySQL 数据库](../cloud/user-guide/connect-database/certified/connect-mysql.md)

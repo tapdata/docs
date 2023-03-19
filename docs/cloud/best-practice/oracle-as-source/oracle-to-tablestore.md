@@ -6,8 +6,8 @@
 
 在创建同步任务前，请确保您已经配置好了相关数据源：
 
-1. [配置 Oracle 连接](../../user-guide/connect-database/connect-oracle.md)
-2. [配置 Tablestore 连接](../../user-guide/connect-database/connect-tablestore.md)
+1. [配置 Oracle 连接](../../user-guide/connect-database/certified/connect-oracle.md)
+2. [配置 Tablestore 连接](../../user-guide/connect-database/beta/connect-tablestore.md)
 
 同时还请注意参考[数据类型支持说明](../../user-guide/no-supported-data-type.md)。
 

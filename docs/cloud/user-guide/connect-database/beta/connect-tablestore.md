@@ -6,7 +6,7 @@
 
 1. [创建阿里云 Tablestore 实例](https://help.aliyun.com/document_detail/342853.html)，获取该实例的公网连接地址和实例名称。
 
-   ![获取 Tablestore 连接地址和名称](../../images/obtain_tablestore_info_cn.png)
+   ![获取 Tablestore 连接地址和名称](../../../images/obtain_tablestore_info_cn.png)
 
 2. 在阿里云平台创建 RAM 用户并获取访问密钥 AccessKey（AK） 信息，该信息将在连接时使用。
 
@@ -19,7 +19,7 @@
 
    2. 在对话框的文本框中输入 **AliyunOTSFullAccess**，然后单击选择搜索结果中的权限策略名称。
 
-      ![授予 RAM 用户权限](../../images/add_ram_permission_cn.png)
+      ![授予 RAM 用户权限](../../../images/add_ram_permission_cn.png)
 
    3. 单击**确定**，然后单击**完成**。
 
@@ -35,7 +35,7 @@
 
 5. 在跳转到的页面，根据下述说明填写 Tablestore 的连接信息。
 
-   ![填写 Tablestore 连接信息](../../images/create_tablestore_connection_cn.png)
+   ![填写 Tablestore 连接信息](../../../images/create_tablestore_connection_cn.png)
 
    * **连接名称**：填写具有业务意义的独有名称。
    * **连接类型**：固定为**目标**。
@@ -57,4 +57,4 @@
 
 ## 相关文档
 
-[Oracle 实时同步至 Tablestore](../../best-practice/oracle-as-source/oracle-to-tablestore.md)
+[Oracle 实时同步至 Tablestore](../../../best-practice/oracle-as-source/oracle-to-tablestore.md)

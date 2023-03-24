@@ -54,6 +54,13 @@ div[class^='announcementBar_'] {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+/* Code block line warp 
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}*/
+
 /* For multi-tabs background color */
 .unique-tabs .tabs__item {
   line-height: 16px;

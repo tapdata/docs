@@ -156,21 +156,7 @@ const sidebars = {
              },
              'cloud/user-guide/custom-node',
              'cloud/user-guide/operation-log',
-             {
-              type: 'category',
-              label: '排查连接失败问题',
-              link: {type: 'doc', id: 'cloud/user-guide/trouble-shooting-connection/README'},
-              items:[
-                     'cloud/user-guide/trouble-shooting-connection/ts-mysql',
-                     'cloud/user-guide/trouble-shooting-connection/ts-oracle',
-                     'cloud/user-guide/trouble-shooting-connection/ts-mariadb',
-                     'cloud/user-guide/trouble-shooting-connection/ts-mongodb',
-                     'cloud/user-guide/trouble-shooting-connection/ts-postgresql',
-                     'cloud/user-guide/trouble-shooting-connection/ts-sqlserver',
-                     'cloud/user-guide/trouble-shooting-connection/ts-tidb',
-                     'cloud/user-guide/trouble-shooting-connection/ts-dummydb',
-              ]
-             },
+             'cloud/user-guide/trouble-shooting-connection',
              'cloud/user-guide/no-supported-data-type',
             ]
     },

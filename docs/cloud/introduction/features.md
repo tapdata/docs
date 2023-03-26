@@ -12,4 +12,4 @@ Tapdata Cloud的数据同步包括全量同步和实时增量同步两部分。�
 
 ### 准备工作
 
-为了能够成功的使用数据Tapdata Cloud数据同步功能，您需要部署并规划您的网络访问，设置访问权限，详见[准备工作](https://www.yuque.com/knbase/tapdata-cloud/zhun-bei-gong-zuo_readme)。
+为了能够成功的使用数据Tapdata Cloud数据同步功能，您需要部署并规划您的网络访问，设置访问权限，详见[准备工作](../prerequisites/README.md)。

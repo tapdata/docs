@@ -50,7 +50,7 @@
 
 **具体流程：**
 
-1. 登录 Tapdata 平台。
+1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
 
 2. 在左侧导航栏，单击**自定义节点**。
 
@@ -93,5 +93,4 @@
      ![](../images/masking_demo1.png)
 
    * 经过脱敏后，目标端的表数据：![](../images/masking_demo2.png)
-
 

@@ -1,6 +1,6 @@
 # 连接 SQL Server
 
-PostgreSQL是功能强大的开源对象关系数据库管理系统（ORDBMS）。Tapdata Cloud 支持将 SQL Server 作为源和目标数据库构建数据管道，本文介绍如何在 Tapdata Cloud 中添加 SQL Server 数据源。
+SQL Server 数据库是 Microsoft 开发设计的一个关系数据库智能管理系统（RDBMS）。Tapdata Cloud 支持将 SQL Server 作为源和目标数据库构建数据管道，本文介绍如何在 Tapdata Cloud 中添加 SQL Server 数据源。
 
 ## 准备工作
 

@@ -5,6 +5,33 @@ import TabItem from '@theme/TabItem';
 
 <Tabs className="unique-tabs">
   <TabItem value="2023" label="2023 年" default>
+    <h3>20230317</h3> 
+  <h4>新增功能</h4> 
+  <ul>
+   <li>新增任务进度里程碑展示，任务启动后可在页面底部查看当前任务的整体进度</li>
+   <li>新增 <a href="https://docs.tapdata.io/cloud/user-guide/connect-database/beta/connect-tidb">TiDB 作为源</a>，并支持通过轮询方式实现增量同步</li>
+   <li>支持在创建 Dummy 数据源连接时，可快速增加多个字段</li>
+  </ul> 
+  <h4>功能优化</h4> 
+  <ul>
+   <li>测试连接逻辑优化，测试连接不再影响连接的修改时间</li>
+   <li>数据源分级调整，将数据源分级调整为 Alpha、Beta 和 GA</li>
+   <li>复制任务以表达式模式选择表时，支持重新加载模型</li>
+   <li>纯增量任务设置增量时间点逻辑优化，去除数据库时区选项</li>
+   <li>任务告警的默认值设置调整，避免因默认值太小导致的频繁告警</li>
+   <li>任务增量阶段重试逻辑优化。</li>
+   <li>Oracle 作为源时，新增一个节点设置，可以忽略 clob 类型的数据同步</li>
+   <li>增量时间点设置逻辑优化，禁止设置未来时间点</li>
+   <li>日志展示方式优化，默认直接展示 message 信息，展开可以查看更多内容</li>
+   <li>部署 Agent 时，如果 JDK 版本不符合要求，安装程序会自动下载对应版本的 JDK 给 Agent 使用</li>
+  </ul> 
+  <h4>问题修复</h4> 
+  <ul>
+   <li>修复了相同 process_id 可以启动多个引擎的问题</li>
+   <li>修复了任务同步过程中停止任务，任务进度统计不正确的问题</li>
+   <li>修复了数据复制目标模型字段类型修改按钮异常的问题</li>
+   <li>修复了其它一些已知问题</li>
+  </ul>
     <h3>20230302</h3>
     <h4>新增功能</h4>
     <ul>

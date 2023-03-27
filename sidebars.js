@@ -83,18 +83,25 @@ const sidebars = {
                        label: 'Beta 数据源',
                        link: {type: 'doc', id: 'cloud/prerequisites/config-database/beta/README'},
                        items: [
-                             'cloud/prerequisites/config-database/beta/activemq',
                              'cloud/prerequisites/config-database/beta/apache-doris',
-                             'cloud/prerequisites/config-database/beta/dmdb',
-                             'cloud/prerequisites/config-database/beta/elasticsearch',
-                             'cloud/prerequisites/config-database/beta/greenplum',
+                             'cloud/prerequisites/config-database/beta/larktask',
                              'cloud/prerequisites/config-database/beta/mariadb',
-                             'cloud/prerequisites/config-database/beta/rabbitmq',
-                             'cloud/prerequisites/config-database/beta/rocketmq',
                              'cloud/prerequisites/config-database/beta/tidb',
-                             'cloud/prerequisites/config-database/beta/vika',
                        ]
                       },
+                      {
+                       type: 'category',
+                       label: 'Alpha 数据源',
+                       link: {type: 'doc', id: 'cloud/prerequisites/config-database/alpha/README'},
+                       items: [
+                             'cloud/prerequisites/config-database/alpha/activemq',
+                             'cloud/prerequisites/config-database/alpha/elasticsearch',
+                             'cloud/prerequisites/config-database/alpha/opengauss',
+                             'cloud/prerequisites/config-database/alpha/rabbitmq',
+                             'cloud/prerequisites/config-database/alpha/rocketmq',
+                             'cloud/prerequisites/config-database/alpha/vika',
+                       ]
+                      },                      
              ]
             },
      ]
@@ -130,18 +137,25 @@ const sidebars = {
                      label: 'Beta 数据源',
                      link: {type: 'doc', id: 'cloud/user-guide/connect-database/beta/README'},
                      items:[
-                            'cloud/user-guide/connect-database/beta/connect-adb-mysql',
-                            'cloud/user-guide/connect-database/beta/connect-adb-pg',
                             'cloud/user-guide/connect-database/beta/connect-bigquery',
                             'cloud/user-guide/connect-database/beta/connect-dummydb',
-                            'cloud/user-guide/connect-database/beta/connect-elasticsearch',
-                            'cloud/user-guide/connect-database/beta/connect-greenplum',
-                            'cloud/user-guide/connect-database/beta/connect-hazelcast-cloud',
+                            'cloud/user-guide/connect-database/beta/connect-larktask',
                             'cloud/user-guide/connect-database/beta/connect-mariadb',
-                            'cloud/user-guide/connect-database/beta/connect-mq',
-                            'cloud/user-guide/connect-database/beta/connect-kundb',
                             'cloud/user-guide/connect-database/beta/connect-tidb',
-                            'cloud/user-guide/connect-database/beta/connect-tablestore',
+                           ]
+                    },
+                    {
+                     type: 'category',
+                     label: 'Alpha 数据源',
+                     link: {type: 'doc', id: 'cloud/user-guide/connect-database/alpha/README'},
+                     items:[
+                            'cloud/user-guide/connect-database/alpha/connect-adb-mysql',
+                            'cloud/user-guide/connect-database/alpha/connect-adb-pg',
+                            'cloud/user-guide/connect-database/alpha/connect-elasticsearch',
+                            'cloud/user-guide/connect-database/alpha/connect-hazelcast-cloud',
+                            'cloud/user-guide/connect-database/alpha/connect-mq',
+                            'cloud/user-guide/connect-database/alpha/connect-opengauss',
+                            'cloud/user-guide/connect-database/alpha/connect-tablestore',
                            ]
                     }, 
               ]

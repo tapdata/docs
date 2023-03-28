@@ -111,7 +111,7 @@
 
 
 
-## 部署执行示例
+## 部署命令执行示例
 
 import AsciinemaWidget from '../../../../src/components/AsciinemaWidget';
 

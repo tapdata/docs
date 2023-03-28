@@ -90,4 +90,4 @@ import TabItem from '@theme/TabItem';
 
 ## 下一步
 
-至此，已完成相关准备工作，接下来，您可以连接 [openGauss 数据源](../../user-guide/connect-database/beta/connect-opengauss.md)。
+至此，已完成相关准备工作，接下来，您可以连接 [openGauss 数据源](../../user-guide/connect-database/alpha/connect-opengauss.md)。

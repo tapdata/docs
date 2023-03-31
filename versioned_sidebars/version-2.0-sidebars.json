@@ -329,9 +329,11 @@
              "label": "Beta 数据源",
              "link": {"type": "doc", "id": "enterprise/prerequisites/beta/README"},
              "items": [
+                     "enterprise/prerequisites/beta/apache-doris",
+                     "enterprise/prerequisites/beta/larktask", 
+                     "enterprise/prerequisites/beta/mariadb", 
+                     "enterprise/prerequisites/beta/selectdb",
                      "enterprise/prerequisites/beta/tidb",
-                     "enterprise/prerequisites/beta/larktask",
-                     "enterprise/prerequisites/beta/opengauss",
                      "enterprise/prerequisites/beta/zoho-crm"
              ]
             },                        
@@ -340,13 +342,11 @@
              "label": "Alpha 数据源",
              "link": {"type": "doc", "id": "enterprise/prerequisites/alpha/README"},
              "items": [
-                     "enterprise/prerequisites/alpha/activemq",
-                     "enterprise/prerequisites/alpha/apache-doris",
+                     "enterprise/prerequisites/alpha/activemq",                     
                      "enterprise/prerequisites/alpha/elasticsearch",
-                     "enterprise/prerequisites/alpha/mariadb",
+                     "enterprise/prerequisites/alpha/opengauss",                     
                      "enterprise/prerequisites/alpha/rabbitmq",
-                     "enterprise/prerequisites/alpha/rocketmq",
-                     "enterprise/prerequisites/alpha/selectdb"
+                     "enterprise/prerequisites/alpha/rocketmq"
              ]
             }
       ]
@@ -387,9 +387,17 @@
                      "label": "Beta 数据源",
                      "link": {"type": "doc", "id": "enterprise/user-guide/connect-database/beta/README"},
                      "items":[
-                            "enterprise/user-guide/connect-database/beta/connect-tidb",
+                            "enterprise/user-guide/connect-database/beta/custom-connection",
+                            "enterprise/user-guide/connect-database/beta/connect-db2",
+                            "enterprise/user-guide/connect-database/beta/connect-doris",
+                            "enterprise/user-guide/connect-database/beta/connect-dummy",
+                            "enterprise/user-guide/connect-database/beta/connect-excel",
                             "enterprise/user-guide/connect-database/beta/connect-larktask",
-                            "enterprise/user-guide/connect-database/beta/connect-opengauss",
+                            "enterprise/user-guide/connect-database/beta/connect-mariadb",
+                            "enterprise/user-guide/connect-database/beta/connect-redis",
+                            "enterprise/user-guide/connect-database/beta/connect-selectdb",
+                            "enterprise/user-guide/connect-database/beta/connect-tdengine",
+                            "enterprise/user-guide/connect-database/beta/connect-tidb",
                             "enterprise/user-guide/connect-database/beta/connect-zoho"
                            ]
                     },
@@ -399,21 +407,13 @@
                      "link": {"type": "doc", "id": "enterprise/user-guide/connect-database/alpha/README"},
                      "items":[
                             "enterprise/user-guide/connect-database/alpha/connect-activemq",
-                            "enterprise/user-guide/connect-database/alpha/connect-doris",
-                            "enterprise/user-guide/connect-database/alpha/connect-db2",
-                            "enterprise/user-guide/connect-database/alpha/connect-dummy",
                             "enterprise/user-guide/connect-database/alpha/connect-elasticsearch",
-                            "enterprise/user-guide/connect-database/alpha/connect-excel",
                             "enterprise/user-guide/connect-database/alpha/connect-gbase-8a",
-                            "enterprise/user-guide/connect-database/alpha/connect-gbase-8s",                            
-                            "enterprise/user-guide/connect-database/alpha/connect-mariadb",
+                            "enterprise/user-guide/connect-database/alpha/connect-gbase-8s", 
                             "enterprise/user-guide/connect-database/alpha/connect-oceanbase",
-                            "enterprise/user-guide/connect-database/alpha/connect-redis",
+                            "enterprise/user-guide/connect-database/alpha/connect-opengauss",
                             "enterprise/user-guide/connect-database/alpha/connect-rabbitmq",
-                            "enterprise/user-guide/connect-database/alpha/connect-rocketmq",
-                            "enterprise/user-guide/connect-database/alpha/connect-selectdb",
-                            "enterprise/user-guide/connect-database/alpha/connect-tdengine",
-                            "enterprise/user-guide/connect-database/alpha/custom-connection"
+                            "enterprise/user-guide/connect-database/alpha/connect-rocketmq"
                            ]
                     }
           ]

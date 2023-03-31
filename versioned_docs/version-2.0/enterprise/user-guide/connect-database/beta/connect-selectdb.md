@@ -9,7 +9,7 @@ SelectDB Cloud 2.0.13 以上
 
 ## 操作步骤
 
-1. [登录 SelectDB 完成授权操作](../../../prerequisites/alpha/selectdb.md)。
+1. [登录 SelectDB 完成授权操作](../../../prerequisites/beta/selectdb.md)。
 
 2. 登录 Tapdata 平台，单击左侧导航栏的**连接管理**。
 
@@ -46,7 +46,7 @@ SelectDB Cloud 2.0.13 以上
 
 连接测试失败，提示：“Unknown error 1044”
 
-如果已经完成[授权](../../../prerequisites/alpha/selectdb.md)，您可以跟随下述步骤检查并修复该问题，然后重新进行连接测试。
+如果已经完成[授权](../../../prerequisites/beta/selectdb.md)，您可以跟随下述步骤检查并修复该问题，然后重新进行连接测试。
 
 1. 执行下述命令，查看 Grant_priv 字段的值是否为 **Y**，其中 **username** 需替换为真实的用户名。
 

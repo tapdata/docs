@@ -8,7 +8,7 @@
 - 新增全量完成耗时、最大/平均 QPS 的展示
 - 新增外部缓存统一配置和管理，更多介绍，见[管理外存](user-guide/manage-system/manage-external-storage.md)
 - 新增 [TiDB 作为源](user-guide/connect-database/beta/connect-tidb.md)，并支持通过轮询方式进行增量同步
-- 支持对 [Dummy 数据源](user-guide/connect-database/alpha/connect-dummy.md)快速增加多个字段
+- 支持对 [Dummy 数据源](user-guide/connect-database/beta/connect-dummy.md)快速增加多个字段
 - 基于自定义节点实现 [CSV 字段处理器](user-guide/data-pipeline/custom-node#csv-demo)
 
 ### 功能优化
@@ -61,7 +61,7 @@
 ### 新增功能
 
 - 新增[数据校验功能](user-guide/data-pipeline/verify-data.md)
-- 新增 [Excel 作为源库](user-guide/connect-database/alpha/connect-excel.md)
+- 新增 [Excel 作为源库](user-guide/connect-database/beta/connect-excel.md)
 - 新增 Redis 作为目标库
 - 支持在 JS 节点里操作源库和目标库
 - 新增[追加合并节点](user-guide/data-pipeline/data-development/process-node#union-node)，可将多个相同结构表的数据合并成一张表

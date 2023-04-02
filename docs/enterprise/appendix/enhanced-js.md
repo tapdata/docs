@@ -503,3 +503,28 @@ mongo.getData(uri, collection, filter, limit, sort)
   var deleteCount = mongo.delete('mongodb://127.0.0.1:27017/test', 'users', {id: 1});
   ```
 
+
+
+### aggregate
+
+说明：内置目标节点数据库聚合操作。
+
+参数说明：
+
+* **database**：操作的数据库名称。
+* **collection**：操作的集合名称。
+* **pipeline**：聚合管道参数。
+
+返回值：数组类型，表示聚合的结果集。
+
+示例：
+
+```javascript
+var aa = ScriptExecutor.getScriptExecutor('mongo-test');
+var users = aa.aggregate({
+    database: "test",
+    collection: "user",
+    pipeline: [{'$match':{'CUSTOMER_ID':'C000026278'}}]
+});
+```
+

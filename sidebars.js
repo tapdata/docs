@@ -463,6 +463,8 @@ const sidebars = {
               items:[
                      'enterprise/user-guide/manage-system/manage-cluster',
                      'enterprise/user-guide/manage-system/manage-external-storage',
+                     'enterprise/user-guide/manage-system/manage-user',
+                     'enterprise/user-guide/manage-system/manage-role',
                     ]
              },
              {

@@ -101,7 +101,16 @@
    * **Please enter MongoDB host, port, database name**：设置 MongoDB 数据库的 URI 连接信息，默认为 `127.0.0.1:27017/tapdata`。
    * **Does API Server response error code?**：是否启用 API Server 响应错误码功能。
 
-8. 通过浏览器登录 Tapdata 平台，本机的登录地址为  [http://127.0.0.1:3030](http://127.0.0.1:3030)，首次登录请及时修改密码以保障安全性。
+   部署成功后，命令行返回示例如下：
+
+   ```bash
+   deployed connector.
+   Waiting for the flow engine to start \
+   FlowEngine is startup at : 2023-04-01 23:00
+   API service started
+   ```
+
+7. 通过浏览器登录 Tapdata 平台，本机的登录地址为  [http://127.0.0.1:3030](http://127.0.0.1:3030)，首次登录请及时修改密码以保障安全性。
 
    :::tip
 

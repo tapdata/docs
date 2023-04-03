@@ -4,31 +4,46 @@
 
 ### 新增功能
 
-- 权限管理功能新增支持角色的增删改能力
-- 创建 Custom Connection 时支持脚本调试能力
-- JS 节点中支持运行 MongoDB 聚合处理
+- 权限管理功能新增角色的[增删改能力](user-guide/manage-system/manage-role.md)
+- 创建 Custom Connection 时支持[脚本调试能力](user-guide/connect-database/beta/custom-connection.md)
+- JS 节点中支持运行 [MongoDB 聚合处理](appendix/enhanced-js.md#aggregate)
 - 产品边界规则框架设计与实现，保存任务时自动对产品边界进行检测
 - SQL 类数据源和 MongoDB 数据源支持全量自定义查询（SQL）
 - 基于错误码提示问题解决方案
 - 连接配置时，新增心跳表功能，可用于数据源连接与任务的健康度监测
 - Doris 作为目标，支持数据校验能力（Count）
-- 集群监控页面，可展示当前的引擎对外建立的所有连接数量，并按照 IP:Port 的方式归类
+- [集群监控](user-guide/manage-system/manage-cluster.md)页面，可展示当前的引擎对外建立的所有连接数量，并按照 IP:Port 的方式归类
 - 新增支持 Redis 在数据复制任务里作为目标使用
 - 新增数据复制支持调整关联条件字段
 
 ### 功能优化
 
-- 解决更新和插入策略和数据源的capabilities关联的问题
+- 解决更新和插入策略和数据源的 capabilities 关联的问题
+
 - 日志展示调整优化
+
 - 任务重试与告警逻辑优化，方法重试和任务重试穿插进行
-- 发布的API 服务，在API发布成功且不可用前，禁止调试
+
+- 发布的 API 服务，在 API 发布成功且不可用前，禁止调试
+
 - 共享挖掘稳定性优化
-- 新的日志规范调整和实现，四个日志目录合成一个:都到 .workDir 的 logs 下面，可观测日志增加本地轮转清理, 上报管理端增加频率控制
-- 里程碑展示优化
+
+- 任务里程碑展示优化
+
+- 可观测日志增加本地轮转清理，上报管理端增加频率控制
+
+- 新的日志规范调整和实现，将原有的四个日志目录合并至 Tapdata 安装目录中的 **logs** 目录中，示例如下：
+
+  ```shell
+  [root@centos200 logs]# pwd
+  /root/tapdata/logs
+  [root@centos200 logs]# ls
+  agent.log  tm-centos-test.log  tm-req-centos-test.log  tm-ws-centos-test.log
+  ```
 
 ### 问题修复
 
-* 可观测日志修复日志文件错乱的问题
+* 修复可观测日志文件错乱的问题
 
 
 

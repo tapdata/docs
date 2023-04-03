@@ -4,6 +4,7 @@
 
 ### 新增功能
 
+- 新增数据源支持：[GitHub](user-guide/connect-database/beta/connect-github.md)、[MongoDB Atlas](user-guide/connect-database/beta/connect-mongodb-atlas.md)、[Salesforce](user-guide/connect-database/beta/connect-salesforce.md)、[Lark-IM](user-guide/connect-database/beta/connect-lark-im.md)
 - 权限管理功能新增角色的[增删改能力](user-guide/manage-system/manage-role.md)
 - 创建 Custom Connection 时支持[脚本调试能力](user-guide/connect-database/beta/custom-connection.md)
 - JS 节点中支持运行 [MongoDB 聚合处理](appendix/enhanced-js.md#aggregate)

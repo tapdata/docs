@@ -207,7 +207,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>➖</td>
     <td>✅</td>
-    <td>✅</td>
+    <td>➖</td>
     <td>5.0.15</td>
   </tr>
   <tr>
@@ -248,6 +248,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
   </tr>
 </tbody>
 </table>
+
 </TabItem>
     <TabItem value="file-and-saas" label="文件及 SaaS" default>
 

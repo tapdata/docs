@@ -50,4 +50,3 @@ Tapdata 会自动基于选择源表来推演目标表结构等信息，此处可
 ![推演结果异常](images/faq_deduction_error.png)
 
 
-

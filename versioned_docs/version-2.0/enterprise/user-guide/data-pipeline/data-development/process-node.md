@@ -199,6 +199,12 @@ mysql> select * from student_merge;
 
 源端必须为两个表节点
 
+:::tip
+
+连接节点进行数据处理时，不会在目标表中自动创建主键。
+
+:::
+
 ![](../../../images/process_node_8.png)
 
 

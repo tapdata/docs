@@ -59,3 +59,62 @@
    4. 在跳转到的任务配置页面，您可以直接单击右上角的**启动**，也可以基于业务需求加入相关处理节点以实现自定义 ETL 流程，具体操作，见[创建数据开发任务](../../data-pipeline/data-development/create-task.md)。
 
    
+   
+   
+   
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs className="unique-tabs">
+    <TabItem value="linux" label="流转至平台缓存层" default>
+    <ul>
+    <li>在<b>源数据层</b>，单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/search_icon.png'></img>图标，找到您需要同步的表，将其拖动至平台缓存层。</li>
+    <p></p>
+    <li>在弹出的对话框中，填写表前缀并单击<b>确定</b>，本案例中，我们要同步的表为 <b>customer</b>，此处填写前缀为 <b>MySQL</b>，那么在平台缓存层中，该表名为 <b>FDM_MySQL_customer</b>。</li>
+    <p>完成操作后，Tapdata 将自动创建一个数据复制任务，将您选择表（含全量数据）实时同步至平台缓存层并自动校验，您可以单击平台缓存中表名右侧的<img src='https://deploy-preview-67--tapdata.netlify.app/img/detail_icon.png'></img>图标，跳转至任务监控页面来查看任务运行详情。</p>
+    <img src='https://deploy-preview-67--tapdata.netlify.app/img/create_cache_task.gif'></img>
+    <li>在平台加工层，找到目标表，单击其右侧的<img src='https://docs.tapdata.io/img/detail_icon.png'></img>图标，可查看该表关联的任务和表的基本信息，包含列信息、样本数据、Scheme 等信息。
+    </li>
+    <li>停止 Agent：<code>./tapdata stop</code>
+    </li>
+    </ul>
+   </TabItem>
+   <TabItem value="windows" label="流转至平台加工层">
+    <p>进入 Agent 的安装目录，选择执行下述操作：</p>
+    <ul>
+    <li>查看 Agent 状态：双击应用程序 <b>sstatus.bat</b>
+    </li>
+    <li>启动 Agent：双击应用程序 <b>start.bat</b> 或 <b>tapdata.exe</b>
+    </li>
+    <li>停止 Agent：双击应用程序 <b>stop.bat</b>
+    </li>
+    </ul>
+   </TabItem>
+   <TabItem value="dockerandmac" label="流转至数据目标和服务层">
+    <ol>
+    <li>执行 <code>docker ps</code> 获取容器 ID。
+    </li>
+    <p></p>
+    <li>执行下述格式的命令进入容器命令行。
+    <pre>
+    docker exec -it 容器ID /bin/bash</pre>
+    <p>需替换命令中的容器 ID，例如 <code>docker exec -it 1dbee41b4adc /bin/bash</code>。</p>
+    </li>
+    <li>在容器命令行中，进入 Agent 的安装目录，然后选择执行下述命令：
+    <ul>
+    <li>查看命令帮助：<code>./tapdata help</code>
+    </li>
+    <li>查看 Agent 状态：<code>./tapdata status</code>
+    </li>
+    <li>启动 Agent：<code>./tapdata start</code>
+    </li>
+    <li>停止 Agent：<code>./tapdata stop</code>
+    </li>
+    </ul>
+    </li>
+    </ol>
+   </TabItem>
+  </Tabs>
+
+   

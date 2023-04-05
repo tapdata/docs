@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
    <img src='https://deploy-preview-67--tapdata.netlify.app/img/search_table.png'></img>
    </TabItem>
    <TabItem value="3" label="③ 数据源详情">
-   <p>在数据连接的右侧，单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/data_source_detail.png'></img>图标，页面右侧将展示该数据源的连接信息和关联的任务。</p>
+   <p>在数据连接的右侧，单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/detail_icon.png'></img>图标，页面右侧将展示该数据源的连接信息和关联的任务。</p>
    <img src='https://deploy-preview-67--tapdata.netlify.app/img/search_table.png'></img>
    </TabItem>
    <TabItem value="4" label="④ 表详情">

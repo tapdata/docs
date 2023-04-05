@@ -38,7 +38,6 @@ import TabItem from '@theme/TabItem';
     </ol>
    </TabItem>
    <TabItem value="curated" label="流转至平台加工层">
-
     <ol>
     <li>在<b>平台缓存层</b>，单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/search_icon.png'></img>图标，找到您需要加工的表，将其拖动至<b>平台加工层</b>。</li>
     <p></p>

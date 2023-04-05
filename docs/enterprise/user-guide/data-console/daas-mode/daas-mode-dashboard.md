@@ -12,13 +12,32 @@
 
    ![数据集成模式界面](../../../images/daas_dashboard.png)
 
-   
 
-   | 序号  | 操作介绍                                                     |
-   | ----- | ------------------------------------------------------------ |
-   | **①** | 单击![](../../../images/add_icon.png)图标，在弹出的对话框，我们可以添加数据源，选中某个数据源后将跳转至连接配置页面，具体配置方法，见[连接数据源](../../connect-database/README.md)。 |
-   | **②** | 单击![](../../../images/search_icon.png)图标，输入表名的关键词，可帮助您快速定位到具体的表，该操作在其他层级的模块中也可使用。![查找表](../../../images/search_table.png) |
-   | **③** | 在数据连接的右侧，单击![](../../../images/detail_icon.png)图标，页面右侧将展示该数据源的连接信息和关联的任务。![数据源详情](../../../images/data_source_detail.png) |
-   | **④** | 在表名的右侧，单击![](../../../images/detail_icon.png)图标，页面右侧将展示该表关联的任务和表的基本信息，包含表大小、行数、列信息、样本数据、Scheme（如主键/外键） 等，该操作在其他层级的模块中也可使用。![表详情](../../../images/table_detail.png) |
-   | **⑤** | 单击![](../../../images/switch_icon.png)图标，以目录结构的形式展现数据源信息（再次单击可切换回 Console 视图），选中具体的表，也可以查看该表关联的任务和表的基本信息，包含表大小、行数、列信息、样本数据、Scheme（如主键/外键) 等。 |
-   | **⑥** | 单击![](../../../images/setting_icon.png)图标，在弹出的对话框中，可选择切换回[数据集成模式（Beta）](../etl-mode/etl-mode-dashboard.md)。 |
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs className="unique-tabs">
+    <TabItem value="1" label="① 添加数据源" default>
+    <p>单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/add_icon.png'></img>图标，在弹出的对话框，我们可以添加数据源，选中某个数据源后将跳转至连接配置页面，具体配置方法，见<a href="https://docs.tapdata.io/enterprise/user-guide/connect-database/">连接数据源</a>。</p>
+   </TabItem>
+   <TabItem value="2" label="② 搜索表">
+   <p>单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/search_icon.png'></img>图标，输入表名的关键词，可帮助您快速定位到具体的表，该操作在其他层级的模块中也可使用。</p>
+   <img src='https://deploy-preview-67--tapdata.netlify.app/img/search_table.png'></img>
+   </TabItem>
+   <TabItem value="3" label="③ 数据源详情">
+   <p>在数据连接的右侧，单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/data_source_detail.png'></img>图标，页面右侧将展示该数据源的连接信息和关联的任务。</p>
+   <img src='https://deploy-preview-67--tapdata.netlify.app/img/search_table.png'></img>
+   </TabItem>
+   <TabItem value="4" label="④ 表详情">
+   <p>在表名的右侧，单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/detail_icon.png'></img>图标，页面右侧将展示该表关联的任务和表的基本信息，包含表大小、行数、列信息、样本数据、Scheme（如主键/外键） 等，该操作在其他层级的模块中也可使用。</p>
+   <img src='https://deploy-preview-67--tapdata.netlify.app/img/daas_table_detail.png'></img>
+   </TabItem>
+   <TabItem value="5" label="⑤ 切换视图">
+   <p>单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/switch_icon.png'></img>图标，以目录结构的形式展现数据源信息（再次单击可切换回 Console 视图），选中具体的表，也可以查看该表关联的任务和表的基本信息，包含表大小、行数、列信息、样本数据、Scheme（如主键/外键) 等。</p>
+   <img src='https://deploy-preview-67--tapdata.netlify.app/img/data_category_view.png'></img>
+   <p></p>
+   </TabItem>
+   <TabItem value="6" label="⑥ 切换模式">
+   <p>单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/setting_icon.png'></img>图标，在弹出的对话框中，可选择切换回<a href="http://localhost:3000/enterprise/user-guide/data-console/etl-mode/">数据集成模式</a>。</p>
+</TabItem>
+</Tabs>

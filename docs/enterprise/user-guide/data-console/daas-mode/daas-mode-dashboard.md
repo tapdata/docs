@@ -25,12 +25,12 @@ import TabItem from '@theme/TabItem';
    <img src='https://deploy-preview-67--tapdata.netlify.app/img/search_table.png'></img>
    </TabItem>
    <TabItem value="3" label="③ 数据源详情">
-   <p>在数据连接的右侧，单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/data_source_detail.png'></img>图标，页面右侧将展示该数据源的连接信息和关联的任务。</p>
+   <p>在数据连接的右侧，单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/detai_iconl.png'></img>图标，页面右侧将展示该数据源的连接信息和关联的任务。</p>
    <img src='https://deploy-preview-67--tapdata.netlify.app/img/search_table.png'></img>
    </TabItem>
    <TabItem value="4" label="④ 表详情">
    <p>在表名的右侧，单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/detail_icon.png'></img>图标，页面右侧将展示该表关联的任务和表的基本信息，包含表大小、行数、列信息、样本数据、Scheme（如主键/外键） 等，该操作在其他层级的模块中也可使用。</p>
-   <img src='https://deploy-preview-67--tapdata.netlify.app/img/daas_table_detail.png'></img>
+   <img src='https://deploy-preview-67--tapdata.netlify.app/img/cache_table_detail.png'></img>
    </TabItem>
    <TabItem value="5" label="⑤ 切换视图">
    <p>单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/switch_icon.png'></img>图标，以目录结构的形式展现数据源信息（再次单击可切换回 Console 视图），选中具体的表，也可以查看该表关联的任务和表的基本信息，包含表大小、行数、列信息、样本数据、Scheme（如主键/外键) 等。</p>

@@ -413,6 +413,32 @@ const sidebars = {
              },
              {
               type: 'category',
+              label: '数据面板',
+              link: {type: 'doc', id: 'enterprise/user-guide/data-console/README'},
+              items:[
+                    {
+                     type: 'category',
+                     label: '数据集成模式',
+                     link: {type: 'doc', id: 'enterprise/user-guide/data-console/etl-mode/README'},
+                     items:[
+                            'enterprise/user-guide/data-console/etl-mode/etl-mode-dashboard',
+                            'enterprise/user-guide/data-console/etl-mode/create-etl-task',
+                           ]
+                    },
+                    {
+                     type: 'category',
+                     label: '数据服务平台模式',
+                     link: {type: 'doc', id: 'enterprise/user-guide/data-console/daas-mode/README'},
+                     items:[
+                            'enterprise/user-guide/data-console/daas-mode/enable-daas-mode',
+                            'enterprise/user-guide/data-console/daas-mode/daas-mode-dashboard',
+                            'enterprise/user-guide/data-console/daas-mode/create-daas-task',
+                           ]
+                    },
+                    ]
+             },             
+             {
+              type: 'category',
               label: '数据管道',
               link: {type: 'doc', id: 'enterprise/user-guide/data-pipeline/README'},
               items:[

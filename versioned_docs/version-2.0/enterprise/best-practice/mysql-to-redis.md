@@ -4,6 +4,12 @@ Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓�
 
 本文介绍如何通过数据开发任务，将 MySQL 的数据同步至 Redis。
 
+:::tip
+
+如需同时将源 MySQL 中的数据表同步到 Redis，可[创建数据复制任务](../user-guide/data-pipeline/copy-data/create-task.md)，配置流程与本文类似。
+
+:::
+
 ## 准备工作
 
 在创建数据开发任务前，请确保您已经配置好了相关数据源：

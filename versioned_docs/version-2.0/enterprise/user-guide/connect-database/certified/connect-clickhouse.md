@@ -2,6 +2,12 @@
 
 ClickHouse 是一个用于联机分析（OLAP）的列式数据库管理系统（DBMS）。Tapdata 支持将 ClickHouse 作为目标数据库构建数据管道，本文介绍如何在 Tapdata 中添加 ClickHouse 数据源。
 
+## 注意事项
+
+ClickHouse 作为目标库时，主键数据类型为浮点时，该数据表不支持对更新删除事件的处理。
+
+ClickHouse的主键如果为浮点数会导致更新删除事件处理异常。
+
 ## 操作步骤
 
 1. 登录 Tapdata 平台。

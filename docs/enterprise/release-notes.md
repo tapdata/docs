@@ -1,5 +1,45 @@
 # 更新日志
 
+## V2.15
+
+### 新增功能
+
+- 新增数据源支持：[GitHub](user-guide/connect-database/beta/connect-github.md)、[MongoDB Atlas](user-guide/connect-database/beta/connect-mongodb-atlas.md)、[Salesforce](user-guide/connect-database/beta/connect-salesforce.md)、[Lark-IM](user-guide/connect-database/beta/connect-lark-im.md)
+- 权限管理功能新增角色的[增删改能力](user-guide/manage-system/manage-role.md)
+- 创建 Custom Connection 时支持[脚本调试能力](user-guide/connect-database/beta/custom-connection.md)
+- JS 节点中支持运行 [MongoDB 聚合处理](appendix/enhanced-js.md#aggregate)
+- 产品边界规则框架设计与实现，保存任务时自动对任务[执行预检查](user-guide/data-pipeline/pre-check.md)
+- SQL 类数据源和 MongoDB 数据源支持[全量自定义查询](user-guide/data-pipeline/data-development/create-task.md#full-sql-query)
+- 基于错误码[提示问题解决方案](user-guide/data-pipeline/data-development/monitor-task.md#error-code)
+- 连接配置时，新增[心跳表功能](user-guide/connect-database/certified/connect-mysql.md#heart-beat-table)，可用于数据源连接与任务的健康度监测
+- Doris 作为目标，支持[数据校验能力](user-guide/data-pipeline/verify-data.md)（Count）
+- [集群监控](user-guide/manage-system/manage-cluster.md)页面，可展示当前的引擎对外建立的所有连接数量，并按照 IP:Port 的方式归类
+- 新增支持 [Redis](user-guide/connect-database/beta/connect-redis.md) 在数据复制任务里作为目标使用
+- 新增数据复制支持调整[关联条件字段](user-guide/data-pipeline/copy-data/create-task.md#target-basic-setting)
+
+### 功能优化
+
+- 解决更新和插入策略和数据源的 capabilities 关联的问题
+- 日志展示调整优化
+- 任务重试与告警逻辑优化，方法重试和任务重试穿插进行
+- 发布的 API 服务，在 API 发布成功且不可用前，禁止调试
+- 共享挖掘稳定性优化
+- 任务里程碑展示优化
+- 可观测日志增加本地轮转清理，上报管理端增加频率控制
+- 新的日志规范调整和实现，将原有的四个日志目录合并至 Tapdata 安装目录中的 **logs** 目录中，示例如下：
+  ```shell
+  [root@centos200 logs]# pwd
+  /root/tapdata/logs
+  [root@centos200 logs]# ls
+  agent.log  tm-centos-test.log  tm-req-centos-test.log  tm-ws-centos-test.log
+  ```
+
+### 问题修复
+
+* 修复可观测日志文件错乱的问题
+
+
+
 ## V2.14
 
 ### 新增功能

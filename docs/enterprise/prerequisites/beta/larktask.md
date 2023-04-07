@@ -12,11 +12,13 @@
 
    :::tip
 
-   关于企业自建应用的创建方法，见[开发流程](https://open.feishu.cn/document/home/introduction-to-custom-app-development/self-built-application-development-process)。
+   关于企业自建应用的创建方法，见[开发流程](https://open.feishu.cn/document/home/introduction-to-custom-app-development/self-built-application-development-process)，您需要为该应用授予通讯录、应用信息、任务的所有权限。
 
    :::
 
-3. 在左侧导航栏，单击**凭证与基础信息**，获取 App ID 和 App Secret 信息，后续将在连接数据源时使用。
+3. 如果尚未创建应用，可参考下述步骤。
+
+4. 在左侧导航栏，单击**凭证与基础信息**，获取 App ID 和 App Secret 信息，后续将在连接数据源时使用。
 
    ![](../../images/obtain_feishu_app_ak.png)
 

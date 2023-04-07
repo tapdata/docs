@@ -202,6 +202,15 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>10.x</td>
   </tr>
   <tr>
+    <td>MongoDB Atlas</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>5.0.15</td>
+  </tr>
+  <tr>
     <td>Redis</td>
     <td>➖</td>
     <td>➖</td>
@@ -239,7 +248,8 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
   </tr>
 </tbody>
 </table>
-    </TabItem>
+
+</TabItem>
     <TabItem value="file-and-saas" label="文件及 SaaS" default>
 
 <table>
@@ -287,6 +297,15 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>XLS/XLSX 格式</td>
   </tr>
   <tr>
+    <td>GitHub</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
     <td>Lark-IM</td>
     <td>➖</td>
     <td>➖</td>
@@ -305,6 +324,15 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>不涉及</td>
   </tr>
   <tr>
+    <td>Salesforce</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
     <td>Zoho-CRM</td>
     <td>✅</td>
     <td>➖</td>
@@ -315,6 +343,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
   </tr>
 </tbody>
 </table>
+
 </TabItem>
 </Tabs>
 

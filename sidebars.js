@@ -330,7 +330,9 @@ const sidebars = {
              items: [
                      'enterprise/prerequisites/beta/apache-doris',
                      'enterprise/prerequisites/beta/larktask', 
+                     'enterprise/prerequisites/beta/lark-im',
                      'enterprise/prerequisites/beta/mariadb', 
+                     'enterprise/prerequisites/beta/mongodb-atlas', 
                      'enterprise/prerequisites/beta/selectdb',
                      'enterprise/prerequisites/beta/tidb',
                      'enterprise/prerequisites/beta/zoho-crm',
@@ -385,9 +387,13 @@ const sidebars = {
                             'enterprise/user-guide/connect-database/beta/connect-doris',
                             'enterprise/user-guide/connect-database/beta/connect-dummy',
                             'enterprise/user-guide/connect-database/beta/connect-excel',
+                            'enterprise/user-guide/connect-database/beta/connect-github',
                             'enterprise/user-guide/connect-database/beta/connect-larktask',
+                            'enterprise/user-guide/connect-database/beta/connect-lark-im',
                             'enterprise/user-guide/connect-database/beta/connect-mariadb',
+                            'enterprise/user-guide/connect-database/beta/connect-mongodb-atlas',
                             'enterprise/user-guide/connect-database/beta/connect-redis',
+                            'enterprise/user-guide/connect-database/beta/connect-salesforce',
                             'enterprise/user-guide/connect-database/beta/connect-selectdb',
                             'enterprise/user-guide/connect-database/beta/connect-tdengine',
                             'enterprise/user-guide/connect-database/beta/connect-tidb',
@@ -441,6 +447,8 @@ const sidebars = {
                     'enterprise/user-guide/data-pipeline/custom-node',
                     'enterprise/user-guide/data-pipeline/share-mining',
                     'enterprise/user-guide/data-pipeline/share-cache',
+                    'enterprise/user-guide/data-pipeline/pre-check',
+                    'enterprise/user-guide/data-pipeline/error-code-solution',
                     ]
              },
              'enterprise/user-guide/data-discovery',
@@ -463,6 +471,8 @@ const sidebars = {
               items:[
                      'enterprise/user-guide/manage-system/manage-cluster',
                      'enterprise/user-guide/manage-system/manage-external-storage',
+                     'enterprise/user-guide/manage-system/manage-user',
+                     'enterprise/user-guide/manage-system/manage-role',
                     ]
              },
              {

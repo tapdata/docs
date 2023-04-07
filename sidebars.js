@@ -447,6 +447,8 @@ const sidebars = {
                     'enterprise/user-guide/data-pipeline/custom-node',
                     'enterprise/user-guide/data-pipeline/share-mining',
                     'enterprise/user-guide/data-pipeline/share-cache',
+                    'enterprise/user-guide/data-pipeline/pre-check',
+                    'enterprise/user-guide/data-pipeline/error-code-solution',
                     ]
              },
              'enterprise/user-guide/data-discovery',

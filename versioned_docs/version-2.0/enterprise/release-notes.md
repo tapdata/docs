@@ -8,14 +8,14 @@
 - 权限管理功能新增角色的[增删改能力](user-guide/manage-system/manage-role.md)
 - 创建 Custom Connection 时支持[脚本调试能力](user-guide/connect-database/beta/custom-connection.md)
 - JS 节点中支持运行 [MongoDB 聚合处理](appendix/enhanced-js.md#aggregate)
-- 产品边界规则框架设计与实现，保存任务时自动对产品边界进行检测
-- SQL 类数据源和 MongoDB 数据源支持全量自定义查询（SQL）
-- 基于错误码提示问题解决方案
-- 连接配置时，新增心跳表功能，可用于数据源连接与任务的健康度监测
-- Doris 作为目标，支持数据校验能力（Count）
+- 产品边界规则框架设计与实现，保存任务时自动对任务[执行预检查](user-guide/data-pipeline/pre-check.md)
+- SQL 类数据源和 MongoDB 数据源支持[全量自定义查询](user-guide/data-pipeline/data-development/create-task.md#full-sql-query)
+- 基于错误码[提示问题解决方案](user-guide/data-pipeline/data-development/monitor-task.md#error-code)
+- 连接配置时，新增[心跳表功能](user-guide/connect-database/certified/connect-mysql.md#heart-beat-table)，可用于数据源连接与任务的健康度监测
+- Doris 作为目标，支持[数据校验能力](user-guide/data-pipeline/verify-data.md)（Count）
 - [集群监控](user-guide/manage-system/manage-cluster.md)页面，可展示当前的引擎对外建立的所有连接数量，并按照 IP:Port 的方式归类
-- 新增支持 Redis 在数据复制任务里作为目标使用
-- 新增数据复制支持调整关联条件字段
+- 新增支持 [Redis](user-guide/connect-database/beta/connect-redis.md) 在数据复制任务里作为目标使用
+- 新增数据复制支持调整[关联条件字段](user-guide/data-pipeline/copy-data/create-task.md#target-basic-setting)
 
 ### 功能优化
 

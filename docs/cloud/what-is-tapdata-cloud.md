@@ -32,9 +32,9 @@ Tapdata Cloud 是由 Tapdata 提供的集数据复制、数据开发为一体的
 
 ## 产品定价
 
-Tapdata Cloud 提供基础版（免费使用）、标准版和高级版，您可以按数据链路或节点进行水平拓展。
+Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，完成账号注册即可获得 1 个免费的 Agent 实例。
 
-更多介绍，见[产品定价](https://tapdata.net/pricing.html)。
+更多介绍，见[产品计费](billing/billing-overview.md)。
 
 
 
@@ -42,9 +42,9 @@ Tapdata Cloud 提供基础版（免费使用）、标准版和高级版，您可
 
 不用担心，Tapdata Cloud 提供图形化操作平台，仅需几分钟即可轻松上手，同时，我们还为您准备了丰富的教程帮助您快速实现数据流转需求：
 
-* [部署 Tapdata Agent](cloud/quick-start/install-agent)
+* [部署 Tapdata Agent](quick-start/install-agent)
 * [连接数据库](quick-start/connect-database.md)
-* [开始数据同步](cloud/quick-start/create-task)
+* [开始数据同步](quick-start/create-task)
 
 
 

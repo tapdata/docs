@@ -32,6 +32,17 @@ const sidebars = {
             'cloud/introduction/terms',
      ]
     },
+{
+     type: 'category',
+     label: '产品计费',
+     link: {type: 'doc', id: 'cloud/billing/README'},
+     items: [
+            'cloud/billing/billing-overview',
+            'cloud/billing/purchase',
+            'cloud/billing/renew-subscribe',
+            'cloud/billing/refund',
+     ]
+    },
     {
      type: 'category',
      label: '快速入门',

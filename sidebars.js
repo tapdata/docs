@@ -497,8 +497,15 @@ const sidebars = {
             'enterprise/best-practice/mysql-to-redis'
         ]
     },
-  'enterprise/release-notes',
-  'enterprise/faq',
+    {
+     type: 'category',
+     label: '常见问题',
+     link: {type: 'doc', id: 'enterprise/faq/README'},
+     items: [
+            'enterprise/faq/use-product',
+            'enterprise/faq/operation'
+        ]
+    },
     {
      type: 'category',
      label: '附录',

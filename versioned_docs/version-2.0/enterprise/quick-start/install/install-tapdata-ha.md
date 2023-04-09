@@ -9,7 +9,7 @@
 * 存储空间：100 GB
 * 操作系统：CentOS 7 + 或 Ubuntu 16.04 +
 
-import AsciinemaWidget from '../../../../src/components/AsciinemaWidget';
+import AsciinemaWidget from '../../../../../src/components/AsciinemaWidget';
 
 
 

@@ -120,12 +120,12 @@
 
 
 
-## 部署命令执行示例
+<!-- ## 部署命令执行示例
 
 import AsciinemaWidget from '../../../../src/components/AsciinemaWidget';
 
 <AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install_tapdata.cast" rows={20} idleTimeLimit={3} preload={true} />
-
+-->
 
 
 ## 下一步

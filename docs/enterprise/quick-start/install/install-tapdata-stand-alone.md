@@ -130,4 +130,4 @@ import AsciinemaWidget from '../../../../src/components/AsciinemaWidget';
 
 ## 下一步
 
-[连接数据库](connect-database.md)
+[连接数据库](../connect-database.md)

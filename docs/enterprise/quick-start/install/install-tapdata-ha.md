@@ -201,16 +201,16 @@
    :::
 
 ## 部署命令执行示例
-import AsciinemaWidget from '../../../../src/components/AsciinemaWidget';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import AsciinemaWidget from '../../../../src/components/AsciinemaWidget';
 
 <Tabs className="unique-tabs">
     <TabItem value="linux" label="服务器 A 部署示例" default>
-    <AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install_tapdata.cast" rows={30} idleTimeLimit={3} preload={true} />
+    <AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install_tapdata.cast" rows={20} idleTimeLimit={3} preload={true} />
    </TabItem>
    <TabItem value="windows" label="服务器 B 部署示例">
-    <AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install-tapdata-ha.cast" rows={30} idleTimeLimit={3} preload={true} speed={2} />
+    <AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install-tapdata-ha.cast" rows={20} idleTimeLimit={3} preload={true} speed={2} />
    </TabItem>
   </Tabs>
 
@@ -218,4 +218,4 @@ import TabItem from '@theme/TabItem';
 
 ## 下一步
 
-[连接数据库](connect-database.md)
+[连接数据库](../connect-database.md)

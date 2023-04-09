@@ -124,7 +124,7 @@
 
 import AsciinemaWidget from '../../../../src/components/AsciinemaWidget';
 
-<AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install_tapdata.cast" rows={30} idleTimeLimit={3} preload={true} />
+<AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install_tapdata.cast" rows={20} idleTimeLimit={3} preload={true} />
 
 
 

@@ -9,6 +9,8 @@
 * 存储空间：100 GB
 * 操作系统：CentOS 7 + 或 Ubuntu 16.04 +
 
+import AsciinemaWidget from '../../../../src/components/AsciinemaWidget';
+
 
 
 ## 部署架构
@@ -122,6 +124,9 @@
    API service started
    ```
 
+   服务器 A 部署流程示例如下：
+   <AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install_tapdata.cast" rows={20} idleTimeLimit={3} preload={true} />
+
 3. 通过浏览器登录 Tapdata 平台，本机的登录地址为  [http://127.0.0.1:3030](http://127.0.0.1:3030)，首次登录请及时修改密码以保障安全性。
 
    :::tip
@@ -192,6 +197,10 @@
    API service started
    ```
 
+   服务器 B 部署流程示例如下：
+
+   <AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install-tapdata-ha.cast" rows={20} idleTimeLimit={3} preload={true} speed={2} />
+
 3. 两个服务器上的 Tapdata 服务均已完成部署，在同一内网的设备，即可通过 http://192.168.1.200:3030 或 http://192.168.1.201:3030 来登录管理页面。
 
    :::tip
@@ -199,20 +208,6 @@
    首次登录请及时修改密码以保障安全性。
 
    :::
-
-## 部署命令执行示例
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import AsciinemaWidget from '../../../../src/components/AsciinemaWidget';
-
-<Tabs className="unique-tabs">
-    <TabItem value="linux" label="服务器 A 部署示例" default>
-    <AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install_tapdata.cast" rows={20} idleTimeLimit={3} preload={true} />
-   </TabItem>
-   <TabItem value="windows" label="服务器 B 部署示例">
-    <AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install-tapdata-ha.cast" rows={20} idleTimeLimit={3} preload={true} speed={2} />
-   </TabItem>
-  </Tabs>
 
 
 

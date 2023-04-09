@@ -299,7 +299,15 @@ const sidebars = {
      label: '快速入门',
      link: {type: 'doc', id: 'enterprise/quick-start/README'},
      items: [
-            'enterprise/quick-start/install-tapdata',
+            {
+             type: 'category',
+             label: '部署 Tapdata',
+             link: {type: 'doc', id: 'enterprise/quick-start/install/README'},
+             items: [
+                    'enterprise/quick-start/install/install-tapdata-ha',
+                    'enterprise/quick-start/install/install-tapdata-stand-alone',                    
+             ]
+            },
             'enterprise/quick-start/connect-database',
             'enterprise/quick-start/create-task',
      ]

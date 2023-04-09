@@ -152,7 +152,7 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 
      根据具体报错修复后，再执行数据同步。
 
-* 问：Tapdata Cloud 连接测试时，提示错误：“Unknown error 1044”
+* 问：Tapdata 连接测试时，提示错误：“Unknown error 1044”
 
   答：如果已经授予了正确的权限，可以通过下述方法检查并修复：
 

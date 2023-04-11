@@ -40,6 +40,7 @@ const sidebars = {
             'cloud/billing/billing-overview',
             'cloud/billing/purchase',
             'cloud/billing/renew-subscribe',
+            'cloud/billing/expiration',
             'cloud/billing/refund',
      ]
     },

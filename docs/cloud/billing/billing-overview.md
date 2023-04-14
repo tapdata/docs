@@ -123,39 +123,40 @@ Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，完成
     <td>xlarge</td>
     <td>10</td>
     <td>4 cores</td>
-    <td>11 GB</td>
+    <td>10 GB</td>
     <td>8,000</td>
   </tr>
   <tr>
     <td>2xlarge</td>
     <td>20</td>
     <td>8 cores</td>
-    <td>21 GB</td>
+    <td>19 GB</td>
     <td>16,000</td>
   </tr>
   <tr>
     <td>3xlarge</td>
     <td>30</td>
     <td>12 cores</td>
-    <td>30 GB</td>
+    <td>28 GB</td>
     <td>24,000</td>
   </tr>
   <tr>
     <td>4xlarge</td>
     <td>40</td>
     <td>16 cores</td>
-    <td>40 GB</td>
+    <td>37 GB</td>
     <td>32,000</td>
   </tr>
   <tr>
     <td>8xlarge</td>
     <td>80</td>
     <td>32 cores</td>
-    <td>78 GB</td>
+    <td>72 GB</td>
     <td>64,000</td>
   </tr>
 </tbody>
 </table>
+
 
 
 

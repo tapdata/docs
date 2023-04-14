@@ -497,6 +497,7 @@ const sidebars = {
             'enterprise/best-practice/mysql-to-redis'
         ]
     },
+    'enterprise/release-notes',
     {
      type: 'category',
      label: '常见问题',

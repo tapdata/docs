@@ -94,6 +94,7 @@ const sidebars = {
                        label: 'Alpha 数据源',
                        link: {type: 'doc', id: 'cloud/prerequisites/config-database/alpha/README'},
                        items: [
+                            'cloud/prerequisites/config-database/alpha/aliyun-rds-for-mysql',
                              'cloud/prerequisites/config-database/alpha/activemq',
                              'cloud/prerequisites/config-database/alpha/elasticsearch',
                              'cloud/prerequisites/config-database/alpha/opengauss',
@@ -151,6 +152,7 @@ const sidebars = {
                      items:[
                             'cloud/user-guide/connect-database/alpha/connect-adb-mysql',
                             'cloud/user-guide/connect-database/alpha/connect-adb-pg',
+                            'cloud/user-guide/connect-database/alpha/connect-aliyun-rds-mysql',
                             'cloud/user-guide/connect-database/alpha/connect-elasticsearch',
                             'cloud/user-guide/connect-database/alpha/connect-hazelcast-cloud',
                             'cloud/user-guide/connect-database/alpha/connect-mq',
@@ -211,6 +213,7 @@ const sidebars = {
              link: {type: 'doc', id: 'cloud/best-practice/mysql-as-source/README'},
              items:[
                     'cloud/best-practice/mysql-as-source/mysql-to-bigquery',
+                    'cloud/best-practice/mysql-as-source/mysql-to-aliyun',
                     'cloud/best-practice/mysql-as-source/mysql-to-elasticsearch',
                     'cloud/best-practice/mysql-as-source/mysql-to-mongodb',
                     'cloud/best-practice/mysql-as-source/mysql-to-oracle',

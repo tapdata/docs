@@ -9,7 +9,7 @@
 * 存储空间：100 GB
 * 操作系统：CentOS 7 + 或 Ubuntu 16.04 +
 
-import AsciinemaWidget from '../../../../src/components/AsciinemaWidget';
+import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlayer.tsx';
 
 
 
@@ -124,8 +124,16 @@ import AsciinemaWidget from '../../../../src/components/AsciinemaWidget';
    API service started
    ```
 
-   <!-- 服务器 A 部署流程示例如下：
-   <AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install_tapdata.cast" rows={20} idleTimeLimit={3} preload={true} /> -->
+   服务器 A 部署流程示例如下：
+   <AsciinemaPlayer
+    src="/asciinema_playbook/install_tapdata.cast"
+    poster="npt:0:20"
+    rows={25}
+    speed={1.8}
+    preload={true}
+    terminalFontSize="14px"
+    fit={false}
+/>
 
 3. 通过浏览器登录 Tapdata 平台，本机的登录地址为  [http://127.0.0.1:3030](http://127.0.0.1:3030)，首次登录请及时修改密码以保障安全性。
 
@@ -197,16 +205,21 @@ import AsciinemaWidget from '../../../../src/components/AsciinemaWidget';
    API service started
    ```
 
-   <!-- 服务器 B 部署流程示例如下：
-
-   <AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install-tapdata-ha.cast" rows={20} idleTimeLimit={3} preload={true} speed={2} />  -->
+   服务器 B 部署流程示例如下：
+   <AsciinemaPlayer
+    src="/asciinema_playbook/install-tapdata-ha.cast"
+    poster="npt:0:10"
+    rows={25}
+    speed={1.8}
+    preload={true}
+    terminalFontSize="13px"
+    fit={false}
+/>
 
 3. 两个服务器上的 Tapdata 服务均已完成部署，在同一内网的设备，即可通过 http://192.168.1.200:3030 或 http://192.168.1.201:3030 来登录管理页面。
 
    :::tip
-
    首次登录请及时修改密码以保障安全性。
-
    :::
    
    登录成功后，在系统管理 > 集群管理中，即可查看到两个服务器上 Tapdata 服务的状态。

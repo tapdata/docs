@@ -55,3 +55,9 @@ Oracle Database（简称 Oracle）是甲骨文公司的一款关系数据库管�
    如提示连接测试失败，请根据页面提示进行修复。
 
    :::
+
+
+
+## 推荐阅读
+
+[Oracle 实时同步到 Kafka](../../../best-practice/oracle-to-kafka.md)

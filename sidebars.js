@@ -497,7 +497,8 @@ const sidebars = {
      link: {type: 'doc', id: 'enterprise/best-practice/README'},
      items: [
             'enterprise/best-practice/excel-to-mysql',
-            'enterprise/best-practice/mysql-to-redis'
+            'enterprise/best-practice/mysql-to-redis',
+            'enterprise/best-practice/oracle-to-kafka'
         ]
     },
     {

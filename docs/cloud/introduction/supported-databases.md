@@ -271,7 +271,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>不涉及</td>
+    <td>不涉及，文件位置支持本地、FTP、SFTP、SMB、S3FS、OSS</td>
   </tr>
   <tr>
     <td>Excel</td>
@@ -280,7 +280,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>XLS/XLSX 格式</td>
+    <td>XLS/XLSX 格式，文件位置支持本地、FTP、SFTP、SMB、S3FS、OSS</td>
   </tr>
   <tr>
     <td>Lark-IM</td>
@@ -311,6 +311,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
   </tr>
 </tbody>
 </table>
+
 </TabItem>
 </Tabs>
 
@@ -677,7 +678,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>不涉及</td>
+    <td>不涉及，文件位置支持本地、FTP、SFTP、SMB、S3FS、OSS</td>
   </tr>
   <tr>
     <td>Vika</td>
@@ -695,7 +696,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>不涉及</td>
+    <td>不涉及，文件位置支持本地、FTP、SFTP、SMB、S3FS、OSS</td>
   </tr>
 </tbody>
 </table>

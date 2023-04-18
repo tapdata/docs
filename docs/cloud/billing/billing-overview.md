@@ -37,46 +37,46 @@ Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，完成
 </thead>
 <tbody>
   <tr>
-    <td>small</td>
+    <td>SMALL</td>
     <td colspan="4">免费（1 个 Agent 实例）</td>
   </tr>
   <tr>
-    <td>large </td>
+    <td>LARGE </td>
     <td>800 </td>
     <td>760 </td>
     <td>8,640 </td>
     <td>8,640 </td>
   </tr>
   <tr>
-    <td>xlarge </td>
+    <td>XLARGE </td>
     <td>1600 </td>
     <td>1,520 </td>
     <td>17,280 </td>
     <td>17,280 </td>
   </tr>
   <tr>
-    <td>2xlarge </td>
+    <td>2XLARGE </td>
     <td>3,200 </td>
     <td>2,280 </td>
     <td>34,560 </td>
     <td>34,560 </td>
   </tr>
   <tr>
-    <td>3xlarge </td>
+    <td>3XLARGE </td>
     <td>4,800 </td>
     <td>3,040 </td>
     <td>51,840 </td>
     <td>51,840 </td>
   </tr>
   <tr>
-    <td>4xlarge </td>
+    <td>4XLARGE </td>
     <td>6,400 </td>
     <td>6,080 </td>
     <td>69,120 </td>
     <td>69,120 </td>
   </tr>
   <tr>
-    <td>8xlarge </td>
+    <td>8XLARGE </td>
     <td>12,800 </td>
     <td>12,160</td>
     <td>138,240 </td>
@@ -106,49 +106,49 @@ Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，完成
 </thead>
 <tbody>
   <tr>
-    <td>Small</td>
+    <td>SMALL</td>
     <td>3</td>
     <td>1 core</td>
     <td>4 GB</td>
     <td>2,000</td>
   </tr>
   <tr>
-    <td>large</td>
+    <td>LARGE</td>
     <td>5</td>
     <td>2 cores</td>
     <td>6 GB</td>
     <td>4,000</td>
   </tr>
   <tr>
-    <td>xlarge</td>
+    <td>XLARGE</td>
     <td>10</td>
     <td>4 cores</td>
     <td>10 GB</td>
     <td>8,000</td>
   </tr>
   <tr>
-    <td>2xlarge</td>
+    <td>2XLARGE</td>
     <td>20</td>
     <td>8 cores</td>
     <td>19 GB</td>
     <td>16,000</td>
   </tr>
   <tr>
-    <td>3xlarge</td>
+    <td>3XLARGE</td>
     <td>30</td>
     <td>12 cores</td>
     <td>28 GB</td>
     <td>24,000</td>
   </tr>
   <tr>
-    <td>4xlarge</td>
+    <td>4XLARGE</td>
     <td>40</td>
     <td>16 cores</td>
     <td>37 GB</td>
     <td>32,000</td>
   </tr>
   <tr>
-    <td>8xlarge</td>
+    <td>8XLARGE</td>
     <td>80</td>
     <td>32 cores</td>
     <td>72 GB</td>

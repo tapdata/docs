@@ -32,6 +32,18 @@ const sidebars = {
             'cloud/introduction/terms',
      ]
     },
+{
+     type: 'category',
+     label: '产品计费',
+     link: {type: 'doc', id: 'cloud/billing/README'},
+     items: [
+            'cloud/billing/billing-overview',
+            'cloud/billing/purchase',
+            'cloud/billing/renew-subscribe',
+            'cloud/billing/expiration',
+            'cloud/billing/refund',
+     ]
+    },
     {
      type: 'category',
      label: '快速入门',
@@ -497,16 +509,8 @@ const sidebars = {
             'enterprise/best-practice/mysql-to-redis'
         ]
     },
-    'enterprise/release-notes',
-    {
-     type: 'category',
-     label: '常见问题',
-     link: {type: 'doc', id: 'enterprise/faq/README'},
-     items: [
-            'enterprise/faq/use-product',
-            'enterprise/faq/operation'
-        ]
-    },
+  'enterprise/release-notes',
+  'enterprise/faq',
     {
      type: 'category',
      label: '附录',

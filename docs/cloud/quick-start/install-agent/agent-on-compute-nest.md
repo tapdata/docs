@@ -10,9 +10,9 @@
 
 1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
 
-2. 单击左侧导航栏的 **Agent 管理**，然后单击右侧的**创建 Agent**。
+2. 基于业务需求创建所需规格的 Agent，具体操作，见[订阅实例](../../billing/purchase.md)。
 
-3. 在跳转到的部署页面选择**阿里云计算巢**，然后选择部署方式来创建云服务器 ECS：
+3. 订阅完成后，在跳转到的部署页面选择**阿里云计算巢**，然后选择部署方式来创建云服务器 ECS：
 
    ![](../../images/select_computing_nest_cn.png)
 

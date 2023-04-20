@@ -25,7 +25,7 @@ Tapdata 作为一款高效、可靠、安全实时数据平台，可为您提供
 
 ## 注意事项
 
-* 确保单条 Oracle 的数据大小不超过 Kafka 的单条消息限制（默认为 1 MB），避免无法写入数据。如果遇到超限的状况，可在配置数据开发任务是，在  Oracle 和 Kafka 节点间加入一个**增删字段**节点过滤大字段列，您也可以修改 Kafka 相关的最大消息限制。
+* 确保单条 Oracle 的数据大小不超过 Kafka 的单条消息限制（默认为 1 MB），避免无法写入数据。如果遇到超限的状况，可在配置数据开发任务时，在  Oracle 和 Kafka 节点间加入一个**增删字段**节点来过滤大字段列，您也可以修改 Kafka 相关的最大消息限制。
 * Tapdata 解析 Oracle 日志的速度约为 10,000 QPS，如增量事件高于该速率，可能导致数据处理的延迟上升。
 * 裸日志功能目前不支持在 RAC-ASM 的部署架构上使用，且不支持从 DG 架构的非主节点获取裸日志。
 
@@ -113,7 +113,7 @@ Tapdata 作为一款高效、可靠、安全实时数据平台，可为您提供
 
       ![Kafka 节点高级设置](../images/oracle_to_kafka_target_advanced_settings.png)
 
-      * **更新条件字段**：选择数据更新的条件字段，本案例选择为
+      * **更新条件字段**：选择数据更新的条件字段，本案例选择为 **createTime**。
       * **每批次写入条数**：全量同步时，每批次写入的条目数。
       * **每批写入最大等待时间**：根据目标库的性能和网络延迟评估，设置最大等待时间，单位为毫秒。
       * **已有数据处理**：固定为**保持目标端原有表结构和数据**。
@@ -184,7 +184,7 @@ kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kafka_demo_t
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kafka_demo_topic --max-messages 1 | jq .
 ```
 
-与此同时，我们在源表上执行一个数据变更操作，将某条数据的 **SETTLED_AMOUNT** 的值从 **1000** 调整为 **1200**：
+接下来，我们在源表上执行数据变更操作，将某条数据的 **SETTLED_AMOUNT** 的值从 **1000** 调整为 **1200**：
 
 ![修改源表数据](../images/oracle_update_data.png)
 

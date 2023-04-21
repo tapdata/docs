@@ -61,7 +61,7 @@ const config = {
         },
         // Google Analytics
         gtag: {
-          trackingID: 'G-PVNR6DP305', // Measurement ID, which can be find in Data streams page on Google Analytics platform.
+          trackingID: 'G-43PEGV94TX', // Measurement ID, which can be find in Data streams page on Google Analytics platform.
         },
         blog: false, // Disable the blog plugin
       }),

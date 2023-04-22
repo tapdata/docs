@@ -21,7 +21,11 @@
 
 Tapdata 作为一款高效、可靠、安全实时数据平台，可为您提供简单易用、功能丰富、简单易用的数据流转服务，帮助您提升数据开发效率，专注业务本身，此外，在面对大规模数据处理场景下，您还可以通过增加节点或调整配置实现水平扩展。
 
-接下来，我们介绍具体的操作流程。
+
+
+在本案例中，我们希望实时读取源 Oracle 库中的汽车保险索赔表（**AUTO_CLAIM_Demo**）的数据，同时将读取来的数据进行加工以帮助我们获取增量变更前后的数据，然后再将数据写实时写入 Kafka 数据源中，下游业务应用可以自由订阅并消费 Kafka 的数据，构建实时数据同步管道。
+
+
 
 ## 注意事项
 
@@ -82,11 +86,11 @@ Tapdata 作为一款高效、可靠、安全实时数据平台，可为您提供
 
       ```js
       var ret = {}
-          ret.before = context.event.before;
-          ret.after = record;
-          ret.createTime = new Date();
-          ret.tableName = context.tableName;
-          return ret;
+      ret.before = context.event.before;
+      ret.after = record;
+      ret.createTime = new Date();
+      ret.tableName = context.tableName;
+      return ret;
       ```
 
       :::tip

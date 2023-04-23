@@ -196,6 +196,32 @@ const sidebars = {
              },
              'cloud/user-guide/custom-node',
              'cloud/user-guide/operation-log',
+             {
+              type: 'category',
+              label: '数据面板（Beta）',
+              link: {type: 'doc', id: 'cloud/user-guide/data-console/README'},
+              items:[
+                    {
+                     type: 'category',
+                     label: '数据集成平台模式',
+                     link: {type: 'doc', id: 'cloud/user-guide/data-console/etl-mode/README'},
+                     items:[
+                            'cloud/user-guide/data-console/etl-mode/etl-mode-dashboard',
+                            'cloud/user-guide/data-console/etl-mode/create-etl-task',
+                           ]
+                    },
+                    {
+                     type: 'category',
+                     label: '数据服务平台模式',
+                     link: {type: 'doc', id: 'cloud/user-guide/data-console/daas-mode/README'},
+                     items:[
+                            'cloud/user-guide/data-console/daas-mode/enable-daas-mode',
+                            'cloud/user-guide/data-console/daas-mode/daas-mode-dashboard',
+                            'cloud/user-guide/data-console/daas-mode/create-daas-task',
+                           ]
+                    },
+                    ]
+             },               
              'cloud/user-guide/trouble-shooting-connection',
              'cloud/user-guide/no-supported-data-type',
             ]

@@ -9,5 +9,6 @@
 
 ## 扩展阅读
 
+* [开启数据服务平台模式](../user-guide/data-console/daas-mode/enable-daas-mode.md)
 * [支持的数据源](../introduction/supported-databases.md)
 * [最佳实践文档](../best-practice/README.md)

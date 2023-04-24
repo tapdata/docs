@@ -22,6 +22,6 @@
 
    - **保存并运行**：无需执行额外的操作，由 Tapdata Cloud 自动创建一个数据开发任务并运行，将您的源表实时同步到选定的目标库中。在本案例中，Tapdata Cloud 会将源 MySQL 中的 **customer** 表实时同步到 MongoDB 中。
 
-     您也可以单机目标库卡片中的任务名称，进入任务监控页面查看详细的运行状态，更多介绍，见[监控任务](../data-development/monitor-task.md)。
+     您也可以单击目标库卡片中的任务名称，进入任务监控页面查看详细的运行状态，更多介绍，见[监控任务](../../data-development/monitor-task.md)。
 
    

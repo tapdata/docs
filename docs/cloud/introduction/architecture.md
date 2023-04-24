@@ -1,10 +1,10 @@
 # 产品架构与工作原理
 
-Tapdata Cloud 组件包含 Tapdata cloud manager 和 Tapdata agent：
+Tapdata Cloud 组件包含 Tapdata Cloud manager 和 Tapdata Agent：
 
-* **Tapdata cloud manager**（TCM）：Tapdata Cloud 的管理端，负责 agent 实例的安装，同步任务的配置、分发、任务状态监测。
+* **Tapdata Cloud Manager**（TCM）：Tapdata Cloud 的管理端，负责 agent 实例的安装，同步任务的配置、分发、任务状态监测。
 
-* **Tapdata agent**：是 Tapdata Cloud 数据同步服务的执行实例，负责从 TCM 获取任务信息，通过流式技术从源系统获取数据、处理转换数据并发送到目标系统，并在任务执行过程中监测并上报任务状态至 TCM 。
+* **Tapdata Agent**：是 Tapdata Cloud 数据同步服务的执行实例，负责从 TCM 获取任务信息，通过流式技术从源系统获取数据、处理转换数据并发送到目标系统，并在任务执行过程中监测并上报任务状态至 TCM 。
 
 ![](../images/architecture.png)
 

@@ -32,6 +32,18 @@ const sidebars = {
             'cloud/introduction/terms',
      ]
     },
+{
+     type: 'category',
+     label: '产品计费',
+     link: {type: 'doc', id: 'cloud/billing/README'},
+     items: [
+            'cloud/billing/billing-overview',
+            'cloud/billing/purchase',
+            'cloud/billing/renew-subscribe',
+            'cloud/billing/expiration',
+            'cloud/billing/refund',
+     ]
+    },
     {
      type: 'category',
      label: '快速入门',
@@ -302,7 +314,15 @@ const sidebars = {
      label: '快速入门',
      link: {type: 'doc', id: 'enterprise/quick-start/README'},
      items: [
-            'enterprise/quick-start/install-tapdata',
+            {
+             type: 'category',
+             label: '部署 Tapdata',
+             link: {type: 'doc', id: 'enterprise/quick-start/install/README'},
+             items: [
+                    'enterprise/quick-start/install/install-tapdata-ha',
+                    'enterprise/quick-start/install/install-tapdata-stand-alone',                    
+             ]
+            },
             'enterprise/quick-start/connect-database',
             'enterprise/quick-start/create-task',
      ]
@@ -498,9 +518,11 @@ const sidebars = {
      items: [
             'enterprise/best-practice/excel-to-mysql',
             'enterprise/best-practice/mysql-to-redis',
-            'enterprise/best-practice/oracle-to-kafka'
+            'enterprise/best-practice/oracle-to-kafka',
+            'enterprise/best-practice/heart-beat-task',
         ]
     },
+  'enterprise/release-notes',
     {
      type: 'category',
      label: '常见问题',

@@ -1,4 +1,4 @@
-# 部署 Tapdata
+# 单节点部署 Tapdata
 
 本文介绍如何快速在本地环境部署 Tapdata 服务。
 
@@ -122,12 +122,23 @@
 
 ## 部署命令执行示例
 
-import AsciinemaWidget from '../../../../src/components/AsciinemaWidget';
+import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlayer.tsx';
 
-<AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install_tapdata.cast" rows={30} idleTimeLimit={3} preload={true} />
+<AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install_tapdata.cast" rows={20} idleTimeLimit={3} preload={true} />
+
+
+<AsciinemaPlayer
+    src="/asciinema_playbook/install_tapdata.cast"
+    poster="npt:0:20"
+    rows={25}
+    speed={1.8}
+    preload={true}
+    terminalFontSize="15px"
+    fit={false}
+/>
 
 
 
 ## 下一步
 
-[连接数据库](connect-database.md)
+[连接数据库](../connect-database.md)

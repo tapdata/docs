@@ -5,7 +5,22 @@ import TabItem from '@theme/TabItem';
 
 <Tabs className="unique-tabs">
   <TabItem value="2023" label="2023 年" default>
-    <h3>20230317</h3> 
+  <h3>20230428</h3> 
+  <h4>新增功能</h4> 
+   <ul>
+   <li>支持购买<a href="billing/purchase">全托管模式</a>的 Agent 实例，由 Tapdata Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，可实现一键交付使用，免去部署和运维精力，专注业务本身。</li>
+  </ul> 
+    <h3>20230421</h3> 
+  <h4>新增功能</h4> 
+   <ul>
+   <li>新增数据面板，支持数据集成模式和数据服务平台模式，可满足不同的数据治理需求。</li>
+   <li>支持<a href="billing/billing-overview">计费功能</a>，可选购半托管实例，按照订阅 Agent 实例的规格和数量收费，满足业务对性能的需求。</li>
+  </ul> 
+  <h4>功能优化</h4> 
+  <ul>
+   <li> Agent 体验优化。</li>
+  </ul> 
+<h3>20230317</h3> 
   <h4>新增功能</h4> 
   <ul>
    <li>新增任务进度里程碑展示，任务启动后可在页面底部查看当前任务的整体进度</li>

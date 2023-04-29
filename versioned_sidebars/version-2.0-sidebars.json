@@ -528,7 +528,8 @@
       "items": [
         "enterprise/best-practice/excel-to-mysql",
         "enterprise/best-practice/mysql-to-redis",
-        "enterprise/best-practice/heart-beat-task"
+        "enterprise/best-practice/heart-beat-task",
+        "enterprise/best-practice/alert-via-qqmail"
       ]
     },
     "enterprise/release-notes",

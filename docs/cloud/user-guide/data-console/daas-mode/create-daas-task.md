@@ -69,7 +69,7 @@ import TabItem from '@theme/TabItem';
     </ul>
     </li>
     <p></p>
-    <p>完成设置后，Tapdata 将自动创建一个数据开发任务，将您的源表实时同步到选定的目标库中，提供给最终业务。您还可以单击目标库卡片中的任务名称，进入任务监控页面查看详细的运行状态，更多介绍，见[监控任务](../../data-development/monitor-task.md)。</p>
+    <p>完成设置后，Tapdata 将自动创建一个数据开发任务，将您的源表实时同步到选定的目标库中，提供给最终业务。您还可以单击目标库卡片中的任务名称，进入任务监控页面查看详细的运行状态，更多介绍，见<a href="../../data-development/monitor-task">监控任务</a>。</p>
     </ol>
    </TabItem>
   </Tabs>

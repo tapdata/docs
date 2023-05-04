@@ -528,6 +528,7 @@
       "items": [
         "enterprise/best-practice/excel-to-mysql",
         "enterprise/best-practice/mysql-to-redis",
+        "enterprise/best-practice/oracle-to-kafka",
         "enterprise/best-practice/heart-beat-task"
       ]
     },

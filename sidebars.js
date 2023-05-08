@@ -506,11 +506,13 @@ const sidebars = {
               label: '数据服务',
               link: {type: 'doc', id: 'enterprise/user-guide/data-service/README'},
               items:[
+                     'enterprise/user-guide/data-service/manage-app',
                      'enterprise/user-guide/data-service/create-api-service',
                      'enterprise/user-guide/data-service/create-api-client',
                      'enterprise/user-guide/data-service/create-api-server',
                      'enterprise/user-guide/data-service/audit-api',
                      'enterprise/user-guide/data-service/monitor-api-request',
+                     'enterprise/user-guide/data-service/query-via-graphql',
                     ]
              },
              {
@@ -546,6 +548,7 @@ const sidebars = {
             'enterprise/best-practice/mysql-to-redis',
             'enterprise/best-practice/oracle-to-kafka',
             'enterprise/best-practice/heart-beat-task',
+            'enterprise/best-practice/full-breakpoint-resumption',
         ]
     },
   'enterprise/release-notes',

@@ -548,6 +548,7 @@ const sidebars = {
             'enterprise/best-practice/mysql-to-redis',
             'enterprise/best-practice/oracle-to-kafka',
             'enterprise/best-practice/heart-beat-task',
+            'enterprise/best-practice/alert-via-qqmail',
             'enterprise/best-practice/full-breakpoint-resumption',
         ]
     },

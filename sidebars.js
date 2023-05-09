@@ -106,6 +106,7 @@ const sidebars = {
                        label: 'Alpha 数据源',
                        link: {type: 'doc', id: 'cloud/prerequisites/config-database/alpha/README'},
                        items: [
+                            'cloud/prerequisites/config-database/alpha/aliyun-rds-for-mysql',
                              'cloud/prerequisites/config-database/alpha/activemq',
                              'cloud/prerequisites/config-database/alpha/elasticsearch',
                              'cloud/prerequisites/config-database/alpha/opengauss',
@@ -163,6 +164,7 @@ const sidebars = {
                      items:[
                             'cloud/user-guide/connect-database/alpha/connect-adb-mysql',
                             'cloud/user-guide/connect-database/alpha/connect-adb-pg',
+                            'cloud/user-guide/connect-database/alpha/connect-aliyun-rds-mysql',
                             'cloud/user-guide/connect-database/alpha/connect-elasticsearch',
                             'cloud/user-guide/connect-database/alpha/connect-hazelcast-cloud',
                             'cloud/user-guide/connect-database/alpha/connect-mq',
@@ -196,6 +198,32 @@ const sidebars = {
              },
              'cloud/user-guide/custom-node',
              'cloud/user-guide/operation-log',
+             {
+              type: 'category',
+              label: '数据面板（Beta）',
+              link: {type: 'doc', id: 'cloud/user-guide/data-console/README'},
+              items:[
+                    {
+                     type: 'category',
+                     label: '数据集成平台模式',
+                     link: {type: 'doc', id: 'cloud/user-guide/data-console/etl-mode/README'},
+                     items:[
+                            'cloud/user-guide/data-console/etl-mode/etl-mode-dashboard',
+                            'cloud/user-guide/data-console/etl-mode/create-etl-task',
+                           ]
+                    },
+                    {
+                     type: 'category',
+                     label: '数据服务平台模式',
+                     link: {type: 'doc', id: 'cloud/user-guide/data-console/daas-mode/README'},
+                     items:[
+                            'cloud/user-guide/data-console/daas-mode/enable-daas-mode',
+                            'cloud/user-guide/data-console/daas-mode/daas-mode-dashboard',
+                            'cloud/user-guide/data-console/daas-mode/create-daas-task',
+                           ]
+                    },
+                    ]
+             },               
              'cloud/user-guide/trouble-shooting-connection',
              'cloud/user-guide/no-supported-data-type',
             ]
@@ -223,6 +251,7 @@ const sidebars = {
              link: {type: 'doc', id: 'cloud/best-practice/mysql-as-source/README'},
              items:[
                     'cloud/best-practice/mysql-as-source/mysql-to-bigquery',
+                    'cloud/best-practice/mysql-as-source/mysql-to-aliyun',
                     'cloud/best-practice/mysql-as-source/mysql-to-elasticsearch',
                     'cloud/best-practice/mysql-as-source/mysql-to-mongodb',
                     'cloud/best-practice/mysql-as-source/mysql-to-oracle',
@@ -477,11 +506,13 @@ const sidebars = {
               label: '数据服务',
               link: {type: 'doc', id: 'enterprise/user-guide/data-service/README'},
               items:[
+                     'enterprise/user-guide/data-service/manage-app',
                      'enterprise/user-guide/data-service/create-api-service',
                      'enterprise/user-guide/data-service/create-api-client',
                      'enterprise/user-guide/data-service/create-api-server',
                      'enterprise/user-guide/data-service/audit-api',
                      'enterprise/user-guide/data-service/monitor-api-request',
+                     'enterprise/user-guide/data-service/query-via-graphql',
                     ]
              },
              {
@@ -515,8 +546,10 @@ const sidebars = {
      items: [
             'enterprise/best-practice/excel-to-mysql',
             'enterprise/best-practice/mysql-to-redis',
+            'enterprise/best-practice/oracle-to-kafka',
             'enterprise/best-practice/heart-beat-task',
-            'enterprise/best-practice/alert-via-qqmail'
+            'enterprise/best-practice/alert-via-qqmail',
+            'enterprise/best-practice/full-breakpoint-resumption',
         ]
     },
   'enterprise/release-notes',

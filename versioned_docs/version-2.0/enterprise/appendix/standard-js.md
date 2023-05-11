@@ -122,8 +122,8 @@ var oidStr = UUIDGenerator.objectIdStr();
 
 ```javascript
 var map = new HashMap();
-map.put(“name”, “test”);
-map.remove(“name”);
+map.put("name", "test");
+map.remove("name");
 ```
 
 ## ArrayList
@@ -136,7 +136,7 @@ map.remove(“name”);
 
 ```javascript
 var list = new ArrayList();
-list.add(“test1”);
+list.add("test1");
 list.remove(0);
 ```
 

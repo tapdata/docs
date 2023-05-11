@@ -142,8 +142,8 @@ var ip = networkUtil.GetAddress("ip");
 
 ```javascript
 var map = new HashMap();
-map.put(“name”, “test”);
-map.remove(“name”);
+map.put("name", "test");
+map.remove("name");
 ```
 
 ## ArrayList
@@ -156,7 +156,7 @@ map.remove(“name”);
 
 ```javascript
 var list = new ArrayList();
-list.add(“test1”);
+list.add("test1");
 list.remove(0);
 ```
 
@@ -201,18 +201,18 @@ var source = ScriptExecutorsManager.getScriptExecutor('mysql-connection-name');
 
 ```javascript
 var result = target.execute({
-    database: “test”,
-    collection: “user”,
-    op: “update”,
+    database: "test",
+    collection: "user",
+    op: "update",
     filter: {id: 1},
-    opObject: {name: “user001”, age: 20},
+    opObject: {name: "user001", age: 20},
     upsert: true
 });
 ```
 
 参数说明：
 
-* 对于结构化数据库（如 MySQL），使用方法可参考：`var result = source.execute({sql: “update test.user set name='user001' where id = 1”});`
+* 对于结构化数据库（如 MySQL），使用方法可参考：`var result = source.execute({sql: "update test.user set name='user001' where id = 1"});`
 
 * 对于 MongoDB，可用参数如下：
 
@@ -244,9 +244,9 @@ var result = target.execute({
 
 ```javascript
 var users = target.executeQuery({
-    database: “test”,
-    collection: “user”,
-    filter: {age: {$gt: 10}}，
+    database: "test",
+    collection: "user",
+    filter: {age: {$gt: 10}},
     sort: {age: -1},
     limit: 10
 });
@@ -254,7 +254,7 @@ var users = target.executeQuery({
 
 参数说明：
 
-* 对于结构化数据库（如 MySQL），使用方法可参考：`var users = source.executeQuery({sql: “select * from test.user where age>10”});`
+* 对于结构化数据库（如 MySQL），使用方法可参考：`var users = source.executeQuery({sql: "select * from test.user where age>10"});`
 * 对于 MongoDB，可用参数如下：
   * **database**：操作的数据库名称。
   * **collection**：操作的集合名称。

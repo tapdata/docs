@@ -32,7 +32,7 @@ Tapdata Cloud 是由 Tapdata 提供的集数据复制、数据开发为一体的
 
 ## 产品定价
 
-Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，您可以免费创建 1 个 SMALL 规格的 Agent 实例。
+Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，您可以免费创建 1 个 SMALL 规格的 Agent 实例（半托管模式）。
 
 更多介绍，见[产品计费](billing/billing-overview.md)。
 

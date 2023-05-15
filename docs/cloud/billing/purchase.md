@@ -115,5 +115,5 @@
       ![创建 Agent](../images/create_agent_via_aliyun_market_code.png)
 
       :::tip
-      如您选择的是**全托管模式**，Agent 将自动完成部署；如您选择的是**半托管模式**，您需要根据跳转到的页面的提示，在您的设备上[部署 Agent](../quick-start/install-agent/README.md)。
+      如您选择的是**全托管模式**，您还需要选择部署的地区并单击**部署**，Tapdata Cloud 将自动完成 Agent 的部署；如您选择的是**半托管模式**，您需要根据跳转到的页面的提示，在您的设备上[部署 Agent](../quick-start/install-agent/README.md)。
       :::

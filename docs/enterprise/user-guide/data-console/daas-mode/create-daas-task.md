@@ -30,35 +30,46 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
     <TabItem value="cache" label="流转至平台缓存层" default>
     <ol>
-    <li>在<b>源数据层</b>，单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/search_icon.png'></img>图标，找到您需要同步的表，将其拖动至<b>平台缓存层</b>。</li>
+    <li>在<b>源数据层</b>，单击<img src='/img/search_icon.png'></img>图标，找到您需要同步的表，将其拖动至<b>平台缓存层</b>。</li>
     <p></p>
     <li>在弹出的对话框中，填写表前缀并单击<b>确定</b>，本案例中，我们要同步的表为 <b>customer</b>，此处填写前缀为 <b>MySQL</b>，那么在平台缓存层中，该表名为 <b>FDM_MySQL_customer</b>。</li>
-    <img src='https://deploy-preview-67--tapdata.netlify.app/img/create_cache_task.gif'></img>
-    <p>完成操作后，Tapdata 将自动创建一个数据复制任务，将您选择表（含全量数据）实时同步至平台缓存层并自动校验，您可以单击平台缓存中表名右侧的<img src='https://deploy-preview-67--tapdata.netlify.app/img/detail_icon.png'></img>图标，跳转至任务监控页面来查看任务运行详情。</p>
+    <img src='/img/create_cache_task.gif'></img>
+    <p>完成操作后，Tapdata 将自动创建一个数据复制任务，将您选择表（含全量数据）实时同步至平台缓存层并自动校验，您可以单击平台缓存中表名右侧的<img src='/img/detail_icon.png'></img>图标，跳转至任务监控页面来查看任务运行详情。</p>
     </ol>
    </TabItem>
    <TabItem value="curated" label="流转至平台加工层">
     <ol>
-    <li>在<b>平台缓存层</b>，单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/search_icon.png'></img>图标，找到您需要加工的表，将其拖动至<b>平台加工层</b>。</li>
+    <li>在<b>平台缓存层</b>，单击<img src='/img/search_icon.png'></img>图标，找到您需要加工的表，将其拖动至<b>平台加工层</b>。</li>
     <p></p>
-    <li>在弹出的对话框中，填写表名称并单击<b>确定</b>，如果该表名已存在则会覆盖表中已有的数据。</li>
+    <li>在弹出的对话框中，填写表名称并选择是否启动任务。
     <p></p>
-    <li>在<b>平台加工层</b>，找到目标表，单击其右侧的<img src='https://deploy-preview-67--tapdata.netlify.app/img/detail_icon.png'></img>图标，可查看该表关联的任务和表的基本信息，包含列信息、样本数据、Scheme 等信息。</li>
-    <img src='https://deploy-preview-67--tapdata.netlify.app/img/view_curated_task.png'></img>
-    <li>（可选）如需针对该表执行自定义的 ETL 加工，单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/detail_icon.png'></img>图标后，选择<b>任务</b>标签，单击相关任务名称进入任务监控页面，可在该页面停止并编辑任务，基于业务需求加入相关<a href="https://docs.tapdata.io/enterprise/user-guide/data-pipeline/data-development/process-node">处理节点</a>。具体操作，见<a href="https://docs.tapdata.io/enterprise/user-guide/data-pipeline/data-development/create-task">创建数据开发任务</a>。</li>
+    <ul>
+    <li><b>仅保存</b>：仅保存任务链路，页面将提示保存成功，单击提示信息即可跳转到任务配置页面，您可以<a href="../../data-pipeline/data-development/process-node">添加处理节点</a>，实现表结构调整（如增加字段）、合并表、构建宽表等需求，完成设置后单击页面右上角的<b>启动</b>。
+    </li>
+    <li><b>保存并运行</b>：无需执行额外的操作，由 Tapdata 自动创建一个数据开发任务并运行，将该表实时同步至平台加工层。
+    </li>
+    </ul></li>
+    <p></p>
+    <li>在<b>平台加工层</b>，找到目标表，单击其右侧的<img src='/img/detail_icon.png'></img>图标，可查看该表关联的任务和表的基本信息，包含列信息、样本数据、Scheme 等信息。</li>
+    <img src='/img/view_curated_task.png'></img>
     </ol>
    </TabItem>
    <TabItem value="target" label="流转至数据目标和服务层">
     <ol>
-    <li>从<b>平台缓存层</b>或<b>平台缓存层</b>中，找到要同步的表，将其拖动至<b>数据目标和服务层</b>。</li>
-    <img src='https://deploy-preview-67--tapdata.netlify.app/img/analyze_customer.gif'></img>
+    <li>从<b>平台缓存层</b>或<b>平台缓存层</b>中，找到要同步的表，将其拖动至<b>数据目标和服务层</b>中的目标数据源中。</li>
+    <img src='/img/analyze_customer.gif'></img>
     <p></p>
-    <li>在弹出的对话框中，填写具有业务意义的任务名称并单击<b>确定</b>。</li>
+    <li>在弹出的对话框中，填写具有业务意义的任务名称，然后选择是否启动任务。
     <p></p>
-    <p>Tapdata 将自动创建一个数据开发任务，将您的源表实时同步到选定的目标库中，提供给最终业务。</p>
-    <li>在页面右侧，单击目标库卡片中生成的任务名称，进入任务配置页面。</li>
+    <ul>
+    <li><b>仅保存</b>：仅保存任务链路，此时，您可以单击目标库卡片中的任务名称，在跳转到的任务配置页面<a href="../../data-pipeline/data-development/process-node">添加处理节点</a>，实现更多复杂处理（如数据过滤、增删字段等），完成设置后单击页面右上角的<b>启动</b>。
+    </li>
+    <li><b>保存并运行</b>：无需执行额外的操作，由 Tapdata 自动创建一个数据开发任务并运行，将该表实时同步至平台加工层。
+    </li>
+    </ul>
+    </li>
     <p></p>
-    <li>在跳转到的任务配置页面，您可以直接单击右上角的<b>启动</b>，也可以基于业务需求加入相关处理节点以实现自定义 ETL 流程，具体操作，见<a href="https://docs.tapdata.io/enterprise/user-guide/data-pipeline/data-development/create-task">创建数据开发任务</a>。</li>
+    <p>完成设置后，Tapdata 将自动创建一个数据开发任务，将您的源表实时同步到选定的目标库中，提供给最终业务。您还可以单击目标库卡片中的任务名称，进入任务监控页面查看详细的运行状态，更多介绍，见<a href="../../data-pipeline/data-development/monitor-task">监控任务</a>。</p>
     </ol>
    </TabItem>
   </Tabs>

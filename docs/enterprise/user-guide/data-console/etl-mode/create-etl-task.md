@@ -20,13 +20,11 @@
 
    ![创建任务](../../../images/create_etl_task.gif)
 
-6. 在页面右侧，单击目标库卡片中生成的任务名称，进入任务配置页面。
+   - **仅保存**：仅保存任务链路，此时，您可以单击目标库卡片中的任务名称，对该任务链路进行个性化定制，例如在跳转的任务配置页面[添加处理节点](../../data-pipeline/data-development/process-node)，实现表结构调整（如增加字段）、合并表、构建宽表等需求，完成设置后单击页面右上角的**启动**。
 
-   ![编辑任务](../../../images/edit_etl_task.png)
+   - **保存并运行**：无需执行额外的操作，由 Tapdata Cloud 自动创建一个数据开发任务并运行，将您的源表实时同步到选定的目标库中。在本案例中，Tapdata Cloud 会将源 MySQL 中的 **customer** 表实时同步到 MongoDB 中。
 
-7. 在跳转到的任务配置页面，您可以直接单击右上角的**启动**，也可以基于业务需求加入相关处理节点以实现自定义 ETL 流程，具体操作，见[创建数据开发任务](../../data-pipeline/data-development/create-task.md)。
-
-   
+     您也可以单击目标库卡片中的任务名称，进入任务监控页面查看详细的运行状态，更多介绍，见[监控任务](../../data-pipeline/data-development/monitor-task.md)。
 
    
 

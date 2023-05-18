@@ -1,4 +1,4 @@
-# 步骤三：创建数据/开发任务
+# 步骤三：创建数据复制/开发任务
 
 通过 Tapdata，您不仅可以实现不同数据源之间的数据同步，还可以在数据流转的过程中完成数据的处理。您可以根据业务需求，选择创建下述不同的任务：
 
@@ -9,5 +9,6 @@
 
 ## 扩展阅读
 
+* [开启数据服务平台模式](../user-guide/data-console/daas-mode/enable-daas-mode.md)
 * [支持的数据源](../introduction/supported-databases.md)
 * [最佳实践文档](../best-practice/README.md)

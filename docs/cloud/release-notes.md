@@ -5,34 +5,26 @@ import TabItem from '@theme/TabItem';
 
 <Tabs className="unique-tabs">
   <TabItem value="2023" label="2023 年" default>
-    <h3>20230317</h3> 
+  <h3>20230504</h3> 
   <h4>新增功能</h4> 
-  <ul>
-   <li>新增任务进度里程碑展示，任务启动后可在页面底部查看当前任务的整体进度</li>
-   <li>新增 <a href="https://docs.tapdata.io/cloud/user-guide/connect-database/beta/connect-tidb">TiDB 作为源</a>，并支持通过轮询方式实现增量同步</li>
-   <li>支持在创建 Dummy 数据源连接时，可快速增加多个字段</li>
+   <ul>
+   <li>支持购买<a href="billing/purchase">全托管模式</a>的 Agent 实例，由 Tapdata Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，可实现一键交付使用，免去部署和运维精力，专注业务本身。</li>
+  </ul> 
+    <h3>20230421</h3> 
+  <h4>新增功能</h4> 
+   <ul>
+   <li>新增<a href="https://docs.tapdata.net/cloud/user-guide/data-console/">数据面板</a>，支持数据集成模式和数据服务平台模式，可满足不同的数据治理需求。</li>
+   <li>支持<a href="billing/billing-overview">计费功能</a>，可选购半托管实例，按照订阅 Agent 实例的规格和数量收费，满足业务对性能的需求。</li>
   </ul> 
   <h4>功能优化</h4> 
   <ul>
-   <li>测试连接逻辑优化，测试连接不再影响连接的修改时间</li>
-   <li>数据源分级调整，将数据源分级调整为 Alpha、Beta 和 GA</li>
-   <li>复制任务以表达式模式选择表时，支持重新加载模型</li>
-   <li>纯增量任务设置增量时间点逻辑优化，去除数据库时区选项</li>
-   <li>任务告警的默认值设置调整，避免因默认值太小导致的频繁告警</li>
-   <li>任务增量阶段重试逻辑优化。</li>
-   <li>Oracle 作为源时，新增一个节点设置，可以忽略 clob 类型的数据同步</li>
-   <li>增量时间点设置逻辑优化，禁止设置未来时间点</li>
-   <li>日志展示方式优化，默认直接展示 message 信息，展开可以查看更多内容</li>
-   <li>部署 Agent 时，如果 JDK 版本不符合要求，安装程序会自动下载对应版本的 JDK 给 Agent 使用</li>
+   <li> Agent 体验优化。</li>
   </ul> 
   <h4>问题修复</h4> 
   <ul>
-   <li>修复了相同 process_id 可以启动多个引擎的问题</li>
-   <li>修复了任务同步过程中停止任务，任务进度统计不正确的问题</li>
-   <li>修复了数据复制目标模型字段类型修改按钮异常的问题</li>
-   <li>修复了其它一些已知问题</li>
+   <li>修复了一些已知问题</li>
   </ul>
-    <h3>20230302</h3>
+  <h3>20230302</h3>
     <h4>新增功能</h4>
     <ul>
     <li>新增阿里云市场接入，可通过<a href="https://market.aliyun.com/products/56024006/cmgj00061912.html">阿里云市场</a>采购/试用 Tapdata Cloud。</li>

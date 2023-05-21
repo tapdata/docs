@@ -65,34 +65,46 @@ Tapdata 会自动基于选择源表来推演目标表结构等信息，此处可
 
 ## Tapdata 是否支持将表发布 API 服务？
 
-支持，您可以将加工后的表[发布为 API 服务](../user-guide/data-service/create-api-service.md)，以便其他应用程序可以轻松地访问和获取数据。
+支持（单表），您可以将加工后的表[发布为 API 服务](../user-guide/data-service/create-api-service.md)，以便其他应用程序可以轻松地访问和获取数据。
 
 
 
-## 如何在一个 API 接口上发布多表数据？
+## 如何基于多表的复杂查询发布为 API 服务？
 
-面对查询多表数据的场景中，业界常见的解决方案有物化视图和即席查询（Ad-hoc Query）：
+面对基于多表的复杂查询场景，业界常见的解决方案有物化视图和即席查询（Ad-hoc Query）：
 
 * **物化视图**： 物化视图是一种预先计算和存储的虚拟表，它在查询时提供了高性能的数据访问。通过将多表 Join 操作提前执行并将结果存储为物化视图，可以极大地提高查询性能和响应时间，该方案适用于数据变化频率较低的情况，因为每次数据更新时都需要更新物化视图。
 * **即席查询**： 即席查询是根据用户的需求即时执行的查询，没有提前计算和存储的过程，该方案适用于数据变化频率较高的场景，因为它可以实时获取最新的数据，但在多表 Join 操作时可能会导致较高的查询成本和较长的响应时间。
 
 
 
-而 Tapdata 结合了物化视图和即席查询的优点，以实时 Join 的方式来发布多表 API 服务，核心优势如下：
+在 Tapdata 中，您可以将多表的复杂查询固化为物化视图提供 API 服务，您可以基于查询的复杂程度和对实时性的要求选择下述方案：
 
-| 优势         | 说明                                                         |
-| ------------ | ------------------------------------------------------------ |
-| 提升查询性能 | 通过提前执行 Join 操作并存储为一个新的表，不仅简化了 SQL 语句，还极大地提升了数据查询速度。 |
-| 适应数据变化 | 通过添加连接节点的方式，实现了实时 Join 的效果，源表的数据变更可实时同步到目标表，无需手动定期更新目标表。 |
+**实时视图方案**
 
-具体方式为：配置一个数据开发任务，根据业务需求将多个表预先设置好 Join 关系，随后基于 Join 后的表发布 API 服务即可，配置示例如下：
+实时视图方案适用于 SQL 语句相对简单，对数据实时性要求高的场景，其核心思想上以多样化的[处理节点](../user-guide/data-pipeline/data-development/process-node)来实现 SQL 语句中的具体操作（如 Join），最终将处理后的数据实时同步到一个新表，最后基于该表创建并发布 API 服务。
 
-![Join 表](../images/join_table_for_api.png)
+具体步骤如下：
 
-如上图所示，我们预先将 **customer** 和 **company** 表执行连接（Join）操作（通过[连接节点](../user-guide/data-pipeline/data-development/process-node#join)实现），并将其结果存至 **join_result** 表，后续再基于该表[创建并发布 API 服务](../user-guide/data-service/create-api-service.md)。
+1. [创建数据开发任务](../user-guide/data-pipeline/data-development/create-task)。
+2. 将 SQL 语句中的具体操作以处理节点来替代。如下图所示，我们预先将 **customer** 和 **company** 表执行连接（Join）操作（通过[连接节点](../user-guide/data-pipeline/data-development/process-node#join)实现），并将其结果存至 **join_result** 表。![Join 表](../images/join_table_for_api.png)
+3. 启动任务实现数据的实时同步。
+4. 基于新表（join_result）[创建并发布 API 服务](../user-guide/data-service/create-api-service.md)。
 
-:::tip
 
-在面对更为复杂的查询或 Join 操作时，您还可以在配置开发任务时，在源节点中配置全量自定义查询，自由定义全量同步阶段需要执行的 SQL 查询语句（不对增量阶段生效），随后选择一个弱 Scheme 类的数据源（如 MongoDB/Kafka）作为目标，最后基于目标表创建并发布 API 服务。
 
-:::
+**跑批视图方案**
+
+面对非常复杂的 SQL 语句（例如 SQL 嵌套、复杂 Join 等），可直接将 SQL 语句在全量阶段执行，将查询结果同步至一个新表，最后基于该表创建并发布 API 服务。该方案适用于 SQL 复杂性高，但对实时性要求不高的场景。
+
+具体步骤如下：
+
+1. [创建数据开发任务](../user-guide/data-pipeline/data-development/create-task)。
+2. 在画布中添加源和目标节点。
+   :::tip
+   目标节点需为弱 Scheme 类的数据源，例如如 MongoDB 或 Kafka。
+   :::
+3. 在源节点设置阶段，打开全量自定义查询开关，添加全量数据同步阶段需要执行的 SQL 查询语句（不对增量阶段生效）。
+   ![query_table_for_api](../images/query_table_for_api.png)
+4. 完成目标节点的设置后，单击页面右上角的设置，将同步类型设置为**全量**，随后基于对实时性的要求设置定期调度的策略。
+5. 启动任务，等待任务运行完毕后再基于新表（join_result）[创建并发布 API 服务](../user-guide/data-service/create-api-service.md)。

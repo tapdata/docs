@@ -239,7 +239,7 @@ SELECT birthdate FROM customer_new_time WHERE id="00027f47eef64717aa8ffb8115f1e6
 
 
 
-## 连接
+## <span id="join">连接（Join）</span>
 
 连接节点主要用来进行表与表之间的连接设置，支持左连接，选择相应字段进行关联即可进行两个表的合并
 

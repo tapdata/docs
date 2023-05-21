@@ -107,4 +107,4 @@ Tapdata 会自动基于选择源表来推演目标表结构等信息，此处可
 3. 在源节点设置阶段，打开全量自定义查询开关，添加全量数据同步阶段需要执行的 SQL 查询语句（不对增量阶段生效）。
    ![query_table_for_api](../images/query_table_for_api.png)
 4. 完成目标节点的设置后，单击页面右上角的设置，将同步类型设置为**全量**，随后基于对实时性的要求设置定期调度的策略。
-5. 启动任务，等待任务运行完毕后再基于新表（join_result）[创建并发布 API 服务](../user-guide/data-service/create-api-service.md)。
+5. 启动任务，等待任务运行完毕后再基于新表[创建并发布 API 服务](../user-guide/data-service/create-api-service.md)。

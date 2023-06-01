@@ -132,7 +132,7 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
    </TabItem>
   </Tabs>
 
-* **database_name.table_name**：要授予权限的数据库名称。
+* **database_name**：要授予权限的数据库名称。
 * **username**：用户名。
 
 

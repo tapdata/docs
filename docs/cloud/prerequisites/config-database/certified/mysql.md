@@ -39,15 +39,17 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 2. 为刚创建的账号授予权限，简易示例如下，推荐基于业务需求设置更精细化的权限控制。
 
 <Tabs className="unique-tabs">
-    <TabItem value="onedatabase" label="授予指定库 SELECT 权限" default>
-    <pre>GRANT SELECT, SHOW VIEW, CREATE ROUTINE, LOCK TABLES ON database_name.table_name TO 'username' IDENTIFIED BY 'password';</pre>
+    <TabItem value="onedatabase" label="授予指定库权限" default>
+    <pre>GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';<br />
+GRANT SELECT ON database_name.* TO 'username' IDENTIFIED BY 'password';</pre>
    </TabItem>
-   <TabItem value="all" label="授予全局权限">
-    <pre>GRANT RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';</pre>
+   <TabItem value="all" label="授予所有库权限">
+    <pre>GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';<br />
+GRANT SELECT ON *.* TO 'username' IDENTIFIED BY 'password';</pre>
    </TabItem>
   </Tabs>
 
-* **database_name.table_name**：要授予权限的库和表，名称间用英文句号（.）分隔，例如 demodata.customer。
+* **database_name**：要授予权限的数据库名称。
 * **username**：用户名。
 * **password**：密码。
 
@@ -122,17 +124,16 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 2. 为刚创建的账号授予权限。
 
 <Tabs className="unique-tabs">
-    <TabItem value="onedatabase" label="授予指定库 SELECT 权限" default>
-    <pre>GRANT SELECT, SHOW VIEW, CREATE ROUTINE, LOCK TABLES ON database_name.table_name TO 'username' IDENTIFIED BY 'password';</pre>
+    <TabItem value="onedatabase" label="授予指定库权限" default>
+    <pre>GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP ON database_name.* TO 'username';</pre>
    </TabItem>
-   <TabItem value="all" label="授予全局权限">
-    <pre>GRANT RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';</pre>
+   <TabItem value="all" label="授予所有库权限">
+    <pre>GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP ON *.* TO 'username';</pre>
    </TabItem>
   </Tabs>
 
-* **database_name.table_name**：要授予权限的库和表，名称间用英文句号（.）分隔，例如 demodata.customer。
+* **database_name.table_name**：要授予权限的数据库名称。
 * **username**：用户名。
-* **password**：密码。
 
 
 

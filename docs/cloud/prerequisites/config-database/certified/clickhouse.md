@@ -37,13 +37,13 @@ ClickHouse v21.x
    CREATE USER tapdata HOST ANY IDENTIFIED WITH sha256_password BY 'Tap@123456';
    ```
 
-3. 为刚创建的账号授予权限，简易示例如下，推荐基于业务需求设置更精细化的权限控制。更多介绍，见[授权语法](https://clickhouse.com/docs/zh/sql-reference/statements/grant/)。
+3. 为刚创建的账号授予权限，简易示例如下，您还可以基于业务需求设置更精细化的权限控制。更多介绍，见[授权语法](https://clickhouse.com/docs/zh/sql-reference/statements/grant/)。
 
    ```sql
-   GRANT ALL ON database_name.table_name TO 'username' WITH GRANT OPTION;
+   GRANT SELECT, INSERT, CREATE TABLE, ALTER TABLE, ALTER UPDATE, DROP TABLE, TRUNCATE ON database_name.* TO username
    ```
 
-   * **database_name.table_name**：要授予权限的库和表，名称间用英文句号（.）分隔，例如 demodata.customer。
+   * **database_name**：要授予权限的数据库名称。
    * **usernmae**：用户名。
 
 ## 下一步

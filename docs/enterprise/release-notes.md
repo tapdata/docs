@@ -7,7 +7,7 @@
 ### 新增功能
 
 - 数据面板功能新增支持表级溯源能力，可通过表详情查看数据血缘关系
-- [配置数据复制任务](user-guide/data-pipeline/copy-data/create-task#310-table-model)时，支持在处理节点中查看表模型
+- [配置数据复制任务](./user-guide/data-pipeline/copy-data/create-task#310-table-model)时，支持在处理节点中查看表模型
 - 支持基于 Doris 数据源[发布 API 数据服务](user-guide/data-service/create-api-service.md)
 - [集群管理](user-guide/manage-system/manage-cluster.md)页面，支持下载线程资源监控和数据源使用情况数据
 

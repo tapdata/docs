@@ -14,7 +14,7 @@
 ### 功能优化
 
 - 共享挖掘任务管理优化，支持[启停单个表的挖掘任务](user-guide/data-pipeline/share-mining#release310-share-mining)
-- [[共享缓存](user-guide/data-pipeline/share-cache)、[函数](user-guide/data-pipeline/manage-function)、[API 数据服务](user-guide/data-service/create-api-service)支持导入导出功能
+- [共享缓存](user-guide/data-pipeline/share-cache)、[函数](user-guide/data-pipeline/manage-function)、[API 数据服务](user-guide/data-service/create-api-service)支持导入导出功能
 - [数据校验](user-guide/data-pipeline/verify-data)支持配置告警信息的规则和通知方式
 - [数据校验](user-guide/data-pipeline/verify-data)自动填充表逻辑优化
 - 前端增加[标准 JS](appendix/standard-js) 和[增强 JS](appendix/enhanced-js) 的功能区分说明

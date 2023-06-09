@@ -18,9 +18,17 @@ import TabItem from '@theme/TabItem';
 
 <Tabs className="unique-tabs">
     <TabItem value="5" label="① 切换视图" default>
-   <p>单击<img src='/img/switch_icon.png'></img>图标，以目录结构的形式展现数据源信息（再次单击可切换回数据服务平台视图），选中具体的表，可查看该表的基本信息和关联的任务信息，包含表大小、行数、列信息、样本数据、Scheme（如主键/外键) 等。</p>
+   <p>单击<img src='/img/switch_icon.png'></img>图标，以目录结构的形式展现数据源信息（再次单击可切换回 Console 视图）。</p>
+   <p>如果选中具体的表，您还可以在页面右侧看到表详情信息，各标签页介绍如下：</p>
    <img src='/img/data_category_view.png'></img>
-   <p></p>
+   <ul>
+   <li><b>概览</b>：可查看表的基本信息，例如表大小、行数、列信息、样本数据等。</li>
+   <li><b>Schema</b>：可查看表的列详情，如列类型、主键、外键、默认值等。</li>
+   <li><b>任务</b>：可查看该表相关的任务及其状态，您也可以在该页签中创建新的任务。</li>
+   <li><b>血缘</b>：以图的形式直观展现数据血缘关系，帮助您更好地管控数据质量，单击任务节点可直接跳转至相关任务的监控页面。
+   <img src='/img/data_lineage.png'></img>
+   </li>
+  </ul> 
    </TabItem>
     <TabItem value="1" label="② 添加数据源">
     <p>单击<img src='/img/add_icon.png'></img>图标，在弹出的对话框，我们可以添加数据源，选中某个数据源后将跳转至连接配置页面，具体配置方法，见<a href="../../connect-database/">连接数据源</a>。</p>

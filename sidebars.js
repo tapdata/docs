@@ -96,6 +96,7 @@ const sidebars = {
                        link: {type: 'doc', id: 'cloud/prerequisites/config-database/beta/README'},
                        items: [
                              'cloud/prerequisites/config-database/beta/apache-doris',
+                             'cloud/prerequisites/config-database/beta/csv-and-excel',                             
                              'cloud/prerequisites/config-database/beta/larktask',
                              'cloud/prerequisites/config-database/beta/mariadb',
                              'cloud/prerequisites/config-database/beta/tidb',
@@ -109,6 +110,7 @@ const sidebars = {
                             'cloud/prerequisites/config-database/alpha/aliyun-rds-for-mysql',
                              'cloud/prerequisites/config-database/alpha/activemq',
                              'cloud/prerequisites/config-database/alpha/elasticsearch',
+                             'cloud/prerequisites/config-database/alpha/json-and-xml',
                              'cloud/prerequisites/config-database/alpha/opengauss',
                              'cloud/prerequisites/config-database/alpha/rabbitmq',
                              'cloud/prerequisites/config-database/alpha/rocketmq',
@@ -151,7 +153,9 @@ const sidebars = {
                      link: {type: 'doc', id: 'cloud/user-guide/connect-database/beta/README'},
                      items:[
                             'cloud/user-guide/connect-database/beta/connect-bigquery',
+                            'cloud/user-guide/connect-database/beta/connect-csv',
                             'cloud/user-guide/connect-database/beta/connect-dummydb',
+                            'cloud/user-guide/connect-database/beta/connect-excel',
                             'cloud/user-guide/connect-database/beta/connect-larktask',
                             'cloud/user-guide/connect-database/beta/connect-mariadb',
                             'cloud/user-guide/connect-database/beta/connect-tidb',
@@ -167,9 +171,11 @@ const sidebars = {
                             'cloud/user-guide/connect-database/alpha/connect-aliyun-rds-mysql',
                             'cloud/user-guide/connect-database/alpha/connect-elasticsearch',
                             'cloud/user-guide/connect-database/alpha/connect-hazelcast-cloud',
+                            'cloud/user-guide/connect-database/alpha/connect-json',
                             'cloud/user-guide/connect-database/alpha/connect-mq',
                             'cloud/user-guide/connect-database/alpha/connect-opengauss',
                             'cloud/user-guide/connect-database/alpha/connect-tablestore',
+                            'cloud/user-guide/connect-database/alpha/connect-xml',
                            ]
                     }, 
               ]
@@ -378,13 +384,14 @@ const sidebars = {
              link: {type: 'doc', id: 'enterprise/prerequisites/beta/README'},
              items: [
                      'enterprise/prerequisites/beta/apache-doris',
+                     'enterprise/prerequisites/beta/csv-and-excel',
                      'enterprise/prerequisites/beta/larktask', 
                      'enterprise/prerequisites/beta/lark-im',
                      'enterprise/prerequisites/beta/mariadb', 
                      'enterprise/prerequisites/beta/mongodb-atlas', 
                      'enterprise/prerequisites/beta/selectdb',
                      'enterprise/prerequisites/beta/tidb',
-                     'enterprise/prerequisites/beta/zoho-crm',
+                     'enterprise/prerequisites/beta/zoho-crm',                     
              ]
             },                        
             {
@@ -394,6 +401,7 @@ const sidebars = {
              items: [
                      'enterprise/prerequisites/alpha/activemq',                     
                      'enterprise/prerequisites/alpha/elasticsearch',
+                     'enterprise/prerequisites/alpha/json-and-xml',
                      'enterprise/prerequisites/alpha/opengauss',                     
                      'enterprise/prerequisites/alpha/rabbitmq',
                      'enterprise/prerequisites/alpha/rocketmq',                     
@@ -432,6 +440,7 @@ const sidebars = {
                      link: {type: 'doc', id: 'enterprise/user-guide/connect-database/beta/README'},
                      items:[
                             'enterprise/user-guide/connect-database/beta/custom-connection',
+                            'enterprise/user-guide/connect-database/beta/connect-csv',
                             'enterprise/user-guide/connect-database/beta/connect-db2',
                             'enterprise/user-guide/connect-database/beta/connect-doris',
                             'enterprise/user-guide/connect-database/beta/connect-dummy',
@@ -458,10 +467,12 @@ const sidebars = {
                             'enterprise/user-guide/connect-database/alpha/connect-elasticsearch',
                             'enterprise/user-guide/connect-database/alpha/connect-gbase-8a',
                             'enterprise/user-guide/connect-database/alpha/connect-gbase-8s', 
+                            'enterprise/user-guide/connect-database/alpha/connect-json',
                             'enterprise/user-guide/connect-database/alpha/connect-oceanbase',
                             'enterprise/user-guide/connect-database/alpha/connect-opengauss',
                             'enterprise/user-guide/connect-database/alpha/connect-rabbitmq',
                             'enterprise/user-guide/connect-database/alpha/connect-rocketmq',
+                            'enterprise/user-guide/connect-database/alpha/connect-xml',
                            ]
                     },
                     ]

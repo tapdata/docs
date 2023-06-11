@@ -13,6 +13,7 @@ Excel 是使用广泛的数据统计和数据分析软件，Tapdata Cloud 支持
 - Excel 数据源仅适用于数据开发任务，暂不支持在数据复制任务中引用。
 - 为避免超大 Excel 文件占满机器内存，推荐 Excel 文件不超过 512 MB。
 - Tapdata Cloud 默认每隔 1 分钟检测 Excel 文件是否发生变更（如新增/修改文件），如发生变更则将涉及的文件全量新增后更新条件字段以完成修改，暂不支持同步删除文件或数据。
+- Excel 文件中可用的数据类型为 BOOLEAN、DATE、DOUBLE、STRING、TEXT。
 
 ## 操作步骤
 

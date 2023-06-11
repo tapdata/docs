@@ -1,6 +1,6 @@
-# CSV/EXCEL
+# CSV/Excel
 
-Tapdata Cloud 支持读取 Local（本地）、FTP、SFTP、SMB、S3FS 或 OSS 上的文件，支持的文件类型包括 CSV、EXCEL、[JSON 和 XML](../alpha/json-and-xml.md)，满足多样化的数据流转需求。
+Tapdata Cloud 支持读取 Local（本地）、FTP、SFTP、SMB、S3FS 或 OSS 上的文件，支持的文件类型包括 CSV、Excel、[JSON 和 XML](../alpha/json-and-xml.md)，满足多样化的数据流转需求。
 
 本文介绍在创建 CSV 或 EXCEL 数据源连接前所需的准备工作，请根据 CSV/EXCEL 文件的存放位置选择阅读。
 
@@ -152,5 +152,4 @@ Amazon S3 是一种面向互联网的存储服务。您可以通过 Amazon S3 �
    3. 单击左侧的概览标签页，下翻至访问端口即可获取外网访问地址对应的 Endpoint。
    
       ![获取 Endpoint](../../../images/obtain_oss_endpoint.png)
-
 

@@ -1,6 +1,6 @@
-# CSV/EXCEL
+# CSV/Excel
 
-Tapdata 支持读取 Local（本地）、FTP、SFTP、SMB、S3FS 或 OSS 上的文件，支持的文件类型包括 CSV、EXCEL、[JSON 和 XML](../alpha/json-and-xml.md)，满足多样化的数据流转需求。
+Tapdata 支持读取 Local（本地）、FTP、SFTP、SMB、S3FS 或 OSS 上的文件，支持的文件类型包括 CSV、Excel、[JSON 和 XML](../alpha/json-and-xml.md)，满足多样化的数据流转需求。
 
 本文介绍在创建 CSV 或 EXCEL 数据源连接前所需的准备工作，请根据 CSV/EXCEL 文件的存放位置选择阅读。
 

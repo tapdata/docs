@@ -2,6 +2,47 @@
 
 本文介绍 V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)。
 
+## V3.1
+
+### 新增功能
+
+- [数据面板功能](user-guide/data-console/etl-mode)新增支持表级溯源能力，可通过表详情查看数据血缘关系
+- [配置数据复制任务](./user-guide/data-pipeline/copy-data/create-task#310-table-model)时，支持在处理节点中查看表模型
+- 支持基于 Doris 数据源[发布 API 数据服务](user-guide/data-service/create-api-service.md)
+- [集群管理](user-guide/manage-system/manage-cluster.md)页面，支持下载线程资源监控和数据源使用情况数据
+
+### 功能优化
+
+- 共享挖掘任务管理优化，支持[启停单个表的挖掘任务](user-guide/data-pipeline/share-mining#release310-share-mining)
+- [共享缓存](user-guide/data-pipeline/share-cache)、[函数](user-guide/data-pipeline/manage-function)、[API 数据服务](user-guide/data-service/create-api-service)支持导入导出功能
+- [数据校验](user-guide/data-pipeline/verify-data)支持配置告警信息的规则和通知方式
+- [数据校验](user-guide/data-pipeline/verify-data)自动填充表逻辑优化
+- 前端增加[标准 JS](appendix/standard-js) 和[增强 JS](appendix/enhanced-js) 的功能区分说明
+- JS 处理器标准化、JS 用法及试运行重构
+- 在所有支持写 JS 脚本的处理节点中，当输入 `record.` 时可自动提示当前模型的字段名
+- 重置时清除外存数据导致超时问题优化
+- 支持修改主键
+- 支持通过脚本统一设置任务增量同步间隔默认时间
+- License 优化，通过绑定 IP 地址避免硬件信息变化导致 License 失效
+- Excel 数据源使用提示优化，增加提示信息
+- 性能优化
+  - **JS 节点**处理性能优化
+  - **字段处理**节点处理性能优化
+  - **主从合并**节点性能优化
+  - **字段编辑**节点在多字段场景下的前端展示优化
+- 数据类型边界提示及处理逻辑优化
+- 连接管理的筛选栏，数据库类型下拉列表支持搜索和清除选中
+- 错误码弹窗，错误堆栈增加一键复制的功能
+
+### 问题修复
+
+- 修复针对轮询源的增量，没有增量时间点指标的问题
+- 修复模型变化后，会强制删除更新字段的问题
+- 修复类型修改、 增删字段、字段改名的节点配置，在加载模型的时候会被重置的问题
+- 修复打开全量自定义开关时，目标是 MongoDB 出现报错的问题
+
+
+
 ## V3.0
 
 ### 新增功能

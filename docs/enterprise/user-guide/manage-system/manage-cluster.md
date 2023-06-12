@@ -14,12 +14,18 @@
 
    ![集群管理](../../images/manage_cluster_1.png)
 
-3. 在此页面，单击![](../../images/cluster_setting_icon.png)可调整服务器名称与切换网卡展示信息。
+3. 在此页面，根据业务需求选择下述操作。
 
-   :::tip
+   * 单击![](../../images/process_monitor_icon.png)可下载当前引擎的线程资源使用详情，格式为 JSON。
 
-   切换网卡展示信息仅改变集群管理页服务器下IP的展示，不会影响功能运行。
+   * 单击![](../../images/data_source_monitor_icon.png)可下载当前引擎的数据源使用详情，格式为 JSON。
 
-   :::
+   * 单击![](../../images/cluster_setting_icon.png)可调整服务器名称与切换网卡展示信息。
 
-4. 在此页面，单击![](../../images/cluster_add_icon.png)可增加自定义的服务监控。
+     :::tip
+
+     切换网卡展示信息仅改变集群管理页服务器下 IP 地址的展示，不会影响功能运行。
+
+     :::
+
+   * 单击![](../../images/cluster_add_icon.png)可增加自定义的服务监控。

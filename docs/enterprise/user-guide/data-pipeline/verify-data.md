@@ -17,12 +17,12 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
     <TabItem value="windows" label="对数据复制/开发任务执行校验" default>
     <p></p>
-      <ul><img src='https://docs.tapdata.io/img/check_data_settings.png'></img>
+      <ul><img src='/img/check_data_settings.png'></img>
           <ul>
           <li>  <b>校验任务模式</b>：选择<b>为特定的 PIPELINE 创建的校验任务</b>。</li>
           <li>  <b>选择任务</b>：选择待校验的数据复制/数据开发任务。</li>
           <li>  <b>结果输出</b>：选择<b>输出所有不一致的数据</b>或<b>只输出来源表不一致的数据</b>。</li>
-          <li>  <b>校验告警</b>：选择当任务运行出错或校验结果不一致时，告警信息的通知方式。</li>
+          <li>  <b>校验任务告警</b>：选择当任务运行出错或校验结果不一致时，告警信息的规则配置和通知方式。</li>
           <li>  <b>校验类型</b>：目前支持下述三种校验方式。</li>
           <ul><p>如在同步过程中修改了表的字段名，那么执行<b>表全字段值校验</b>或<b>关联字段值校验</b>时，可能因字段名不匹配而导致校验失败。</p>
                   <li><b>快速 count 校验</b>：对源表和目标表的行数进行校验，不会展示具体的差异内容，速度极快。</li>
@@ -36,11 +36,11 @@ import TabItem from '@theme/TabItem';
         </ul>
    </TabItem>
    <TabItem value="mac" label="自定义待校验的源和目标表">
-       <ul><img src='https://docs.tapdata.io/img/check_data_settings_2.png'></img>
+       <ul><img src='/img/check_data_settings_2.png'></img>
           <ul>
           <li>  <b>校验任务模式</b>：选择<b>指定任意表的校验任务</b>。</li>
           <li>  <b>结果输出</b>：选择<b>输出所有不一致的数据</b>或<b>只输出来源表不一致的数据</b>。</li>
-          <li>  <b>校验告警</b>：选择当任务运行出错或校验结果不一致时，告警信息的通知方式。</li>
+          <li>  <b>校验任务告警</b>：选择当任务运行出错或校验结果不一致时，告警信息的规则配置和通知方式。</li>
           <li>  <b>校验类型</b>：目前支持下述三种校验方式。</li>
           <ul>
                   <li><b>快速 count 校验</b>：对源表和目标表的行数进行校验，不会展示具体的差异内容，速度极快。</li>

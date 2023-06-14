@@ -577,6 +577,7 @@ const sidebars = {
             'enterprise/best-practice/heart-beat-task',
             'enterprise/best-practice/alert-via-qqmail',
             'enterprise/best-practice/full-breakpoint-resumption',
+            'enterprise/best-practice/extract-array',
         ]
     },
   'enterprise/release-notes',

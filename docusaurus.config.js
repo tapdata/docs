@@ -139,6 +139,10 @@ const config = {
           },
         ],
       },
+      // Hotjar for Feedback
+        hotjar: {
+        applicationId: '3533951',
+    },
       footer: {
         style: 'dark',
         /* links: [
@@ -187,10 +191,6 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        // Hotjar for Feedback
-        hotjar: {
-        applicationId: '3533951',
-    },
       },
     }),
 };

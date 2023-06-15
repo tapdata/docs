@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
    <p>当您将文件存放在 Tapdata 所属的设备上，可将其作为数据来源，准备工作如下：</p> 
   <ol>
    <li>登录至 Tapdata 所属设备。</li>
-   <li>为便于管理，新建一个文件夹用来存放文件，例如： <code>/root/files</code>。</li>
+   <li>为便于管理，新建一个文件夹用来存放文件，以 root 用户为例，我们新建一个文件夹为： <code>/root/files</code>。</li>
    <li>将 CSV/EXCEL 文件存放至该文件夹。</li>
   </ol> 
   <p>后续在配置数据源时，您只需提供<strong>文件存放路径</strong>即可。</p>
@@ -152,6 +152,15 @@ Amazon S3 是一种面向互联网的存储服务。您可以通过 Amazon S3 �
    3. 单击左侧的概览标签页，下翻至访问端口即可获取外网访问地址对应的 Endpoint。
    
       ![获取 Endpoint](../../images/obtain_oss_endpoint.png)
+
+
+
+## 下一步
+
+至此，已完成相关准备工作，接下来，您可以：
+
+* [连接 CSV](../../user-guide/connect-database/beta/connect-csv.md) 
+* [连接 Excel](../../user-guide/connect-database/beta/connect-excel.md)
 
 
 

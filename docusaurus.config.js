@@ -83,9 +83,10 @@ const config = {
     ],
   ],
 
-// An Image Zoom plugin for Docusaurus 2
+// An Image Zoom plugin for Docusaurus 2, and integrate hotjar for feedback
   plugins: [
-    'plugin-image-zoom'
+    'plugin-image-zoom',
+    'docusaurus-plugin-hotjar'
   ],
 
   themeConfig:
@@ -138,6 +139,10 @@ const config = {
           },
         ],
       },
+      // Hotjar for Feedback
+        hotjar: {
+        applicationId: '3533951',
+    },
       footer: {
         style: 'dark',
         /* links: [

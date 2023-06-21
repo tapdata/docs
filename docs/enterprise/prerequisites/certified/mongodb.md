@@ -23,12 +23,10 @@ Tapdata 基于 MongoDB 的 Change Stream 实现，此特性在 MongoDB 4.0 开�
 3. 根据权限管控需求选择下述步骤，创建用于数据同步/开发任务的账号并授予权限。
 
    :::tip
-
    由于分片服务器不会向 config 数据库获取用户权限，因此，当源库为分片集群架构时，您需要在每个分片的主节点上创建相应的用户并授予权限。
-
    :::
 
-   * 授予指定库（以 demodata 库为例）的读权限
+   * 授予指定库（以 **demodata** 库为例）的读权限
 
      ```bash
      use admin
@@ -59,7 +57,7 @@ Tapdata 基于 MongoDB 的 Change Stream 实现，此特性在 MongoDB 4.0 开�
             { role: "clusterMonitor", db: "admin" },
       ]
        }
-  )
+      )
      ```
 
 4. 在设置 MongoDB URI 时，推荐将写关注级别设置为大多数，即 `w=majority`，否则可能因 Primary 节点异常宕机导致的数据丢失文档。

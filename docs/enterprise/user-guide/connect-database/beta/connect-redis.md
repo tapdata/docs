@@ -41,4 +41,4 @@ Redis 2.8 ~ 6.0
 
 ## 相关文档
 
-[Redis 数据开发任务](../../../best-practice/mysql-to-redis.md)
+[从 MySQL 同步至 Redis](../../../best-practice/mysql-to-redis.md)

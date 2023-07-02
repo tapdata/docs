@@ -166,4 +166,4 @@ Amazon S3 是一种面向互联网的存储服务。您可以通过 Amazon S3 �
 
 ## 相关文档
 
-[Excel 数据开发任务](../../best-practice/excel-to-mysql.md)
+[采集 Excel 数据至 MySQL](../../best-practice/excel-to-mysql.md)

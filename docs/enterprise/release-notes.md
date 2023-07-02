@@ -13,8 +13,8 @@
 
 ### 功能优化
 
-- 共享挖掘任务管理优化，支持[启停单个表的挖掘任务](user-guide/data-pipeline/share-mining#release310-share-mining)
-- [共享缓存](user-guide/data-pipeline/share-cache)、[函数](user-guide/data-pipeline/manage-function)、[API 数据服务](user-guide/data-service/create-api-service)支持导入导出功能
+- 共享挖掘任务管理优化，支持[启停单个表的挖掘任务](user-guide/advanced-settings/share-mining.md#release310-share-mining)
+- [共享缓存](user-guide/advanced-settings/share-cache.md)、[函数](user-guide/advanced-settings/manage-function.md)、[API 数据服务](user-guide/data-service/create-api-service)支持导入导出功能
 - [数据校验](user-guide/data-pipeline/verify-data)支持配置告警信息的规则和通知方式
 - [数据校验](user-guide/data-pipeline/verify-data)自动填充表逻辑优化
 - 前端增加[标准 JS](appendix/standard-js) 和[增强 JS](appendix/enhanced-js) 的功能区分说明
@@ -54,7 +54,7 @@
 
 ### 功能优化
 
-- [共享缓存功能](user-guide/data-pipeline/share-mining.md)优化，提供可观测页面，便于观察挖掘进度和故障排查。
+- [共享缓存功能](user-guide/advanced-settings/share-mining.md)优化，提供可观测页面，便于观察挖掘进度和故障排查。
 - [全量自定义查询功能](user-guide/data-pipeline/data-development/create-task#full-sql-query)，放开仅能使用 JS 节点的限制，也支持添加其它处理节点，节点模型直接使用源表的模型。
 - 增删字段、类型修改、字段改名等字段[处理节点](user-guide/data-pipeline/data-development/process-node.md)，支持字段搜索功能。
 - 连接配置中 Schema 加载频率配置文案调整。

@@ -514,12 +514,13 @@ const sidebars = {
                      link: {type: 'doc', id: 'enterprise/user-guide/data-pipeline/copy-data/README'},
                      items:[
                             'enterprise/user-guide/data-pipeline/copy-data/create-task',
+                            'enterprise/user-guide/data-pipeline/copy-data/process-node',
                             'enterprise/user-guide/data-pipeline/copy-data/monitor-task',
                            ]
                     },
                     {
                      type: 'category',
-                     label: '数据开发',
+                     label: '数据转换',
                      link: {type: 'doc', id: 'enterprise/user-guide/data-pipeline/data-development/README'},
                      items:[
                             'enterprise/user-guide/data-pipeline/data-development/create-task',
@@ -529,15 +530,21 @@ const sidebars = {
                            ]
                     },
                     'enterprise/user-guide/data-pipeline/verify-data',
-                    'enterprise/user-guide/data-pipeline/manage-function',
-                    'enterprise/user-guide/data-pipeline/custom-node',
-                    'enterprise/user-guide/data-pipeline/share-mining',
-                    'enterprise/user-guide/data-pipeline/share-cache',
                     'enterprise/user-guide/data-pipeline/pre-check',
                     'enterprise/user-guide/data-pipeline/error-code-solution',
                     ]
              },
-             'enterprise/user-guide/data-discovery',
+             {
+              type: 'category',
+              label: '高级设置',
+              link: {type: 'doc', id: 'enterprise/user-guide/advanced-settings/README'},
+              items:[
+                     'enterprise/user-guide/advanced-settings/share-cache',
+                     'enterprise/user-guide/advanced-settings/manage-function',
+                     'enterprise/user-guide/advanced-settings/custom-node',
+                     'enterprise/user-guide/advanced-settings/share-mining',
+                    ]
+             },
              {
               type: 'category',
               label: '数据服务',
@@ -558,10 +565,10 @@ const sidebars = {
               label: '系统管理',
               link: {type: 'doc', id: 'enterprise/user-guide/manage-system/README'},
               items:[
+                     'enterprise/user-guide/manage-system/manage-role',
+                     'enterprise/user-guide/manage-system/manage-user',
                      'enterprise/user-guide/manage-system/manage-cluster',
                      'enterprise/user-guide/manage-system/manage-external-storage',
-                     'enterprise/user-guide/manage-system/manage-user',
-                     'enterprise/user-guide/manage-system/manage-role',
                     ]
              },
              {

@@ -4,6 +4,25 @@
 
 使用方法及场景介绍，见 [JS 处理节点](../user-guide/data-pipeline/data-development/process-node#js-process)。
 
+## context
+
+### global
+
+说明：节点维度下的一个任务周期内的 hashMap 容器，可在 js 节点上自定义响应的内容。
+
+示例：
+
+```js
+let myVariable = context.global["myVariable"];
+if ("undifine" == myVariable || null == myVariable){
+  myVariable = context.global["myVariable"] = {
+      "key":1,
+      "status":false
+   }
+}
+myVariable.key++;
+```
+
 ## DateUtil
 
 ### parse
@@ -124,6 +143,21 @@ var oidStr = UUIDGenerator.objectIdStr();
 var map = new HashMap();
 map.put("name", "test");
 map.remove("name");
+```
+
+## LinkedHashMap
+
+说明：JAVA 内置有序 map 容器
+
+示例：
+
+```js
+var map = new LinkedHashMap();//创建
+map.put("key", "This is a LinkedHashMap")://向容器中加入key-value键值对
+let value = map.get("key");//根据key获取value
+let isEmpty = map.isEmpty();//判断容器是否为空
+let size = map.size();//获取容器中键值对的数目
+map.remove("key");//移出容器中指定键的键值对
 ```
 
 ## ArrayList

@@ -446,6 +446,7 @@ const sidebars = {
                             'enterprise/user-guide/connect-database/beta/connect-dummy',
                             'enterprise/user-guide/connect-database/beta/connect-excel',
                             'enterprise/user-guide/connect-database/beta/connect-github',
+                            'enterprise/user-guide/connect-database/beta/connetc-http-receiver',
                             'enterprise/user-guide/connect-database/beta/connect-larktask',
                             'enterprise/user-guide/connect-database/beta/connect-lark-im',
                             'enterprise/user-guide/connect-database/beta/connect-mariadb',

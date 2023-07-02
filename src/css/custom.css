@@ -61,7 +61,7 @@ pre {
     word-wrap: break-word;
 }*/
 
-/* For multi-tabs background color */
+/* For multi-tabs background color
 .unique-tabs .tabs__item {
   line-height: 16px;
   margin-right: 8px;
@@ -72,4 +72,9 @@ pre {
   color: #fff;
   border-radius: var(--ifm-global-radius);
   background-color: var(--ifm-tabs-color-active);
+} */
+
+/* Add grey line to the multi-tabs bottom */
+.tabs {
+  border-bottom: 1px solid grey;
 }

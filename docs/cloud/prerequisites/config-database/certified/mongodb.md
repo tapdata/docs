@@ -23,63 +23,41 @@ Tapdata Cloud 基于 MongoDB 的 Change Stream 实现，此特性在 MongoDB 4.0
 3. 根据权限管控需求选择下述步骤，创建用于数据同步/开发任务的账号并授予权限。
 
    :::tip
-
    由于分片服务器不会向 config 数据库获取用户权限，因此，当源库为分片集群架构时，您需要在每个分片的主节点上创建相应的用户并授予权限。
-
    :::
 
-   * 授予指定库（以 demodata 库为例）的读权限
+   * 授予指定库（以 **demodata** 库为例）的读权限
 
      ```bash
      use admin
-     db.createUser({
-         "user" : "tapdata",
-         "pwd"  : "my_password",
-         "roles" : [
-             {
-                 "role" : "clusterMonitor",
-                 "db" : "admin"
-             },
-             {
-                 "role" : "read",
-                 "db" : "demodata"
-             }，
-             {
-                 "role" : "read",
-                 "db" : "local"
-             },
-             {
-                 "role" : "read",
-                 "db" : "config"
-             }
+     db.createUser(
+       {
+         user: "tapdata",
+         pwd: "my_password",
+         roles: [
+            { role: "read", db: "demodata" },
+            { role: "read", db: "local" },
+            { role: "read", db: "config" },
+            { role: "clusterMonitor", db: "admin" },
          ]
-     }
+       }
+     )
      ```
-
-     :::tip
-
-     仅当 MongoDB 为 3.2 版本时，需要授予 local 数据库的读权限。
-
-     :::
-
+     
    * 授予所有库的读权限。
-
+   
      ```bash
      use admin
-      db.createUser({
-         "user" : "tapdata",
-         "pwd"  : "my_password",
-         "roles" : [
-             {
-                 "role" : "clusterMonitor",
-                 "db" : "admin"
-             },
-             {
-                 "role" : "readAnyDatabase",
-                 "db" : "admin"
-             }
-         ]
-     }
+     db.createUser(
+       {
+         user: "tapdata",
+         pwd: "my_password",
+         roles: [
+         { role: "readAnyDatabase", db: "admin" },
+            { role: "clusterMonitor", db: "admin" },
+      ]
+       }
+      )
      ```
 
 4. 在设置 MongoDB URI 时，推荐将写关注级别设置为大多数，即 `w=majority`，否则可能因 Primary 节点异常宕机导致的数据丢失文档。
@@ -93,28 +71,20 @@ Tapdata Cloud 基于 MongoDB 的 Change Stream 实现，此特性在 MongoDB 4.0
 
 ### 作为目标库
 
-授予指定库（以 demodata 库为例）的写权限，并授予 **clusterMonitor** 角色以供数据验证使用，示例如下：
+授予指定库（以 **demodata** 库为例）的写权限，并授予 **clusterMonitor** 角色以供数据验证使用，示例如下：
 
 ```bash
-> use admin
-> db.createUser({
-  "user" : "tapdata",
-  "pwd"  : "my_password",
-  "roles" : [
-      {
-          "role" : "clusterMonitor",
-          "db" : "admin"
-      },
-      {
-          "role" : "readWrite",
-          "db" : "demodata"
-      },
-      {
-          "role" : "read",
-          "db" : "local"
-      }
-  ]
-}
+use admin
+db.createUser(
+  {
+    user: "tapdata",
+    pwd: "my_password",
+    roles: [
+       { role: "readWrite", db: "demodata" },
+       { role: "clusterMonitor", db: "admin" },
+    ]
+  }
+)
 ```
 
 :::tip

@@ -73,7 +73,12 @@ Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓�
          * **List**：您可以打开**单键存储**开关，让整个表记录全部存储为一个键，List 的每条值对应一条记录，且允许将第一条设为表头（以英文逗号分隔）；您也可以将整个表记录按某些字段组成的键表达式分组然后平铺为多个 List 键值。
          * **Hash**：您可以打开**单键存储**开关，让整个表记录全部存储为一个键，Hash 中的键均存储为 String 类型；您也可以将整个表记录全部平铺为多个键值，每个键对应的 Hash 即为一条记录，每个字段对应各自的值。
        - **单键存储**：当存储格式选择为 **List** 或 **Hash**，可设置该选项，需注意不可超过 Redis 单键的大小限制（512 MB）。
-       - **包含表头**：当存储格式选择为 **List** 或 **Hash**，且选择为**单键存储**时，打开该开关可加入标题行。
+       - **包含表头**：当存储格式选择为 **List** 或 **Hash**，且选择为**单键存储**时，<span id="release320-contain-table-head">打开该开关</span>可在 Redis 中加入一个 Hash 键（名称为 `-schema-key-`），其值用来存放源表的表名和列名信息，示例如下：
+         ```bash
+         HGETALL -schema-key-
+         1) "customer"
+         2) "id,name,lastname,address,country,city,registry_date,birthdate,email,phone_number,locale"
+         ```
        - **键表达式**：键名的表达式，格式为 `prefix_${列名}_suffix`，例如：`db0_${id}_202301`，键名即为 `db0_id列对应的值_202301`。
        - **值显示**：支持下述两种显示方式。
          - **Json**：将每条记录转化为 Json 串。

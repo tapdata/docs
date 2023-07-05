@@ -12,7 +12,7 @@
 
 4. 在弹出的对话框中，搜索并选择 **HTTP Receiver**。
 
-5. 根据下述说明完成数据源配置。
+5. 根据下述说明完成数据源<span id="320-http-receiver">配置</span>。
 
    ![数据源配置](../../../images/http_receiver_connection_setting.png)
 

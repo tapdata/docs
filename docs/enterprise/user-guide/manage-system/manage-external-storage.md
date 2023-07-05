@@ -18,7 +18,7 @@
 
 3. 在页面右侧，单击**创建外存**。
 
-4. 在弹出的对话框中，根据下述说明完成配置。
+4. 在弹出的对话框中，根据下述说明完成<span id="320-external-storage">配置</span>。
 
    ![创建外存](../../images/create_external_storage_cn.png)
 

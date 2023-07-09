@@ -551,6 +551,7 @@ const sidebars = {
                      'enterprise/user-guide/data-service/monitor-api-request',
                      'enterprise/user-guide/data-service/query-via-restful',
                      'enterprise/user-guide/data-service/query-via-graphql',
+                     'enterprise/user-guide/data-service/api-query-params',
                     ]
              },
              {

@@ -8,7 +8,7 @@
 
 - **[Field Filter（字段过滤器）](#field)**：按需返回指定的字段。
 - **[Limit Filter（返回记录数过滤器）](#limit)**：限定返回记录行数。
-- **[Skip Filter（跳过指定记录数过滤器）](skip)**：跳过指定行数返回数据。
+- **[Skip Filter（跳过指定记录数过滤器）](#skip)**：跳过指定行数返回数据。
 - **[Where Filter（查询条件过滤器）](#where)**：根据一组具有逻辑关系的条件查询匹配数据并返回，类似 SQL 的 WHERE 子句。
 
 本案例中，我们已经将 customer 表[发布为 API 服务](create-api-service)，该表的数据来源于随机生成，其表结构和数据样例如下：

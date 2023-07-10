@@ -18,17 +18,23 @@
 
 3. 在页面右侧，单击**创建外存**。
 
-4. 在弹出的对话框中，根据下述说明完成配置。
+4. 在弹出的对话框中，根据下述说明完成<span id="320-external-storage">配置</span>。
 
    ![创建外存](../../images/create_external_storage_cn.png)
 
    * **外存名称**：填写具有业务意义的换成名称，便于后续识别。
-   * **外存类型**：支持 MongoDB 和 RocksDB。
-   * **存储路径**：填写数据库连接地址，例如 MongoDB 格式参考： `mongodb:/admin:password@127.0.0.1:27017/mydb?replicaSet=xxx&authSource=admin`，如选择为 RocksDB，此处填写路径即可。
-   * **外存表名**：填写存储的目标表名，仅当外存类型为 MongoDB 时需设置。
+   * **外存类型**：支持 **MongoDB** 和 **RocksDB**。
+   * **存储路径**：填写数据库连接地址，例如 MongoDB 格式参考： `mongodb:/admin:password@127.0.0.1:27017/mydb?replicaSet=xxx&authSource=admin`。
+   * **使用 TLS/SSL 连接**：选择是否启用 TSL/SSL 加密，如开启该功能，您还需要上传客户端私钥。
    * **设为默认**：选择是否作为默认外存。
 
-5. 单击**确定**。
+5. 单击**连接测试**，测试通过后单击**保存**。
+
+   :::tip
+
+   如提示连接测试失败，请根据页面提示进行修复。
+
+   :::
 
 
 
@@ -36,7 +42,7 @@
 
 您可以在共享缓存、部分处理节点（如**连接节点**）中使用刚刚配置的外存，示例如下：
 
-* [创建共享缓存](../data-pipeline/share-cache.md)时，可选择外存。
+* [创建共享缓存](../advanced-settings/share-cache.md)时，可选择外存。
 
   ![共享缓存](../../images/apply_external_storage_shared_cache_cn.png)
 

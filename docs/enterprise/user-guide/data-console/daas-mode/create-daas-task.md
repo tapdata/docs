@@ -46,7 +46,7 @@ import TabItem from '@theme/TabItem';
     <ul>
     <li><b>仅保存</b>：仅保存任务链路，页面将提示保存成功，单击提示信息即可跳转到任务配置页面，您可以<a href="../../data-pipeline/data-development/process-node">添加处理节点</a>，实现表结构调整（如增加字段）、合并表、构建宽表等需求，完成设置后单击页面右上角的<b>启动</b>。
     </li>
-    <li><b>保存并运行</b>：无需执行额外的操作，由 Tapdata 自动创建一个数据开发任务并运行，将该表实时同步至平台加工层。
+    <li><b>保存并运行</b>：无需执行额外的操作，由 Tapdata 自动创建一个数据转换任务并运行，将该表实时同步至平台加工层。
     </li>
     </ul></li>
     <p></p>
@@ -64,12 +64,12 @@ import TabItem from '@theme/TabItem';
     <ul>
     <li><b>仅保存</b>：仅保存任务链路，此时，您可以单击目标库卡片中的任务名称，在跳转到的任务配置页面<a href="../../data-pipeline/data-development/process-node">添加处理节点</a>，实现更多复杂处理（如数据过滤、增删字段等），完成设置后单击页面右上角的<b>启动</b>。
     </li>
-    <li><b>保存并运行</b>：无需执行额外的操作，由 Tapdata 自动创建一个数据开发任务并运行，将该表实时同步至平台加工层。
+    <li><b>保存并运行</b>：无需执行额外的操作，由 Tapdata 自动创建一个数据转换任务并运行，将该表实时同步至平台加工层。
     </li>
     </ul>
     </li>
     <p></p>
-    <p>完成设置后，Tapdata 将自动创建一个数据开发任务，将您的源表实时同步到选定的目标库中，提供给最终业务。您还可以单击目标库卡片中的任务名称，进入任务监控页面查看详细的运行状态，更多介绍，见<a href="../../data-pipeline/data-development/monitor-task">监控任务</a>。</p>
+    <p>完成设置后，Tapdata 将自动创建一个数据转换任务，将您的源表实时同步到选定的目标库中，提供给最终业务。您还可以单击目标库卡片中的任务名称，进入任务监控页面查看详细的运行状态，更多介绍，见<a href="../../data-pipeline/data-development/monitor-task">监控任务</a>。</p>
     </ol>
    </TabItem>
   </Tabs>

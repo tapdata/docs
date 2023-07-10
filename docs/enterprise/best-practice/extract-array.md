@@ -51,13 +51,13 @@
 
 ## 准备工作
 
-在创建数据开发任务前，您需要将结算汇总表所属的数据源添加至 Tapdata 中，同时，您还需要添加一个数据源（如 MySQL 数据库）作为目标库，具体操作，见[配置 MySQL 连接](../user-guide/connect-database/certified/connect-mysql.md)。
+在创建数据转换任务前，您需要将结算汇总表所属的数据源添加至 Tapdata 中，同时，您还需要添加一个数据源（如 MySQL 数据库）作为目标库，具体操作，见[配置 MySQL 连接](../user-guide/connect-database/certified/connect-mysql.md)。
 
 ## 操作步骤
 
 1. 登录 Tapdata 平台。
 
-2. 在左侧导航栏，选择**数据管道** > **数据开发**。
+2. 在左侧导航栏，选择**数据管道** > **数据转换**。
 
 3. 单击页面右侧的**创建**。
 
@@ -75,7 +75,7 @@
 
    ![选择源表](../images/select_fin_oper_settle.png)
 
-   如需了解更多配置介绍，见[创建数据开发任务](../user-guide/data-pipeline/data-development/create-task.md)。
+   如需了解更多配置介绍，见[创建数据转换任务](../user-guide/data-pipeline/data-development/create-task.md)。
 
 6. 单击中间的标准 JS 节点，在右侧面板中的脚本文本框中输入下述代码。
 
@@ -122,7 +122,7 @@
 
    ![选择目标表](../images/select_settle_analytics.png)
 
-   如需了解更多配置介绍，见[创建数据开发任务](../user-guide/data-pipeline/data-development/create-task.md)。
+   如需了解更多配置介绍，见[创建数据转换任务](../user-guide/data-pipeline/data-development/create-task.md)。
 
 9. （可选）单击页面右上角的**设置**，配置任务属性。
 

@@ -2,6 +2,47 @@
 
 本文介绍 V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)。
 
+## V3.2
+
+### 新增功能
+
+- 数据平台模式下，可直接[展示表级溯源的关系](user-guide/data-console/daas-mode/daas-mode-dashboard#release320-daas)，帮助您可视化展示数据表产生的链路关系
+- 数据平台模式下，支持[删除**平台加工层**的表](user-guide/data-console/daas-mode/daas-mode-dashboard#release320-daas)
+- 在配置任务的目标节点时，支持[按照系数来调整字段长度](user-guide/data-pipeline/copy-data/create-task#release320-col-length)，避免因字符编码不同等原因引发的数据写入失败问题
+- [数据校验](user-guide/data-pipeline/verify-data)功能支持 SelectDB 数据源
+- Redis 作为目标节点场景下，存储为 List 或 Hash 格式，且选择为单键方式时，[支持将源表 Schema 写入一个 Hash 键](best-practice/mysql-to-redis#release320-contain-table-head)（默认名称为 `-schema-key-`），其值用来存放源表的表名和列名信息。
+- 新增[**类型过滤**](user-guide/data-pipeline/data-development/process-node#release320-type-filter)处理节点，可将快速过滤同类型的列，被过滤的字段将不会传递至下个节点
+- [**字段编辑**](user-guide/data-pipeline/copy-data/process-node#column-modification)处理节点，支持蛇形命名和驼峰命名之间的转换
+- 数据复制任务、数据转换任务、数据面板、换成创建时支持[显示表的描述信息](user-guide/data-pipeline/copy-data/create-task#310-table-model)，默认来源为表的注释信息
+
+### 功能优化
+
+- 产品菜单调整，数据开发更名为[数据转换](user-guide/data-pipeline/data-development/)，另有部分功能移至[高级设置](user-guide/advanced-settings/)（如共享缓存）中
+- 无主键数据表管理交互优化，例如在配置数据复制任务时，[支持筛选无主键表并增加主键表的标识](user-guide/data-pipeline/copy-data/create-task#310-table-model)
+- 对于外存配置的 MongoDB 数据源，加入[连接测试能力](user-guide/manage-system/manage-external-storage#320-external-storage)
+- 新建的外存，当选择 MongoDB 时支持[使用 SSL 连接](user-guide/manage-system/manage-external-storage#320-external-storage)
+- 创建 HttpReceiver 数据源时[支持试运行脚本](user-guide/connect-database/beta/connetc-http-receiver#320-http-receiver)，同时增加[访问鉴权功能](user-guide/connect-database/beta/connetc-http-receiver#320-http-receiver)
+- 标准  JS 节点能力调整，增加 [LinkedHashMap 数据结构](appendix/standard-js#linkedhashmap)和 [context.global 对象](appendix/standard-js#global)
+- [**字段编辑**](user-guide/data-pipeline/copy-data/process-node#column-modification)处理节点，界面交互优化
+- 任务启动和重新加载 Schema 的冗余提示优化
+- 数据复制任务，支持手动添加新表，新增表的可实现全量+增量数据同步
+- 数据校验使用与界面交互优化
+- 任务节点配置处理逻辑优化
+- 数据面板中的**平台缓存层**和**数据加工层**中，可展示由数据复制/转换任务生成的连接和表信息
+- 数据面板中的数据目录模式下，支持对表和字段添加描述信息
+- Tapdata 部署流程和提示调整优化
+- Tapdata 启动器优化，重新启动服务无需重复注册数据源
+- 在 Agent 启动和停止节点时，自动停止 PDK 注册
+- 数据复制任务与数据转换任务配置交互的整体优化
+
+### 问题修复
+
+- 修复了 2 个 Oracle 数据源指定不同的外存，挖掘合并后导致外存不是用户指定的问题
+- 修复了导入任务数据源开启了共享挖掘，外存配置显示为id且不可修改的问题
+- 修复了数据源到平台缓存层的任务合并问题
+
+
+
 ## V3.1
 
 ### 新增功能
@@ -13,8 +54,8 @@
 
 ### 功能优化
 
-- 共享挖掘任务管理优化，支持[启停单个表的挖掘任务](user-guide/data-pipeline/share-mining#release310-share-mining)
-- [共享缓存](user-guide/data-pipeline/share-cache)、[函数](user-guide/data-pipeline/manage-function)、[API 数据服务](user-guide/data-service/create-api-service)支持导入导出功能
+- 共享挖掘任务管理优化，支持[启停单个表的挖掘任务](user-guide/advanced-settings/share-mining.md#release310-share-mining)
+- [共享缓存](user-guide/advanced-settings/share-cache.md)、[函数](user-guide/advanced-settings/manage-function.md)、[API 数据服务](user-guide/data-service/create-api-service)支持导入导出功能
 - [数据校验](user-guide/data-pipeline/verify-data)支持配置告警信息的规则和通知方式
 - [数据校验](user-guide/data-pipeline/verify-data)自动填充表逻辑优化
 - 前端增加[标准 JS](appendix/standard-js) 和[增强 JS](appendix/enhanced-js) 的功能区分说明
@@ -54,7 +95,7 @@
 
 ### 功能优化
 
-- [共享缓存功能](user-guide/data-pipeline/share-mining.md)优化，提供可观测页面，便于观察挖掘进度和故障排查。
+- [共享缓存功能](user-guide/advanced-settings/share-mining.md)优化，提供可观测页面，便于观察挖掘进度和故障排查。
 - [全量自定义查询功能](user-guide/data-pipeline/data-development/create-task#full-sql-query)，放开仅能使用 JS 节点的限制，也支持添加其它处理节点，节点模型直接使用源表的模型。
 - 增删字段、类型修改、字段改名等字段[处理节点](user-guide/data-pipeline/data-development/process-node.md)，支持字段搜索功能。
 - 连接配置中 Schema 加载频率配置文案调整。

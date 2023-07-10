@@ -8,7 +8,7 @@
 
 2. 在左侧导航栏，单击**数据面板**。
 
-3. 在本页面，您可以直观地看到您已录入的数据源信息，接下来，我们将介绍各模块的具体作用。
+3. 在本页面，您可以直观地看到您已录入的数据源信息，接下来，我们将介绍各模块的<span id="release320-daas">具体作用</span>。
 
    ![数据集成模式界面](../../../images/daas_dashboard.png)
 
@@ -19,10 +19,10 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
     <TabItem value="5" label="① 切换视图" default>
    <p>单击<img src='/img/switch_icon.png'></img>图标，以目录结构的形式展现数据源信息（再次单击可切换回 Console 视图）。</p>
-   <p>如果选中具体的表，您还可以在页面右侧看到表详情信息，各标签页介绍如下：</p>
+   <p>在<b>目录视图</b>下，如果选中具体的表，您还可以在页面右侧看到表详情信息，各标签页介绍如下：</p>
    <img src='/img/data_category_view.png'></img>
    <ul>
-   <li><b>概览</b>：可查看表的基本信息，例如表大小、行数、列信息、样本数据等。</li>
+   <li><b>概览</b>：可查看表的基本信息，例如表大小、行数、列类型、列注释、列描述（默认来源为注释信息）、样本数据等。</li>
    <li><b>Schema</b>：可查看表的列详情，如列类型、主键、外键、默认值等。</li>
    <li><b>任务</b>：可查看该表相关的任务及其状态，您也可以在该页签中创建新的任务。</li>
    <li><b>血缘</b>：以图的形式直观展现数据血缘关系，帮助您更好地管控数据质量，单击任务节点可直接跳转至相关任务的监控页面。
@@ -43,9 +43,16 @@ import TabItem from '@theme/TabItem';
    </TabItem>
    <TabItem value="4" label="⑤ 表详情">
    <p>在表名的右侧，单击<img src='/img/detail_icon.png'></img>图标，页面右侧将展示该表关联的任务和表的基本信息，包含表大小、行数、列信息、样本数据、Scheme（如主键/外键） 等，该操作在其他层级的模块中也可使用。</p>
+   <p></p>
+   <p>此外，当<b>平台加工层</b>的某个表不再需要时，您可以单击该表并在弹出的面板中单击删除（需删除关联的任务）。</p>
    <img src='/img/cache_table_detail.png'></img>
    </TabItem>
-   <TabItem value="6" label="⑥ 切换模式">
+   <TabItem value="6" label="⑥ 表溯源">
+   <p>单击<img src='/img/trace.png'></img>图标，即可查看到表的血缘关系，可快速数据表产生的链路关系，帮助您更好管理表。
+   <img src='/img/trace_source.png'></img>
+   </p>
+</TabItem>
+   <TabItem value="7" label="⑦ 切换模式">
    <p>单击<img src='/img/setting_icon.png'></img>图标，在弹出的对话框中，可选择切换回<a href="../etl-mode/">数据集成模式</a>。</p>
 </TabItem>
 </Tabs>

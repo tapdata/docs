@@ -86,7 +86,7 @@ Tapdata 会自动基于选择源表来推演目标表结构等信息，此处可
 
 具体步骤如下：
 
-1. [创建数据开发任务](../user-guide/data-pipeline/data-development/create-task)。
+1. [创建数据转换任务](../user-guide/data-pipeline/data-development/create-task)。
 2. 将 SQL 语句中的具体操作以处理节点来替代。如下图所示，我们预先将 **customer** 和 **company** 表执行连接（Join）操作（通过[连接节点](../user-guide/data-pipeline/data-development/process-node#join)实现），并将其结果存至 **join_result** 表。![Join 表](../images/join_table_for_api.png)
 3. 启动任务实现数据的实时同步。
 4. 基于新表（join_result）[创建并发布 API 服务](../user-guide/data-service/create-api-service.md)。
@@ -99,7 +99,7 @@ Tapdata 会自动基于选择源表来推演目标表结构等信息，此处可
 
 具体步骤如下：
 
-1. [创建数据开发任务](../user-guide/data-pipeline/data-development/create-task)。
+1. [创建数据转换任务](../user-guide/data-pipeline/data-development/create-task)。
 2. 在画布中添加源和目标节点。
    :::tip
    目标节点需为弱 Scheme 类的数据源，例如如 MongoDB 或 Kafka。

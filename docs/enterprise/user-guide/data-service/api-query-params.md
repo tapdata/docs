@@ -172,7 +172,7 @@ filter={"skip":n}
 ?filter[limit]=10&filter[skip]=50
 
 # 方法二
-?filter={"limit":10,"skip"=50} 
+?filter={"limit":10,"skip":50} 
 ```
 
 

@@ -6,7 +6,7 @@
 
 ## 支持的过滤器
 
-- **[Field Filter（字段过滤器）](#field)**：按需返回指定的字段。
+
 - **[Limit Filter（返回记录数过滤器）](#limit)**：限定返回记录行数。
 - **[Skip Filter（跳过指定记录数过滤器）](#skip)**：跳过指定行数返回数据。
 - **[Where Filter（查询条件过滤器）](#where)**：根据一组具有逻辑关系的条件查询匹配数据并返回，类似 SQL 的 WHERE 子句。
@@ -41,45 +41,6 @@ registry_date: 02-04-1978
 
 
 
-## <span id="field">Field Filter</span>
-
-默认情况下，查询返回结果中包含数据模型（表）的所有字段，通过为模型中的字段名设置 **true** 或 **false** 来实现字段的过滤，语法如下：
-
-```bash
-# 方法一
-filter[fields][propertyName]=<true|false>&filter[fields][propertyName]=<true|false>...
-
-# 方法二
-filter={"fields":{"propertyName1":<true|false>,"propertyName2":<true|false>,...}}
-```
-
-### 使用示例
-
-假设我们需要只返回 **customer** 表中的 **id**、**name**、**city** 字段的值，示例如下：
-
-```bash
-# 方法一
-?filter[fields][id]=true&filter[fields][name]=true&filter[fields][city]=true
-
-# 方法二
-?filter={"fields":{"id":true,"name":true,"city":true}}
-```
-
-### 返回示例
-
-```json
-{    
-    "data": [      
-    {          
-        "level": "INFO",          
-        "message": "generator controller /home/lg/workspace/nodejs/apig/src/controllers/logs-v-1.controller.ts",         "date": "2019-07-13T09:12:05.134Z"      
-    }, {          
-        "level": "INFO",          
-        "message": "generator controller /home/lg/workspace/nodejs/apig/src/controllers/logs-v-1.controller.ts",         "date": "2019-07-13T09:12:05.134Z"      
-    },      ...    
-    ]
-}
-```
 
 ## <span id="limit">Limit Filter</span>
 

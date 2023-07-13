@@ -39,3 +39,9 @@ RESTful API 是遵循 REST 架构规范的应用编程接口（API 或 Web API�
 8. 单击 **Query**，返回示例如下。
 
    ![查询结果](../../images/restful_api_query_result.png)
+   
+   :::tip
+   
+   Tapdata 支持在 URL 查询字符串中添加查询条件，从而查询结果的快速过滤，具体操作，见 [API 查询参数说明](api-query-params.md)。
+   
+   :::

@@ -12,16 +12,13 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017
 
 :::
 
+<details>
+<summary>SQL Server 2005 作为源库解决方案</summary>
+由于 CDC 支持从 SQLServer 2008 开始支持，对于较早的版本，您需要使用 Custom SQL 功能来模拟更改数据捕获，在从旧版本复制数据时，源表必须有一个更改跟踪列，比如 <b>LAST_UPDATED_TIME</b>，它在每次插入或更新记录时都会更新；随后在创建数据复制任务时，任务的同步类型选择为<b>全量</b>，将<b>重复运行自定义 SQL</b>设置为 <b>True</b>，同时在映射设计上提供适当的自定义 SQL。
+
+</details>
+
 ## 作为源库
-
-:::tip
-
-由于 CDC 支持从 SQLServer 2008 开始支持，对于较早的版本，您需要使用 Custom SQL 功能来模拟更改数据捕获，在从旧版本复制数据时，需要考虑以下几点：
-
-- 源表必须有一个更改跟踪列，比如 **LAST_UPDATED_TIME**，它在每次插入或更新记录时都会更新。
-- 创建数据同步任务时，任务的同步类型选择为**全量**，将**重复运行自定义 SQL**设置为 **True**，同时在映射设计上提供适当的自定义 SQL。
-
-:::
 
 1. 以管理员（例如 **sa**）身份，登录到 SQL Server Management Studio 或 sqlcmd。
 3. 执行下述命令，选择为指定的数据库（推荐）或表启用变更数据捕获能力。
@@ -39,7 +36,7 @@ import TabItem from '@theme/TabItem';
    GO
    <br />
    <br />
-   -- 查看是否启用变更数据捕获，is_cdc_enabled 值为 1 即表示已启用该功能<br />
+-- 查看是否启用变更数据捕获，is_cdc_enabled 值为 1 即表示已启用该功能<br />
    SELECT [name], database_id, is_cdc_enabled<br />
    FROM sys.databases<br />
    WHERE [name] = N'database_name'<br />
@@ -56,7 +53,7 @@ EXEC sys.sp_cdc_enable_table<br />
 @source_name = N'table_name',<br />
 @role_name = N'role_name'<br />
 GO<br />
-<br />   -- 查看是否启用变更数据捕获，is_tracked_by_cdc 值为 1 即表示已启用该功能<br />
+<br />-- 查看是否启用变更数据捕获，is_tracked_by_cdc 值为 1 即表示已启用该功能<br />
 use [数据库名称]<br />
 go<br />
 SELECT [name],is_tracked_by_cdc<br />
@@ -188,6 +185,7 @@ go</pre>
 
 
 ## 扩展阅读
+
 
 本小节介绍在使用变更数据捕获功能时可能会遇到的问题，更多信息，请参考[微软官方文档](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/change-data-capture-stored-procedures-transact-sql?view=sql-server-ver15)。
 

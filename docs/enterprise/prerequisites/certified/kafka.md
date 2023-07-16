@@ -15,8 +15,21 @@ Kafka 2.3.x
 
 ## 准备工作
 
-1. 登录 Kafka 所属设备，完成 Topic 的创建，相关方法，见 [Kafka 快速入门](https://kafka.apache.org/23/documentation.html#quickstart)。
-2. 确认加密方式，如开启了 kerberos 认证，您还需要提前准备好密钥、配置等文件。
+1. 登录 Kafka 所属设备。
+
+2. （可选）如您将 Kafka 作为目标库，推荐提前创建好数据要存放的 Topic，如果由 Tapdata 自动创建，则其分区和副本数均为 1。
+
+   下述命令示例表示创建一个名为 kafa_demo_topic 的 Topic，其分区数和副本数均为 3：
+
+   ```bash
+   bin/kafka kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 3 --partitions 3 --topic kafa_demo_topic
+   ```
+
+   更多介绍，见 [Kafka 快速入门](https://kafka.apache.org/23/documentation.html#quickstart)。
+
+3. 确认加密方式，如开启了 kerberos 认证，您还需要提前准备好密钥、配置等文件。
+
+
 
 
 

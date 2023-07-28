@@ -2,7 +2,7 @@
 
 Excel 是使用广泛的数据统计和数据分析软件，Tapdata Cloud 支持读取本地、FTP、SFTP、SMB 或 S3FS 上的 Excel 文件，满足多样化的数据流转需求。
 
-本文介绍如何通过 Tapdata Cloud 的数据转换任务，将 Excel 文件数据同步至 MySQL，实现 Excel 数据的快速入库，用来对接更丰富的数据分析工具。
+本文介绍如何通过 Tapdata Cloud 的数据开发任务，将 Excel 文件数据同步至 MySQL，实现 Excel 数据的快速入库，用来对接更丰富的数据分析工具。
 
 ## 背景介绍
 
@@ -14,7 +14,7 @@ Excel 是使用广泛的数据统计和数据分析软件，Tapdata Cloud 支持
 
 ## 准备工作
 
-在创建数据转换任务前，请确保您已经配置好了相关数据源：
+在创建数据开发任务前，请确保您已经配置好了相关数据源：
 
 1. [配置 Excel 连接](../../user-guide/connect-database/beta/connect-excel.md)
 2. [配置 MySQL 连接](../../user-guide/connect-database/certified/connect-mysql.md)

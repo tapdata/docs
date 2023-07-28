@@ -298,6 +298,14 @@ const sidebars = {
                     'cloud/best-practice/oracle-as-source/oracle-to-tablestore',
              ]
             },
+            {
+             type: 'category',
+             label: '文件实时同步',
+             link: {type: 'doc', id: 'cloud/best-practice/files-as-source/README'},
+             items:[
+                    'cloud/best-practice/files-as-source/excel-to-mysql',
+             ]
+            },            
         ]
         },
      'cloud/release-notes',

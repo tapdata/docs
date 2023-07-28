@@ -44,16 +44,6 @@ Apache Kafka 是一个分布式数据流处理平台，可以实时发布、订�
 
 
 
-## Kafka 消费说明
-
-* **仅全量**：从 Topic 中各分区的 earliest offset 开始订阅消费，如果之前存在消息消费记录，则恢复到之前的 offset 开始消费。
-* **仅增量**：从 Topic 中各分区的 latest offset 开始订阅消费，如果之前存在消息消费记录，则恢复到之前的 offset 开始消费。
-* **全量 + 增量**：跳过全量同步阶段，从增量阶段开始。
-  * 如果没有进行过全量同步，则会从 Topic 中各分区的 earliest offset 开始订阅消费，否则从 Topic 中各分区的 latest offset 开始订阅消费。
-  * 如果之前存在消息消费记录，则会恢复到之前的 offset 开始消费。
-
-
-
 ## 推荐阅读
 
 [Oracle 实时同步到 Kafka](../../../best-practice/oracle-to-kafka.md)

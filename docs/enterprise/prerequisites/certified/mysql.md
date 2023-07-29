@@ -125,10 +125,10 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 
 <Tabs className="unique-tabs">
     <TabItem value="onedatabase" label="授予指定库权限" default>
-    <pre>GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP ON database_name.* TO 'username';</pre>
+    <pre>GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP, INDEX ON database_name.* TO 'username';</pre>
    </TabItem>
    <TabItem value="all" label="授予所有库权限">
-    <pre>GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP ON *.* TO 'username';</pre>
+    <pre>GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP, INDEX ON *.* TO 'username';</pre>
    </TabItem>
   </Tabs>
 

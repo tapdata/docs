@@ -36,8 +36,12 @@
 
    ![调试 API](../../images/try_query_api.png)
 
-7. （可选）对于以创建的数据服务，您可以将其选中并导出备份或分享给其他团队成本，您也可以导入数据服务。
+7. （可选）对于已创建的数据服务，您可以将其<span id="release330-export-api">选中并导出</span>备份或分享给其他团队成员，您也可以导入数据服务。
 
    ![导入/导出 API 服务](../../images/import_export_api.png)
+
+   除此以外，对于已发布的数据服务，您还可以将其选中并单击 **API 文档导出**，可在团队内部快速建立 API 的使用资料，导出的 Word 文件为 docx 格式，包含数据服务名称、API 描述、GET/POST 的参数说明和使用示例等信息，具体如下图所示。
+
+   ![API 文档示例](../../images/export_api_docx.png)
 
    

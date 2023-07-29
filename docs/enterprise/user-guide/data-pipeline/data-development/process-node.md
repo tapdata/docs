@@ -197,7 +197,7 @@ mysql> select * from student_merge;
 
 
 
-## <span id="time-calculation">时间运算</span>
+## <span id="date-calculation">时间运算</span>
 
 某些场景下，数据处理的源库和目标库的时区不同，此时对日期/时间类型的字段进行运算处理，例如增加几个小时或减少几个小时从而实现时间调整，方便后续业务处理。此场景下，可以通过时间运算节点完成该需求。
 

@@ -18,7 +18,7 @@
 
    :::
 
-4. 跟随下述流程，一键完成数据流转。
+4. 跟随下述流程，<span id="release330-task">一键完成数据流转</span>。
 
    :::tip
    通过平台加工层，您可以对表进行表结构调整（如增加字段）、合并表、构建宽表等操作，如果缓存层的表已经满足您的业务需求，则无需使用平台加工层，您可以直接发布 API 或将缓存层的表拖动至**数据目标和服务层**。
@@ -32,9 +32,9 @@ import TabItem from '@theme/TabItem';
     <ol>
     <li>在<b>源数据层</b>，单击<img src='/img/search_icon.png'></img>图标，找到您需要同步的表，将其拖动至<b>平台缓存层</b>。</li>
     <p></p>
-    <li>在弹出的对话框中，填写表前缀并单击<b>确定</b>，本案例中，我们要同步的表为 <b>customer</b>，此处填写前缀为 <b>MySQL</b>，那么在平台缓存层中，该表名为 <b>FDM_MySQL_customer</b>。</li>
+    <li>在弹出的对话框中，填写表前缀、选择数据同步方式（全量或增量）并单击<b>确定</b>。</li>
     <img src='/img/create_cache_task.gif'></img>
-    <p>完成操作后，Tapdata 将自动创建一个数据复制任务，将您选择表（含全量数据）实时同步至平台缓存层并自动校验，您可以单击平台缓存中表名右侧的<img src='/img/detail_icon.png'></img>图标，跳转至任务监控页面来查看任务运行详情。</p>
+    <p>选择<b>保存并运行</b>后，Tapdata 将自动创建一个数据复制任务，将您选择表实时同步至平台缓存层并自动校验，您可以单击平台缓存中表名右侧的<img src='/img/detail_icon.png'></img>图标，跳转至任务监控页面来查看任务运行详情。</p>
     </ol>
    </TabItem>
    <TabItem value="curated" label="流转至平台加工层">

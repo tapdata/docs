@@ -4,7 +4,7 @@ SQL Server 数据库是 Microsoft 开发设计的一个关系数据库智能管�
 
 ## 准备工作
 
-[SQL Server 数据源准备工作](../../../prerequisites/config-database/certified/sqlserver.md)
+[SQL Server 数据源准备工作](../../../prerequisites/certified/sqlserver.md)
 
 ## 操作步骤
 

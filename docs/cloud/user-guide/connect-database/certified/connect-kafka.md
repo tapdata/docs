@@ -4,7 +4,7 @@ Apache Kafka 是一个分布式数据流处理平台，可以实时发布、订�
 
 ## 准备工作
 
- [Kafka 数据源准备工作](../../../prerequisites/config-database/certified/kafka.md)
+ [Kafka 数据源准备工作](../../../prerequisites/certified/kafka.md)
 
 ## 操作步骤
 

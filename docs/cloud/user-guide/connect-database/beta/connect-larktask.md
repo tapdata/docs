@@ -18,7 +18,7 @@
 
    * **连接名称**：填写具有业务意义的独有名称。
    * **连接类型**：仅支持**目标**。
-   * **应用 ID**、**应用 Secret**：可通过飞书开放平台获取，具体操作，见 [LarkTask 数据源准备工作](../../../prerequisites/config-database/beta/larktask.md)。
+   * **应用 ID**、**应用 Secret**：可通过飞书开放平台获取，具体操作，见 [LarkTask 数据源准备工作](../../../prerequisites/beta/larktask.md)。
    * **agent 设置**：默认为**平台自动分配**，您也可以手动指定。
    * **模型加载频率**：数据源中模型数量大于 1 万时，Tapdata 将按照本参数的设定定期刷新模型。
 

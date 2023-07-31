@@ -18,10 +18,10 @@
 
 3. 在左侧导航栏，单击**凭证与基础信息**，获取 App ID 和 App Secret 信息，后续将在连接数据源时使用。
 
-   ![](../../../images/obtain_feishu_app_ak.png)
+   ![](../../images/obtain_feishu_app_ak.png)
 
 
 
 ## 下一步
 
-至此，已完成相关准备工作，接下来，您可以连接您可以 [LarkTask 数据源](../../../user-guide/connect-database/beta/connect-larktask.md)。
+至此，已完成相关准备工作，接下来，您可以连接您可以 [LarkTask 数据源](../../user-guide/connect-database/beta/connect-larktask.md)。

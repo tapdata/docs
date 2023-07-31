@@ -4,7 +4,7 @@
 
 ## 准备工作
 
-[阿里云 RDS MySQL 准备工作](../../../prerequisites/config-database/alpha/aliyun-rds-for-mysql.md)
+[阿里云 RDS MySQL 准备工作](../../../prerequisites/alpha/aliyun-rds-for-mysql.md)
 
 ## 操作步骤
 

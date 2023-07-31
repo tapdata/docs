@@ -4,7 +4,7 @@ PostgreSQL是功能强大的开源对象关系数据库管理系统（ORDBMS）�
 
 ## 准备工作
 
-[PostgreSQL 数据源准备工作](../../../prerequisites/config-database/certified/postgresql.md)
+[PostgreSQL 数据源准备工作](../../../prerequisites/certified/postgresql.md)
 
 ## 操作步骤
 

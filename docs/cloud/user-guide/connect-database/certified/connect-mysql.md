@@ -4,7 +4,7 @@ MySQL 是应用最广泛的开源关系数据库，是许多网站、应用程�
 
 ## 准备工作
 
-[MySQL 数据源准备工作](../../../prerequisites/config-database/certified/mysql.md)
+[MySQL 数据源准备工作](../../../prerequisites/certified/mysql.md)
 
 ## 操作步骤
 

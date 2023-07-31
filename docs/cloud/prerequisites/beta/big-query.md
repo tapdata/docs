@@ -1,10 +1,11 @@
-# 连接 BigQuery
+# BigQuery
 
-[BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) 是 Google Cloud 的全代管式 PB 级经济实惠的分析数据仓库，可让您近乎实时地分析大量数据。Tapdata Cloud 支持将 BigQuery 作为目标数据库执行数据同步/数据开发任务，本文介绍如何在 Tapdata Cloud 中添加 BigQuery 数据源。
+[BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) 是 Google Cloud 的全代管式 PB 级经济实惠的分析数据仓库，可让您近乎实时地分析大量数据。完成 Agent 部署后，您可以跟随本文教程在 Tapdata Cloud 中添加 BigQuery 数据源，后续可将其作为目标库来构建数据管道。
+
 
 ## 前提条件
 
-[Agent](../../../quick-start/install-agent/README.md) 所属机器可访问谷歌云服务，例如可将 Agent 安装至海外服务器。
+[Agent](../../quick-start/install-agent/README.md) 所属机器可访问谷歌云服务，例如可将 Agent 安装至海外服务器。
 
 
 
@@ -54,11 +55,11 @@
 
    2. 在服务账号详情区域，填写服务账号的名称、ID 和说明信息，单击**创建并继续**。
 
-      ![创建访问账号](../../../images/create_server_account.png)
+      ![创建访问账号](../../images/create_server_account.png)
 
    3. 在**角色**下拉框中输入并选中我们刚创建的角色（**bigquery-role**），单击页面底部的**完成**。
 
-      ![授予权限](../../../images/grant_bigquery_role.png)
+      ![授予权限](../../images/grant_bigquery_role.png)
 
 4. 为服务账号创建认证密钥。
 
@@ -66,7 +67,7 @@
 
    2. 在**密钥**标签页，单击**添加密钥** > **创建新密钥**。
 
-      ![创建密钥](../../../images/create_account_key.png)
+      ![创建密钥](../../images/create_account_key.png)
 
    3. 在弹出的对话框中，选择**密钥类型**为 **JSON**，然后单击**创建**。
 
@@ -86,7 +87,7 @@
 
 
 
-## 操作步骤
+## 添加数据源
 
 1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
 
@@ -98,7 +99,7 @@
 
 5. 在跳转到的页面，根据下述说明填写 BigQuery 的连接信息。
 
-   ![配置 BigQuery 连接信息](../../../images/connect_bigquery.png)
+   ![配置 BigQuery 连接信息](../../images/connect_bigquery.png)
 
    * **连接名称**：填写具有业务意义的独有名称。
    * **连接类型**：目前仅支持作为**目标**。
@@ -116,4 +117,4 @@
 
 ## 相关文档
 
-[MySQL 实时同步至 BigQuery](../../../best-practice/mysql-as-source/mysql-to-bigquery)
+[MySQL 实时同步至 BigQuery](../../best-practice/mysql-as-source/mysql-to-bigquery)

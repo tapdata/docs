@@ -1,8 +1,8 @@
-# CSV/Excel
+# JSON/XML
 
-Tapdata Cloud 支持读取 Local（本地）、FTP、SFTP、SMB、S3FS 或 OSS 上的文件，支持的文件类型包括 CSV、Excel、[JSON 和 XML](../alpha/json-and-xml.md)，满足多样化的数据流转需求。
+Tapdata Cloud 支持读取 Local（本地）、FTP、SFTP、SMB、S3FS 或 OSS 上的文件，支持的文件类型包括 [CSV、EXCEL](../beta/csv.md)、JSON 和 XML，满足多样化的数据流转需求。
 
-本文介绍在创建 CSV 或 EXCEL 数据源连接前所需的准备工作，请根据 CSV/EXCEL 文件的存放位置选择阅读。
+本文介绍在创建 JSON/XML 数据源连接前所需的准备工作，请根据 JSON/XML 文件的存放位置选择阅读。
 
 ## 存放在 Local/FTP/SFTP/SMB
 
@@ -12,11 +12,11 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
    <TabItem value="local" label="Local（本地）">
 
-   <p>当您将文件存放在 Tapdata Agent（<a href="../../../faq/agent-installation#semi-and-full-agent">半托管模式</a>）所属的设备上，可将其作为数据来源，准备工作如下：</p> 
+   <p>当您将文件存放在 Tapdata Agent（<a href="../../faq/agent-installation#semi-and-full-agent">半托管模式</a>）所属的设备上，可将其作为数据来源，准备工作如下：</p> 
   <ol>
    <li>登录至 Tapdata Agent 所属设备。</li>
    <li>为便于管理，新建一个文件夹用来存放文件，以 root 用户为例，我们新建一个文件夹为： <code>/root/files</code>。</li>
-   <li>将 CSV/EXCEL 文件存放至该文件夹。</li>
+   <li>将 JSON/XML 文件存放至该文件夹。</li>
   </ol> 
   <p>后续在配置数据源时，您只需提供<strong>文件存放路径</strong>即可。</p>
 
@@ -26,7 +26,7 @@ import TabItem from '@theme/TabItem';
   <ol>
    <li>安装 FTP 服务（如 <a href="https://security.appspot.com/vsftpd.html">vsftpd</a>）并保障网络通信正常。</li>
    <li>如开启了认证，您需要准备 FTP 的账号与密码，保障其具备文件读取权限。</li>
-   <li>记录 CSV/EXCEL 文件存放路径，后续配置数据源时使用。</li>
+   <li>记录 JSON/XML 文件存放路径，后续配置数据源时使用。</li>
   </ol>
 
    </TabItem>
@@ -35,7 +35,7 @@ import TabItem from '@theme/TabItem';
   <ol>
    <li>安装 SFTP 服务（openssh-client 与 openssh-server）并保障网络通信正常。</li>
    <li>准备 SFTP 服务的账号、密码，保障其具备文件读取权限。</li>
-   <li>记录 CSV/EXCEL 文件存放路径，后续配置数据源时使用。</li>
+   <li>记录 JSON/XML 文件存放路径，后续配置数据源时使用。</li>
   </ol>
 
    </TabItem>
@@ -44,7 +44,7 @@ import TabItem from '@theme/TabItem';
   <ol>
    <li>安装 SMB （支持 1.0/2.0/3.0 版本）协议的软件，如 Samba ，保障网络通信正常。</li>
    <li>准备 Samba 服务的账号、密码，保障其具备文件读取权限。</li>
-   <li>记录 CSV/EXCEL 文件存放的路径，后续配置数据源时使用。</li>
+   <li>记录 JSON/XML 文件存放的路径，后续配置数据源时使用。</li>
   </ol>
 
    </TabItem>
@@ -71,7 +71,7 @@ Amazon S3 是一种面向互联网的存储服务。您可以通过 Amazon S3 �
 
    4. 在**权限选项**区域选择**直接附加策略**，然后搜索并选中 **AmazonS3ReadOnlyAccess** 策略。
 
-      ![grant_s3_read](../../../images/grant_s3_read.png)
+      ![grant_s3_read](../../images/grant_s3_read.png)
 
    5. 单击**下一步**，然后单击**创建用户**。
 
@@ -81,7 +81,7 @@ Amazon S3 是一种面向互联网的存储服务。您可以通过 Amazon S3 �
 
    2. 单击**安全凭证**页签，然后在**访问密钥**区域单击**创建访问密钥**。
 
-      ![create_s3_ak](../../../images/create_s3_ak.png)
+      ![create_s3_ak](../../images/create_s3_ak.png)
 
    3. 选择**第三方服务**并单击**下一步**。
 
@@ -89,7 +89,7 @@ Amazon S3 是一种面向互联网的存储服务。您可以通过 Amazon S3 �
 
    5. 在页面查看或下载访问密钥信息，包含 **Accesskey**、**Secretkey** 信息。
 
-      ![obtain_s3_ak](../../../images/obtain_s3_ak.png)
+      ![obtain_s3_ak](../../images/obtain_s3_ak.png)
 
       :::tip
 
@@ -103,7 +103,7 @@ Amazon S3 是一种面向互联网的存储服务。您可以通过 Amazon S3 �
 
    2. 在存储桶列表页，找到目标存储桶，查看其区域代码。
    
-      ![获取区域代码](../../../images/obtain_s3_region.png)
+      ![获取区域代码](../../images/obtain_s3_region.png)
 
 
 
@@ -121,7 +121,7 @@ Amazon S3 是一种面向互联网的存储服务。您可以通过 Amazon S3 �
 
    3. 在跳转到的页面填写登录名称、显示名称，选择 OpenAPI 调用方式并单击**确定**。
 
-      ![创建用户](../../../images/create_aliyun_user.png)
+      ![创建用户](../../images/create_aliyun_user.png)
 
    4. 用户创建完成后，单击下载 CSV 文件，该文件包含访问密钥（AccessKey）信息。
 
@@ -139,7 +139,7 @@ Amazon S3 是一种面向互联网的存储服务。您可以通过 Amazon S3 �
 
    3. 在右侧弹出的面板中，选择授权范围，然后搜索并选中 **AliyunOSSReadOnlyAccess** 策略。
 
-      ![授予 OSS 读取权限](../../../images/grant_oss_read.png)
+      ![授予 OSS 读取权限](../../images/grant_oss_read.png)
 
    4. 单击**确定**，然后单击**完成**。
 
@@ -151,7 +151,9 @@ Amazon S3 是一种面向互联网的存储服务。您可以通过 Amazon S3 �
 
    3. 单击左侧的概览标签页，下翻至访问端口即可获取外网访问地址对应的 Endpoint。
    
-      ![获取 Endpoint](../../../images/obtain_oss_endpoint.png)
+      ![获取 Endpoint](../../images/obtain_oss_endpoint.png)
+
+
 
 
 
@@ -159,5 +161,5 @@ Amazon S3 是一种面向互联网的存储服务。您可以通过 Amazon S3 �
 
 至此，已完成相关准备工作，接下来，您可以：
 
-* [连接 CSV](../../../user-guide/connect-database/beta/connect-csv.md) 
-* [连接 Excel](../../../user-guide/connect-database/beta/connect-excel.md)
+* [连接 JSON](../../user-guide/connect-database/alpha/connect-json.md) 
+* [连接 XML](../../user-guide/connect-database/alpha/connect-xml.md)

@@ -4,7 +4,7 @@ MongoDB 是一个流行的、开源 NoSQL 数据库，以灵活/可扩展的方�
 
 ## 准备工作
 
-[MongoDB 数据源准备工作](../../../prerequisites/config-database/certified/mongodb.md)
+[MongoDB 数据源准备工作](../../../prerequisites/certified/mongodb.md)
 
 ## 操作步骤
 

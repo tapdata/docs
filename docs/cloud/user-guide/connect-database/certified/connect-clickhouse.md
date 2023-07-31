@@ -4,7 +4,7 @@ ClickHouse 是一个用于联机分析（OLAP）的列式数据库管理系统�
 
 ## 前提条件
 
- [ClickHouse 数据源准备工作](../../../prerequisites/config-database/certified/clickhouse.md)
+ [ClickHouse 数据源准备工作](../../../prerequisites/certified/clickhouse.md)
 
 ## 操作步骤
 

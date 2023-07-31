@@ -4,7 +4,7 @@ Oracle Database（简称 Oracle）是甲骨文公司的一款关系数据库管�
 
 ## 准备工作
 
-[Oracle 数据源准备工作](../../../prerequisites/config-database/certified/oracle)
+[Oracle 数据源准备工作](../../../prerequisites/certified/oracle)
 
 ## 操作步骤
 

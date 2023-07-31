@@ -22,7 +22,7 @@
 
    3. 在右侧的面板中，完成下述设置。
 
-      ![创建账号](../../../images/aliyun_mysql_create_account.png)
+      ![创建账号](../../images/aliyun_mysql_create_account.png)
 
       * **数据库账号**：以小写字母开头，以小写字母或数字结尾，支持小写字母、数字和下划线，长度为 2~32 个字符。
       * **账号类型**：选择为**高权限**账号，以便可获取数据库的 Binlog 和读写数据库。更多账号类型介绍，见[账号类型](https://help.aliyun.com/document_detail/96089.htm#section-b3f-whz-q2b)。
@@ -40,7 +40,7 @@
    1. 在左侧导航栏，选择**数据库连接**。
    2. 单击**开通外网地址**。
    3. 在弹出的对话框中，保持选项：**将0.0.0.0/0 加入白名单** 处于选中状态。
-      ![开通外网地址](../../../images/aliyun_mysql_ip_white_list.png)
+      ![开通外网地址](../../images/aliyun_mysql_ip_white_list.png)
    4. 单击**确定**。
       :::tip
       完成操作后，您可以在本页面查看到外网连接地址，后续将在连接数据源时填写该地址。
@@ -66,4 +66,4 @@
 
 ## 下一步
 
-[连接阿里云 RDS for MySQL](../../../user-guide/connect-database/alpha/connect-aliyun-rds-mysql.md)
+[连接阿里云 RDS for MySQL](../../user-guide/connect-database/alpha/connect-aliyun-rds-mysql.md)

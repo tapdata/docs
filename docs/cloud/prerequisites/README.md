@@ -1,4 +1,4 @@
-# 准备工作
+# 连接数据源
 
 import DocCardList from '@theme/DocCardList';
 

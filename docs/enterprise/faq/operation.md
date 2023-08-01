@@ -53,7 +53,7 @@ Subsystem:
 
 2. 下载并解压 3.3.0 版本安装包，然后进入安装包目录中。
 
-3. 执行下述格式的命令，完成滚动升级流程，升级完成后将提升 `Update finished. All Task are running.`。
+3. 执行下述格式的命令，完成滚动升级流程，升级完成后将提示： `Update finished. All Task are running.`。
 
    ```bash
    ./tapdata upgrade --source <old_version_path>

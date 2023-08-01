@@ -107,11 +107,13 @@ const sidebars = {
                        'cloud/prerequisites/alpha/aliyun-rds-for-mysql',
                        'cloud/prerequisites/alpha/activemq',
                        'cloud/prerequisites/alpha/elasticsearch',
-                       'cloud/prerequisites/alpha/json-and-xml',
+                       'cloud/prerequisites/alpha/json',
                        'cloud/prerequisites/alpha/opengauss',
                        'cloud/prerequisites/alpha/rabbitmq',
                        'cloud/prerequisites/alpha/rocketmq',
+                       'cloud/prerequisites/alpha/tablestore',
                        'cloud/prerequisites/alpha/vika',
+                       'cloud/prerequisites/alpha/xml',
                        ]
                },
      ]
@@ -123,7 +125,7 @@ const sidebars = {
      items: [
              'cloud/user-guide/workshop',
              'cloud/user-guide/manage-agent',
-             {
+             /* {
               type: 'category',
               label: '连接数据库',
               link: {type: 'doc', id: 'cloud/user-guide/connect-database/README'},
@@ -168,12 +170,11 @@ const sidebars = {
                             'cloud/user-guide/connect-database/alpha/connect-json',
                             'cloud/user-guide/connect-database/alpha/connect-mq',
                             'cloud/user-guide/connect-database/alpha/connect-opengauss',
-                            'cloud/user-guide/connect-database/alpha/connect-tablestore',
                             'cloud/user-guide/connect-database/alpha/connect-xml',
                            ]
                     }, 
               ]
-             },
+             },*/
              'cloud/user-guide/manage-connection',
              {
               type: 'category',

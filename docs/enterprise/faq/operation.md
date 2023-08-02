@@ -39,6 +39,44 @@ Subsystem:
 
 
 
+## <span id="release330-upgrade">如何执行滚动升级？</span>
+
+从 3.3.0 版本开始，Tapdata 支持滚动升级功能，相较于普通的停机升级方式，可帮助您缩短升级时间窗口，进一步降低业务影响，具体步骤如下：
+
+:::tip
+
+要求升级前后两个版本相兼容，同时推荐任务进入增量阶段或在业务低峰期执行。
+
+:::
+
+1. 登录 Tapdata 所属的服务器，保持原版本的 Tapdata 服务处于运行中。
+
+2. 下载并解压 3.3.0 版本安装包，然后进入安装包目录中。
+
+3. 执行下述格式的命令，完成滚动升级流程，升级完成后将提示： `Update finished. All Task are running.`。
+
+   ```bash
+   ./tapdata upgrade --source <old_version_path>
+   ```
+
+   old_version_path：老版本 Tapdata 所安装的目录，示例如下：
+
+   ```bash
+   ./tapdata upgrade --source /root/320/tapdata/
+   ```
+
+   :::tip
+
+   如果升级过程中遇到错误后，再次执行升级命令，可以接续上次升级过程，如需重置升级状态命令，可执行`./tapdata upgrade reset`。
+
+   :::
+
+4. 升级完毕后，登录 Tapdata 平台，单击右上角的用户名并选择系统版本确认已升级成功。
+
+5. 在 Tapdata 平台左侧导航栏，选择**系统管理** > **集群管理**，确认服务都已正常运行。
+
+   ![查看服务状态](../images/upgrade_check_server.png)
+
 
 
 ## 如何查看运行日志？

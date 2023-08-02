@@ -2,6 +2,36 @@
 
 本文介绍 V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)。
 
+
+
+## V3.3
+
+### 新增功能
+
+- [Kafka 数据源](prerequisites/certified/kafka.md)支持自定义消息体格式
+- 新增 [API 接口文档导出功能](user-guide/data-service/create-api-service#release330-export-api)，帮助团队快速建立并完善 API 使用资料
+- 共享挖掘功能支持[配置任务告警](user-guide/advanced-settings/share-mining#release330-alert)，可通过系统通知消息或邮件来发出告警信息，帮助更好地掌握任务的运行状态
+- [数据校验功能](user-guide/data-pipeline/verify-data.md)，支持设置数据过滤，从而实现只对特定条件的数据进行校验，可帮助您减少校验规模，提升效率
+- 在数据服务平台模式下，向平台缓存层拖拽数据表生成任务时，支持[设置任务的同步类型为全量或增量](user-guide/data-console/daas-mode/create-daas-task/#release330-task)
+
+### 功能优化
+
+- [支持滚动升级](faq/operation#release330-upgrade)，相较于停机升级方式，可进一步降低业务影响
+- [共享挖掘任务](user-guide/advanced-settings/share-mining.md)报错后，关联任务增加告警提示
+- 在[行过滤器处理节点](user-guide/data-pipeline/data-development/process-node.md)中，使用 DATE 类型过滤时，增加使用示例
+- [时间运算节点](user-guide/data-pipeline/data-development/process-node#date-calculation)，支持展示调整的字段
+- 全量完成剩余时间算法优化
+- 字段处理节点支持针对配置的一键复制和粘贴
+
+### 问题修复
+
+- 启动TM时如果没配置 java 环境变量，会导致启动不了，此时添加了针对该问题的日志输出
+- 修复了 admin 用户，在个人中心修改用户名后，所有菜单都不能查看的问题
+- 修复了数据复制/数据转换创建任务时，所有数据源都不支持 DDL 的问题
+- 修复了数据复制任务，配置表编辑节点时，添加前后缀输入一个字符加载一次的问题
+
+
+
 ## V3.2
 
 ### 新增功能

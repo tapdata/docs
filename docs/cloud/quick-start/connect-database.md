@@ -22,7 +22,7 @@
 
    :::tip
 
-   下文以 MySQL 数据源为例演示操作流程，其他数据源见[连接各类数据库](../user-guide/connect-database)。
+   下文以 MySQL 数据源为例演示操作流程，其他数据源见[连接各类数据库](../prerequisites)。
 
    :::
 

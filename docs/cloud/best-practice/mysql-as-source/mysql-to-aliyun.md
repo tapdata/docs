@@ -24,7 +24,7 @@
 
 ## 准备工作
 
-1. [连接本地 MySQL 数据库](../../user-guide/connect-database/certified/connect-mysql.md)。
+1. [连接本地 MySQL 数据库](../../prerequisites/certified/mysql.md)。
 
    :::tip
 
@@ -32,7 +32,7 @@
 
    :::
 
-2. [连接阿里云 RDS MySQL](../../user-guide/connect-database/alpha/connect-aliyun-rds-mysql.md)。
+2. [连接阿里云 RDS MySQL](../../prerequisites/alpha/aliyun-rds-for-mysql.md)。
 
 
 

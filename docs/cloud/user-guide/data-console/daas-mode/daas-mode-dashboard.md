@@ -23,7 +23,7 @@ import TabItem from '@theme/TabItem';
    <p></p>
    </TabItem>
     <TabItem value="1" label="② 添加数据源">
-    <p>单击<img src='/img/add_icon.png'></img>图标，在弹出的对话框，我们可以添加数据源，选中某个数据源后将跳转至连接配置页面，具体配置方法，见<a href="../../connect-database/">连接数据源</a>。</p>
+    <p>单击<img src='/img/add_icon.png'></img>图标，在弹出的对话框，我们可以添加数据源，选中某个数据源后将跳转至连接配置页面，具体配置方法，见<a href="../../../prerequisites/">连接数据源</a>。</p>
    </TabItem>
    <TabItem value="2" label="③ 搜索表">
    <p>单击<img src='/img/search_icon.png'></img>图标，输入表名的关键词，可帮助您快速定位到具体的表，该操作也支持在其他层级中使用。</p>

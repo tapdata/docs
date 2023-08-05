@@ -92,10 +92,15 @@ const sidebars = {
                items: [
                        'cloud/prerequisites/beta/apache-doris',
                        'cloud/prerequisites/beta/big-query',
+                       'cloud/prerequisites/beta/custom-connection',
                        'cloud/prerequisites/beta/csv',
                        'cloud/prerequisites/beta/excel',
+                       'cloud/prerequisites/beta/github',
                        'cloud/prerequisites/beta/larktask',
                        'cloud/prerequisites/beta/mariadb',
+                       'cloud/prerequisites/beta/redis',
+                       'cloud/prerequisites/beta/salesforce',
+                       'cloud/prerequisites/beta/selectdb',
                        'cloud/prerequisites/beta/tidb',
                        ]
                },

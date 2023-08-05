@@ -1,6 +1,6 @@
 # 连接测试及失败排查方法
 
-为保障数据源的连接有效性，当您完成[数据连接配置](connect-database/README.md)后，可单击**连接测试**以验证数据源配置是否满足要求、网络连通性是否正常等。本文介绍 Tapdata Cloud 常见的检查项目及失败时的排查方法。
+为保障数据源的连接有效性，当您完成[数据连接配置](../prerequisites/README.md)后，可单击**连接测试**以验证数据源配置是否满足要求、网络连通性是否正常等。本文介绍 Tapdata Cloud 常见的检查项目及失败时的排查方法。
 
 - **检查服务连接是否可用**
 
@@ -20,7 +20,7 @@
 
 - **检查binlog是否开启，并且为ROW级**（适用于 MySQL）
 
-  Tapdata Cloud 检查数据库的 binlog 是否开启、binlog 格式是否为 ROW，如果不满足要求则提示测试失败，设置方法，见 [MySQL 数据源准备工作](../prerequisites/config-database/certified/mysql.md)。此时请检查数据库相关配置。
+  Tapdata Cloud 检查数据库的 binlog 是否开启、binlog 格式是否为 ROW，如果不满足要求则提示测试失败，设置方法，见 [MySQL 数据源准备工作](../prerequisites/certified/mysql.md)。此时请检查数据库相关配置。
 
 - **检查 cdc 同步同步所需的权限是否授权**
 
@@ -28,15 +28,15 @@
 
 - **检查 archive log 是否开启**（适用于 Oracle）
 
-  Tapdata Cloud 检查是否开启 archive log，如果未开启则测试失败，开启方法，见 [Oracle 数据源准备工作](../prerequisites/config-database/certified/oracle.md)。
+  Tapdata Cloud 检查是否开启 archive log，如果未开启则测试失败，开启方法，见 [Oracle 数据源准备工作](../prerequisites/certified/oracle.md)。
 
 - **检查 supplemental log 模式是否正确**（适用于 Oracle）
 
-  Tapdata Cloud 检查supplemental log 模式是否正确，如不正确则提示测试失败，设置方法，见 [Oracle 数据源准备工作](../prerequisites/config-database/certified/oracle.md)。
+  Tapdata Cloud 检查supplemental log 模式是否正确，如不正确则提示测试失败，设置方法，见 [Oracle 数据源准备工作](../prerequisites/certified/oracle.md)。
 
 - **检查 DDL 语句所需的权限是否授权**（适用于 Oracle）
 
-  Tapdata Cloud 检查数据库账号是否具备 DDL 执行权限，如果权限不满足则提示测试失败，授权示例，见 [Oracle 数据源准备工作](../prerequisites/config-database/certified/oracle.md)。
+  Tapdata Cloud 检查数据库账号是否具备 DDL 执行权限，如果权限不满足则提示测试失败，授权示例，见 [Oracle 数据源准备工作](../prerequisites/certified/oracle.md)。
 
 
 

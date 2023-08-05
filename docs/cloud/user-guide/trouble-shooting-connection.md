@@ -42,4 +42,4 @@
 
 ## 推荐阅读
 
-[数据源连接前的准备工作](../prerequisites/config-database/README.md)
+[数据源连接前的准备工作](../prerequisites/README.md)

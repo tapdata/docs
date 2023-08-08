@@ -16,7 +16,7 @@
 
 3. 在左侧导航栏，单击**凭证与基础信息**，获取 App ID 和 App Secret 信息，后续将在连接数据源时使用。
 
-   ![](/Users/walter/Documents/GitHub/docs/docs/cloud/images/obtain_feishu_app_ak.png)
+   ![](../../images/obtain_feishu_app_ak.png)
 
 ## 注意事项
 

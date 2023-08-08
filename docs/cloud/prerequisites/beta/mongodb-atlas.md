@@ -66,7 +66,7 @@ MongoDB Atlas 5.0.15
 
 5. 根据下述说明完成数据源配置。
 
-   ![MongoDB Atlas 连接示例](../../../images/mongodb_atlas_connection_setting.png)
+   ![MongoDB Atlas 连接示例](../../images/mongodb_atlas_connection_setting.png)
 
     * 连接信息设置
 

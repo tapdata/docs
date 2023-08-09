@@ -8,7 +8,7 @@ Tapdata Cloud 可以实现数据从 MySQL 数据库到 Elasticsearch 的数据�
 
 1. [注册 Tapdata Cloud](https://cloud.tapdata.net)
 2. [配置 MySQL 连接](../../prerequisites/certified/mysql.md)
-3. [配置 Elasticsearch 连接](../../prerequisites/alpha/database/elasticsearch.md)
+3. [配置 Elasticsearch 连接](../../prerequisites/alpha/elasticsearch.md)
 
 同时还请注意参考[数据类型支持说明](../../user-guide/no-supported-data-type.md)，确保你需要操作的数据库版本在系统支持的列表里。
 

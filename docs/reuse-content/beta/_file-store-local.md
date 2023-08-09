@@ -4,7 +4,7 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
    <TabItem value="local" label="Local（本地）">
 
-   <p>当您将文件存放在 Tapdata Agent（<a href="../../../faq/agent-installation#semi-and-full-agent">半托管模式</a>）所属的设备上，可将其作为数据来源，准备工作如下：</p> 
+   <p>当您将文件存放在 Tapdata Agent（<a href="../../faq/agent-installation#semi-and-full-agent">半托管模式</a>）所属的设备上，可将其作为数据来源，准备工作如下：</p> 
   <ol>
    <li>登录至 Tapdata Agent 所属设备。</li>
    <li>为便于管理，新建一个文件夹用来存放文件，以 root 用户为例，我们新建一个文件夹为： <code>/root/files</code>。</li>

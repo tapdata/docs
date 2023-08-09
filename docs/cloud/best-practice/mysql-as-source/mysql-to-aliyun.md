@@ -32,7 +32,7 @@
 
    :::
 
-2. [连接阿里云 RDS MySQL](../../prerequisites/alpha/aliyun-rds-for-mysql.md)。
+2. [连接阿里云 RDS MySQL](../../prerequisites/alpha/database/aliyun-rds-for-mysql.md)。
 
 
 

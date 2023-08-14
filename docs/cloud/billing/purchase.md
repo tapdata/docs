@@ -6,7 +6,7 @@
 
 1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
 
-2. 在左侧导航栏，单击 **Agent 管理**。
+2. 在左侧导航栏，单击**资源管理**。
 
    当前我们已经创建了一个免费的 Agent 实例（半托管模式），现在我们需要订阅更多的 Agent 实例以满足业务对性能需求。
 
@@ -47,11 +47,10 @@
 7. 在跳转到的支付页面，根据页面指引完成支付流程，支持信用卡支付，完成支付后可下载支付凭证信息。
 
 8. 支付成功后，页面将自动跳转回 Tapdata Cloud 平台，可查看到您购买的 Agent 实例处于**待部署**状态。
-
-   ![订阅成功](../images/purchase_success.png)
    :::tip
    如您选择的是**全托管模式**，Agent 将自动完成部署；如您选择的是**半托管模式**，您需要手动在您的设备上[部署 Agent](../quick-start/install-agent/README.md)。
    :::
+   
 
 
 

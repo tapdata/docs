@@ -66,147 +66,149 @@ const sidebars = {
      ]
     },
     {
-     type: 'category',
-     label: '连接数据源',
-     link: {type: 'doc', id: 'cloud/prerequisites/README'},
-     items: [
-             'cloud/prerequisites/allow-access-network',
-             {
-              type: 'category',
-              label: '认证数据源',
-              link: {type: 'doc', id: 'cloud/prerequisites/certified/README'},
-              items: [
-                      'cloud/prerequisites/certified/clickhouse',
-                      'cloud/prerequisites/certified/kafka',
-                      'cloud/prerequisites/certified/mysql',
-                      'cloud/prerequisites/certified/mongodb',
-                      'cloud/prerequisites/certified/oracle',
-                      'cloud/prerequisites/certified/postgresql',
-                      'cloud/prerequisites/certified/sqlserver',
-                      ]
-              },
-              {
-               type: 'category',
-               label: 'Beta 数据源',
-               link: {type: 'doc', id: 'cloud/prerequisites/beta/README'},
-               items: [
-                       {
-                        type: 'category',
-                        label: '数据库',
-                        link: {type: 'doc', id: 'cloud/prerequisites/beta/database/README'},
-                         items: [
-                                'cloud/prerequisites/beta/database/big-query',
-                                'cloud/prerequisites/beta/database/custom-connection',
-                                'cloud/prerequisites/beta/database/dameng',
-                                'cloud/prerequisites/beta/database/databend',
-                                'cloud/prerequisites/beta/database/db2',
-                                'cloud/prerequisites/beta/database/doris',
-                                'cloud/prerequisites/beta/database/dummy',
-                                'cloud/prerequisites/beta/database/kingbase3s-r6',
-                                'cloud/prerequisites/beta/database/mariadb',
-                                'cloud/prerequisites/beta/database/redis',
-                                'cloud/prerequisites/beta/database/selectdb',
-                                'cloud/prerequisites/beta/database/tdengine',
-                                'cloud/prerequisites/beta/database/tidb',
-                                'cloud/prerequisites/beta/database/yashandb',
-                                ]
-                        },
-                        {
-                        type: 'category',
-                        label: 'SaaS',
-                        link: {type: 'doc', id: 'cloud/prerequisites/beta/saas/README'},
-                         items: [
-                                'cloud/prerequisites/beta/saas/coding',
-                                'cloud/prerequisites/beta/saas/github',
-                                'cloud/prerequisites/beta/saas/http-receiver',
-                                'cloud/prerequisites/beta/saas/hubspot',
-                                'cloud/prerequisites/beta/saas/lark-im',
-                                'cloud/prerequisites/beta/saas/larktask',
-                                'cloud/prerequisites/beta/saas/metabase',
-                                'cloud/prerequisites/beta/saas/salesforce',
-                                'cloud/prerequisites/beta/saas/zoho-desk',
-                                ]
-                        },
-                        {
-                        type: 'category',
-                        label: '文件',
-                        link: {type: 'doc', id: 'cloud/prerequisites/beta/file/README'},
-                         items: [
-                                'cloud/prerequisites/beta/file/csv',
-                                'cloud/prerequisites/beta/file/excel',
-                                ]
-                        }
-                       ]
-               },
-               {
-               type: 'category',
-               label: 'Alpha 数据源',
-               link: {type: 'doc', id: 'cloud/prerequisites/alpha/README'},
-               items: [
-                       {
-                        type: 'category',
-                        label: '数据库',
-                        link: {type: 'doc', id: 'cloud/prerequisites/alpha/database/README'},
-                         items: [
-                                'cloud/prerequisites/alpha/database/activemq',
-                                'cloud/prerequisites/alpha/database/adb-mysql',
-                                'cloud/prerequisites/alpha/database/adb-postgresql',
-                                'cloud/prerequisites/alpha/database/aliyun-adb-mysql',
-                                'cloud/prerequisites/alpha/database/aliyun-mongodb',
-                                'cloud/prerequisites/alpha/database/aliyun-rds-for-mariadb',
-                                'cloud/prerequisites/alpha/database/aliyun-rds-for-mongodb',
-                                'cloud/prerequisites/alpha/database/aliyun-rds-for-mysql',
-                                'cloud/prerequisites/alpha/database/aliyun-rds-for-pg',
-                                'cloud/prerequisites/alpha/database/amazon-rds-mysql',
-                                'cloud/prerequisites/alpha/database/elasticsearch',
-                                'cloud/prerequisites/alpha/database/gbase-8a',
-                                'cloud/prerequisites/alpha/database/gbase-8s',
-                                'cloud/prerequisites/alpha/database/hazelcast-cloud',
-                                'cloud/prerequisites/alpha/database/hive1',
-                                'cloud/prerequisites/alpha/database/hive3',
-                                'cloud/prerequisites/alpha/database/kingbase-es-r3',
-                                'cloud/prerequisites/alpha/database/mrs-hive3',
-                                'cloud/prerequisites/alpha/database/mysql-pxc',
-                                'cloud/prerequisites/alpha/database/oceanbase',
-                                'cloud/prerequisites/alpha/database/opengauss',
-                                'cloud/prerequisites/alpha/database/polardb-mysql',
-                                'cloud/prerequisites/alpha/database/polardb-postgresql',
-                                'cloud/prerequisites/alpha/database/rabbitmq',
-                                'cloud/prerequisites/alpha/database/rocketmq',
-                                'cloud/prerequisites/alpha/database/tablestore',
-                                'cloud/prerequisites/alpha/database/tencentdb-for-mariadb',
-                                'cloud/prerequisites/alpha/database/tencentdb-for-mongodb',
-                                'cloud/prerequisites/alpha/database/tencentdb-for-mysql',
-                                'cloud/prerequisites/alpha/database/tencentdb-for-pg',
-                                ]
-                       },
-                       {
-                        type: 'category',
-                        label: 'SaaS',
-                        link: {type: 'doc', id: 'cloud/prerequisites/alpha/saas/README'},
-                         items: [
-                                'cloud/prerequisites/alpha/saas/ai-chat',
-                                'cloud/prerequisites/alpha/saas/bes-channels',
-                                'cloud/prerequisites/alpha/saas/lark-approval',
-                                'cloud/prerequisites/alpha/saas/lark-doc',
-                                'cloud/prerequisites/alpha/saas/quick-api',
-                                'cloud/prerequisites/alpha/saas/shein',
-                                'cloud/prerequisites/alpha/saas/vika',
-                                'cloud/prerequisites/alpha/saas/zoho-crm',
-                                ]
-                       },
-                       {
-                        type: 'category',
-                        label: '文件',
-                        link: {type: 'doc', id: 'cloud/prerequisites/alpha/file/README'},
-                         items: [
-                                'cloud/prerequisites/alpha/file/json',
-                                'cloud/prerequisites/alpha/file/xml',
-                                ]
-                       },
-                       ]
-               },
-     ]
+         type: 'category',
+         label: '连接数据源',
+         link: {type: 'doc', id: 'cloud/prerequisites/README'},
+         items: [
+                 'cloud/prerequisites/allow-access-network',
+                 {
+                  type: 'category',
+                  label: '数据仓库与数据湖',
+                  link: {type: 'doc', id: 'cloud/prerequisites/warehouses-and-lake/README'},
+                  items: [
+                          'cloud/prerequisites/warehouses-and-lake/big-query',
+                          'cloud/prerequisites/warehouses-and-lake/clickhouse',
+                          'cloud/prerequisites/warehouses-and-lake/databend',
+                          'cloud/prerequisites/warehouses-and-lake/doris',
+                          'cloud/prerequisites/warehouses-and-lake/selectdb',
+                          'cloud/prerequisites/warehouses-and-lake/tablestore',
+                          'cloud/prerequisites/warehouses-and-lake/yashandb',
+                         ]
+                  },
+                 {
+                  type: 'category',
+                  label: '自建数据库',
+                  link: {type: 'doc', id: 'cloud/prerequisites/on-prem-databases/README'},
+                  items: [
+                          'cloud/prerequisites/on-prem-databases/dameng',
+                          'cloud/prerequisites/on-prem-databases/db2',
+                          'cloud/prerequisites/on-prem-databases/elasticsearch',
+                          'cloud/prerequisites/on-prem-databases/gbase-8a',
+                          'cloud/prerequisites/on-prem-databases/gbase-8s',
+                          'cloud/prerequisites/on-prem-databases/hive1',
+                          'cloud/prerequisites/on-prem-databases/hive3',
+                          'cloud/prerequisites/on-prem-databases/informix',
+                          'cloud/prerequisites/on-prem-databases/kingbase-es-r3',
+                          'cloud/prerequisites/on-prem-databases/kingbase-es-r6',
+                          'cloud/prerequisites/on-prem-databases/mariadb',
+                          'cloud/prerequisites/on-prem-databases/mongodb',
+                          'cloud/prerequisites/on-prem-databases/mongodb-atlas',
+                          'cloud/prerequisites/on-prem-databases/mrs-hive3',
+                          'cloud/prerequisites/on-prem-databases/mysql',
+                          'cloud/prerequisites/on-prem-databases/mysql-pxc',
+                          'cloud/prerequisites/on-prem-databases/oceanbase',
+                          'cloud/prerequisites/on-prem-databases/opengauss',
+                          'cloud/prerequisites/on-prem-databases/oracle',
+                          'cloud/prerequisites/on-prem-databases/postgresql',
+                          'cloud/prerequisites/on-prem-databases/redis',
+                          'cloud/prerequisites/on-prem-databases/sqlserver',
+                          'cloud/prerequisites/on-prem-databases/tdengine',
+                          'cloud/prerequisites/on-prem-databases/tidb',
+                          ]
+                  },
+                  {
+                   type: 'category',
+                   label: '云数据库',
+                   link: {type: 'doc', id: 'cloud/prerequisites/cloud-databases/README'},
+                   items: [
+                           'cloud/prerequisites/cloud-databases/aliyun-adb-mysql',
+                           'cloud/prerequisites/cloud-databases/aliyun-adb-postgresql',
+                           'cloud/prerequisites/cloud-databases/aliyun-mongodb',
+                           'cloud/prerequisites/cloud-databases/aliyun-rds-for-mariadb',
+                           'cloud/prerequisites/cloud-databases/aliyun-rds-for-mongodb',
+                           'cloud/prerequisites/cloud-databases/aliyun-rds-for-mysql',
+                           'cloud/prerequisites/cloud-databases/aliyun-rds-for-pg',
+                           'cloud/prerequisites/cloud-databases/amazon-rds-mysql',
+                           'cloud/prerequisites/cloud-databases/polardb-mysql',
+                           'cloud/prerequisites/cloud-databases/polardb-postgresql',
+                           'cloud/prerequisites/cloud-databases/tencentdb-for-mariadb',
+                           'cloud/prerequisites/cloud-databases/tencentdb-for-mongodb',
+                           'cloud/prerequisites/cloud-databases/tencentdb-for-mysql',
+                           'cloud/prerequisites/cloud-databases/tencentdb-for-pg',
+                          ]
+                   },
+                  {
+                   type: 'category',
+                   label: '消息队列与中间件',
+                   link: {type: 'doc', id: 'cloud/prerequisites/mq-and-middleware/README'},
+                   items: [
+                           'cloud/prerequisites/mq-and-middleware/activemq',
+                           'cloud/prerequisites/mq-and-middleware/ai-chat',
+                           'cloud/prerequisites/mq-and-middleware/bes-channels',
+                           'cloud/prerequisites/mq-and-middleware/hazelcast-cloud',
+                           'cloud/prerequisites/mq-and-middleware/kafka',
+                           'cloud/prerequisites/mq-and-middleware/rabbitmq',
+                           'cloud/prerequisites/mq-and-middleware/rocketmq',
+                          ]
+                   },
+                   {
+                   type: 'category',
+                   label: '客户管理与销售运营分析',
+                   link: {type: 'doc', id: 'cloud/prerequisites/crm-and-sales-analytics/README'},
+                   items: [
+                           'cloud/prerequisites/crm-and-sales-analytics/hubspot',
+                           'cloud/prerequisites/crm-and-sales-analytics/metabase',
+                           'cloud/prerequisites/crm-and-sales-analytics/salesforce',
+                           'cloud/prerequisites/crm-and-sales-analytics/zoho-crm',
+                          ]
+                   },
+                   {
+                    type: 'category',
+                    label: 'SaaS 应用与 API 服务',
+                    link: {type: 'doc', id: 'cloud/prerequisites/saas-and-api/README'},
+                    items: [
+                            'cloud/prerequisites/saas-and-api/coding',
+                            'cloud/prerequisites/saas-and-api/github',
+                            'cloud/prerequisites/saas-and-api/lark-approval',
+                            'cloud/prerequisites/saas-and-api/lark-doc',
+                            'cloud/prerequisites/saas-and-api/lark-im',
+                            'cloud/prerequisites/saas-and-api/lark-task',
+                            'cloud/prerequisites/saas-and-api/quick-api',
+                            'cloud/prerequisites/saas-and-api/vika',
+                            'cloud/prerequisites/saas-and-api/zoho-desk',
+                           ]
+                   },
+                   {
+                    type: 'category',
+                    label: '电商平台',
+                    link: {type: 'doc', id: 'cloud/prerequisites/e-commerce/README'},
+                    items: [
+                            'cloud/prerequisites/e-commerce/alibaba-1688',
+                            'cloud/prerequisites/e-commerce/shein',
+                           ]
+                   },
+                   {
+                    type: 'category',
+                    label: '文件',
+                    link: {type: 'doc', id: 'cloud/prerequisites/files/README'},
+                    items: [
+                            'cloud/prerequisites/files/csv',
+                            'cloud/prerequisites/files/excel',
+                            'cloud/prerequisites/files/json',
+                            'cloud/prerequisites/files/xml',
+                           ]
+                   },
+                   {
+                    type: 'category',
+                    label: '其他',
+                    link: {type: 'doc', id: 'cloud/prerequisites/others/README'},
+                    items: [
+                            'cloud/prerequisites/others/custom-connection',
+                            'cloud/prerequisites/others/dummy',
+                            'cloud/prerequisites/others/http-receiver',
+                           ]
+                   },
+         ]
     },
     {
      type: 'category',

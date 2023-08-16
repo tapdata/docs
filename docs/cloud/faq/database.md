@@ -24,7 +24,7 @@ Tapdata Cloud 支持丰富的数据库，包括常见关系型、非关系型以
 
 ### Oracle 同步到 SQL Server，Select 权限是否足够？
 
-Oracle 需要一些额外的权限来做 CDC，具体配置与授权，见 [Oracle 准备工作](../prerequisites/certified/oracle.md)。
+Oracle 需要一些额外的权限来做 CDC，具体配置与授权，见 [Oracle 准备工作](../prerequisites/on-prem-databases/oracle.md)。
 
 
 

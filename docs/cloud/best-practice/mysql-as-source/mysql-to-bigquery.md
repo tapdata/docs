@@ -8,8 +8,8 @@
 
 在创建同步任务前，请确保您已经配置好了相关数据源：
 
-1. [配置 MySQL 连接](../../prerequisites/certified/mysql.md)
-2. [配置 BigQuery 连接](../../prerequisites/beta/database/big-query.md)
+1. [配置 MySQL 连接](../../prerequisites/on-prem-databases/mysql.md)
+2. [配置 BigQuery 连接](../../prerequisites/warehouses-and-lake/big-query.md)
 
 同时还请注意参考[数据类型支持说明](../../user-guide/no-supported-data-type.md)。
 

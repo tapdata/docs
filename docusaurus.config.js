@@ -194,6 +194,10 @@ const config = {
         theme: require('prism-react-renderer/themes/dracula'),
       },
     }),
+
+  scripts: [
+    '/js/iframe.js'
+  ]
 };
 
 module.exports = config;

@@ -1,6 +1,6 @@
 # JSON
 
-Tapdata Cloud 支持读取 Local（本地）、FTP、SFTP、SMB、S3FS 或 OSS 上的文件，支持的文件类型包括 [CSV](../beta/csv.md)、[EXCEL](../beta/excel.md)、JSON 和 [XML](xml.md)，满足多样化的数据流转需求。
+Tapdata Cloud 支持读取 Local（本地）、FTP、SFTP、SMB、S3FS 或 OSS 上的文件，支持的文件类型包括 [CSV](csv.md)、[EXCEL](excel.md)、JSON 和 [XML](xml.md)，满足多样化的数据流转需求。
 
 JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，易于阅读和编写，可以在多种语言之间进行数据交换。完成 Agent 部署后，您可以跟随本文教程在 Tapdata Cloud 中添加 JSON 数据源，后续可将其作为源库来构建数据管道。
 

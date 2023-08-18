@@ -33,7 +33,7 @@
 
    :::
 
-2. [连接 MongoDB 数据库](../../../prerequisites/certified/mongodb.md)。
+2. [连接 MongoDB 数据库](../../../prerequisites/on-prem-databases/mongodb.md)。
 
 ## 操作步骤
 

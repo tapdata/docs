@@ -7,8 +7,8 @@ Tapdata Cloud 可以实现数据从 MongoDB 数据库到 MySQL 的数据同步�
 在创建同步任务前，请确保你已经配置好了相关的数据源，如果还没有，请参考： 
 
 1. [注册 Tapdata Cloud](https://cloud.tapdata.net)
-2. [配置 MongoDB 连接](../../prerequisites/certified/mongodb.md)
-3. [配置 MySQL 连接](../../prerequisites/certified/mysql.md)
+2. [配置 MongoDB 连接](../../prerequisites/on-prem-databases/mongodb.md)
+3. [配置 MySQL 连接](../../prerequisites/on-prem-databases/mysql.md)
 
 同时还请注意参考[数据类型支持说明](../../user-guide/no-supported-data-type.md)，确保你需要操作的数据库版本在系统支持的列表里。
 

@@ -13,6 +13,10 @@ import TabItem from '@theme/TabItem';
 
 Dorix 1.x、2.x
 
+## 注意事项
+
+如需使用 Doris 作为源库并同步增量数据变更，您需要[创建数据转换任务](../../user-guide/data-development/create-task.md)并选择**增量同步方式**为**字段轮询**。
+
 ## 准备工作
 
 1. 登录 Doris 数据库，执行下述格式的命令，创建用于数据同步/开发任务的账号。
@@ -97,3 +101,5 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
    如提示连接测试失败，请根据页面提示进行修复。
 
    :::
+
+

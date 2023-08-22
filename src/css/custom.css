@@ -78,3 +78,26 @@ pre {
 .tabs {
   border-bottom: 1px solid grey;
 }
+
+/* Floating frame for term (show words) */
+.highlight-text {
+  color: #fa9600;
+  cursor: pointer;
+  border-bottom: 1px dashed #fa9600;
+}
+
+/* Floating frame for term (Float words) */
+.tooltip-content {
+  background-color: #e68a00;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  width: auto;
+  max-width: 550px;
+  display: none;
+}
+.tooltip:hover .tooltip-content {
+  display: block;
+}

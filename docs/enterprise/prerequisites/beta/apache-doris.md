@@ -13,6 +13,10 @@ import TabItem from '@theme/TabItem';
 
 Dorix 1.x、2.x
 
+import Content from '../../../reuse-content/beta/beta.md';
+
+<Content />
+
 ## 注意事项
 
 如需使用 Doris 作为源库并同步增量数据变更，您需要[创建数据转换任务](../../user-guide/data-pipeline/data-development/create-task.md)并选择**增量同步方式**为**字段轮询**。

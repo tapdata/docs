@@ -135,6 +135,7 @@ const sidebars = {
                            'cloud/prerequisites/cloud-databases/tencentdb-for-mongodb',
                            'cloud/prerequisites/cloud-databases/tencentdb-for-mysql',
                            'cloud/prerequisites/cloud-databases/tencentdb-for-pg',
+                           'cloud/prerequisites/cloud-databases/tencentdb-for-sql-server',
                           ]
                    },
                   {

@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 - 新增 [Dashboard 页面](user-guide/workshop.md)，可直观获取页面任务与 Agent 状态概览
 - [Agent 购买](billing/purchase.md)的支付方式新增公对公支付
-- 新增实时数据中心的初始化使用引导
+- 新增[实时数据中心](user-guide/real-time-data-hub.md)的介绍和部署引导
 
 #### 功能优化
 

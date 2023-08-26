@@ -240,6 +240,7 @@ const sidebars = {
                    'cloud/user-guide/data-development/monitor-task',
                    ]
              },
+             'cloud/user-guide/real-time-data-hub',
              'cloud/user-guide/custom-node',
              'cloud/user-guide/operation-log',
              'cloud/user-guide/trouble-shooting-connection',

@@ -10,11 +10,11 @@ Tapdata Cloud 的数据同步包括全量同步和实时增量同步两部分，
 
 
 
-## 数据开发
+## 数据转换
 
 针对复杂的数据处理需求，Tapdata Cloud 在数据复制能力的基础上，支持在数据源间增加多种[处理节点](../user-guide/data-development/process-node.md)，快速实现多表合并、数据拆分、字段增减、共享挖掘等高级数据处理需求。
 
-![数据开发工作流程](../images/features_data_dev.png)
+![数据转换工作流程](../images/features_data_dev.png)
 
 
 

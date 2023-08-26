@@ -7,7 +7,7 @@ Tapdata Cloud 支持读取 Local（本地）、FTP、SFTP、SMB、S3FS 或 OSS �
 ## 注意事项
 
 - 一个连接配置仅对应一个模型（表），如有多个模型您需要分别为其创建链接。
-- XML 数据源仅适用于数据开发任务，暂不支持在数据复制任务中引用。
+- XML 数据源仅适用于数据转换任务，暂不支持在数据复制任务中引用。
 - Tapdata Cloud 默认每隔 1 分钟检测 XML 文件是否发生变更（如新增/修改文件），如发生变更则将涉及的文件全量新增后更新条件字段以完成修改，暂不支持同步删除文件或数据。
 - XML 文件中可用的数据类型为 ARRAY、BOOLEAN、DATETIME、INTEGER、NUMBER, OBJECT、STRING、TEXT。
 

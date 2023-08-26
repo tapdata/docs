@@ -21,142 +21,14 @@ Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，完成
 
 您可以通过信用卡或对公转账的方式支付 Tapdata Cloud 费用。
 
-## 产品定价
-
-请根据数据量和任务数量选择合适的 Agent 规格进行订阅，各规格定价如下，单位为人民币（元）：
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs className="unique-tabs">
-    <TabItem value=" semi-managed" label="全托管模式定价" default>
-    <p>此模式下，由 Tapdata Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，提供统一的运行维护和资源监控以提升运行可靠性，可实现一键交付使用，免去部署和运维精力，专注业务本身。</p>
-    <table>
-<thead>
-  <tr>
-    <th>规格</th>
-    <th>包月</th>
-    <th>连续包月</th>
-    <th>包年</th>
-    <th>连续包年</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>LARGE</td>
-    <td>1600</td>
-    <td>1,520</td>
-    <td>17,280</td>
-    <td>17,280</td>
-  </tr>
-  <tr>
-    <td>XLARGE</td>
-    <td>3,200</td>
-    <td>2,280</td>
-    <td>34,560</td>
-    <td>34,560</td>
-  </tr>
-  <tr>
-    <td>2XLARGE</td>
-    <td>4,800</td>
-    <td>3,040</td>
-    <td>51,840</td>
-    <td>51,840</td>
-  </tr>
-  <tr>
-    <td>3XLARGE</td>
-    <td>6,400</td>
-    <td>6,080</td>
-    <td>69,120</td>
-    <td>69,120</td>
-  </tr>
-  <tr>
-    <td>4XLARGE</td>
-    <td>12,800</td>
-    <td>12,160</td>
-    <td>138,240</td>
-    <td>138,240</td>
-  </tr>
-  <tr>
-    <td>8XLARGE</td>
-    <td>25,600</td>
-    <td>24,320</td>
-    <td>276,480</td>
-    <td>276,480</td>
-  </tr>
-</tbody>
-</table>
-   </TabItem>
-   <TabItem value="fully-managed" label="半托管模式定价">
-   <p>此模式下，由您提供设备来部署和运维 Agent，可充分利用现有硬件资源，获得更低的价格的同时，进一步提升安全性。</p>
-    <table>
-<thead>
-  <tr>
-    <th>规格</th>
-    <th>包月</th>
-    <th>连续包月 </th>
-    <th>包年 </th>
-    <th>连续包年 </th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>SMALL</td>
-    <td colspan="4">免费（1 个 Agent 实例）</td>
-  </tr>
-  <tr>
-    <td>LARGE </td>
-    <td>800 </td>
-    <td>760 </td>
-    <td>8,640 </td>
-    <td>8,640 </td>
-  </tr>
-  <tr>
-    <td>XLARGE </td>
-    <td>1600 </td>
-    <td>1,520 </td>
-    <td>17,280 </td>
-    <td>17,280 </td>
-  </tr>
-  <tr>
-    <td>2XLARGE </td>
-    <td>3,200 </td>
-    <td>2,280 </td>
-    <td>34,560 </td>
-    <td>34,560 </td>
-  </tr>
-  <tr>
-    <td>3XLARGE </td>
-    <td>4,800 </td>
-    <td>3,040 </td>
-    <td>51,840 </td>
-    <td>51,840 </td>
-  </tr>
-  <tr>
-    <td>4XLARGE </td>
-    <td>6,400 </td>
-    <td>6,080 </td>
-    <td>69,120 </td>
-    <td>69,120 </td>
-  </tr>
-  <tr>
-    <td>8XLARGE </td>
-    <td>12,800 </td>
-    <td>12,160</td>
-    <td>138,240 </td>
-    <td>138,240 </td>
-  </tr>
-</tbody>
-</table>
-   </TabItem>
-  </Tabs>
-
 
 
 
 ## 规格说明
 
-由于数据流转通常受 Agent 所属机器负载/性能、网络传输延迟、网络带宽、源/目标库读写性能等多种因素影响，下表各规格的性能仅为参考，实际运行以场景真实表现为准。
+由于数据流转通常受 Agent 所属机器负载/性能、网络传输延迟、网络带宽、源/目标库读写性能等多种因素影响，请根据数据量和任务数量选择合适的 Agent 规格进行订阅。下表各规格的性能仅为参考，实际运行以场景真实表现为准。
+
+各规格的定价，以购买流程的展示为准，推荐选择连续包月（**95 折**）或连续包年（**9 折**）。
 
 <table>
 <thead>

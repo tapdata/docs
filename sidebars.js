@@ -80,6 +80,7 @@ const sidebars = {
                           'cloud/prerequisites/warehouses-and-lake/clickhouse',
                           'cloud/prerequisites/warehouses-and-lake/databend',
                           'cloud/prerequisites/warehouses-and-lake/doris',
+                          'cloud/prerequisites/warehouses-and-lake/gaussdb',
                           'cloud/prerequisites/warehouses-and-lake/greenplum',
                           'cloud/prerequisites/warehouses-and-lake/selectdb',
                           'cloud/prerequisites/warehouses-and-lake/tablestore',

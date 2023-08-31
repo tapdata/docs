@@ -1,43 +1,46 @@
 # Zoho CRM
 
-在创建 Zoho-CRM 连接前，您需要在跟随本文完成前置准备工作，完成操作后即可创建连接并在数据复制/开发任务中使用该数据源。
+Zoho CRM 可以将您的销售，营销和客户支持活动整合在一起，帮助您在一个平台上实现流程的简化，提升工作效率。Tapdata 支持将 Zoho CRM 作为数据来源构建数据管道，帮助您读取 CRM 中的数据并同步到指定的数据源，快速打通数据流转通道。本文介绍如何在 Tapdata 中添加 Zoho CRM 数据源。
 
-## 操作步骤
 
-1. 登录 [Zoho API 控制台](https://api-console.zoho.com.cn/)，然后单击 **GET STARTED**。
 
-2. 单击 **Self Client** 卡片对应的 **CREATE NOW**。
+## 支持读取的数据
 
-3. 单击 **CREATE**，然后在弹出的对话框中单击 **OK**。
+Tapdata 支持将 Zoho CRM 中的数据以表的形式来读取，并同步至目标库，表名与 Zoho CRM 中功能模块对应关系如下：
 
-4. 创建完成后，您将获取 **Client ID** 和 **Client Secret** 信息，后续将在连接数据源时使用。
+- **Accounts**：客户
+- **Contacts**：联系人
+- **Leads**：线索
+- **Potentials**：商机
+- **Quotes**：报价
+- **Sales_Order**：销售订单
 
-   ![](../../images/obtain_zoho_secret.png)
+## 连接 Zoho CRM
 
-5. 单击 **Generate Code** 页签，填写要授权的 **Scope** 和描述信息，然后单击 **CREATE**。
+1. 登录 Tapdata 平台。
 
-   ![](../../images/zoho_generate_code.png)
+2. 在左侧导航栏，单击**连接管理**。
+
+3. 单击页面右侧的**创建**。
+
+4. 在弹出的对话框中，搜索并选择 **Zoho CRM**。
+
+5. 根据下述说明完成数据源配置。
+   - **连接名称**：填写具有业务意义的独有名称。
+   - **连接类型**：仅支持**源头**。
+   - **高级设置**
+     - **Agent 设置**：默认为**平台自动分配**，您也可以手动指定。
+     - **模型加载时间**：当数据源中模型数量小于 10,000 时，每小时刷新一次模型信息；如果模型数据超过 10,000，则每天按照您指定的时间刷新模型信息。
+
+6. 单击**授权**，在跳转到的 Zoho CRM 授权页面，以**管理员**的身份完成登录和授权操作。
 
    :::tip
 
-   关于 Scope 的设置参考资料，见 [OAuth 认证](https://www.zoho.com.cn/crm/help/developer/api/oauth-overview.html)。
+   完成操作后，页面将自动返回至数据源配置页面并显示**成功授权**。
 
    :::
 
-6. 在跳转到的页面，选择目标 Portal 和 Production，单击 **CREATE**。
+7. 单击**连接测试**，测试通过后单击**保存**。
 
-7. 在弹出的对话框中，复制或下载 Code 信息（即令牌信息），妥善保存该信息，后续将在连接数据源时使用。
+   如提示连接测试失败，请根据页面提示进行修复。
 
-   ![](../../images/obtain_zoho_code.png)
-
-   :::tip
-
-   默认的令牌有效期为三分钟，请尽快完成数据源的添加，如过期请重复执行步骤 5~7，重写获取令牌信息。
-
-   :::
-
-
-
-## 下一步
-
-至此，已完成相关准备工作，接下来，您可以连接 [Zoho CRM](../../user-guide/connect-database/beta/connect-zoho.md)。

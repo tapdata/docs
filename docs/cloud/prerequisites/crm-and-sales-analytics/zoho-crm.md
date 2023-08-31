@@ -1,76 +1,48 @@
 # Zoho CRM
 
-### 写在前面
+Zoho CRM 可以将您的销售，营销和客户支持活动整合在一起，帮助您在一个平台上实现流程的简化，提升工作效率。Tapdata Cloud 支持将 Zoho CRM 作为数据来源构建数据管道，帮助您读取 CRM 中的数据并同步到指定的数据源，快速打通数据流转通道。本文介绍如何在 Tapdata Cloud 中添加 Zoho CRM 数据源。
 
-如果您感兴趣的话，不妨前往ZoHo提供的OpenAPI文档文档，详细了解全部内容：
 
-- OpenAPI文档：https://www.zoho.com.cn/crm/help/developer/api/overview.html
 
-当然您也可以浏览以下内容，快速上手ZoHo数据源的配置流程。
+## 支持读取的数据
 
-------
+Tapdata Cloud 支持将 Zoho CRM 中的数据以表的形式来读取，并同步至目标库，表名与 Zoho CRM 中功能模块对应关系如下：
 
-### 1.属性说明
+- **Accounts**：客户
+- **Contacts**：联系人
+- **Leads**：线索
+- **Potentials**：商机
+- **Quotes**：报价
+- **Sales_Order**：销售订单
 
-- 客户端ID码(Client ID)：客户端ID码需要用户前往ZoHoDesk手动获取并复制粘贴到此；
-- 客户端机密码(Client Secret)：客户端机密码与客户端ID码获取方式一致，您获取客户端ID码的同时也可以看到客户端机密码，输入客户端ID码和客户端机密码后即可输入应用生成码；
-- 用生成码(Generate Code)：应用生成码需要与客户端ID码和客户端机密码配合使用，用于获取OpenAPI访问秘钥和秘钥刷新令牌。
+## 连接 Zoho CRM
 
-------
+1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
 
-### 2.配置步骤
+2. 在左侧导航栏，单击**连接管理**。
 
-1. 注册客户端：
+3. 单击页面右侧的**创建**。
 
-   1. 访问 https://api-console.zoho.com.cn/ Zoho Developer控制台
-   2. 点击添加客户端ID.
+4. 在弹出的对话框中，搜索并选择 **Zoho CRM**。
 
-   ![img](https://www.zohowebstatic.com/sites/default/files/crm/api-reg-client-add-client.jpg)
+5. 根据下述说明完成数据源配置。
+   - **连接名称**：填写具有业务意义的独有名称。
+   - **连接类型**：仅支持**源头**。
+   - **高级设置**
+     - **Agent 设置**：默认为**平台自动分配**，您也可以手动指定。
+     - **模型加载时间**：当数据源中模型数量小于 10,000 时，每小时刷新一次模型信息；如果模型数据超过 10,000，则每天按照您指定的时间刷新模型信息。
 
-   3. 输入以下信息
+6. 单击**授权**，在跳转到的 Zoho CRM 授权页面，以**管理员**的身份完成登录和授权操作。
 
-      ![img](https://www.zohowebstatic.com/sites/default/files/crm/api-reg-client2.jpg)
+   ![完成授权](../../images/grant_zoho_crm.png)
 
-      客户端名称 - 您想要在Zoho注册的应用程序名称
+   :::tip
 
-      客户端域 - 要在URL中用于标识web页面的域名
+   完成操作后，页面将自动返回至数据源配置页面并显示**成功授权**。
 
-      授权重定向URL - 系统对接无需使用此参数，可自行填写一个地址。
+   :::
 
-   4. 点击创建。
+7. 单击**连接测试**，测试通过后单击**保存**。
 
-   5. 收到以下证书：
+   如提示连接测试失败，请根据页面提示进行修复。
 
-      ![img](https://www.zohowebstatic.com/sites/default/files/crm/api-reg-client3.jpg)
-
-      客户端ID – 消费者密钥由连接的应用程序生成。
-
-      客户端密钥 – 消费者密钥产生于连接的应用程序。
-
-2. 认证请求
-
-   1. 单击【ADD CLIENT】按钮，选择【Self Client】。
-   2. 填写上面获取到的客户端ID和客户端密钥。
-   3. 在Generate Code页签填写【Scope】和【Scope Description】点击【CREATE】按钮。
-
-   Scope填写方式参见https://www.zoho.com.cn/crm/help/developer/api/oauth-overview.html 作用域章节。
-
-   ![img](https://www.zohowebstatic.com/sites/default/files/crm/api-v2-selfclient2.png)
-
-   4. 生成Generated Code
-
-   ![img](https://gitee.com/code-on-top/picture-temp/raw/master/picture/zoho_generate_code_3.png)
-
-2. 完成连接配置
-
-   1. 在连接配置中填写Client ID、Client Secret和授予令牌（Generated Code）
-   2. 点击【刷新令牌】按钮获取访问令牌。
-   3. 保存连接。
-
-## 表说明
-
-1. Leads：线索。
-2. Contacts：联系人。
-3. Accounts：客户。
-4. Potentials：商机。
-5. Quotes：报价。

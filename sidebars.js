@@ -505,7 +505,6 @@ const sidebars = {
                             'enterprise/user-guide/connect-database/beta/connect-selectdb',
                             'enterprise/user-guide/connect-database/beta/connect-tdengine',
                             'enterprise/user-guide/connect-database/beta/connect-tidb',
-                            'enterprise/user-guide/connect-database/beta/connect-zoho', 
                            ]
                     },
                     {

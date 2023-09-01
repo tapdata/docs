@@ -5,10 +5,9 @@
 | 任务类型                                                     | 适用场景                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [创建数据复制任务](../user-guide/copy-data/create-task.md)   | 简单几步即可实现同/异构数据源间的实时同步，适用于数据迁移/同步、数据灾备、读性能扩展等多种业务场景。 |
-| [创建数据开发任务](../user-guide/data-development/create-task.md)（Beta） | 通过在源/目标数据源间增加多种处理节点，快速实现多表合并、数据拆分、字段增减、共享挖掘等高级数据处理需求。 |
+| [创建数据转换任务](../user-guide/data-development/create-task.md)（Beta） | 通过在源/目标数据源间增加多种处理节点，快速实现多表合并、数据拆分、字段增减、共享挖掘等高级数据处理需求。 |
 
 ## 扩展阅读
 
-* [开启数据服务平台模式](../user-guide/data-console/daas-mode/enable-daas-mode.md)
 * [支持的数据源](../introduction/supported-databases.md)
 * [最佳实践文档](../best-practice/README.md)

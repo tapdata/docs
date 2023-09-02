@@ -13,6 +13,21 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
   <TabItem value="2023" label="2023 年" default>
 ```
+### 20230826
+
+#### 新增功能
+
+- 新增[主从合并节点](user-guide/data-development/process-node#pri-sec-merged)，可实现宽表的快速构建和实时更新，帮助您更好地实现数据分析
+
+#### 功能优化
+
+- 将连接数据源时右侧展示帮助文档，调整为内嵌的在线文档，帮助用户获取最新的帮助信息
+- 对核心数据源（如 PostgreSQL、Redis等），优化创建连接时的页面参数介绍和指引
+
+#### 问题修复
+
+* 修复了运行过的任务无法查看运行监控页面的问题
+
 ### 20230811
 
 #### 新增功能

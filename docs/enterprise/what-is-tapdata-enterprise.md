@@ -7,8 +7,7 @@ slug: /
 
 [Tapdata](https://tapdata.net) 是一款面向数据服务的平台化产品，旨在帮助企业打破多个数据孤岛，完成数据快速交付，同时依靠实时数据同步，提高数据传输效率。我们还支持通过低代码的方式创建任务，简单的拖拽节点即可完成创建，有效降低开发难度，缩短项目上线周期。
 
-![](https://20778419.s21i.faiusr.com/3/2/ABUIABADGAAgtLr-lgYotInUhwYwgA84uAg.gif)
-
+<iframe      src="https://20778419.s21v.faiusr.com/58/2/ABUIABA6GAAg-NP9pQYokaGd7AE.mp4"   width="100%"   height="500"      frameborder="0"    allowfullscreen="true" > </iframe>
 
 
 ## 为什么选择 Tapdata

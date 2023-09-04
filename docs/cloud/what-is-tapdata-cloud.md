@@ -6,7 +6,8 @@ sidebar_position: 1
 
 Tapdata Cloud 是由 Tapdata 提供的集数据复制、数据转换、数据开发为一体的实时数据服务，能够在跨云、跨地域、多类型数据源的场景下，提供毫秒级的实时数据同步服务和数据融合服务。
 
-![](images/tapdata_cloud.gif)
+
+<iframe      src="https://20778419.s21v.faiusr.com/58/2/ABUIABA6GAAg-NP9pQYokaGd7AE.mp4"   width="100%"      height="463"      frameborder="0"    allowfullscreen="true"  > </iframe>
 
 ## 为什么选择 Tapdata Cloud
 

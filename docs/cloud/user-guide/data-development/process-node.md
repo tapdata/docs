@@ -47,6 +47,44 @@ Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足�
 
 
 
+## <span id="pri-sec-merged">主从合并</span>
+
+在大数据处理和分析中，数据合并和转换是一个关键的任务，在本案例中，我们以 [SSB 数据集](https://www.cs.umb.edu/~poneil/StarSchemaB.PDF)的 `lineorder` 和 `date` 表为例，介绍如何使用 Tapdata Cloud 来实现多表合并到一个 MongoDB 集合的需求。
+
+:::tip
+
+使用主从合并节点时，目标库需为自行部署的 MongoDB 或 MongoDB Atlas。
+
+:::
+
+**操作流程**：
+
+1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+
+2. 在左侧导航栏，单击**数据管道** > **数据转换**。
+
+3. 单击页面右侧的**创建**。
+
+4. 在页面左侧依次拖入要执行主从合并的数据源至右侧画布，然后从页面左下角拖入**主从合并**节点，最后将它们按照下述顺序连接起来。
+
+   ![添加主从合并节点](../../images/primary_secondary_merge_node_conn1.png)
+
+5. 依次单击要执行追加合并的数据源，分别在页面右侧的面板中选择待合并的表（**lineorder** / **date**）。
+
+6. 单击**主从合并**节点，将 date 表拖拽进入 lineoder 表中来表示它们的从属关系，随后即可查看到合并后的表结构信息。
+
+   ![设置主从合并节点](../../images/primary_secondary_merge_node_setting.png)
+
+7. 从页面左侧拖入一个 MongoDB 或 MongoDB Atalas 数据源用于存放追加合并后的表，然后将**追加合并**节点连接至该数据源。
+
+8. 单击用于存放追加合并表的数据源，在页面右侧的面板中选择目标表或输入表名由 Tapdata Cloud 自动创建，完成设置后选择更新条件自动。
+
+   ![追加合并示例](../../images/primary_secondary_merge_node_conn2.png)
+
+9. 确认配置无误后，单击**启动**。
+
+   操作完成后，您可以在当前页面观察任务的执行情况，如 QPS、延迟、任务时间统计等信息。
+
 
 
 ## <span id="union-node">追加合并</span>

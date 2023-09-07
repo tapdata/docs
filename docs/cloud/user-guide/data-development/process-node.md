@@ -75,7 +75,7 @@ Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足�
 
    ![设置主从合并节点](../../images/primary_secondary_merge_node_setting.png)
 
-7. 从页面左侧拖入一个 MongoDB 或 MongoDB Atalas 数据源用于存放追加合并后的表，然后将**追加合并**节点连接至该数据源。
+7. 从页面左侧拖入一个 MongoDB 或 MongoDB Atalas 数据源用于存放追加合并后的表，然后将**主从合并**节点连接至该数据源。
 
 8. 单击用于存放追加合并表的数据源，在页面右侧的面板中选择目标表或输入表名由 Tapdata Cloud 自动创建，完成设置后选择更新条件自动。
 

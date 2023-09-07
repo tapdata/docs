@@ -53,7 +53,7 @@ Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足�
 
 :::tip
 
-使用主从合并节点时，目标库需为自行部署的 MongoDB 或 MongoDB Atlas。
+使用主从合并节点时，需要将 Agent 实例[升级](../manage-agent.md)至 3.5.1 版本，同时，目标库需为自行部署的 MongoDB 或 MongoDB Atlas。
 
 :::
 

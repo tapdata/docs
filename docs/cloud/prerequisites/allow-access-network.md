@@ -12,6 +12,13 @@
 | Agent 可连接至目标数据库的服务端口 | 确保 Agent 可向目标库写入数据。                              |
 | Agent 可连接至外网                 | 确保 Agent 可向 Tapdata Cloud 上报任务状态、获取配置和执行任务等操作。 |
 
+如果您订阅的是[全托管 Agent](../billing/purchase#hosted-mode)，且待连接的数据源只接受与特定的 IP 地址建立连接，此时您需要将 Agent 所属的服务器地址添加至数据源对应的安全设置中，例如添加至自建数据库的防火墙白名单规则中，以允许 Agent 与您的数据源建立通信与传输数据，各地域 Agent 服务器地址如下：
+
+* 阿里云  北京：**47.93.190.224**
+* 阿里云  香港：**47.242.251.110**
+
+
+
 :::tip
 
 如您的网络环境不支持访问外网，可选择在本地部署 [Tapdata](https://tapdata.net/tapdata-enterprise.html)，更多介绍，见[版本对比](https://tapdata.net/pricing.html)。

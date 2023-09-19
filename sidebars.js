@@ -29,6 +29,7 @@ const sidebars = {
             'cloud/introduction/benefits',
             'cloud/introduction/use-cases',
             'cloud/introduction/supported-databases',
+            'cloud/introduction/security',
             'cloud/introduction/terms',
      ]
     },

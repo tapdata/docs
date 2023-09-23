@@ -162,6 +162,82 @@ mysql> select * from student_merge;
 6 rows in set (0.00 sec)
 ```
 
+
+
+## <span id="python">Python</span>
+
+如果目前内置的处理节点不能完全满足您的特定需求，或您想对数据进行更加细致和个性化的处理，您也可以添加 Python 处理节点，编写自定义的 Python 脚本来管理数据的处理/加工逻辑，这些经过处理的数据将继续被同步到目标库中，帮助您实现数据链路自由定制，更好地掌控数据的流动和加工。
+
+![Python 节点](../../images/python_node.png)
+
+Python 处理节点支持的版本为 Python 2.7.3，支持的第三方包来源为：requests-2.2.1、PyYAML-3.13、setuptools-44.0.0，上图中的`context` 内容说明如下：
+
+```python
+context = {
+        "event": {},  # 数据源的事件类型、表名及其他信息
+        "before": {}, # 数据变化前的内容
+        "info": {},   # 数据源的事件信息
+        "global": {}  # 任务周期内，节点维度上的状态存储容器
+      }
+```
+
+Python 处理节点支持的系统包为：`struct, jarray, _marshal, _bytecodetools, binascii, ucnhash, _sre, sys, cmath, itertools, jffi, operator, _py_compile, array, zipimport, _codecs, _hashlib, bz2, gc, posix, cPickle, synchronize, _random, _imp, errno, __builtin__, _csv, _json, _weakref, thread, exceptions, _ast, cStringIO, _jyio, _collections, _functools, _threading, _jythonlib, math, time, _locale`。
+
+常见库的使用方法参考如下：
+
+```python
+# yaml包的使用，请参考：https://pyyaml.org/wiki/PyYAMLDocumentation
+data = {'key1': 'value1', 'key2': 'value2'}
+yaml_str = yaml.dump(data, default_flow_style=False)
+log.info('(1)Use YAML may covert data to YAML string: \n{}', yaml_str)
+
+# 修改指定数据的某个字段验证
+record['prefix'] = 'ust-modified'
+
+# 正常打印日志 true
+log.info("(3)log a info") # 打印info级别日志
+log.warn("(4)log an warn") # 打印warn级别日志
+
+#requests的用法，请参考：https://requests.readthedocs.io/projects/cn/zh_CN/latest/
+try: 
+  response = requests.get("http://localhost:3000")
+  log.info('Request result: {}', response.text)
+except Exception as e:
+  log.info('Request result: {}', str(e))
+  
+# json模块的用法，请参考： https://docs.python.org/zh-cn/2.7/library/json.html
+log.info("Json value: {}", json.dumps(['Gavin', {'key': ('value', None, 1.0, 2)}]))
+
+# random,time,datetime,uuid的使用
+log.info("(7)Time value: {}",time.time()) # time包用法参考：https://docs.python.org/zh-cn/2.7/library/datetime.html
+log.info("(7-1)Datetime value: {}", datetime.datetime(2023, 9, 19, 11, 8, 0)) # datetime包用法参考：https://docs.python.org/zh-cn/2.7/library/datetime.html
+
+# math模块的使用，可参考：https://docs.python.org/zh-cn/2.7/library/math.html
+log.info("(9)Math value: {}", math.sqrt(100)) 
+
+# hashlib模块的使用， 可参考：https://docs.python.org/zh-cn/2.7/library/hashlib.html
+m = hashlib.md5()  # 构建MD5对象
+m.update("xjh999".encode(encoding='utf-8')) #设置编码格式 并将字符串添加到MD5对象中
+password_md5 = m.hexdigest()  # hexdigest()将加密字符串 生成十六进制数据字符串值
+log.info("(10)hashlib value: {}", password_md5) 
+
+# base64包用法参考，请参考：https://docs.python.org/zh-cn/2.7/library/base64.html
+try:
+  tmpBytes = "xjh999999999".encode()
+  tmpBase64 = base64.b64encode(tmpBytes)
+  log.info("(11)base64 value: {}", tmpBase64)
+except Exception as e:
+  log.info('(11)base64 failed：{}',e)
+
+# types包的使用，参考：https://docs.python.org/zh-cn/2.7/library/types.html
+log.info("(12)Types value: {}", type(100))
+return record
+```
+
+
+
+
+
 ## <span id="js-process">JS 处理</span>
 
 支持通过 JavaScript 脚本或者 Java 代码对数据进行处理，编写代码时需先检测是否与源节点及目标节点相连，若未相连则无法编辑代码。  

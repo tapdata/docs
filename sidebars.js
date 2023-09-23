@@ -247,6 +247,7 @@ const sidebars = {
              'cloud/user-guide/real-time-data-hub',
              'cloud/user-guide/custom-node',
              'cloud/user-guide/operation-log',
+             'cloud/user-guide/error-code-solution',
              'cloud/user-guide/trouble-shooting-connection',
              'cloud/user-guide/no-supported-data-type',
             ]

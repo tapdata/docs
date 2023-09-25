@@ -13,6 +13,18 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
   <TabItem value="2023" label="2023 年" default>
 ```
+### 20230920
+#### 新增功能
+
+* 新增 [Python 处理节点](user-guide/data-development/process-node#python)，支持通过 Python 脚本来自定义数据处理逻辑，相较于 JS 处理节点性能有一定提升
+* 新增**联系我们**入口，方便用户遇到问题时快速联系技术支持
+
+#### 功能优化
+
+* 优化[数据源错误码](user-guide/error-code-solution.md)，覆盖更多场景并提供解决方案
+* 配置邮件告警通知时，增加绑定邮箱地址的页面引导
+* 优化任务数达到上限时的提醒，当达到任务数上限时提供快升级的入口
+
 ### 20230826
 
 #### 新增功能

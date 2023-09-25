@@ -4,7 +4,7 @@
 
 ## 账号说明
 
-在获取支持前，您需要[登录 Tapdata Cloud](https://cloud.tapdata.net/console/v3/)并前往用户中心绑定邮箱，使用该邮箱来登录用户社区和工单系统。
+在获取支持前，您需要[登录 Tapdata Cloud](https://cloud.tapdata.net/console/v3/) 并前往用户中心绑定邮箱，使用该邮箱来登录用户社区和工单系统。
 
 ![绑定邮箱](../images/bind_email_cn.png)
 

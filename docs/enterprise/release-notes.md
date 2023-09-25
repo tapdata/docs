@@ -2,6 +2,21 @@
 
 本文介绍 V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)。
 
+## V3.5.2
+
+### 新增功能
+
+* 新增 [Python 处理节点](user-guide/data-pipeline/data-development/process-node#python)，支持通过 Python 脚本来自定义数据处理逻辑，相较于 JS 处理节点性能有一定提升
+* 新增支持 Redis 间的数据同步能力
+
+## 功能优化
+
+* 优化[数据源错误码](user-guide/data-pipeline/error-code-solution.md)，覆盖更多场景并提供解决方案
+
+
+
+---
+
 
 
 ## V3.5.1

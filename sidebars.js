@@ -240,6 +240,7 @@ const sidebars = {
              link: {type: 'doc', id: 'cloud/user-guide/data-development/README'},
              items:[
                    'cloud/user-guide/data-development/create-task',
+                   'cloud/user-guide/data-development/create-materialized-view',
                    'cloud/user-guide/data-development/manage-task',
                    'cloud/user-guide/data-development/process-node',
                    'cloud/user-guide/data-development/monitor-task',
@@ -551,6 +552,7 @@ const sidebars = {
                      link: {type: 'doc', id: 'enterprise/user-guide/data-pipeline/data-development/README'},
                      items:[
                             'enterprise/user-guide/data-pipeline/data-development/create-task',
+                            'enterprise/user-guide/data-pipeline/data-development/create-materialized-view',
                             'enterprise/user-guide/data-pipeline/data-development/manage-task',
                             'enterprise/user-guide/data-pipeline/data-development/process-node',
                             'enterprise/user-guide/data-pipeline/data-development/monitor-task',

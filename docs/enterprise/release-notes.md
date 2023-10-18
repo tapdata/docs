@@ -2,6 +2,25 @@
 
 本文介绍 V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)。
 
+
+
+## V3.5.4
+
+### 新增功能
+
+- 新增[构建物化视图](user-guide/data-pipeline/data-development/create-materialized-view.md)功能，可快速构建实时数据模型
+- 新增支持对[共享挖掘](user-guide/advanced-settings/share-mining.md)任务的源节点进行配置调整，支持设置是否启用**增量多线程写入**和**补充更新数据的完整字段**
+- Kafka 数据源新增支持[设置副本数和分区数](best-practice/oracle-to-kafka#advanced_settings)
+- MongoDB 间同步时，新增对 `$unset` 操作的支持
+
+### 功能优化
+
+- [数据校验](user-guide/data-pipeline/verify-data.md)功能字段过滤体验优化
+- 支持在数据复制/数据转换配置的页面顶部，通过搜索节点来快速定位目标节点
+
+
+---
+
 ## V3.5.2
 
 ### 新增功能
@@ -9,13 +28,9 @@
 * 新增 [Python 处理节点](user-guide/data-pipeline/data-development/process-node#python)，支持通过 Python 脚本来自定义数据处理逻辑，相较于 JS 处理节点性能有一定提升
 * 新增支持 Redis 间的数据同步能力
 
-## 功能优化
+### 功能优化
 
 * 优化[数据源错误码](user-guide/data-pipeline/error-code-solution.md)，覆盖更多场景并提供解决方案
-
-
-
----
 
 
 

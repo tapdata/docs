@@ -13,7 +13,27 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
   <TabItem value="2023" label="2023 年" default>
 ```
+### 20231008
+
+#### 新增功能
+
+- 新增[构建物化视图](user-guide/data-development/create-materialized-view.md)功能，可快速构建实时数据模型
+- Kafka 数据源新增支持设置副本数和分区数
+- MongoDB 间同步时，新增对 `$unset` 操作的支持
+
+#### 功能优化
+
+- 任务引导过程中，针对全托管 Agent 在创建连接时，增加全托管 Agent 公网 IP 地址的说明，
+- 支持在数据复制/数据转换配置的页面顶部，通过搜索节点来快速定位目标节点
+
+#### 问题修复
+
+* 修复通过页面重启 Agent 时，记录的操作日志类别不正确的问题
+
+
+
 ### 20230920
+
 #### 新增功能
 
 * 新增 [Python 处理节点](user-guide/data-development/process-node#python)，支持通过 Python 脚本来自定义数据处理逻辑，相较于 JS 处理节点性能有一定提升

@@ -4,9 +4,15 @@
 
 完成 Agent 部署后，您可以跟随本文教程在 Tapdata Cloud 中添加 Dameng 数据源，后续可将其作为源或目标库来构建数据管道。
 
+
+
 ## 支持版本 
 
 DM 7.x、8.x
+
+import Content1 from '../../../reuse-content/beta/_beta.md';
+
+<Content1 />
 
 ## 准备工作
 

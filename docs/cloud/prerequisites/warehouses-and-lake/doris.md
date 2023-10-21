@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 Dorix 1.x、2.x
 
-import Content from '../../../reuse-content/beta/beta.md';
+import Content from '../../../reuse-content/beta/_beta.md';
 
 <Content />
 
@@ -105,5 +105,4 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
    如提示连接测试失败，请根据页面提示进行修复。
 
    :::
-
 

@@ -25,28 +25,24 @@ DM 7.x、8.x
 
    ```sql
    CREATE USER username IDENTIFIED BY "password" DEFAULT TABLESPACE table_space_name;
-   
-   -- CREATE USER tapsource IDENTIFIED BY "Tap@159753" DEFAULT TABLESPACE dmhr;
    ```
-
+   
    * **username**：用户名。
    * **pass_word**：密码。
    * **table_space_name**：表空间名称。
-
+   
 3. 为刚创建的账号授予权限，您也可以基于业务需求自定义权限控制。
 
    ```sql
    -- 替换下述命令中的 username 为真实的用户名
-   GRANT SELECT TABLE, SELECT VIEW TO tapsource;
+   GRANT dba TO username;
    
-   -- 或者下面的精细化，会保障不报错
-   grant dba to tapsource
-   GRANT SELECT TABLE, SELECT VIEW TO tapsource;
-   GRANT SELECT ON "SYS"."V$RLOG" TO tapsource;
-   GRANT SELECT ON "SYS"."V$ARCHIVED_LOG" TO tapsource;
-   
+   -- 或者使用下述更精细化的授权
+   GRANT SELECT TABLE, SELECT VIEW TO username;
+   GRANT SELECT ON "SYS"."V$RLOG" TO username;
+   GRANT SELECT ON "SYS"."V$ARCHIVED_LOG" TO username;
    ```
-
+   
 4. 如需获取源库的数据变更以实现增量同步，您还需要跟随下述步骤开启数据库的归档功能和归档日志。
 
    :::tip
@@ -124,7 +120,7 @@ DM 7.x、8.x
      * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。
      * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
      * **模型加载频率**：数据源中模型数量大于 1 万时，Tapdata Cloud 将按照设置的时间定期刷新模型。
-     * **开启心跳表**：当连接类型选择为**源头和目标**、**源头**时，支持打开该开关，由 Tapdata 在源库中创建一个名为 **_tapdata_heartbeat_table** 的心跳表并每隔 10 秒更新一次其中的数据（数据库账号需具备相关权限），用于数据源连接与任务的健康度监测。
+     * **开启心跳表**：当连接类型选择为**源头和目标**、**源头**时，支持打开该开关，由 Tapdata Cloud 在源库中创建一个名为 **_tapdata_heartbeat_table** 的心跳表并每隔 10 秒更新一次其中的数据（数据库账号需具备相关权限），用于数据源连接与任务的健康度监测。
        :::tip
        数据源需在数据复制/开发任务引用并启动后，心跳任务任务才会启动，此时您可以再次进入该数据源的编辑页面，即可单击**查看心跳任务**。
        :::

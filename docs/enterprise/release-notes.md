@@ -4,6 +4,30 @@
 
 
 
+## V3.5.5
+
+### 新增功能
+
+- 新增支持 Hive3 作为目标
+- [MongoDB](user-guide/connect-database/certified/connect-mongodb.md) 作为目标时，新增支持创建分片集合
+- 配置任务时，新增支持禁用节点能力
+
+### 功能优化
+
+- 优化已发布的 [API 权限范围的设置](user-guide/data-service/create-api-service#settings)，无需取消发布即可调整权限
+- [配置数据复制任务](user-guide/data-pipeline/copy-data/create-task.md)时，可通过**可选择的表范围**下拉框快速过滤出有主键或无主键表，其中有主键表包含具有唯一索引的无主键表
+
+### 问题修复
+
+- 修复了 MongoDB 作为目标时，INSERT 操作遇到无分片键发生报错的问题
+- 修复了 MongoDB 不支持 REPLACE，即 REPLACE 删掉的字段无法被正常删除的问题
+
+
+
+---
+
+
+
 ## V3.5.4
 
 ### 新增功能
@@ -19,7 +43,6 @@
 - 支持在数据复制/数据转换配置的页面顶部，通过搜索节点来快速定位目标节点
 
 
----
 
 ## V3.5.2
 

@@ -9,8 +9,8 @@
 ### 新增功能
 
 - 新增支持 Hive3 作为目标
-- [MongoDB](user-guide/connect-database/certified/connect-mongodb.md) 作为目标时，新增支持创建分片集合
-- 配置任务时，新增支持禁用节点能力
+- MongoDB 作为目标时，新增支持[自动创建分片集合](user-guide/data-pipeline/copy-data/create-task#advanced-settings)
+- 配置任务时，新增支持禁用节点能力，鼠标悬停至节点上即可选择该功能，可帮助减少数据在处理过程中的流转成本
 
 ### 功能优化
 

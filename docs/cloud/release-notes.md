@@ -13,6 +13,24 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
   <TabItem value="2023" label="2023 年" default>
 ```
+### 20231020
+
+#### 新增功能
+
+- MongoDB 作为目标时，新增支持[自动创建分片集合](user-guide/copy-data/create-task#advanced-settings)
+- 配置任务时，新增支持禁用节点能力，鼠标悬停至节点上即可选择该功能，可帮助减少数据在处理过程中的流转成本
+
+#### 功能优化
+
+- [配置数据复制任务](user-guide/copy-data/create-task.md)时，可通过**可选择的表范围**下拉框快速过滤出有主键或无主键表，其中有主键表包含具有唯一索引的无主键表
+- 新用户的功能介绍引导流程中，新增 Demo 数据源，帮助您快速完成教程，构建起第一个数据流转任务
+- 优化引擎界面操作按钮前端显示效果
+
+#### 问题修复
+
+- 修复了 MongoDB 作为目标时，INSERT 操作遇到无分片键发生报错的问题
+- 修复了 MongoDB 不支持 REPLACE，即 REPLACE 删掉的字段无法被正常删除的问题
+
 ### 20231008
 
 #### 新增功能

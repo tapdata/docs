@@ -10,6 +10,7 @@
 
 - 新增支持 Hive3 作为目标
 - MongoDB 作为目标时，新增支持[自动创建分片集合](user-guide/data-pipeline/copy-data/create-task#advanced-settings)
+- 新增 [Unwind 处理节点](user-guide/data-pipeline/data-development/process-node#Unwind)，可帮助您高效地将数组中的每个元素“展开”，将每个元素转换为独立的数据行
 - 配置任务时，新增支持禁用节点能力，鼠标悬停至节点上即可选择该功能，可帮助减少数据在处理过程中的流转成本
 
 ### 功能优化

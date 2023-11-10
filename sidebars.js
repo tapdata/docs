@@ -249,6 +249,7 @@ const sidebars = {
              'cloud/user-guide/real-time-data-hub',
              'cloud/user-guide/custom-node',
              'cloud/user-guide/operation-log',
+             'cloud/user-guide/handle-schema-change',
              'cloud/user-guide/error-code-solution',
              'cloud/user-guide/trouble-shooting-connection',
              'cloud/user-guide/no-supported-data-type',
@@ -612,6 +613,8 @@ const sidebars = {
                     ]
              },
              'enterprise/user-guide/notification',
+             'enterprise/user-guide/handle-schema-change',
+             'enterprise/user-guide/no-supported-data-type',
         ]
     },
     {

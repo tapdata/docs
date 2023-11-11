@@ -4,6 +4,26 @@
 
 
 
+## V3.5.6
+
+### 功能优化
+
+- 优化[数据源连接](user-guide/connect-database/README.md)方式，MySQL、PostgreSQL、Kafka、TiDB、MariaDB 等数据源支持 SSL 连接，可帮助进一步提升数据安全性
+- 优化[数据校验](user-guide/data-pipeline/verify-data.md)的过滤功能，支持通过 SQL 实现自定义查询和聚合查询过滤
+- 优化界面交互逻辑
+- 针对非主键的更新条件，创建唯一索引来解决数据重复的问题
+
+### 问题修复
+
+- 修复表名包含 `.` 时可能出现的数据同步失败问题
+- 修复任务异常信息未包含表名的问题
+
+
+
+---
+
+
+
 ## V3.5.5
 
 ### 新增功能
@@ -24,8 +44,6 @@
 - 修复了 MongoDB 不支持 REPLACE，即 REPLACE 删掉的字段无法被正常删除的问题
 
 
-
----
 
 
 

@@ -413,6 +413,7 @@ const sidebars = {
              link: {type: 'doc', id: 'enterprise/prerequisites/beta/README'},
              items: [
                      'enterprise/prerequisites/beta/apache-doris',
+                     'enterprise/prerequisites/beta/databend',
                      'enterprise/prerequisites/beta/csv-and-excel',
                      'enterprise/prerequisites/beta/larktask', 
                      'enterprise/prerequisites/beta/lark-im',

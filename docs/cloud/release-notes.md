@@ -13,6 +13,20 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
   <TabItem value="2023" label="2023 年" default>
 ```
+### 20231103
+
+#### 功能优化
+
+- 优化[数据源连接](prerequisites/README.md)方式，MySQL、PostgreSQL、Kafka、TiDB、MariaDB 等数据源支持 SSL 连接，可帮助进一步提升数据安全性
+- 优化界面交互逻辑
+- 针对非主键的更新条件，创建唯一索引来解决数据重复的问题
+
+#### 问题修复
+
+- 修复表名包含 `.` 时可能出现的数据同步失败问题
+- 修复任务异常信息未包含表名的问题
+- 修复为任务指定运行的 Agent 时，任务配额与任务数量上限判定不正确的问题
+
 ### 20231020
 
 #### 新增功能

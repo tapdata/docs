@@ -6,6 +6,11 @@
 
 本文以 MySQL 实时同步至 MongoDB 为例，为您演示数据复制任务的创建流程，其他数据源也可参考此流程。
 
+<details>
+  <summary>最佳实践</summary>
+  为构建高效可靠的数据复制任务，推荐在开始配置任务前，推荐阅读<a href="../../../best-practice/data-sync">数据同步最佳实践</a>。
+</details>
+
 1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，选择**数据管道** > **数据复制**。

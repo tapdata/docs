@@ -260,6 +260,7 @@ const sidebars = {
      label: '最佳实践',
      link: {type: 'doc', id: 'cloud/best-practice/README'},
      items: [
+            'cloud/best-practice/data-sync',
             {
              type: 'category',
              label: 'MongoDB 实时同步',
@@ -622,6 +623,7 @@ const sidebars = {
      label: '最佳实践',
      link: {type: 'doc', id: 'enterprise/best-practice/README'},
      items: [
+            'enterprise/best-practice/data-sync',
             'enterprise/best-practice/excel-to-mysql',
             'enterprise/best-practice/mysql-to-redis',
             'enterprise/best-practice/oracle-to-kafka',

@@ -8,6 +8,10 @@ import TabItem from '@theme/TabItem';
 ## 支持版本
 MariaDB 10.x
 
+import Content from '../../../reuse-content/beta/beta.md';
+
+<Content />
+
 ## 准备工作
 
 ### 作为源库

@@ -137,7 +137,7 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 
 
 
-### <span id="ssl">开启 SSL 连接（可选）</span>
+## <span id="ssl">开启 SSL 连接（可选）</span>
 
 为进一步提升数据链路的安全性，您还可以选择为 MySQL 数据库开启 SSL（Secure Sockets Layer）加密，实现在传输层对网络连接的加密，在提升通信数据安全性的同时，保证数据的完整性，具体操作流程如下：
 

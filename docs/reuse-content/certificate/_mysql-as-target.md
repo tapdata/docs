@@ -1,10 +1,13 @@
 1. 登录 MySQL 数据库，执行下述格式的命令，创建用于数据同步/开发任务的账号。
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <Tabs className="unique-tabs">
-    <TabItem value="mysql5" label="MySQL 5.x" default>
+    <TabItem value="mysql52" label="MySQL 5.x" default>
     <pre>CREATE USER 'username'@'host' IDENTIFIED BY 'password';</pre>
    </TabItem>
-   <TabItem value="mysql8" label="MySQL 8.x">
+   <TabItem value="mysql82" label="MySQL 8.x">
     <pre>CREATE USER 'username'@'host' IDENTIFIED WITH mysql_native_password BY 'password';</pre>
    </TabItem>
   </Tabs>
@@ -24,10 +27,10 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 2. 为刚创建的账号授予权限。
 
 <Tabs className="unique-tabs">
-    <TabItem value="onedatabase" label="授予指定库权限" default>
+    <TabItem value="onedatabase2" label="授予指定库权限" default>
     <pre>GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP ON database_name.* TO 'username';</pre>
    </TabItem>
-   <TabItem value="all" label="授予所有库权限">
+   <TabItem value="all2" label="授予所有库权限">
     <pre>GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP ON *.* TO 'username';</pre>
    </TabItem>
   </Tabs>

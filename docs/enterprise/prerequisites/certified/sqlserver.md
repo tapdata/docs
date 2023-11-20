@@ -4,7 +4,7 @@ SQL Server 数据库是 Microsoft 开发设计的一个关系数据库智能管�
 
 ## 支持版本
 
-SQL Server 2005、2008、2008 R2、2012、2014、2016、2017
+SQL Server 2005、2008、2008 R2、2012、2014、2016、2017、2019、2022
 
 :::tip
 
@@ -21,54 +21,44 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017
 ## 作为源库
 
 1. 以管理员（例如 **sa**）身份，登录到 SQL Server Management Studio 或 sqlcmd。
-3. 执行下述命令，选择为指定的数据库（推荐）或表启用变更数据捕获能力。
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+2. [启用 SQL Server 代理服务](https://learn.microsoft.com/zh-cn/sql/ssms/agent/start-stop-or-pause-the-sql-server-agent-service?view=sql-server-ver16)。 
 
-<Tabs className="unique-tabs">
-    <TabItem value="dbcdc" label="启用库级变更数据捕获" default>
-    <p>在执行命令时，您需要替换 <b>database_name</b> 为真实的数据库名。</p>
-    <pre>-- 启用变更数据捕获能力<br />
-   USE database_name<br />
-   GO<br />
-   EXEC sys.sp_cdc_enable_db<br />
-   GO
-   <br />
-   <br />
--- 查看是否启用变更数据捕获，is_cdc_enabled 值为 1 即表示已启用该功能<br />
-   SELECT [name], database_id, is_cdc_enabled<br />
-   FROM sys.databases<br />
-   WHERE [name] = N'database_name'<br />
-   GO</pre>
-   </TabItem>
-   <TabItem value="tablecdc" label="启用表级变更数据捕获">
+3. 执行下述命令，启用变更数据捕获能力。
 
-   <p>在执行命令时，您需要分别替换数据库名、架构名等信息，具体参加代码块下方的介绍。</p>
-    <pre>-- 启用变更数据捕获能力<br />
-    USE database_namebr />
-GO
-EXEC sys.sp_cdc_enable_table<br />
-@source_schema = N'schema_name',<br />
-@source_name = N'table_name',<br />
-@role_name = N'role_name'<br />
-GO<br />
-<br />-- 查看是否启用变更数据捕获，is_tracked_by_cdc 值为 1 即表示已启用该功能<br />
-use [数据库名称]<br />
-go<br />
-SELECT [name],is_tracked_by_cdc<br />
-FROM sys.tables<br />
-WHERE [name] = N'table_name'<br />
-go</pre>
+   1. 启用数据库级别的 CDC，在执行命令时，您需要替换 **database_name** 为真实的数据库名。
 
-<ul>
-<li>schema_name：架构名称，例如 <b>dbo</b>。</li>
-<li>table_name：数据表的名称。</li>
-<li>role_name：可以访问更改数据的角色，如不希望使用设置角色，可将其设置为 NULL。</li>
-</ul>
-<p>如果在启用增量复制时指定了角色，则需确保数据库用户具有适当的角色，以便 Tapdata 可以访问增量复制表。</p>
-   </TabItem>
-  </Tabs>
+      ```sql
+      -- 启用变更数据捕获能力
+      USE database_name
+      GO
+      EXEC sys.sp_cdc_enable_db
+      GO
+      
+      -- 查看是否启用变更数据捕获，is_cdc_enabled 值为 1 即表示已启用该功能
+      SELECT [name], database_id, is_cdc_enabled
+      FROM sys.databases
+      WHERE [name] = N'database_name'
+      GO
+      ```
+
+   2. 启用表级别的 CDC。
+
+      ```sql
+      USE database_name
+      GO
+      EXEC sys.sp_cdc_enable_table 
+      @source_schema = N'schema_name', 
+      @source_name   = N'table_name',
+      @role_name     = N'role_name',
+      @supports_net_changes = 1
+      GO
+      ```
+
+      - **database_name**：数据库名称。
+      - **schema_name**：架构名称，例如 **dbo**。
+      - **table_name**：数据表的名称。
+      - **role_name**：可以访问更改数据的角色，如不希望使用设置角色，可将其设置为 NULL，如果在启用增量复制时指定了角色，则需确保数据库用户具有适当的角色，以便 Tapdata Cloud 可以访问增量复制表。
 
 4. 依次执行下述格式的命令，创建用于数据复制/转换任务的用户。
 
@@ -116,7 +106,7 @@ go</pre>
    GRANT SELECT ON SCHEMA::cdc TO tapdata;
    ```
 
-7. （可选）如需向从节点读取增量数据以实现数据同步，您需要为从节点设置上述步骤。
+6. （可选）如需向从节点读取增量数据以实现数据同步，您需要为从节点设置上述步骤。
 
 
 

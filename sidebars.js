@@ -55,10 +55,7 @@ const sidebars = {
              label: '步骤一：安装 Agent',
              link: {type: 'doc', id: 'cloud/quick-start/install-agent/README'},
              items: [
-                    'cloud/quick-start/install-agent/agent-on-linux',
-                    'cloud/quick-start/install-agent/agent-on-windows',
-                    'cloud/quick-start/install-agent/agent-on-docker',
-                    'cloud/quick-start/install-agent/agent-on-mac-m1',
+                    'cloud/quick-start/install-agent/agent-on-selfhosted',
                     'cloud/quick-start/install-agent/agent-on-compute-nest',
              ]
             },

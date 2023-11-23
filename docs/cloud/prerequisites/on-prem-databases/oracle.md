@@ -241,6 +241,144 @@ TO  username CONTAINER=all;
 
 
 
+### <span id="ssl">开启 SSL 连接（可选）</span>
+
+为进一步提升数据链路的安全性，您还可以选择为 Oracle 数据库开启 SSL（Secure Sockets Layer）加密，实现在传输层对网络连接的加密，在提升通信数据安全性的同时，保证数据的完整性。
+
+接下来，我们以部署在 Linux 平台上的 Oracle 12c 为例，演示具体的操作流程：
+
+1. 登录 Oracle 数据库所属的设备，依次执行下述命令，调整目录权限并切换至 Oracle 用户。
+
+   ```bash
+   chown oracle:dba /opt/oracle/ -R
+   su oracle
+   mkdir -p /opt/oracle/wallet
+   ```
+
+2. 依次执行下述格式的命令，创建存放证书文件的目录并生成 Key 文件，其中 `{password}` 需更换为要设置的密码。
+
+   ```bash
+   $ORACLE_HOME/bin/orapki wallet create -wallet /opt/oracle/wallet -pwd {password} -auto_login
+   $ORACLE_HOME/bin/orapki wallet add -wallet /opt/oracle/wallet  -pwd {password}   -dn "CN=localhost" -keysize 1024 -self_signed -validity 365
+   ```
+
+
+3. 执行下述命令，生成 jks 文件，需更换 {password} 为对应的密码。
+
+   ```bash
+   $ORACLE_HOME/bin/orapki wallet pkcs12_to_jks -wallet /opt/oracle/wallet -pwd {password} -jksKeyStoreLoc /opt/oracle/wallet/oracle12c_ks.jks -jksKeyStorepwd {password} -jksTrustStoreLoc /opt/oracle/wallet/oracle12c_ts.jks -jksTrustStorepwd {password}
+   ```
+
+   如需转换 pem 文件，可再执行下述命令：
+
+   ```bash
+   cd /opt/oracle/wallet&& openssl pkcs12 -clcerts -nokeys -out oracle_cert.pem -in ewallet.p12
+   ```
+
+4. 创建相关配置文件，完成 SSL 的配置。
+
+   ```bash
+   # 该目录需基于您的环境调整
+   cd /u01/app/oracle/product/12.1.0/xe/network/admin
+   touch listener.ora
+   touch sqlnet.ora
+   touch tnsnames.ora
+   ```
+
+   配置文件添加的内容分别如下：
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="listener.ora">
+```
+```bash
+# listener.ora
+
+SSL_CLIENT_AUTHENTICATION = FALSE
+
+WALLET_LOCATION =
+  (SOURCE =
+    (METHOD = FILE)
+    (METHOD_DATA =
+      (DIRECTORY = /opt/oracle/wallet)
+    )
+  )
+
+LISTENER =
+(DESCRIPTION_LIST =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1))
+    (ADDRESS = (PROTOCOL = TCP)(HOST = 0.0.0.0)(PORT = 1521))
+  )
+  (DESCRIPTION =
+     (ADDRESS = (PROTOCOL = TCPS)(HOST = 0.0.0.0)(PORT = 2484))
+   )
+)
+
+DEDICATED_THROUGH_BROKER_LISTENER=ON
+DIAG_ADR_ENABLED = off
+```
+</TabItem>
+
+<TabItem value="sqlnet.ora">
+
+```bash
+# sqlnet.ora
+
+WALLET_LOCATION =
+   (SOURCE =
+     (METHOD = FILE)
+     (METHOD_DATA =
+       (DIRECTORY = /opt/oracle/wallet)
+     )
+   )
+
+SQLNET.AUTHENTICATION_SERVICES = (TCPS,NTS,BEQ)
+SSL_CLIENT_AUTHENTICATION = FALSE
+SSL_CIPHER_SUITES = (SSL_RSA_WITH_AES_256_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA)
+```
+</TabItem>
+
+<TabItem value="tnsnames.ora">
+
+```bash
+# tnsnames.ora
+
+SSL=
+(DESCRIPTION =
+  (ADDRESS = (PROTOCOL = TCPS)(HOST = 0.0.0.0)(PORT = 2484))
+  (CONNECT_DATA =
+    (SERVER = DEDICATED)
+    (SERVICE_NAME = XE)
+  )
+)
+
+XE=
+(DESCRIPTION =
+  (ADDRESS = (PROTOCOL = TCP)(HOST = 0.0.0.0)(PORT = 1521))
+  (CONNECT_DATA =
+    (SERVER = DEDICATED)
+    (SERVICE_NAME = XE)
+  )
+)
+```
+</TabItem>
+</Tabs>
+
+5. 在业务低峰期，依次执行下述命令重启 Oracle 服务。
+
+   ```bash
+   $ORACLE_HOME/bin/lsnrctl stop
+   $ORACLE_HOME/bin/lsnrctl start
+   $ORACLE_HOME/bin/sqlplus / as sysdba
+   shutdown
+   startup
+   ```
+
+6. 验证 Oracle 可通过 SSL 登录，例如 `$ORACLE_HOME/bin/sqlplus username/password@SSL`。
+
+
+
 
 ## 添加数据源
 
@@ -267,11 +405,15 @@ TO  username CONTAINER=all;
       * **其他连接串参数**：额外的连接参数，默认为空。
       * **账号**：数据库的账号。
       * **密码**：数据库账号对应的密码。
-      * **多租户模式**：如 Oracle 为多租户模式，需打开该开关并填写 PDB 信息。
+      * **日志插件**：保持默认（**logMiner**）。
 
    * 高级设置
-      * **日志插件**：保持默认（**logMiner**）。
+     
+      * **加载表注释**：选择是否加载表注释信息。
+      * **多租户模式**：如 Oracle 为多租户模式，需打开该开关并填写 PDB 信息。
+      * **使用 SSL**：选择是否开启 SSL 连接数据源，可进一步提升数据安全性，开启该功能后还需要上传 SSL 证书文件并填写证书密码，相关文件已在[开启 SSL 连接](#ssl)中获取。
       * **时间类型的时区**：默认为数据库所用的时区，您也可以根据业务需求手动指定。
+      * **套接字超时时长**：设置此参数可以避免在特殊情况下无限制等待数据库返回结果，从而形成僵尸连接，单位为分钟，通常无需设置，默认值为 0 表示不设置。
       * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。
       * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。
       * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。

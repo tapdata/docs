@@ -13,6 +13,29 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
   <TabItem value="2023" label="2023 年" default>
 ```
+### 20231124
+
+#### 新增功能
+
+* 支持对 [Oracle 数据源](prerequisites/on-prem-databases/oracle#advanced)加载表注释，可在配置数据源时的高级选项中开启，方便通过注释信息快速识别表的业务含义
+* 任务运行[监控页面](user-guide/copy-data/monitor-task.md)中，支持基于事件大小的维度来查看 QPS 信息
+
+#### 功能优化
+
+* 优化资源管理和订阅中心的页面展示效果
+* 执行数据源连接测试时，支持显示连接器下载进度，帮助快速掌握连接进度及超时问题定位
+
+#### 问题修复
+
+1. 修复重置任务后重新运行任务时，增量信息未清理成功的问题
+2. 修复部分 SaaS 数据源在执行全量数据同步时，显示增量时间点的问题
+
+
+
+
+
+
+
 ### 20231103
 
 #### 功能优化

@@ -1,5 +1,0 @@
-# 产品简介
-
-import DocCardList from '@theme/DocCardList';
-
-<DocCardList />

@@ -4,6 +4,27 @@
 
 
 
+## V3.5.7
+
+### 新增功能
+
+- 支持对 [Oracle 数据源](user-guide/connect-database/certified/connect-oracle#advanced)加载表注释，可在配置数据源时的高级选项中开启，方便通过注释信息快速识别表的业务含义
+- 支持在 [Windows 平台中部署 Tapdata](quick-start/install/install-on-windows.md)，进一步丰富部署平台支持度
+- 任务运行[监控页面](user-guide/data-pipeline/copy-data/monitor-task.md)中，支持基于事件大小的维度来查看 QPS 信息
+
+### 问题修复
+
+- 修复重置任务后重新运行任务时，增量信息未清理成功的问题
+- 修复部分 SaaS 数据源在执行全量数据同步时，显示增量时间点的问题
+
+  
+
+
+
+---
+
+
+
 ## V3.5.6
 
 ### 功能优化
@@ -17,10 +38,6 @@
 
 - 修复表名包含 `.` 时可能出现的数据同步失败问题
 - 修复任务异常信息未包含表名的问题
-
-
-
----
 
 
 

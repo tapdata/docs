@@ -379,7 +379,8 @@ const sidebars = {
              link: {type: 'doc', id: 'enterprise/quick-start/install/README'},
              items: [
                     'enterprise/quick-start/install/install-tapdata-ha',
-                    'enterprise/quick-start/install/install-tapdata-stand-alone',                    
+                    'enterprise/quick-start/install/install-tapdata-stand-alone',
+                    'enterprise/quick-start/install/install-on-windows',                 
              ]
             },
             'enterprise/quick-start/connect-database',

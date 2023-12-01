@@ -444,7 +444,7 @@ const sidebars = {
              'enterprise/user-guide/workshop',
              {
               type: 'category',
-              label: '连接数据库',
+              label: '连接数据源',
               link: {type: 'doc', id: 'enterprise/user-guide/connect-database/README'},
               items:[
                     {
@@ -504,6 +504,7 @@ const sidebars = {
                     },
                     ]
              },
+             'enterprise/user-guide/manage-connection',
              {
               type: 'category',
               label: '实时数据中心',

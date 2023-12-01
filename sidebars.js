@@ -638,6 +638,7 @@ const sidebars = {
      link: {type: 'doc', id: 'enterprise/faq/README'},
      items: [
             'enterprise/faq/use-product',
+            'enterprise/faq/data-pipeline',
             'enterprise/faq/operation'
         ]
     },

@@ -561,6 +561,7 @@ const sidebars = {
                     'enterprise/user-guide/data-pipeline/verify-data',
                     'enterprise/user-guide/data-pipeline/pre-check',
                     'enterprise/user-guide/data-pipeline/error-code-solution',
+                    'enterprise/user-guide/data-pipeline/error-and-solutions',
                     ]
              },
              {

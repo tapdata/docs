@@ -640,7 +640,8 @@ const sidebars = {
      items: [
             'enterprise/faq/use-product',
             'enterprise/faq/data-pipeline',
-            'enterprise/faq/operation'
+            'enterprise/faq/operation',
+            'enterprise/faq/emergency-plan'
         ]
     },
     {

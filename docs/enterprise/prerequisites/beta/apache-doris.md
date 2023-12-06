@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 Dorix 1.x、2.x
 
-import Content from '../../../reuse-content/beta/beta.md';
+import Content from '../../../reuse-content/beta/_beta.md';
 
 <Content />
 

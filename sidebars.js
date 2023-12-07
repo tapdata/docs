@@ -446,7 +446,7 @@ const sidebars = {
              'enterprise/user-guide/workshop',
              {
               type: 'category',
-              label: '连接数据库',
+              label: '连接数据源',
               link: {type: 'doc', id: 'enterprise/user-guide/connect-database/README'},
               items:[
                     {
@@ -506,6 +506,7 @@ const sidebars = {
                     },
                     ]
              },
+             'enterprise/user-guide/manage-connection',
              {
               type: 'category',
               label: '实时数据中心',
@@ -562,6 +563,7 @@ const sidebars = {
                     'enterprise/user-guide/data-pipeline/verify-data',
                     'enterprise/user-guide/data-pipeline/pre-check',
                     'enterprise/user-guide/data-pipeline/error-code-solution',
+                    'enterprise/user-guide/data-pipeline/error-and-solutions',
                     ]
              },
              {
@@ -639,7 +641,9 @@ const sidebars = {
      link: {type: 'doc', id: 'enterprise/faq/README'},
      items: [
             'enterprise/faq/use-product',
-            'enterprise/faq/operation'
+            'enterprise/faq/data-pipeline',
+            'enterprise/faq/operation',
+            'enterprise/faq/emergency-plan'
         ]
     },
     {

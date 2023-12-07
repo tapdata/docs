@@ -56,3 +56,4 @@ import TabItem from '@theme/TabItem';
    <p>单击<img src='/img/setting_icon.png'></img>图标，在弹出的对话框中，可选择切换回<a href="../etl-mode/">数据集成模式</a>。</p>
 </TabItem>
 </Tabs>
+

@@ -280,4 +280,4 @@ db.ClusterState.find();
 * [数据服务](../user-guide/data-service/README.md)
   * 删除或者下线 API，将导致该 API 不可用。
 * [系统管理](../user-guide/manage-system/README.md)
-  * 在[管理集群](../user-guide/manage-system/manage-cluster.md)时，
+  * 在[管理集群](../user-guide/manage-system/manage-cluster.md)时，应仅在服务出现异常时，才对相关服务执行关闭或重启操作。

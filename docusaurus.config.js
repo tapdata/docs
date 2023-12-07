@@ -119,7 +119,7 @@ const config = {
             type: 'doc',
             docId: 'enterprise/what-is-tapdata-enterprise',
             position: 'left',
-            label: 'Tapdata',
+            label: 'Tapdata On-Prem',
             },
           {
             type: 'doc',

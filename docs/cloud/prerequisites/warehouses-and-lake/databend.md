@@ -8,7 +8,7 @@ Databend 是一个开源的 Elastic 和 Workload-Aware 现代云数据仓库，D
 
 Databend v0.9 及以上
 
-import Content from '../../../reuse-content/beta/beta.md';
+import Content from '../../../reuse-content/beta/_beta.md';
 
 <Content />
 

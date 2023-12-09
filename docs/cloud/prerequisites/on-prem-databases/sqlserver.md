@@ -166,7 +166,21 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017、2019、2022
    GRANT DELETE, INSERT, SELECT, UPDATE ON SCHEMA::dbo TO tapdata;
    ```
 
-   
+
+
+
+## <span id="ssl">开启 SSL 连接（可选）</span>
+
+为进一步提升数据链路的安全性，您还可以选择为 SQL Server 数据库开启 SSL（Secure Sockets Layer）加密，实现在传输层对网络连接的加密，在提升通信数据安全性的同时，保证数据的完整性，具体操作可参考官方文档：
+
+* [Windows 平台](https://learn.microsoft.com/zh-cn/sql/database-engine/configure-windows/configure-sql-server-encryption?view=sql-server-ver15)
+* [Linux 平台](https://learn.microsoft.com/zh-cn/sql/linux/sql-server-linux-encrypted-connections?view=sql-server-ver15&tabs=server)
+
+:::tip
+
+完成配置后，妥善保存证书相关文件，后续将后续在配置连接时使用。
+
+:::
 
 
 
@@ -193,9 +207,10 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017、2019、2022
       * **账号**：数据库的账号。
       * **密码**：数据库账号对应的密码。
       * **Schema**：Schema 名称。
-      * **其他连接串参数**：额外的连接参数，默认为空。
    * 高级设置
+      * **其他连接串参数**：额外的连接参数，默认为空。
       * **时间类型的时区**：默认为数据库所用的时区，您也可以根据业务需求手动指定。
+      * **使用 SSL/TLS**：选择是否开启 SSL 连接数据源，可进一步提升数据安全性，开启该功能后还需要上传 CA 证书、证书密码和服务器主机名信息，相关文件已在[开启 SSL 连接](#ssl)中获取。
       * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。
       * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。
       * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。

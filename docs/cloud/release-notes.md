@@ -13,6 +13,23 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
   <TabItem value="2023" label="2023 年" default>
 ```
+### 20231208
+
+#### 新增功能
+
+- 数据源新增 [Azure Cosmos DB](prerequisites/cloud-databases/azure-cosmos-db.md)，可做为源库同步全量数据，帮助实现云端数据快速流转
+
+#### 功能优化
+
+- 优化数据源连接方式，[SQL Server](prerequisites/on-prem-databases/sqlserver.md) 可支持 SSL 连接，可帮助进一步提升数据安全性
+- 优化[数据复制任务](user-guide/data-pipeline/copy-data/create-task.md)的目标节点字段类型调整方式，在手动输入的基础上，支持直接选择目标数据库常用类型
+- 针对任务的源节点设置，支持设置增量阶段每批读取的条数，更好适应增量同步的性能需求
+
+#### 问题修复
+
+- 修复增强 JS 节点在特定场景下，模型声明不生效或异常问题
+- 修复若干 UI 交互体验问题
+
 ### 20231124
 
 #### 新增功能

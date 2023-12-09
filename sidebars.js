@@ -327,7 +327,6 @@ const sidebars = {
             },            
         ]
         },
-     'cloud/release-notes',
      {
       type: 'category',
       label: '常见问题',
@@ -349,6 +348,7 @@ const sidebars = {
               ]
      },
      'cloud/faq/support',
+     'cloud/release-notes',
   ],
 
 

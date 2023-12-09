@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 #### 功能优化
 
 - 优化数据源连接方式，[SQL Server](prerequisites/on-prem-databases/sqlserver.md) 可支持 SSL 连接，可帮助进一步提升数据安全性
-- 优化[数据复制任务](user-guide/data-pipeline/copy-data/create-task.md)的目标节点字段类型调整方式，在手动输入的基础上，支持直接选择目标数据库常用类型
+- 优化[数据复制任务](user-guide/copy-data/create-task.md)的目标节点字段类型调整方式，在手动输入的基础上，支持直接选择目标数据库常用类型
 - 针对任务的源节点设置，支持设置增量阶段每批读取的条数，更好适应增量同步的性能需求
 
 #### 问题修复

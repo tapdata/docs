@@ -80,8 +80,15 @@ Authorization: bearer eyJhbGciOiJIUzI1NiJ9.eyJjbGllbnRJZCI6ImI1ZmQwMWM1OTk2YTYzN
 
 | 响应状态码 | 说明                                                         |
 | ---------- | ------------------------------------------------------------ |
-| 200        | findById、findPage、create、自定义方法 请求处理成功返回。    |
+| 200        | findById、findPage、create、自定义方法、请求处理成功返回。   |
 | 204        | updateById、deleteById 请求处理成功返回。                    |
 | 500        | 服务器内部处理错误返回。常见错误：新增记录违反唯一约束、MongoDB Validate 验证失败等。 |
-| 401        | 认证失败返回。访问令牌过期或未提供访问令牌。                 |
-| 404        | 操作数据不存在返回。根据删除、更新、查询不存在的记录等。     |
+| 401        | 认证失败返回，访问令牌过期或未提供访问令牌。                 |
+| 404        | 操作数据不存在，删除、更新、查询不存在的记录等。             |
+
+
+
+## 推荐阅读
+
+* [通过 RESTful 查询 API](query-via-restful)
+* [通过 GraphQL 查询 API](query-via-graphql)

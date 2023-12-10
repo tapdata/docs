@@ -588,6 +588,7 @@ const sidebars = {
                      'enterprise/user-guide/data-service/create-api-server',
                      'enterprise/user-guide/data-service/audit-api',
                      'enterprise/user-guide/data-service/monitor-api-request',
+                     'enterprise/user-guide/data-service/api-auth',
                      'enterprise/user-guide/data-service/query-via-restful',
                      'enterprise/user-guide/data-service/query-via-graphql',
                      'enterprise/user-guide/data-service/api-query-params',

@@ -4,6 +4,32 @@
 
 
 
+## V3.5.8
+
+### 新增功能
+
+- 数据源新增 [Azure Cosmos DB](user-guide/connect-database/beta/azure-cosmos-db.md)，可做为源库同步全量数据，帮助实现云端数据快速流转
+- 数据复制/转换任务支持导入能力，您可以在 [MongoDB Relational Migrator](https://www.mongodb.com/docs/relational-migrator/) 上设计好数据流转流程并将其导出，随后在 Tapdata 数据管道右上角直接导入，进一步提升数据管道设计便利性
+
+### 功能优化
+
+- 优化数据源连接方式，[SQL Server](prerequisites/certified/sqlserver.md) 可支持 SSL 连接，可帮助进一步提升数据安全性
+- 优化[数据复制任务](user-guide/data-pipeline/copy-data/create-task.md)的目标节点字段类型调整方式，在手动输入的基础上，支持直接选择目标数据库常用类型
+- 针对任务的源节点设置，支持设置增量阶段每批读取的条数，更好适应增量同步的性能需求
+
+### 问题修复
+
+- 修复增强 JS 节点在特定场景下，模型声明不生效或异常问题
+- 修复若干 UI 交互体验问题
+
+
+
+
+
+---
+
+
+
 ## V3.5.7
 
 ### 新增功能
@@ -17,11 +43,6 @@
 - 修复重置任务后重新运行任务时，增量信息未清理成功的问题
 - 修复部分 SaaS 数据源在执行全量数据同步时，显示增量时间点的问题
 
-  
-
-
-
----
 
 
 
@@ -29,7 +50,7 @@
 
 ### 功能优化
 
-- 优化[数据源连接](user-guide/connect-database/README.md)方式，MySQL、PostgreSQL、Kafka、TiDB、MariaDB 等数据源支持 SSL 连接，可帮助进一步提升数据安全性
+- 优化[数据源连接](prerequisites/README.md)方式，MySQL、PostgreSQL、Kafka、TiDB、MariaDB 等数据源支持 SSL 连接，可帮助进一步提升数据安全性
 - 优化[数据校验](user-guide/data-pipeline/verify-data.md)的过滤功能，支持通过 SQL 实现自定义查询和聚合查询过滤
 - 优化界面交互逻辑
 - 针对非主键的更新条件，创建唯一索引来解决数据重复的问题

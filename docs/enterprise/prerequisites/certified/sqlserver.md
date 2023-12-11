@@ -15,7 +15,6 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017、2019、2022
 <details>
 <summary>SQL Server 2005 作为源库解决方案</summary>
 由于 CDC 支持从 SQLServer 2008 开始支持，对于较早的版本，您需要使用 Custom SQL 功能来模拟更改数据捕获，在从旧版本复制数据时，源表必须有一个更改跟踪列，比如 <b>LAST_UPDATED_TIME</b>，它在每次插入或更新记录时都会更新；随后在创建数据复制任务时，任务的同步类型选择为<b>全量</b>，将<b>重复运行自定义 SQL</b>设置为 <b>True</b>，同时在映射设计上提供适当的自定义 SQL。
-
 </details>
 
 ## 作为源库
@@ -162,7 +161,21 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017、2019、2022
    GRANT DELETE, INSERT, SELECT, UPDATE ON SCHEMA::dbo TO tapdata;
    ```
 
-   
+
+
+
+## <span id="ssl">开启 SSL 连接（可选）</span>
+
+为进一步提升数据链路的安全性，您还可以选择为 SQL Server 数据库开启 SSL（Secure Sockets Layer）加密，实现在传输层对网络连接的加密，在提升通信数据安全性的同时，保证数据的完整性，具体操作可参考官方文档：
+
+* [Windows 平台](https://learn.microsoft.com/zh-cn/sql/database-engine/configure-windows/configure-sql-server-encryption?view=sql-server-ver15)
+* [Linux 平台](https://learn.microsoft.com/zh-cn/sql/linux/sql-server-linux-encrypted-connections?view=sql-server-ver15&tabs=server)
+
+:::tip
+
+完成配置后，妥善保存证书相关文件，后续将后续在配置连接时使用。
+
+:::
 
 
 

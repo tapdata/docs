@@ -327,7 +327,6 @@ const sidebars = {
             },            
         ]
         },
-     'cloud/release-notes',
      {
       type: 'category',
       label: '常见问题',
@@ -349,6 +348,7 @@ const sidebars = {
               ]
      },
      'cloud/faq/support',
+     'cloud/release-notes',
   ],
 
 
@@ -634,8 +634,7 @@ const sidebars = {
             'enterprise/best-practice/full-breakpoint-resumption',
             'enterprise/best-practice/extract-array',
         ]
-    },
-  'enterprise/release-notes',
+    },  
     {
      type: 'category',
      label: '常见问题',
@@ -657,6 +656,7 @@ const sidebars = {
         ]
     },
   'enterprise/support',
+  'enterprise/release-notes',
  ]
 };
 

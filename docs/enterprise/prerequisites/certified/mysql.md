@@ -152,7 +152,7 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
    :::tip
 
    * 运行该程序需确保您的设备已安装 **openssl**，例如在 CentOS 系统中，可执行 `yum install openssl -y` 命令来安装。
-   * 命令执行完毕后，会自动生成文件： `ca-key.pem`、`server-key.pem` 和 `client-key.pem`，通常位于 `/var/lib/mysql/` 目录中，您可以将其下载至本机中，后续在 Tapdata Cloud 中配置连接时使用。
+   * 命令执行完毕后，会自动生成文件： `ca-key.pem`、`server-key.pem` 和 `client-key.pem`，通常位于 `/var/lib/mysql/` 目录中，您可以将其下载至本机中，后续在配置连接时使用。
 
    :::
 

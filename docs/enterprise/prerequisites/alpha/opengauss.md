@@ -2,7 +2,10 @@
 
 在创建 openGauss 连接前，您需要在跟随本文完成前置准备工作，完成操作后即可创建连接并在数据复制/开发任务中使用该数据源。
 
-
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
 
 ## 支持版本
 
@@ -70,18 +73,22 @@ OpenGauss 3.0.0 及以上
 
 2. 为刚创建的账号授予权限，简易示例如下，推荐基于业务需求设置更精细化的权限控制。
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
+```mdx-code-block
 <Tabs className="unique-tabs">
-    <TabItem value="source" label="作为源库" default>
-    <pre>GRANT SELECT ON ALL TABLES IN SCHEMA schemaname TO username;</pre>
-   </TabItem>
-   <TabItem value="target" label="作为目标库">
-    <pre>GRANT INSERT,UPDATE,DELETE,TRUNCATE ON ALL TABLES IN SCHEMA schemaname TO username;</pre>
-   </TabItem>
-  </Tabs>
+<TabItem value="作为源库">
+```
+```sql
+GRANT SELECT ON ALL TABLES IN SCHEMA schemaname TO username;
+```
+</TabItem>
 
+<TabItem value="作为目标库">
+
+```sql
+GRANT INSERT,UPDATE,DELETE,TRUNCATE ON ALL TABLES IN SCHEMA schemaname TO username;
+```
+</TabItem>
+</Tabs>
 
    * **schemaname**：目标表所属的模型名称。
    * **username**：用户名。

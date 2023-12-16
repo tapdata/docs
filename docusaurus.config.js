@@ -196,7 +196,8 @@ const config = {
     }),
 
   scripts: [
-    '/js/iframe.js'
+    '/js/iframe.js',
+    '/js/replaceIcons.js'
   ]
 };
 

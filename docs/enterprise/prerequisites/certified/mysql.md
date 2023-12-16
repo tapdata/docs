@@ -2,6 +2,11 @@
 
 MySQL 是应用最广泛的开源关系数据库，是许多网站、应用程序、商业产品使用的关系数据存储。在创建 MySQL 连接前，您需要在跟随本文完成前置准备工作，完成操作后即可创建连接并在数据复制/开发任务中使用该数据源。
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## 支持版本 
 
 MySQL 5.0、5.1、5.5、5.6、5.7、8.x
@@ -12,17 +17,22 @@ MySQL 5.0、5.1、5.5、5.6、5.7、8.x
 
 1. 登录 MySQL 数据库，执行下述格式的命令，创建用于数据同步/开发任务的账号。
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
+```mdx-code-block
 <Tabs className="unique-tabs">
-    <TabItem value="mysql5" label="MySQL 5.x" default>
-    <pre>CREATE USER 'username'@'host' IDENTIFIED BY 'password';</pre>
-   </TabItem>
-   <TabItem value="mysql8" label="MySQL 8.x">
-    <pre>CREATE USER 'username'@'host' IDENTIFIED WITH mysql_native_password BY 'password';</pre>
-   </TabItem>
-  </Tabs>
+<TabItem value="MySQL 5.x">
+```
+```sql
+CREATE USER 'username'@'host' IDENTIFIED BY 'password';
+```
+</TabItem>
+
+<TabItem value="MySQL 8.x">
+
+```sql
+CREATE USER 'username'@'host' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+</TabItem>
+</Tabs>
 
   * **username**：用户名。
   * **password**：密码。
@@ -38,16 +48,24 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 
 2. 为刚创建的账号授予权限，简易示例如下，推荐基于业务需求设置更精细化的权限控制。
 
+```mdx-code-block
 <Tabs className="unique-tabs">
-    <TabItem value="onedatabase" label="授予指定库权限" default>
-    <pre>GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';<br />
-GRANT SELECT ON database_name.* TO 'username' IDENTIFIED BY 'password';</pre>
-   </TabItem>
-   <TabItem value="all" label="授予所有库权限">
-    <pre>GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';<br />
-GRANT SELECT ON *.* TO 'username' IDENTIFIED BY 'password';</pre>
-   </TabItem>
-  </Tabs>
+<TabItem value="授予指定库权限">
+```
+```sql
+GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';
+GRANT SELECT ON database_name.* TO 'username' IDENTIFIED BY 'password';
+```
+</TabItem>
+
+<TabItem value="授予所有库权限">
+
+```sql
+GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';
+GRANT SELECT ON *.* TO 'username' IDENTIFIED BY 'password';
+```
+</TabItem>
+</Tabs>
 
 * **database_name**：要授予权限的数据库名称。
 * **username**：用户名。
@@ -100,14 +118,22 @@ GRANT SELECT ON *.* TO 'username' IDENTIFIED BY 'password';</pre>
 
 1. 登录 MySQL 数据库，执行下述格式的命令，创建用于数据同步/开发任务的账号。
 
+```mdx-code-block
 <Tabs className="unique-tabs">
-    <TabItem value="mysql5" label="MySQL 5.x" default>
-    <pre>CREATE USER 'username'@'host' IDENTIFIED BY 'password';</pre>
-   </TabItem>
-   <TabItem value="mysql8" label="MySQL 8.x">
-    <pre>CREATE USER 'username'@'host' IDENTIFIED WITH mysql_native_password BY 'password';</pre>
-   </TabItem>
-  </Tabs>
+<TabItem value="MySQL 5.x">
+```
+```sql
+CREATE USER 'username'@'host' IDENTIFIED BY 'password';
+```
+</TabItem>
+
+<TabItem value="MySQL 8.x">
+
+```sql
+CREATE USER 'username'@'host' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+</TabItem>
+</Tabs>
 
   * **username**：用户名。
   * **password**：密码。
@@ -123,14 +149,22 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 
 2. 为刚创建的账号授予权限。
 
+```mdx-code-block
 <Tabs className="unique-tabs">
-    <TabItem value="onedatabase" label="授予指定库权限" default>
-    <pre>GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP, INDEX ON database_name.* TO 'username';</pre>
-   </TabItem>
-   <TabItem value="all" label="授予所有库权限">
-    <pre>GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP, INDEX ON *.* TO 'username';</pre>
-   </TabItem>
-  </Tabs>
+<TabItem value="授予指定库权限">
+```
+```sql
+GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP, INDEX ON database_name.* TO 'username';
+```
+</TabItem>
+
+<TabItem value="授予所有库权限">
+
+```sql
+GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP, INDEX ON *.* TO 'username';
+```
+</TabItem>
+</Tabs>
 
 * **database_name**：要授予权限的数据库名称。
 * **username**：用户名。

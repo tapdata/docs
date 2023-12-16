@@ -7,6 +7,12 @@ Tapdata 支持丰富的数据源，具体如下：
 
 :::
 
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## 认证数据源
 
 <table>
@@ -104,9 +110,11 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
 
 :::
 
-<Tabs className="unique-tabs">
-    <TabItem value="normal-beta" label="常见数据库" default>
 
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="常见数据库">
+```
 <table>
 <thead>
   <tr>
@@ -254,7 +262,8 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
 </table>
 
 </TabItem>
-    <TabItem value="file-and-saas" label="文件及 SaaS" default>
+
+<TabItem value="文件及 SaaS">
 
 <table>
 <thead>
@@ -348,7 +357,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
 </tbody>
 </table>
 
-
 </TabItem>
 </Tabs>
 
@@ -363,11 +371,11 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
 
 :::
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
+```mdx-code-block
 <Tabs className="unique-tabs">
-    <TabItem value="normal" label="常见数据库" default>
+<TabItem value="常见数据库">
+```
 
 <table>
 <thead>
@@ -469,9 +477,10 @@ import TabItem from '@theme/TabItem';
   </tr>
 </tbody>
 </table>
-   </TabItem>
 
-   <TabItem value="cloud" label="云数据库">
+</TabItem>
+
+<TabItem value="云数据库">
 
 <table>
 <thead>
@@ -637,8 +646,9 @@ import TabItem from '@theme/TabItem';
 </tbody>
 </table>
 
-   </TabItem>
-   <TabItem value="stream" label="消息队列">
+</TabItem>
+
+<TabItem value="消息队列">
 
 <table>
 <thead>
@@ -686,8 +696,10 @@ import TabItem from '@theme/TabItem';
   </tr>
 </tbody>
 </table>
-   </TabItem>
-   <TabItem value="file-and-saas-alpha" label="文件及 SaaS">
+
+</TabItem>
+
+<TabItem value="文件及 SaaS">
 
 <table>
 <thead>
@@ -736,5 +748,5 @@ import TabItem from '@theme/TabItem';
 </tbody>
 </table>
 
-   </TabItem>
-  </Tabs>
+</TabItem>
+</Tabs>

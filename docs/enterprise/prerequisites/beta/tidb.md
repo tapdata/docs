@@ -2,6 +2,11 @@
 
 在创建 TiDB 连接前，您需要在跟随本文完成前置准备工作，完成操作后即可创建连接并在数据复制/开发任务中使用该数据源。
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## 支持版本
 
 TiDB 5.4 及以上
@@ -28,17 +33,22 @@ TiDB 5.4 及以上
 
 2. 为刚创建的账号授予权限。
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
+```mdx-code-block
 <Tabs className="unique-tabs">
-    <TabItem value="onedatabase" label="授予指定库 SELECT 权限" default>
-    <pre>GRANT SELECT, SHOW VIEW, CREATE ROUTINE, LOCK TABLES ON database_name.table_name TO 'username' IDENTIFIED BY 'password';</pre>
-   </TabItem>
-   <TabItem value="all" label="授予全局权限">
-    <pre>GRANT RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';</pre>
-   </TabItem>
-  </Tabs>
+<TabItem value="授予指定库 SELECT 权限">
+```
+```sql
+GRANT SELECT, SHOW VIEW, CREATE ROUTINE, LOCK TABLES ON database_name.table_name TO 'username' IDENTIFIED BY 'password';
+```
+</TabItem>
+
+<TabItem value="授予全局权限">
+
+```sql
+GRANT RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';
+```
+</TabItem>
+</Tabs>
 
 * **database_name.table_name**：要授予权限的库和表，名称间用英文句号（.）分隔，例如 demodata.customer。
 * **username**：用户名。
@@ -77,14 +87,22 @@ import TabItem from '@theme/TabItem';
 
 2. 为刚创建的账号授予权限。
 
+```mdx-code-block
 <Tabs className="unique-tabs">
-    <TabItem value="onedatabase-t" label="授予指定库 SELECT 权限" default>
-    <pre>GRANT SELECT, SHOW VIEW, CREATE ROUTINE, LOCK TABLES ON database_name.table_name TO 'username' IDENTIFIED BY 'password';</pre>
-   </TabItem>
-   <TabItem value="all-t" label="授予全局权限">
-    <pre>GRANT RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';</pre>
-   </TabItem>
-  </Tabs>
+<TabItem value="授予指定库权限">
+```
+```sql
+GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP, INDEX ON database_name.* TO 'username';
+```
+</TabItem>
+
+<TabItem value="授予全局权限">
+
+```sql
+GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP, INDEX ON *.* TO 'username';
+```
+</TabItem>
+</Tabs>
 
 * **database_name.table_name**：要授予权限的库和表，名称间用英文句号（.）分隔，例如 demodata.customer。
 * **username**：用户名。

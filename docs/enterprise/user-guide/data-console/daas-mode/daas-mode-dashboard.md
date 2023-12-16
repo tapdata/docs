@@ -63,7 +63,7 @@ import TabItem from '@theme/TabItem';
 
 此外，当平台加工层的某个表不再需要时，您可以单击该表并在弹出的面板中单击删除（需删除关联的任务）。
 
-![查看表详情](/img/cache_table_detail.png
+![查看表详情](/img/cache_table_detail.png)
 
 </TabItem>
 

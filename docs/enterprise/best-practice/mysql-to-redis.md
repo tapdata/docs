@@ -139,7 +139,8 @@ registry_date: 15-07-2011
 ```shell
 127.0.0.1:6379> get db0_879f660510764c4ea4127447e7ca44b8_202301
 "{\"country\":\"Lao People's Democratic Republic\",\"birthdate\":\"11-08-2001\",
-\"registry_date\":\"15-07-2011\",\"address\":\"USS Vasquez\\nFPO AA 12217\",\"city\":\"Hutchinsonborough\",\"name\":\"Rebecca\",\"phone_number\":
+\"registry_date\":\"15-07-2011\",\"address\":\"USS Vasquez\\nFPO AA 12217\",
+\"city\":\"Hutchinsonborough\",\"name\":\"Rebecca\",\"phone_number\":
 \"1-516-422-8314x744\",\"id\":\"879f660510764c4ea4127447e7ca44b8\",\"locale\":\"or_IN\",
 \"email\":\"cameroncole@example.com\",\"lastname\":\"Dunlap\"}"
 ```

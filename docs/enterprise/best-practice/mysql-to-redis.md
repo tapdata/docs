@@ -63,26 +63,33 @@ Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓�
      * **全量多线程写入**：全量数据写入的并发线程数，默认为 **8**，可基于目标端写性能适当调整。      
      * **增量多线程写入**：增量数据写入的并发线程数，默认未启用，启用后可基于目标端写性能适当调整。      
      * **模型**：展示源表的表结构信息，包含字段名称和字段类型。         
+     
    * **高级设置** 
      * **数据写入模式**：根据业务需求选择数据写入模式：
        * **按事件类型处理**：选择此项后，还需要选择插入、更新、删除事件的数据写入策略。
        * **统计追加写入**：只处理插入事件，丢弃更新和删除事件。        
+       
      * **数据源专属配置**
        * **存储格式**：支持下述三种格式。
          * **String**：键值以平铺的方式存储，即键值为整条记录。
          * **List**：您可以打开**单键存储**开关，让整个表记录全部存储为一个键，List 的每条值对应一条记录，且允许将第一条设为表头（以英文逗号分隔）；您也可以将整个表记录按某些字段组成的键表达式分组然后平铺为多个 List 键值。
          * **Hash**：您可以打开**单键存储**开关，让整个表记录全部存储为一个键，Hash 中的键均存储为 String 类型；您也可以将整个表记录全部平铺为多个键值，每个键对应的 Hash 即为一条记录，每个字段对应各自的值。
        - **单键存储**：当存储格式选择为 **List** 或 **Hash**，可设置该选项，需注意不可超过 Redis 单键的大小限制（512 MB）。
+       
        - **包含表头**：当存储格式选择为 **List** 或 **Hash**，且选择为**单键存储**时，<span id="release320-contain-table-head">打开该开关</span>可在 Redis 中加入一个 Hash 键（默认名称为 `-schema-key-`），其值用来存放源表的表名和列名信息，示例如下：
+         
          ```bash
          HGETALL -schema-key-
          1) "customer"
          2) "id,name,lastname,address,country,city,registry_date,birthdate,email,phone_number,locale"
          ```
+         
        - **键表达式**：键名的表达式，格式为 `prefix_${列名}_suffix`，例如：`db0_${id}_202301`，键名即为 `db0_id列对应的值_202301`。
+       
        - **值显示**：支持下述两种显示方式。
          - **Json**：将每条记录转化为 Json 串。
          - **Text**：按照字段的顺序将对应值用特定的连接符合并起来，如果内容包含了该字符，则以转义字符将内容包裹。
+     
    * **告警设置**   
      默认情况下，节点的平均处理耗时连续 1 分钟大于等于 5 秒，则发送系统通知和邮件通知，您也可以根据业务需求调整规则或关闭告警。
 
@@ -127,9 +134,14 @@ registry_date: 15-07-2011
 
 随后，我们前往 Redis 并查询对应的数据，结果如下，数据以 JSON 形式存储在键值中，且随后的记录变更（如修改字段值）也可以正常同步。
 
+
+
 ```shell
 127.0.0.1:6379> get db0_879f660510764c4ea4127447e7ca44b8_202301
-"{\"country\":\"Lao People's Democratic Republic\",\"birthdate\":\"11-08-2001\",\"registry_date\":\"15-07-2011\",\"address\":\"USS Vasquez\\nFPO AA 12217\",\"city\":\"Hutchinsonborough\",\"name\":\"Rebecca\",\"phone_number\":\"1-516-422-8314x744\",\"id\":\"879f660510764c4ea4127447e7ca44b8\",\"locale\":\"or_IN\",\"email\":\"cameroncole@example.com\",\"lastname\":\"Dunlap\"}"
+"{\"country\":\"Lao People's Democratic Republic\",\"birthdate\":\"11-08-2001\",
+\"registry_date\":\"15-07-2011\",\"address\":\"USS Vasquez\\nFPO AA 12217\",\"city\":\"Hutchinsonborough\",\"name\":\"Rebecca\",\"phone_number\":
+\"1-516-422-8314x744\",\"id\":\"879f660510764c4ea4127447e7ca44b8\",\"locale\":\"or_IN\",
+\"email\":\"cameroncole@example.com\",\"lastname\":\"Dunlap\"}"
 ```
 
 

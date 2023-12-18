@@ -202,6 +202,8 @@ filter={"skip":n}
 
 其中，**property** 表示数据模型中的属性名称，即表中的字段名称；**operator** 表示逻辑运算符，支持的运算符如下：
 
+
+
 - **and**：逻辑与操作。
 - **or**：逻辑或操作。
 - **gt**：大于。
@@ -346,6 +348,8 @@ filter={"where":{"property":{"operator":value}}}
 
 语法如下
 
+
+
 ```bash
 # 方法一
 filter[where][property][between][0]=value1&filter[where][property][between][1]=value2...
@@ -359,9 +363,12 @@ filter={"where":{"property":{"between":[value1,value2]}}}
 
 在 customer 表中，查询出生日期在 **2000-01-01** 到 **2000-12-31** 之间的用户信息，示例如下：
 
+
+
 ```bash
 # 方法一
-?filter[where][birthdate][between][0]=2000-01-01T00:00:00.000Z&filter[where][birthdate][between][1]=2000-12-31T00:00:00.000Z
+?filter[where][birthdate][between][0]=2000-01-01T00:00:00.000Z&filter[where][birthdate]
+[between][1]=2000-12-31T00:00:00.000Z
 
 # 方法二
 filter={"where":{"birthdate":{"between":["2000-01-01T00:00:00.000Z","2000-12-31T00:00:00.000Z"]}}}

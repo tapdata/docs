@@ -23,11 +23,16 @@ MongoDB Atlas 是 MongoDB 提供的多云应用程序数据平台，Tapdata 支�
    * 连接信息设置
 
      * **连接名称**：填写具有业务意义的独有名称。
+
      * **连接类型**：支持将 MongoDB Atlas 作为源或目标库。
-     * **连接方式**：固定为**URI 模式**，选择该模式后，您需要填写数据库 URI 连接信息（需替换账号、密码并设置），获取方式见准备工作，例如：` mongodb+srv://tapdata:Tap123456@cluster****.mongodb.net/admin?retryWrites=true&w=majority`
+
+     * **连接方式**：固定为**URI 模式**，选择该模式后，您需要填写数据库 URI 连接信息（需替换账号、密码并设置），获取方式见准备工作，例如：
+       
+       ` mongodb+srv://tapdata:Tap123456@cluster****.mongodb.net/admin?retryWrites=true&w=majority`
        :::tip
        请务必在连接串中设置认证数据库，例如上述示例中设置为 **admin**，否则会导致连接失败并提示错误：“datbaseName can not be null”。
        :::
+       
      * **使用 TLS/SSL 连接**：根据业务需求选择：
        * **TSL/SSL 连接**：Tapdata 将连接网络中的单独服务器，该服务器提供到数据库的 TSL/SSL 通道。如果您的数据库位于不可访问的子网中，则可尝试使用此方法并提供私钥文件、私钥密码等信息。
        * **直接连接**：Tapdata 将直接连接到数据库。

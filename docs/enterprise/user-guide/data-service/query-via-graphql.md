@@ -16,7 +16,9 @@ GraphQL 提供了一种查询语言，支持以声明方式从服务器请求数
 
       ![API 服务器列表](../../images/api_server_list.png)
 
-   3. 在浏览器中输入 API 服务器的访问地址并加上 `/graphql` 后缀，例如 `http://192.168.1.200:3080/graphql`，即获得 GraphQL 查询请求地址。
+   3. 在浏览器中输入 API 服务器的访问地址并加上 `/graphql` 后缀，即获得 GraphQL 查询请求地址，例如：
+
+       `http://192.168.1.200:3080/graphql`
 
 3. 获取 API 服务的 Access Token 认证信息。
 

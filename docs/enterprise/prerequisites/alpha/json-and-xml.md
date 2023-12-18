@@ -9,8 +9,11 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-
 ## 存放在 Local/FTP/SFTP/SMB
+
+
+
+
 
 ```mdx-code-block
 <Tabs className="unique-tabs">

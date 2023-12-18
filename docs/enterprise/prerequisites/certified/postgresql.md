@@ -180,7 +180,10 @@ PostgreSQL 9.4、9.5、9.6、10.x、11.x、12 版本
       ```sql
       lsn  | 0/3E38E60
       xid  | 610
-      data | {"change":[{"kind":"insert","schema":"public","table":"test_decode","columnnames":["uid","name","age","score"],"columntypes":["integer","character varying(50)","integer","numeric"],"columnvalues":[1,"Jack",18,89]}]}
+      data | {"change":[{"kind":"insert","schema":"public","table":"test_decode",
+      "columnnames":["uid","name","age","score"],"columntypes":
+      ["integer","character varying(50)","integer","numeric"],
+      "columnvalues":[1,"Jack",18,89]}]}
       ```
 
    5. 确认无问题后，可销毁 Slot 连接并删除测试表。

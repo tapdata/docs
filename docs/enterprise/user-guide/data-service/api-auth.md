@@ -35,7 +35,9 @@ http://{Tapdata 服务器地址}:3030/oauth/token
 
 在 `request header`、`request body`、`request url` 中添加  `access_token` 参数：
 
-```
+
+
+```bash
 access_token: eyJhbGciOiJIUzI1NiJ9.eyJjbGllbnRJZCI6ImI1ZmQwMWM1OTk2YTYzNDMyMGViZjUzY2JhYjVmYWRmIiwidXNlcl9pZCI6IjVjZTBiYzUxMzNmZDI5NGI2YTI1YTYzYyIsImNyZWF0ZWRBdCI6MTU1ODM2ODg4NDk0NCwicm9sZXMiOlsiNWNlMGJjNTEzM2ZkMjk0YjZhMjVhNjNjIl0sImV4cGlyZWRhdGUiOjE1NTgzNzA2ODQ5NDR9.fKSCRs2pCNdYYVCYjM-W1OfmQO057EKKOTO1n89Q998
 ```
 
@@ -43,7 +45,9 @@ access_token: eyJhbGciOiJIUzI1NiJ9.eyJjbGllbnRJZCI6ImI1ZmQwMWM1OTk2YTYzNDMyMGViZ
 
 在 `request header` 中添加认证参数：
 
-```
+
+
+```bash
 Authorization: bearer eyJhbGciOiJIUzI1NiJ9.eyJjbGllbnRJZCI6ImI1ZmQwMWM1OTk2YTYzNDMyMGViZjUzY2JhYjVmYWRmIiwidXNlcl9pZCI6IjVjZTBiYzUxMzNmZDI5NGI2YTI1YTYzYyIsImNyZWF0ZWRBdCI6MTU1ODM2ODg4NDk0NCwicm9sZXMiOlsiNWNlMGJjNTEzM2ZkMjk0YjZhMjVhNjNjIl0sImV4cGlyZWRhdGUiOjE1NTgzNzA2ODQ5NDR9.fKSCRs2pCNdYYVCYjM-W1OfmQO057EKKOTO1n89Q998
 ```
 

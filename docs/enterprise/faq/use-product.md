@@ -107,8 +107,11 @@ Tapdata 会自动基于选择源表来推演目标表结构等信息，此处可
 1. [创建数据转换任务](../user-guide/data-pipeline/data-development/create-task)。
 
 2. 在画布中添加源和目标节点。
+
    :::tip
+
    目标节点需为弱 Scheme 类的数据源，例如如 MongoDB 或 Kafka。
+
    :::
 
 3. 在源节点设置阶段，打开全量自定义查询开关，添加全量数据同步阶段需要执行的 SQL 查询语句（不对增量阶段生效）。

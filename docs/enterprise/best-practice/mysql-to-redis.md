@@ -34,18 +34,27 @@ Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓�
    * **基础设置**      
      * **节点名称**：默认为连接名称，您也可以设置一个具有业务意义的名称。
      * **表**：选择要操作的源表，下方将展示表的结构信息，包含列名和列类型。      
+     
    * **高级设置**      
      * **DDL 同步配置**      
        选择是否启用 **DDL 事件采集**，打开该开关后，Tapdata 会自动采集所选的源端 DDL 事件（如新增字段），如果目标端支持 DDL 写入即可实现 DDL 语句的同步。      
+       
      * **增量同步方式**      
        选择**实时日志解析**或**字段轮询**，选择为**轮询**时，您还需要指定轮询的字段、时间间隔和每次读取行数。**实时日志解析**会使用数据源事务日志进行解析并同步增量事件，**字段轮询**会通过对字段的轮询进行增量事件同步，其中**字段轮询**通常无法同步删除事件。      
+       
      * **数据过滤配置**      
        * **全量自定义查询**：打开该开关后，可填写全量数据同步阶段需要执行的 SQL 查询语句（不对增量阶段生效），可实现自定义的数据提取（如数据过滤、Join 等），例如填写 `SELECT id,name,address FROM customer;`。
+         
          :::tip
+         
          启用该功能要求目标节点为弱 Scheme 类的数据源（如 MongoDB/Kafka）等。
+         
          ::: 
+         
        * **过滤设置**：默认关闭，开启后您需要指定数据过滤条件。      
+       
      * **批量读取条数**：全量同步时，每批次读取的记录条数，默认为 **100**。     
+     
    * **告警设置**   
      默认情况下，节点的平均处理耗时连续 1 分钟大于等于 5 秒，则发送系统通知和邮件通知，您也可以根据业务需求调整规则或关闭告警。
 
@@ -81,7 +90,8 @@ Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓�
          ```bash
          HGETALL -schema-key-
          1) "customer"
-         2) "id,name,lastname,address,country,city,registry_date,birthdate,email,phone_number,locale"
+         2) "id,name,lastname,address,country,city,registry_date,
+         birthdate,email,phone_number,locale"
          ```
          
        - **键表达式**：键名的表达式，格式为 `prefix_${列名}_suffix`，例如：`db0_${id}_202301`，键名即为 `db0_id列对应的值_202301`。
@@ -141,8 +151,8 @@ registry_date: 15-07-2011
 "{\"country\":\"Lao People's Democratic Republic\",\"birthdate\":\"11-08-2001\",
 \"registry_date\":\"15-07-2011\",\"address\":\"USS Vasquez\\nFPO AA 12217\",
 \"city\":\"Hutchinsonborough\",\"name\":\"Rebecca\",\"phone_number\":
-\"1-516-422-8314x744\",\"id\":\"879f660510764c4ea4127447e7ca44b8\",\"locale\":\"or_IN\",
-\"email\":\"cameroncole@example.com\",\"lastname\":\"Dunlap\"}"
+\"1-516-422-8314x744\",\"id\":\"879f660510764c4ea4127447e7ca44b8\",\"locale\":
+\"or_IN\",\"email\":\"cameroncole@example.com\",\"lastname\":\"Dunlap\"}"
 ```
 
 

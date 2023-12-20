@@ -48,7 +48,8 @@ import TabItem from '@theme/TabItem';
    * **仅保存**：仅保存任务链路，页面将提示保存成功，单击提示信息即可跳转到任务配置页面，您可以[添加处理节点](../../data-pipeline/data-development/process-node)，实现表结构调整（如增加字段）、合并表、构建宽表等需求，完成设置后单击页面右上角的**启动**。
    * **保存并运行**：无需执行额外的操作，由 Tapdata 自动创建一个数据转换任务并运行，将该表实时同步至平台加工层。
 3. 在**平台加工层**，找到目标表，单击其右侧的![](/img/detail_icon.png)图标，可查看该表关联的任务和表的基本信息，包含列信息、样本数据、Scheme 等信息。
-   ![](/img/view_curated_task.png)
+
+![](/img/view_curated_task.png)
 
 </TabItem>
 

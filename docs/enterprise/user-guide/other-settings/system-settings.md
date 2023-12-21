@@ -12,7 +12,7 @@
 
 ## 日志设置
 
-![](../../images/log_settings.png)
+![日志设置](../../images/log_settings.png)
 
 **日志等级**：在日志设置可以设置日志的等级。输入任务日志等级包括: **error**/**warn**/**info**/**debug**/**trace**。用户选择了一个等级，则在日志内只会打印该等级及其以上等级的日志。
 
@@ -26,7 +26,7 @@
 
 ## SMTP 设置
 
-![](../../images/smtp_settings.png)
+![SMTP 设置](../../images/smtp_settings.png)
 
 配置SMTP服务，设置项包括：
 
@@ -47,7 +47,7 @@
 
 ## API 分发设置
 
-![](../../images/api_distribution_settings.png)
+![API 分发设置](../../images/api_distribution_settings.png)
 
 设置API分发策略，设置项包括：
 
@@ -61,7 +61,7 @@
 
 ## 连接设置
 
-![](../../images/connection_settings.png)
+![连接设置](../../images/connection_settings.png)
 
 设置连接管理的一些配置，设置项包括：
 
@@ -74,7 +74,7 @@
 
 ## 运维展示设置
 
-![](../../images/operation_settings.png)
+![运维展示设置](../../images/operation_settings.png)
 
 运维展示支持设置项包括：
 
@@ -88,7 +88,7 @@
 
 ## 系统全局设置
 
-![](../../images/global_settings.png)
+![系统全局设置](../../images/global_settings.png)
 
 系统全局设置，支持的设置项包括：
 
@@ -100,7 +100,7 @@
 
 ## 灾备演习设置
 
-![](../../images/disaster_drill_settings.png)
+![灾备演习设置](../../images/disaster_drill_settings.png)
 
 灾备演习设置主要的配置项包括：
 
@@ -113,7 +113,7 @@
 
 ## 后台分析设置
 
-![](../../images/background_settings.png)
+![后台分析设置](../../images/background_settings.png)
 
 后台分析设置主要设置数据质量分析间隔，用户根据需要设置即可。
 
@@ -121,7 +121,7 @@
 
 ## 系统资源监控设置
 
-![](../../images/resource_monitor_settings.png)
+![系统资源监控设置](../../images/resource_monitor_settings.png)
 
 系统资源监控设置主要设置系统资源监控的采集频率，用户根据需要设置即可。
 
@@ -129,7 +129,7 @@
 
 ## 进程设置
 
-![](../../images/process_settings.png)
+![进程设置](../../images/process_settings.png)
 
 - 进程设置主要用来设置进程心跳的过期时间
 
@@ -139,9 +139,11 @@
 
 ## 任务设置
 
-![](../../images/task_settings.png)
+![任务设置](../../images/task_settings.png)
 
 任务设置主要用来对任务运行时的一些参数进行设置。支持的设置项包括：
+
+
 
 - 增量滞后判定时间（秒）：可以设置任务增量延迟超过多少时才算滞后
 - 是否在目标端数据集添加创建时间：true or false

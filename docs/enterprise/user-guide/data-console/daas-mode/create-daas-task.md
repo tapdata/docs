@@ -34,7 +34,9 @@ import TabItem from '@theme/TabItem';
 
 1. 在**源数据层**，单击![](/img/search_icon.png)图标，找到您需要同步的表，将其拖动至**平台缓存层**。
 2. 在弹出的对话框中，填写表前缀、选择数据同步方式（全量或增量）并单击**确定**。
+
    ![创建缓存层任务](/img/create_cache_task.gif)
+
 3. 选择**保存并运行**后，Tapdata 将自动创建一个数据复制任务，将您选择表实时同步至平台缓存层并自动校验，您可以单击平台缓存中表名右侧的![](/img/detail_icon.png)图标，跳转至任务监控页面来查看任务运行详情。
 
 </TabItem>
@@ -46,7 +48,8 @@ import TabItem from '@theme/TabItem';
    * **仅保存**：仅保存任务链路，页面将提示保存成功，单击提示信息即可跳转到任务配置页面，您可以[添加处理节点](../../data-pipeline/data-development/process-node)，实现表结构调整（如增加字段）、合并表、构建宽表等需求，完成设置后单击页面右上角的**启动**。
    * **保存并运行**：无需执行额外的操作，由 Tapdata 自动创建一个数据转换任务并运行，将该表实时同步至平台加工层。
 3. 在**平台加工层**，找到目标表，单击其右侧的![](/img/detail_icon.png)图标，可查看该表关联的任务和表的基本信息，包含列信息、样本数据、Scheme 等信息。
-   ![](/img/view_curated_task.png)
+
+![](/img/view_curated_task.png)
 
 </TabItem>
 

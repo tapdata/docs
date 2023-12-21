@@ -23,9 +23,15 @@
    ![创建外存](../../images/create_external_storage_cn.png)
 
    * **外存名称**：填写具有业务意义的换成名称，便于后续识别。
+
    * **外存类型**：支持 **MongoDB** 和 **RocksDB**。
-   * **存储路径**：填写数据库连接地址，例如 MongoDB 格式参考： `mongodb:/admin:password@127.0.0.1:27017/mydb?replicaSet=xxx&authSource=admin`。
+
+   * **存储路径**：填写数据库连接地址，例如 MongoDB 格式参考：
+
+      `mongodb:/admin:password@127.0.0.1:27017/mydb?replicaSet=xxx&authSource=admin`。
+
    * **使用 TLS/SSL 连接**：选择是否启用 TSL/SSL 加密，如开启该功能，您还需要上传客户端私钥。
+
    * **设为默认**：选择是否作为默认外存。
 
 5. 单击**连接测试**，测试通过后单击**保存**。

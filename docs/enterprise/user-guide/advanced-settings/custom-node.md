@@ -90,9 +90,11 @@
 
    * 源端的表数据：
 
-     ![](../../images/masking_demo1.png)
+     ![脱敏前](../../images/masking_demo1.png)
 
-   * 经过脱敏后，目标端的表数据：![](../../images/masking_demo2.png)
+   * 经过脱敏后，目标端的表数据：
+   
+     ![脱敏后](../../images/masking_demo2.png)
 
 
 

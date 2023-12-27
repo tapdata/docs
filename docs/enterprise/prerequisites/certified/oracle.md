@@ -233,13 +233,13 @@ TO  username CONTAINER=all;
 
 
 
-## <span id="ssl">开启 SSL 连接（可选）</span>
+## 开启 SSL 连接（可选）
 
 
 
 为进一步提升数据链路的安全性，您还可以选择为 Oracle 数据库开启 SSL（Secure Sockets Layer）加密，实现在传输层对网络连接的加密，在提升通信数据安全性的同时，保证数据的完整性。
 
-接下来，我们以部署在 Linux 平台上的 Oracle 12c 为例，演示具体的操作流程：
+接下来，我们以部署在 Linux 平台上的 Oracle 12c 为例，演示具体的<span id="ssl">操作流程</span>：
 
 1. 登录 Oracle 数据库所属的设备，依次执行下述命令，调整目录权限并切换至 Oracle 用户。
 

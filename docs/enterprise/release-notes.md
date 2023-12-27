@@ -8,6 +8,22 @@
 
 ### 新增功能
 
+* 针对 MongoDB 5.x 及以上版本的数据源，新增支持 [Time Series 集合](https://www.mongodb.com/docs/manual/core/timeseries-collections/)
+* 针对 MongoDB 6.x 及以上版本的数据源，新增支持 [preImage](https://www.mongodb.com/docs/manual/changeStreams/#change-streams-with-document-pre--and-post-images)
+
+### 问题修复
+
+* 修复多表数据复制场景下，断点不准确的问题
+* 修复已知的 UI 交互体验问题
+
+---
+
+
+
+## V3.5.8
+
+### 新增功能
+
 - 数据源新增 [Azure Cosmos DB](user-guide/connect-database/beta/azure-cosmos-db.md)，可做为源库同步全量数据，帮助实现云端数据快速流转
 - 数据复制/转换任务支持导入能力，您可以在 [MongoDB Relational Migrator](https://www.mongodb.com/docs/relational-migrator/) 上设计好数据流转流程并将其导出，随后在 Tapdata 数据管道右上角直接导入，进一步提升数据管道设计便利性
 
@@ -21,12 +37,6 @@
 
 - 修复增强 JS 节点在特定场景下，模型声明不生效或异常问题
 - 修复若干 UI 交互体验问题
-
-
-
-
-
----
 
 
 

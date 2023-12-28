@@ -13,6 +13,26 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
   <TabItem value="2023" label="2023 年" default>
 ```
+
+
+
+### 20231226
+
+#### 新增功能
+
+* 针对 MongoDB 5.x 及以上版本的数据源，新增支持 [Time Series 集合](https://www.mongodb.com/docs/manual/core/timeseries-collections/)
+* 针对 MongoDB 6.x 及以上版本的数据源，新增支持 [preImage](https://www.mongodb.com/docs/manual/changeStreams/#change-streams-with-document-pre--and-post-images)
+
+#### 功能优化
+
+* 优化任务数达到上限的场景下，开启定时调度任务时的系统提示
+
+#### 问题修复
+
+* 修复多表数据复制场景下，断点不准确的问题
+* 修复已退订删除的 Agent 实例，未及时停止上报心跳信息的问题
+* 修复已知的 UI 交互体验问题
+
 ### 20231208
 
 #### 新增功能

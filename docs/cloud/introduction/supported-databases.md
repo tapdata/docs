@@ -795,15 +795,6 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
     <td>5.14.x</td>
   </tr>
   <tr>
-    <td>ActiveMQ</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>5.14.x</td>
-  </tr>
-  <tr>
     <td>AI Chat</td>
     <td>➖</td>
     <td>➖</td>
@@ -820,6 +811,15 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
     <td>✅</td>
     <td>➖</td>
     <td> 5.20、5.21</td>
+  </tr>
+  <tr>
+    <td>RabbitMQ</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>3.8.x</td>
   </tr>
   <tr>
     <td>RocketMQ</td>

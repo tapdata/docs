@@ -8,6 +8,15 @@ Tapdata Cloud 支持丰富的数据源，具体如下：
 
 :::
 
+
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+
+
 ### 认证数据源
 
 <table>
@@ -102,8 +111,11 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
 
 :::
 
+
+```mdx-code-block
 <Tabs className="unique-tabs">
-    <TabItem value="normal-beta" label="常见数据库" default>
+<TabItem value="自建数据库">
+```
 
 <table>
 <thead>
@@ -123,15 +135,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
 </thead>
 <tbody>
   <tr>
-    <td>BigQuery</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>不涉及</td>
-  </tr>
-  <tr>
     <td>Custom Connection</td>
     <td>✅</td>
     <td>✅</td>
@@ -150,15 +153,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>7.x、8.x</td>
   </tr>
   <tr>
-    <td>Databend</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>0.9 及以上</td>
-  </tr>
-  <tr>
     <td>IBM DB2</td>
     <td>✅</td>
     <td>✅</td>
@@ -168,15 +162,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>9.7 LUW</td>
   </tr>
   <tr>
-    <td>Doris</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>0.15.0</td>
-  </tr>
-  <tr>
     <td>DummyDB</td>
     <td>✅</td>
     <td>✅</td>
@@ -184,6 +169,15 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>➖</td>
     <td>-</td>
+  </tr>
+  <tr>
+    <td>Informix</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>10 及以上</td>
   </tr>
   <tr>
     <td>KingBaseES-R6</td>
@@ -213,13 +207,13 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>2.8 ~ 6.0</td>
   </tr>
   <tr>
-    <td>SelectDB</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
+    <td>Sybase</td>
+    <td>✅</td>
     <td>✅</td>
     <td>➖</td>
-    <td>MySQL 5.7/8.0</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>ASE 16.0</td>
   </tr>
   <tr>
     <td>TDengine</td>
@@ -242,7 +236,8 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
 </tbody>
 </table>
 </TabItem>
-    <TabItem value="file-and-saas" label="文件及 SaaS" default>
+
+<TabItem value="数据仓库/数据湖">
 
 <table>
 <thead>
@@ -261,6 +256,92 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
   </tr>
 </thead>
 <tbody>
+  <tr>
+    <td>BigQuery</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
+    <td>Databend</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>0.9 及以上</td>
+  </tr>
+  <tr>
+    <td>Doris</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>0.15.0</td>
+  </tr>
+  <tr>
+    <td>GaussDB（DWS）</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>8.1.3</td>
+  </tr>
+  <tr>
+    <td>SelectDB</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>2.0.13 及以上</td>
+  </tr>
+  <tr>
+    <td>YashanDB</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>1.0</td>
+  </tr>
+</tbody>
+</table>
+</TabItem>
+
+<TabItem value="云数据库/文件/SaaS" >
+
+<table>
+<thead>
+  <tr>
+    <th rowspan="2">类型</th>
+    <th colspan="3">作为来源</th>
+    <th colspan="2">作为目标</th>
+    <th rowspan="2">版本</th>
+  </tr>
+  <tr>
+    <th>全量</th>
+    <th>增量</th>
+    <th>DDL 采集</th>
+    <th>数据写入</th>
+    <th>DDL 应用</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Azure CosmosDB</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
   <tr>
     <td>Coding</td>
     <td>✅</td>
@@ -289,6 +370,15 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>XLS/XLSX 格式，文件位置支持本地、FTP、SFTP、SMB、S3FS、OSS</td>
   </tr>
   <tr>
+    <td>HubSpot</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
     <td>Lark-IM</td>
     <td>➖</td>
     <td>➖</td>
@@ -307,9 +397,36 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>不涉及</td>
   </tr>
   <tr>
+    <td>Metabase</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
+    <td>Salesforce</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
     <td>Zoho-CRM</td>
     <td>✅</td>
     <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
+    <td>Zoho-Desk</td>
+    <td>✅</td>
+    <td>✅</td>
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
@@ -333,12 +450,10 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
 
 :::
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
+```mdx-code-block
 <Tabs className="unique-tabs">
-    <TabItem value="normal" label="常见数据库" default>
-
+<TabItem value="自建数据库">
+```
 <table>
 <thead>
   <tr>
@@ -382,15 +497,6 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>➖</td>
     <td>8x</td>
-  </tr>
-  <tr>
-    <td>Hive 1</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>3.1.2+</td>
   </tr>
   <tr>
     <td>KingBaseES-R3</td>
@@ -440,9 +546,59 @@ import TabItem from '@theme/TabItem';
 </tbody>
 </table>
 
-   </TabItem>
+</TabItem>
 
-   <TabItem value="cloud" label="云数据库">
+<TabItem value="数据仓库/数据湖">
+
+<table>
+<thead>
+  <tr>
+    <th rowspan="2">类型</th>
+    <th colspan="3">作为来源</th>
+    <th colspan="2">作为目标</th>
+    <th rowspan="2">版本</th>
+  </tr>
+  <tr>
+    <th>全量</th>
+    <th>增量</th>
+    <th>DDL 采集</th>
+    <th>数据写入</th>
+    <th>DDL 应用</th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+    <td>GreenPlum</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+<tr>
+    <td>Hive1</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Hive 3</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>3.1.2 及以上</td>
+  </tr>
+</tbody>
+</table>
+</TabItem>
+
+<TabItem value="云数据库">
 
 <table>
 <thead>
@@ -608,8 +764,9 @@ import TabItem from '@theme/TabItem';
 </tbody>
 </table>
 
-   </TabItem>
-   <TabItem value="stream" label="消息队列">
+</TabItem>
+
+<TabItem value="消息队列/中间件">
 
 <table>
 <thead>
@@ -638,6 +795,24 @@ import TabItem from '@theme/TabItem';
     <td>5.14.x</td>
   </tr>
   <tr>
+    <td>AI Chat</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+<tr>
+    <td>Hazelcast</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td> 5.20、5.21</td>
+  </tr>
+  <tr>
     <td>RabbitMQ</td>
     <td>✅</td>
     <td>✅</td>
@@ -657,8 +832,9 @@ import TabItem from '@theme/TabItem';
   </tr>
 </tbody>
 </table>
-   </TabItem>
-   <TabItem value="file-and-saas-alpha" label="文件及 SaaS">
+</TabItem>
+
+<TabItem value="文件/SaaS">
 
 <table>
 <thead>
@@ -677,6 +853,33 @@ import TabItem from '@theme/TabItem';
   </tr>
 </thead>
 <tbody>
+<tr>
+    <td>Alibaba 1688</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+<tr>
+    <td>BesChannels</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+<tr>
+    <td>Feishu-Bitable</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
   <tr>
     <td>JSON</td>
     <td>✅</td>
@@ -685,6 +888,33 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>➖</td>
     <td>不涉及，文件位置支持本地、FTP、SFTP、SMB、S3FS、OSS</td>
+  </tr>
+  <tr>
+    <td>Lark Approval</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
+    <td>Lark Doc</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
+    <td>Shein</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
   </tr>
   <tr>
     <td>Vika</td>
@@ -706,5 +936,5 @@ import TabItem from '@theme/TabItem';
   </tr>
 </tbody>
 </table>
-   </TabItem>
-  </Tabs>
+</TabItem>
+</Tabs>

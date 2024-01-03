@@ -79,6 +79,95 @@ Subsystem:
 
 
 
+## 如何扩容 Tapdata 集群？
+
+当现有集群面临性能瓶颈、资源使用接近上限或需要提高系统容错能力和高可用性时，可对集群进行扩容操作，具体操作流程如下：
+
+1. 完成新机器的环境初始化。
+
+   1. 登录至服务器，依次执行下述命令完成文件访问数、防火墙等系统参数设置。
+
+      ```bash
+      ulimit -n 1024000 
+      echo "* soft nofile 1024000" >> /etc/security/limits.conf 
+      echo "* hard nofile 1024000" >> /etc/security/limits.conf 
+      systemctl disable firewalld.service 
+      systemctl stop firewalld.service 
+      setenforce 0 
+      sed -i "s/enforcing/disabled/g" /etc/selinux/config 
+      ```
+
+   2. 安装  Java 1.8 版本。
+
+      ```bash
+      yum -y install java-1.8.0-openjdk
+      ```
+
+   3. 设置系统时间。
+
+      ```bash
+      # 方式一：use ntpdate
+      # nptdate -u cn.ntp.org.cn
+      crontab -e 
+      # 最后一行添加
+      * */1 * * * ntpdate -u ntp1.aliyun.com
+      
+      # 方式二：date -s 指定
+      date -s '10:34:06'
+      
+      # 系统时间同步到硬件，防止系统重启后时间被还原
+      hwclock -w
+      ```
+
+2. 下载 Tapdata 安装包（可[联系我们](mailto:team@tapdata.io)获取），将其上传至待部署的设备中。
+
+3. 在待部署的设备上，执行下述格式的命令，解压安装包并进入解压后的路径。
+
+   ```bash
+   tar -zxvf 安装包名&&cd tapdata
+   ```
+
+   例如：`tar -zxvf tapdata-release-v2.14.tar.gz&&cd tapdata `
+
+4. 在待部署的设备上，完成扩容操作。
+
+   1. 复制集群已有节点中，Tapdata 工作目录下的 **application.yml** 文件至待部署设备中的 Tapdata 工作目录，然后注释或删除该文件中的 **uuid** 所在行。
+
+   2. 上传 License 文件至 Tapdata 工作目录。 
+
+   3. 启动并扩容所需的服务。
+
+      ```bash
+      # 扩容 Tapdata 管理服务
+      ./tapdata start frontend
+      
+      # 扩容 Tapdata API 服务
+      ./tapdata start apiserver
+      
+      # 扩容 Tapdata 引擎服务
+      ./tapdata start backend
+      ```
+
+5. 启动成功后，可登录 Tapdata 平台，在**系统管理** > 集群管理中查看各服务的状态。
+
+
+
+## Tapdata 依赖的 MongoDB 数据库如何保障高可用？
+
+避免使用单节点架构，可采用副本集部署架构来保障高可用，例如采用三节点的副本集架构时，其中一个节点作为 Primary 节点，其他节点作为 Secondary 节点。
+
+:::tip
+
+如果已采用单节点架构，您可以将其[转换为副本集架构](https://www.mongodb.com/docs/manual/tutorial/convert-standalone-to-replica-set/)。
+
+:::
+
+在副本集中，写入 Primary 节点的数据会自动同步至 Secondary 节点上，当 Primary 节点故障或不可用时，副本集会自动选举一个新的 Primary 节点，从而保证数据库的可用性和数据的完整性，最大程度地减少数据库出现故障的时间和影响。
+
+您可以登录 MongoDB 数据库，通过 `rs.status()` 命令查看副本集状态和各节点的状态信息。更多介绍，见 [Replication](https://www.mongodb.com/docs/v4.4/replication/)。
+
+
+
 ## 如何查看运行日志？
 
 在 2.15 之前版本，日志分散存放在 Tapdata 安装目录中的各文件夹中，从 2.15 版本开始，日志信息集中存放在安装目录下的 logs 目录中。
@@ -140,7 +229,7 @@ tapdata:
 
 ## Tapdata 如何实现高可用？
 
-您可以在多台机器上部署 Tapdata 以实现高可用，某个节点出现异常时，其余节点可继续提供服务，进入增量的任务会断点续传，任务可自动均衡调度分配。
+您可以在多台机器上[部署 Tapdata](../quick-start/install/install-tapdata-ha.md) 以实现高可用，某个节点出现异常时，其余节点可继续提供服务，进入增量的任务会断点续传，任务可自动均衡调度分配。
 
 
 
@@ -248,16 +337,6 @@ db.ClusterState.find();
 - Workers: 进程信息
 - License: License 信息
 - TypeMappings: 类型映射
-
-
-
-## MongoDB 数据库如何保障高可用？
-
-避免使用单节点架构，可采用副本集部署架构来保障高可用，例如采用三节点的副本集架构时，其中一个节点作为 Primary 节点，其他节点作为 Secondary 节点。
-
-在副本集中，写入 Primary 节点的数据会自动同步至 Secondary 节点上，当 Primary 节点故障或不可用时，副本集会自动选举一个新的 Primary 节点，从而保证数据库的可用性和数据的完整性，最大程度地减少数据库出现故障的时间和影响。
-
-您可以登录 MongoDB 数据库，通过 `rs.status()` 命令查看副本集状态和各节点的状态信息。更多介绍，见 [Replication](https://www.mongodb.com/docs/v4.4/replication/)。
 
 
 

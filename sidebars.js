@@ -633,6 +633,7 @@ const sidebars = {
             'enterprise/best-practice/alert-via-qqmail',
             'enterprise/best-practice/full-breakpoint-resumption',
             'enterprise/best-practice/extract-array',
+            'enterprise/best-practice/raw-logs-solution',
         ]
     },  
     {

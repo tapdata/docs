@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 ```mdx-code-block
 <Tabs className="unique-tabs">
-  <TabItem value="2024" label="2024 年" default>
+  <TabItem value="2024 年" default>
 ```
 
 ### 20240112
@@ -28,11 +28,9 @@ import TabItem from '@theme/TabItem';
 * 修复 Oracle 到 MySQL 的 DDL 操作同步场景下，DROP COLUMN 操作未正常同步的问题
 * 修复若干 UI 交互体验问题
 
+</TabItem>
 
-```mdx-code-block
-<Tabs className="unique-tabs">
-  <TabItem value="2023" label="2023 年" default>
-```
+<TabItem value="2023 年">
 
 ### 20231226
 
@@ -84,10 +82,6 @@ import TabItem from '@theme/TabItem';
 
 * 修复重置任务后重新运行任务时，增量信息未清理成功的问题
 * 修复部分 SaaS 数据源在执行全量数据同步时，显示增量时间点的问题
-
-
-
-
 
 ### 20231103
 
@@ -300,7 +294,7 @@ import TabItem from '@theme/TabItem';
 
 </TabItem>
 
-  <TabItem value="2022" label="2022 年">
+<TabItem value="2022 年">
     <h3>20221230</h3>
 <h4>功能优化</h4>
 <ul>
@@ -411,8 +405,9 @@ import TabItem from '@theme/TabItem';
     <li>数据连接新增MariaDB支持</li>
     <li>优化编辑已运行任务的弹窗提示</li>
 </ul>
-  </TabItem>
-  <TabItem value="2021" label="2021 年">
+</TabItem>
+
+<TabItem value="2021 年">
     <h3>20211221</h3>
 
 <h4>新增功能</h4>
@@ -620,10 +615,3 @@ import TabItem from '@theme/TabItem';
 </ul>
   </TabItem>
 </Tabs>
-
-
-
-
-
-
-

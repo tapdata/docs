@@ -4,6 +4,22 @@
 
 
 
+## V3.5.10
+
+### 新增功能
+
+* MongoDB 间的数据同步场景，新增支持 [Capped 集合](https://www.mongodb.com/docs/manual/core/capped-collections/)
+
+### 问题修复
+
+* 修复 JS 节点模型声明设置在任务编辑页面提示错误的问题
+* 修复 Oracle 到 MySQL 的 DDL 操作同步场景下，DROP COLUMN 操作未正常同步的问题
+* 修复若干 UI 交互体验问题
+
+---
+
+
+
 ## V3.5.9
 
 ### 新增功能
@@ -15,10 +31,6 @@
 
 * 修复多表数据复制场景下，断点不准确的问题
 * 修复已知的 UI 交互体验问题
-
----
-
-
 
 ## V3.5.8
 

@@ -7,14 +7,32 @@ import TabItem from '@theme/TabItem';
 ```
 
 
+```mdx-code-block
+<Tabs className="unique-tabs">
+  <TabItem value="2024" label="2024 年" default>
+```
+
+### 20240112
+
+#### 新增功能
+
+* MongoDB 间的数据同步场景，新增支持 [Capped 集合](https://www.mongodb.com/docs/manual/core/capped-collections/)
+
+#### 功能优化
+
+* 优化新用户引导流程，支持收起相关提示和返回上一步骤
+
+#### 问题修复
+
+* 修复 JS 节点模型声明设置在任务编辑页面提示错误的问题
+* 修复 Oracle 到 MySQL 的 DDL 操作同步场景下，DROP COLUMN 操作未正常同步的问题
+* 修复若干 UI 交互体验问题
 
 
 ```mdx-code-block
 <Tabs className="unique-tabs">
   <TabItem value="2023" label="2023 年" default>
 ```
-
-
 
 ### 20231226
 

@@ -1,8 +1,8 @@
 # YashanDB
 
-崖山数据库管理系统（YashanDB）是深圳计算科学研究院在经典数据库理论基础上，融入新的原创理论，自主设计、研发的新型数据库管理系统。Tapdata Cloud 支持将 YashanDB 作为目标库来构建数据管道，帮助您快速完成数据流转。
+崖山数据库管理系统（YashanDB）是深圳计算科学研究院在经典数据库理论基础上，融入新的原创理论，自主设计、研发的新型数据库管理系统。Tapdata 支持将 YashanDB 作为目标库来构建数据管道，帮助您快速完成数据流转。
 
-接下来，跟随本文介绍在 Tapdata Cloud 平台上连接 YashanDB 数据源。
+接下来，跟随本文介绍在 Tapdata 平台上连接 YashanDB 数据源。
 
 ## 准备工作
 
@@ -19,7 +19,7 @@ GRANT SELECT ANY TABLE TO username;
 
 ## 连接 YashanDB
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

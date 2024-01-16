@@ -17,6 +17,7 @@ import TabItem from '@theme/TabItem';
 #### 新增功能
 
 * MongoDB 间的数据同步场景，新增支持 [Capped 集合](https://www.mongodb.com/docs/manual/core/capped-collections/)
+* 数据复制/转换任务支持导入能力，您可以在 [MongoDB Relational Migrator](https://www.mongodb.com/docs/relational-migrator/) 上设计好数据流转流程并将其导出，随后在 Tapdata 数据管道右上角直接导入，进一步提升数据管道设计便利性
 
 #### 功能优化
 
@@ -25,7 +26,9 @@ import TabItem from '@theme/TabItem';
 #### 问题修复
 
 * 修复 JS 节点模型声明设置在任务编辑页面提示错误的问题
-* 修复 Oracle 到 MySQL 的 DDL 操作同步场景下，DROP COLUMN 操作未正常同步的问题
+* 修复 Oracle 同步至 MySQL 时，DROP COLUMN 操作未正常同步的问题
+* 修复 MySQL 同步至 ClickHouse 时，DDL 报错的问题
+* 修复 WebSocket 频繁重连导致任务不稳定的问题
 * 修复若干 UI 交互体验问题
 
 </TabItem>

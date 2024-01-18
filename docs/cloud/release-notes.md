@@ -7,14 +7,33 @@ import TabItem from '@theme/TabItem';
 ```
 
 
-
-
 ```mdx-code-block
 <Tabs className="unique-tabs">
-  <TabItem value="2023" label="2023 年" default>
+  <TabItem value="2024 年" default>
 ```
 
+### 20240112
 
+#### 新增功能
+
+* MongoDB 间的数据同步场景，新增支持 [Capped 集合](https://www.mongodb.com/docs/manual/core/capped-collections/)
+* 数据复制/转换任务支持导入能力，您可以在 [MongoDB Relational Migrator](https://www.mongodb.com/docs/relational-migrator/) 上设计好数据流转流程并将其导出，随后在 Tapdata 数据管道右上角直接导入，进一步提升数据管道设计便利性
+
+#### 功能优化
+
+* 优化新用户引导流程，支持收起相关提示和返回上一步骤
+
+#### 问题修复
+
+* 修复 JS 节点模型声明设置在任务编辑页面提示错误的问题
+* 修复 Oracle 同步至 MySQL 时，DROP COLUMN 操作未正常同步的问题
+* 修复 MySQL 同步至 ClickHouse 时，DDL 报错的问题
+* 修复 WebSocket 频繁重连导致任务不稳定的问题
+* 修复若干 UI 交互体验问题
+
+</TabItem>
+
+<TabItem value="2023 年">
 
 ### 20231226
 
@@ -66,10 +85,6 @@ import TabItem from '@theme/TabItem';
 
 * 修复重置任务后重新运行任务时，增量信息未清理成功的问题
 * 修复部分 SaaS 数据源在执行全量数据同步时，显示增量时间点的问题
-
-
-
-
 
 ### 20231103
 
@@ -282,7 +297,7 @@ import TabItem from '@theme/TabItem';
 
 </TabItem>
 
-  <TabItem value="2022" label="2022 年">
+<TabItem value="2022 年">
     <h3>20221230</h3>
 <h4>功能优化</h4>
 <ul>
@@ -393,8 +408,9 @@ import TabItem from '@theme/TabItem';
     <li>数据连接新增MariaDB支持</li>
     <li>优化编辑已运行任务的弹窗提示</li>
 </ul>
-  </TabItem>
-  <TabItem value="2021" label="2021 年">
+</TabItem>
+
+<TabItem value="2021 年">
     <h3>20211221</h3>
 
 <h4>新增功能</h4>
@@ -602,10 +618,3 @@ import TabItem from '@theme/TabItem';
 </ul>
   </TabItem>
 </Tabs>
-
-
-
-
-
-
-

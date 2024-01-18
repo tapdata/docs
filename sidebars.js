@@ -420,6 +420,7 @@ const sidebars = {
                      'enterprise/prerequisites/beta/mongodb-atlas', 
                      'enterprise/prerequisites/beta/selectdb',
                      'enterprise/prerequisites/beta/tidb',
+                     'enterprise/prerequisites/beta/yashandb',
                      'enterprise/prerequisites/beta/zoho-crm',                     
              ]
             },                        

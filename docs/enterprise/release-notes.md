@@ -120,7 +120,7 @@
 
 ### 功能优化
 
-* 优化[数据源错误码](user-guide/data-pipeline/error-code-solution.md)，覆盖更多场景并提供解决方案
+* 优化[数据源错误码](troubleshooting/error-code.md)，覆盖更多场景并提供解决方案
 
 
 

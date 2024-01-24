@@ -562,8 +562,6 @@ const sidebars = {
                     },
                     'enterprise/user-guide/data-pipeline/verify-data',
                     'enterprise/user-guide/data-pipeline/pre-check',
-                    'enterprise/user-guide/data-pipeline/error-code-solution',
-                    'enterprise/user-guide/data-pipeline/error-and-solutions',
                     ]
              },
              {
@@ -622,7 +620,7 @@ const sidebars = {
     },
     {
      type: 'category',
-     label: '最佳实践',
+     label: '实践案例',
      link: {type: 'doc', id: 'enterprise/best-practice/README'},
      items: [
             'enterprise/best-practice/data-sync',
@@ -635,7 +633,16 @@ const sidebars = {
             'enterprise/best-practice/extract-array',
             'enterprise/best-practice/raw-logs-solution',
         ]
-    },  
+    },
+    {
+     type: 'category',
+     label: '故障排查',
+     link: {type: 'doc', id: 'enterprise/troubleshooting/README'},
+     items: [
+            'enterprise/troubleshooting/error-code',
+            'enterprise/troubleshooting/error-and-solutions',
+        ]
+    },
     {
      type: 'category',
      label: '常见问题',

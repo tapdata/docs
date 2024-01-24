@@ -82,7 +82,7 @@ import TabItem from '@theme/TabItem';
 
 * 问：支持同步源库的 DDL 操作吗，例如新增字段？
 
-  答：部分数据源支持，您可以在配置任务时**开启 DDL 事件**采集和 **DDL 应用**，支持同步的 DDL 和数据源的更多介绍，见 [DDL 同步说明](../../handle-schema-change.md)。
+  答：部分数据源支持，您可以在配置任务时**开启 DDL 事件**采集和 **DDL 应用**，支持同步的 DDL 和数据源的更多介绍，见 [DDL 同步说明](../../../best-practice/handle-schema-change.md)。
 
 * 问：如果任务因 Schema 变化而以外终止，如何修复？
 

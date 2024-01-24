@@ -1,4 +1,4 @@
-# DDL 同步说明
+# 处理 DDL 变更
 
 在使用 Tapdata 进行数据迁移和同步的过程中，了解数据源的表结构变更操作（如 DDL 操作）对数据流转的影响至关重要。Tapdata 致力于无缝处理大多数 DDL 变更，您需要了解表结构变更（如增减列）对数据同步流程的潜在影响，避免影响业务正常运行。
 
@@ -8,7 +8,7 @@
 
 为保障数据复制/转换任务的高可用性和容错性，默认情况下，Tapdata 不会将源库的 DDL 语句同步到目标库，如果需要开启此功能，请按照以下步骤操作：
 
-1. 在创建或编辑[数据复制](data-pipeline/copy-data/create-task.md)或[数据转换](data-pipeline/data-development/create-task.md)任务时，转到源数据库节点的配置页面。
+1. 在创建或编辑[数据复制](../user-guide/data-pipeline/copy-data/create-task.md)或[数据转换](../user-guide/data-pipeline/data-development/create-task.md)任务时，转到源数据库节点的配置页面。
 
 2. 找到高级设置标签页，检查 **DDL 事件采集**选项是否可用。
 
@@ -28,7 +28,7 @@
 
 | DDL 采集     | DDL 应用                                                     |
 | ------------ | ------------------------------------------------------------ |
-| 新增字段     | Tapdata 在目标库新增字段时，会自动适配字段类型，例如从 MySQL 的 **INT** 转换至 Oracle 的 **NUMBER(38,0)**，如遇[不支持的列类型](no-supported-data-type.md)可能导致新增字段失败。 |
+| 新增字段     | Tapdata 在目标库新增字段时，会自动适配字段类型，例如从 MySQL 的 **INT** 转换至 Oracle 的 **NUMBER(38,0)**，如遇[不支持的列类型](../user-guide/no-supported-data-type.md)可能导致新增字段失败。 |
 | 修改字段名   | Tapdata 会自动在目标库完成该操作，需注意避免目标库的字段命名限制。 |
 | 修改字段属性 | 在不同类型的数据库间同步时（例如从 MySQL 到 Oracle），需确保目标数据库支持更改后的数据类型和属性。否则，这可能导致同步任务的错误或中断。 |
 | 删除字段     | 从源表中删除列可能会对数据管道产生严重影响，尤其是当该列是数据处理逻辑的关键部分，例如主键或作为同步链路的更新条件字段。在进行此类变更之前，需确保数据管道中的其他组件不再依赖该列。 |
@@ -43,7 +43,7 @@
 
 如果因 DDL 同步错误而导致数据同步任务中断，您可以在选择源数据库中撤销相关 DDL 操作，或者选择重新加载数据源的 Schema，然后重置并重启任务来修复。
 
-此外，您还可以通过查看[任务日志](data-pipeline/copy-data/monitor-task)和错误码，可以帮助您诊断和解决任务失败的问题，正常的 DDL 采集与应用日志示例如下：
+此外，您还可以通过查看[任务日志](../user-guide/data-pipeline/copy-data/monitor-task)和错误码，可以帮助您诊断和解决任务失败的问题，正常的 DDL 采集与应用日志示例如下：
 
 ![DDL 日志信息](../images/ddl_apply_logs.png)
 
@@ -58,7 +58,7 @@
 1. **变更前验证**：在生产环境应用 DDL 变更之前，在测试环境进行完整的验证，识别可能中断同步的潜在问题。
 2. **计划与通知**： 安排在业务低峰时段进行 DDL 变更，并提前通知相关团队。
 3. **管道配置更新：**定期回顾并更新您的数据管道配置，以符合最新的表结构。
-4. **监控和预警：**为您的数据管道设置[监控](data-pipeline/copy-data/monitor-task)和[告警](../best-practice/alert-via-qqmail.md)，以便在遇到不支持的DDL操作时快速响应。
+4. **监控和预警：**为您的数据管道设置[监控](../user-guide/data-pipeline/copy-data/monitor-task)和[告警](alert-via-qqmail.md)，以便在遇到不支持的DDL操作时快速响应。
 
 
 

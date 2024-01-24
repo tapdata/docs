@@ -614,26 +614,33 @@ const sidebars = {
                     ]
              },
              'enterprise/user-guide/notification',
-             'enterprise/user-guide/handle-schema-change',
              'enterprise/user-guide/no-supported-data-type',
         ]
     },
     {
      type: 'category',
-     label: '实践案例',
-     link: {type: 'doc', id: 'enterprise/best-practice/README'},
+     label: '同步案例',
+     link: {type: 'doc', id: 'enterprise/pipeline-tutorial/README'},
      items: [
-            'enterprise/best-practice/data-sync',
-            'enterprise/best-practice/excel-to-mysql',
-            'enterprise/best-practice/mysql-to-redis',
-            'enterprise/best-practice/oracle-to-kafka',
-            'enterprise/best-practice/heart-beat-task',
-            'enterprise/best-practice/alert-via-qqmail',
-            'enterprise/best-practice/full-breakpoint-resumption',
-            'enterprise/best-practice/extract-array',
-            'enterprise/best-practice/raw-logs-solution',
+            'enterprise/pipeline-tutorial/excel-to-mysql',
+            'enterprise/pipeline-tutorial/mysql-to-redis',
+            'enterprise/pipeline-tutorial/oracle-to-kafka',
+            'enterprise/pipeline-tutorial/extract-array',
         ]
     },
+    {
+         type: 'category',
+         label: '最佳实践',
+         link: {type: 'doc', id: 'enterprise/best-practice/README'},
+         items: [
+                'enterprise/best-practice/data-sync',
+                'enterprise/best-practice/handle-schema-change',
+                'enterprise/best-practice/heart-beat-task',
+                'enterprise/best-practice/alert-via-qqmail',
+                'enterprise/best-practice/full-breakpoint-resumption',
+                'enterprise/best-practice/raw-logs-solution',
+            ]
+        },
     {
      type: 'category',
      label: '故障排查',

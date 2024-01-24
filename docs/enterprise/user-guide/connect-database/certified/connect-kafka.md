@@ -53,4 +53,4 @@ Apache Kafka 是一个分布式数据流处理平台，可以实时发布、订�
 
 ## 推荐阅读
 
-[Oracle 实时同步到 Kafka](../../../best-practice/oracle-to-kafka.md)
+[Oracle 实时同步到 Kafka](../../../pipeline-tutorial/oracle-to-kafka.md)

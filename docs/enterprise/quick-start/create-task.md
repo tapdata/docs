@@ -10,4 +10,4 @@
 ## 扩展阅读
 
 * [支持的数据源](../introduction/supported-databases.md)
-* [最佳实践文档](../best-practice/README.md)
+* [最佳实践文档](../pipeline-tutorial/README.md)

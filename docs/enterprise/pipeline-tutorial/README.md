@@ -1,4 +1,4 @@
-# 同步案例
+# 同步实践教程
 
 import DocCardList from '@theme/DocCardList';
 

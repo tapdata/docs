@@ -72,4 +72,4 @@ Excel 是使用广泛的数据统计和数据分析软件，Tapdata 支持读取
 
 ## 相关文档
 
-[采集 Excel 数据至 MySQL](../../../best-practice/excel-to-mysql.md)
+[采集 Excel 数据至 MySQL](../../../pipeline-tutorial/excel-to-mysql.md)

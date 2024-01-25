@@ -151,7 +151,7 @@ CREATE TABLE customer (
 );
 ```
 
-此外，我们将利用 MySQL 的存储过程来实现数据持续写入，从而实现增量数据生成，大约每秒 10,000 条的速率插入，存储过程定义如下：
+此外，我们将利用 PostgreSQL 的自定义函数来实现数据持续写入，从而实现增量数据生成，大约每秒 10,000 条的速率插入，存储过程定义如下：
 
 ```sql
 CREATE OR REPLACE FUNCTION CUSTOMER_INSERT_DATA6(DATA_COUNT INT, BATCH_SIZE INT) RETURNS VOID AS $$

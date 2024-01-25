@@ -655,7 +655,8 @@ const sidebars = {
      link: {type: 'doc', id: 'enterprise/appendix/README'},
      items: [
             'enterprise/appendix/standard-js',
-            'enterprise/appendix/enhanced-js'
+            'enterprise/appendix/enhanced-js',
+            'enterprise/appendix/benchmark'
         ]
     },
   'enterprise/support',

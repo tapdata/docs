@@ -57,4 +57,4 @@ MySQL 是应用最广泛的开源关系数据库，是许多网站、应用程�
 
 ## 相关文档
 
-[MySQL 实时同步至 Redis](../../../best-practice/mysql-to-redis.md)
+[MySQL 实时同步至 Redis](../../../pipeline-tutorial/mysql-to-redis.md)

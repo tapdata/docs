@@ -59,7 +59,7 @@
 
 ![错误码](../../../images/error_log_code.png)
 
-单击该错误码，可在弹出的对话框中详细了解详细的原因及解决方案，更多信息，见[任务错误码及解决方案](../error-code-solution.md)。
+单击该错误码，可在弹出的对话框中详细了解详细的原因及解决方案，更多信息，见[任务错误码及解决方案](../../../troubleshooting/error-code.md)。
 
 ![错误码详情](../../../images/error_code_pdk10003.png)
 

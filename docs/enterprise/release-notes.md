@@ -117,7 +117,7 @@
 
 - 新增[构建物化视图](user-guide/data-pipeline/data-development/create-materialized-view.md)功能，可快速构建实时数据模型
 - 新增支持对[共享挖掘](user-guide/advanced-settings/share-mining.md)任务的源节点进行配置调整，支持设置是否启用**增量多线程写入**和**补充更新数据的完整字段**
-- Kafka 数据源新增支持[设置副本数和分区数](best-practice/oracle-to-kafka#advanced_settings)
+- Kafka 数据源新增支持[设置副本数和分区数](pipeline-tutorial/oracle-to-kafka#advanced_settings)
 - MongoDB 间同步时，新增对 `$unset` 操作的支持
 
 ### 功能优化
@@ -136,7 +136,7 @@
 
 ### 功能优化
 
-* 优化[数据源错误码](user-guide/data-pipeline/error-code-solution.md)，覆盖更多场景并提供解决方案
+* 优化[数据源错误码](troubleshooting/error-code.md)，覆盖更多场景并提供解决方案
 
 
 
@@ -213,7 +213,7 @@
 - 数据平台模式下，支持[删除**平台加工层**的表](user-guide/data-console/daas-mode/daas-mode-dashboard#release320-daas)
 - 在配置任务的目标节点时，支持[按照系数来调整字段长度](user-guide/data-pipeline/copy-data/create-task#release320-col-length)，避免因字符编码不同等原因引发的数据写入失败问题
 - [数据校验](user-guide/data-pipeline/verify-data)功能支持 SelectDB 数据源
-- Redis 作为目标节点场景下，存储为 List 或 Hash 格式，且选择为单键方式时，[支持将源表 Schema 写入一个 Hash 键](best-practice/mysql-to-redis#release320-contain-table-head)（默认名称为 `-schema-key-`），其值用来存放源表的表名和列名信息。
+- Redis 作为目标节点场景下，存储为 List 或 Hash 格式，且选择为单键方式时，[支持将源表 Schema 写入一个 Hash 键](pipeline-tutorial/mysql-to-redis#release320-contain-table-head)（默认名称为 `-schema-key-`），其值用来存放源表的表名和列名信息。
 - 新增[**类型过滤**](user-guide/data-pipeline/data-development/process-node#release320-type-filter)处理节点，可将快速过滤同类型的列，被过滤的字段将不会传递至下个节点
 - [**字段编辑**](user-guide/data-pipeline/copy-data/process-node#column-modification)处理节点，支持蛇形命名和驼峰命名之间的转换
 - 数据复制任务、数据转换任务、数据面板、换成创建时支持[显示表的描述信息](user-guide/data-pipeline/copy-data/create-task#310-table-model)，默认来源为表的注释信息

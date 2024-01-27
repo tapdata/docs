@@ -346,7 +346,7 @@ db.ClusterState.find();
 
 常见的高危操作如下：
 
-* [连接管理](../user-guide/connect-database/README.md)
+* [连接管理](../prerequisites/README.md)
   * **删除数据源连接**：如果有任务使用到此数据源，为避免误删除，当执行删除操作会提示该连接被任务引用。
   * **编辑数据源连接**：如果数据源的参数设置不正确可能导致该连接失效，正在引用该数据源的任务会使用之前的参数而不受影响，但是新任务或将任务重置后可能引发报错。
 * [数据复制](../user-guide/data-pipeline/copy-data/create-task.md)/[数据转换](../user-guide/data-pipeline/data-development/create-task.md)任务

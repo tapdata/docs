@@ -388,57 +388,153 @@ const sidebars = {
      ]
     },
 {
-     type: 'category',
-     label: '准备工作',
-     link: {type: 'doc', id: 'enterprise/prerequisites/README'},
-     items: [
-            {
-             type: 'category',
-             label: '认证数据源',
-             link: {type: 'doc', id: 'enterprise/prerequisites/certified/README'},
-             items: [
-                     'enterprise/prerequisites/certified/clickhouse',
-                     'enterprise/prerequisites/certified/kafka',
-                     'enterprise/prerequisites/certified/mysql',
-                     'enterprise/prerequisites/certified/mongodb',
-                     'enterprise/prerequisites/certified/oracle',
-                     'enterprise/prerequisites/certified/postgresql',
-                     'enterprise/prerequisites/certified/sqlserver',
-             ]
-            },
-            {
-             type: 'category',
-             label: 'Beta 数据源',
-             link: {type: 'doc', id: 'enterprise/prerequisites/beta/README'},
-             items: [
-                     'enterprise/prerequisites/beta/apache-doris',
-                     'enterprise/prerequisites/beta/databend',
-                     'enterprise/prerequisites/beta/db2',
-                     'enterprise/prerequisites/beta/csv-and-excel',
-                     'enterprise/prerequisites/beta/larktask', 
-                     'enterprise/prerequisites/beta/lark-im',
-                     'enterprise/prerequisites/beta/mariadb', 
-                     'enterprise/prerequisites/beta/mongodb-atlas', 
-                     'enterprise/prerequisites/beta/selectdb',
-                     'enterprise/prerequisites/beta/tidb',
-                     'enterprise/prerequisites/beta/yashandb',
-                     'enterprise/prerequisites/beta/zoho-crm',                     
-             ]
-            },                        
-            {
-             type: 'category',
-             label: 'Alpha 数据源',
-             link: {type: 'doc', id: 'enterprise/prerequisites/alpha/README'},
-             items: [
-                     'enterprise/prerequisites/alpha/activemq',                     
-                     'enterprise/prerequisites/alpha/elasticsearch',
-                     'enterprise/prerequisites/alpha/json-and-xml',
-                     'enterprise/prerequisites/alpha/opengauss',                     
-                     'enterprise/prerequisites/alpha/rabbitmq',
-                     'enterprise/prerequisites/alpha/rocketmq',                     
-             ]
-            },
-     ]
+         type: 'category',
+         label: '连接数据源',
+         link: {type: 'doc', id: 'enterprise/prerequisites/README'},
+         items: [
+                 'enterprise/prerequisites/allow-access-network',
+                 {
+                  type: 'category',
+                  label: '数据仓库与数据湖',
+                  link: {type: 'doc', id: 'enterprise/prerequisites/warehouses-and-lake/README'},
+                  items: [
+                          'enterprise/prerequisites/warehouses-and-lake/big-query',
+                          'enterprise/prerequisites/warehouses-and-lake/clickhouse',
+                          'enterprise/prerequisites/warehouses-and-lake/databend',
+                          'enterprise/prerequisites/warehouses-and-lake/doris',
+                          'enterprise/prerequisites/warehouses-and-lake/gaussdb',
+                          'enterprise/prerequisites/warehouses-and-lake/greenplum',
+                          'enterprise/prerequisites/warehouses-and-lake/selectdb',
+                          'enterprise/prerequisites/warehouses-and-lake/tablestore',
+                          'enterprise/prerequisites/warehouses-and-lake/yashandb',
+                         ]
+                  },
+                 {
+                  type: 'category',
+                  label: '自建数据库',
+                  link: {type: 'doc', id: 'enterprise/prerequisites/on-prem-databases/README'},
+                  items: [
+                          'enterprise/prerequisites/on-prem-databases/dameng',
+                          'enterprise/prerequisites/on-prem-databases/db2',
+                          'enterprise/prerequisites/on-prem-databases/elasticsearch',
+                          'enterprise/prerequisites/on-prem-databases/gbase-8a',
+                          'enterprise/prerequisites/on-prem-databases/gbase-8s',
+                          'enterprise/prerequisites/on-prem-databases/hive1',
+                          'enterprise/prerequisites/on-prem-databases/hive3',
+                          'enterprise/prerequisites/on-prem-databases/informix',
+                          'enterprise/prerequisites/on-prem-databases/kingbase-es-r3',
+                          'enterprise/prerequisites/on-prem-databases/kingbase-es-r6',
+                          'enterprise/prerequisites/on-prem-databases/mariadb',
+                          'enterprise/prerequisites/on-prem-databases/mongodb',
+                          'enterprise/prerequisites/on-prem-databases/mongodb-atlas',
+                          'enterprise/prerequisites/on-prem-databases/mrs-hive3',
+                          'enterprise/prerequisites/on-prem-databases/mysql',
+                          'enterprise/prerequisites/on-prem-databases/mysql-pxc',
+                          'enterprise/prerequisites/on-prem-databases/oceanbase',
+                          'enterprise/prerequisites/on-prem-databases/opengauss',
+                          'enterprise/prerequisites/on-prem-databases/oracle',
+                          'enterprise/prerequisites/on-prem-databases/postgresql',
+                          'enterprise/prerequisites/on-prem-databases/redis',
+                          'enterprise/prerequisites/on-prem-databases/sqlserver',
+                          'enterprise/prerequisites/on-prem-databases/tdengine',
+                          'enterprise/prerequisites/on-prem-databases/tidb',
+                          ]
+                  },
+                  {
+                   type: 'category',
+                   label: '云数据库',
+                   link: {type: 'doc', id: 'enterprise/prerequisites/cloud-databases/README'},
+                   items: [
+                           'enterprise/prerequisites/cloud-databases/aliyun-adb-mysql',
+                           'enterprise/prerequisites/cloud-databases/aliyun-adb-postgresql',
+                           'enterprise/prerequisites/cloud-databases/aliyun-mongodb',
+                           'enterprise/prerequisites/cloud-databases/aliyun-rds-for-mariadb',
+                           'enterprise/prerequisites/cloud-databases/aliyun-rds-for-mongodb',
+                           'enterprise/prerequisites/cloud-databases/aliyun-rds-for-mysql',
+                           'enterprise/prerequisites/cloud-databases/aliyun-rds-for-pg',
+                           'enterprise/prerequisites/cloud-databases/aliyun-rds-for-sql-server',
+                           'enterprise/prerequisites/cloud-databases/amazon-rds-mysql',
+                           'enterprise/prerequisites/cloud-databases/polardb-mysql',
+                           'enterprise/prerequisites/cloud-databases/polardb-postgresql',
+                           'enterprise/prerequisites/cloud-databases/tencentdb-for-mariadb',
+                           'enterprise/prerequisites/cloud-databases/tencentdb-for-mongodb',
+                           'enterprise/prerequisites/cloud-databases/tencentdb-for-mysql',
+                           'enterprise/prerequisites/cloud-databases/tencentdb-for-pg',
+                           'enterprise/prerequisites/cloud-databases/tencentdb-for-sql-server',
+                          ]
+                   },
+                  {
+                   type: 'category',
+                   label: '消息队列与中间件',
+                   link: {type: 'doc', id: 'enterprise/prerequisites/mq-and-middleware/README'},
+                   items: [
+                           'enterprise/prerequisites/mq-and-middleware/activemq',
+                           'enterprise/prerequisites/mq-and-middleware/ai-chat',
+                           'enterprise/prerequisites/mq-and-middleware/bes-channels',
+                           'enterprise/prerequisites/mq-and-middleware/hazelcast-cloud',
+                           'enterprise/prerequisites/mq-and-middleware/kafka',
+                           'enterprise/prerequisites/mq-and-middleware/rabbitmq',
+                           'enterprise/prerequisites/mq-and-middleware/rocketmq',
+                          ]
+                   },
+                   {
+                   type: 'category',
+                   label: '客户管理与销售运营分析',
+                   link: {type: 'doc', id: 'enterprise/prerequisites/crm-and-sales-analytics/README'},
+                   items: [
+                           'enterprise/prerequisites/crm-and-sales-analytics/hubspot',
+                           'enterprise/prerequisites/crm-and-sales-analytics/metabase',
+                           'enterprise/prerequisites/crm-and-sales-analytics/salesforce',
+                           'enterprise/prerequisites/crm-and-sales-analytics/zoho-crm',
+                          ]
+                   },
+                   {
+                    type: 'category',
+                    label: 'SaaS 应用与 API 服务',
+                    link: {type: 'doc', id: 'enterprise/prerequisites/saas-and-api/README'},
+                    items: [
+                            'enterprise/prerequisites/saas-and-api/coding',
+                            'enterprise/prerequisites/saas-and-api/github',
+                            'enterprise/prerequisites/saas-and-api/lark-approval',
+                            'enterprise/prerequisites/saas-and-api/lark-doc',
+                            'enterprise/prerequisites/saas-and-api/lark-im',
+                            'enterprise/prerequisites/saas-and-api/lark-task',
+                            'enterprise/prerequisites/saas-and-api/quick-api',
+                            'enterprise/prerequisites/saas-and-api/vika',
+                            'enterprise/prerequisites/saas-and-api/zoho-desk',
+                           ]
+                   },
+                   {
+                    type: 'category',
+                    label: '电商平台',
+                    link: {type: 'doc', id: 'enterprise/prerequisites/e-commerce/README'},
+                    items: [
+                            'enterprise/prerequisites/e-commerce/alibaba-1688',
+                            'enterprise/prerequisites/e-commerce/shein',
+                           ]
+                   },
+                   {
+                    type: 'category',
+                    label: '文件',
+                    link: {type: 'doc', id: 'enterprise/prerequisites/files/README'},
+                    items: [
+                            'enterprise/prerequisites/files/csv',
+                            'enterprise/prerequisites/files/excel',
+                            'enterprise/prerequisites/files/json',
+                            'enterprise/prerequisites/files/xml',
+                           ]
+                   },
+                   {
+                    type: 'category',
+                    label: '其他',
+                    link: {type: 'doc', id: 'enterprise/prerequisites/others/README'},
+                    items: [
+                            'enterprise/prerequisites/others/custom-connection',
+                            'enterprise/prerequisites/others/dummy',
+                            'enterprise/prerequisites/others/http-receiver',
+                           ]
+                   },
+         ]
     },
     {
      type: 'category',
@@ -446,7 +542,7 @@ const sidebars = {
      link: {type: 'doc', id: 'enterprise/user-guide/README'},
      items: [
              'enterprise/user-guide/workshop',
-             {
+             /*{
               type: 'category',
               label: '连接数据源',
               link: {type: 'doc', id: 'enterprise/user-guide/connect-database/README'},
@@ -507,7 +603,7 @@ const sidebars = {
                            ]
                     },
                     ]
-             },
+             },*/
              'enterprise/user-guide/manage-connection',
              {
               type: 'category',

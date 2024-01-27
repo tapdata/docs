@@ -56,7 +56,7 @@ MongoDB Atlas 5.0.15
 
 ## 连接 MongoDB Atlas
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

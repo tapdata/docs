@@ -1,10 +1,10 @@
 # Dummy
 
-Dummy 是测试数据源，可以生成测试数据。本文介绍如何在 Tapdata Cloud 中添加 Dummy 数据源。
+Dummy 是测试数据源，可以生成测试数据。本文介绍如何在 Tapdata 中添加 Dummy 数据源。
 
 ## 操作步骤
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

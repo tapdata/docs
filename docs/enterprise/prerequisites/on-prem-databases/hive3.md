@@ -1,6 +1,6 @@
 # Hive3
 
-请遵循以下说明以确保在 Tapdata Cloud 中成功添加和使用 Hive 数据库。
+请遵循以下说明以确保在 Tapdata 中成功添加和使用 Hive 数据库。
 
 ## 限制说明
 

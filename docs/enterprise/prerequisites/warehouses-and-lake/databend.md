@@ -2,7 +2,7 @@
 
 Databend 是一个开源的 Elastic 和 Workload-Aware 现代云数据仓库，Databend 使用最新的矢量化查询处理技术，帮助用户在对象存储上进行快速的数据分析。
 
-接下来，跟随本文介绍在 Tapdata Cloud 平台上连接本地部署的 Databend。
+接下来，跟随本文介绍在 Tapdata 平台上连接本地部署的 Databend。
 
 ## 支持版本
 
@@ -29,7 +29,7 @@ import Content from '../../../reuse-content/beta/_beta.md';
    CREATE USER 'tapdata' IDENTIFIED BY 'Tap@123456';
    ```
 
-2. 为刚创建的账号授予指定数据库的所有权限，以便 Tapdata Cloud 可自动创建同步的目标表，您也可以基于业务需求设置更精细化的权限控制。更多介绍，见 [GRANT 语法](https://databend.rs/doc/sql-commands/ddl/user/grant-privileges)。
+2. 为刚创建的账号授予指定数据库的所有权限，以便 Tapdata 可自动创建同步的目标表，您也可以基于业务需求设置更精细化的权限控制。更多介绍，见 [GRANT 语法](https://databend.rs/doc/sql-commands/ddl/user/grant-privileges)。
 
    ```sql
    -- 请根据下述提示更换 database_name 和 username
@@ -43,7 +43,7 @@ import Content from '../../../reuse-content/beta/_beta.md';
 
 ## 连接 Databend
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

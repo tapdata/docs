@@ -2,7 +2,7 @@
 
 Elasticsearch 是一个开放的分布式搜索和分析引擎，适用于包括文本、数字、地理空间、结构化和非结构化数据等在内的所有类型的数据。
 
-Tapdata Cloud 支持将 Elasticsearch 作为目标，帮助您快速构建数据链路，可用于日志数据写入分析、内容管理和搜索分析等场景。接下来，我们将介绍如何在 Tapdata Cloud 平台中连接 Elasticsearch 数据源。
+Tapdata 支持将 Elasticsearch 作为目标，帮助您快速构建数据链路，可用于日志数据写入分析、内容管理和搜索分析等场景。接下来，我们将介绍如何在 Tapdata 平台中连接 Elasticsearch 数据源。
 
 ## 支持版本
 
@@ -10,7 +10,7 @@ Elasticsearch 7.6
 
 ## 连接 Elasticsearch
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

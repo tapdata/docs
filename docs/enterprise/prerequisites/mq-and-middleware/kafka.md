@@ -1,6 +1,6 @@
 # Kafka
 
-Apache Kafka 是一个分布式数据流处理平台，可以实时发布、订阅、存储和处理数据流。完成 Agent 部署后，您可以跟随本文教程在 Tapdata Cloud 中添加 Apache Kafka 数据源，后续可将其作为源或目标库来构建数据管道。
+Apache Kafka 是一个分布式数据流处理平台，可以实时发布、订阅、存储和处理数据流。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 Apache Kafka 数据源，后续可将其作为源或目标库来构建数据管道。
 
 ## 支持版本
 
@@ -44,7 +44,7 @@ Kafka 2.3.x
 
 ## 添加数据源
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

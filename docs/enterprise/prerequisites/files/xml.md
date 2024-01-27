@@ -1,14 +1,14 @@
 # XML
 
-Tapdata Cloud 支持读取 Local（本地）、FTP、SFTP、SMB、S3FS 或 OSS 上的文件，支持的文件类型包括 [CSV](csv.md)、[EXCEL](excel.md)、[JSON](json.md) 和 XML，满足多样化的数据流转需求。
+Tapdata 支持读取 Local（本地）、FTP、SFTP、SMB、S3FS 或 OSS 上的文件，支持的文件类型包括 [CSV](csv.md)、[EXCEL](excel.md)、[JSON](json.md) 和 XML，满足多样化的数据流转需求。
 
-可扩展标记语言（XML）一种数据表示格式，可以描述非常复杂的数据结构，常用于传输和存储数据。完成 Agent 部署后，您可以跟随本文教程在 Tapdata Cloud 中添加 CSV 数据源，后续可将其作为源库来构建数据管道。
+可扩展标记语言（XML）一种数据表示格式，可以描述非常复杂的数据结构，常用于传输和存储数据。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 CSV 数据源，后续可将其作为源库来构建数据管道。
 
 ## 注意事项
 
 - 一个连接配置仅对应一个模型（表），如有多个模型您需要分别为其创建链接。
 - XML 数据源仅适用于数据转换任务，暂不支持在数据复制任务中引用。
-- Tapdata Cloud 默认每隔 1 分钟检测 XML 文件是否发生变更（如新增/修改文件），如发生变更则将涉及的文件全量新增后更新条件字段以完成修改，暂不支持同步删除文件或数据。
+- Tapdata 默认每隔 1 分钟检测 XML 文件是否发生变更（如新增/修改文件），如发生变更则将涉及的文件全量新增后更新条件字段以完成修改，暂不支持同步删除文件或数据。
 - XML 文件中可用的数据类型为 ARRAY、BOOLEAN、DATETIME、INTEGER、NUMBER, OBJECT、STRING、TEXT。
 
 ## <span id="prerequisite">准备工作</span>
@@ -40,7 +40,7 @@ import Content3 from '../../../reuse-content/beta/_file-store-oss.md';
 
 ## 添加数据源
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

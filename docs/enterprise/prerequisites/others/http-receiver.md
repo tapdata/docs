@@ -1,12 +1,12 @@
 # Http Receiver
 
-借助 Tapdata Cloud 的 HTTP Receiver 数据源，您可以接收来自 SaaS 等平台数据源推送的数据，方便您快速打通数据孤岛，构建统一的数据平台。本文介绍如何在 Tapdata Cloud 中添加 HTTP Receiver 数据源。
+借助 Tapdata 的 HTTP Receiver 数据源，您可以接收来自 SaaS 等平台数据源推送的数据，方便您快速打通数据孤岛，构建统一的数据平台。本文介绍如何在 Tapdata 中添加 HTTP Receiver 数据源。
 
 
 
 ## 连接 HTTP Receiver
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

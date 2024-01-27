@@ -1,6 +1,6 @@
 # BigQuery
 
-[BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) 是 Google Cloud 的全代管式 PB 级经济实惠的分析数据仓库，可让您近乎实时地分析大量数据。完成 Agent 部署后，您可以跟随本文教程在 Tapdata Cloud 中添加 BigQuery 数据源，后续可将其作为目标库来构建数据管道。
+[BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) 是 Google Cloud 的全代管式 PB 级经济实惠的分析数据仓库，可让您近乎实时地分析大量数据。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 BigQuery 数据源，后续可将其作为目标库来构建数据管道。
 
 
 ## 前提条件
@@ -10,7 +10,7 @@
 
 ## 准备工作
 
-1. 登录 Google Cloud 的[角色页面](https://console.cloud.google.com/iam-admin/roles)，创建角色，该角色将包含 Tapdata Cloud 操作 BigQuery 所必须的权限。
+1. 登录 Google Cloud 的[角色页面](https://console.cloud.google.com/iam-admin/roles)，创建角色，该角色将包含 Tapdata 操作 BigQuery 所必须的权限。
 
    1. 单击**创建角色**。
 
@@ -78,7 +78,7 @@
 
          :::tip
 
-         为保障 Tapdata Cloud 正常读取到数据集信息，创建数据集时，选择**位置类型**为**多区域**。
+         为保障 Tapdata 正常读取到数据集信息，创建数据集时，选择**位置类型**为**多区域**。
 
          :::
 
@@ -88,11 +88,11 @@
 
 ## 添加数据源
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 
-3. 单击页面右侧的**创建连接**。
+3. 单击页面右侧的**创建**。
 
 4. 在弹出的对话框中，单击 **Beta 数据源**，然后选择 **BigQuery**。
 

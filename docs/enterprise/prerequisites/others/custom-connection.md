@@ -5,11 +5,11 @@
 
 ## 连接 Custom Connection
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 
-3. 单击页面右侧的**创建连接**。
+3. 单击页面右侧的**创建**。
 
 4. 在弹出的对话框中，搜索并选择 **Custom Connection**。
 

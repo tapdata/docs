@@ -1,8 +1,8 @@
 # Doris
 
-Doris 适用于实时数据分析和报表，支持高并发查询和复杂分析，广泛应用于数据仓库、BI报表和数据可视化。Tapdata Cloud 支持将 Doras 作为源或目标库来构建数据管道，帮助您快速完成大数据分析场景下的数据流转。
+Doris 适用于实时数据分析和报表，支持高并发查询和复杂分析，广泛应用于数据仓库、BI报表和数据可视化。Tapdata 支持将 Doras 作为源或目标库来构建数据管道，帮助您快速完成大数据分析场景下的数据流转。
 
-接下来，跟随本文介绍在 Tapdata Cloud 平台上连接 Doris 数据源。
+接下来，跟随本文介绍在 Tapdata 平台上连接 Doris 数据源。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -74,7 +74,7 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
 
 ## 连接 Doris
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

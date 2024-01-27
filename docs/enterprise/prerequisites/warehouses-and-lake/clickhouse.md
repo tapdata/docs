@@ -1,6 +1,6 @@
 # ClickHouse
 
-ClickHouse 是一个用于联机分析（OLAP）的列式数据库管理系统（DBMS）。完成 Agent 部署后，您可以跟随本文教程在 Tapdata Cloud 中添加 ClickHouse 数据源，后续可将其作为目标库来构建数据管道。
+ClickHouse 是一个用于联机分析（OLAP）的列式数据库管理系统（DBMS）。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 ClickHouse 数据源，后续可将其作为目标库来构建数据管道。
 
 ## 支持版本
 
@@ -48,7 +48,7 @@ ClickHouse v21.x
 
 ## 添加数据源
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 
@@ -80,5 +80,4 @@ ClickHouse v21.x
    如提示连接测试失败，请根据页面提示进行修复。
 
    :::
-
 

@@ -2,7 +2,7 @@
 
 阿里云[表格存储](https://help.aliyun.com/document_detail/27280.html)（Tablestore）是面向海量结构化数据提供 Serverless 表存储服务，同时针对物联网场景深度优化提供一站式的IoTstore解决方案。
 
-完成 Agent 部署后，您可以跟随本文教程在 Tapdata Cloud 中添加 CSV 数据源，后续可将其作为目标库来构建数据管道。
+完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 CSV 数据源，后续可将其作为目标库来构建数据管道。
 
 ## <span id="prerequisite"> 准备工作 </span>
 
@@ -27,11 +27,11 @@
 
 ## 添加数据源
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 
-3. 单击页面右侧的**创建连接**。
+3. 单击页面右侧的**创建**。
 
 4. 在弹出的对话框中，单击 **Alpha 数据源**，然后选择 **Tablestore**。
 

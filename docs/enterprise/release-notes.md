@@ -2,7 +2,21 @@
 
 本文介绍 V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)。
 
+## V3.5.11
 
+### 新增功能
+
+- [共享挖掘](user-guide/advanced-settings/share-mining.md)功能支持使用 RocksDB 作为本地外存，可实现对增量日志的存储扩展。
+- [TDengine 连接器](prerequisites/on-prem-databases/tdengine.md)支持将多个数据库作为增量源
+
+### 功能优化
+
+- [任务监控页面](user-guide/data-pipeline/copy-data/monitor-task.md)，增加增量阶段的时间过滤选项，便于快速观察增量阶段的 QPS
+- 针对可能对数据库造成影响的关键操作（例如过滤源表数据），增加相关提示信息
+
+### 问题修复
+
+* 修复[主从合并节点](user-guide/data-pipeline/data-development/process-node#pri-sec-merged)，当主表与子表关键条件变化时，最终数据与预期不符合的问题
 
 ## V3.5.10
 
@@ -18,10 +32,6 @@
 * 修复 MySQL 同步至 ClickHouse 时，DDL 报错的问题
 * 修复 WebSocket 频繁重连导致任务不稳定的问题
 * 修复若干 UI 交互体验问题
-
-
-
----
 
 
 

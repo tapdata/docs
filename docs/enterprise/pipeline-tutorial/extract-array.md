@@ -51,7 +51,7 @@
 
 ## 准备工作
 
-在创建数据转换任务前，您需要将结算汇总表所属的数据源添加至 Tapdata 中，同时，您还需要添加一个数据源（如 MySQL 数据库）作为目标库，具体操作，见[配置 MySQL 连接](../user-guide/connect-database/certified/connect-mysql.md)。
+在创建数据转换任务前，您需要将结算汇总表所属的数据源添加至 Tapdata 中，同时，您还需要添加一个数据源（如 MySQL 数据库）作为目标库，具体操作，见[配置 MySQL 连接](../prerequisites/on-prem-databases/mysql.md)。
 
 ## 操作步骤
 

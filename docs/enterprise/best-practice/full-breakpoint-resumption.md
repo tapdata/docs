@@ -16,7 +16,7 @@
 
 ## 准备工作
 
-在创建数据转换任务前，请确保您已经配置好了相关数据源，具体操作，见[配置 MongoDB 连接](../user-guide/connect-database/certified/connect-mongodb.md)。
+在创建数据转换任务前，请确保您已经配置好了相关数据源，具体操作，见[配置 MongoDB 连接](../prerequisites/on-prem-databases/mongodb.md)。
 
 ## 操作步骤
 

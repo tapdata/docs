@@ -39,8 +39,8 @@ Tapdata 作为一款高效、可靠、安全实时数据平台，可为您提供
 
 在创建数据转换任务前，请确保您已经配置好了相关数据源：
 
-1. [配置 Oracle 连接](../user-guide/connect-database/certified/connect-oracle.md)
-2. [配置 Kafka 连接](../user-guide/connect-database/certified/connect-kafka.md)
+1. [配置 Oracle 连接](../prerequisites/on-prem-databases/oracle.md)
+2. [配置 Kafka 连接](../prerequisites/mq-and-middleware/kafka.md)
 
 ## 操作步骤
 

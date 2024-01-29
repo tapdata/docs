@@ -22,7 +22,7 @@
 
 **发生场景**：Oracle 作为源库时，执行增量数据同步期间发生此报错，无法同步增量数据。
 
-**解决方案**：开启 Oracle 的归档日志，具体操作，见 [Oracle 数据源准备工作](../prerequisites/certified/oracle.md)。
+**解决方案**：开启 Oracle 的归档日志，具体操作，见 [Oracle 数据源准备工作](../prerequisites/on-prem-databases/oracle.md)。
 
 
 
@@ -59,7 +59,7 @@
 
 **发生场景**：Oracle 作为源库时，无法执行全量同步或增量同步。
 
-**解决方案**：通常为权限分配问题，授权方法，见 [Oracle 数据源准备工作](../prerequisites/certified/oracle.md)。
+**解决方案**：通常为权限分配问题，授权方法，见 [Oracle 数据源准备工作](../prerequisites/on-prem-databases/oracle.md)。
 
 
 

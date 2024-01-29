@@ -41,11 +41,11 @@
 
 ### 新增功能
 
-- 数据源新增 [Azure Cosmos DB](user-guide/connect-database/beta/azure-cosmos-db.md)，可做为源库同步全量数据，帮助实现云端数据快速流转
+- 数据源新增 [Azure Cosmos DB](prerequisites/cloud-databases/azure-cosmos-db.md)，可做为源库同步全量数据，帮助实现云端数据快速流转
 
 ### 功能优化
 
-- 优化数据源连接方式，[SQL Server](prerequisites/certified/sqlserver.md) 可支持 SSL 连接，可帮助进一步提升数据安全性
+- 优化数据源连接方式，[SQL Server](prerequisites/on-prem-databases/sqlserver.md) 可支持 SSL 连接，可帮助进一步提升数据安全性
 - 优化[数据复制任务](user-guide/data-pipeline/copy-data/create-task.md)的目标节点字段类型调整方式，在手动输入的基础上，支持直接选择目标数据库常用类型
 - 针对任务的源节点设置，支持设置增量阶段每批读取的条数，更好适应增量同步的性能需求
 
@@ -60,7 +60,7 @@
 
 ### 新增功能
 
-- 支持对 [Oracle 数据源](user-guide/connect-database/certified/connect-oracle#advanced)加载表注释，可在配置数据源时的高级选项中开启，方便通过注释信息快速识别表的业务含义
+- 支持对 [Oracle 数据源](prerequisites/on-prem-databases/oracle#advanced)加载表注释，可在配置数据源时的高级选项中开启，方便通过注释信息快速识别表的业务含义
 - 支持在 [Windows 平台中部署 Tapdata](quick-start/install/install-on-windows.md)，进一步丰富部署平台支持度
 - 任务运行[监控页面](user-guide/data-pipeline/copy-data/monitor-task.md)中，支持基于事件大小的维度来查看 QPS 信息
 
@@ -181,7 +181,7 @@
 
 ### 新增功能
 
-- [Kafka 数据源](prerequisites/certified/kafka.md)支持自定义消息体格式
+- [Kafka 数据源](prerequisites/mq-and-middleware/kafka.md)支持自定义消息体格式
 - 新增 [API 接口文档导出功能](user-guide/data-service/create-api-service#release330-export-api)，帮助团队快速建立并完善 API 使用资料
 - 共享挖掘功能支持[配置任务告警](user-guide/advanced-settings/share-mining#release330-alert)，可通过系统通知消息或邮件来发出告警信息，帮助更好地掌握任务的运行状态
 - [数据校验功能](user-guide/data-pipeline/verify-data.md)，支持设置数据过滤，从而实现只对特定条件的数据进行校验，可帮助您减少校验规模，提升效率
@@ -224,7 +224,7 @@
 - 无主键数据表管理交互优化，例如在配置数据复制任务时，[支持筛选无主键表并增加主键表的标识](user-guide/data-pipeline/copy-data/create-task#310-table-model)
 - 对于外存配置的 MongoDB 数据源，加入[连接测试能力](user-guide/manage-system/manage-external-storage#320-external-storage)
 - 新建的外存，当选择 MongoDB 时支持[使用 SSL 连接](user-guide/manage-system/manage-external-storage#320-external-storage)
-- 创建 HttpReceiver 数据源时[支持试运行脚本](user-guide/connect-database/beta/connetc-http-receiver#320-http-receiver)，同时增加[访问鉴权功能](user-guide/connect-database/beta/connetc-http-receiver#320-http-receiver)
+- 创建 HttpReceiver 数据源时[支持试运行脚本](prerequisites/others/http-receiver)，同时增加[访问鉴权功能](prerequisites/others/http-receiver#320-http-receiver)
 - 标准  JS 节点能力调整，增加 [LinkedHashMap 数据结构](appendix/standard-js#linkedhashmap)和 [context.global 对象](appendix/standard-js#global)
 - [**字段编辑**](user-guide/data-pipeline/copy-data/process-node#column-modification)处理节点，界面交互优化
 - 任务启动和重新加载 Schema 的冗余提示优化

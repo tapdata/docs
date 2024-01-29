@@ -14,8 +14,8 @@ Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓�
 
 在创建数据转换任务前，请确保您已经配置好了相关数据源：
 
-1. [配置 MySQL 连接](../user-guide/connect-database/certified/connect-mysql.md)
-2. [配置 Redis 连接](../user-guide/connect-database/beta/connect-redis.md)
+1. [配置 MySQL 连接](../prerequisites/on-prem-databases/mysql.md)
+2. [配置 Redis 连接](../prerequisites/on-prem-databases/redis.md)
 
 ## 操作步骤
 

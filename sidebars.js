@@ -392,7 +392,6 @@ const sidebars = {
          label: '连接数据源',
          link: {type: 'doc', id: 'enterprise/prerequisites/README'},
          items: [
-                 'enterprise/prerequisites/allow-access-network',
                  {
                   type: 'category',
                   label: '数据仓库与数据湖',

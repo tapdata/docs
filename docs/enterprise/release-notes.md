@@ -189,7 +189,7 @@
 
 ### 功能优化
 
-- [支持滚动升级](faq/operation#release330-upgrade)，相较于停机升级方式，可进一步降低业务影响
+- [支持滚动升级](production-admin/operation.md#release330-upgrade)，相较于停机升级方式，可进一步降低业务影响
 - [共享挖掘任务](user-guide/advanced-settings/share-mining.md)报错后，关联任务增加告警提示
 - 在[行过滤器处理节点](user-guide/data-pipeline/data-development/process-node.md)中，使用 DATE 类型过滤时，增加使用示例
 - [时间运算节点](user-guide/data-pipeline/data-development/process-node#date-calculation)，支持展示调整的字段

@@ -378,7 +378,6 @@ const sidebars = {
              label: '部署 Tapdata',
              link: {type: 'doc', id: 'enterprise/quick-start/install/README'},
              items: [
-                    'enterprise/quick-start/install/install-tapdata-ha',
                     'enterprise/quick-start/install/install-tapdata-stand-alone',
                     'enterprise/quick-start/install/install-on-windows',                 
              ]
@@ -716,6 +715,17 @@ const sidebars = {
     },
     {
      type: 'category',
+     label: '生产部署与运维',
+     link: {type: 'doc', id: 'enterprise/production-admin/README'},
+     items: [
+            'enterprise/production-admin/install-tapdata-ha',
+            'enterprise/production-admin/install-replica-mongodb',
+            'enterprise/production-admin/operation',
+            'enterprise/production-admin/emergency-plan',
+        ]
+    },
+    {
+     type: 'category',
      label: '同步案例',
      link: {type: 'doc', id: 'enterprise/pipeline-tutorial/README'},
      items: [
@@ -754,8 +764,6 @@ const sidebars = {
      items: [
             'enterprise/faq/use-product',
             'enterprise/faq/data-pipeline',
-            'enterprise/faq/operation',
-            'enterprise/faq/emergency-plan'
         ]
     },
     {

@@ -2,6 +2,12 @@
 
 本文介绍如何快速在本地的 Linux 平台上部署 Tapdata 服务。
 
+:::tip
+
+单节点部署可用于功能测试场景，如需用作生产环境，推荐采用[高可用部署](../../production-admin/install-tapdata-ha.md)。
+
+:::
+
 ## 软硬件环境要求
 
 * CPU：8 核

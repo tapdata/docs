@@ -244,6 +244,15 @@ const sidebars = {
                    ]
              },
              'cloud/user-guide/real-time-data-hub',
+             {
+             type: 'category',
+             label: '高级功能',
+             link: {type: 'doc', id: 'cloud/user-guide/advanced-settings/README'},
+             items:[
+                   'cloud/user-guide/advanced-settings/share-mining',
+                   'cloud/user-guide/advanced-settings/manage-external-storage',
+                   ]
+             },
              'cloud/user-guide/custom-node',
              'cloud/user-guide/operation-log',
              'cloud/user-guide/handle-schema-change',

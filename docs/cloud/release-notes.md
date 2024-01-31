@@ -16,8 +16,8 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- 新增支持共享挖掘功能，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力。
-- 共享挖掘功能支持使用 RocksDB 作为本地外存，可实现对增量日志的存储扩展。
+- 新增支持[共享挖掘](user-guide/advanced-settings/share-mining.md)功能，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力。
+- 共享挖掘功能支持使用 RocksDB 作为[本地外存](user-guide/advanced-settings/manage-external-storage.md)，可实现对增量日志的存储扩展。
 
 #### 功能优化
 

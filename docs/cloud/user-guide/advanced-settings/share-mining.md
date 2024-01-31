@@ -1,14 +1,14 @@
 # 管理共享挖掘
 
-为减轻增量时源端数据库压力，Tapdata 支持对增量日志进行共享挖掘，挖掘功能开启后并不会马上开始挖掘，而是在用户创建该数据源下所属表的任务时开启挖掘，无论挖掘任务暂停或者错误均不会影响同步任务正常运行。
+为减轻增量时源端数据库压力，Tapdata Cloud 支持对增量日志进行共享挖掘，挖掘功能开启后并不会马上开始挖掘，而是在用户创建该数据源下所属表的任务时开启挖掘，无论挖掘任务暂停或者错误均不会影响同步任务正常运行。
 
 
 
 ## 开启共享挖掘
 
-可在[创建连接](../../quick-start/connect-database.md)时开启共享挖掘，开启后从共享源读取数据，如果是首次开启则需填写存储挖掘连接（可选择一个 MongoDB 作为存储库）。
+可在[创建连接](../../prerequisites/README.md)时开启共享挖掘，开启后从共享源读取数据，如果是首次开启则需填写存储挖掘连接（可选择一个 MongoDB 作为存储库）。
 
-![](../images/enable_shared_mining.png)
+![](../../images/enable_shared_mining.png)
 
 
 
@@ -16,15 +16,15 @@
 
 创建数据转换或数据复制任务，当任务包含增量的任务且数据源已开启共享挖掘，即可在任务设置中使用共享挖掘功能。更多关于任务配置的介绍，见[创建数据复制/开发任务](../../quick-start/create-task.md)。
 
-![](../images/create_shared_mining.png)
+![](../../images/create_shared_mining.png)
 
 
 
 ## 管理共享挖掘
 
-任务创建成功后系统会自动生成挖掘任务，在 Tapdata 平台，单击左侧导航栏的**数据管道** > **共享挖掘**，可查看到挖掘名称以**数据源名称**为前缀以帮助您快速识别：
+任务创建成功后系统会自动生成挖掘任务，在 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)，单击左侧导航栏的**高级功能** > **共享挖掘**，可查看到挖掘名称以**数据源名称**为前缀以帮助您快速识别：
 
-![任务列表](../images/share_mining_list.png)
+![任务列表](../../images/share_mining_list.png)
 
 可执行的管理操作如下：
 
@@ -32,19 +32,19 @@
 
 * **编辑共享挖掘配置**：当共享挖掘任务处于停止状态时，可单击**编辑**，然后在弹出的对话框中，设置挖掘名称、日志保存时长、挖掘开始时间、是否启用增量多线程写入和补充更新数据的完整字段。
 
-  ![编辑共享挖掘](../images/edit_share_mining.png)
+  ![编辑共享挖掘](../../images/edit_share_mining.png)
 
 * **监控任务详情**：单击挖掘任务对应**监控**，可查看详细挖掘信息，例如 QPS、增量延迟等关键指标。
 
-  ![](../images/shared_mining_detail.png)
+  ![](../../images/shared_mining_detail.png)
 
 * **配置任务告警**：单击挖掘任务对应**监控**，单击页面右上角的设置，在右侧弹出的面板中<span id="release330-alert">配置任务告警</span>，可通过系统通知消息或邮件来发出告警信息，帮助更好地掌握任务的运行状态。
 
-  ![配置任务告警](../images/share_mining_alert_settings.png)
+  ![配置任务告警](../../images/share_mining_alert_settings.png)
 
 * <span id="release310-share-mining">启停指定表的挖掘任务</span>：单击挖掘任务对应的<b>监控</b>，然后单击源节点，在页面右侧的面板中可查看到共享挖掘所涉及的表、挖掘的数量等信息，如下图所示。
   
-  ![挖掘表信息](../images/shared_mining_detail_2.png)
+  ![挖掘表信息](../../images/shared_mining_detail_2.png)
   
   当遇到某个表因大事务而引发增量事件获取异常时，您可以在此页面选中相关的表并单击**停止挖掘**，在弹出的对话框中确认影响范围后单击**确定**。
   
@@ -82,8 +82,8 @@
 
 3. 选择刚才创建的 MongoDB 连接作为存储中间库（这一步也可在共享挖掘-挖掘设置中操作）二次设置不会再显示
 
-   * 存储MongoDB连接名称：lyl_mongo
-   * 存储MongoDB表名：david_mongo_share
+   * 存储MongoDB连接名称：**lyl_mongo**
+   * 存储MongoDB表名：**david_mongo_share**
 
 4. 点击**保存**按钮。
 
@@ -108,7 +108,7 @@
 
 在源库新增一条数据
 
-![](../images/shared_mining_demo_1.png)
+![](../../images/shared_mining_demo_1.png)
 
 
 
@@ -116,10 +116,10 @@
 
  python376 tap.py --source_type=MongoDB --name=lyl_mongo --table=david_mongo_share  common_query
 
-![](../images/shared_mining_demo_2.png)
+![](../../images/shared_mining_demo_2.png)
 
 
 
 在目标库查看是否有增量数据
 
-![](../images/shared_mining_demo_3.png)
+![](../../images/shared_mining_demo_3.png)

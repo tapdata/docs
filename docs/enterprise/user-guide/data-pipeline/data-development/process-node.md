@@ -83,7 +83,7 @@ Tapdata 支持在数据转换任务中添加处理节点，满足对数据进行
 
 
 
-## 主从合并
+## <span id="pri-sec-merged">主从合并</span>
 
 在大数据处理和分析中，数据合并和转换是一个关键的任务，在本案例中，我们以 [SSB 数据集](https://www.cs.umb.edu/~poneil/StarSchemaB.PDF)的 `lineorder` 和 `date` 表为例，介绍如何使用 Tapdata 来实现多表合并到一个 MongoDB 集合的需求。
 

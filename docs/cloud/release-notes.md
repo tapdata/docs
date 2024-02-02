@@ -12,7 +12,25 @@ import TabItem from '@theme/TabItem';
   <TabItem value="2024 年" default>
 ```
 
-### 20240112
+### 2024-01-26
+
+#### 新增功能
+
+- 新增支持[共享挖掘](user-guide/advanced-settings/share-mining.md)功能，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力。
+- 共享挖掘功能支持使用 RocksDB 作为[本地外存](user-guide/advanced-settings/manage-external-storage.md)，可实现对增量日志的存储扩展。
+
+#### 功能优化
+
+- 优化 [Google 云市场](https://console.cloud.google.com/marketplace/product/tapdata-public/detail)用户的新手引导流程
+- [任务监控页面](user-guide/copy-data/monitor-task.md)，增加增量阶段的时间过滤选项，便于快速观察增量阶段的 QPS
+- 针对可能对数据库造成影响的关键操作（例如过滤源表数据），增加相关提示信息
+- 优化实例订阅到期后的退订逻辑
+
+#### 问题修复
+
+* 修复[主从合并节点](user-guide/data-development/process-node#pri-sec-merged)，当主表与子表关键条件变化时，最终数据与预期不符合的问题
+
+### 2024-01-12
 
 #### 新增功能
 

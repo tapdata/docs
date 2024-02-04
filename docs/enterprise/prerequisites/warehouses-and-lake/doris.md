@@ -60,7 +60,7 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
 </TabItem>
 </Tabs>
 
-
+ 
 
 :::tip
 

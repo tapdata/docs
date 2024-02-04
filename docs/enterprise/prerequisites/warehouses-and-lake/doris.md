@@ -60,6 +60,8 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
 </TabItem>
 </Tabs>
 
+
+
 :::tip
 
 请更换上述命令中的信息：

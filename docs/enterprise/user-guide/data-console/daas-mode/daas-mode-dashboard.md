@@ -45,7 +45,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="② 添加数据源">
 
-单击![](/img/add_icon.png)图标，在弹出的对话框，我们可以添加数据源，选中某个数据源后将跳转至连接配置页面，具体配置方法，见[连接数据源](../../../prerequisites/README.md)。
+单击 **+** 图标，在弹出的对话框，我们可以添加数据源，选中某个数据源后将跳转至连接配置页面，具体配置方法，见[连接数据源](../../../prerequisites/README.md)。
 
 </TabItem>
 

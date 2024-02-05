@@ -16,7 +16,7 @@ Excel 是使用广泛的数据统计和数据分析软件，完成 Agent 部署�
 
 本小节介绍在创建 EXCEL 数据源连接前所需的准备工作，请根据 EXCEL 文件的存放位置选择阅读。
 
-## 存放在 Local/FTP/SFTP/SMB
+### 文件存放在 Local/FTP/SFTP/SMB
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

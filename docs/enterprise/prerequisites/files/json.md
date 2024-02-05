@@ -18,8 +18,6 @@ JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，�
 
 ### 文件存放在 Local/FTP/SFTP/SMB
 
-## 存放在 Local/FTP/SFTP/SMB
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

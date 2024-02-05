@@ -15,7 +15,7 @@ Tapdata 支持读取 Local（本地）、FTP、SFTP、SMB、S3FS 或 OSS 上的�
 
 本小节介绍在创建 XML 数据源连接前所需的准备工作，请根据 XML 文件的存放位置选择阅读。
 
-## 存放在 Local/FTP/SFTP/SMB
+### 文件存放在 Local/FTP/SFTP/SMB
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

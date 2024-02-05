@@ -1,16 +1,26 @@
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 为保障任务的顺利执行，您需要为 MySQL 数据库开启 Binlog（可实现增量数据同步），然后为数据复制/开发任务创建一个数据库账号。
 
 1. 登录 MySQL 数据库，执行下述格式的命令，创建用于数据同步/开发任务的账号。
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
+```mdx-code-block
 <Tabs className="unique-tabs">
-    <TabItem value="mysql5" label="MySQL 5.x" default>
-    <pre>CREATE USER 'username'@'host' IDENTIFIED BY 'password';</pre>
-   </TabItem>
-   <TabItem value="mysql8" label="MySQL 8.x">
-    <pre>CREATE USER 'username'@'host' IDENTIFIED WITH mysql_native_password BY 'password';</pre>
+<TabItem value="MySQL 5.x" default>
+```
+
+```sql
+CREATE USER 'username'@'host' IDENTIFIED BY 'password';
+```
+</TabItem>
+
+<TabItem value="MySQL 8.x">
+```sql
+CREATE USER 'username'@'host' IDENTIFIED WITH mysql_native_password BY 'password';
+```
    </TabItem>
   </Tabs>
 
@@ -29,13 +39,20 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 2. 为刚创建的账号授予权限，简易示例如下，推荐基于业务需求设置更精细化的权限控制。
 
 <Tabs className="unique-tabs">
-    <TabItem value="onedatabase" label="授予指定库权限" default>
-    <pre>GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';<br />
-GRANT SELECT ON database_name.* TO 'username' IDENTIFIED BY 'password';</pre>
-   </TabItem>
-   <TabItem value="all" label="授予所有库权限">
-    <pre>GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';<br />
-GRANT SELECT ON *.* TO 'username' IDENTIFIED BY 'password';</pre>
+<TabItem value="授予指定库权限" default>
+```sql
+GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';
+GRANT SELECT ON database_name.* TO 'username' IDENTIFIED BY 'password';
+```
+</TabItem>
+
+<TabItem value="授予所有库权限">
+
+```sql
+GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';
+GRANT SELECT ON *.* TO 'username' IDENTIFIED BY 'password';
+```
+
    </TabItem>
   </Tabs>
 

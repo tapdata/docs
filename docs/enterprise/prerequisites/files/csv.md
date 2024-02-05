@@ -16,7 +16,7 @@ CSV 文件是一种以纯文本形式存储表格数据的简单文件格式，�
 
 本小节介绍在创建 CSV 数据源连接前所需的准备工作，请根据 CSV 文件的存放位置选择阅读。
 
-### 文件存放在 Local/FTP/SFTP/SMB
+## 存放在 Local/FTP/SFTP/SMB
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

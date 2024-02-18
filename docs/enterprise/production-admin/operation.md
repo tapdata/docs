@@ -229,7 +229,7 @@ tapdata:
 
 ## Tapdata 如何实现高可用？
 
-您可以在多台机器上[部署 Tapdata](../quick-start/install/install-tapdata-ha.md) 以实现高可用，某个节点出现异常时，其余节点可继续提供服务，进入增量的任务会断点续传，任务可自动均衡调度分配。
+您可以在多台机器上[部署 Tapdata](install-tapdata-ha.md) 以实现高可用，某个节点出现异常时，其余节点可继续提供服务，进入增量的任务会断点续传，任务可自动均衡调度分配。
 
 
 

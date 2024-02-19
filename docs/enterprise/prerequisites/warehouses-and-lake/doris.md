@@ -60,13 +60,18 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
 </TabItem>
 </Tabs>
 
+ 
+
 :::tip
 
 请更换上述命令中的信息：
 * **catalog_name**：数据目录名称，默认名称为 **internal**，可以通过 [SHOW CATALOGS](https://doris.apache.org/zh-CN/docs/1.2/sql-manual/sql-reference/Show-Statements/SHOW-CATALOGS) 命令查看已创建的数据目录。更多介绍，见[多源数据目录](https://doris.apache.org/zh-CN/docs/1.2/lakehouse/multi-catalog/)。
 * **database_name**：要授予权限的数据库名称。
 * **username**：用户名。
+
 :::
+
+
 
 
 

@@ -1,8 +1,13 @@
+```mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+```
 
+
+```mdx-code-block
 <Tabs className="unique-tabs">
-   <TabItem value="local" label="Local（本地）">
+<TabItem value="Local（本地）">
+```
 
    <p>当您将文件存放在 Tapdata Agent（<a href="../../faq/agent-installation#semi-and-full-agent">半托管模式</a>）所属的设备上，可将其作为数据来源，准备工作如下：</p> 
   <ol>
@@ -13,7 +18,7 @@ import TabItem from '@theme/TabItem';
   <p>后续在配置数据源时，您只需提供<strong>文件存放路径</strong>即可。</p>
 
    </TabItem>
-   <TabItem value="ftp" label="FTP">
+   <TabItem value="FTP">
     <p>文件传输协议（FTP）是用于在网络上进行文件传输的一套标准协议。如需将 FTP 服务中的文件作为数据来源，准备工作如下：</p> 
   <ol>
    <li>安装 FTP 服务（如 <a href="https://security.appspot.com/vsftpd.html">vsftpd</a>）并保障网络通信正常。</li>
@@ -22,7 +27,7 @@ import TabItem from '@theme/TabItem';
   </ol>
 
    </TabItem>
-   <TabItem value="sftp" label="SFTP">
+   <TabItem value="SFTP">
    <p>安全文件传输协议（SFTP）可为文件提供一种安全加密的网络传输方法。如需将 SFTP 服务中的文件作为数据来源，准备工作如下：</p> 
   <ol>
    <li>安装 SFTP 服务（openssh-client 与 openssh-server）并保障网络通信正常。</li>
@@ -31,7 +36,7 @@ import TabItem from '@theme/TabItem';
   </ol>
 
    </TabItem>
-   <TabItem value="smb" label="SMB">
+   <TabItem value="SMB">
    <p>信息服务快协议（SMB）是一种Linux、UNIX系统上可用于共享文件和打印机等资源的协议。如需将 Samba 服务中的文件作为数据来源，准备工作如下：</p> 
   <ol>
    <li>安装 SMB （支持 1.0/2.0/3.0 版本）协议的软件，如 Samba ，保障网络通信正常。</li>

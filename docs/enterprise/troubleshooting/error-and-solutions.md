@@ -114,6 +114,36 @@ ALTER USER 'username'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 
 
 
+## SQL Server
+
+###  HikariPool-1082 - Connection is not available, request timed out after 30000ms
+
+**发生场景**：SQL Server 作为目标库，开启了多线程写入，任务一启动即失败。此场景下，由于启用了多线程写入会导致连接数过多，大量线程同时请求，连接开销过大，引发此类报错。
+
+**解决方案**：选择并执行下述任一方案，完成操作后重置并重启任务。
+
+* 尝试关闭任务里目标节点的多线程写入。
+
+  ![多线程写入](../images/multi_thread_write.png)
+
+* 在连接管理页面中，找到 SQL Server 连接，通过连接串参数设置将连接参数的值调大一些（例如 `Min Idle=20;Max Pool Size=20`），示例如下：
+
+  ![连接串参数设置](../images/sql_server_connection_settings.png)
+
+
+
+### 不能将值 NULL 插入到列...
+
+**发生场景**：SQL Server 作为目标库，手动调整了目标表的非空约束，从而引发此类错误。
+
+**解决方案**：调回目标表的非空约束，然后重启任务。
+
+:::tip
+
+在任务运行阶段，请勿手动调整目标表的结构以免因表结构变更引发任务中断，如需调整表结构，应当开启任务的 DDL 操作同步，并在源库调整表结构，更多介绍，见[处理 DDL 变更](../best-practice/handle-schema-change.md)。
+
+:::
+
 ## ElasticSearch
 
 ### exception [type=illegal_argument_exception, reason=Limit of total fields [1000] has been exceeded]]

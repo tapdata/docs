@@ -156,14 +156,14 @@ Tapdata 在运行时，会将任务的必要配置、共享缓存等信息存储
       
       ```
 
-   2. 加载新的服务文件，并启用它以开机启动：
+   2. 加载新的服务文件，并启用以实现开机启动：
 
       ```bash
       sudo systemctl daemon-reload
       sudo systemctl enable mongod.service
       ```
 
-   3. （可选）在业务低峰期，重启机器并通过 `systemctl status mongod.service` 命令查看是否 MongoDB 服务是否正常启动。
+   3. （可选）在业务低峰期，重启机器并通过 `systemctl status mongod.service` 命令查看 MongoDB 服务是否正常启动。
 
  
 

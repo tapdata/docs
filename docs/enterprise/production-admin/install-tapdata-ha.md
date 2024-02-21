@@ -139,13 +139,44 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
     preload={true}
     terminalFontSize="14px"
     fit={false}
-/>
+   />
 
 3. 通过浏览器登录 Tapdata 平台，本机的登录地址为  [http://127.0.0.1:3030](http://127.0.0.1:3030)，首次登录请及时修改密码以保障安全性。
 
    :::tip
    如需在同一内网的其他设备上访问 Tapdata 服务，请确保网络可互通。
    :::
+
+4. 为 Tapdata 服务设置开机启动。
+
+   1. 进入 `/usr/lib/systemd/system` 目录， 使用文本编辑器（如 `vim`）创建一个新的服务文件并命名为 `tapdata.service`，将下述文件内容粘贴到文件中。
+
+      ```bash
+      # 将 ExecStart、ExecStop 的路径替换为 tapdata 安装路径
+      [Unit]
+      Description=Tapdata Service
+      After=network.target
+      
+      [Service]
+      Type=simple
+      User=root
+      ExecStart=/root/tapdata/tapdata start
+      ExecStop=/root/tapdata/tapdata stop
+      Restart=on-failure
+      
+      [Install]
+      WantedBy=multi-user.target
+      ```
+
+   2. 加载新的服务文件，并启用以实现开机启动：
+
+      ```bash
+      sudo systemctl daemon-reload
+      sudo systemctl enable tapdata.service
+      ```
+
+   3. （可选）在业务低峰期，重启机器并通过 `systemctl status tapdata.service` 命令查看 Tapdata 服务是否正常启动。
+
 
 ## 服务器 B 部署流程
 
@@ -220,17 +251,47 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
     preload={true}
     terminalFontSize="13px"
     fit={false}
-/>
+   />
 
 3. 两个服务器上的 Tapdata 服务均已完成部署，在同一内网的设备，即可通过 http://192.168.1.200:3030 或 http://192.168.1.201:3030 来登录管理页面。
 
    :::tip
    首次登录请及时修改密码以保障安全性。
    :::
-   
+
    登录成功后，在系统管理 > 集群管理中，即可查看到两个服务器上 Tapdata 服务的状态。
-   
+
    ![集群状态](../images/tapdata_cluster_ha.png)
+
+4. 为 Tapdata 服务设置开机启动。
+
+   1. 进入 `/usr/lib/systemd/system` 目录， 使用文本编辑器（如 `vim`）创建一个新的服务文件并命名为 `tapdata.service`，将下述文件内容粘贴到文件中。
+
+      ```bash
+      # 确保 ExecStart、ExecStop 指向正确的 tapdata 安装路径
+      [Unit]
+      Description=Tapdata Service
+      After=network.target
+      
+      [Service]
+      Type=simple
+      User=root
+      ExecStart=/root/tapdata/tapdata start
+      ExecStop=/root/tapdata/tapdata stop
+      Restart=on-failure
+      
+      [Install]
+      WantedBy=multi-user.target
+      ```
+
+   2. 加载新的服务文件，并启用以实现开机启动：
+
+      ```bash
+      sudo systemctl daemon-reload
+      sudo systemctl enable tapdata.service
+      ```
+
+   3. （可选）在业务低峰期，重启机器并通过 `systemctl status tapdata.service` 命令查看 Tapdata 服务是否正常启动。
 
 
 

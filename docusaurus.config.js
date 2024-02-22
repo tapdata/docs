@@ -101,7 +101,7 @@ const config = {
     // Website announcement
     announcementBar: {
             id: 'announcementBar-1',
-            content: `🎉️ 更稳定，更易用，新增数据开发（Beta）功能，抢先体验全新的 <a target="_blank" rel="noopener noreferrer" href="https://tapdata.net/tapdata-cloud/closed-beta-version.html">Tapdata Cloud 3.0</a> `,
+            content: `🎉️ 更稳定，更易用，新增数据转换功能，抢先体验全新的 <a target="_blank" rel="noopener noreferrer" href="https://cloud.tapdata.net/console/v3/">Tapdata Cloud 3.0</a> `,
             backgroundColor: '#1d4378',
             textColor: '#ffffff',
             },

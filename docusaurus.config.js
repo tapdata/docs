@@ -146,12 +146,12 @@ const config = {
      // algolia search plugin
      algolia: {
       // The application ID provided by Algolia
-      appId: 'BGJISAIHB6',
+      appId: '9MM3A6XTHN',
 
       // Public API key: it is safe to commit it
-      apiKey: '674c2022cc6424bbd0c9224bde72a2e1',
+      apiKey: 'f384fde42cbcd6274731550436ed5d62',
 
-      indexName: 'Tapdata',
+      indexName: 'tapdata',
       },
       footer: {
         style: 'dark',

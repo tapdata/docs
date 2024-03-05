@@ -68,7 +68,7 @@ const config = {
     ],
   ],
 
-// Local search engine configuration
+/* Local search engine configuration
   themes: [
     [
       "@easyops-cn/docusaurus-search-local",
@@ -81,7 +81,7 @@ const config = {
         indexBlog: false,
       },
     ],
-  ],
+  ],*/
 
 // An Image Zoom plugin for Docusaurus 2, and integrate hotjar for feedback
   plugins: [
@@ -143,6 +143,12 @@ const config = {
         hotjar: {
         applicationId: '3533951',
     },
+    // algolia search plugin
+     algolia: {
+      appId: '9MM3A6XTHN',
+      apiKey: 'f384fde42cbcd6274731550436ed5d62',
+      indexName: 'tapdata',
+      },
       footer: {
         style: 'dark',
         /* links: [

@@ -128,6 +128,12 @@ const config = {
             label: 'Tapdata Cloud',
           },
           {
+            type: 'doc',
+            docId: 'tapdb/what-is-tapdb',
+            position: 'left',
+            label: 'TapDB',
+          },
+          {
             type: 'docsVersionDropdown',
             position: 'right',
             dropdownActiveClassDisabled: true,

@@ -787,7 +787,13 @@ const sidebars = {
     },
   'enterprise/support',
   'enterprise/release-notes',
- ]
+ ],
+
+// Tapdata Enterprise docs list
+  enterprise: [
+  'tapdb/what-is-tapdb',
+  'tapdb/installation/install-on-ubuntu',
+  ]
 };
 
 module.exports = sidebars;

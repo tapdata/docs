@@ -789,8 +789,8 @@ const sidebars = {
   'enterprise/release-notes',
  ],
 
-// Tapdata Enterprise docs list
-  enterprise: [
+// TapDB docs list
+  tapdb: [
   'tapdb/what-is-tapdb',
   'tapdb/installation/install-on-ubuntu',
   ]

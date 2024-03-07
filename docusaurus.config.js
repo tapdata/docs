@@ -147,7 +147,7 @@ const config = {
      algolia: {
       appId: '9MM3A6XTHN',
       apiKey: '115379b0b56d2b5fc069efcd24d1d251',
-      indexName: 'tapdata',
+      indexName: 'tapdata-net',
       },
       footer: {
         style: 'dark',

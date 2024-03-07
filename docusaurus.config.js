@@ -146,7 +146,7 @@ const config = {
     // algolia search plugin
      algolia: {
       appId: '9MM3A6XTHN',
-      apiKey: 'aaa34ed85c8fa940f787d470019fb29b',
+      apiKey: '115379b0b56d2b5fc069efcd24d1d251',
       indexName: 'tapdata',
       },
       footer: {

@@ -148,6 +148,7 @@ const config = {
       appId: '9MM3A6XTHN',
       apiKey: 'aaa34ed85c8fa940f787d470019fb29b',
       indexName: 'tapdata',
+      contextualSearch: false,
       },
       footer: {
         style: 'dark',

@@ -2,11 +2,26 @@
 
 本文介绍 V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)。
 
+## 3.5.12
+
+### 新增功能
+
+* 支持在 License 到期前一周发送邮件提醒（每天一次），可结合[配置 SMTP 邮件服务](best-practice/alert-via-qqmail.md)来提升运维便利性
+* [DDL 同步设置](best-practice/handle-schema-change)，新增**遇到 DDL 操作时任务报错停止**和**自动忽略 DDL**选项，可适应不同业务场景需求
+* 支持设置引擎日志的过期时间和日志大小，实现日志的自动清理
+* 新增时间字段注入节点，可在数据同步过程中为流经的数据增加一个自定义的时间字段（如时间戳）
+
+### 功能优化
+
+* 优化任务重试逻辑和界面提示信息
+* 优化增量采集时刻设置，支持快速选择上一次增量运行时所处的增量时间点
+* 优化主从合并节点使用外存的交互处理逻辑
+
 ## V3.5.11
 
 ### 新增功能
 
-- [共享挖掘](user-guide/advanced-settings/share-mining.md)功能支持使用 RocksDB 作为本地外存，可实现对增量日志的存储扩展。
+- [共享挖掘](user-guide/advanced-settings/share-mining.md)功能支持使用 RocksDB 作为本地外存，可实现对增量日志的存储扩展
 - [TDengine 连接器](prerequisites/on-prem-databases/tdengine.md)支持将多个数据库作为增量源
 
 ### 功能优化

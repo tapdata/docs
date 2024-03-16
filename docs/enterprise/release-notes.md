@@ -8,8 +8,8 @@
 
 * 支持在 License 到期前一周发送邮件提醒（每天一次），可结合[配置 SMTP 邮件服务](best-practice/alert-via-qqmail.md)来提升运维便利性
 * [DDL 同步设置](best-practice/handle-schema-change)，新增**遇到 DDL 操作时任务报错停止**和**自动忽略 DDL**选项，可适应不同业务场景需求
+* 新增[时间字段注入](user-guide/data-pipeline/data-development/process-node#time_injection)节点，可在数据同步过程中为流经的数据增加一个自定义的时间戳字段，从而提供更灵活的方式来获取源库的增量变更
 * 支持设置引擎日志的过期时间和日志大小，实现日志的自动清理
-* 新增时间字段注入节点，可在数据同步过程中为流经的数据增加一个自定义的时间字段（如时间戳）
 
 ### 功能优化
 

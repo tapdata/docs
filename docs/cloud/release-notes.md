@@ -18,9 +18,9 @@ import TabItem from '@theme/TabItem';
 
 ### 新增功能
 
-* 支持设置默认告警接收人，可自定义告警接收邮箱地址（支持多个）
-* [DDL 同步设置](best-practice/handle-schema-change)，新增**遇到 DDL 操作时任务报错停止**和**自动忽略 DDL**选项，可适应不同业务场景需求
-* 新增时间字段注入节点，可在数据同步过程中为流经的数据增加一个自定义的时间字段（如时间戳）
+* 支持设置[默认告警接收人](user-guide/workshop#notifications)，可自定义告警接收邮箱地址（支持多个）
+* [DDL 同步设置](user-guide/handle-schema-change.md)，新增**遇到 DDL 操作时任务报错停止**和**自动忽略 DDL**选项，可适应不同业务场景需求
+* 新增[时间字段注入](user-guide/data-development/process-node#time_injection)节点，可在数据同步过程中为流经的数据增加一个自定义的时间戳字段，从而提供更灵活的方式来获取源库的增量变更
 
 ### 功能优化
 

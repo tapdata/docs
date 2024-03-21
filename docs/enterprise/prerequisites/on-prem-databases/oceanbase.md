@@ -1,116 +1,73 @@
-# Oceanbase
+# OceanBase
 
-请遵循以下说明以确保在 Tapdata 中成功添加和使用Oceanbase数据库。
+OceanBase 数据库是一个金融级分布式关系数据库，Tapdata 支持将 OceanBase 作为目标库，帮助您快速构建数据流转链路。接下来，我们将介绍如何在 Tapdata 平台中连接 OceanBase 数据源。
 
 ## 支持版本
 
-Oceanbase 5.0、5.1、5.5、5.6、5.7、8.x
+OceanBase 3.x
 
-## 先决条件（作为源）
+import Content1 from '../../../reuse-content/alpha/alpha.md';
 
-### 开启 Binlog
+<Content1 />
 
-- 必须开启 Oceanbase 的 binlog ，Tapdata 才能正常完成同步工作。
-- 级连删除（CASCADE DELETE），这类由数据库产生的删除不会记录在binlog内，所以不被支持。 修改 `$Oceanbase_HOME/Oceanbase.cnf `, 例如:
+## 准备工作
 
-```
-server_id         = 223344
-log_bin           = Oceanbase-bin
-expire_logs_days  = 1
-binlog_format     = row
-binlog_row_image  = full
-```
+1. 确保 Tapdata 所属的网络已加入 OceanBase 的[租户白名单](https://www.oceanbase.com/docs/community-observer-cn-10000000000015856)中。
 
-配置解释：
-server-id: 对于 Oceanbase 中的每个服务器和复制客户端必须是唯一的
-binlog_format：必须设置为 row 或者 ROW
-binlog_row_image：必须设置为 full
-expire_logs_days：二进制日志文件保留的天数，到期会自动删除
-log_bin：binlog 序列文件的基本名称
+2. 以 `root` 用户登录到[租户](https://www.oceanbase.com/docs/community-observer-cn-10000000000015851)。
 
-### 重启 Oceanbase
+3. 执行下述格式的命令，创建用于数据同步的用户。
 
-```
-/etc/inint.d/Oceanbased restart
-```
+   ```sql
+   CREATE USER 'username' IDENTIFIED BY 'password';
+   ```
+   
+   * **username**：用户名。
+   * **password**：密码。
+   
+4. 执行下述格式的命令，为刚创建的用户授予库级别所有权限，您也可以基于业务需求自定义更精细化的[权限控制](https://www.oceanbase.com/docs/community-observer-cn-10000000000014488)。
 
-验证 binlog 已启用，请在 Oceanbase shell 执行以下命令
+   ```sql
+   GRANT ALL ON database_name.* TO username;
+   ```
+   
+   * **database_name**：数据库名称。
+   * **username**：用户名。
 
-```
-show variables like 'binlog_format';
-```
 
-输出的结果中，format value 应该是"ROW"
 
-验证 binlog_row_image 参数的值是否为full:
+## 添加数据源
 
-```
-show variables like 'binlog_row_image';
-```
+1. 登录 Tapdata 平台。
 
-输出结果中，binlog_row_image value应该是"FULL"
+2. 在左侧导航栏，单击**连接管理**。
 
-### 创建Oceanbase账号
+3. 单击页面右侧的**创建**。
 
-Oceanbase8以后，对密码加密的方式不同，请注意使用对应版本的方式，设置密码，否则会导致无法进行增量同步 使用以下命令，确认 supplemental logging 是否开启
+4. 在弹出的对话框中，搜索并选择 **OceanBase**。
 
-**3.3.1 5.x版本**
+5. 在跳转到的页面，根据下述说明填写 OceanBase 的连接信息。
 
-```
-create user 'username'@'localhost' identified by 'password';
-```
+   ![OceanBase 连接示例](../../images/oceanbase_connection.png)
 
-**3.3.2 8.x版本**
+   * **连接信息设置**
+     * **连接名称**：填写具有业务意义的独有名称。
+     * **连接类型**：目前仅支持 OceanBase 作为**目标**库。
+     * **地址**：数据库连接地址。
+     * **端口**：数据库的服务端口，默认为 **2881**。
+     * **数据库**：数据库名称，即一个连接对应一个数据库，如有多个数据库则需创建多个数据连接。
+     * **账号**：数据库的租户账号，格式为 `用户名@租户名`，例如要通过 `tapdata` 账号连接默认的 test 租户时，即填写为` tapdata@test`。
+     * **密码**：租户账号对应的密码。
+     * **额外参数**：额外的连接参数，默认为空。
+     * **时区**：默认为数据库所用的时区，您也可以根据业务需求手动指定。
+   * **高级设置**
+     * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
+     * **模型加载频率**：数据源中模型数量大于 1 万时，Tapdata 将按照设置的时间定期刷新模型。
 
-```
-// 创建用户
-create user 'username'@'localhost' identified with Oceanbase_native_password by 'password';
-// 修改密码
-alter user 'username'@'localhost' identified with Oceanbase_native_password by 'password';
-```
+6. 单击**连接测试**，测试通过后单击**保存**。
 
-### 给 tapdata 账号授权
+   :::tip
 
-对于某个数据库赋于select权限
+   如提示连接测试失败，请根据页面提示进行修复。
 
-```
-GRANT SELECT, SHOW VIEW, CREATE ROUTINE, LOCK TABLES ON <DATABASE_NAME>.<TABLE_NAME> TO 'tapdata' IDENTIFIED BY 'password';
-```
-
-对于全局的权限
-
-```
-GRANT RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'tapdata' IDENTIFIED BY 'password';
-```
-
-### 约束说明
-
-```
-当从Oceanbase同步到其他异构数据库时，如果源Oceanbase存在表级联设置，因该级联触发产生的数据更新和删除不会传递到目标。如需要在目标端构建级联处理能力，可以视目标情况，通过触发器等手段来实现该类型的数据同步。
-```
-
-## 先决条件（作为目标）
-
-对于某个数据库赋于全部权限
-
-```
-GRANT ALL PRIVILEGES ON <DATABASE_NAME>.<TABLE_NAME> TO 'tapdata' IDENTIFIED BY 'password';
-```
-
-对于全局的权限
-
-```
-GRANT PROCESS ON *.* TO 'tapdata' IDENTIFIED BY 'password';
-```
-
-## 常见错误
-
-Unknown error 1044 如果权限已经grant了，但是通过tapdata还是无法通过测试连接，可以通过下面的步骤检查并修复
-
-```
-SELECT host,user,Grant_priv,Super_priv FROM Oceanbase.user where user='username';
-//查看Grant_priv字段的值是否为Y
-//如果不是，则执行以下命令
-UPDATE Oceanbase.user SET Grant_priv='Y' WHERE user='username';
-FLUSH PRIVILEGES;
-```
+   :::

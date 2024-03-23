@@ -29,24 +29,7 @@ import Content from '../../../reuse-content/alpha/alpha.md';
    * **username**：用户名。
    * **password**：密码。
 
-3. 执行下述格式的命令，授予账号权限。
-
-      ```sql
-      -- 进入要授权的数据库
-      \c database_name
-      
-      -- 授予目标 Schema 的表读取权限
-      GRANT SELECT ON ALL TABLES IN SCHEMA schema_name TO username;
-      
-      -- 授予目标 Schema 的 USAGE 权限
-      GRANT USAGE ON SCHEMA schema_name TO username;
-      ```
-
-      * **database_name**：数据库名称。
-      * **schema_name**：Schema 名称。
-      * **username**：用户名。
-
-4. 为刚创建的账号授予权限，您也可以基于业务需求自定义权限控制。
+3. 为刚创建的账号授予权限，您也可以基于业务需求自定义权限控制。
 
 ```mdx-code-block
 <Tabs className="unique-tabs">

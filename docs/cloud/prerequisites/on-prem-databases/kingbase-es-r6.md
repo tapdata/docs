@@ -97,9 +97,10 @@ import Content from '../../../reuse-content/beta/_beta.md';
 
       ```bash
       yum install -y devtoolset-7-llvm centos-release-scl devtoolset-7-gcc* llvm5.0 make gcc git
-      mkdir -p Server/include/server
+      mkdir -p /home/kingbase/Server/include/server
       
       # 复制文件
+      mkdir -p /home/kingbase/Server/include/server
       cp -a /home/kingbase/Server/lib/plc/.server/* /home/kingbase/Server/include/server/
       ```
 

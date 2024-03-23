@@ -46,7 +46,7 @@ PostgreSQL 9.4、9.5、9.6、10.x、11.x、12 版本
       -- 授予目标 Schema 的 USAGE 权限
       GRANT USAGE ON SCHEMA schema_name TO username;
       
-      -- 授予复制权限
+      -- 授予复制权限，仅需读取数据库的全量数据，则无需执行
       ALTER USER username REPLICATION;
       ```
 

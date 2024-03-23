@@ -103,23 +103,23 @@ import Content from '../../../reuse-content/beta/_beta.md';
       # 复制文件
       cp -a /home/kingbase/Server/lib/plc/.server/* /home/kingbase/Server/include/server/
       ```
-      
-   5. 以 `kingbase` 用户身份进入 Docker，依次执行下述命令，完成插件的安装。
+
+   2. 以 `kingbase` 用户身份进入 Docker，依次执行下述命令，完成插件的安装。
 
       ```bash
-   # 克隆并进入目录
+      # 克隆并进入目录
       git clone https://github.com/eulerto/wal2json.git && cd wal2json
       
       # 编译安装
-      make 
+      make
       
       # 复制生成的 wal2json.so 至 Kingbase 包目录中
       cp wal2json.so /home/kingbase/Server/lib/
       ```
-   
-   6. 执行命令 `vim /home/kingbase/data/kingbase.conf` 修改配置文件，将 `wal_level` 的值修改为 `logical`。
 
-   7. 在业务低峰期，重启 KingbaseES-R6 服务。
+   3. 执行命令 `vim /home/kingbase/data/kingbase.conf` 修改配置文件，将 `wal_level` 的值修改为 `logical`。
+
+   4. 在业务低峰期，重启 KingbaseES-R6 服务。
 
 5. （可选）测试日志插件。
 

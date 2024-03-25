@@ -96,8 +96,8 @@ import Content from '../../../reuse-content/beta/_beta.md';
    1. 以 `root` 身份进入 Docker，执行下述命令安装环境依赖，包含 llvm、clang、gcc 等，然后完成文件复制以保障编译时可找到相关文件。
 
       ```bash
+      # 安装依赖
       yum install -y devtoolset-7-llvm centos-release-scl devtoolset-7-gcc* llvm5.0 make gcc git
-      mkdir -p /home/kingbase/Server/include/server
       
       # 复制文件
       mkdir -p /home/kingbase/Server/include/server

@@ -46,13 +46,19 @@ PostgreSQL 9.4、9.5、9.6、10.x、11.x、12 版本
       -- 授予目标 Schema 的 USAGE 权限
       GRANT USAGE ON SCHEMA schema_name TO username;
       
-      -- 授予复制权限
+      -- 授予复制权限，仅需读取数据库的全量数据，则无需执行
       ALTER USER username REPLICATION;
       ```
 
       * **database_name**：数据库名称。
       * **schema_name**：Schema 名称。
       * **username**：用户名。
+      
+      :::tip
+      
+      如仅需读取 PostgreSQL 的全量数据（不包含增量变更），则无需执行后续步骤。
+      
+      :::
 
 3. 执行下述格式的命令，修改复制标识为 **FULL**（使用整行作为标识），该属性决定了当数据发生 UPDATE/DELETE 时，日志记录的字段。
 

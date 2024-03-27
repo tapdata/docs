@@ -90,7 +90,7 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
     - **连接类型**：支持将 Doris 作为源或目标库。
     - **数据库地址**：Doris 的连接地址。
     - **端口**：Doris 的查询服务端口，默认端口为 **9030**。
-    - **HTTP 接口地址**：BE 服务的 HTTP 协议访问地址，包含地址和端口信息，默认端口为 **8040**。
+    - **HTTP 接口地址**：FE 服务的 HTTP 协议访问地址，包含地址和端口信息，默认端口为 **8030**。
     - **Doris 目录**：Doris 的目录，其层级在数据库之上，如使用默认目录可置空，更多介绍，见[多源数据目录](https://doris.apache.org/zh-CN/docs/1.2/lakehouse/multi-catalog/)。
     - **数据库名称**：一个连接对应一个数据库，如有多个数据库则需创建多个数据连接。
     - **账号**、**密码**：分别填写数据库的账号和密码。

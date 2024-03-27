@@ -2,6 +2,11 @@
 
 金仓数据库管理系统（KingbaseES）是北京人大金仓信息技术股份有限公司自主研发的、具有自主知识产权的商用关系型数据库管理系统。KingbaseES-R6 可兼容 Postgres 9.6 版本的绝大多数特性，本文将介绍如何在 Tapdata Cloud 中添加 KingbaseES-R6 数据源，后续可将其作为源或目标库来构建数据管道。
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## 支持版本
 
 KingBaseES-V8R6
@@ -16,192 +21,7 @@ import Content from '../../../reuse-content/beta/_beta.md';
 
 <Content />
 
-## 增量数据读取原理
-
-为实现增量数据的读取，Tapdata Cloud 通过逻辑解码功能，提取提交到事务日志中的更改，并通过插件以用户友好的方式处理这些更改。支持的变更数据捕获（CDC）如下：
-
-- 逻辑解码（Logical Decoding）：用于从 WAL 日志中解析逻辑变更事件
-- 复制协议（Replication Protocol）：提供了消费者实时订阅（甚至同步订阅）数据库变更的机制
-- 快照导出（Export Snapshot）：允许导出数据库的一致性快照（pg_export_snapshot）
-- 复制槽（Replication Slot）：用于保存消费者偏移量，跟踪订阅者进度。 
-
 ## <span id="prerequisite">准备工作</span>
-
-### 作为源库
-
-1. 以管理员身份登录 KingbaseES-R6 数据库。
-
-2. 创建用户并授权。
-
-   1. 执行下述格式的命令，创建用于数据同步/开发任务的账号。
-
-      ```sql
-      CREATE USER username WITH PASSWORD 'password';
-      ```
-
-      * **username**：用户名。
-      * **password**：密码。
-
-   2. 执行下述格式的命令，授予账号权限。
-
-      ```sql
-      -- 进入要授权的数据库
-      \c database_name
-      
-      -- 授予目标 Schema 的表读取权限
-      GRANT SELECT ON ALL TABLES IN SCHEMA schema_name TO username;
-      
-      -- 授予目标 Schema 的 USAGE 权限
-      GRANT USAGE ON SCHEMA schema_name TO username;
-      
-      -- 授予复制权限，仅需读取数据库的全量数据，则无需执行
-      ALTER USER username REPLICATION;
-      ```
-
-      * **database_name**：数据库名称。
-      * **schema_name**：Schema 名称。
-      * **username**：用户名。
-      
-      :::tip
-      
-      如仅需读取 KingbaseES-R6 的全量数据（不包含增量变更），则无需执行后续步骤。
-      
-      :::
-
-3. 执行下述格式的命令，修改复制标识为 **FULL**（使用整行作为标识），该属性决定了当数据发生 UPDATE/DELETE 时，日志记录的字段。
-
-   ```sql
-   ALTER TABLE schema_name.table_name REPLICA IDENTITY FULL;   
-   ```
-
-   * **schema_name**：Schema 名称。
-   * **table_name**：表名称。
-
-4. 登录 KingbaseES-R6 所属的服务器，根据业务需求和版本选择要安装的解码器插件：
-
-   - [Wal2json](https://github.com/eulerto/wal2json/blob/master/README.md)（源表需具备主键，否则无法同步删除操作）
-
-   - [Decoderbufs](https://github.com/debezium/postgres-decoderbufs)
-
-   - [Pgoutput](https://www.postgresql.org/docs/15/sql-createsubscription.html)
-
-   接下来，我们以 **Wal2json** 为例演示安装流程。
-
-   :::tip
-
-   本案例中的 KingbaseES-R6 部署在 Docker 平台中（基于 CentOS 7.9），如您的环境与本案例不同，需要调整下述步骤中安装的开发包版本、文件路径等。
-
-   :::
-
-   1. 以 `root` 身份进入 Docker，执行下述命令安装环境依赖，包含 llvm、clang、gcc 等，然后完成文件复制以保障编译时可找到相关文件。
-
-      ```bash
-      # 安装依赖
-      yum install -y devtoolset-7-llvm centos-release-scl devtoolset-7-gcc* llvm5.0 make gcc git
-      
-      # 复制文件
-      mkdir -p /home/kingbase/Server/include/server
-      cp -a /home/kingbase/Server/lib/plc/.server/* /home/kingbase/Server/include/server/
-      ```
-
-   5. 以 `kingbase` 用户身份进入 Docker，依次执行下述命令，完成插件的安装。
-
-      ```bash
-      # 克隆并进入目录
-      git clone https://github.com/eulerto/wal2json.git && cd wal2json
-      
-      # 编译安装
-      make 
-      
-      # 复制生成的 wal2json.so 至 Kingbase 包目录中
-      cp wal2json.so /home/kingbase/Server/lib/
-      ```
-
-   6. 执行命令 `vim /home/kingbase/data/kingbase.conf` 修改配置文件，将 `wal_level` 的值修改为 `logical`。
-
-   7. 在业务低峰期，重启 KingbaseES-R6 服务。
-
-5. （可选）测试日志插件。
-
-   1. 连接 KingbaseES-R6 数据库，切换至需要同步的数据库并创建一张测试表。
-
-      ```sql
-      -- 假设需要同步的数据库为 demodata，模型为 public
-      \c demodata
-      
-      CREATE TABLE public.test_decode
-      (
-        uid    integer not null
-            constraint users_pk
-                primary key,
-        name   varchar(50),
-        age    integer,
-        score  decimal
-      );
-      ```
-
-   2. 创建 Slot 连接，以 wal2json 插件为例。
-
-      ```sql
-      SELECT * FROM pg_create_logical_replication_slot('slot_test', 'wal2json');
-      ```
-
-   3. 对测试表插入一条数据。
-
-      ```sql
-      INSERT INTO public.test_decode (uid, name, age, score)
-      VALUES (1, 'Jack', 18, 89);
-      ```
-
-   4. 监听日志并查看返回结果，是否有刚才插入操作的信息。
-
-      ```sql
-      SELECT * FROM pg_logical_slot_peek_changes('slot_test', null, null);
-      ```
-
-      返回示例如下（竖向显示）：
-
-      ```sql
-      lsn  | 0/3E38E60
-      xid  | 610
-      data | {"change":[{"kind":"insert","schema":"public","table":"test_decode","columnnames":["uid","name","age","score"],"columntypes":["integer","character varying(50)","integer","numeric"],"columnvalues":[1,"Jack",18,89]}]}
-      ```
-
-   5. 确认无问题后，可销毁 Slot 连接并删除测试表。
-
-      ```sql
-      SELECT * FROM pg_drop_replication_slot('slot_test');
-      DROP TABLE public.test_decode;
-      ```
-
-6. （可选）如需使用最后更新时间戳的方式进行增量同步，您需要执行下述步骤。
-
-   1. 在源数据库中，执行下述命令创建公共函数，需替换 schema 名称。
-
-      ```sql
-      CREATE OR REPLACE FUNCTION schema_name.update_lastmodified_column()
-        RETURNS TRIGGER LANGUAGE plpgsql AS $$
-        BEGIN
-            NEW.last_update = now();
-            RETURN NEW;
-        END;
-      $$;
-      ```
-
-   2. 创建字段和 trigger，每个表均需执行一次，例如表名为 **mytable**。
-
-      ```sql
-      // 创建 last_update 字段
-      ALTER TABLE schema_name.mytable ADD COLUMN last_udpate timestamp DEFAULT now();
-      
-      // 创建 trigger
-      CREATE TRIGGER trg_uptime BEFORE UPDATE ON schema_name.mytable FOR EACH ROW EXECUTE PROCEDURE
-        update_lastmodified_column();
-      ```
-
-
-
-### 作为目标库
 
 1. 以管理员身份登录 KingbaseES-R6 数据库。
 
@@ -214,24 +34,59 @@ import Content from '../../../reuse-content/beta/_beta.md';
    * **username**：用户名。
    * **password**：密码。
 
-3. 执行下述格式的命令，为数据库账号授予权限。
+3. 为刚创建的账号授予权限，您也可以基于业务需求自定义权限控制。
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="作为源库">
+```
+
+```sql
+-- 进入要授权的数据库
+\c database_name
+
+-- 授予目标 Schema 的表读取权限
+GRANT SELECT ON ALL TABLES IN SCHEMA schema_name TO username;
+
+-- 授予目标 Schema 的 USAGE 权限
+GRANT USAGE ON SCHEMA schema_name TO username;
+
+-- 授予复制权限，如仅需读取数据库的全量数据，则无需执行
+ALTER USER username REPLICATION;
+```
+
+</TabItem>
+
+<TabItem value="作为目标库">
+
+```sql
+-- 进入要授权的数据库
+\c database_name;
+
+-- 授予目标 Schema 的 USAGE 和 CREATE 权限
+GRANT CREATE,USAGE ON SCHEMA schemaname TO username;
+
+-- 授予目标 Schema 的表读写权限
+GRANT SELECT,INSERT,UPDATE,DELETE,TRUNCATE ON ALL TABLES IN SCHEMA schemaname TO username;
+```
+
+</TabItem>
+</Tabs>
+
+* **database_name**：数据库名称。
+* **schema_name**：Schema 名称。
+* **username**：用户名。
+
+4. 如需读取源库的增量变更，您还需要执行下述格式的命令，修改复制标识为 **FULL**（使用整行作为标识），该属性决定了当数据发生 UPDATE/DELETE 时，日志记录的字段。
 
    ```sql
-   -- 进入要授权的数据库
-   \c database_name;
-   
-   -- 授予目标 Schema 的 USAGE 和 CREATE 权限
-   GRANT CREATE,USAGE ON SCHEMA schemaname TO username;
-   
-   -- 授予目标 Schema 的表读写权限
-   GRANT SELECT,INSERT,UPDATE,DELETE,TRUNCATE ON ALL TABLES IN SCHEMA schemaname TO username;
+   ALTER TABLE schema_name.table_name REPLICA IDENTITY FULL;
    ```
 
-   * **database_name**：数据库名称。
    * **schema_name**：Schema 名称。
-   * **username**：用户名。
+   * **table_name**：表名称。
 
-
+   完成操作后，您还需要联系[技术支持](../../faq/support.md)提供相关插件，在 KingbaseES-R6 所属的服务器上进行安装。
 
 
 ## 添加数据源

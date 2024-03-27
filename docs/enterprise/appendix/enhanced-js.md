@@ -435,28 +435,28 @@ rest.get(url, header, returnType, connectTimeOut, readTimeOut)
 * Get
 
   ```javascript
-  var result = rest.get('http://127.0.0.1:1234/users?id=1', {}, '[array/object/string]', 30, 300);rest.post(url, parameters)
-  rest.post(url, parameters, headers, returnType)
-  rest.post(url, parameters, connectTimeOut, readTimeOut)
-  rest.post(url, parameters, headers, returnType, connectTimeOut, readTimeOut)
+  var result = rest.get('http://127.0.0.1:1234/users?where[user_id]=1', {status: 0}, {}, 30, 300);rest.get(url)
+  rest.get(url, headers)
+  rest.get(url, connectTimeOut, readTimeOut)
+  rest.get(url, headers, connectTimeOut, readTimeOut)
   ```
 
 * Post
 
   ```javascript
-  var result = rest.post('http://127.0.0.1:1234/users/find', {}, {}, '[array/object/string]', 30, 300);rest.patch(url, parameters)
-  rest.patch(url, parameters, headers)
-  rest.patch(url, parameters, connectTimeOut, readTimeOut)
-  rest.patch(url, parameters, headers, connectTimeOut, readTimeOut)
+  var result = rest.post('http://127.0.0.1:1234/users?id=1', {}, '[array/object/string]', 30, 300);rest.post(url, parameters)
+  rest.post(url, parameters, headers, returnType)
+  rest.post(url, parameters, connectTimeOut, readTimeOut)
+  rest.post(url, parameters, headers, returnType, connectTimeOut, readTimeOut)
   ```
 
 * Patch
 
   ```javascript
-  var result = rest.patch('http://127.0.0.1:1234/users?where[user_id]=1', {status: 0}, {}, 30, 300);rest.delete(url)
-  rest.delete(url, headers)
-  rest.delete(url, connectTimeOut, readTimeOut)
-  rest.delete(url, headers, connectTimeOut, readTimeOut)
+  var result = rest.patch('http://127.0.0.1:1234/users/find', {}, {}, '[array/object/string]', 30, 300);rest.patch(url, parameters)
+  rest.patch(url, parameters, headers)
+  rest.patch(url, parameters, connectTimeOut, readTimeOut)
+  rest.patch(url, parameters, headers, connectTimeOut, readTimeOut)
   ```
 
 * Delete

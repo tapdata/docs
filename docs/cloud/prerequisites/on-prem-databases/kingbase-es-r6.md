@@ -86,7 +86,7 @@ GRANT SELECT,INSERT,UPDATE,DELETE,TRUNCATE ON ALL TABLES IN SCHEMA schemaname TO
    * **schema_name**：Schema 名称。
    * **table_name**：表名称。
 
-   完成操作后，您还需要联系[技术支持](../../support.md)提供相关插件，在 KingbaseES-R6 所属的服务器上进行安装。
+   完成操作后，您还需要联系[技术支持](../../faq/support.md)提供相关插件，在 KingbaseES-R6 所属的服务器上进行安装。
 
 
 ## 添加数据源

@@ -29,6 +29,7 @@ const sidebars = {
              'introduction/benefits',
              'introduction/use-cases',
              'introduction/supported-databases',
+             'introduction/security',
              'introduction/terms',
        ]
     },
@@ -42,8 +43,24 @@ const sidebars = {
              label: '部署 Tapdata',
              link: {type: 'doc', id: 'quick-start/install/README'},
              items: [
-                    'quick-start/install/install-tapdata-stand-alone',
-                    'quick-start/install/install-on-windows',                 
+                    {
+                     type: 'category',
+                     label: 'Tapdata Cloud',
+                     link: {type: 'doc', id: 'quick-start/install/install-tapdata-agent/README'},
+                     items: [
+                     'quick-start/install/install-tapdata-agent/agent-on-selfhosted',
+                     'quick-start/install/install-tapdata-agent/agent-on-compute-nest',
+                     ]
+                     },
+                    {
+                     type: 'category',
+                     label: 'Tapdata On-Prem',
+                     link: {type: 'doc', id: 'quick-start/install/install-tapdata-enterprise/README'},
+                     items: [
+                     'quick-start/install/install-tapdata-enterprise/install-tapdata-stand-alone',
+                     'quick-start/install/install-tapdata-enterprise/install-on-windows',
+                     ]
+                     }
              ]
             },
             'quick-start/connect-database',
@@ -394,8 +411,11 @@ const sidebars = {
      link: {type: 'doc', id: 'pipeline-tutorial/README'},
      items: [
             'pipeline-tutorial/excel-to-mysql',
+            'pipeline-tutorial/mysql-to-aliyun',
+            'pipeline-tutorial/mysql-to-bigquery',
             'pipeline-tutorial/mysql-to-redis',
             'pipeline-tutorial/oracle-to-kafka',
+            'pipeline-tutorial/oracle-to-tablestore',
             'pipeline-tutorial/extract-array',
         ]
     },

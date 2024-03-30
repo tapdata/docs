@@ -4,7 +4,7 @@
 
 :::tip
 
-单节点部署可用于功能测试场景，如需用作生产环境，推荐采用[高可用部署](../../production-admin/install-tapdata-ha.md)。
+单节点部署可用于功能测试场景，如需用作生产环境，推荐采用[高可用部署](../../../production-admin/install-tapdata-ha.md)。
 
 :::
 
@@ -27,18 +27,18 @@
 
    3. 单击左侧的**高级系统设置**，然后单击**环境变量**。
 
-      ![选择环境变量](../../images/select_system_env.png)
+      ![选择环境变量](../../../images/select_system_env.png)
 
    4. 在弹出的对话框中，单击**系统变量**下方的**新建**，然后填写变量名和值，最后单击**确定**。
    
-      ![添加变量](../../images/add_system_env.png)
+      ![添加变量](../../../images/add_system_env.png)
    
       * **变量名**：`JAVA_HOME`
       * **变量值**：JDK 的安装路径，本例为 `C:\Program Files\Java\jdk1.8.0_202`
    
    5. 在**系统变量**区域框中，找到并双击名为 **Path** 的变量，然后在弹出的对话框中，分别新建下述环境变量，最后单击**确定**。
    
-      ![修改变量](../../images/edit_system_env.png)
+      ![修改变量](../../../images/edit_system_env.png)
    
       * `%JAVA_HOME%\bin`
       * `%JAVA_HOME%\jre\bin`
@@ -166,5 +166,5 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
 
 ## 下一步
 
-[连接数据库](../connect-database.md)
+[连接数据库](../../connect-database.md)
 

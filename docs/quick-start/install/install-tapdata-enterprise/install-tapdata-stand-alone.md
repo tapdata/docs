@@ -4,7 +4,7 @@
 
 :::tip
 
-单节点部署可用于功能测试场景，如需用作生产环境，推荐采用[高可用部署](../../production-admin/install-tapdata-ha.md)。
+单节点部署可用于功能测试场景，如需用作生产环境，推荐采用[高可用部署](../../../production-admin/install-tapdata-ha.md)。
 
 :::
 
@@ -147,4 +147,4 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
 
 ## 下一步
 
-[连接数据库](../connect-database.md)
+[连接数据库](../../connect-database.md)

@@ -2,6 +2,8 @@
 
 作为新一代实时数据服务平台，Tapdata 通过实时的数据采集技术、灵活的数据处理方式、完整的数据治理能力、便捷的数据发布方式，让企业轻松打破数据孤岛的限制，为分析型和交易型业务提供实时、准确的数据，支撑企业实现更敏捷的业务创新。
 
+## Tapdata On-Prem 架构 
+
 ![产品架构](https://20778419.s21i.faiusr.com/3/2/ABUIABADGAAgtLr-lgYotInUhwYwgA84uAg.gif)
 
 Tapdata 分为四层架构，从左到右分别为：
@@ -13,13 +15,15 @@ Tapdata 分为四层架构，从左到右分别为：
 
 :::tip
 
-如您无需本地部署 Tapdata，您也可以选择使用半托管形式的 Tapdata Cloud（基础版可免费试用）。更多介绍，见[版本对比](https://tapdata.net/pricing.html)。
+如您无需本地部署 Tapdata，您也可以选择使用 Tapdata Cloud。更多介绍，见[版本对比](https://tapdata.net/pricing.html)。
 
 :::
 
+## Tapdata Cloud 架构
+
 Tapdata Cloud 组件包含 Tapdata Cloud manager 和 Tapdata Agent：
 
-* **Tapdata Cloud Manager**（TCM）：Tapdata Cloud 的管理端，负责 agent 实例的安装，同步任务的配置、分发、任务状态监测。
+* **Tapdata Cloud Manager**（TCM）：Tapdata Cloud 的管理端，负责 Agent 实例的安装，同步任务的配置、分发、任务状态监测。
 
 * **Tapdata Agent**：是 Tapdata Cloud 数据同步服务的执行实例，负责从 TCM 获取任务信息，通过流式技术从源系统获取数据、处理转换数据并发送到目标系统，并在任务执行过程中监测并上报任务状态至 TCM 。
 

@@ -1,6 +1,6 @@
 # 实时数据中心
 
-> <img src="https://img.shields.io/badge/3.2%20%E4%B9%8B%E5%89%8D%E5%90%8D%E7%A7%B0%20-%E6%95%B0%E6%8D%AE%E9%9D%A2%E6%9D%BF-40b976" style={{transform:'scale(1.2)'}} />
+> <img src="https://img.shields.io/badge/3.2%20%E4%B9%8B%E5%89%8D%E5%90%8D%E7%A7%B0%20-%E6%95%B0%E6%8D%AE%E9%9D%A2%E6%9D%BF-orange" style={{transform:'scale(1.2)'}} />
 
 实时数据中心功能支持两种模式，可满足不同的数据治理需求。
 

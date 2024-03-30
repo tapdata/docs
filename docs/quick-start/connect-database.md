@@ -10,7 +10,7 @@
 
 ## 操作步骤
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 服务平台。
 
 2. 在左侧导航栏栏，单击**连接管理**。
 

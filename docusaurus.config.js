@@ -122,6 +122,11 @@ const config = {
             label: 'Tapdata 帮助文档',
             },
           {
+            href: 'https://cloud.tapdata.net/console/v3/',
+            position: 'right',
+            label: '登录 Tapdata Cloud',
+            },
+          {
             type: 'docsVersionDropdown',
             position: 'right',
             dropdownActiveClassDisabled: true,

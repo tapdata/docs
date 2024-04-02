@@ -1,5 +1,9 @@
 # 管理集群
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 通过集群管理页面，您可以查看当前集群内所有组件的运行状态和对外建立的连接数等信息，同时支持管理操作。
 
 

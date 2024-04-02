@@ -1,5 +1,9 @@
 # 管理函数
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 Tapdata 支持丰富的函数，可帮助您更加便捷地完成处理过程的定义，从而在 [JS 节点](../data-pipeline/data-development/process-node#js-process)中引用。除此以外，您还可以根据需求自由定义函数或导入第三方 jar 包来引入函数。
 
 ## 操作步骤

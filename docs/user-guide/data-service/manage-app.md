@@ -1,5 +1,9 @@
 # 应用管理
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 为更好地管理和区分  API 服务，我们可以基于业务对其进行分类，将不同的 API 划入不同的应用中，本文介绍具体的操作流程。
 
 

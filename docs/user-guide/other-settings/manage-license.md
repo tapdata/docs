@@ -1,5 +1,9 @@
 # 管理 License
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 在页面右上角，单击账户信息，然后单击 License 管理 可进入管理界面。
 
 ![](../../images/manage_license_1.png)

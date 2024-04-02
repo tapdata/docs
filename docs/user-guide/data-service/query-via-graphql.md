@@ -1,5 +1,9 @@
 # 通过 GraphQL 查询 API
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 GraphQL 提供了一种查询语言，支持以声明方式从服务器请求数据，例如请求架构中的特定数据。Tapdata 集成了 GraphQL，您可以通过 API 服务地址来执行请求。
 
 本文我们将介绍如何借助 Postman 工具，通过 GraphQL 查看 API 数据服务。

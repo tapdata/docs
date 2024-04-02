@@ -1,5 +1,9 @@
 # 数据服务
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 Tapdata 支持 API 形式发布表数据，帮助企业构建统一的数据服务平台，各类应用可基于 API 为推送服务等应用提供支持，推荐的使用顺序如下：
 
 | 步骤                                              | 说明                                                         |

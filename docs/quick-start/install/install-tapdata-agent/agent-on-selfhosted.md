@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，您可以免费创建 1 个 SMALL 规格的 Agent 实例（半托管模式），此外，您还可以[购买更多的 Agent 实例](../../billing/billing-overview.md)，来满足业务需求，接下来，我们演示具体的操作流程。
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**资源管理**。
 

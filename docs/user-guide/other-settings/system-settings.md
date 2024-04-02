@@ -1,5 +1,9 @@
 # 系统设置
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 系统设置功能主要用来对系统的一些参数进行设置，例如日志、SMTP、API 分发等设置。
 
 

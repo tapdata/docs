@@ -1,5 +1,9 @@
 # 创建客户端
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 API客户端是用来管理和创建调用API，开发者设计开发的应用程序或者其他需要调用 API 接口的应用程序（统称客户端应用）在接入数据发布系统前需要先注册，注册完成后，得到一个专属客户端ID（client_id）和客户端密钥（client_secret）
 
 ## 操作步骤

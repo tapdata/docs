@@ -1,5 +1,9 @@
 # 管理用户
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 Tapdata 部署完成后，会自动创建一个名为 `admin@admin.com`  的系统管理员，为更好地管理平台操作权限，您可以通过该账号登录 Tapdata 平台，为组织内的其他成员执行创建用户、赋予权限等管理操作。
 
 ## 操作步骤

@@ -4,6 +4,11 @@
 
 借助 Tapdata 的数据服务平台模式，您可以将分散在不同业务系统的数据同步至统一的平台缓存层，可为后续的数据加工和业务提供基础数据，从而构建一致、实时的数据平台，连通数据孤岛。
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## 背景介绍
 
 在当今的数字化时代，企业面临的最大挑战之一是如何高效地处理和分析大量的实时数据。传统的数据处理方法，例如批处理或手动编写数据 ETL 脚本，通常无法提供及时的数据分析和处理，这限制了企业在快速变化的市场环境中做出及时决策的能力。此外，直接在生产数据库上进行数据操作可能影响其稳定性和安全性，进而影响整个业务的运行效率。
@@ -30,20 +35,6 @@
 
 
 
-## 准备工作
-
-1. 准备一个 MongoDB 数据库（4.0 及以上），将其作为平台缓存层/平台加工层的存储引擎，相关部署介绍，见 [MongoDB 官网](https://www.mongodb.com/docs/manual/administration/install-on-linux/)。
-
-   :::tip
-
-   为保障业务高可用性，推荐 MongoDB 采用副本集/分配集群架构，同时需基于源数据层的数据规模预留足够的存储空间和 Oplog 空间（推荐 14 天及以上）。
-
-   :::
-
-2. [连接 MongoDB 数据库](../../../prerequisites/on-prem-databases/mongodb.md)。
-
-
-
 ## 操作步骤
 
 Tapdata 默认处于数据集成模式，接下来，我们将介绍如何开启数据服务平台模式。
@@ -52,9 +43,57 @@ Tapdata 默认处于数据集成模式，接下来，我们将介绍如何开启
 
 2. 在左侧导航栏，单击**实时数据中心**。
 
-3. 在页面右侧，单击![setting_icon](../../../images/setting_icon.png)图标。
+3. 根据您的产品系列选择操作步骤：
 
-4. 选择数据服务平台模式，然后设置平台缓存层/平台加工层所用的存储引擎，即我们在准备工作中设置的 MongoDB 数据源。
+
+<Tabs className="unique-tabs">
+<TabItem value="Tapdata Cloud" default>
+
+
+1. 查看实时数据中心的介绍并向下滚动到页面底部，单击**订阅存储**。
+
+2. 选择 MongoDB Atlas 实例的规格，Tapdata 会将其作为平台缓存层/平台加工层的存储引擎。
+
+   ![订阅存储](../../../images/purchase_storage.png)
+
+   - **云提供商**：当前支持：Google Cloud。
+
+   - **区域**：选择部署区域，选择靠近您的数据源的区域，以尽量减少网络延迟。
+
+   - **规格**：选择 MongoDB Atlas 的**规格**和**存储大小**。
+
+     <details><summary>规格说明</summary>
+     <ul>
+     <li>M10: 2 vCPUs, 2 GB RAM</li>
+     <li>M20: 2 vCPUs, 4 GB RAM</li>
+     <li>M30: 2 vCPUs, 8 GB RAM</li>
+     <li>M40: 4 vCPUs, 16 GB RAM</li>
+     <li>M50: 8 vCPUs, 32 GB RAM</li>
+     <li>M60: 16 vCPUs, 64 GB RAM</li>
+     </ul>
+     </details>
+
+   - **订阅周期**：选择所需的订阅周期，支持**连续包年**和**连续包月**。
+
+3. 单击**订阅**，在跳转到的页面核对订阅规格并填写接收账单的邮箱地址。
+
+4. 单击**立即付款**，跟随页面提示完成付款流程。
+
+</TabItem>
+
+<TabItem value="Tapdata On-Prem">
+
+1. 准备一个 MongoDB 数据库（4.0 及以上），然后在 Tapdata 平台上[连接该数据库](./../../prerequisites/on-prem-databases/mongodb.md)，将其作为平台缓存层/平台加工层的存储引擎，相关部署介绍，见[部署案例](../../../production-admin/install-replica-mongodb)或 [MongoDB 官网](https://www.mongodb.com/docs/manual/administration/install-on-linux/)。
+
+   :::tip
+
+   为保障业务高可用性，推荐 MongoDB 采用副本集/分配集群架构，同时需基于源数据层的数据规模预留足够的存储空间和 Oplog 空间（推荐 14 天及以上）。
+
+   :::
+
+2. 在 Tapdata 平台的页面右侧，单击![setting_icon](../../../images/setting_icon.png)图标。
+
+3. 选择数据服务平台模式，然后设置平台缓存层/平台加工层所用的存储引擎，即我们在准备工作中设置的 MongoDB 数据源。
 
    ![开启数据服务平台模式](../../../images/enable_daas_mode.png)
 
@@ -64,7 +103,10 @@ Tapdata 默认处于数据集成模式，接下来，我们将介绍如何开启
 
    :::
 
-5. 单击**保存**。
+4. 单击**保存**。
 
-   
+</TabItem>
+</Tabs>
+
+  
 

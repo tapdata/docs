@@ -18,7 +18,7 @@
   为构建高效可靠的数据复制任务，推荐在开始配置任务前，推荐阅读<a href="../../best-practice/data-sync">数据同步最佳实践</a>。
 </details>
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**数据复制**。
 

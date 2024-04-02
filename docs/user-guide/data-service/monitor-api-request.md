@@ -1,5 +1,9 @@
 # 服务监控
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 通过服务监控可对平台上的API请求进行监控管理，可查看全局的统计和每个API的状态
 
 ![](../../images/monito_api_1.png)

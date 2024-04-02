@@ -343,13 +343,14 @@ const sidebars = {
              },
              {
               type: 'category',
-              label: '高级设置',
+              label: '高级功能',
               link: {type: 'doc', id: 'user-guide/advanced-settings/README'},
               items:[
                      'user-guide/advanced-settings/share-cache',
                      'user-guide/advanced-settings/manage-function',
                      'user-guide/advanced-settings/custom-node',
                      'user-guide/advanced-settings/share-mining',
+                     'user-guide/advanced-settings/manage-external-storage',
                     ]
              },
              {

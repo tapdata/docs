@@ -1,5 +1,9 @@
 # API 查询参数说明
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 调用已发布的 API 接口时，支持在 URL 查询字符串中添加查询条件，从而查询结果的快速过滤。本文介绍支持的过滤器和相关使用示例。
 
 

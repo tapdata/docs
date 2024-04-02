@@ -1,5 +1,9 @@
 # 创建数据服务
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 为了方便开发人员进行接口对接，同时也方便查看通过 Tapdata 发布的 API 信息，我们提供了数据服务功能。
 
 ## 支持的数据源

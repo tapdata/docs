@@ -1,10 +1,14 @@
 # 系统维护与应急处理策略
 
+import Content2 from '../reuse-content/_enterprise-features.md';
+
+<Content2 />
+
 本文档提供了全面的产品应急处理流程和预案策略，旨在帮助您在面临突发事件和产品问题时，如何迅速、有效地进行响应，减轻故障带来的影响，提升产品的整体稳定性和安全性。
 
 :::tip
 
-Tapdata 支持单机或高可用部署，如您部署在生产环境中，推荐采用[高可用部署](install-tapdata-ha.md)方式。
+Tapdata On-Prem 支持单机或高可用部署，如您部署在生产环境中，推荐采用[高可用部署](install-tapdata-ha.md)方式。
 
 :::
 

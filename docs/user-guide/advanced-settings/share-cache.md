@@ -1,5 +1,9 @@
 # 创建共享缓存
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 共享缓存主要是为解决部分热点数据会被多个任务调用做处理时对源库产生太大压力，所以将这些数据放到缓存里供多个任务使用。
 
 

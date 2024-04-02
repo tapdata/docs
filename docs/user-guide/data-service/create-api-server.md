@@ -1,5 +1,9 @@
 # 创建服务器
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 API 服务器可以配置对外暴露的API服务器地址，也可以增加多个服务器。
 
 

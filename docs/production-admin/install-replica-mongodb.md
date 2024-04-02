@@ -1,6 +1,10 @@
 # 部署 MongoDB 副本集
 
-Tapdata 在运行时，会将任务的必要配置、共享缓存等信息存储至 MongoDB 数据库中，为保障生产环境的高可用，在部署 Tapdata 前，需要完成 MongoDB 副本集的部署，本文将介绍具体的部署流程。
+import Content2 from '../reuse-content/_enterprise-features.md';
+
+<Content2 />
+
+Tapdata On-Prem 在运行时，会将任务的必要配置、共享缓存等信息存储至 MongoDB 数据库中，为保障生产环境的高可用，在部署 Tapdata 前，需要完成 MongoDB 副本集的部署，本文将介绍具体的部署流程。
 
 ## 部署架构
 

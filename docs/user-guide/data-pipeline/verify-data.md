@@ -1,5 +1,9 @@
 # 数据校验
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 基于多种自研技术，Tapdata 可最大程度保障数据一致性。除此以外，Tapdata 还支持对数据表执行数据校验，帮助您进一步验证和确保数据流转的正确性，满足生产环境的严苛要求。本文介绍数据校验任务的配置流程。
 
 ```mdx-code-block

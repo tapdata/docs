@@ -1,12 +1,16 @@
-# 更新日志
+# Tapdata On-Prem 更新日志
 
-本文介绍 V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/release-notes)。
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
+
+本文介绍 Tapdata On-Prem V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/release-notes)。
 
 ## 3.5.12
 
 ### 新增功能
 
-* 支持在 License 到期前一周发送邮件提醒（每天一次），可结合[配置 SMTP 邮件服务](best-practice/alert-via-qqmail.md)来提升运维便利性
+* 支持在 License 到期前一周发送邮件提醒（每天一次），可结合[配置 SMTP 邮件服务](../best-practice/alert-via-qqmail.md)来提升运维便利性
 * [DDL 同步设置](../best-practice/handle-schema-change)，新增**遇到 DDL 操作时任务报错停止**和**自动忽略 DDL**选项，可适应不同业务场景需求
 * 新增[时间字段注入](user-guide/data-pipeline/data-development/process-node#time_injection)节点，可在数据同步过程中为流经的数据增加一个自定义的时间戳字段，从而提供更灵活的方式来获取源库的增量变更
 * 支持设置引擎日志的过期时间和日志大小，实现日志的自动清理
@@ -21,12 +25,12 @@
 
 ### 新增功能
 
-- [共享挖掘](user-guide/advanced-settings/share-mining.md)功能支持使用 RocksDB 作为本地外存，可实现对增量日志的存储扩展
-- [TDengine 连接器](prerequisites/on-prem-databases/tdengine.md)支持将多个数据库作为增量源
+- [共享挖掘](../user-guide/advanced-settings/share-mining.md)功能支持使用 RocksDB 作为本地外存，可实现对增量日志的存储扩展
+- [TDengine 连接器](../prerequisites/on-prem-databases/tdengine.md)支持将多个数据库作为增量源
 
 ### 功能优化
 
-- [任务监控页面](user-guide/data-pipeline/copy-data/monitor-task.md)，增加增量阶段的时间过滤选项，便于快速观察增量阶段的 QPS
+- [任务监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)，增加增量阶段的时间过滤选项，便于快速观察增量阶段的 QPS
 - 针对可能对数据库造成影响的关键操作（例如过滤源表数据），增加相关提示信息
 
 ### 问题修复
@@ -66,12 +70,12 @@
 
 ### 新增功能
 
-- 数据源新增 [Azure Cosmos DB](prerequisites/cloud-databases/azure-cosmos-db.md)，可做为源库同步全量数据，帮助实现云端数据快速流转
+- 数据源新增 [Azure Cosmos DB](../prerequisites/cloud-databases/azure-cosmos-db.md)，可做为源库同步全量数据，帮助实现云端数据快速流转
 
 ### 功能优化
 
-- 优化数据源连接方式，[SQL Server](prerequisites/on-prem-databases/sqlserver.md) 可支持 SSL 连接，可帮助进一步提升数据安全性
-- 优化[数据复制任务](user-guide/data-pipeline/copy-data/create-task.md)的目标节点字段类型调整方式，在手动输入的基础上，支持直接选择目标数据库常用类型
+- 优化数据源连接方式，[SQL Server](../prerequisites/on-prem-databases/sqlserver.md) 可支持 SSL 连接，可帮助进一步提升数据安全性
+- 优化[数据复制任务](../user-guide/data-pipeline/copy-data/create-task.md)的目标节点字段类型调整方式，在手动输入的基础上，支持直接选择目标数据库常用类型
 - 针对任务的源节点设置，支持设置增量阶段每批读取的条数，更好适应增量同步的性能需求
 
 ### 问题修复
@@ -86,8 +90,8 @@
 ### 新增功能
 
 - 支持对 [Oracle 数据源](../prerequisites/on-prem-databases/oracle#advanced)加载表注释，可在配置数据源时的高级选项中开启，方便通过注释信息快速识别表的业务含义
-- 支持在 [Windows 平台中部署 Tapdata](quick-start/install/install-tapdata-enterprise/install-on-windows.md)，进一步丰富部署平台支持度
-- 任务运行[监控页面](user-guide/data-pipeline/copy-data/monitor-task.md)中，支持基于事件大小的维度来查看 QPS 信息
+- 支持在 [Windows 平台中部署 Tapdata](../quick-start/install/install-tapdata-enterprise/install-on-windows.md)，进一步丰富部署平台支持度
+- 任务运行[监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)中，支持基于事件大小的维度来查看 QPS 信息
 
 ### 问题修复
 
@@ -101,8 +105,8 @@
 
 ### 功能优化
 
-- 优化[数据源连接](prerequisites/README.md)方式，MySQL、PostgreSQL、Kafka、TiDB、MariaDB 等数据源支持 SSL 连接，可帮助进一步提升数据安全性
-- 优化[数据校验](user-guide/data-pipeline/verify-data.md)的过滤功能，支持通过 SQL 实现自定义查询和聚合查询过滤
+- 优化[数据源连接](../prerequisites/README.md)方式，MySQL、PostgreSQL、Kafka、TiDB、MariaDB 等数据源支持 SSL 连接，可帮助进一步提升数据安全性
+- 优化[数据校验](../user-guide/data-pipeline/verify-data.md)的过滤功能，支持通过 SQL 实现自定义查询和聚合查询过滤
 - 优化界面交互逻辑
 - 针对非主键的更新条件，创建唯一索引来解决数据重复的问题
 
@@ -125,7 +129,7 @@
 ### 功能优化
 
 - 优化已发布的 [API 权限范围的设置](user-guide/data-service/create-api-service#settings)，无需取消发布即可调整权限
-- [配置数据复制任务](user-guide/data-pipeline/copy-data/create-task.md)时，可通过**可选择的表范围**下拉框快速过滤出有主键或无主键表，其中有主键表包含具有唯一索引的无主键表
+- [配置数据复制任务](../user-guide/data-pipeline/copy-data/create-task.md)时，可通过**可选择的表范围**下拉框快速过滤出有主键或无主键表，其中有主键表包含具有唯一索引的无主键表
 
 ### 问题修复
 
@@ -140,14 +144,14 @@
 
 ### 新增功能
 
-- 新增[构建物化视图](user-guide/data-pipeline/data-development/create-materialized-view.md)功能，可快速构建实时数据模型
-- 新增支持对[共享挖掘](user-guide/advanced-settings/share-mining.md)任务的源节点进行配置调整，支持设置是否启用**增量多线程写入**和**补充更新数据的完整字段**
+- 新增[构建物化视图](../user-guide/data-pipeline/data-development/create-materialized-view.md)功能，可快速构建实时数据模型
+- 新增支持对[共享挖掘](../user-guide/advanced-settings/share-mining.md)任务的源节点进行配置调整，支持设置是否启用**增量多线程写入**和**补充更新数据的完整字段**
 - Kafka 数据源新增支持[设置副本数和分区数](../pipeline-tutorial/oracle-to-kafka#advanced_settings)
 - MongoDB 间同步时，新增对 `$unset` 操作的支持
 
 ### 功能优化
 
-- [数据校验](user-guide/data-pipeline/verify-data.md)功能字段过滤体验优化
+- [数据校验](../user-guide/data-pipeline/verify-data.md)功能字段过滤体验优化
 - 支持在数据复制/数据转换配置的页面顶部，通过搜索节点来快速定位目标节点
 
 
@@ -161,13 +165,13 @@
 
 ### 功能优化
 
-* 优化[数据源错误码](troubleshooting/error-code.md)，覆盖更多场景并提供解决方案
+* 优化[数据源错误码](../troubleshooting/error-code.md)，覆盖更多场景并提供解决方案
 
 
 
 ## V3.5.1
 
-- [创建角色](user-guide/manage-system/manage-role.md)时，支持对功能和数据权限的精细化权限授予            
+- [创建角色](../user-guide/manage-system/manage-role.md)时，支持对功能和数据权限的精细化权限授予            
 
 ### 功能优化
 
@@ -185,7 +189,7 @@
 * 当任务配置为全量+增量时，支持开启[定期调度任务功能](user-guide/data-pipeline/copy-data/create-task#task-attr)，到达该时间点后任务会自动停止、重置并重新运行
 * 对于[增删字段节点](user-guide/data-pipeline/data-development/process-node#add-and-del-cols)，支持字段顺序调整功能
 * 任务设置新增[动态调整内存功能](user-guide/data-pipeline/copy-data/create-task#task-attr)（默认开启），全量同步阶段，识别内存占用量并自动调整内存队列，可有效避免内存资源短缺场景下的内存溢出
-* 数据面板更名为[实时数据中心](user-guide/real-time-data-hub/README.md)，同时增加使用和任务创建引导
+* 数据面板更名为[实时数据中心](../user-guide/real-time-data-hub/README.md)，同时增加使用和任务创建引导
 * 新增目标写入策略，当更新事件不存在时，支持将更新事件写入到本地日志
 
 ### 功能优化
@@ -206,17 +210,17 @@
 
 ### 新增功能
 
-- [Kafka 数据源](prerequisites/mq-and-middleware/kafka.md)支持自定义消息体格式
+- [Kafka 数据源](../prerequisites/mq-and-middleware/kafka.md)支持自定义消息体格式
 - 新增 [API 接口文档导出功能](user-guide/data-service/create-api-service#release330-export-api)，帮助团队快速建立并完善 API 使用资料
 - 共享挖掘功能支持[配置任务告警](user-guide/advanced-settings/share-mining#release330-alert)，可通过系统通知消息或邮件来发出告警信息，帮助更好地掌握任务的运行状态
-- [数据校验功能](user-guide/data-pipeline/verify-data.md)，支持设置数据过滤，从而实现只对特定条件的数据进行校验，可帮助您减少校验规模，提升效率
+- [数据校验功能](../user-guide/data-pipeline/verify-data.md)，支持设置数据过滤，从而实现只对特定条件的数据进行校验，可帮助您减少校验规模，提升效率
 - 在数据服务平台模式下，向平台缓存层拖拽数据表生成任务时，支持[设置任务的同步类型为全量或增量](user-guide/real-time-data-hub/daas-mode/create-daas-task/#release330-task)
 
 ### 功能优化
 
-- [支持滚动升级](production-admin/operation.md#release330-upgrade)，相较于停机升级方式，可进一步降低业务影响
-- [共享挖掘任务](user-guide/advanced-settings/share-mining.md)报错后，关联任务增加告警提示
-- 在[行过滤器处理节点](user-guide/data-pipeline/data-development/process-node.md)中，使用 DATE 类型过滤时，增加使用示例
+- [支持滚动升级](../production-admin/operation.md#release330-upgrade)，相较于停机升级方式，可进一步降低业务影响
+- [共享挖掘任务](../user-guide/advanced-settings/share-mining.md)报错后，关联任务增加告警提示
+- 在[行过滤器处理节点](../user-guide/data-pipeline/data-development/process-node.md)中，使用 DATE 类型过滤时，增加使用示例
 - [时间运算节点](user-guide/data-pipeline/data-development/process-node#date-calculation)，支持展示调整的字段
 - 全量完成剩余时间算法优化
 - 字段处理节点支持针对配置的一键复制和粘贴
@@ -275,15 +279,15 @@
 
 ### 新增功能
 
-- [数据面板功能](user-guide/real-time-data-hub/etl-mode)新增支持表级溯源能力，可通过表详情查看数据血缘关系
+- [数据面板功能](../user-guide/real-time-data-hub/etl-mode)新增支持表级溯源能力，可通过表详情查看数据血缘关系
 - [配置数据复制任务](./user-guide/data-pipeline/copy-data/create-task#310-table-model)时，支持在处理节点中查看表模型
-- 支持基于 Doris 数据源[发布 API 数据服务](user-guide/data-service/create-api-service.md)
-- [集群管理](user-guide/manage-system/manage-cluster.md)页面，支持下载线程资源监控和数据源使用情况数据
+- 支持基于 Doris 数据源[发布 API 数据服务](../user-guide/data-service/create-api-service.md)
+- [集群管理](../user-guide/manage-system/manage-cluster.md)页面，支持下载线程资源监控和数据源使用情况数据
 
 ### 功能优化
 
-- 共享挖掘任务管理优化，支持[启停单个表的挖掘任务](user-guide/advanced-settings/share-mining.md#release310-share-mining)
-- [共享缓存](user-guide/advanced-settings/share-cache.md)、[函数](user-guide/advanced-settings/manage-function.md)、[API 数据服务](user-guide/data-service/create-api-service)支持导入导出功能
+- 共享挖掘任务管理优化，支持[启停单个表的挖掘任务](../user-guide/advanced-settings/share-mining.md#release310-share-mining)
+- [共享缓存](../user-guide/advanced-settings/share-cache.md)、[函数](../user-guide/advanced-settings/manage-function.md)、[API 数据服务](user-guide/data-service/create-api-service)支持导入导出功能
 - [数据校验](user-guide/data-pipeline/verify-data)支持配置告警信息的规则和通知方式
 - [数据校验](user-guide/data-pipeline/verify-data)自动填充表逻辑优化
 - 前端增加[标准 JS](../appendix/standard-js) 和[增强 JS](../appendix/enhanced-js) 的功能区分说明
@@ -316,16 +320,16 @@
 
 ### 新增功能
 
-- [集成 GraphQL 能力](user-guide/data-service/query-via-graphql.md)，丰富 API 查询方式。
-- 为 API [增加应用分类能力](user-guide/data-service/create-api-service.md)，便于基于业务分类。
+- [集成 GraphQL 能力](../user-guide/data-service/query-via-graphql.md)，丰富 API 查询方式。
+- 为 API [增加应用分类能力](../user-guide/data-service/create-api-service.md)，便于基于业务分类。
 - 新增[时间运算处理节点](user-guide/data-pipeline/data-development/process-node#time-calculation)，可灵活应对源目库时区不一致场景。
-- 新增[全量分片能力](best-practice/full-breakpoint-resumption.md)，目前仅支持 MongoDB。
+- 新增[全量分片能力](../best-practice/full-breakpoint-resumption.md)，目前仅支持 MongoDB。
 
 ### 功能优化
 
-- [共享缓存功能](user-guide/advanced-settings/share-mining.md)优化，提供可观测页面，便于观察挖掘进度和故障排查。
+- [共享缓存功能](../user-guide/advanced-settings/share-mining.md)优化，提供可观测页面，便于观察挖掘进度和故障排查。
 - [全量自定义查询功能](user-guide/data-pipeline/data-development/create-task#full-sql-query)，放开仅能使用 JS 节点的限制，也支持添加其它处理节点，节点模型直接使用源表的模型。
-- 增删字段、类型修改、字段改名等字段[处理节点](user-guide/data-pipeline/data-development/process-node.md)，支持字段搜索功能。
+- 增删字段、类型修改、字段改名等字段[处理节点](../user-guide/data-pipeline/data-development/process-node.md)，支持字段搜索功能。
 - 连接配置中 Schema 加载频率配置文案调整。
 - **表编辑节点**的表名修改逻辑优化，去掉应用按钮，配置直接生效。
 - 管理进程（frontend）启动时，与同步治理进程一样，增加了 heapDump、stackTrace 相关参数。

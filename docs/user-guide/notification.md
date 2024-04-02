@@ -1,5 +1,15 @@
 # 通知中心
 
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
+
+:::tip
+
+如您的产品为 Tapdata Cloud，通知消息及其配置入口在页面右上角，支持设置通知规则和告警接收人。
+
+:::
+
 
 
 ## 系统通知

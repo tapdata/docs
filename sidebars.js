@@ -462,7 +462,15 @@ const sidebars = {
         ]
     },
   'support',
-  'release-notes',
+    {
+     type: 'category',
+     label: '更新日志',
+     link: {type: 'doc', id: 'release-notes/README'},
+     items: [
+            'release-notes/release-notes-cloud',
+            'release-notes/release-notes-on-prem'
+        ]
+    },
  ]
 };
 

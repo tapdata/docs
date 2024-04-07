@@ -10,7 +10,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 ## 创建自定义节点
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../log-in.md)。
 
 2. 在左侧导航栏，选择**数据管道** > **自定义节点**。
 
@@ -54,7 +54,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 **具体流程：**
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../log-in.md)。
 
 2. 在左侧导航栏，选择**数据管道** > **自定义节点**。
 
@@ -108,7 +108,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 **具体流程：**
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../log-in.md)。
 
 2. 在左侧导航栏，选择**数据管道** > **自定义节点**。
 

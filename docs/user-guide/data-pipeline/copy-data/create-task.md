@@ -11,7 +11,7 @@
   为构建高效可靠的数据复制任务，推荐在开始配置任务前，推荐阅读<a href="../../../best-practice/data-sync">数据同步最佳实践</a>。
 </details>
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../../log-in.md)。
 
 2. 在左侧导航栏，选择**数据管道** > **数据复制**。
 
@@ -21,7 +21,7 @@
 
 5. 将源节点和目标节点连接起来。
 
-   ![拖拽数据源至画布](../../../images//drag_database_cn.gif)
+   ![拖拽数据源至画布](../../../images/drag_database_cn.gif)
 
    :::tip
    除添加数据源节点外，您还可以添加处理节点以完成更复杂的任务，如过滤数据、增减字段等，更多介绍，见[处理节点](#process-node)。
@@ -29,7 +29,7 @@
 
 6. 单击源端节点（本例为 MySQL），根据下述说明完成右侧面板的<span id="310-table-model">参数配置</span>。
 
-   ![源端设置](../../../images//data_source_settings.png)
+   ![源端设置](../../../images/data_source_settings.png)
 
    * **基础设置**
      * **节点名称**：默认为连接名称，您也可以设置一个具有业务意义的名称。
@@ -47,7 +47,7 @@
    
 7. 单击目标端节点（本例为 MongoDB），根据下述说明完成右侧面板的参数配置。
 
-   ![节点基础设置](../../../images//data_copy_normal_setting.png)
+   ![节点基础设置](../../../images/data_copy_normal_setting.png)
 
    * **基础设置**
      * **节点名称**：默认为连接名称，您也可以设置一个具有业务意义的名称。 
@@ -88,7 +88,7 @@
 
 9. 单击**保存**或**启动**按钮完成创建，为保障任务的正常运行，Tapdata 会基于节点配置和数据源特征进行预检查，同时打印日志信息。
 
-   ![任务预检查](../../../images//task_pre_check.png)
+   ![任务预检查](../../../images/task_pre_check.png)
 
    :::tip
 
@@ -98,7 +98,7 @@
 
 10. 启动成功后会自动跳转至任务监控页面，您可以查看任务的 QPS、延迟、任务事件等信息。
 
-    ![任务监控](../../../images//copy_data_monitor_cn.png)
+    ![任务监控](../../../images/copy_data_monitor_cn.png)
 
 
 

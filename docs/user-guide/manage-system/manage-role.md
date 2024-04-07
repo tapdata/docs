@@ -8,7 +8,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 ## 操作步骤
 
-1. 以系统管理员身份登录 Tapdata 平台。
+1. 以系统管理员身份[登录 Tapdata 平台](../log-in.md)。
 
 2. 在左侧导航栏，选择**系统管理** > **角色管理**。
 

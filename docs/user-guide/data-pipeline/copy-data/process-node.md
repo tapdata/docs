@@ -12,7 +12,7 @@ Tapdata 支持在数据复制任务中添加处理节点，满足对数据进行
 
 除此以外，您也可以直接为单个目标表填写新表名。
 
-![](../../../images//copy_data_1.png)
+![](../../../images/copy_data_1.png)
 
 
 
@@ -27,7 +27,7 @@ Tapdata 支持在数据复制任务中添加处理节点，满足对数据进行
 
 此外，您还可以选中目标字段单击**屏蔽**，被屏蔽的字段将不会传递至下个节点。
 
-![](../../../images//data_copy_column_modification.png)
+![](../../../images/data_copy_column_modification.png)
 
 
 
@@ -35,17 +35,17 @@ Tapdata 支持在数据复制任务中添加处理节点，满足对数据进行
 
 支持通过 JavaScript 脚本或者 Java 代码对数据进行处理，编写代码时需先检测是否与源节点及目标节点相连，若未相连则无法编辑代码。  
 
-![](../../../images//copy_data_4.png)
+![](../../../images/copy_data_4.png)
 
 脚本写完后可节点下方试运行按钮查看输入输出以便进行调试
 
-![](../../../images//copy_data_5.png)
+![](../../../images/copy_data_5.png)
 
 ### JS 节点的模型声明
 
 针对JS节点，Tapdata会通过采样数据试运行的方式来推演节点的模型信息。如果发现推演出的模型不准确，丢失或者多了某些字段，可以通过模型声明显式的来定义模型里的字段信息。
 
-![](../../../images//create_task_5.png)
+![](../../../images/create_task_5.png)
 
 在复制任务中，模型声明支持的方法如下所示
 
@@ -103,7 +103,7 @@ TapModelDeclare.removeIndex(schemaApplyResultList, 'indexName')
 
 **操作流程**：
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../../log-in.md)。
 
 2. 在左侧导航栏，选择**数据管道** > **数据复制**。
 
@@ -115,7 +115,7 @@ TapModelDeclare.removeIndex(schemaApplyResultList, 'indexName')
 
 6. 单击**时间运算**节点，在右侧的面板中选择要运算的时间类型和运算方式。
 
-   ![时间运算](../../../images//time_calculation.png)
+   ![时间运算](../../../images/time_calculation.png)
 
    * **节点名称**：默认为连接名称，您也可以设置一个具有业务意义的名称。
    * **请选择您要运算的时间类型**：Tapdata 会自动检测支持的时间类型并展现，您需要基于业务需求选择，此外，您还可以单击**模型**标签页，查看时间类型与列名的对应关系。
@@ -156,7 +156,7 @@ SELECT birthdate FROM customer_new_time WHERE id="00027f47eef64717aa8ffb8115f1e6
 
 具体操作：将**类型过滤**节点添加到画布并与数据源连接起来，单击该节点并选择要过滤的字段类型（暂不支持指定精度）：
 
-![类型过滤](../../../images//data_type_filter.png)
+![类型过滤](../../../images/data_type_filter.png)
 
 :::tip
 

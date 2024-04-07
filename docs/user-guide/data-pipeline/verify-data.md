@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 ## 操作步骤
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../log-in.md)。
 
 2. 在左侧导航栏，选择**数据管道** > **数据校验**。
 

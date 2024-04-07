@@ -14,7 +14,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 ## 操作步骤
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../log-in.md)。
 
 2. 在左侧导航栏，选择**数据服务** > **服务管理**。
 

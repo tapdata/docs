@@ -24,7 +24,7 @@ Agent 是数据同步、数据异构、数据开发场景中的关键程序，�
 
 通常数据流转应用场景对时效性有较高的要求，因此，可将 Agent 部署在数据库所属的本地网络中降低网络延迟。
 
-更多介绍，见[部署 Tapdata Agent](../quick-start/install-agent)。
+更多介绍，见[部署 Tapdata Agent](../quick-start/install/install-tapdata-agent)。
 
 ### 需要部署多少个 Agent？
 
@@ -56,7 +56,7 @@ Agent 是数据同步、数据异构、数据开发场景中的关键程序，�
 
 ### Agent 一直是部署状态检测中？
 
-您需要根据提示完成 Agent 的部署，部署完成后 Agent 状态会自动转换为**运行中**。如果超过 5 分钟还未显示正常，则可能部署失败，您可以联系我们[获取技术支持](support.md)，并提供日志协助定位问题。
+您需要根据提示完成 Agent 的部署，部署完成后 Agent 状态会自动转换为**运行中**。如果超过 5 分钟还未显示正常，则可能部署失败，您可以联系我们[获取技术支持](../support.md)，并提供日志协助定位问题。
 
 
 
@@ -64,7 +64,7 @@ Agent 是数据同步、数据异构、数据开发场景中的关键程序，�
 
 ### Agent 启动报错：“start timout”？
 
-如果遇到启动 Agent 失败，您可以查看安装目录中的日志文件 **logs/tapdata-agent.log**，判断是否为网络问题，您也可以联系我们[获取技术支持](support.md)，并提供日志协助定位问题。
+如果遇到启动 Agent 失败，您可以查看安装目录中的日志文件 **logs/tapdata-agent.log**，判断是否为网络问题，您也可以联系我们[获取技术支持](../support.md)，并提供日志协助定位问题。
 
 ### 输入 token 后报错：“ java.lang.IllegalStateException: Cannot load configuration class: io.tapdata.Application”？
 
@@ -82,7 +82,7 @@ Agent 是数据同步、数据异构、数据开发场景中的关键程序，�
 
 ### Agent 意外停止了，如何启动 Agent ？
 
-登录部署了 Agent 的设备并进入 Agent 安装目录，执行 `./tapdata start` 命令，如果无法启动可以联系我们[获取技术支持](support.md)，并提供日志协助定位问题。
+登录部署了 Agent 的设备并进入 Agent 安装目录，执行 `./tapdata start` 命令，如果无法启动可以联系我们[获取技术支持](../support.md)，并提供日志协助定位问题。
 
 ### Agent 正常运行，界面上却显示为离线？
 

@@ -10,7 +10,7 @@ GraphQL 提供了一种查询语言，支持以声明方式从服务器请求数
 
 ## 操作步骤
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../log-in.md)。
 
 2. 获取 GraphQL 查询请求地址。
 

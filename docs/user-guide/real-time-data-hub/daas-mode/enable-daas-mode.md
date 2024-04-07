@@ -39,7 +39,7 @@ import TabItem from '@theme/TabItem';
 
 Tapdata 默认处于数据集成模式，接下来，我们将介绍如何开启数据服务平台模式。
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../../log-in.md)。
 
 2. 在左侧导航栏，单击**实时数据中心**。
 
@@ -83,7 +83,7 @@ Tapdata 默认处于数据集成模式，接下来，我们将介绍如何开启
 
 <TabItem value="Tapdata On-Prem">
 
-1. 准备一个 MongoDB 数据库（4.0 及以上），然后在 Tapdata 平台上[连接该数据库](./../../prerequisites/on-prem-databases/mongodb.md)，将其作为平台缓存层/平台加工层的存储引擎，相关部署介绍，见[部署案例](../../../production-admin/install-replica-mongodb)或 [MongoDB 官网](https://www.mongodb.com/docs/manual/administration/install-on-linux/)。
+1. 准备一个 MongoDB 数据库（4.0 及以上），然后在 Tapdata 平台上[连接该数据库](../../../prerequisites/on-prem-databases/mongodb.md)，将其作为平台缓存层/平台加工层的存储引擎，相关部署介绍，见[部署案例](../../../production-admin/install-replica-mongodb)或 [MongoDB 官网](https://www.mongodb.com/docs/manual/administration/install-on-linux/)。
 
    :::tip
 

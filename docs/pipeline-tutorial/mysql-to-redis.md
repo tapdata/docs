@@ -19,7 +19,7 @@ Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓�
 
 ## 操作步骤
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../user-guide/log-in.md)。
 
 2. 在左侧导航栏，选择**数据管道** > **数据转换**。
 

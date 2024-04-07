@@ -32,7 +32,7 @@ slug: /
 
   基于数据分层治理的理念，可将分散在不同业务系统的数据同步至统一的平台缓存层，最大限度地降低数据提取对业务的影响，为后续的数据加工和业务提供基础数据，从而构建一致、实时的数据平台，连通数据孤岛。
 
-* **[无代码的操作页面](user-guide/cloud-workshop.md)**
+* **[无代码的操作页面](user-guide/workshop.md)**
 
   告别 SQL 与代码，只需简单的鼠标拖拉拽即可快速完成重命名表等转换规则，此外还支持基于 Javascript 的 UDF 功能。
 
@@ -55,7 +55,7 @@ Tapdata 提供 **Cloud** 和 **On-Prem** 两种部署方式，满足您多样化
 
 ## 推荐阅读
 
-- [产品架构与工作原理](../introduction/architecture.md)
+- [产品架构与工作原理](introduction/architecture.md)
 - [功能特性](introduction/features.md)
 - [应用场景](introduction/use-cases.md)
 - [支持的数据库](introduction/supported-databases.md)

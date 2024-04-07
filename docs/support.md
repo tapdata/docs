@@ -1,6 +1,6 @@
 # 获取支持
 
-除查阅 Tapdata 文档外，您还可以通过用户社区和工单系统来获取 Tapdata 产品的原厂技术支持。
+除查阅 Tapdata 文档外，您还可以通过在线客服、用户社区和工单系统来获取 Tapdata 产品的原厂技术支持。
 
 
 
@@ -8,7 +8,12 @@
 
 在获取支持前，您需要[注册 Tapdata Cloud](https://auth.tapdata.net/)并前往用户中心绑定邮箱，使用该邮箱来登录用户社区和工单系统。
 
-![绑定邮箱](images/bind_email_cn.png)
+
+## 在线客服
+
+登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)后，单击页面左下角的 **Connect**，系统将为您提供常见问题及其解决方案功能参考，如未解决可转接人工服务或通过聊天窗口拨打语音电话。
+
+![在线客服](../images/online_chat_support.png)
 
 
 
@@ -31,8 +36,8 @@
 为帮助我们更快识别和响应问题，请参考下述说明填写工单信息。
 
 * **部门**：选择 **Tapdata 技术支持**。
-* **产品名称**：选择 **Tapdata 企业版**。
-* **版本号**：可在 Tapdata 平台右上角查看，具体操作，见[查看系统版本](user-guide/other-settings/check-version.md)。
+* **产品名称**：选择 **Tapdata 企业版** 或 **Tapdata 云版**。
+* **版本号**：对于企业版（On-Prem 版），可在 Tapdata 平台右上角查看，具体操作，见[查看系统版本](user-guide/other-settings/check-version.md)。
 * **支持分类**：根据您的问题类型选择，如选择**用户使用问题**。
 * **主题**：一句话描述您所遇到的问题，便于识别定位。
 * **描述**：填写您遇到的问题，推荐包含下述信息：

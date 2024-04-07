@@ -46,7 +46,7 @@ QQ 邮箱作为一种普及度较高的通信工具，使用非常广泛，它�
 
 ## 步骤二：配置 SMTP 服务
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../user-guide/log-in.md)。
 
 2. 在页面右上角单击![](../images/setting.png)图标，然后选择**系统设置**。
 

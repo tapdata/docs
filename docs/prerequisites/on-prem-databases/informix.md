@@ -6,7 +6,7 @@ Informix 是 IBM 信息管理部门中的产品系列，专注于多个关系型
 
 ## 连接 Informix
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
 
 2. 在左侧导航栏中，点击 **连接**。
 

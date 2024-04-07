@@ -21,9 +21,9 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-* 支持设置[默认告警接收人](user-guide/cloud-workshop.md#notifications)，可自定义告警接收邮箱地址（支持多个）
-* [DDL 同步设置](user-guide/handle-schema-change.md)，新增**遇到 DDL 操作时任务报错停止**和**自动忽略 DDL**选项，可适应不同业务场景需求
-* 新增[时间字段注入](../user-guide/data-pipeline/data-development/cloud-process-node.md#time_injection)节点，可在数据同步过程中为流经的数据增加一个自定义的时间戳字段，从而提供更灵活的方式来获取源库的增量变更
+* 支持设置[默认告警接收人](../user-guide/workshop.md#notifications)，可自定义告警接收邮箱地址（支持多个）
+* [DDL 同步设置](../best-practice/handle-schema-change.md)，新增**遇到 DDL 操作时任务报错停止**和**自动忽略 DDL**选项，可适应不同业务场景需求
+* 新增[时间字段注入](../user-guide/data-pipeline/data-development/process-node.md#time_injection)节点，可在数据同步过程中为流经的数据增加一个自定义的时间戳字段，从而提供更灵活的方式来获取源库的增量变更
 
 #### 功能优化
 
@@ -35,19 +35,19 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- 新增支持[共享挖掘](advanced-settings/share-mining.md)功能，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力。
+- 新增支持[共享挖掘](../user-guide/advanced-settings/share-mining.md)功能，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力。
 - 共享挖掘功能支持使用 RocksDB 作为[本地外存](../user-guide/advanced-settings/manage-external-storage.md)，可实现对增量日志的存储扩展。
 
 #### 功能优化
 
 - 优化 [Google 云市场](https://console.cloud.google.com/marketplace/product/tapdata-public/detail)用户的新手引导流程
-- [任务监控页面](user-guide/copy-data/monitor-task.md)，增加增量阶段的时间过滤选项，便于快速观察增量阶段的 QPS
+- [任务监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)，增加增量阶段的时间过滤选项，便于快速观察增量阶段的 QPS
 - 针对可能对数据库造成影响的关键操作（例如过滤源表数据），增加相关提示信息
 - 优化实例订阅到期后的退订逻辑
 
 #### 问题修复
 
-* 修复[主从合并节点](../user-guide/data-pipeline/data-development/cloud-process-node.md#pri-sec-merged)，当主表与子表关键条件变化时，最终数据与预期不符合的问题
+* 修复[主从合并节点](../user-guide/data-pipeline/data-development/process-node.md#pri-sec-merged)，当主表与子表关键条件变化时，最终数据与预期不符合的问题
 
 ### 2024-01-12
 
@@ -98,7 +98,7 @@ import TabItem from '@theme/TabItem';
 #### 功能优化
 
 - 优化数据源连接方式，[SQL Server](../prerequisites/on-prem-databases/sqlserver.md) 可支持 SSL 连接，可帮助进一步提升数据安全性
-- 优化[数据复制任务](user-guide/data-pipeline/copy-data/cloud-create-task.md)的目标节点字段类型调整方式，在手动输入的基础上，支持直接选择目标数据库常用类型
+- 优化[数据复制任务](../user-guide/data-pipeline/copy-data/create-task.md)的目标节点字段类型调整方式，在手动输入的基础上，支持直接选择目标数据库常用类型
 - 针对任务的源节点设置，支持设置增量阶段每批读取的条数，更好适应增量同步的性能需求
 
 #### 问题修复
@@ -110,8 +110,8 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-* 支持对 [Oracle 数据源](trash/prerequisites/on-prem-databases/oracle#advanced)加载表注释，可在配置数据源时的高级选项中开启，方便通过注释信息快速识别表的业务含义
-* 任务运行[监控页面](user-guide/copy-data/monitor-task.md)中，支持基于事件大小的维度来查看 QPS 信息
+* 支持对 [Oracle 数据源](../prerequisites/on-prem-databases/oracle#advanced)加载表注释，可在配置数据源时的高级选项中开启，方便通过注释信息快速识别表的业务含义
+* 任务运行[监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)中，支持基于事件大小的维度来查看 QPS 信息
 
 #### 功能优化
 
@@ -141,13 +141,13 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- MongoDB 作为目标时，新增支持[自动创建分片集合](user-guide/data-pipeline/copy-data/cloud-create-task.md#advanced-settings)
-- 新增 [Unwind 处理节点](../user-guide/data-pipeline/data-development/cloud-process-node.md#Unwind)，可帮助您高效地将数组中的每个元素“展开”，将每个元素转换为独立的数据行
+- MongoDB 作为目标时，新增支持[自动创建分片集合](../user-guide/data-pipeline/copy-data/create-task.md#advanced-settings)
+- 新增 [Unwind 处理节点](../user-guide/data-pipeline/data-development/process-node.md#Unwind)，可帮助您高效地将数组中的每个元素“展开”，将每个元素转换为独立的数据行
 - 配置任务时，新增支持禁用节点能力，鼠标悬停至节点上即可选择该功能，可帮助减少数据在处理过程中的流转成本
 
 #### 功能优化
 
-- [配置数据复制任务](user-guide/data-pipeline/copy-data/cloud-create-task.md)时，可通过**可选择的表范围**下拉框快速过滤出有主键或无主键表，其中有主键表包含具有唯一索引的无主键表
+- [配置数据复制任务](../user-guide/data-pipeline/copy-data/create-task.md)时，可通过**可选择的表范围**下拉框快速过滤出有主键或无主键表，其中有主键表包含具有唯一索引的无主键表
 - 新用户的功能介绍引导流程中，新增 Demo 数据源，帮助您快速完成教程，构建起第一个数据流转任务
 - 优化引擎界面操作按钮前端显示效果
 
@@ -160,7 +160,7 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- 新增[构建物化视图](trash/data-development/create-materialized-view.md)功能，可快速构建实时数据模型
+- 新增[构建物化视图](../user-guide/data-pipeline/data-development/create-materialized-view.md)功能，可快速构建实时数据模型
 - Kafka 数据源新增支持设置副本数和分区数
 - MongoDB 间同步时，新增对 `$unset` 操作的支持
 
@@ -179,12 +179,12 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-* 新增 [Python 处理节点](../user-guide/data-pipeline/data-development/cloud-process-node.md#python)，支持通过 Python 脚本来自定义数据处理逻辑，相较于 JS 处理节点性能有一定提升
+* 新增 [Python 处理节点](../user-guide/data-pipeline/data-development/process-node.md#python)，支持通过 Python 脚本来自定义数据处理逻辑，相较于 JS 处理节点性能有一定提升
 * 新增**联系我们**入口，方便用户遇到问题时快速联系技术支持
 
 #### 功能优化
 
-* 优化[数据源错误码](error-code-solution.md)，覆盖更多场景并提供解决方案
+* 优化[数据源错误码](../troubleshooting/error-code.md)，覆盖更多场景并提供解决方案
 * 配置邮件告警通知时，增加绑定邮箱地址的页面引导
 * 优化任务数达到上限时的提醒，当达到任务数上限时提供快升级的入口
 
@@ -192,7 +192,7 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- 新增[主从合并节点](../user-guide/data-pipeline/data-development/cloud-process-node.md#pri-sec-merged)，可实现宽表的快速构建和实时更新，帮助您更好地实现数据分析
+- 新增[主从合并节点](../user-guide/data-pipeline/data-development/process-node.md#pri-sec-merged)，可实现宽表的快速构建和实时更新，帮助您更好地实现数据分析
 
 #### 功能优化
 
@@ -207,13 +207,13 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- 新增 [Dashboard 页面](user-guide/cloud-workshop.md)，可直观获取页面任务与 Agent 状态概览
-- [Agent 购买](billing/purchase.md)的支付方式新增公对公支付
-- 新增[实时数据中心](real-time-data-hub.md)的介绍和部署引导
+- 新增 [Dashboard 页面](../user-guide/workshop.md)，可直观获取页面任务与 Agent 状态概览
+- [Agent 购买](../billing/purchase.md)的支付方式新增公对公支付
+- 新增[实时数据中心](../user-guide/real-time-data-hub)的介绍和部署引导
 
 #### 功能优化
 
-- 整合数据复制和数据面板入口，可在数据复制页面的右上角[切换至数据面板视图](user-guide/data-pipeline/copy-data/create-task-via-drag.md)
+- 整合数据复制和数据面板入口，可在数据复制页面的右上角切换至数据面板视图
 - 优化计算引擎（Agent）的创建和支付流程
 - 新增 MongoDB 数据源的错误码实现
 - 优化运行监控页面左侧的增量延迟指标，以任务的增量延迟告警阈值作为 Y 轴数据来源
@@ -231,9 +231,9 @@ import TabItem from '@theme/TabItem';
 #### 新增功能
 
 - 页面顶部新增专业版订阅入口，专业版处理性能更高，可基于任务数自由购买规格
-- 当任务配置为全量+增量时，支持开启[定期调度任务功能](user-guide/data-pipeline/copy-data/cloud-create-task.md#task-attr)，到达该时间点后任务会自动停止、重置并重新运行
-- 对于[增删字段节点](../user-guide/data-pipeline/data-development/cloud-process-node.md#add-and-del-cols)，支持字段顺序调整功能
-- 任务设置新增[动态调整内存功能](user-guide/data-pipeline/copy-data/cloud-create-task.md#task-attr)（默认开启），全量同步阶段，识别内存占用量并自动调整内存队列，可有效避免内存资源短缺场景下的内存溢出
+- 当任务配置为全量+增量时，支持开启[定期调度任务功能](../user-guide/data-pipeline/copy-data/create-task.md#task-attr)，到达该时间点后任务会自动停止、重置并重新运行
+- 对于[增删字段节点](../user-guide/data-pipeline/data-development/process-node.md#add-and-del-cols)，支持字段顺序调整功能
+- 任务设置新增[动态调整内存功能](../user-guide/data-pipeline/copy-data/create-task.md#task-attr)（默认开启），全量同步阶段，识别内存占用量并自动调整内存队列，可有效避免内存资源短缺场景下的内存溢出
 
 #### 问题修复
 
@@ -243,8 +243,8 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- 对于[全托管实例](billing/purchase#hosted-mode)，增加自身出口 IP 地址的显示，便于数据源添加白名单
-- 对于[全托管实例](billing/purchase#hosted-mode)，增加存储的到期时间，所属的云厂商和地区等信息
+- 对于[全托管实例](../billing/purchase#hosted-mode)，增加自身出口 IP 地址的显示，便于数据源添加白名单
+- 对于[全托管实例](../billing/purchase#hosted-mode)，增加存储的到期时间，所属的云厂商和地区等信息
 
 #### 功能优化
 
@@ -259,14 +259,14 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- 支持购买[全托管模式](billing/purchase)的 Agent 实例，由 Tapdata Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，可实现一键交付使用，免去部署和运维精力，专注业务本身。
+- 支持购买[全托管模式](../billing/purchase)的 Agent 实例，由 Tapdata Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，可实现一键交付使用，免去部署和运维精力，专注业务本身。
 
 ### 20230421
 
 #### 新增功能
 
-- 新增[数据面板](https://docs.tapdata.net/cloud/user-guide/data-console/)，支持数据集成模式和数据服务平台模式，可满足不同的数据治理需求。
-- 支持[计费功能](billing/billing-overview)，可选购半托管实例，按照订阅 Agent 实例的规格和数量收费，满足业务对性能的需求。
+- 新增[数据面板](../user-guide/real-time-data-hub)，支持数据集成模式和数据服务平台模式，可满足不同的数据治理需求。
+- 支持[计费功能](../billing/billing-overview)，可选购半托管实例，按照订阅 Agent 实例的规格和数量收费，满足业务对性能的需求。
 
 #### 功能优化
 

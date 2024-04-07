@@ -18,7 +18,7 @@ Coding 是腾讯云旗下的一站式 DevOps 研发管理平台，围绕 DevOps 
 
 ## 连接 Coding
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
 2. 在左侧导航栏，单击**连接管理**。
 3. 单击页面右侧的**创建**。
 4. 在弹出的对话框中，搜索并选择 **Coding**。

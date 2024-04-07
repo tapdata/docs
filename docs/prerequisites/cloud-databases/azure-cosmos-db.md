@@ -26,7 +26,7 @@ Azure Cosmos DB 仅支持全量数据同步，暂不支持增量数据同步。
 
 ## 操作步骤
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
 
 2. 在左侧导航栏，单击**连接管理**。
 

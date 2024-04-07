@@ -1,4 +1,4 @@
-# 计算巢服务上安装
+# 计算巢服务上安装 Agent
 
 在传统云端部署模式下，企业用户需要自行完成购买 ECS、准备环境、安全策略配置等复杂流程，由于高度依赖人工经验，交付周期和质量都难以保障。为进一步提升部署便捷性和安全性，Tapdata 通过[阿里云计算巢](https://help.aliyun.com/document_detail/290066.html)帮助用户在安全的网络环境中一键部署 Tapdata Agent，实现了部署、交付、运维全服务生命周期的效率升级，极大降低使用门槛。
 
@@ -8,9 +8,9 @@
 
 ## 操作步骤
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../../../user-guide/log-in.md)。
 
-2. 基于业务需求创建所需规格的 Agent，具体操作，见[订阅实例](../../billing/purchase.md)。
+2. 基于业务需求创建所需规格的 Agent，具体操作，见[订阅实例](../../../billing/purchase.md)。
 
 3. 订阅完成后，在跳转到的部署页面选择**阿里云计算巢**，然后选择部署方式来创建云服务器 ECS：
 
@@ -51,9 +51,9 @@
 
 ## 下一步
 
-[连接数据库](../connect-database.md)
+[连接数据库](../../connect-database.md)
 
 ## 推荐阅读
 
-* [管理 Agent](../../user-guide/manage-agent.md)
-* [安装与管理 Agent 常见问题](../../faq/agent-installation.md)
+* [管理 Agent](../../../user-guide/manage-agent.md)
+* [安装与管理 Agent 常见问题](../../../faq/agent-installation.md)

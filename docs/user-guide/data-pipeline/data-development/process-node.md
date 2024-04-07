@@ -20,7 +20,7 @@ Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足�
 
 **表达式示例**：如下图所示，筛选出生日期晚于 **1991-01-01** 的用户，即为 `record.birthdate >= '1990-01-01'`。
 
-![Row Filter 节点设置](../../../images//data_dev_row_filter_setting.png)
+![Row Filter 节点设置](../../../images/data_dev_row_filter_setting.png)
 
 
 
@@ -28,7 +28,7 @@ Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足�
 
 增删字段主要用来增加新的字段或者删除已有字段，将**增删字段**节点添加到画布并与数据源连接起来，即可根据需求增加或删除字段，此外，您还可以调整字段的顺序位置。如果字段被删除，该字段不会传递至下个节点。
 
-![增删字段](../../../images//add_and_delete_columns.png)
+![增删字段](../../../images/add_and_delete_columns.png)
 
 
 
@@ -41,7 +41,7 @@ Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足�
 * 蛇形命名转驼峰命名：例如从 `CLAIM_ID` 转换为 `claimId`
 * 驼峰命名转蛇形命名：例如从 `claimId` 转换为  `CLAIM_ID` 
 
-![字段改名](../../../images//rename_column.png)
+![字段改名](../../../images/rename_column.png)
 
 
 
@@ -53,7 +53,7 @@ Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足�
 
 在画布上添加字段计算节点，然后点击【配置】，找到要计算的字段，点击配置计算规则。
 
-![](../../../images//process_node_5.png)
+![](../../../images/process_node_5.png)
 
 在打开的字段赋值页面，可以为当前字段添加计算规则，支持使用 JS 能力。
 
@@ -63,7 +63,7 @@ Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足�
 
 类型修改节点可以用来调整字段的数据类型，具体操作如下图所示。
 
-![修改字段类型](../../../images//data_dev_column_type_setting.png)
+![修改字段类型](../../../images/data_dev_column_type_setting.png)
 
 
 
@@ -73,7 +73,7 @@ Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足�
 
 具体操作：将**类型过滤**节点添加到画布并与数据源连接起来，单击该节点并选择要过滤的字段类型（暂不支持指定精度）：
 
-![类型过滤](../../../images//data_type_filter.png)
+![类型过滤](../../../images/data_type_filter.png)
 
 :::tip
 
@@ -95,7 +95,7 @@ Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足�
 
 **操作流程**：
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../../log-in.md)。
 
 2. 在左侧导航栏，选择**数据管道** > **数据转换**。
 
@@ -103,19 +103,19 @@ Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足�
 
 4. 在页面左侧依次拖入要执行主从合并的数据源至右侧画布，然后从页面左下角拖入**主从合并**节点，最后将它们按照下述顺序连接起来。
 
-   ![添加主从合并节点](../../../images//primary_secondary_merge_node_conn1.png)
+   ![添加主从合并节点](../../../images/primary_secondary_merge_node_conn1.png)
 
 5. 依次单击要执行追加合并的数据源，分别在页面右侧的面板中选择待合并的表（**lineorder** / **date**）。
 
 6. 单击**主从合并**节点，将 date 表拖拽进入 lineoder 表中来表示它们的从属关系，随后即可查看到合并后的表结构信息。
 
-   ![设置主从合并节点](../../../images//primary_secondary_merge_node_setting.png)
+   ![设置主从合并节点](../../../images/primary_secondary_merge_node_setting.png)
 
 7. 从页面左侧拖入一个 MongoDB 或 MongoDB Atalas 数据源用于存放追加合并后的表，然后将**追加合并**节点连接至该数据源。
 
 8. 单击用于存放追加合并表的数据源，在页面右侧的面板中选择目标表或输入表名由 Tapdata 自动创建，完成设置后选择更新条件自动。
 
-   ![追加合并示例](../../../images//primary_secondary_merge_node_conn2.png)
+   ![追加合并示例](../../../images/primary_secondary_merge_node_conn2.png)
 
 9. 确认配置无误后，单击**启动**。
 
@@ -139,13 +139,13 @@ Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足�
 
 希望对 2 个表结构相同的 **student1** 和 **student2** 表执行追加合并操作（Union），然后将结果存在 **student_merge** 表中，表结构及数据如下：
 
-![追加合并数据示例](../../../images//table_union_demo.png)
+![追加合并数据示例](../../../images/table_union_demo.png)
 
 
 
 **操作流程**：
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../../log-in.md)。
 
 2. 在左侧导航栏，选择**数据管道** > **数据转换**。
 
@@ -153,7 +153,7 @@ Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足�
 
 4. 在页面左侧依次拖入要执行追加合并的数据源至右侧画布，然后从页面左下角拖入**追加合并**节点，最后将它们连接起来。
 
-   ![添加追加合并节点](../../../images//add_union_node.png)
+   ![添加追加合并节点](../../../images/add_union_node.png)
 
 5. 依次单击要执行追加合并的数据源，在页面右侧的面板中选择待合并的表（**student1** / **student2**）。
 
@@ -169,13 +169,13 @@ Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足�
 
    :::
 
-   ![追加合并示例](../../../images//union_table_demo.png)
+   ![追加合并示例](../../../images/union_table_demo.png)
 
 9. 确认配置无误后，单击**启动**。
 
    操作完成后，您可以在当前页面观察任务的执行情况，如 QPS、延迟、任务时间统计等信息，示例如下：
 
-   ![union_table_result](../../../images//union_table_result.png)
+   ![union_table_result](../../../images/union_table_result.png)
 
 
 
@@ -212,7 +212,7 @@ mysql> select * from student_merge;
 
 **操作流程**：
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../../log-in.md)。
 
 2. 在左侧导航栏，选择**数据管道** > **数据转换**。
 
@@ -224,7 +224,7 @@ mysql> select * from student_merge;
 
 6. 单击**时间运算**节点，在右侧的面板中选择要运算的时间类型和运算方式。
 
-   ![时间运算](../../../images//time_calculation.png)
+   ![时间运算](../../../images/time_calculation.png)
 
    * **节点名称**：默认为连接名称，您也可以设置一个具有业务意义的名称。
    * **请选择您要运算的时间类型**：Tapdata 会自动检测支持的时间类型并展现，您需要基于业务需求选择，此外，您还可以单击**模型**标签页，查看时间类型与列名的对应关系。
@@ -273,7 +273,7 @@ SELECT birthdate FROM customer_new_time WHERE id="00027f47eef64717aa8ffb8115f1e6
 
 :::
 
-![](../../../images//process_node_8.png)
+![](../../../images/process_node_8.png)
 
 
 
@@ -300,19 +300,19 @@ SELECT birthdate FROM customer_new_time WHERE id="00027f47eef64717aa8ffb8115f1e6
 
 MySQL表1的结构和数据：lyl_join1
 
-![](../../../images//process_node_9.png)
+![](../../../images/process_node_9.png)
 
 
 
 MySQL表2的结构和数据：lyl_join2
 
-![](../../../images//process_node_10.png)
+![](../../../images/process_node_10.png)
 
 
 
 任务启动后同步到Oracle表的结构和数据：lyl_join
 
-![](../../../images//process_node_11.png)
+![](../../../images/process_node_11.png)
 
 
 
@@ -320,7 +320,7 @@ MySQL表2的结构和数据：lyl_join2
 
 如果目前内置的处理节点不能完全满足您的特定需求，或您想对数据进行更加细致和个性化的处理，您也可以添加 Python 处理节点，编写自定义的 Python 脚本来管理数据的处理/加工逻辑，这些经过处理的数据将继续被同步到目标库中，帮助您实现数据链路自由定制，更好地掌控数据的流动和加工。
 
-![Python 节点](../../../images//python_node.png)
+![Python 节点](../../../images/python_node.png)
 
 Python 处理节点支持的版本为 Python 2.7.3，支持的第三方包来源为：requests-2.2.1、PyYAML-3.13、setuptools-44.0.0，上图中的`context` 内容说明如下：
 
@@ -394,7 +394,7 @@ return record
 
 假设有一个名为 `customer_json` 的集合，记录了每位顾客购买的商品列表。为了更细致地分析每个商品的销售情况，我们希望将商品列表从数组格式转换为单独的数据行。这样，每个商品都会有一个与之对应的顾客购买记录。为实现这一需求，我们可以在配置数据转换任务时，增加 Unwind 节点来实现，节点配置示例如下。
 
-![unwind_node](../../../images//unwind_node.png)
+![unwind_node](../../../images/unwind_node.png)
 
 :::tip
 
@@ -409,19 +409,19 @@ return record
 
 在实时数据集成和同步过程中，捕获并同步增量数据是确保数据一致性和时效性的关键。当数据源不具备完整的 CDC 支持或受限于权限控制无法获取增量日志，我们可以为数据同步链路增加**时间字段注入**节点来为读取到的源表数据自动增加时间戳信息，随后在目标表的配置中选择使用此字段（类型为 **DATETIME**）进行轮询，来实现增量数据的获取，从而进一步提升实时数据获取方式的灵活性。
 
-![时间字段注入](../../../images//time_field.png)
+![时间字段注入](../../../images/time_field.png)
 
 ## <span id="js-process">JS 处理</span>
 
 支持通过 JavaScript 脚本或者 Java 代码对数据进行处理，编写代码时需先检测是否与源节点及目标节点相连，若未相连则无法编辑代码。  
 
-![](../../../images//process_node_12.png)
+![](../../../images/process_node_12.png)
 
 ### 模型声明
 
 针对JS节点，Tapdata会通过采样数据试运行的方式来推演节点的模型信息。如果发现推演出的模型不准确，丢失或者多了某些字段，可以通过模型声明显式的来定义模型里的字段信息。
 
-![](../../../images//process_node_13.png)
+![](../../../images/process_node_13.png)
 
 在开发任务中，模型声明支持的方法如下所示：
 

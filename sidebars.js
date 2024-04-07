@@ -35,6 +35,18 @@ const sidebars = {
     },
     {
      type: 'category',
+     label: '产品计费',
+     link: {type: 'doc', id: 'billing/README'},
+     items: [
+             'billing/billing-overview',
+             'billing/purchase',
+             'billing/renew-subscribe',
+             'billing/expiration',
+             'billing/refund',
+       ]
+    },
+    {
+     type: 'category',
      label: '快速入门',
      link: {type: 'doc', id: 'quick-start/README'},
      items: [
@@ -220,69 +232,9 @@ const sidebars = {
      label: '用户指南',
      link: {type: 'doc', id: 'user-guide/README'},
      items: [
+             'user-guide/log-in',
              'user-guide/workshop',
-             /*{
-              type: 'category',
-              label: '连接数据源',
-              link: {type: 'doc', id: 'user-guide/connect-database/README'},
-              items:[
-                    {
-                     type: 'category',
-                     label: '认证数据源',
-                     link: {type: 'doc', id: 'user-guide/connect-database/certified/README'},
-                     items:[
-                            'user-guide/connect-database/certified/connect-clickhouse',
-                            'user-guide/connect-database/certified/connect-kafka',
-                            'user-guide/connect-database/certified/connect-mysql',
-                            'user-guide/connect-database/certified/connect-mongodb',
-                            'user-guide/connect-database/certified/connect-oracle',
-                            'user-guide/connect-database/certified/connect-postgresql',
-                            'user-guide/connect-database/certified/connect-sqlserver',
-                           ]
-                    },
-                    {
-                     type: 'category',
-                     label: 'Beta 数据源',
-                     link: {type: 'doc', id: 'user-guide/connect-database/beta/README'},
-                     items:[
-                            'user-guide/connect-database/beta/custom-connection',
-                            'user-guide/connect-database/beta/connect-csv',
-                            'user-guide/connect-database/beta/connect-db2',
-                            'user-guide/connect-database/beta/connect-doris',
-                            'user-guide/connect-database/beta/connect-dummy',
-                            'user-guide/connect-database/beta/connect-excel',
-                            'user-guide/connect-database/beta/connect-github',
-                            'user-guide/connect-database/beta/connetc-http-receiver',
-                            'user-guide/connect-database/beta/connect-larktask',
-                            'user-guide/connect-database/beta/connect-lark-im',
-                            'user-guide/connect-database/beta/connect-mariadb',
-                            'user-guide/connect-database/beta/connect-mongodb-atlas',
-                            'user-guide/connect-database/beta/connect-redis',
-                            'user-guide/connect-database/beta/connect-salesforce',
-                            'user-guide/connect-database/beta/connect-selectdb',
-                            'user-guide/connect-database/beta/connect-tdengine',
-                            'user-guide/connect-database/beta/connect-tidb',
-                           ]
-                    },
-                    {
-                     type: 'category',
-                     label: 'Alpha 数据源',
-                     link: {type: 'doc', id: 'user-guide/connect-database/alpha/README'},
-                     items:[
-                            'user-guide/connect-database/alpha/connect-activemq',
-                            'user-guide/connect-database/alpha/connect-elasticsearch',
-                            'user-guide/connect-database/alpha/connect-gbase-8a',
-                            'user-guide/connect-database/alpha/connect-gbase-8s', 
-                            'user-guide/connect-database/alpha/connect-json',
-                            'user-guide/connect-database/alpha/connect-oceanbase',
-                            'user-guide/connect-database/alpha/connect-opengauss',
-                            'user-guide/connect-database/alpha/connect-rabbitmq',
-                            'user-guide/connect-database/alpha/connect-rocketmq',
-                            'user-guide/connect-database/alpha/connect-xml',
-                           ]
-                    },
-                    ]
-             },*/
+             'user-guide/manage-agent',
              'user-guide/manage-connection',
              {
               type: 'category',
@@ -449,6 +401,8 @@ const sidebars = {
      items: [
             'faq/use-product',
             'faq/data-pipeline',
+            'faq/agent-installation',
+            'faq/data-security',
         ]
     },
     {
@@ -461,7 +415,6 @@ const sidebars = {
             'appendix/benchmark'
         ]
     },
-  'support',
     {
      type: 'category',
      label: '更新日志',
@@ -471,6 +424,7 @@ const sidebars = {
             'release-notes/release-notes-on-prem'
         ]
     },
+  'support',
  ]
 };
 

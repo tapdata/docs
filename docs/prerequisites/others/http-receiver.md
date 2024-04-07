@@ -6,7 +6,7 @@
 
 ## 连接 HTTP Receiver
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
 
 2. 在左侧导航栏，单击**连接管理**。
 

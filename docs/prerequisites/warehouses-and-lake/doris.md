@@ -79,7 +79,7 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
 
 ## 连接 Doris
 
-1. 登录 Tapdata 平台。
+1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
 
 2. 在左侧导航栏，单击**连接管理**。
 

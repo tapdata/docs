@@ -53,9 +53,9 @@ Tapdata 会自动基于选择源表来推演目标表结构等信息，此处可
 
 ## Tapdata 是否支持将表发布 API 服务？
 
-import Content from '../reuse-content/_enterprise-features.md';
+import Content1 from '../reuse-content/_enterprise-features.md';
 
-<Content />
+<Content1 />
 
 支持（单表），您可以将加工后的表[发布为 API 服务](../user-guide/data-service/create-api-service.md)，以便其他应用程序可以轻松地访问和获取数据。
 
@@ -63,9 +63,9 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ## 如何基于多表的复杂查询发布为 API 服务？
 
-import Content from '../reuse-content/_enterprise-features.md';
+import Content2 from '../reuse-content/_enterprise-features.md';
 
-<Content />
+<Content2 />
 
 面对基于多表的复杂查询场景，业界常见的解决方案有物化视图和即席查询（Ad-hoc Query）：
 

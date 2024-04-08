@@ -16,16 +16,16 @@ Tapdata 支持丰富的数据库，包括常见关系型、非关系型以及队
 
 ## Tapdata 如何收费？
 
-Tapdata 采用订阅制收费，按照您部署的服务器节点数量，按年支付相应的订阅费用。
+Tapdata 提供 **Cloud** 和 **On-Prem** 两种部署方式，满足您多样化的需求：
 
-
+| 产品            | 适用场景                                                     | 定价说明                                                     |
+| --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Tapdata Cloud   | 注册 [Tapdata Cloud](https://cloud.tapdata.net/console/v3/) 账号即可使用，适合需要快速部署、低前期投资场景，帮助您更好地专注于业务发展而非基础设施管理。 | 免费提供 1 个 SMALL 规格的 Agent 实例（半托管模式），您也可以按照业务需求，订阅更高规格或更多数量的 Agent 实例。更多介绍，见[产品计费](billing/billing-overview.md)。 |
+| Tapdata On-Prem | 支持部署至本地数据中心，适合对数据敏感性或网络隔离有严格要求的场景，如金融机构、政府部门或希望完全控制数据的大型企业。 | 基于部署的服务器节点数量，按年支付相应的订阅费用。在正式采购前，您可以点击“[申请试用](https://tapdata.net/tapdata-on-prem/demo.html)‍”‍，Tapdata 工程师会联系您并协助您试用。更多介绍，见[产品定价](https://tapdata.net/pricing.html)。 |
 
 ## 连接测试失败怎么办？
 
 创建数据连接时，需要参照页面右侧连接配置帮助，按指南完成相关参数的设定，您也可以参考[准备工作](../prerequisites)完成设置。
-
-
-
 
 
 ## 配置复制任务时，目标节点推演结果异常？
@@ -53,11 +53,19 @@ Tapdata 会自动基于选择源表来推演目标表结构等信息，此处可
 
 ## Tapdata 是否支持将表发布 API 服务？
 
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
+
 支持（单表），您可以将加工后的表[发布为 API 服务](../user-guide/data-service/create-api-service.md)，以便其他应用程序可以轻松地访问和获取数据。
 
 
 
 ## 如何基于多表的复杂查询发布为 API 服务？
+
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
 
 面对基于多表的复杂查询场景，业界常见的解决方案有物化视图和即席查询（Ad-hoc Query）：
 

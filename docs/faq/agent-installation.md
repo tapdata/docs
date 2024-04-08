@@ -1,5 +1,9 @@
 # 部署与管理 Agent
 
+import Content from '../reuse-content/_cloud-features.md';
+
+<Content />
+
 本文列举 Tapdata Agent 在部署和运行遇到的常见问题。
 
 ## 部署 Agent

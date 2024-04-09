@@ -1,4 +1,4 @@
-# 部署高可用 Tapdata On-Prem
+# 部署高可用 Tapdata Enterprise
 
 import Content2 from '../reuse-content/_enterprise-features.md';
 

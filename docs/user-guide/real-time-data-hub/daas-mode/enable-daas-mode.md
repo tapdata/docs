@@ -81,7 +81,7 @@ Tapdata 默认处于数据集成模式，接下来，我们将介绍如何开启
 
 </TabItem>
 
-<TabItem value="Tapdata On-Prem">
+<TabItem value="Tapdata Enterprise">
 
 1. 准备一个 MongoDB 数据库（4.0 及以上），然后在 Tapdata 平台上[连接该数据库](../../../prerequisites/on-prem-databases/mongodb.md)，将其作为平台缓存层/平台加工层的存储引擎，相关部署介绍，见[部署案例](../../../production-admin/install-replica-mongodb)或 [MongoDB 官网](https://www.mongodb.com/docs/manual/administration/install-on-linux/)。
 

@@ -1,10 +1,10 @@
-# Tapdata On-Prem 更新日志
+# Tapdata Enterprise 更新日志
 
 import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
-本文介绍 Tapdata On-Prem V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/release-notes)。
+本文介绍 Tapdata Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/release-notes)。
 
 ## 3.5.12
 

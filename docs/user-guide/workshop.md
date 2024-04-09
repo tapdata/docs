@@ -20,7 +20,7 @@
 
 
 
-## Tapdata On-Prem
+## Tapdata Enterprise
 
 当前系统所有任务的数量统计、状态统计和运行数据统计，并可以查看当前系统集群的运行状态。
 

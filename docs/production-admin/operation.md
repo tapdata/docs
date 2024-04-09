@@ -4,7 +4,7 @@ import Content2 from '../reuse-content/_enterprise-features.md';
 
 <Content2 />
 
-本文列出 Tapdata On-Prem 运维相关的常见问题。
+本文列出 Tapdata Enterprise 运维相关的常见问题。
 
 ## 如何启停服务？
 

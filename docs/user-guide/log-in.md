@@ -10,8 +10,8 @@ Tapdata Cloud 适合需要快速部署、低前期投资场景，帮助您更好
 
 
 
-## Tapdata On-Prem
+## Tapdata Enterprise
 
-Tapdata On-Prem 支持部署至本地数据中心，适合对数据敏感性或网络隔离有严格要求的场景。Tapdata On-Prem 平台由管理员[完成部署](../quick-start/install/install-tapdata-enterprise/README.md)操作，基于业务需求为企业内的用户[分配账号](../user-guide/manage-system/manage-user.md)并[授予权限](../user-guide/manage-system/manage-role.md)，普通用户需联系管理员获得登录地址和账号。
+Tapdata Enterprise 支持部署至本地数据中心，适合对数据敏感性或网络隔离有严格要求的场景。Tapdata Enterprise 平台由管理员[完成部署](../quick-start/install/install-tapdata-enterprise/README.md)操作，基于业务需求为企业内的用户[分配账号](../user-guide/manage-system/manage-user.md)并[授予权限](../user-guide/manage-system/manage-role.md)，普通用户需联系管理员获得登录地址和账号。
 
-![登录 Tapdata On-Prem](../images/login-on-prem.png)
+![登录 Tapdata Enterprise](../images/login-on-prem.png)

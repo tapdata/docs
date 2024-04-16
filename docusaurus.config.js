@@ -203,8 +203,12 @@ const config = {
     }),
 
   scripts: [
+    {
+      src: 'https://hm.baidu.com/hm.js?2a8961eabe42165bedcb48eb99150206',
+      async: true,
+    },
     '/js/iframe.js',
-    '/js/replaceIcons.js'
+    '/js/replaceIcons.js',
   ]
 };
 

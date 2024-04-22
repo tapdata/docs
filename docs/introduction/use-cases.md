@@ -1,4 +1,7 @@
 # 应用场景
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 Tapdata 是新一代的实时数据平台，通过把企业核心数据实时集中到中央化数据平台的方式并通过 API 或者反向同步方式，为下游的交互式应用、微服务或交互式分析提供实时数据。
 

@@ -1,4 +1,7 @@
 # SQL Server
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 SQL Server 数据库是 Microsoft 开发设计的一个关系数据库智能管理系统（RDBMS）。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 SQL Server 数据源，后续可将其作为源或目标库来构建数据管道。
 

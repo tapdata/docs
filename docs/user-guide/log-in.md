@@ -1,4 +1,8 @@
 # 登录 Tapdata 平台
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
+
 
 Tapdata 提供了界面化操作平台，方便您通过简单的拖拽即可完成数据管道的编排与设置，在使用前，您需要根据选用的产品系列，跟随下述文档指引登录至 Tapdata 平台。
 

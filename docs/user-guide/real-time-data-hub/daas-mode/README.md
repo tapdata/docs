@@ -1,6 +1,7 @@
-# 数据服务平台模式（Beta）
+# 数据服务平台模式
+import Content from '../../../reuse-content/_all-features.md';
 
-
+<Content />
 
 import DocCardList from '@theme/DocCardList';
 

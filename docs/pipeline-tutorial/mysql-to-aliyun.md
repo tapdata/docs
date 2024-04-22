@@ -1,4 +1,7 @@
 # MySQL 实时同步至阿里云
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 随着云计算的发展和普及，越来越多的企业希望将其业务从本地机房迁移到云端，以享受云计算的优势，如运维成本低、弹性灵活等。对于拥有本地 MySQL 数据库的企业而言，数据库迁移是迁移到云端的关键一步。
 

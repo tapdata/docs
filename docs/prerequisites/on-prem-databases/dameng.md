@@ -1,4 +1,7 @@
 # Dameng（达梦）
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 达梦数据库管理系统（DM）是新一代大型通用关系型数据库，全面支持 SQL 标准和主流编程语言接口/开发框架。行列融合存储技术，在兼顾 OLAP 和 OLTP 的同时，满足 HTAP 混合应用场景。
 

@@ -1,6 +1,9 @@
 # 为转换任务添加处理节点
+import Content from '../../../reuse-content/_all-features.md';
 
-Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足对数据进行过滤、字段调整等需求。
+<Content />
+
+Tapdata 支持在数据复制/开发任务中添加处理节点，满足对数据进行过滤、字段调整等需求。
 
 ## 行过滤器
 

@@ -1,4 +1,7 @@
 # Oracle 实时同步到 Kakfa
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 在大数据时代，越来越多的企业需要将传统的关系型数据库中的数据实时同步到大数据处理平台，以支持实时数据处理、数据湖构建、数据仓库替代等场景。而 Oracle 作为一款广泛应用于企业级应用的关系型数据库，其数据同步到大数据平台的需求也日益增加。
 

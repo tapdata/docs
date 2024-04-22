@@ -1,4 +1,7 @@
 # 标准 JS 内置函数
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 标准 JS 节点只能对数据记录进行处理和运算，如需使用所有的系统内置函数，实现外部调用（如网络、数据库等），可使用[增强 JS 节点](enhanced-js.md)。
 

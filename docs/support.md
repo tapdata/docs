@@ -1,4 +1,7 @@
 # 获取支持
+import Content from './reuse-content/_all-features.md';
+
+<Content />
 
 除查阅 Tapdata 文档外，您还可以通过在线客服、用户社区和工单系统来获取 Tapdata 产品的原厂技术支持。
 

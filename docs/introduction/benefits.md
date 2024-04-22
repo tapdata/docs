@@ -1,4 +1,7 @@
 # 产品优势
+import Content1 from '../reuse-content/_all-features.md';
+
+<Content1 />
 
 Tapdata 支持丰富的数据源间的数据流转能力，为您提供了数据复制、数据转换、数据服务等多种核心功能，相对于传统数据迁移/同步工具，Tapdata 可为您提供功能丰富、简单易用、安全可靠的数据流转服务，极大提升数据开发效率。
 

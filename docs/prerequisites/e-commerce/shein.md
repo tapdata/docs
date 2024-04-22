@@ -1,4 +1,7 @@
 # Shein
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 ## 使用须知
 

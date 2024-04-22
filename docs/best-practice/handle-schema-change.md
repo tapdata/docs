@@ -1,4 +1,7 @@
 # 处理 DDL 变更
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 在使用 Tapdata 进行数据迁移和同步的过程中，了解数据源的表结构变更操作（如 DDL 操作）对数据流转的影响至关重要。Tapdata 致力于无缝处理大多数 DDL 变更，您需要了解表结构变更（如增减列）对数据同步流程的潜在影响，避免影响业务正常运行。
 

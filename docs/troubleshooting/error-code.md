@@ -1,4 +1,7 @@
 # 任务错误码及解决方案
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 如果遇到任务异常，您可以通过任务的[监控页面](../user-guide/data-pipeline/data-development/monitor-task.md)的底部查看相关日志信息，针对常见的问题，Tapdata 将其固化为特定的错误码方便您查找，同时提供了错误原因及其解决方案。
 

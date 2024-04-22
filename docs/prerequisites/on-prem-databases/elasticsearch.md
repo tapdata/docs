@@ -1,4 +1,7 @@
 # Elasticsearch
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 Elasticsearch 是一个开放的分布式搜索和分析引擎，适用于包括文本、数字、地理空间、结构化和非结构化数据等在内的所有类型的数据。
 

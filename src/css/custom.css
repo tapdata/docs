@@ -86,7 +86,14 @@ pre {
   border-bottom: 1px dashed #fa9600;
 }
 
-/* Floating frame for term (Float words) e68a00*/
+/* Floating frame for term (Float words) */
+.tooltip {
+  display: inline-block;
+  width: auto;
+  margin: 0 10px;
+  position: relative;
+}
+
 .tooltip-content {
   background-color: #e68a00;
   color: white;
@@ -94,10 +101,14 @@ pre {
   border-radius: 5px;
   position: absolute;
   z-index: 1;
-  width: auto;
-  max-width: 550px;
+  width: 550px;
   display: none;
+  top: 100%;
+  left: 0%;
+  transform: translateX(0%);
+  box-sizing: border-box;
 }
+
 .tooltip:hover .tooltip-content {
   display: block;
 }

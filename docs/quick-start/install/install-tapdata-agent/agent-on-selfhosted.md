@@ -1,5 +1,9 @@
 # 在本地设备上安装 Agent
 
+import Content from '../../../reuse-content/_cloud-features.md';
+
+<Content />
+
 Tapdata Agent 是数据同步、数据异构、数据管道场景的重要组件，您可以将其部署在云端，由 Tapdata Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，免去部署和运维精力，专注业务本身；您也可以选购半托管实例，充分利用自有的硬件资源，获得更低的价格的同时，进一步提升安全性。
 
 <details>

@@ -1,4 +1,7 @@
 # 监控数据转换任务
+import Content from '../../../reuse-content/_all-features.md';
+
+<Content />
 
 数据转换任务启动后，页面将自动跳转至任务监控页面，通过该页面可观察任务运行细节，包括 Agent 状态、数据同步状态、任务进度、告警设置等信息。
 

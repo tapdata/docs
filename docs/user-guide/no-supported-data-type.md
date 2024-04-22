@@ -1,4 +1,7 @@
 # 数据类型支持说明
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 :::tip
 

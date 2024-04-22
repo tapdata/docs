@@ -1,4 +1,7 @@
 # 为复制任务添加处理节点
+import Content from '../../../reuse-content/_all-features.md';
+
+<Content />
 
 Tapdata 支持在数据复制任务中添加处理节点，满足对数据进行过滤、字段调整等需求。
 

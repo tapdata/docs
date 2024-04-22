@@ -1,4 +1,7 @@
 # 通过 QQ 邮箱发送告警信息
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
 
 Tapdata 支持通过 SMTP 协议来发送告警邮件，可以实现在用户常用的邮箱中及时接收到异常通知，从而帮助您及时感知运行异常，保障任务运行的稳定性和可靠性。
 

@@ -1,4 +1,7 @@
 # openGauss
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 openGauss 是一款支持 SQL 2003 标准语法，支持主备部署的高可用关系型数据库。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 CSV 数据源，后续可将其作为源或目标库来构建数据管道。
 

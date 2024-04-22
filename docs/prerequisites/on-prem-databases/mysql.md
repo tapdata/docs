@@ -1,4 +1,7 @@
 # MySQL
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 MySQL 是应用最广泛的开源关系数据库，是许多网站、应用程序、商业产品使用的关系数据存储。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 MySQL 数据源，后续可将其作为源或目标库来构建数据管道。
 

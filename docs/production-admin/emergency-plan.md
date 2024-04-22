@@ -1,4 +1,7 @@
 # 系统维护与应急处理策略
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
 
 import Content2 from '../reuse-content/_enterprise-features.md';
 

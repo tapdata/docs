@@ -1,4 +1,7 @@
 # 性能测试
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
 
 本文档旨在详细介绍对 Tapdata 进行性能测试的方法和步骤。我们将探讨如何准确地评估 Tapdata 在不同条件下的数据处理能力、响应时间和系统稳定性，帮助您了解 Tapdata 在各种负载下的表现，从而更好地规划资源和优化配置。
 

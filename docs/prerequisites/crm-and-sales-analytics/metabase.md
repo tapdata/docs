@@ -1,4 +1,7 @@
 # Metabase
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 ### 1、填写连接名称（必填）
 

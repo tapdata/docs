@@ -1,4 +1,7 @@
 # 数据同步最佳实践
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 本指南旨在提供使用 Tapdata 进行数据同步时的最佳实践，我们将从数据源分析、任务配置和运行监控等方面具体介绍，帮助您构建高效、可靠的数据同步任务。
 

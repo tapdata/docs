@@ -1,4 +1,7 @@
 # 采集 Excel 数据至 MySQL
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 Excel 是使用广泛的数据统计和数据分析软件，Tapdata 支持读取本地、FTP、SFTP、SMB 或 S3FS 上的 Excel 文件，满足多样化的数据流转需求。
 

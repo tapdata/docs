@@ -1,5 +1,9 @@
 # Aliyun RDS for SQL Server
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 云数据库 RDS SQL Server 版是阿里云提供的一种稳定可靠、可弹性伸缩的在线数据库服务，拥有微软 SQL Server 正版授权许可，支持复杂SQL查询，广泛应用于新零售、医疗、房地产等行业。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 Aliyun RDS for SQL Server 数据源，后续可将其作为源或目标库来构建数据管道。
 
 

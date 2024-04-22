@@ -1,4 +1,7 @@
 # Alibaba 1688
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 阿里巴巴（1688）是全球企业间（B2B）电子商务的著名品牌，为数千万网商提供海量商机信息和便捷安全的在线交易市场。本文介绍如何将 Alibaba 1688 数据源连接至 Tapdata，实现数据流转。
 

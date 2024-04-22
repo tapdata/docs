@@ -1,4 +1,7 @@
 # Coding
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 Coding 是腾讯云旗下的一站式 DevOps 研发管理平台，围绕 DevOps 理念向广大开发者及企业研发团队提供代码托管、项目协同、测试管理、持续集成、制品库、持续部署、云原生应用管理 Orbit、团队知识库等系列工具产品。
 

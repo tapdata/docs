@@ -1,4 +1,7 @@
 # Informix
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 Informix 是 IBM 信息管理部门中的产品系列，专注于多个关系型数据库管理系统和多模型数据库产品。
 

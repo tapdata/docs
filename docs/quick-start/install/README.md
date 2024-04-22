@@ -1,4 +1,7 @@
 # 部署 Tapdata
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 Tapdata 提供 **Cloud** 和 **Enterprise** 两种部署方式，满足您多样化的需求：
 

@@ -1,4 +1,7 @@
 # 部署高可用 Tapdata Enterprise
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
 
 import Content2 from '../reuse-content/_enterprise-features.md';
 

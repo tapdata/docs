@@ -1,4 +1,7 @@
 # 增强 JS 内置函数（Beta）
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 增强 JS 节点（Beta）可使用所有的内置函数，实现外部调用（如网络、数据库等），如仅需对数据记录进行处理和运算，请使用[标准 JS 节点](standard-js.md)。
 

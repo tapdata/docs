@@ -1,4 +1,7 @@
 # 管理数据转换任务
+import Content from '../../../reuse-content/_all-features.md';
+
+<Content />
 
 任务创建完成后，您可以在任务列表中对任务进行监控和管理操作。
 

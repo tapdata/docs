@@ -1,4 +1,7 @@
 # 数据管道
+import Content1 from '../reuse-content/_all-features.md';
+
+<Content1 />
 
 本文列出在构建数据管道时，可能遇到的问题及相关解决方案，包含数据复制任务、数据转换任务、数据校验等功能模块。
 

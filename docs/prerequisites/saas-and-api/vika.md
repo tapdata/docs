@@ -1,4 +1,7 @@
 # Vika
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 ### 维格表限制
 

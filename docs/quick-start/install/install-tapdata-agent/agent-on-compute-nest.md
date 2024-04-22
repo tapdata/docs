@@ -1,5 +1,9 @@
 # 计算巢服务上安装 Agent
 
+import Content from '../../../reuse-content/_cloud-features.md';
+
+<Content />
+
 在传统云端部署模式下，企业用户需要自行完成购买 ECS、准备环境、安全策略配置等复杂流程，由于高度依赖人工经验，交付周期和质量都难以保障。为进一步提升部署便捷性和安全性，Tapdata 通过[阿里云计算巢](https://help.aliyun.com/document_detail/290066.html)帮助用户在安全的网络环境中一键部署 Tapdata Agent，实现了部署、交付、运维全服务生命周期的效率升级，极大降低使用门槛。
 
 ## 前提条件

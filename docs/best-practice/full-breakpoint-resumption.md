@@ -1,4 +1,7 @@
 # 通过全量断点续传保障海量数据迁移
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 面对海量数据的迁移场景，您可以借助 Tapdata 的全量断点续传功能，将数据分片并迁移，提高数据迁移的可靠性，保障迁移任务的成功运行。
 

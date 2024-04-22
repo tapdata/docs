@@ -1,4 +1,7 @@
 # MongoDB
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 MongoDB 是一个流行的、开源 NoSQL 数据库，以灵活/可扩展的方式存储和检索数据。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 MongoDB 数据源，后续可将其作为源或目标库来构建数据管道。
 

@@ -1,5 +1,9 @@
 # 单节点部署（Linux 平台）
 
+import Content from '../../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 本文介绍如何快速在本地的 Linux 平台上部署 Tapdata 服务。
 
 :::tip

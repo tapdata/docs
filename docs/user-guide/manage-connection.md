@@ -1,4 +1,7 @@
 # 管理连接
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 Tapdata 通过连接保存了各数据库的连接信息，方便您在创建数据复制/开发任务时直接引用，无需重复配置，提升运维便利性。本文介绍连接的常见运维操作。
 

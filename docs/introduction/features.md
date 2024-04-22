@@ -1,5 +1,9 @@
 # 功能特性
 
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
+
 本文介绍 Tapdata 的功能特性，帮助您快速了解其核心能力。
 
 ## 数据复制

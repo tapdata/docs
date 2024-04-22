@@ -1,8 +1,15 @@
 # 管理外存
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 为便于后续快速读取任务相关信息，Tapdata 会将任务的必要配置、共享缓存等信息存储至内部的 MongoDB 数据库中。为存储更多的数据（如缓存数据），您可以创建一个外部数据库来存储相关数据。
 
+:::tip
 
+如果您使用的是 Tapdata Enterprise，操作入口为**系统管理** > **外存管理**。
+
+:::
 
 ## 前提条件
 

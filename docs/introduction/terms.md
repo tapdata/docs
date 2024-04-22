@@ -1,4 +1,7 @@
 # 名词解释
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 本文介绍 Tapdata 常见的术语，帮助您快速理解产品和功能概念。
 

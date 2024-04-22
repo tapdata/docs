@@ -1,4 +1,7 @@
 # 连接数据库
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 完成[部署](install/README.md)后，您需要在 Tapdata 平台为数据库建立连接，完成操作后即可创建数据同步任务。
 

@@ -1,4 +1,7 @@
 # 故障排查
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 本章节将介绍 Tapdata 的故障排查相关参考资料：
 

@@ -1,4 +1,7 @@
 # MySQL 实时同步至 BigQuery
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 [BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) 是 Google Cloud 的全代管式 PB 级经济实惠的分析数据仓库，可让您近乎实时地分析大量数据。通过 Tapdata 可以将多种数据源实时同步至 BigQuery，轻松实现数据的流转，更好满足业务数据架构变化或大数据分析场景。
 

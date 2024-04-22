@@ -1,4 +1,7 @@
 # 产品特性/使用
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 本文列举使用 Tapdata 过程中的常见问题。
 

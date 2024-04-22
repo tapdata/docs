@@ -1,4 +1,7 @@
 # PostgreSQL
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 PostgreSQL是功能强大的开源对象关系数据库管理系统（ORDBMS）。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 PostgreSQL 数据源，后续可将其作为源或目标库来构建数据管道。
 

@@ -1,4 +1,7 @@
 # 单节点部署（Windows 平台）
+import Content from '../../../reuse-content/_enterprise-features.md';
+
+<Content />
 
 本文介绍如何快速在本地的 Windows 平台部署 Tapdata 服务。
 

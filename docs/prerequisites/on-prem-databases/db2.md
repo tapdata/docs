@@ -1,4 +1,7 @@
 # Db2
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 IBM Db2 是一种关系数据库，可为存储和管理结构化数据提供高性能、可扩展性和可靠性。Tapdata 支持将 Db2 作为源和目标库，帮助您快速构建数据链路。接下来，我们将介绍如何在 Tapdata 平台中连接 Db2 数据源。
 

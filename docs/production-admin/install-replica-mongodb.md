@@ -1,4 +1,7 @@
 # 部署 MongoDB 副本集
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 import Content2 from '../reuse-content/_enterprise-features.md';
 

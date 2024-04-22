@@ -1,4 +1,7 @@
 # Lark Approval
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 本文介绍如何添加 Lark Approval（飞书审批）数据源。
 

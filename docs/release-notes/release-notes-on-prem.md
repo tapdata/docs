@@ -6,6 +6,59 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 本文介绍 Tapdata Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/release-notes)。
 
+
+
+## 3.5.15
+
+### 新增功能
+
+* [数据复制任务](../user-guide/data-pipeline/copy-data/create-task.md)支持表级别的断点续传能力，任务重启时可以直接从未完成同步的表继续同步
+* 支持通过拖拽快速[设置任务/连接的标签](../user-guide/data-pipeline/copy-data/manage-task.md)
+* 支持 MySQL 主从架构，发生主从切换后，相关任务可继续正常同步数据
+
+### 问题修复
+
+* 修复阿里云 PolarDB MySQL 数据源，因不支持特定事件导致任务报错的问题
+* 修复全量任务同步完成，统计指标中显示统计进度不正确的问题
+
+## 3.5.14
+
+### 新增功能
+
+* 支持为同步治理服务（Agent）[指定标签](../user-guide/manage-system/manage-cluster.md)，后续可为任务指派包含特定标签的 Agent
+* 支持对 [TiDB 数据源](../prerequisites/on-prem-databases/tidb.md)的实时日志解析能力，可满足增量数据同步需求
+* 在 Oracle 全量同步至 MySQL 阶段，支持同步未使用函数的唯一索引和普通索引
+* 支持在启动任务时，选择跳过上一次运行时出现的错误
+
+### 功能优化
+
+* 优化数据同步任务场景下，源节点中的 [DDL 同步设置](../best-practice/handle-schema-change.md)，选择遇到 DDL 报错时可配置要忽略的 DDL 语句（基于正则表达式）
+* 优化数据校验能力，支持对包含处理节点的任务进行校验
+* 优化数据校验结果页展示，支持快速过滤一致和不一致的表
+
+### 问题修复
+
+* 修复 MongoDB 作为外存场景下，当存储 Key 为带 `.` 符号的 String，且 Value 是 Map 类型时，发生异常的问题
+* 修复对Kafka 数据源执行连接测试时，包含非 JSON 的主题会发生循环异常的问题
+* 修复 JS 节点在特定场景下，试运行报错的问题
+* 修复使用主从合并节点时，更改关联键值引发数据不正确的问题
+* 修复 RocksDB 作为缓存存储，可能引发任务报错的问题
+
+## 3.5.13
+
+### 新增功能
+
+* [配置数据校验任务](../user-guide/data-pipeline/verify-data.md)时，在对 MongoDB 的聚合查询场景下，可基于时间字段执行自定义过滤
+* 支持 MySQL/Oracle 同构数据源间同步的 [Hash 校验](../user-guide/data-pipeline/verify-data.md)
+
+### 问题修复
+
+* 修复了开启多线程同步场景下，DDL 操作无法正常同步的问题
+* 修复了 JS 节点打印日志时，偶发的文件句柄数未及时释放的问题
+* 修复了 MongoDB RM 文件导入异常的问题
+
+
+
 ## 3.5.12
 
 ### 新增功能
@@ -123,7 +176,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 - 新增支持 Hive3 作为目标
 - MongoDB 作为目标时，新增支持[自动创建分片集合](user-guide/data-pipeline/copy-data/create-task#advanced-settings)
-- 新增 [Unwind 处理节点](user-guide/data-pipeline/data-development/process-node#Unwind)，可帮助您高效地将数组中的每个元素“展开”，将每个元素转换为独立的数据行
+- 新增 [Unwind 处理节点](../user-guide/data-pipeline/data-development/process-node#Unwind)，可帮助您高效地将数组中的每个元素“展开”，将每个元素转换为独立的数据行
 - 配置任务时，新增支持禁用节点能力，鼠标悬停至节点上即可选择该功能，可帮助减少数据在处理过程中的流转成本
 
 ### 功能优化

@@ -212,7 +212,16 @@ const config = {
     },
     '/js/iframe.js',
     '/js/replaceIcons.js',
-  ]
+  ],
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'baidu-site-verification', 
+        content: 'codeva-tYI9V6QTSG'
+      },
+    },
+  ],
 };
 
 module.exports = config;

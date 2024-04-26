@@ -108,7 +108,6 @@ const config = {
     // SEO Configuration, this would become <meta name="keywords" content="cooking, blog"> in the generated HTML
       metadata: [
         {name: 'keywords', content: '一站式实时数据平台, Tapdata'},
-        {name: 'baidu-site-verification', content: 'codeva-tYI9V6QTSG'},
       ],
       navbar: {
         title: '首页',
@@ -212,7 +211,16 @@ const config = {
     },
     '/js/iframe.js',
     '/js/replaceIcons.js',
-  ]
+  ],
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'baidu-site-verification', 
+        content: 'codeva-tYI9V6QTSG'
+      },
+    },
+  ],
 };
 
 module.exports = config;

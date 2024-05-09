@@ -42,9 +42,9 @@ Tapdata Cloud 提供基础版（免费使用）、标准版和高级版，您可
 
 不用担心，Tapdata Cloud 提供图形化操作平台，仅需几分钟即可轻松上手，同时，我们还为您准备了丰富的教程帮助您快速实现数据流转需求：
 
-* [部署 Tapdata Agent](cloud/quick-start/install-agent)
+* [部署 Tapdata Agent](quick-start/install-agent)
 * [连接数据库](quick-start/connect-database.md)
-* [开始数据同步](cloud/quick-start/create-task)
+* [开始数据同步](quick-start/create-task)
 
 
 

@@ -119,16 +119,15 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'enterprise/what-is-tapdata-enterprise',
+            docId: 'what-is-tapdata',
             position: 'left',
-            label: 'Tapdata On-Prem',
+            label: 'Tapdata 帮助文档',
             },
           {
-            type: 'doc',
-            docId: 'cloud/what-is-tapdata-cloud',
-            position: 'left',
-            label: 'Tapdata Cloud',
-          },
+            href: 'https://cloud.tapdata.net/console/v3/',
+            position: 'right',
+            label: '登录 Tapdata Cloud',
+            },
           {
             type: 'docsVersionDropdown',
             position: 'right',

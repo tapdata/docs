@@ -66,13 +66,14 @@ const sidebars = {
                      },
                     {
                      type: 'category',
-                     label: 'Tapdata On-Prem',
+                     label: 'Tapdata Enterprise',
                      link: {type: 'doc', id: 'quick-start/install/install-tapdata-enterprise/README'},
                      items: [
                      'quick-start/install/install-tapdata-enterprise/install-tapdata-stand-alone',
                      'quick-start/install/install-tapdata-enterprise/install-on-windows',
                      ]
-                     }
+                     },
+                     'quick-start/install/install-tapdata-community'
              ]
             },
             'quick-start/connect-database',

@@ -7,8 +7,7 @@ Tapdata 支持丰富的数据源，具体如下：
 
 :::tip
 
-* 如需同步 DDL 操作，您需要开启 DDL 采集和 DDL 应用，更多介绍，见[DDL 同步说明](../best-practice/handle-schema-change.md)。
-* Tapdata Community 仅支持 ClickHouse、Kafka、MongoDB、MySQL、PostgreSQL 数据源。
+如需同步 DDL 操作，您需要开启 DDL 采集和 DDL 应用，更多介绍，见[DDL 同步说明](../best-practice/handle-schema-change.md)。
 
 :::
 
@@ -105,7 +104,6 @@ import TabItem from '@theme/TabItem';
   </tr>
 </tbody>
 </table>
-
 
 
 ## Beta 数据源

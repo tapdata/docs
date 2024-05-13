@@ -273,6 +273,7 @@ const sidebars = {
                      link: {type: 'doc', id: 'user-guide/data-pipeline/copy-data/README'},
                      items:[
                             'user-guide/data-pipeline/copy-data/create-task',
+                            'user-guide/data-pipeline/copy-data/manage-task',
                             'user-guide/data-pipeline/copy-data/process-node',
                             'user-guide/data-pipeline/copy-data/monitor-task',
                            ]

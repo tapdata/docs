@@ -266,6 +266,10 @@ SELECT birthdate FROM customer_new_time WHERE id="00027f47eef64717aa8ffb8115f1e6
 
 ## <span id="join">连接（Join）</span>
 
+import Content2 from '../../../reuse-content/_enterprise-features.md';
+
+<Content2 />
+
 连接节点主要用来进行表与表之间的连接设置，支持**左连接**，选择相应字段进行关联即可进行两个表的合并
 
 源端必须为两个表节点
@@ -392,6 +396,10 @@ return record
 
 
 ## <span id="Unwind">Unwind</span>
+
+import Content1 from '../../../reuse-content/_enterprise-features.md';
+
+<Content1 />
 
 **Unwind** 专门设计来处理 JSON 数据结构中的数组内容，可以高效地将数组中的每个元素“展开”，将每个元素转换为独立的数据行。这样的处理方式特别适合于需要对数组数据进行深度分析的场景，例如数据标准化、个性化报表生成、数据转换和数据质量清洗。此外，当目标系统或应用不支持数组格式，或为了与其他数据结构兼容时，Unw**i**nd 节点提供了一种开箱即用的解决方案，确保数据处理和同步流程的高效性和准确性。
 

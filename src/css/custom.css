@@ -95,8 +95,8 @@ pre {
 }
 
 .tooltip-content {
-  background-color: #e68a00;
-  color: white;
+  background-color: #2E8B57;
+  color: white; /* content color */
   padding: 5px;
   border-radius: 5px;
   position: absolute;
@@ -107,6 +107,15 @@ pre {
   left: 0%;
   transform: translateX(0%);
   box-sizing: border-box;
+}
+.tooltip-content a {
+  color: white;
+  text-decoration: none;
+  text-decoration: underline;
+}
+
+.tooltip-content a:hover {
+  color: #c0c0c0;
 }
 
 .tooltip:hover .tooltip-content {

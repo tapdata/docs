@@ -793,6 +793,7 @@ const sidebars = {
   tapdb: [
   'tapdb/what-is-tapdb',
   'tapdb/installation/install-on-ubuntu',
+  'tapdb/license',
   ]
 };
 

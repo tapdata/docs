@@ -46,7 +46,7 @@ Tapdata 提供 **Cloud**、**Enterprise** 和 **Community** 三种部署方式�
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Tapdata Cloud | 采用 SaaS（软件及服务）模式，注册 [Tapdata Cloud](https://cloud.tapdata.net/console/v3/) 账号即可使用，适合需要快速部署、低前期投资场景，帮助您更好地专注于业务发展而非基础设施管理。 | 免费提供 1 个 SMALL 规格的 Agent 实例（半托管模式），您也可以按照业务需求，订阅更高规格或更多数量的 Agent 实例。更多介绍，见[产品计费](billing/billing-overview.md)。 |
 | Tapdata Enterprise | 支持部署至本地数据中心，适合对数据敏感性或网络隔离有严格要求的场景，如金融机构、政府部门或希望完全控制数据的大型企业。 | 基于部署的服务器节点数量，按年支付相应的订阅费用。在正式采购前，您可以点击“[申请试用](https://tapdata.net/tapdata-on-prem/demo.html)‍”‍，Tapdata 工程师会联系您并协助您试用。更多介绍，见[产品定价](https://tapdata.net/pricing.html)。 |
-| Tapdata Community | 开源的数据集成平台，提供基础的数据同步和转换功能，可通过 Docker 一键部署，帮助您快速探索和实施数据集成项目。随着项目或企业发展，您可以平滑升级至 Tapdata Cloud 或 Tapdata Enterprise，以获得更多高级功能或服务支持。 | 开源免费 |
+| Tapdata Community | 开源的数据集成平台，提供基础的数据同步和转换功能，可通过 Docker 一键部署，帮助您快速探索和实施数据集成项目。随着项目或企业发展，您可以平滑升级至 Tapdata Cloud 或 Tapdata Enterprise，以获得更多高级功能或服务支持。 | [开源免费](https://github.com/tapdata/tapdata) |
 
 
 

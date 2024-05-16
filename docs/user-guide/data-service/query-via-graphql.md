@@ -1,6 +1,6 @@
 # 通过 GraphQL 查询 API
 
-import Content from '../../reuse-content/_enterprise-and-community-features.md';
+import Content from '../../reuse-content/_enterprise-features.md';
 
 <Content />
 

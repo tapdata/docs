@@ -1,4 +1,4 @@
-# 单节点部署（Windows 平台）
+# 在 Windows 平台部署
 import Content from '../../../reuse-content/_enterprise-features.md';
 
 <Content />

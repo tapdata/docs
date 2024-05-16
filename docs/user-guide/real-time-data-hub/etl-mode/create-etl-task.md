@@ -1,5 +1,5 @@
 # 一键生成数据管道
-import Content from '../../../reuse-content/_all-features.md';
+import Content from '../../../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content />
 

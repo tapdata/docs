@@ -35,18 +35,6 @@ const sidebars = {
     },
     {
      type: 'category',
-     label: '产品计费',
-     link: {type: 'doc', id: 'billing/README'},
-     items: [
-             'billing/billing-overview',
-             'billing/purchase',
-             'billing/renew-subscribe',
-             'billing/expiration',
-             'billing/refund',
-       ]
-    },
-    {
-     type: 'category',
      label: '快速入门',
      link: {type: 'doc', id: 'quick-start/README'},
      items: [
@@ -79,6 +67,18 @@ const sidebars = {
             'quick-start/connect-database',
             'quick-start/create-task',
      ]
+    },
+    {
+     type: 'category',
+     label: '产品计费',
+     link: {type: 'doc', id: 'billing/README'},
+     items: [
+             'billing/billing-overview',
+             'billing/purchase',
+             'billing/renew-subscribe',
+             'billing/expiration',
+             'billing/refund',
+       ]
     },
 {
          type: 'category',

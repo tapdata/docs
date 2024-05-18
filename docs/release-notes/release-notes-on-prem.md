@@ -15,8 +15,8 @@ import Content from '../reuse-content/_enterprise-features.md';
 * 支持 MySQL 间、PostgreSQL 间的双向数据同步能力，更好满足多活和容灾场景
 * 支持 [MongoDB Relmig](https://www.mongodb.com/docs/relational-migrator/) 1.3.0 以上版本的文件导入能力，进一步完善生态对接能力
 * 支持同步 MongoDB 的 [Oplog](https://www.mongodb.com/docs/manual/core/replica-set-oplog/)（操作日志）数据
-* 支持在任务配置时，在源节点的**高级设置**中选择对表的时间字段进行过滤（例如相对日期）
-* 支持在任务列表页面，展示任务里程碑信息，帮助用户快速获知任务的关键进度状况
+* 支持在配置数据转换任务时，在源节点的**[高级设置](../user-guide/data-pipeline/data-development/create-task#full-sql-query)**中选择对表的时间字段进行过滤（例如相对日期）
+* 支持在[任务列表](../user-guide/data-pipeline/copy-data/manage-task.md)页面，展示任务里程碑信息，帮助用户快速获知任务的关键进度状况
 
 ### 功能优化
 

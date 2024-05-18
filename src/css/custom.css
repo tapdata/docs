@@ -113,3 +113,15 @@ pre {
 .tooltip:hover .tooltip-content {
   display: block;
 }
+
+/* Light mode (TIP) */
+.theme-admonition.theme-admonition-tip.alert.alert--success {
+  background-color: #d6eaff;
+  border-color: #616bea;
+}
+
+/* Dark mode (TIP) */
+html[data-theme='dark'] .theme-admonition.theme-admonition-tip.alert.alert--success {
+  background-color: #1e3a5f;
+  border-color: #878fef;
+}

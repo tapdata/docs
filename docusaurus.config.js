@@ -29,7 +29,7 @@ const config = {
 
   i18n: {
       defaultLocale: 'zh-cn',
-      locales: ['zh-cn'],
+      locales: ['zh'],
     },
 
   presets: [

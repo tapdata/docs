@@ -120,8 +120,20 @@ pre {
   border-color: #616bea;
 }
 
+/* Href in TIP */
+.theme-admonition.theme-admonition-tip.alert.alert--success a {
+  text-decoration-color: #3b47e5;
+  color: #3b47e5;
+}
+
 /* Dark mode (TIP) */
 html[data-theme='dark'] .theme-admonition.theme-admonition-tip.alert.alert--success {
   background-color: #1e3a5f;
   border-color: #878fef;
+}
+
+/* Href in TIP */
+html[data-theme='dark'] .theme-admonition.theme-admonition-tip.alert.alert--success a {
+  text-decoration-color: #66ccff;
+  color: #66ccff;
 }

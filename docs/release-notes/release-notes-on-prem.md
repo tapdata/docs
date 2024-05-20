@@ -8,6 +8,29 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 
 
+## 3.5.16
+
+### 新增功能
+
+* 支持 MySQL 间、PostgreSQL 间的双向数据同步能力，更好满足多活和容灾场景
+* 支持 [MongoDB Relmig](https://www.mongodb.com/docs/relational-migrator/) 1.3.0 以上版本的文件导入能力，进一步完善生态对接能力
+* 支持同步 MongoDB 的 [Oplog](https://www.mongodb.com/docs/manual/core/replica-set-oplog/)（操作日志）数据
+* 支持在配置数据转换任务时，在源节点的**[高级设置](../user-guide/data-pipeline/data-development/create-task#full-sql-query)**中选择对表的时间字段进行过滤（例如相对日期）
+* 支持在[任务列表](../user-guide/data-pipeline/copy-data/manage-task.md)页面，展示任务里程碑信息，帮助用户快速获知任务的关键进度状况
+
+### 功能优化
+
+* 优化 [Unwind 节点](../user-guide/data-pipeline/data-development/process-node#unwind)，支持设置展开模式，如内嵌对象或平铺字段
+* 优化全量同步详情页面展示，支持通过表名快速过滤表
+
+### 问题修复
+
+* 修复特定场景下，调整告警设置可能影响任务正常运行的问题
+* 修复新增挖掘表时，任务显示挖掘任务异常的问题
+* 修复缓存任务被删除后，任务启动后仍从已删除的缓存任务获取数据的问题
+
+
+
 ## 3.5.15
 
 ### 新增功能

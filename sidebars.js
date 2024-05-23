@@ -35,18 +35,6 @@ const sidebars = {
     },
     {
      type: 'category',
-     label: '产品计费',
-     link: {type: 'doc', id: 'billing/README'},
-     items: [
-             'billing/billing-overview',
-             'billing/purchase',
-             'billing/renew-subscribe',
-             'billing/expiration',
-             'billing/refund',
-       ]
-    },
-    {
-     type: 'category',
      label: '快速入门',
      link: {type: 'doc', id: 'quick-start/README'},
      items: [
@@ -66,18 +54,31 @@ const sidebars = {
                      },
                     {
                      type: 'category',
-                     label: 'Tapdata On-Prem',
+                     label: 'Tapdata Enterprise',
                      link: {type: 'doc', id: 'quick-start/install/install-tapdata-enterprise/README'},
                      items: [
                      'quick-start/install/install-tapdata-enterprise/install-tapdata-stand-alone',
                      'quick-start/install/install-tapdata-enterprise/install-on-windows',
                      ]
-                     }
+                     },
+                     'quick-start/install/install-tapdata-community'
              ]
             },
             'quick-start/connect-database',
             'quick-start/create-task',
      ]
+    },
+    {
+     type: 'category',
+     label: '产品计费',
+     link: {type: 'doc', id: 'billing/README'},
+     items: [
+             'billing/billing-overview',
+             'billing/purchase',
+             'billing/renew-subscribe',
+             'billing/expiration',
+             'billing/refund',
+       ]
     },
 {
          type: 'category',

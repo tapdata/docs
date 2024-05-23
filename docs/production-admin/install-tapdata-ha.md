@@ -3,10 +3,6 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
-import Content2 from '../reuse-content/_enterprise-features.md';
-
-<Content2 />
-
 为保障生产环境的业务可靠性，推荐采用高可用部署的方式，本文介绍如何快速在本地的 Linux 平台部署高可用的 Tapdata 服务。
 
 ## 软硬件环境要求

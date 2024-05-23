@@ -20,9 +20,9 @@ import Content from './reuse-content/_all-features.md';
 
 
 
-## 用户社区
+## 开源社区
 
-您可以访问 Tapdata [用户社区](https://tapdata.zohodesk.com.cn/portal/zh/community/tapdata-support)来获取支持，讨论使用中遇到的问题，提出您宝贵的意见和反馈，Tapdata 技术工程师或社区用户会进行回复。
+您可以访问 [Tapdata 开源社区](https://github.com/tapdata/tapdata)，通过提交 Issue 获取支持，讨论使用中遇到的问题，提出您宝贵的意见和反馈，Tapdata 技术工程师或社区用户会进行回复。
 
 :::tip
 

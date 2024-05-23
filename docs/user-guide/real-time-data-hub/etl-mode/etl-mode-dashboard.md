@@ -1,5 +1,5 @@
 # 数据集成界面介绍
-import Content from '../../../reuse-content/_all-features.md';
+import Content from '../../../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content />
 

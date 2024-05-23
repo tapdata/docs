@@ -19,7 +19,7 @@ import Content from '../../../reuse-content/_all-features.md';
 
 2. 基于产品类型选择操作入口：
    * Tapdata Cloud：在左侧导航栏，单击**数据复制**。
-   * Tapdata Enterprise：在左侧导航栏，选择**数据管道** > **数据复制**。
+   * Tapdata Enterprise 或 Tapdata Community：在左侧导航栏，选择**数据管道** > **数据复制**。
 
 3. 单击页面右侧的**创建**，跳转到任务配置页面。
 

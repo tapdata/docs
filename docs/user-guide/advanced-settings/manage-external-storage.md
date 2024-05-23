@@ -1,5 +1,5 @@
 # 管理外存
-import Content from '../../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
 <Content />
 
@@ -7,7 +7,7 @@ import Content from '../../reuse-content/_all-features.md';
 
 :::tip
 
-如果您使用的是 Tapdata Enterprise，操作入口为**系统管理** > **外存管理**。
+如果您使用的是 Tapdata Enterprise 或 Tapdata Community，操作入口为**系统管理** > **外存管理**。
 
 :::
 

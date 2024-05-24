@@ -6,13 +6,13 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #3b47e5;
+  --ifm-color-primary-dark: #222fe2;
+  --ifm-color-primary-darker: #1d2ad8;
+  --ifm-color-primary-darkest: #1823b2;
+  --ifm-color-primary-light: #545fe8;
+  --ifm-color-primary-lighter: #616bea;
+  --ifm-color-primary-lightest: #878fef;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
@@ -44,13 +44,14 @@ div[class^='announcementBar_'] {
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #4ba0ff;
+  --ifm-color-primary-dark: #2a8fff;
+  --ifm-color-primary-darker: #1a86ff;
+  --ifm-color-primary-darkest: #006de7;
+  --ifm-color-primary-light: #6cb1ff;
+  --ifm-color-primary-lighter: #7cbaff;
+  --ifm-color-primary-lightest: #aed4ff;
+  --ifm-background-color: #06070a;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -95,7 +96,7 @@ pre {
 }
 
 .tooltip-content {
-  background-color: #2E8B57;
+  background-color: #878fef;
   color: white; /* content color */
   padding: 5px;
   border-radius: 5px;
@@ -120,4 +121,28 @@ pre {
 
 .tooltip:hover .tooltip-content {
   display: block;
+}
+
+/* Light mode (TIP) */
+.theme-admonition.theme-admonition-tip.alert.alert--success {
+  background-color: #d6eaff;
+  border-color: #616bea;
+}
+
+/* Href in TIP */
+.theme-admonition.theme-admonition-tip.alert.alert--success a {
+  text-decoration-color: #3b47e5;
+  color: #3b47e5;
+}
+
+/* Dark mode (TIP) */
+html[data-theme='dark'] .theme-admonition.theme-admonition-tip.alert.alert--success {
+  background-color: #1e3a5f;
+  border-color: #878fef;
+}
+
+/* Href in TIP */
+html[data-theme='dark'] .theme-admonition.theme-admonition-tip.alert.alert--success a {
+  text-decoration-color: #66ccff;
+  color: #66ccff;
 }

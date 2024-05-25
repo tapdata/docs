@@ -102,6 +102,12 @@ Tapdata 社区版包括以下主要组件：
 
 4. 执行 `./start.sh`启动 Tapdata 服务，完成启动后关键日志提示如下：
 
+   :::tip
+
+   如采用非 root 用户部署，应避免使用 `sudo` 提权操作以避免安装失败。在执行命令前，请使用 `sudo chown -R <your-username>:<your-group> <installation-dir>` 或 `sudo chmod -R 777 <installation-dir>` 为当前用户赋予安装目录的完全权限。
+
+   :::
+
    ```bash
    <<< Start Server [SUCCESS]
    All Done, Please Visit http://localhost:3000
@@ -114,7 +120,7 @@ Tapdata 社区版包括以下主要组件：
    如需在同一内网的其他设备上访问 Tapdata 服务，请确保网络可互通。
 
    :::
-   
+
 
 </TabItem>
 </Tabs>

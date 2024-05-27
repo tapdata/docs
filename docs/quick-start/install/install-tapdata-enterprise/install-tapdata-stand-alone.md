@@ -73,6 +73,12 @@ import Content from '../../../reuse-content/_enterprise-features.md';
 
 6. 执行 `./tapdata start`，跟随命令行提示，依次设置 Tapdata 的登录地址、API 服务端口、MongoDB 连接信息等，示例及说明如下：
 
+   :::tip
+
+   如采用非 root 用户部署，应避免使用 `sudo` 提权操作以避免安装失败。在执行命令前，请使用 `sudo chown -R <your-username>:<your-group> <installation-dir>` 或 `sudo chmod -R 777 <installation-dir>` 为当前用户赋予安装目录的完全权限。
+
+   :::
+
    ```bash
     ./tapdata start
     _______       _____  _____       _______

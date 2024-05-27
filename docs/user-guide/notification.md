@@ -1,4 +1,4 @@
-# 通知中心
+# 通知与告警设置
 
 import Content from '../reuse-content/_enterprise-and-community-features.md';
 
@@ -10,12 +10,24 @@ import Content from '../reuse-content/_enterprise-and-community-features.md';
 
 :::
 
+Tapdata 支持自定义系统和告警设置，同时支持通过 Webhook 对接第三方平台，帮助您快速掌握任务运行状态。
 
+## 通知设置
 
-## 系统通知
+[登录 Tapdata 平台](log-in.md)后，单击右上角的 ![setting_icon](../images/setting_icon.png) > **通知设置**，可根据自定义的通知规则设置，自动触发通知发送流程，主要包括任务运行通知和 Agent 通知两种类型：具体包含的通知项如下所示：
 
-系统通知功能主要是系统根据用户自定义的通知规则设置，自动触发发送的通知。主要包括任务运行通知和Agent通知两种类型，具体包含的通知项有：
+![](../images/system_notification_1.png)
 
+- 任务被启动系统通知
+- 任务被停止系统通知
+- 任务被删除系统通知
+- 任务状态error系统通知
+- 任务遇到错误
+- CDC滞后通知
+- 校验任务count差异系统通知
+- 校验任务内容差异系统通知
+- 校验任务被删除系统通知
+- 校验任务运行error
 - 任务被删除
 - 任务被停止
 - 任务状态error
@@ -28,32 +40,15 @@ import Content from '../reuse-content/_enterprise-and-community-features.md';
 - Agent被创建
 - Agent被删除
 
-用户在系统通知设置里打开了系统通知选项的通知，都可以在系统通知列表中看到。
+## 告警设置
 
-![](../images/system_notification_1.png)
-
-
-
-### 功能描述
-
-在系统通知列表用户可以看到所有的系统通知，消息通知按照系统定义区分不同的级别，包括：ERROR、WARN、INFO三种级别。
-
-在系统通知列表支持按照消息的不同级别进行筛选，支持按照消息类型进行筛选。
-
-
-
-### 通知设置
-
-通过通知设置可以设置接收哪些类型的系统通知，设置入口为右上角的设置图标，然后选择**通知设置**。
+通过告警设置，您可以设置告警事件的通知方式和发送间隔：
 
 ![](../images/system_notification_2.png)
 
+## Webhook 告警
 
+通过 Webhook 告警功能，您只需填写服务 URL 即可与您的告警平台或第三方平台实现快速对接，从而实现更多的通知方式，例如即时通讯平台。
 
-## 用户通知
+![Webhook 设置](../images/webhook_settings.png)
 
-用户通知功能主要用来记录所有的用户操作，用户从登录系统开始进行的所有操作都会以用户通知的形式进行记录。用户可以通过用户通知记录来对用户行为进行审计。
-
-在用户通知页面，可以通过数据源或者任务名称、操作时间和操作人对用户通知进行快速筛选。
-
-![](../images/user_notification.png)

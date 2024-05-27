@@ -8,6 +8,27 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 
 
+## 3.6.0
+
+### 新增功能
+
+* 支持在[配置数据转换任务](../user-guide/data-pipeline/data-development/create-task#target-node-set)时，为目标表名动态生成日期后缀，适用于每日定期执行批处理的场景
+* 支持[通过 Webhook 对接第三方平台](../user-guide/notification.md)，实现告警事件的更多推送渠道
+* 支持在[配置数据校验任务](../user-guide/data-pipeline/verify-data.md)时，对 MySQL、Oracle、SQL Server、PostgreSQL 和 GaussDB 数据源间执行 Hash 校验，提升校验效率
+* 支持在配置 Doris 数据源时设置分区
+* 支持 OceanBase 数据源的 Oracle 模式，数据源名称为 Oceanbase(Oracle)
+
+### 功能优化
+
+* 优化 MongoDB 同步到关系型数据库（如 MySQL）的数据处理逻辑
+* 优化 Dummy 数据源，支持快速添加大字段以用于性能测试场景
+
+### 问题修复
+
+* 修复 MariaDB 无法将 `0000-00-00 00:00:00` 格式数据写入目标的问题
+* 修复心跳表被误删后心跳任务无法自动恢复的问题
+* 修复共享挖掘任务出现错误后，无法序列化的问题
+
 ## 3.5.16
 
 ### 新增功能
@@ -111,7 +132,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ### 问题修复
 
-* 修复[主从合并节点](user-guide/data-pipeline/data-development/process-node#pri-sec-merged)，当主表与子表关键条件变化时，最终数据与预期不符合的问题
+* 修复[主从合并节点](../user-guide/data-pipeline/data-development/process-node#pri-sec-merged)，当主表与子表关键条件变化时，最终数据与预期不符合的问题
 
 ## V3.5.10
 

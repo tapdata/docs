@@ -47,19 +47,19 @@ Tapdata 社区版包括以下主要组件：
 3. 执行以下命令启动 Tapdata 容器：
 
    ```bash
-   docker run -d -p 3000:3000 --restart always --name tapdata ghcr.io/tapdata/tapdata:latest
+   docker run -d -p 3030:3030 --restart always --name tapdata ghcr.io/tapdata/tapdata:latest
    ```
 
    参数解释：
 
    - `-d`：表示后台运行容器。
-   - `-p 3000:3000`：映射容器的 3000 端口到宿主机的 3000 端口，允许您通过浏览器访问 Tapdata。
+   - `-p 3030:3030`：映射容器的 3030 端口到宿主机的 3030 端口，允许您通过浏览器访问 Tapdata。
    - `--name tapdata`：为您的容器指定一个名字，本案例指定为 **tapdata**。
    - `--restart always`：重启 docker 服务时，自动启动该容器。
 
    :::tip
 
-   Tapdata 社区版默认会使用容器内的 MongoDB 来存储元数据、任务配置等数据，如需使用自有的 MongoDB，可在启动容器时通过 `-e` 来指定 MongoDB [URI 连接串信息](https://www.mongodb.com/docs/v5.0/reference/connection-string/#standard-connection-string-format)，例如：`docker run  -d -p 3000:3000 --name tapdata -e MONGO_URI=mongodb://root:Tap123456@192.168.1.18:29917/tapdata_community?authSource=admin' --restart always ghcr.io/tapdata/tapdata:latest`。
+   Tapdata 社区版默认会使用容器内的 MongoDB 来存储元数据、任务配置等数据，如需使用自有的 MongoDB，可在启动容器时通过 `-e` 来指定 MongoDB [URI 连接串信息](https://www.mongodb.com/docs/v5.0/reference/connection-string/#standard-connection-string-format)，例如：`docker run  -d -p 3030:3030 --name tapdata -e MONGO_URI=mongodb://root:Tap123456@192.168.1.18:29917/tapdata_community?authSource=admin' --restart always ghcr.io/tapdata/tapdata:latest`。
 
    :::
 
@@ -67,10 +67,10 @@ Tapdata 社区版包括以下主要组件：
 
    ```bash
    <<< Start Server [SUCCESS]
-   All Done, Please Visit http://localhost:3000
+   All Done, Please Visit http://localhost:3030
    ```
 
-5. 通过浏览器登录 Tapdata 平台，本机的登录地址为 http://localhost:3000，默认账号为 admin@admin.com，密码为 admin，首次登录请及时修改密码以保障安全性。
+5. 通过浏览器登录 Tapdata 平台，本机的登录地址为 http://localhost:3030，默认账号为 admin@admin.com，密码为 admin，首次登录请及时修改密码以保障安全性。
 
    :::tip
 
@@ -110,10 +110,10 @@ Tapdata 社区版包括以下主要组件：
 
    ```bash
    <<< Start Server [SUCCESS]
-   All Done, Please Visit http://localhost:3000
+   All Done, Please Visit http://localhost:3030
    ```
 
-5. 通过浏览器登录 Tapdata 平台，本机的登录地址为 http://localhost:3000，默认账号为 admin@admin.com，密码为 admin，首次登录请及时修改密码以保障安全性。
+5. 通过浏览器登录 Tapdata 平台，本机的登录地址为 http://localhost:3030，默认账号为 admin@admin.com，密码为 admin，首次登录请及时修改密码以保障安全性。
 
    :::tip
 

@@ -3,17 +3,17 @@ import Content from '../reuse-content/_all-features.md';
 
 <Content />
 
-登录 Tapdata 平台后，页面将默认展示 Dashboard/工作台，帮助您快速使用产品，了解任务运行状态等，基于您的选用的产品系列，选择查看下述文档。
+登录 TapData 平台后，页面将默认展示 Dashboard/工作台，帮助您快速使用产品，了解任务运行状态等，基于您的选用的产品系列，选择查看下述文档。
 
-## Tapdata Cloud
+## TapData Cloud
 
 帮助您快速了解和熟悉产品，并可以通过快速创建入口创建 Agent、连接和任务。
 
-![Tapdata Cloud Dashboard](../images/workshop_cloud.png)
+![TapData Cloud Dashboard](../images/workshop_cloud.png)
 
-* **探索示例**：展示 Tapdata Cloud 在不同场景下的最佳实践，例如数据入湖仓等。
+* **探索示例**：展示 TapData Cloud 在不同场景下的最佳实践，例如数据入湖仓等。
 
-* **概览**：展示 Tapdata Cloud 中 Agent、连接、任务的数量和状态信息。
+* **概览**：展示 TapData Cloud 中 Agent、连接、任务的数量和状态信息。
 
 * **公告通知**：展示最新的公告信息，包括升级变更提醒、版本新特性介绍等内容，点击公告标题可以查看公告详细内容。
 
@@ -23,7 +23,7 @@ import Content from '../reuse-content/_all-features.md';
 
 
 
-## Tapdata Enterprise
+## TapData Enterprise
 
 当前系统所有任务的数量统计、状态统计和运行数据统计，并可以查看当前系统集群的运行状态。
 
@@ -41,11 +41,11 @@ import Content from '../reuse-content/_all-features.md';
 - **传输总览**：展示当前用户创建的所有数据复制任务和数据转换任务的事件传输统计
 - **集群总览**：展示系统集群下各节点服务的当前状态
 
-## Tapdata Community
+## TapData Community
 
 展示当前系统所有任务的数量统计、状态统计和运行数据统计信息。
 
-![Tapdata Community](../images/dashboard_community.png)
+![TapData Community](../images/dashboard_community.png)
 
 控制台页面主要包含以下关键指标：
 
@@ -57,7 +57,7 @@ import Content from '../reuse-content/_all-features.md';
 
 ## 相关文档
 
-只需简单 3 步，即可体验 Tapdata 强大、便捷的数据流转能力：
+只需简单 3 步，即可体验 TapData 强大、便捷的数据流转能力：
 
 * [安装 Tapdata](../quick-start/install/README.md)
 * [连接数据库](../quick-start/connect-database.md)

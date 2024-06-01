@@ -4,7 +4,7 @@ import Content from '../../../reuse-content/_cloud-features.md';
 
 <Content />
 
-在传统云端部署模式下，企业用户需要自行完成购买 ECS、准备环境、安全策略配置等复杂流程，由于高度依赖人工经验，交付周期和质量都难以保障。为进一步提升部署便捷性和安全性，Tapdata 通过[阿里云计算巢](https://help.aliyun.com/document_detail/290066.html)帮助用户在安全的网络环境中一键部署 Tapdata Agent，实现了部署、交付、运维全服务生命周期的效率升级，极大降低使用门槛。
+在传统云端部署模式下，企业用户需要自行完成购买 ECS、准备环境、安全策略配置等复杂流程，由于高度依赖人工经验，交付周期和质量都难以保障。为进一步提升部署便捷性和安全性，TapData 通过[阿里云计算巢](https://help.aliyun.com/document_detail/290066.html)帮助用户在安全的网络环境中一键部署 TapData Agent，实现了部署、交付、运维全服务生命周期的效率升级，极大降低使用门槛。
 
 ## 前提条件
 
@@ -12,7 +12,7 @@ import Content from '../../../reuse-content/_cloud-features.md';
 
 ## 操作步骤
 
-1. [登录 Tapdata 平台](../../../user-guide/log-in.md)。
+1. [登录 TapData 平台](../../../user-guide/log-in.md)。
 
 2. 基于业务需求创建所需规格的 Agent，具体操作，见[订阅实例](../../../billing/purchase.md)。
 
@@ -37,8 +37,8 @@ import Content from '../../../reuse-content/_cloud-features.md';
 
    :::tip
 
-   * 您可以返回 Tapdata Cloud 平台，获取**应用实例配置**处所需的**实例版本**和**实例 Token**。
-   * 此外，您还可以在页面底部授权 Tapdata 提供代运维服务，避免故障排查时手动修改网络配置、交换登录凭证等困扰，杜绝安全隐患，提升排查效率。
+   * 您可以返回 TapData Cloud 平台，获取**应用实例配置**处所需的**实例版本**和**实例 Token**。
+   * 此外，您还可以在页面底部授权 TapData 提供代运维服务，避免故障排查时手动修改网络配置、交换登录凭证等困扰，杜绝安全隐患，提升排查效率。
 
    :::
 

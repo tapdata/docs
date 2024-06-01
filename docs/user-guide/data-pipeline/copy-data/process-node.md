@@ -3,7 +3,7 @@ import Content from '../../../reuse-content/_all-features.md';
 
 <Content />
 
-Tapdata 支持在数据复制任务中添加处理节点，满足对数据进行过滤、字段调整等需求。
+TapData 支持在数据复制任务中添加处理节点，满足对数据进行过滤、字段调整等需求。
 
 ## 表编辑节点
 
@@ -106,7 +106,7 @@ TapModelDeclare.removeIndex(schemaApplyResultList, 'indexName')
 
 **操作流程**：
 
-1. [登录 Tapdata 平台](../../log-in.md)。
+1. [登录 TapData 平台](../../log-in.md)。
 
 2. 在左侧导航栏，选择**数据管道** > **数据复制**。
 
@@ -121,7 +121,7 @@ TapModelDeclare.removeIndex(schemaApplyResultList, 'indexName')
    ![时间运算](../../../images/time_calculation.png)
 
    * **节点名称**：默认为连接名称，您也可以设置一个具有业务意义的名称。
-   * **请选择您要运算的时间类型**：Tapdata 会自动检测支持的时间类型并展现，您需要基于业务需求选择，此外，您还可以单击**模型**标签页，查看时间类型与列名的对应关系。
+   * **请选择您要运算的时间类型**：TapData 会自动检测支持的时间类型并展现，您需要基于业务需求选择，此外，您还可以单击**模型**标签页，查看时间类型与列名的对应关系。
    * **请选择运算方式**：支持增加或减少时间，颗粒度为整数的小时，本案例中，我们选择减少 8 小时。
 
 7. 完成目标节点配置及任务配置，具体操作，见[创建数据复制任务](create-task.md)。

@@ -3,7 +3,7 @@ import Content from '../reuse-content/_all-features.md';
 
 <Content />
 
-[BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) 是 Google Cloud 的全代管式 PB 级经济实惠的分析数据仓库，可让您近乎实时地分析大量数据。通过 Tapdata 可以将多种数据源实时同步至 BigQuery，轻松实现数据的流转，更好满足业务数据架构变化或大数据分析场景。
+[BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) 是 Google Cloud 的全代管式 PB 级经济实惠的分析数据仓库，可让您近乎实时地分析大量数据。通过 TapData 可以将多种数据源实时同步至 BigQuery，轻松实现数据的流转，更好满足业务数据架构变化或大数据分析场景。
 
 本文以 MySQL 为源数据为例，演示如何将其数据同步至 BigQuery，其他数据的配置方法与本文流程类似。
 
@@ -18,7 +18,7 @@ import Content from '../reuse-content/_all-features.md';
 
 ## 配置任务
 
-1. 登录 Tapdata 服务平台。
+1. 登录 TapData 服务平台。
 
 2. 在左侧导航栏，单击**数据复制**。
 
@@ -32,7 +32,7 @@ import Content from '../reuse-content/_all-features.md';
 
    - **节点名称**：默认为连接名称，您也可以设置一个具有业务意义的名称。
    - **DDL 事件采集**：BigQuery 暂不支持 DDL 写入，无需配置此参数。
-   - **动态新增表**：打开该开关后，Tapdata 会自动将源库新增/删除的表同步到目标库，仅在选择了全部表时生效。
+   - **动态新增表**：打开该开关后，TapData 会自动将源库新增/删除的表同步到目标库，仅在选择了全部表时生效。
    - **选择表**：可选择**全部**或**自定义**，如选择为**自定义**，您还需要在下方选择要同步的表。
    - **批量读取条数**：全量同步时，每批次读取的记录条数，默认为 **100**。
 
@@ -62,7 +62,7 @@ import Content from '../reuse-content/_all-features.md';
       
         更多临时表的原理介绍，见[常见问题](#faq)。
       
-      - **数据合并时间**：Tapdata 会间隔指定的时间，将临时表的数据合并至目标表，合并时间越短，目标表的数据越新，首次合并时间为全量结束后的 1 小时进行。
+      - **数据合并时间**：TapData 会间隔指定的时间，将临时表的数据合并至目标表，合并时间越短，目标表的数据越新，首次合并时间为全量结束后的 1 小时进行。
 
 7. 确认无误后，单击**启动**。
 
@@ -86,7 +86,7 @@ import Content from '../reuse-content/_all-features.md';
 
 * 问：临时表的工作原理是什么？
 
-  答：为提升数据写入 BigQuery 的性能，降低数据延迟，Tapdata 基于 BigQuery 数据特征，组合使用 Stream API 与 Merge API，其过程如下：
+  答：为提升数据写入 BigQuery 的性能，降低数据延迟，TapData 基于 BigQuery 数据特征，组合使用 Stream API 与 Merge API，其过程如下：
 
   1. 在全量写入阶段，使用 Stream API 进行数据导入。
 

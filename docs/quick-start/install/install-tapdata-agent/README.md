@@ -1,4 +1,4 @@
-# Tapdata Cloud
+# TapData Cloud
 
 import Content2 from '../../../reuse-content/_cloud-features.md';
 

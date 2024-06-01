@@ -3,7 +3,7 @@ import Content from '../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content />
 
-为了提高数据变更捕获的效率，Tapdata 不仅支持使用数据库原生日志解析工具（LogMiner），还开发了直接解析数据库增量日志文件的能力，从而实现更高效的事件捕获，可获得更高的采集性能（QPS 20,000 以上），降低采集增量数据对源库的影响，但由于需要单独部署额外的组件，会增加一定的运维成本，适用于数据变更频繁的场景。
+为了提高数据变更捕获的效率，TapData 不仅支持使用数据库原生日志解析工具（LogMiner），还开发了直接解析数据库增量日志文件的能力，从而实现更高效的事件捕获，可获得更高的采集性能（QPS 20,000 以上），降低采集增量数据对源库的影响，但由于需要单独部署额外的组件，会增加一定的运维成本，适用于数据变更频繁的场景。
 
 ![工作流程](../images/raw_logs_workflow.png)
 
@@ -49,7 +49,7 @@ import Content from '../reuse-content/_enterprise-and-cloud-features.md';
 
 接下来，我们以 Oracle 12c 运行在 Linux 平台为例，演示裸日志查询的部署流程。
 
-1. [联系 Tapdata](mailto:team@tapdata.io) 获取裸日志解析插件的安装包和 License 文件。
+1. [联系 TapData](mailto:team@tapdata.io) 获取裸日志解析插件的安装包和 License 文件。
 
 2. 登录 Oracle 所属设备上，依次执行下述命令完成部署前的工作。
 
@@ -129,7 +129,7 @@ import Content from '../reuse-content/_enterprise-and-cloud-features.md';
 
   如果是存储介质 **ASM**，redo log 保存 ASM 内，此时，DML 与 DDL 的数据来源则是通过程序远程查询 ASM 实例获取到的 redo log  二进制，所以会占用一定的 ASM 性能。此时程序可以不与 Oracle 同属一台机器，所以会占用一定的网络带宽与ASM性能。
 
-* 问：如果强制终止 Tapdata 引擎或裸日志插件，会有什么影响？
+* 问：如果强制终止 TapData 引擎或裸日志插件，会有什么影响？
 
   答：系统将重新扫描目录中积攒的 fzs 文件，可能会导致进入增量缓慢，如果发生异常，您可以将相关解析日志保存提供给技术支持。
 

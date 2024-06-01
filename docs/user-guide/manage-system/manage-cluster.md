@@ -10,7 +10,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 ## 操作步骤
 
-1. [登录 Tapdata 平台](../log-in.md)。
+1. [登录 TapData 平台](../log-in.md)。
 
 2. 在左侧导航栏，选择**系统管理** > **集群管理**，默认展示**集群视图**，可查看各组件的运行状态和连接信息。
 

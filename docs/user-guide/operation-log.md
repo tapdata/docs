@@ -3,12 +3,12 @@ import Content from '../reuse-content/_cloud-features.md';
 
 <Content />
 
-操作日志主要是记录用户在 Tapdata Cloud 所执行的操作，您可以查看到近期的操作日志，还可以使用过滤条件对操作日志进行筛选。
+操作日志主要是记录用户在 TapData Cloud 所执行的操作，您可以查看到近期的操作日志，还可以使用过滤条件对操作日志进行筛选。
 
 
 ## 操作步骤
 
-1. [登录 Tapdata 平台](log-in.md)。
+1. [登录 TapData 平台](log-in.md)。
 
 2. 在左侧导航栏栏，单击**操作日志**。
 

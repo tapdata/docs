@@ -3,7 +3,7 @@ import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
-Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓存、事件发布/订阅、高速队列等场景。Tapdata 支持将关系型数据库（Oracle、MySQL、MongoDB、PostgreSQL、SQL Server）的数据实时同步至 Redis，帮助您快速完成数据流转。本文介绍如何在 Tapdata 上连接 Redis 数据源。
+Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓存、事件发布/订阅、高速队列等场景。TapData 支持将关系型数据库（Oracle、MySQL、MongoDB、PostgreSQL、SQL Server）的数据实时同步至 Redis，帮助您快速完成数据流转。本文介绍如何在 TapData 上连接 Redis 数据源。
 
 ## 支持的版本
 
@@ -11,7 +11,7 @@ Redis 2.8 ~ 6.0
 
 ## 连接 Redis
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. [登录 TapData 平台](../../user-guide/log-in.md)。
 
 2. 在左侧导航栏，单击**连接管理**。
 

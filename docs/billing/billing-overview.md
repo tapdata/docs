@@ -4,17 +4,17 @@ import Content from '../reuse-content/_cloud-features.md';
 
 <Content />
 
-本文介绍 Tapdata Cloud 的计费项、计费方式和价格说明等计费信息。
+本文介绍 TapData Cloud 的计费项、计费方式和价格说明等计费信息。
 
 :::tip
 
-如您选用的是 Tapdata Enterprise 产品，则是按年支付相应的订阅费用，可部署至本地数据中心，适合对数据敏感性或网络隔离有严格要求的场景，正式采购前可[申请试用](https://tapdata.net/tapdata-on-prem/demo.html)‍。
+如您选用的是 TapData Enterprise 产品，则是按年支付相应的订阅费用，可部署至本地数据中心，适合对数据敏感性或网络隔离有严格要求的场景，正式采购前可[申请试用](https://tapdata.net/tapdata-on-prem/demo.html)‍。
 
 :::
 
 ## 计费方式
 
-Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，完成账号注册即可获得 1 个免费的 Agent 实例，此外，您还可以选择包月、包年、连续包月、连续包年订阅方式来购买更多的 Agent 实例，来满足业务需求：
+TapData Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，完成账号注册即可获得 1 个免费的 Agent 实例，此外，您还可以选择包月、包年、连续包月、连续包年订阅方式来购买更多的 Agent 实例，来满足业务需求：
 
 - **包月**：一次性购买一个月的服务，订阅到期后不会自动续费，可手动续费。
 - **包年**：一次性购买一年的服务，订阅到期后不会自动续费，可手动续费。
@@ -23,13 +23,13 @@ Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，完成
 
 :::tip
 
-当选择连续包月/包年计费方式时，Tapdata Cloud 会在每期的到期日自动扣取下一周期的订阅费用，您可以前往用户中心查看扣费详情。
+当选择连续包月/包年计费方式时，TapData Cloud 会在每期的到期日自动扣取下一周期的订阅费用，您可以前往用户中心查看扣费详情。
 
 :::
 
 ## 支付方式
 
-您可以通过信用卡或对公转账的方式支付 Tapdata Cloud 费用。
+您可以通过信用卡或对公转账的方式支付 TapData Cloud 费用。
 
 
 
@@ -109,7 +109,7 @@ Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，完成
 
 :::tip
 
-在[购买 Agent 实例](purchase.md)时，如您选择**半托管模式**，您需要提供宿主机以[部署 Agent](../quick-start/install/install-tapdata-agent/README.md)，同时为保障最大程度地保障数据流转性能，需确保其拥有足够的计算、存储和带宽等资源；如您选择**全托管模式**，则由 Tapdata Cloud 提供所有的计算和存储资源。
+在[购买 Agent 实例](purchase.md)时，如您选择**半托管模式**，您需要提供宿主机以[部署 Agent](../quick-start/install/install-tapdata-agent/README.md)，同时为保障最大程度地保障数据流转性能，需确保其拥有足够的计算、存储和带宽等资源；如您选择**全托管模式**，则由 TapData Cloud 提供所有的计算和存储资源。
 
 :::
 

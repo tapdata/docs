@@ -1,9 +1,9 @@
-# 部署高可用 Tapdata Enterprise
+# 部署高可用 TapData Enterprise
 import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
-为保障生产环境的业务可靠性，推荐采用高可用部署的方式，本文介绍如何快速在本地的 Linux 平台部署高可用的 Tapdata 服务。
+为保障生产环境的业务可靠性，推荐采用高可用部署的方式，本文介绍如何快速在本地的 Linux 平台部署高可用的 TapData 服务。
 
 ## 软硬件环境要求
 
@@ -18,11 +18,11 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
 
 ## 部署架构
 
-本案例中，假设我们有两个服务器（A 和 B），分别为它们配置了 IP，现在我们希望分别在这两个服务器上部署完整的 Tapdata 服务，即管理服务、同步治理服务和 API 服务，从而实现整体服务的高可用。
+本案例中，假设我们有两个服务器（A 和 B），分别为它们配置了 IP，现在我们希望分别在这两个服务器上部署完整的 TapData 服务，即管理服务、同步治理服务和 API 服务，从而实现整体服务的高可用。
 
 :::tip
 
-此环境中，我们已完成了  [MongoDB 副本集](../production-admin/install-replica-mongodb.md)的部署，可为 Tapdata 服务提供运行数据的存储服务。
+此环境中，我们已完成了  [MongoDB 副本集](../production-admin/install-replica-mongodb.md)的部署，可为 TapData 服务提供运行数据的存储服务。
 
 :::
 
@@ -58,7 +58,7 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
 
    2. 安装 MongoDB（4.0 及以上版本），该库将作为中间库存储任务等数据，具体操作，见[官方文档](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/)。
 
-3. 下载 Tapdata 安装包（可[联系我们](mailto:team@tapdata.io)获取），将其上传至待部署的设备中。
+3. 下载 TapData 安装包（可[联系我们](mailto:team@tapdata.io)获取），将其上传至待部署的设备中。
 
 4. 在待部署的设备上，执行下述格式的命令，解压安装包并进入解压后的路径。
 
@@ -80,11 +80,11 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
       java -cp components/tm.jar -Dloader.main=com.tapdata.tm.license.util.SidGenerator org.springframework.boot.loader.PropertiesLauncher
       ```
 
-   2. 将打印出的 SID 信息提供给 Tapdata 支持团队，完成 License 申请流程。
+   2. 将打印出的 SID 信息提供给 TapData 支持团队，完成 License 申请流程。
 
    3. 将申请到的 License 文件上传至解压后的目录（**tapdata**）中。
 
-2. 在 tapdata 目录中，执行 `./tapdata start`，跟随命令行提示，依次设置 Tapdata 的登录地址、API 服务端口、MongoDB 连接信息等，示例及说明如下：
+2. 在 tapdata 目录中，执行 `./tapdata start`，跟随命令行提示，依次设置 TapData 的登录地址、API 服务端口、MongoDB 连接信息等，示例及说明如下：
 
    :::tip
 
@@ -122,8 +122,8 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
    TapdataAgent starting ...:
    ```
 
-   * **Please enter backend url**：设置 Tapdata 平台的登录地址，默认为 `http://127.0.0.1:3030/`
-   * **Please enter tapdata port**：设置 Tapdata 平台的登录端口，默认为 `3030`。
+   * **Please enter backend url**：设置 TapData 平台的登录地址，默认为 `http://127.0.0.1:3030/`
+   * **Please enter tapdata port**：设置 TapData 平台的登录端口，默认为 `3030`。
    * **Please enter api server port**：设置 API Server 的服务端口，默认为 `3080`。
    * **Does MongoDB require username/password?**：MongoDB 数据库是否启用了安全认证，未启用则输入 **n**，如果启用则输入 **y**，然后根据提示分别输入用户名、密码和鉴权数据库（默认为 `admin`）。
    * **Does MongoDB require TLS/SSL?(y/n)**：MongoDB 数据库是否启用 TSL/SSL 加密，未启用则输入 **n**，如果启用则输入 **y**，然后根据提示分别输入 CA 证书和 Certificate Key 文件的绝对地址路径，以及 Certificate Key 的文件密码。
@@ -150,13 +150,13 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
     fit={false}
    />
 
-3. 通过浏览器登录 Tapdata 平台，本机的登录地址为  [http://127.0.0.1:3030](http://127.0.0.1:3030)，首次登录请及时修改密码以保障安全性。
+3. 通过浏览器登录 TapData 平台，本机的登录地址为  [http://127.0.0.1:3030](http://127.0.0.1:3030)，首次登录请及时修改密码以保障安全性。
 
    :::tip
-   如需在同一内网的其他设备上访问 Tapdata 服务，请确保网络可互通。
+   如需在同一内网的其他设备上访问 TapData 服务，请确保网络可互通。
    :::
 
-4. 为 Tapdata 服务设置开机启动。
+4. 为 TapData 服务设置开机启动。
 
    1. 进入 `/usr/lib/systemd/system` 目录， 使用文本编辑器（如 `vim`）创建一个新的服务文件并命名为 `tapdata.service`，将下述文件内容粘贴到文件中。
 
@@ -184,7 +184,7 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
       sudo systemctl enable tapdata.service
       ```
 
-   3. （可选）在业务低峰期，重启机器并通过 `systemctl status tapdata.service` 命令查看 Tapdata 服务是否正常启动。
+   3. （可选）在业务低峰期，重启机器并通过 `systemctl status tapdata.service` 命令查看 TapData 服务是否正常启动。
 
 
 ## 服务器 B 部署流程
@@ -197,11 +197,11 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
       java -cp components/tm.jar -Dloader.main=com.tapdata.tm.license.util.SidGenerator org.springframework.boot.loader.PropertiesLauncher
       ```
 
-   2. 将打印出的 SID 信息提供给 Tapdata 支持团队，完成 License 申请流程。
+   2. 将打印出的 SID 信息提供给 TapData 支持团队，完成 License 申请流程。
 
    3. 将申请到的 License 文件上传至解压后的目录（**tapdata**）中。
 
-2. 在 tapdata 目录中，执行 `./tapdata start`，跟随命令行提示，依次设置 Tapdata 的登录地址、API 服务端口、MongoDB 连接信息等，示例及说明如下：
+2. 在 tapdata 目录中，执行 `./tapdata start`，跟随命令行提示，依次设置 TapData 的登录地址、API 服务端口、MongoDB 连接信息等，示例及说明如下：
 
    :::tip
 
@@ -240,8 +240,8 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
    deploy connector...
    ```
 
-   * **Please enter backend url**：设置 Tapdata 平台的登录地址，此处我们需要设置服务器 A 和 B 的登录地址，以英文逗号（,）分隔，即填入：`http://192.168.1.200:3030,http://192.168.1.201:3030`
-   * **Please enter tapdata port**：设置 Tapdata 平台的登录端口，默认为 `3030`。
+   * **Please enter backend url**：设置 TapData 平台的登录地址，此处我们需要设置服务器 A 和 B 的登录地址，以英文逗号（,）分隔，即填入：`http://192.168.1.200:3030,http://192.168.1.201:3030`
+   * **Please enter tapdata port**：设置 TapData 平台的登录端口，默认为 `3030`。
    * **Please enter api server port**：设置 API Server 的服务端口，默认为 `3080`。
    * **Does MongoDB require username/password?**：MongoDB 数据库是否启用了安全认证，未启用则输入 **n**，如果启用则输入 **y**，然后根据提示分别输入用户名、密码和鉴权数据库（默认为 `admin`）。
    * **Does MongoDB require TLS/SSL?(y/n)**：MongoDB 数据库是否启用 TSL/SSL 加密，未启用则输入 **n**，如果启用则输入 **y**，然后根据提示分别输入 CA 证书和 Certificate Key 文件的绝对地址路径，以及 Certificate Key 的文件密码。
@@ -268,17 +268,17 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
     fit={false}
    />
 
-3. 两个服务器上的 Tapdata 服务均已完成部署，在同一内网的设备，即可通过 http://192.168.1.200:3030 或 http://192.168.1.201:3030 来登录管理页面。
+3. 两个服务器上的 TapData 服务均已完成部署，在同一内网的设备，即可通过 http://192.168.1.200:3030 或 http://192.168.1.201:3030 来登录管理页面。
 
    :::tip
    首次登录请及时修改密码以保障安全性。
    :::
 
-   登录成功后，在系统管理 > 集群管理中，即可查看到两个服务器上 Tapdata 服务的状态。
+   登录成功后，在系统管理 > 集群管理中，即可查看到两个服务器上 TapData 服务的状态。
 
    ![集群状态](../images/tapdata_cluster_ha.png)
 
-4. 为 Tapdata 服务设置开机启动。
+4. 为 TapData 服务设置开机启动。
 
    1. 进入 `/usr/lib/systemd/system` 目录， 使用文本编辑器（如 `vim`）创建一个新的服务文件并命名为 `tapdata.service`，将下述文件内容粘贴到文件中。
 
@@ -306,7 +306,7 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
       sudo systemctl enable tapdata.service
       ```
 
-   3. （可选）在业务低峰期，重启机器并通过 `systemctl status tapdata.service` 命令查看 Tapdata 服务是否正常启动。
+   3. （可选）在业务低峰期，重启机器并通过 `systemctl status tapdata.service` 命令查看 TapData 服务是否正常启动。
 
 
 

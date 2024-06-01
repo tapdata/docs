@@ -3,12 +3,12 @@ import Content from '../reuse-content/_all-features.md';
 
 <Content />
 
-Tapdata 支持丰富的数据源，具体如下：
+TapData 支持丰富的数据源，具体如下：
 
 :::tip
 
 * 如需同步 DDL 操作，您需要开启 DDL 采集和 DDL 应用，更多介绍，见[DDL 同步说明](../best-practice/handle-schema-change.md)。
-* Tapdata Community 仅支持 ClickHouse、Kafka、MongoDB、MySQL、PostgreSQL 数据源。
+* TapData Community 仅支持 ClickHouse、Kafka、MongoDB、MySQL、PostgreSQL 数据源。
 
 :::
 
@@ -111,7 +111,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip
 
-Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测试用例，但尚未通过 Tapdata 认证测试流程，如在使用过程中有疑问，欢迎[联系我们](mailto:team@tapdata.io)。
+Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测试用例，但尚未通过 TapData 认证测试流程，如在使用过程中有疑问，欢迎[联系我们](mailto:team@tapdata.io)。
 
 :::
 
@@ -450,7 +450,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
 
 :::tip
 
-Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚未通过集成测试用例和 Tapdata 认证测试流程，如在使用过程中有疑问，欢迎[联系我们](mailto:team@tapdata.io)。
+Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚未通过集成测试用例和 TapData 认证测试流程，如在使用过程中有疑问，欢迎[联系我们](mailto:team@tapdata.io)。
 
 :::
 

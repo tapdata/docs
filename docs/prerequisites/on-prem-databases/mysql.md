@@ -3,7 +3,7 @@ import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
-MySQL 是应用最广泛的开源关系数据库，是许多网站、应用程序、商业产品使用的关系数据存储。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 MySQL 数据源，后续可将其作为源或目标库来构建数据管道。
+MySQL 是应用最广泛的开源关系数据库，是许多网站、应用程序、商业产品使用的关系数据存储。完成 Agent 部署后，您可以跟随本文教程在 TapData 中添加 MySQL 数据源，后续可将其作为源或目标库来构建数据管道。
 
 ## 支持版本 
 
@@ -42,7 +42,7 @@ import Content2 from '../../reuse-content/certificate/_mysql-as-target.md';
    :::tip
 
    * 运行该程序需确保您的设备已安装 **openssl**，例如在 CentOS 系统中，可执行 `yum install openssl -y` 命令来安装。
-   * 命令执行完毕后，会自动生成文件： `ca-key.pem`、`server-key.pem` 和 `client-key.pem`，通常位于 `/var/lib/mysql/` 目录中，您可以将其下载至本机中，后续在 Tapdata 中配置连接时使用。
+   * 命令执行完毕后，会自动生成文件： `ca-key.pem`、`server-key.pem` 和 `client-key.pem`，通常位于 `/var/lib/mysql/` 目录中，您可以将其下载至本机中，后续在 TapData 中配置连接时使用。
 
    :::
 
@@ -83,7 +83,7 @@ import Content2 from '../../reuse-content/certificate/_mysql-as-target.md';
 
 ## 添加数据源
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. [登录 TapData 平台](../../user-guide/log-in.md)。
 
 2. 在左侧导航栏，单击**连接管理**。
 
@@ -111,7 +111,7 @@ import Content2 from '../../reuse-content/certificate/_mysql-as-target.md';
         * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。
         * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。
         * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
-        * **模型加载频率**：数据源中模型数量大于 1 万时，Tapdata 将按照设置的时间定期刷新模型。
+        * **模型加载频率**：数据源中模型数量大于 1 万时，TapData 将按照设置的时间定期刷新模型。
     * **SSL 设置**：选择是否开启 SSL 连接数据源，可进一步提升数据安全性，开启该功能后还需要上传 CA 文件、客户端证书、客户端密钥文件等，相关文件已在[开启 SSL 连接](#ssl)中获取。
 
 6. 单击**连接测试**，测试通过后单击**保存**。
@@ -138,7 +138,7 @@ import Content2 from '../../reuse-content/certificate/_mysql-as-target.md';
 
      根据具体报错修复后，再执行数据同步。
 
-* 问：Tapdata 连接测试时，提示错误：“Unknown error 1044”
+* 问：TapData 连接测试时，提示错误：“Unknown error 1044”
 
   答：如果已经授予了正确的权限，可以通过下述方法检查并修复：
 

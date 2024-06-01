@@ -8,7 +8,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 ## 操作步骤
 
-1. 以系统管理员身份[登录 Tapdata 平台](../log-in.md)。
+1. 以系统管理员身份[登录 TapData 平台](../log-in.md)。
 
 2. 在左侧导航栏，选择**系统管理** > **角色管理**。
 
@@ -25,7 +25,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
      :::tip
 
-     * 如下图所示，我们仅为其赋予了**连接管理**的权限，该用户登录 Tapdata 后，仅可看到连接管理管理菜单，而且不允许该角色创建和复制连接。
+     * 如下图所示，我们仅为其赋予了**连接管理**的权限，该用户登录 TapData 后，仅可看到连接管理管理菜单，而且不允许该角色创建和复制连接。
      * 当前支持精细权限控制的功能模块为连接管理和数据管道。
    
      :::

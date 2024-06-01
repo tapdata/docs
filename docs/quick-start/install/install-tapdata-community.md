@@ -1,10 +1,10 @@
-# Tapdata Community
+# TapData Community
 
 import Content from '../../reuse-content/_community-features.md';
 
 <Content />
 
-Tapdata 社区版（Community）是一个开源的实时数据平台，可帮助您实现数据的实时同步和转换，本文将演示如何快速安装和启动 Tapdata 社区版。
+TapData 社区版（Community）是一个开源的实时数据平台，可帮助您实现数据的实时同步和转换，本文将演示如何快速安装和启动 TapData 社区版。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -22,13 +22,13 @@ import TabItem from '@theme/TabItem';
 
 ## 组件介绍
 
-Tapdata 社区版包括以下主要组件：
+TapData 社区版包括以下主要组件：
 
-- **连接器（Connectors）**：允许 Tapdata 社区版连接到各种数据源，例如数据库、数据仓库和消息队列等。
+- **连接器（Connectors）**：允许 TapData 社区版连接到各种数据源，例如数据库、数据仓库和消息队列等。
 - **数据处理引擎**：负责执行数据的转换、清洗和加工等任务
 - **监控和管理界面**：提供简单易用的界面化平台，用于配置、管理和监控数据流。
 
-## 安装 Tapdata 社区版
+## 安装 TapData 社区版
 
 
 
@@ -38,13 +38,13 @@ Tapdata 社区版包括以下主要组件：
 ```
 1. 确保 [Docker](https://docs.docker.com/get-docker/) 已安装并启动。
 
-2. 打开终端或命令行界面，执行以下命令拉取最新的 Tapdata Docker 镜像：
+2. 打开终端或命令行界面，执行以下命令拉取最新的 TapData Docker 镜像：
 
    ```bash
    docker pull ghcr.io/tapdata/tapdata:latest
    ```
 
-3. 执行以下命令启动 Tapdata 容器：
+3. 执行以下命令启动 TapData 容器：
 
    ```bash
    docker run -d -p 3030:3030 --restart always --name tapdata ghcr.io/tapdata/tapdata:latest
@@ -59,7 +59,7 @@ Tapdata 社区版包括以下主要组件：
 
    :::tip
 
-   Tapdata 社区版默认会使用容器内的 MongoDB 来存储元数据、任务配置等数据，如需使用自有的 MongoDB，可在启动容器时通过 `-e` 来指定 MongoDB [URI 连接串信息](https://www.mongodb.com/docs/v5.0/reference/connection-string/#standard-connection-string-format)，例如：`docker run  -d -p 3030:3030 --name tapdata -e MONGO_URI=mongodb://root:Tap123456@192.168.1.18:29917/tapdata_community?authSource=admin' --restart always ghcr.io/tapdata/tapdata:latest`。
+   TapData 社区版默认会使用容器内的 MongoDB 来存储元数据、任务配置等数据，如需使用自有的 MongoDB，可在启动容器时通过 `-e` 来指定 MongoDB [URI 连接串信息](https://www.mongodb.com/docs/v5.0/reference/connection-string/#standard-connection-string-format)，例如：`docker run  -d -p 3030:3030 --name tapdata -e MONGO_URI=mongodb://root:Tap123456@192.168.1.18:29917/tapdata_community?authSource=admin' --restart always ghcr.io/tapdata/tapdata:latest`。
 
    :::
 
@@ -70,11 +70,11 @@ Tapdata 社区版包括以下主要组件：
    All Done, Please Visit http://localhost:3030
    ```
 
-5. 通过浏览器登录 Tapdata 平台，本机的登录地址为 http://localhost:3030，默认账号为 admin@admin.com，密码为 admin，首次登录请及时修改密码以保障安全性。
+5. 通过浏览器登录 TapData 平台，本机的登录地址为 http://localhost:3030，默认账号为 admin@admin.com，密码为 admin，首次登录请及时修改密码以保障安全性。
 
    :::tip
 
-   如需在同一内网的其他设备上访问 Tapdata 服务，请确保网络可互通。
+   如需在同一内网的其他设备上访问 TapData 服务，请确保网络可互通。
 
    :::
 
@@ -82,7 +82,7 @@ Tapdata 社区版包括以下主要组件：
 
 <TabItem value="Linux 平台下部署">
 
-1. 访问 [Tapdata Community Release 页面](https://github.com/tapdata/tapdata/releases)，获取最新的安装包，然后将其上传至待部署的设备中。
+1. 访问 [TapData Community Release 页面](https://github.com/tapdata/tapdata/releases)，获取最新的安装包，然后将其上传至待部署的设备中。
 
 2. 在待部署的设备上，执行下述格式的命令，解压安装包并进入解压后的路径。
 
@@ -92,7 +92,7 @@ Tapdata 社区版包括以下主要组件：
 
    以 3.5.6 版本为例，即为`tar -zxvf tapdata-v3.5.16-663b7b11.tar.gz && cd tapdata`
 
-3. 执行下述格式的命令，指定 MongoDB [URI 连接串信息](https://www.mongodb.com/docs/v5.0/reference/connection-string/#standard-connection-string-format)，Tapdata 将用其存储 Tapdata 元数据、任务配置等信息。
+3. 执行下述格式的命令，指定 MongoDB [URI 连接串信息](https://www.mongodb.com/docs/v5.0/reference/connection-string/#standard-connection-string-format)，TapData 将用其存储 TapData 元数据、任务配置等信息。
 
    ```bash
    export MONGO_URI=mongodb://{admin}:{password}@{host}:{port}/{database_name}?replicaSet={replica_name}&authSource=admin
@@ -100,7 +100,7 @@ Tapdata 社区版包括以下主要组件：
 
    示例：`export mongodb://root:Tap123456@192.168.1.18:29917/tapdata_community?replicaSet=rs1&authSource=admin`
 
-4. 执行 `./start.sh`启动 Tapdata 服务，完成启动后关键日志提示如下：
+4. 执行 `./start.sh`启动 TapData 服务，完成启动后关键日志提示如下：
 
    :::tip
 
@@ -113,11 +113,11 @@ Tapdata 社区版包括以下主要组件：
    All Done, Please Visit http://localhost:3030
    ```
 
-5. 通过浏览器登录 Tapdata 平台，本机的登录地址为 http://localhost:3030，默认账号为 admin@admin.com，密码为 admin，首次登录请及时修改密码以保障安全性。
+5. 通过浏览器登录 TapData 平台，本机的登录地址为 http://localhost:3030，默认账号为 admin@admin.com，密码为 admin，首次登录请及时修改密码以保障安全性。
 
    :::tip
 
-   如需在同一内网的其他设备上访问 Tapdata 服务，请确保网络可互通。
+   如需在同一内网的其他设备上访问 TapData 服务，请确保网络可互通。
 
    :::
 

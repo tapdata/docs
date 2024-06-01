@@ -5,13 +5,13 @@ import Content from '../reuse-content/_cloud-features.md';
 <Content />
 
 
-Tapdata Cloud 支持对 Agent 的可视化运维管理，您可以通过页面管理已安装的 Agent，也可以通过命令行管理。
+TapData Cloud 支持对 Agent 的可视化运维管理，您可以通过页面管理已安装的 Agent，也可以通过命令行管理。
 
 
 
 ## 通过页面管理 Agent
 
-1. [登录 Tapdata 平台](log-in.md)。
+1. [登录 TapData 平台](log-in.md)。
 
 2. 单击左侧导航栏的**资源管理**。
 

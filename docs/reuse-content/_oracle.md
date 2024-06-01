@@ -144,7 +144,7 @@ GRANT create session, alter session, select any dictionary, select any transacti
 
 Oracle 的 connection_time
 
-connect_time 参数将自动断开超时的会话。 默认情况下，它是无限的。 设置此设置后，Tapdata 的实时同步可能无法正常工作。 要检查设置的值，可以使用以下命令：
+connect_time 参数将自动断开超时的会话。 默认情况下，它是无限的。 设置此设置后，TapData 的实时同步可能无法正常工作。 要检查设置的值，可以使用以下命令：
 
 ```sql
 select resource_name, limit from dba_profiles where profile=( select profile from dba_users where username = '<username>');

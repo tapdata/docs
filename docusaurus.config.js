@@ -101,18 +101,18 @@ const config = {
     // Website announcement
     announcementBar: {
             id: 'announcementBar-1',
-            content: `🎉️ 更稳定，更易用，新增数据转换功能，抢先体验全新的 <a target="_blank" rel="noopener noreferrer" href="https://cloud.tapdata.net/console/v3/">Tapdata Cloud 3.0</a> `,
+            content: `🎉️ 更稳定，更易用，新增数据转换功能，抢先体验全新的 <a target="_blank" rel="noopener noreferrer" href="https://cloud.tapdata.net/console/v3/">TapData Cloud 3.0</a> `,
             backgroundColor: '#1d4378',
             textColor: '#ffffff',
             },
     // SEO Configuration, this would become <meta name="keywords" content="cooking, blog"> in the generated HTML
       metadata: [
-        {name: 'keywords', content: '一站式实时数据平台, Tapdata'},
+        {name: 'keywords', content: '一站式实时数据平台, TapData'},
       ],
       navbar: {
         title: '首页',
         logo: {
-          alt: 'Tapdata',
+          alt: 'TapData',
           src: 'img/logo.png',
           href: 'https://tapdata.net/',
         },
@@ -121,12 +121,12 @@ const config = {
             type: 'doc',
             docId: 'what-is-tapdata',
             position: 'left',
-            label: 'Tapdata 帮助文档',
+            label: 'TapData 帮助文档',
             },
           {
             href: 'https://cloud.tapdata.net/console/v3/',
             position: 'right',
-            label: '登录 Tapdata Cloud',
+            label: '登录 TapData Cloud',
             },
           {
             type: 'docsVersionDropdown',
@@ -134,8 +134,8 @@ const config = {
             dropdownActiveClassDisabled: true,
            },
           {
-            href: 'https://github.com/tapdata/docs',
-            label: 'GitHub',
+            href: 'https://github.com/tapdata/tapdata',
+            label: 'GitHub⭐',
             position: 'right',
           },
         ],
@@ -194,7 +194,7 @@ const config = {
             ],
           },
         ], */
-        copyright: `Copyright © ${new Date().getFullYear()} Tapdata, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} TapData, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

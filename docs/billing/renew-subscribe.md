@@ -4,13 +4,13 @@ import Content from '../reuse-content/_cloud-features.md';
 
 <Content />
 
-对于包年/包月实例，在到期前一个月 Tapdata Cloud 会提醒您及时续费，为避免影响您的业务，请在实例到期前及时续费或者在购买时选择**连续包年**/**包月**计费方式。
+对于包年/包月实例，在到期前一个月 TapData Cloud 会提醒您及时续费，为避免影响您的业务，请在实例到期前及时续费或者在购买时选择**连续包年**/**包月**计费方式。
 
 
 
 ## 操作步骤
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 [TapData Cloud 平台](https://cloud.tapdata.net/console/v3/)。
 
 2. 在页面右上角，单击您的用户名，选择**订阅中心**。
 

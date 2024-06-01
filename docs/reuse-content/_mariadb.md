@@ -6,7 +6,7 @@ MariaDB 10.x
 
 #### 开启 binlog
 
-- 必须开启 MariaDB 的 binlog ，Tapdata 才能正常完成同步工作。
+- 必须开启 MariaDB 的 binlog ，TapData 才能正常完成同步工作。
 - 级连删除（CASCADE DELETE），这类由数据库产生的删除不会记录在binlog内，所以不被支持。 修改 $MYSQL_HOME/mysql.cnf, 例如:
 
 ```bash

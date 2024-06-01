@@ -6,7 +6,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 服务审计主要用来查看 API 的访问记录，可查看每次请求的记录包括访问类型、访问人员、IP 地址、访问时间、访问结果、失败原因等等，也可按不同条件进行筛选。
 
-登录至 Tapdata 平台，单击页面左侧的**数据服务** > **服务审计**即可查看。
+登录至 TapData 平台，单击页面左侧的**数据服务** > **服务审计**即可查看。
 
 ![](../../images/audit_api_1.png)
 

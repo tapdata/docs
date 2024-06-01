@@ -1,10 +1,10 @@
-# Tapdata Cloud 更新日志
+# TapData Cloud 更新日志
 
 import Content from '../reuse-content/_cloud-features.md';
 
 <Content />
 
-为提升用户体验，Tapdata Cloud 通过发布新版本的方式丰富/优化产品功能、修复已知缺陷。本文介绍 Tapdata Cloud 的更新日志，帮助您更好地掌握新功能特性。
+为提升用户体验，TapData Cloud 通过发布新版本的方式丰富/优化产品功能、修复已知缺陷。本文介绍 TapData Cloud 的更新日志，帮助您更好地掌握新功能特性。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -100,7 +100,7 @@ import TabItem from '@theme/TabItem';
 
 #### 功能优化
 
-* 为进一步提升用户体验，成熟度为 Beta 和 Alpha 的[数据源](../prerequisites/README.md)需申请使用，Tapdata 可基于您的业务场景提供更好的技术支持
+* 为进一步提升用户体验，成熟度为 Beta 和 Alpha 的[数据源](../prerequisites/README.md)需申请使用，TapData 可基于您的业务场景提供更好的技术支持
 
 #### 问题修复
 
@@ -144,7 +144,7 @@ import TabItem from '@theme/TabItem';
 #### 新增功能
 
 * MongoDB 间的数据同步场景，新增支持 [Capped 集合](https://www.mongodb.com/docs/manual/core/capped-collections/)
-* 数据复制/转换任务支持导入能力，您可以在 [MongoDB Relational Migrator](https://www.mongodb.com/docs/relational-migrator/) 上设计好数据流转流程并将其导出，随后在 Tapdata 数据管道右上角直接导入，进一步提升数据管道设计便利性
+* 数据复制/转换任务支持导入能力，您可以在 [MongoDB Relational Migrator](https://www.mongodb.com/docs/relational-migrator/) 上设计好数据流转流程并将其导出，随后在 TapData 数据管道右上角直接导入，进一步提升数据管道设计便利性
 
 #### 功能优化
 
@@ -349,7 +349,7 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- 支持购买[全托管模式](../billing/purchase)的 Agent 实例，由 Tapdata Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，可实现一键交付使用，免去部署和运维精力，专注业务本身。
+- 支持购买[全托管模式](../billing/purchase)的 Agent 实例，由 TapData Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，可实现一键交付使用，免去部署和运维精力，专注业务本身。
 
 ### 20230421
 
@@ -370,7 +370,7 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- 新增阿里云市场接入，可通过[阿里云市场](https://market.aliyun.com/products/56024006/cmgj00061912.html)采购/试用 Tapdata Cloud。
+- 新增阿里云市场接入，可通过[阿里云市场](https://market.aliyun.com/products/56024006/cmgj00061912.html)采购/试用 TapData Cloud。
 
 #### 问题修复
 
@@ -453,7 +453,7 @@ import TabItem from '@theme/TabItem';
 <ul>
     <li>Agent 部署引导流程优化，新增体验示例，用户无需安装 Agent 即可体验产品能力</li>
     <li>任务列表展示优化，新增展示任务的增量时间点，并支持排序</li>
-    <li>分类功能用户体验优化，用户选择分类后，Tapdata Cloud 会记住用户的分类选择</li>
+    <li>分类功能用户体验优化，用户选择分类后，TapData Cloud 会记住用户的分类选择</li>
     <li>可观测日志展示方式优化，支持折叠和展开时自动格式化</li>
     <li>源节点增量时间点推进逻辑优化，任务使用的表的增量时间点，随所在库的增量时间点持续推进</li>
 </ul>

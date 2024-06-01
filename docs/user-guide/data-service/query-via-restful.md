@@ -4,13 +4,13 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 <Content />
 
-RESTful API 是遵循 REST 架构规范的应用编程接口（API 或 Web API），Tapdata 支持集成了 RESTful API 服务，您可以通过 API 服务地址来执行请求，获取经治理后的数据信息。
+RESTful API 是遵循 REST 架构规范的应用编程接口（API 或 Web API），TapData 支持集成了 RESTful API 服务，您可以通过 API 服务地址来执行请求，获取经治理后的数据信息。
 
 本文我们将介绍如何借助 Postman 工具来调用 API 请求。
 
 ## 操作步骤
 
-1. [登录 Tapdata 平台](../log-in.md)。
+1. [登录 TapData 平台](../log-in.md)。
 
 2. 在左侧导航栏，选择**数据服务** > **服务管理**。
 
@@ -46,6 +46,6 @@ RESTful API 是遵循 REST 架构规范的应用编程接口（API 或 Web API�
    
    :::tip
    
-   Tapdata 支持在 URL 查询字符串中添加查询条件，从而查询结果的快速过滤，具体操作，见 [API 查询参数说明](api-query-params.md)。
+   TapData 支持在 URL 查询字符串中添加查询条件，从而查询结果的快速过滤，具体操作，见 [API 查询参数说明](api-query-params.md)。
    
    :::

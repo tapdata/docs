@@ -8,7 +8,7 @@ import Content from '../reuse-content/_cloud-features.md';
 
 ## 操作步骤
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. 登录 [TapData Cloud 平台](https://cloud.tapdata.net/console/v3/)。
 
 2. 在左侧导航栏，单击**资源管理**。
 
@@ -37,7 +37,7 @@ import Content from '../reuse-content/_cloud-features.md';
 
 ## 退款说明
 
-当您发起了退订操作后，Tapdata Cloud 将按照使用时间执行退款，例如一次性订购 1 个月的实例，在使用了 10 天后发起退订，则默认在原有支付金额上退还剩余 20 天的费用，计算公式如下：
+当您发起了退订操作后，TapData Cloud 将按照使用时间执行退款，例如一次性订购 1 个月的实例，在使用了 10 天后发起退订，则默认在原有支付金额上退还剩余 20 天的费用，计算公式如下：
 
 （订阅周期结束日期 − 退订日期）**/** （订阅周期结束日期 **−** 订阅周期开始日期） **×** 实际支付金额（不含优惠金额）
 

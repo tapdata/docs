@@ -4,14 +4,14 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 <Content />
 
-Tapdata 的 API 认证服务基于 OAuth 2.0 机制，默认支持 `client credentials`、`implicit` 授权方式，您可以在[创建客户端](create-api-client.md)时选择授权方式。本文将介绍 API 认证流程，包含如何获取访问令牌，帮助您快速使用 API 服务。
+TapData 的 API 认证服务基于 OAuth 2.0 机制，默认支持 `client credentials`、`implicit` 授权方式，您可以在[创建客户端](create-api-client.md)时选择授权方式。本文将介绍 API 认证流程，包含如何获取访问令牌，帮助您快速使用 API 服务。
 
 ## 获取访问令牌
 
 ### 请求地址
 
 ```bash
-http://{Tapdata 服务地址}:3030/oauth/token
+http://{TapData 服务地址}:3030/oauth/token
 ```
 
 ### 请求参数

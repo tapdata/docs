@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 ## 操作步骤
 
-1. [登录 Tapdata 平台](../../log-in.md)。
+1. [登录 TapData 平台](../../log-in.md)。
 
 2. 在左侧导航栏，单击**实时数据中心**。
 

@@ -10,7 +10,7 @@ import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
 ## 创建自定义节点
 
-1. [登录 Tapdata 平台](../log-in.md)。
+1. [登录 TapData 平台](../log-in.md)。
 
 2. 在左侧导航栏，选择**高级功能** > **自定义节点**。
 
@@ -54,7 +54,7 @@ import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
 **具体流程：**
 
-1. [登录 Tapdata 平台](../log-in.md)。
+1. [登录 TapData 平台](../log-in.md)。
 
 2. 在左侧导航栏，选择**数据管道** > **自定义节点**。
 
@@ -104,11 +104,11 @@ import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
 ## <span id="csv-demo">案例二：自定义 CSV 字段处理器</span>
 
-通过 Tapdata 将数据同步至 Redis 时，希望能够按照 CSV 文件的格式进行标准化处理，例如对特殊字符进行转移，方便后续的数据处理。
+通过 TapData 将数据同步至 Redis 时，希望能够按照 CSV 文件的格式进行标准化处理，例如对特殊字符进行转移，方便后续的数据处理。
 
 **具体流程：**
 
-1. [登录 Tapdata 平台](../log-in.md)。
+1. [登录 TapData 平台](../log-in.md)。
 
 2. 在左侧导航栏，选择**数据管道** > **自定义节点**。
 

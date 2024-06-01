@@ -3,10 +3,10 @@ import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
-HubSpot 是一个客户平台，提供连接营销、销售、内容管理和客户服务所需的所有软件、集成和资源。Tapdata 支持将 HubSpot 作为源库构建数据管道，帮助您读取 HubSpot 的运营数据，并同步到指定的数据源，本文介绍如何在 Tapdata 中添加 HubSpot 数据源。
+HubSpot 是一个客户平台，提供连接营销、销售、内容管理和客户服务所需的所有软件、集成和资源。TapData 支持将 HubSpot 作为源库构建数据管道，帮助您读取 HubSpot 的运营数据，并同步到指定的数据源，本文介绍如何在 TapData 中添加 HubSpot 数据源。
 
 ## 连接 HubSpot
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. [登录 TapData 平台](../../user-guide/log-in.md)。
 
 2. 在左侧导航栏，单击**连接管理**。
 

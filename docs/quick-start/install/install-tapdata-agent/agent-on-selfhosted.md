@@ -4,11 +4,11 @@ import Content from '../../../reuse-content/_cloud-features.md';
 
 <Content />
 
-Tapdata Agent 是数据同步、数据异构、数据管道场景的重要组件，您可以将其部署在云端，由 Tapdata Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，免去部署和运维精力，专注业务本身；您也可以选购半托管实例，充分利用自有的硬件资源，获得更低的价格的同时，进一步提升安全性。
+TapData Agent 是数据同步、数据异构、数据管道场景的重要组件，您可以将其部署在云端，由 TapData Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，免去部署和运维精力，专注业务本身；您也可以选购半托管实例，充分利用自有的硬件资源，获得更低的价格的同时，进一步提升安全性。
 
 <details>
   <summary>Agent 介绍</summary>
-  Agent 是数据同步、数据异构、数据开发场景中的关键程序，负责通过流式技术从源系统获取数据、处理转换数据并发送到目标系统，由云上的管理端统一管理，由 Agent 处理的数据不会上传或存储在 Tapdata Cloud 中，充分保障数据安全性。
+  Agent 是数据同步、数据异构、数据开发场景中的关键程序，负责通过流式技术从源系统获取数据、处理转换数据并发送到目标系统，由云上的管理端统一管理，由 Agent 处理的数据不会上传或存储在 TapData Cloud 中，充分保障数据安全性。
 </details>
 
 
@@ -20,9 +20,9 @@ import TabItem from '@theme/TabItem';
 
 ## 操作步骤
 
-Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，您可以免费创建 1 个 SMALL 规格的 Agent 实例（半托管模式），此外，您还可以[购买更多的 Agent 实例](../../../billing/billing-overview.md)，来满足业务需求，接下来，我们演示具体的操作流程。
+TapData Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，您可以免费创建 1 个 SMALL 规格的 Agent 实例（半托管模式），此外，您还可以[购买更多的 Agent 实例](../../../billing/billing-overview.md)，来满足业务需求，接下来，我们演示具体的操作流程。
 
-1. [登录 Tapdata 平台](../../../user-guide/log-in.md)。
+1. [登录 TapData 平台](../../../user-guide/log-in.md)。
 
 2. 在左侧导航栏，单击**资源管理**。
 
@@ -38,7 +38,7 @@ Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，您可
 
      - **半托管模式**：由您提供设备来部署和运维 Agent，为其运行提供计算/存储资源，可充分利用现有硬件资源，获得更低的价格的同时，进一步提升安全性。
 
-     - **全托管模式（推荐）**：由 Tapdata Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，可实现一键交付使用，免去部署和运维精力，专注业务本身。
+     - **全托管模式（推荐）**：由 TapData Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，可实现一键交付使用，免去部署和运维精力，专注业务本身。
 
        :::tip
 
@@ -52,7 +52,7 @@ Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，您可
 
    :::tip
 
-   此外，您还可以通过[阿里云市场](https://market.aliyun.com/products/56024006/cmgj00061912.html)采购/试用 Tapdata Cloud，在阿里云市场获得授权码后，在本页面下方选择**直接使用阿里云授权码**以完成绑定。
+   此外，您还可以通过[阿里云市场](https://market.aliyun.com/products/56024006/cmgj00061912.html)采购/试用 TapData Cloud，在阿里云市场获得授权码后，在本页面下方选择**直接使用阿里云授权码**以完成绑定。
 
    :::
 
@@ -153,7 +153,7 @@ Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，您可
    wget 'https://resource.tapdata.net/doc-source/tapdata.zip' && unzip tapdata.zip
    ```
 
-5. 返回 Tapdata Cloud 部署页面，选择目标操作系统为**Linux(64 位) **，然后点击**复制**。
+5. 返回 TapData Cloud 部署页面，选择目标操作系统为**Linux(64 位) **，然后点击**复制**。
 
       ![Copy the installation command](../../../images/select_agent_platform.png)
 

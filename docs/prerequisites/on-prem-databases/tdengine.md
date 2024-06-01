@@ -3,15 +3,15 @@ import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
-TDengine 是一款开源、高性能、云原生的时序数据库，可适用于物联网、车联网、工业互联网、金融、IT 运维等场景。本文介绍如何在 Tapdata 上连接 TDengine 数据源，帮助您快速实现数据流转。
+TDengine 是一款开源、高性能、云原生的时序数据库，可适用于物联网、车联网、工业互联网、金融、IT 运维等场景。本文介绍如何在 TapData 上连接 TDengine 数据源，帮助您快速实现数据流转。
 
 ## 前提条件
 
-由于Tapdata 采用 REST 方式连接至 TDengine，在配置连接前，您需要在 TDengine 所属服务器上执行 `sudo systemctl start taosadapter` 命令开启 [taosAdapter](https://docs.taosdata.com/reference/taosadapter/) 服务。
+由于TapData 采用 REST 方式连接至 TDengine，在配置连接前，您需要在 TDengine 所属服务器上执行 `sudo systemctl start taosadapter` 命令开启 [taosAdapter](https://docs.taosdata.com/reference/taosadapter/) 服务。
 
 :::tip
 
-如希望 Tapdata 读取 TDengine 的增量数据，您还需要在 Agent 所属服务器上[安装 TDengine 客户端驱动](https://docs.taosdata.com/connector/#%E5%AE%89%E8%A3%85%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%A9%B1%E5%8A%A8)。
+如希望 TapData 读取 TDengine 的增量数据，您还需要在 Agent 所属服务器上[安装 TDengine 客户端驱动](https://docs.taosdata.com/connector/#%E5%AE%89%E8%A3%85%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%A9%B1%E5%8A%A8)。
 
 :::
 
@@ -21,7 +21,7 @@ TDengine 3.x
 
 ## 操作步骤
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. [登录 TapData 平台](../../user-guide/log-in.md)。
 
 2. 在左侧导航栏，单击**连接管理**。
 

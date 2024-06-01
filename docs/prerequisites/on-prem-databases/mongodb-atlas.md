@@ -3,7 +3,7 @@ import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
-MongoDB Atlas 是 MongoDB 提供的多云应用程序数据平台，Tapdata 支持将 MongoDB Atlas 作为源或目标库构建数据管道，本文介绍如何在 Tapdata 中添加 MongoDB Atlas 数据源。
+MongoDB Atlas 是 MongoDB 提供的多云应用程序数据平台，TapData 支持将 MongoDB Atlas 作为源或目标库构建数据管道，本文介绍如何在 TapData 中添加 MongoDB Atlas 数据源。
 
 ## 支持版本
 
@@ -25,7 +25,7 @@ MongoDB Atlas 5.0.15
 
     2. 单击右侧的 **ADD IP ADDRESS**。
 
-    3. 在弹出的对话框中，填写 Tapdata 所属的公网地址（CIDR 格式）并单击 **Confirm**。
+    3. 在弹出的对话框中，填写 TapData 所属的公网地址（CIDR 格式）并单击 **Confirm**。
 
        ![设置网络白名单](../../images/atlas_add_ip_address.png)
 
@@ -59,7 +59,7 @@ MongoDB Atlas 5.0.15
 
 ## 连接 MongoDB Atlas
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. [登录 TapData 平台](../../user-guide/log-in.md)。
 
 2. 在左侧导航栏，单击**连接管理**。
 
@@ -88,8 +88,8 @@ MongoDB Atlas 5.0.15
           :::
           
         * **使用 TLS/SSL 连接**：根据业务需求选择：
-            * **TSL/SSL 连接**：Tapdata 将连接网络中的单独服务器，该服务器提供到数据库的 TSL/SSL 通道。如果您的数据库位于不可访问的子网中，则可尝试使用此方法并提供私钥文件、私钥密码等信息。
-            * **直接连接**：Tapdata 将直接连接到数据库。
+            * **TSL/SSL 连接**：TapData 将连接网络中的单独服务器，该服务器提供到数据库的 TSL/SSL 通道。如果您的数据库位于不可访问的子网中，则可尝试使用此方法并提供私钥文件、私钥密码等信息。
+            * **直接连接**：TapData 将直接连接到数据库。
 
     * 高级设置
         * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。
@@ -100,7 +100,7 @@ MongoDB Atlas 5.0.15
         
         * **模型加载时间**：当数据源中模型数量小于 10,000 时，每小时刷新一次模型信息；如果模型数据超过 10,000，则每天按照您指定的时间刷新模型信息。
         
-        * **开启心跳表**：当连接类型选择为**源头和目标**、**源头**时，支持打开该开关，由 Tapdata 在源库中创建一个名为 **_tapdata_heartbeat_table** 的心跳表并每隔 10 秒更新一次其中的数据（数据库账号需具备相关权限），用于数据源连接与任务的健康度监测。
+        * **开启心跳表**：当连接类型选择为**源头和目标**、**源头**时，支持打开该开关，由 TapData 在源库中创建一个名为 **_tapdata_heartbeat_table** 的心跳表并每隔 10 秒更新一次其中的数据（数据库账号需具备相关权限），用于数据源连接与任务的健康度监测。
           
           :::tip
           

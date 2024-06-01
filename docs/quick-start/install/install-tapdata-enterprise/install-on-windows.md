@@ -3,7 +3,7 @@ import Content from '../../../reuse-content/_enterprise-features.md';
 
 <Content />
 
-本文介绍如何快速在本地的 Windows 平台部署 Tapdata 服务。
+本文介绍如何快速在本地的 Windows 平台部署 TapData 服务。
 
 :::tip
 
@@ -20,7 +20,7 @@ import Content from '../../../reuse-content/_enterprise-features.md';
 
 ## 准备工作
 
-1. 部署 MongoDB 数据库，该库将作为 Tapdata 存储系统运行相关数据，例如日志、元数据等，相关部署方法，可参考[官方文档](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/)。
+1. 部署 MongoDB 数据库，该库将作为 TapData 存储系统运行相关数据，例如日志、元数据等，相关部署方法，可参考[官方文档](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/)。
 
 2. 登录至待部署的设备上，安装 Java 1.8 并设置环境变量。
 
@@ -69,7 +69,7 @@ import Content from '../../../reuse-content/_enterprise-features.md';
 
 :::
 
-1. 下载 Tapdata 安装包（可[联系我们](mailto:team@tapdata.io)获取），将安装包解压到所需目录。
+1. 下载 TapData 安装包（可[联系我们](mailto:team@tapdata.io)获取），将安装包解压到所需目录。
 
 2. 打开命令行，执行下述格式的命令进入到解压到的目录，本案例中为 `D:\tapdata`。
 
@@ -85,11 +85,11 @@ import Content from '../../../reuse-content/_enterprise-features.md';
       java -cp components/tm.jar -Dloader.main=com.tapdata.tm.license.util.SidGenerator org.springframework.boot.loader.PropertiesLauncher
       ```
 
-   2. 将打印出的 SID 信息提供给 Tapdata 支持团队，完成 License 申请流程。
+   2. 将打印出的 SID 信息提供给 TapData 支持团队，完成 License 申请流程。
 
    3. 将申请到的 License 文件上传至解压后的目录中。
 
-2. 执行 `./tapdata.exe start`，跟随命令行提示，依次设置 Tapdata 的登录地址、API 服务端口、MongoDB 连接信息等，示例及说明如下：
+2. 执行 `./tapdata.exe start`，跟随命令行提示，依次设置 TapData 的登录地址、API 服务端口、MongoDB 连接信息等，示例及说明如下：
 
    ```bash
     ./tapdata.exe start
@@ -121,8 +121,8 @@ import Content from '../../../reuse-content/_enterprise-features.md';
    TapdataAgent starting ...:
    ```
 
-   * **Please enter backend url**：设置 Tapdata 平台的登录地址，默认为 `http://127.0.0.1:3030/`
-   * **Please enter tapdata port**：设置 Tapdata 平台的登录端口，默认为 `3030`。
+   * **Please enter backend url**：设置 TapData 平台的登录地址，默认为 `http://127.0.0.1:3030/`
+   * **Please enter tapdata port**：设置 TapData 平台的登录端口，默认为 `3030`。
    * **Please enter api server port**：设置 API Server 的服务端口，默认为 `3080`。
    * **Does MongoDB require username/password?**：MongoDB 数据库是否启用了安全认证，未启用则输入 **n**，如果启用则输入 **y**，然后根据提示分别输入用户名、密码和鉴权数据库（默认为 `admin`）。
    * **Does MongoDB require TLS/SSL?(y/n)**：MongoDB 数据库是否启用 TSL/SSL 加密，未启用则输入 **n**，如果启用则输入 **y**，然后根据提示分别输入 CA 证书和 Certificate Key 文件的绝对地址路径，以及 Certificate Key 的文件密码。
@@ -138,11 +138,11 @@ import Content from '../../../reuse-content/_enterprise-features.md';
    API service started
    ```
 
-3. 通过浏览器登录 Tapdata 平台，本机的登录地址为  [http://127.0.0.1:3030](http://127.0.0.1:3030)，首次登录请及时修改密码以保障安全性。
+3. 通过浏览器登录 TapData 平台，本机的登录地址为  [http://127.0.0.1:3030](http://127.0.0.1:3030)，首次登录请及时修改密码以保障安全性。
 
    :::tip
 
-   如需在同一内网的其他设备上访问 Tapdata 服务，请确保网络可互通，例如[设置 Windows 防火墙](https://learn.microsoft.com/zh-cn/windows/security/operating-system-security/network-security/windows-firewall/configure)，允许访问本机的 3030 和 3080 端口。
+   如需在同一内网的其他设备上访问 TapData 服务，请确保网络可互通，例如[设置 Windows 防火墙](https://learn.microsoft.com/zh-cn/windows/security/operating-system-security/network-security/windows-firewall/configure)，允许访问本机的 3030 和 3080 端口。
 
    :::
 

@@ -6,15 +6,15 @@ import Content from '../reuse-content/_enterprise-and-community-features.md';
 
 :::tip
 
-如您的产品为 Tapdata Cloud，通知消息及其配置入口在页面右上角，支持设置通知规则和告警接收人。
+如您的产品为 TapData Cloud，通知消息及其配置入口在页面右上角，支持设置通知规则和告警接收人。
 
 :::
 
-Tapdata 支持自定义系统和告警设置，同时支持通过 Webhook 对接第三方平台，帮助您快速掌握任务运行状态。
+TapData 支持自定义系统和告警设置，同时支持通过 Webhook 对接第三方平台，帮助您快速掌握任务运行状态。
 
 ## 通知设置
 
-[登录 Tapdata 平台](log-in.md)后，单击右上角的 ![setting_icon](../images/setting_icon.png) > **通知设置**，可根据自定义的通知规则设置，自动触发通知发送流程，主要包括任务运行通知和 Agent 通知两种类型：具体包含的通知项如下所示：
+[登录 TapData 平台](log-in.md)后，单击右上角的 ![setting_icon](../images/setting_icon.png) > **通知设置**，可根据自定义的通知规则设置，自动触发通知发送流程，主要包括任务运行通知和 Agent 通知两种类型：具体包含的通知项如下所示：
 
 ![](../images/system_notification_1.png)
 

@@ -34,7 +34,7 @@ PostgreSQL 的逻辑解码功能最早出现在9.4版本中，它是一种机制
 - **DEFAULT** - 更新和删除将包含primary key列的现前值
 - **NOTHING** - 更新和删除将不包含任何先前值
 - **FULL** - 更新和删除将包含所有列的先前值
-- **INDEX** index name - 更新和删除事件将包含名为index name的索引定义中包含的列的先前值 如果有多表合并同步的场景，则Tapdata需要调整该属性为FULL 示例
+- **INDEX** index name - 更新和删除事件将包含名为index name的索引定义中包含的列的先前值 如果有多表合并同步的场景，则TapData需要调整该属性为FULL 示例
 
 ```sql
 alter table '[schema]'.'[table name]' REPLICA IDENTITY FULL`

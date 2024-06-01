@@ -10,7 +10,7 @@ import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
 ## 创建共享缓存
 
-1. [登录 Tapdata 平台](../log-in.md)。
+1. [登录 TapData 平台](../log-in.md)。
 
 2. 在左侧导航栏，选择**高级功能** > **共享缓存**。
 

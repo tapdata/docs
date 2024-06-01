@@ -3,11 +3,11 @@ import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
 <Content />
 
-为便于后续快速读取任务相关信息，Tapdata 会将任务的必要配置、共享缓存等信息存储至内部的 MongoDB 数据库中。为存储更多的数据（如缓存数据），您可以创建一个外部数据库来存储相关数据。
+为便于后续快速读取任务相关信息，TapData 会将任务的必要配置、共享缓存等信息存储至内部的 MongoDB 数据库中。为存储更多的数据（如缓存数据），您可以创建一个外部数据库来存储相关数据。
 
 :::tip
 
-如果您使用的是 Tapdata Cloud，操作入口为**高级功能** > **外存管理**。
+如果您使用的是 TapData Cloud，操作入口为**高级功能** > **外存管理**。
 
 :::
 
@@ -19,13 +19,13 @@ import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
 ## 创建外存
 
-1. [登录 Tapdata 平台](../log-in.md)。
+1. [登录 TapData 平台](../log-in.md)。
 
 2. 在左侧导航栏，选择**系统管理** > **外存管理**。
 
    :::tip
 
-   如您使用的产品系列为 Tapdata Cloud 产品，操作入口为**高级功能** > **外存管理**。
+   如您使用的产品系列为 TapData Cloud 产品，操作入口为**高级功能** > **外存管理**。
 
    :::
 

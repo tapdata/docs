@@ -48,7 +48,11 @@ Tapdata 提供 **Cloud**、**Enterprise** 和 **Community** 三种部署方式�
 | Tapdata Enterprise | 支持部署至本地数据中心，适合对数据敏感性或网络隔离有严格要求的场景，如金融机构、政府部门或希望完全控制数据的大型企业。 | 基于部署的服务器节点数量，按年支付相应的订阅费用。在正式采购前，您可以点击“[申请试用](https://tapdata.net/tapdata-on-prem/demo.html)‍”‍，Tapdata 工程师会联系您并协助您试用。更多介绍，见[产品定价](https://tapdata.net/pricing.html)。 |
 | Tapdata Community | 开源的数据集成平台，提供基础的数据同步和转换功能，可通过 Docker 一键部署，帮助您快速探索和实施数据集成项目。随着项目或企业发展，您可以平滑升级至 Tapdata Cloud 或 Tapdata Enterprise，以获得更多高级功能或服务支持。 | [开源免费](https://github.com/tapdata/tapdata) |
 
+:::tip
 
+更多详细介绍，见 [TapData 版本对比](introduction/compare-editions.md)。
+
+:::
 
 ## 首次使用
 

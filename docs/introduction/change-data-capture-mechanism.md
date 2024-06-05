@@ -146,9 +146,13 @@ END;
 ## 常见问题
 
 * 问：TapData 哪些数据源支持获取 CDC？
-* 答：具体见[支持的数据源](../introduction/supported-databases.md)中的各表格，作为数据源时如支持增量则支持获取 CDC 信息。
+
+  答：具体见[支持的数据源](../introduction/supported-databases.md)中的各表格，作为数据源时如支持增量则支持获取 CDC 信息。
+
 * 问：如果我的数据源支持获取 CDC，如何选择 CDC 的采集方式？
-* 答：为最大化提升兼容性和采集性能，TapData 支持下述 CDC 采集方式：
+
+  答：为最大化提升兼容性和采集性能，TapData 支持下述 CDC 采集方式：
+
   * **基于数据库日志解析**：默认采集方式，绝大部分数据库均支持，受限于权限限制无法放开日志或某些 SaaS 类数据源，可选择**字段轮询**方式。
   * **基于裸日志解析**：目前仅 Oracle 数据源支持。
   * **字段轮询**：可在 TapData 中[配置数据转换任务](../user-guide/data-pipeline/data-development/create-task.md)时，为源节点设置增量同步方式。

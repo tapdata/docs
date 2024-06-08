@@ -1,4 +1,7 @@
 # 变更数据捕获（CDC）
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 更改数据捕获（Change Data Capture, CDC）是一种用于捕获并跟踪数据库中数据变化的方法，在数据同步和集成中起着关键作用，可用于实现增量数据同步。本文档将详细介绍 Tapdata 支持的各种 CDC 方法，帮助您了解其工作原理、优缺点，并提供具体的使用方法。
 

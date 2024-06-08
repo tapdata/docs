@@ -5,6 +5,31 @@ import Content from '../../reuse-content/_all-features.md';
 
 Dummy 是测试数据源，可以生成测试数据。本文介绍如何在 Tapdata 中添加 Dummy 数据源。
 
+<details><summary>支持的生成字段类型</summary>
+
+
+| 类型                      | 说明                   | 参数                                                         |
+| ------------------------- | ---------------------- | ------------------------------------------------------------ |
+| array                     | 数组                   | 无                                                           |
+| binary                    | 字节                   | 无                                                           |
+| boolean                   | 布尔值                 | 无                                                           |
+| date                      | 日期                   | 无                                                           |
+| datetime                  | 时期+时间              | 无                                                           |
+| map                       | 键值对                 | 无                                                           |
+| now                       | 当前时间               | 无                                                           |
+| number[(precision,scale)] | 数值                   | ● precision: 长度（范围 1-40，默认 4）<br />● scale: 精度（范围 0-10，默认 1） |
+| rdatetime[(fraction)]     | 指定精度的日期         | fraction: 时间精度（默认：0，范围 0-9 整数）                 |
+| rlongbinary[(byte)]       | 指定长度的随机二进制   | byte: 字节长度（默认：1000）                                 |
+| rlongstring[(byte)]       | 指定长度的随机长字符   | byte: 字节长度（默认：1000）                                 |
+| rnumber[(precision)]      | 随机数字               | precision: 长度（默认：4）                                   |
+| rstring[(byte)]           | 指定长度的随机字符     | byte: 字节长度（默认：64）                                   |
+| serial[(begin,step)]      | 自增序列               | ● begin: 开始位置（默认：1） <br />● step: 步长（默认：1）   |
+| string(byte)              | 字符串                 | ● byte: 字节长度（默认：64） <br />● fixed: 如果定长字符器加上此标识（默认：非定长） |
+| time                      | 时间                   | 无                                                           |
+| uuid                      | UUID，即通用唯一识别码 | 无                                                           |
+
+</details>
+
 ## 操作步骤
 
 1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
@@ -47,5 +72,3 @@ Dummy 是测试数据源，可以生成测试数据。本文介绍如何在 Tapd
    如提示连接测试失败，请根据页面提示进行修复。
 
    :::
-
-   

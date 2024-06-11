@@ -424,7 +424,8 @@ const sidebars = {
      link: {type: 'doc', id: 'release-notes/README'},
      items: [
             'release-notes/release-notes-cloud',
-            'release-notes/release-notes-on-prem'
+            'release-notes/release-notes-on-prem',
+            'release-notes/release-notes-community'
         ]
     },
   'support',

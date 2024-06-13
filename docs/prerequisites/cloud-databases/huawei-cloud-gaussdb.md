@@ -1,4 +1,8 @@
-# 华为云 GaussDB
+# HuaWei'Cloud GaussDB
+
+import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
+
+<Content />
 
 GaussDB 是华为自主创新研发的分布式关系型数据库，支持分布式事务，同城跨 AZ 部署，数据 0 丢失，支持 1000+ 的扩展能力，PB 级海量存储，可为企业提供功能全面，稳定可靠，扩展性强，性能优越的企业级数据库服务。TapData 支持将 GaussDB 作为源或目标数据库，帮助您快速构建数据流转链路。接下来，我们将介绍如何在 TapData 平台中连接 GaussDB 数据源。
 
@@ -26,11 +30,11 @@ import TabItem from '@theme/TabItem';
 - 为解析某个 [Astore 表](https://support.huaweicloud.com/intl/zh-cn/fg-gaussdb-cent/gaussdb-48-0126.html)的 UPDATE 和 DELETE 语句，需为此表配置 [REPLICA IDENITY](https://support.huaweicloud.com/intl/zh-cn/centralized-devg-v2-gaussdb/devg_03_0520.html#ZH-CN_TOPIC_0000001496777341__li0149195395816) 属性，如果此表没有主键则需要配置为 FULL
 - 不支持解码 DDL 语句，在执行特定的 DDL 语句（如普通表truncate或分区表exchange）时，可能造成解码数据丢失。此外，在事务中执行 DDL 语句后，该 DDL 语句与之后的语句不会被解码。
 - 不支持 interval partition 表复制。
-- 不支持全局临时表。
+- 不支持<span id="prerequisites">全局临时表</span>。
 
 ## 准备工作
 
-1. <span id="prerequisites">访问华为云 GaussDB</span>，[创建数据库用户并授予权限](https://support.huaweicloud.com/intl/zh-cn/distributed-devg-v8-gaussdb/gaussdb-12-0022.html)。
+1. 访问华为云 GaussDB，[创建数据库用户并授予权限](https://support.huaweicloud.com/intl/zh-cn/distributed-devg-v8-gaussdb/gaussdb-12-0022.html)。
 
 ```mdx-code-block
 <Tabs className="unique-tabs">
@@ -51,11 +55,13 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 </Tabs>
 
-2. 调整 `pg_hba.conf` 配置以允许复制，配置取决于实际的网络以及用于连接的用户。下述案例中，允许 IP 地址为 10.10.10.10 的所有用户访问数据库。
+2. 调整 `pg_hba.conf` 配置以允许访问数据库，需替换为实际的 IP 地址和用户名。下述案例中，允许 IP 地址为 10.10.10.10 的所有用户访问数据库。
 
    ```bash
    # IP 地址也可以设置为 0.0.0.0/0，即允许所有 IP
    host all all 10.10.10.10/32 sha256
+   
+   # 仅增量数据同步需配置下述信息
    host replication all 10.10.10.10/32 sha256
    ```
 
@@ -63,6 +69,8 @@ import TabItem from '@theme/TabItem';
 
    * **wal_level**：取值为 **logical**，即开启逻辑复制功能。
    * **max_replication_slots**：大于等于每个节点所需的（物理流复制槽数+备份槽数+逻辑复制槽数），默认为 20，建议参考值设置为使用此连接作为源的的任务任务数+1。
+   
+   
 
 ## 连接 GaussDB
 
@@ -111,7 +119,7 @@ import TabItem from '@theme/TabItem';
 
        :::
 
-   * **SSL 设置**：选择是否开启 SSL 连接数据源，可进一步提升数据安全性，开启该功能后还需要上传 CA 文件、客户端证书、密钥填写客户端密码。
+   * **SSL 设置**：选择是否开启 SSL 连接数据源，可进一步提升数据安全性，开启该功能后还需要上传 CA 文件、客户端证书、密钥填写客户端密码，可从 GaussDB 实例的**基本信息**中的**数据库信息**处下载相关信息。
 
 6. 单击**连接测试**，测试通过后单击**保存**。
 

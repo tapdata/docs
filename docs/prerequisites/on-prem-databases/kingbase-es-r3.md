@@ -1,5 +1,5 @@
 # KingbaseES-R3
-import Content1 from '../../reuse-content/_all-features.md';
+import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content1 />
 

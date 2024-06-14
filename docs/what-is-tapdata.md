@@ -16,7 +16,7 @@ slug: /
 
 
 
-* **[丰富的数据库支持](introduction/supported-databases.md)**
+* **[丰富的数据库支持](prerequisites/supported-databases.md)**
 
   支持主流数据库，包括商业数据库、开源数据库、云数据库、SaaS 平台数据源、文件数据源等，并支持自定义数据源。
 
@@ -65,5 +65,5 @@ TapData 提供 **Cloud**、**Enterprise** 和 **Community** 三种部署方式�
 - [产品架构与工作原理](introduction/architecture.md)
 - [功能特性](introduction/features.md)
 - [应用场景](introduction/use-cases.md)
-- [支持的数据库](introduction/supported-databases.md)
+- [支持的数据库](prerequisites/supported-databases.md)
 - [常见问题](faq/README.md)

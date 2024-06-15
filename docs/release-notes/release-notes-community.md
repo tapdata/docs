@@ -6,6 +6,24 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.8.0
+
+### 新增功能
+
+* [任务监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)支持性能分析功能，可下载性能指标进行分析
+
+### 功能优化
+
+* 优化任务的表模型主键和索引的展示方式
+* 优化模型推演逻辑，支持在引擎直接进行模型推演
+
+### 问题修复
+
+* 修复数据源异常处理存在忽略部分异常的问题
+* 修复时间字段做关联键的聚合任务，反查不到数据的问题
+* 修复挖掘任务延迟时间异常的问题
+* 修复 MySQL 作为源时，大表初始化同步会占用大量数据库内存的问题
+
 ## 3.7.0
 
 ### 新增功能

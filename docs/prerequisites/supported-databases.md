@@ -41,6 +41,15 @@ import TabItem from '@theme/TabItem';
 </thead>
 <tbody>
   <tr>
+    <td>AWS Clickhouse</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>23 及以上</td>
+  </tr>
+  <tr>
     <td>ClickHouse</td>
     <td>➖</td>
     <td>➖</td>
@@ -102,6 +111,15 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>2005、2008、2012、2014、2016、2017</td>
+  </tr>
+    <tr>
+    <td>TiDB</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>5.x</td>
   </tr>
 </tbody>
 </table>
@@ -255,15 +273,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>✅</td>
     <td>3.x</td>
-  </tr>
-  <tr>
-    <td>TiDB</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>5.x</td>
   </tr>
 </tbody>
 </table>
@@ -679,15 +688,6 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
   </tr>
 </thead>
 <tbody>
-  <tr>
-    <td>AWS Clickhouse</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>23 及以上</td>
-  </tr>
   <tr>
     <td>AWS RDS MySQL</td>
     <td>✅</td>

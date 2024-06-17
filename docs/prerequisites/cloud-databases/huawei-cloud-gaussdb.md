@@ -1,4 +1,4 @@
-# HuaWei'Cloud GaussDB
+# Huawei Cloud GaussDB
 
 import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 

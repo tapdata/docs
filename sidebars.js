@@ -29,6 +29,7 @@ const sidebars = {
              'introduction/benefits',
              'introduction/use-cases',
              'introduction/supported-databases',
+             'introduction/change-data-capture-mechanism',
              'introduction/security',
              'introduction/terms',
        ]
@@ -146,7 +147,8 @@ const sidebars = {
                            'prerequisites/cloud-databases/aliyun-rds-for-pg',
                            'prerequisites/cloud-databases/aliyun-rds-for-sql-server',
                            'prerequisites/cloud-databases/amazon-rds-mysql',
-                           'prerequisites/cloud-databases/polardb-mysql',
+                           'prerequisites/cloud-databases/huawei-cloud-gaussdb',
+                           'prerequisites/cloud-databases/polardb-mysql',                           
                            'prerequisites/cloud-databases/polardb-postgresql',
                            'prerequisites/cloud-databases/tencentdb-for-mariadb',
                            'prerequisites/cloud-databases/tencentdb-for-mongodb',
@@ -424,7 +426,8 @@ const sidebars = {
      link: {type: 'doc', id: 'release-notes/README'},
      items: [
             'release-notes/release-notes-cloud',
-            'release-notes/release-notes-on-prem'
+            'release-notes/release-notes-on-prem',
+            'release-notes/release-notes-community'
         ]
     },
   'support',

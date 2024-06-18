@@ -116,13 +116,14 @@ import TabItem from '@theme/TabItem';
     <td>TiDB</td>
     <td>✅</td>
     <td>✅</td>
-    <td>➖</td>
     <td>✅</td>
     <td>✅</td>
-    <td>5.x</td>
+    <td>✅</td>
+    <td>5.4 及以上</td>
   </tr>
 </tbody>
 </table>
+
 
 
 

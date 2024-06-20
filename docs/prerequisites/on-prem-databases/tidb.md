@@ -10,9 +10,27 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
+## 前提条件
+
+* 若使用 **TapData Enterprise** 或 **Community** 版本，需升级至 **3.8.0** 或更高版本。
+* 若使用 **TapData Cloud** 版本，则需为**半托管**类型的 **Agent 实例**。
+
 ## 支持版本
 
 TiDB 5.4 及以上
+
+## 注意事项
+
+* TiDB 集群与 TapData 引擎（Agent）之间需能正常通信，以保障数据的正常读取和同步。
+
+* 将 TiDB 作为源以实现增量数据同步场景下，待同步的表需具备主键或唯一索引。
+
+* 为进一步简化使用流程，TapData 的 TiDB 连接器集成了 TiCDC，可基于数据变更日志解析为有序的行级变更数据。更多原理及概念介绍，见 [TiCDC 概述](https://docs.pingcap.com/zh/tidb/stable/ticdc-overview)。
+
+* TiDB 版本为 8.0 以上时，如需将其作为源执行增量数据同步，Tapdata Agent 需为半托管实例，且需部署在 Linux 平台。
+
+
+
 
 ## <span id="prerequisite">准备工作</span>
 
@@ -29,7 +47,7 @@ TiDB 5.4 及以上
    示例：创建一个名为 tapdata 的账号，允许从任意主机登录。
 
    ```sql
-   CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
+   CREATE USER 'tapdata'@'%' IDENTIFIED BY 'your_passwd';
    ```
 
 
@@ -60,7 +78,20 @@ GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMP
 
 * **database_name**：数据库名称。
 * **username**：用户名。
-* **password**：密码。
+
+3. 如需执行增量数据同步，且 TiDB 版本高于 8.0，您还需要跟随下述步骤安装相关 CDC 工具。
+   1. 下载 TiCDC 工具，下载地址格式为 `https://tiup-mirrors.pingcap.com/cdc-v${ti-db-version}-linux-${system-architecture}.tar.gz` 。
+   
+      * `${ti-db-version}`：TiDB 版本，例如：`8.0.1`
+      * `${system-architecture}`：操作系统架构，例如：`amd64`（即 x86_64） 或者 `arm64`
+   
+      例如 8.1.0 版本的 Linux（x86_64 架构）的 TiCDC 下载地址为：https://tiup-mirrors.pingcap.com/cdc-v8.1.0-linux-AMD64.tar.gz
+   
+   2. 将下载的压缩包解压并命名为 `cdc`，瑞后将其移动至 `{tapData_dir}/run-resource/ti-db/tool` 目录中。
+   
+      其中，`tapData_dir` 表示 TapData 安装目录。
+   
+   3. 赋予 `{tapData_dir}/run-resource/ti-db/tool/cdc` 可读可写可执行权限。
 
 
 

@@ -28,7 +28,6 @@ const sidebars = {
              'introduction/features',
              'introduction/benefits',
              'introduction/use-cases',
-             'introduction/supported-databases',
              'introduction/change-data-capture-mechanism',
              'introduction/security',
              'introduction/terms',
@@ -86,6 +85,7 @@ const sidebars = {
          label: '连接数据源',
          link: {type: 'doc', id: 'prerequisites/README'},
          items: [
+                 'prerequisites/supported-databases',
                  {
                   type: 'category',
                   label: '数据仓库与数据湖',

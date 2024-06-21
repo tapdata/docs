@@ -23,7 +23,7 @@ import Content from '../reuse-content/_all-features.md';
 
    :::tip
 
-   除开启该开关外，还需要目标库支持 **DDL** **应用**，您可以通过[支持的数据源](../introduction/supported-databases.md)文档，查询各类数据源对 DDL 事件采集和 DDL 应用的支持情况，也可以在在目标节点的**高级设置**中查看 **DDL 事件应用**的提示信息。
+   除开启该开关外，还需要目标库支持 **DDL** **应用**，您可以通过[支持的数据源](../prerequisites/supported-databases.md)文档，查询各类数据源对 DDL 事件采集和 DDL 应用的支持情况，也可以在在目标节点的**高级设置**中查看 **DDL 事件应用**的提示信息。
 
    :::
 

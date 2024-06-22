@@ -30,7 +30,7 @@ TiDB 5.4 及以上
 
   * 为避免 TiCDC 的垃圾回收影响事务或增量数据信息提取，推荐执行命令 `SET GLOBAL tidb_gc_life_time= '24h'` 将其设置为 24 小时。
 
-  * TiDB 版本为 8.0 以上时，如采用 Tapdata Cloud 产品，部署的 Agent 需为[半托管实例](../../faq/agent-installation#semi-and-full-agent)，且需部署在 Linux 平台，更多介绍，见下文的[准备工作](#ticdc)。
+  * TiDB 版本为 8.0 以上时，如采用 Tapdata Cloud 产品，部署的 Agent 需为[半托管实例](../../faq/agent-installation#semi-and-full-agent)，且需部署在 Linux 平台，更多介绍，见下文的[升级 TiCDC](#ticdc)。
 
 
 
@@ -83,7 +83,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMP
 * **database_name**：数据库<span id="ticdc">名称</span>。
 * **username**：用户名。
 
-3. 如需执行增量数据同步，且 TiDB 版本高于 8.0，您还需要跟随下述步骤安装相关 CDC 工具。
+3. 如需执行增量数据同步，且 TiDB 版本高于 8.0，您还需要跟随下述步骤升级 TiCDC 工具。
 
    1. 下载 TiCDC 工具，下载地址格式为 `https://tiup-mirrors.pingcap.com/cdc-v${ti-db-version}-linux-${system-architecture}.tar.gz` 。
 

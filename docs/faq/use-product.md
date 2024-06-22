@@ -7,7 +7,7 @@ import Content from '../reuse-content/_all-features.md';
 
 ## TapData 支持哪些数据源？
 
-TapData 支持丰富的数据库，包括常见关系型、非关系型以及队列型数据源，详情见[支持的数据库](../introduction/supported-databases.md)。
+TapData 支持丰富的数据库，包括常见关系型、非关系型以及队列型数据源，详情见[支持的数据库](../prerequisites/supported-databases.md)。
 
 
 

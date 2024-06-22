@@ -32,4 +32,4 @@ TapData 的数据同步包括全量同步和实时增量同步两部分，可帮
 
 ## 支持的数据源
 
-TapData 支持主流数据库，包括商业数据库、开源数据库、云数据库、SaaS 平台数据源、文件数据源等，并支持自定义数据源，详见[支持的数据源](supported-databases.md)。
+TapData 支持主流数据库，包括商业数据库、开源数据库、云数据库、SaaS 平台数据源、文件数据源等，并支持自定义数据源，详见[支持的数据源](../prerequisites/supported-databases.md)。

@@ -147,7 +147,7 @@ END;
 
 * 问：TapData 哪些数据源支持获取 CDC？
 
-  答：具体见[支持的数据源](../introduction/supported-databases.md)中的各表格，作为数据源时如支持增量则支持获取 CDC 信息。
+  答：具体见[支持的数据源](../prerequisites/supported-databases.md)中的各表格，作为数据源时如支持增量则支持获取 CDC 信息。
 
 * 问：如果我的数据源支持获取 CDC，如何选择 CDC 的采集方式？
 

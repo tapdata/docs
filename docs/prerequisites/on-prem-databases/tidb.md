@@ -10,10 +10,11 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-## 前提条件
+:::tip
 
-* 若使用 **TapData Enterprise** 或 **Community** 版本，需升级至 **3.8.0** 或更高版本。
-* 若使用 **TapData Cloud** 版本，则需为**半托管**类型的 **Agent 实例**。
+为进一步简化使用流程，TapData 的 TiDB 连接器集成了 TiCDC，可基于数据变更日志解析为有序的行级变更数据。更多原理及概念介绍，见 [TiCDC 概述](https://docs.pingcap.com/zh/tidb/stable/ticdc-overview)。
+
+:::
 
 ## 支持版本
 
@@ -21,13 +22,16 @@ TiDB 5.4 及以上
 
 ## 注意事项
 
-* TiDB 集群与 TapData 引擎（Agent）之间需能正常通信，以保障数据的正常读取和同步。
+* 为保障数据的正常同步，TiDB 集群与 TapData 引擎（Agent）之间需能正常通信。
 
-* 将 TiDB 作为源以实现增量数据同步场景下，待同步的表需具备主键或唯一索引。
+* 将 TiDB 作为源以实现增量数据同步场景时，您还需要检查下述信息：
 
-* 为进一步简化使用流程，TapData 的 TiDB 连接器集成了 TiCDC，可基于数据变更日志解析为有序的行级变更数据。更多原理及概念介绍，见 [TiCDC 概述](https://docs.pingcap.com/zh/tidb/stable/ticdc-overview)。
+  * 待同步的表需具备主键或唯一索引，其中唯一索引所属列的值不可为 NULL 且不能为虚拟列。
 
-* TiDB 版本为 8.0 以上时，如需将其作为源执行增量数据同步，Tapdata Agent 需为半托管实例，且需部署在 Linux 平台。
+  * 为避免 TiCDC 的垃圾回收影响事务或增量数据信息提取，推荐执行命令 `SET GLOBAL tidb_gc_life_time= '24h'` 将其设置为 24 小时。
+
+  * TiDB 版本为 8.0 以上时，如采用 Tapdata Cloud 产品，部署的 Agent 需为[半托管实例](../../faq/agent-installation#semi-and-full-agent)，且需部署在 Linux 平台，更多介绍，见下文的[准备工作](#ticdc)。
+
 
 
 
@@ -76,22 +80,34 @@ GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMP
 </TabItem>
 </Tabs>
 
-* **database_name**：数据库名称。
+* **database_name**：数据库<span id="ticdc">名称</span>。
 * **username**：用户名。
 
 3. 如需执行增量数据同步，且 TiDB 版本高于 8.0，您还需要跟随下述步骤安装相关 CDC 工具。
+
    1. 下载 TiCDC 工具，下载地址格式为 `https://tiup-mirrors.pingcap.com/cdc-v${ti-db-version}-linux-${system-architecture}.tar.gz` 。
-   
+
       * `${ti-db-version}`：TiDB 版本，例如：`8.0.1`
       * `${system-architecture}`：操作系统架构，例如：`amd64`（即 x86_64） 或者 `arm64`
-   
+
       例如 8.1.0 版本的 Linux（x86_64 架构）的 TiCDC 下载地址为：https://tiup-mirrors.pingcap.com/cdc-v8.1.0-linux-AMD64.tar.gz
-   
-   2. 将下载的压缩包解压并命名为 `cdc`，瑞后将其移动至 `{tapData_dir}/run-resource/ti-db/tool` 目录中。
-   
-      其中，`tapData_dir` 表示 TapData 安装目录。
-   
-   3. 赋予 `{tapData_dir}/run-resource/ti-db/tool/cdc` 可读可写可执行权限。
+
+   2. 执行下述命令，解压文件并命名为 `cdc`。
+
+      ```bash
+      # 请替换压缩包文件名为您的真实文件名
+      tar -zxvf cdc-v8.1.0-linux-AMD64.tar.gz cdc
+      ```
+
+   3. 将 `cdc` 文件复制并替换至 `{tapData_dir}/run-resources/ti-db/tool` 目录中。
+
+      :::tip
+
+      `{tapData_dir}` 为 TapData 安装目录，如果提示 `Text file busy`，您需要停止该数据源关联的数据同步任务再执行文件复制。
+
+      :::
+
+   4. 授予 `{tapData_dir}/run-resources/ti-db/tool` 当前用户的可读可写可执行权限。
 
 
 
@@ -136,4 +152,6 @@ GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMP
    如提示连接测试失败，请根据页面提示进行修复。
 
    :::
+
+
 

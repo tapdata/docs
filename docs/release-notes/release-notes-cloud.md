@@ -149,7 +149,7 @@ import TabItem from '@theme/TabItem';
 #### 功能优化
 
 - 优化 [Google 云市场](https://console.cloud.google.com/marketplace/product/tapdata-public/detail)用户的新手引导流程
-- [任务监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)，增加增量阶段的时间过滤选项，便于快速观察增量阶段的 QPS
+- [任务监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)，增加增量阶段的时间过滤选项，便于快速观察增量阶段的 RPS
 - 针对可能对数据库造成影响的关键操作（例如过滤源表数据），增加相关提示信息
 - 优化实例订阅到期后的退订逻辑
 
@@ -219,7 +219,7 @@ import TabItem from '@theme/TabItem';
 #### 新增功能
 
 * 支持对 [Oracle 数据源](../prerequisites/on-prem-databases/oracle#advanced)加载表注释，可在配置数据源时的高级选项中开启，方便通过注释信息快速识别表的业务含义
-* 任务运行[监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)中，支持基于事件大小的维度来查看 QPS 信息
+* 任务运行[监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)中，支持基于事件大小的维度来查看 RPS 信息
 
 #### 功能优化
 

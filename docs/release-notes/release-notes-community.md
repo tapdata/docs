@@ -8,10 +8,6 @@ import Content from '../reuse-content/_community-features.md';
 
 ## 3.8.0
 
-### 新增功能
-
-* [任务监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)支持性能分析功能，可下载性能指标进行分析
-
 ### 功能优化
 
 * 优化任务的表模型主键和索引的展示方式

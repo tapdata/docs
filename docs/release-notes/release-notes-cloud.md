@@ -22,7 +22,6 @@ import TabItem from '@theme/TabItem';
 #### 新增功能
 
 * [TiDB](../prerequisites/on-prem-databases/tidb.md) 完成 TapData 集成测试用例和认证测试流程，升级为 GA 级数据源
-* [任务监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)支持性能分析功能，可下载性能指标进行分析
 
 #### 功能优化
 

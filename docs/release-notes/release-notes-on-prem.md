@@ -12,7 +12,6 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 * [TiDB](../prerequisites/on-prem-databases/tidb.md) 完成 TapData 集成测试用例和认证测试流程，升级为 GA 级数据源
 * [数据校验](../user-guide/data-pipeline/verify-data.md)支持自动差异校验，可根据增量延迟对实时任务进行自动差异校验
-* [任务监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)支持性能分析功能，可下载性能指标进行分析
 
 ### 功能优化
 

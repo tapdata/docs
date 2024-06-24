@@ -3,9 +3,9 @@ import Content from '../reuse-content/_all-features.md';
 
 <Content />
 
-Excel 是使用广泛的数据统计和数据分析软件，Tapdata 支持读取本地、FTP、SFTP、SMB 或 S3FS 上的 Excel 文件，满足多样化的数据流转需求。
+Excel 是使用广泛的数据统计和数据分析软件，TapData 支持读取本地、FTP、SFTP、SMB 或 S3FS 上的 Excel 文件，满足多样化的数据流转需求。
 
-本文介绍如何通过 Tapdata 的数据转换任务，将 Excel 文件数据同步至 MySQL，实现 Excel 数据的快速入库，用来对接更丰富的数据分析工具。
+本文介绍如何通过 TapData 的数据转换任务，将 Excel 文件数据同步至 MySQL，实现 Excel 数据的快速入库，用来对接更丰富的数据分析工具。
 
 
 
@@ -18,7 +18,7 @@ Excel 是使用广泛的数据统计和数据分析软件，Tapdata 支持读取
 
 ## 操作步骤
 
-1. [登录 Tapdata 平台](../user-guide/log-in.md)。
+1. [登录 TapData 平台](../user-guide/log-in.md)。
 
 2. 在左侧导航栏，选择**数据管道** > **数据转换**。
 
@@ -40,7 +40,7 @@ Excel 是使用广泛的数据统计和数据分析软件，Tapdata 支持读取
       ![高级设置](../images/data_develop_excel_advanced_settings.png)
 
       * **DDL 同步配置**      
-        选择是否启用 **DDL 事件采集**，打开该开关后，Tapdata 会自动采集所选的源端 DDL 事件（如新增字段），如果目标端支持 DDL 写入即可实现 DDL 语句的同步。      
+        选择是否启用 **DDL 事件采集**，打开该开关后，TapData 会自动采集所选的源端 DDL 事件（如新增字段），如果目标端支持 DDL 写入即可实现 DDL 语句的同步。      
       * **数据过滤配置**      
         默认关闭，开启后您需要指定数据过滤条件。      
       * **驱动读取配置**
@@ -95,7 +95,7 @@ Excel 是使用广泛的数据统计和数据分析软件，Tapdata 支持读取
      
      :::tip
      
-     在增量同步的过程中，Tapdata 默认每隔 1 分钟检测 Excel 文件是否发生变更（如新增/修改文件），如发生变更则将涉及的文件全量新增后更新条件字段以完成修改，暂不支持同步删除文件或数据。
+     在增量同步的过程中，TapData 默认每隔 1 分钟检测 Excel 文件是否发生变更（如新增/修改文件），如发生变更则将涉及的文件全量新增后更新条件字段以完成修改，暂不支持同步删除文件或数据。
      
      :::
      

@@ -1,9 +1,9 @@
 # MySQL PXC
-import Content from '../../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content />
 
-请遵循以下说明以确保在 Tapdata 中成功添加和使用 MySQL PXC 数据库。
+请遵循以下说明以确保在 TapData 中成功添加和使用 MySQL PXC 数据库。
 
 ## 支持版本
 
@@ -13,7 +13,7 @@ MySQL PXC 5.0、5.1、5.5、5.6、5.7、8.x
 
 ### 开启 Binlog
 
-- 必须开启 MySQL PXC 的 binlog ，Tapdata 才能正常完成同步工作。
+- 必须开启 MySQL PXC 的 binlog ，TapData 才能正常完成同步工作。
 - 级连删除（CASCADE DELETE），这类由数据库产生的删除不会记录在binlog内，所以不被支持。 修改 `$MYSQL_HOME/mysql.cnf `, 例如:
 
 ```

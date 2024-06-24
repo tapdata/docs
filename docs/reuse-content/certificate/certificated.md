@@ -5,6 +5,6 @@
     认证数据源
   </span>
   <div class="tooltip-content">
-    认证数据源是指已通过 Tapdata 认证测试流程，运行稳定。
+    认证数据源是指已通过 TapData 认证测试流程，运行稳定。
   </div>
 </span>

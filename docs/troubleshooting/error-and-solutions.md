@@ -9,7 +9,7 @@ import Content from '../reuse-content/_all-features.md';
 
 ## 查看任务日志
 
-通过[任务的监控页面](../user-guide/data-pipeline/copy-data/monitor-task#error-code)下方，即可查看任务的运行日志，针对常见的问题，Tapdata 已将其固化为特定的[错误码](error-code.md)方便您查找，同时提供了错误原因及其解决方案。如为找到相关错误码，您也可以基于本文提供的日志关键字来进行排查或联系技术支持。
+通过[任务的监控页面](../user-guide/data-pipeline/copy-data/monitor-task#error-code)下方，即可查看任务的运行日志，针对常见的问题，TapData 已将其固化为特定的[错误码](error-code.md)方便您查找，同时提供了错误原因及其解决方案。如为找到相关错误码，您也可以基于本文提供的日志关键字来进行排查或联系技术支持。
 
 ## Oracle
 

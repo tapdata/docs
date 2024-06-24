@@ -1,5 +1,5 @@
 # 客户管理与销售运营分析
-import Content from '../../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content />
 

@@ -1,13 +1,13 @@
 # Salesforce
-import Content from '../../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content />
 
-Salesforce 是一个集成 CRM 平台，可以为您的所有部门提供所有客户的单一共享视图。Tapdata 支持将 Salesforce 作为源库构建数据管道，本文介绍如何在 Tapdata 中添加 Salesforce 数据源。
+Salesforce 是一个集成 CRM 平台，可以为您的所有部门提供所有客户的单一共享视图。TapData 支持将 Salesforce 作为源库构建数据管道，本文介绍如何在 TapData 中添加 Salesforce 数据源。
 
 ## 连接 Salesforce
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. [登录 TapData 平台](../../user-guide/log-in.md)。
 
 2. 在左侧导航栏，单击**连接管理**。
 

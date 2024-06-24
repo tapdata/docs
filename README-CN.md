@@ -1,17 +1,17 @@
 [English README](README.md)
 
-# Tapdata 用户手册
+# TapData 用户手册
 
 <p align="left">
 <a href="https://auth.tapdata.net/" rel="nofollow"><img src="https://20778419.s21i.faiusr.com/4/2/ABUIABAEGAAg39a1kQYoqLyr0gEwyAE4Mw.png" style="zoom: 50%;" /></a>
 </p>
-欢迎访问 Tapdata 文档仓库，本仓库存储了 Tapdata 用户手册的源文件（Markdown 格式），前往 Tapdata 文档中心：https://docs.tapdata.io
+欢迎访问 TapData 文档仓库，本仓库存储了 TapData 用户手册的源文件（Markdown 格式），前往 TapData 文档中心：https://docs.tapdata.io
 
-如您发现 Tapdata 文档问题，欢迎[提交 Issue](https://github.com/tapdata/docs/issues/new) 告诉我们，我们会尽快修复，您也可以直接提交 PR 来修改。
+如您发现 TapData 文档问题，欢迎[提交 Issue](https://github.com/tapdata/docs/issues/new) 告诉我们，我们会尽快修复，您也可以直接提交 PR 来修改。
 
-## 什么是 Tapdata?
+## 什么是 TapData?
 
-[Tapdata](https://tapdata.net/) 是一款面向数据服务的平台化产品，旨在帮助企业打破多个数据孤岛，完成数据快速交付，同时依靠实时数据同步，提高数据传输效率。
+[TapData](https://tapdata.net/) 是一款面向数据服务的平台化产品，旨在帮助企业打破多个数据孤岛，完成数据快速交付，同时依靠实时数据同步，提高数据传输效率。
 
 🎮 [开始免费使用](https://auth.tapdata.net/)
 
@@ -20,7 +20,7 @@
 
 ## 如何贡献
 
-我们非常欢迎更多贡献者来帮助改进文档，Tapdata 文档使用 Markdown 语言编写，下面是提交 PR 的流程，如果您对这些操作比较陌生，欢迎[联系我们](#Contact)获得帮助。
+我们非常欢迎更多贡献者来帮助改进文档，TapData 文档使用 Markdown 语言编写，下面是提交 PR 的流程，如果您对这些操作比较陌生，欢迎[联系我们](#Contact)获得帮助。
 
 1. 克隆本仓库至本地。
 
@@ -53,10 +53,10 @@
 
 ```shell
 ├── docs                      # 存放当前版本的文档
-│   ├── cloud                 # Tapdata Cloud 文档
+│   ├── cloud                 # TapData Cloud 文档
 │   │   ├── images            # 统一存放屏幕截图、架构图等，供文档引用
 │   │   ├── …………
-│   ├── enterprise            # Tapdata 文档
+│   ├── enterprise            # TapData 文档
 │   │   ├── images            
 │   │   ├── …………
 │   └── reuse-content         # 可复用内容，我们可以在 Markdown 文件中引用该目录中的文件

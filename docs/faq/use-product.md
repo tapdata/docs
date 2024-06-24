@@ -3,28 +3,28 @@ import Content from '../reuse-content/_all-features.md';
 
 <Content />
 
-本文列举使用 Tapdata 过程中的常见问题。
+本文列举使用 TapData 过程中的常见问题。
 
-## Tapdata 支持哪些数据源？
+## TapData 支持哪些数据源？
 
-Tapdata 支持丰富的数据库，包括常见关系型、非关系型以及队列型数据源，详情见[支持的数据库](../introduction/supported-databases.md)。
-
-
-
-## Tapdata 支持试用吗？
-
-支持。您可以点击“[申请试用](https://tapdata.net/tapdata-on-prem/demo.html)‍”‍，Tapdata 工程师会联系您并协助您试用。
+TapData 支持丰富的数据库，包括常见关系型、非关系型以及队列型数据源，详情见[支持的数据库](../prerequisites/supported-databases.md)。
 
 
 
-## Tapdata 如何收费？
+## TapData 支持试用吗？
 
-Tapdata 提供 **Cloud** 和 **Enterprise** 两种部署方式，满足您多样化的需求：
+支持。您可以点击“[申请试用](https://tapdata.net/tapdata-on-prem/demo.html)‍”‍，TapData 工程师会联系您并协助您试用。
+
+
+
+## TapData 如何收费？
+
+TapData 提供 **Cloud** 和 **Enterprise** 两种部署方式，满足您多样化的需求：
 
 | 产品         | 适用场景                                                     | 定价说明                                                     |
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Tapdata Cloud | 注册 [Tapdata Cloud](https://cloud.tapdata.net/console/v3/) 账号即可使用，适合需要快速部署、低前期投资场景，帮助您更好地专注于业务发展而非基础设施管理。 | 免费提供 1 个 SMALL 规格的 Agent 实例（半托管模式），您也可以按照业务需求，订阅更高规格或更多数量的 Agent 实例。更多介绍，见[产品计费](billing/billing-overview.md)。 |
-| Tapdata Enterprise | 支持部署至本地数据中心，适合对数据敏感性或网络隔离有严格要求的场景，如金融机构、政府部门或希望完全控制数据的大型企业。 | 基于部署的服务器节点数量，按年支付相应的订阅费用。在正式采购前，您可以点击“[申请试用](https://tapdata.net/tapdata-on-prem/demo.html)‍”‍，Tapdata 工程师会联系您并协助您试用。更多介绍，见[产品定价](https://tapdata.net/pricing.html)。 |
+| TapData Cloud | 注册 [TapData Cloud](https://cloud.tapdata.net/console/v3/) 账号即可使用，适合需要快速部署、低前期投资场景，帮助您更好地专注于业务发展而非基础设施管理。 | 免费提供 1 个 SMALL 规格的 Agent 实例（半托管模式），您也可以按照业务需求，订阅更高规格或更多数量的 Agent 实例。更多介绍，见[产品计费](billing/billing-overview.md)。 |
+| TapData Enterprise | 支持部署至本地数据中心，适合对数据敏感性或网络隔离有严格要求的场景，如金融机构、政府部门或希望完全控制数据的大型企业。 | 基于部署的服务器节点数量，按年支付相应的订阅费用。在正式采购前，您可以点击“[申请试用](https://tapdata.net/tapdata-on-prem/demo.html)‍”‍，TapData 工程师会联系您并协助您试用。更多介绍，见[产品定价](https://tapdata.net/pricing.html)。 |
 
 ## 连接测试失败怎么办？
 
@@ -33,20 +33,20 @@ Tapdata 提供 **Cloud** 和 **Enterprise** 两种部署方式，满足您多样
 
 ## 配置复制任务时，目标节点推演结果异常？
 
-Tapdata 会自动基于选择源表来推演目标表结构等信息，此处可能遇到的问题如下：
+TapData 会自动基于选择源表来推演目标表结构等信息，此处可能遇到的问题如下：
 
-* **更新条件异常**：Tapdata 会将更新条件自动设置为表的主键，如果没有主键则选用唯一索引字段，无主键和唯一索引时，您需要手动指定更新条件的字段。
+* **更新条件异常**：TapData 会将更新条件自动设置为表的主键，如果没有主键则选用唯一索引字段，无主键和唯一索引时，您需要手动指定更新条件的字段。
 * **推演异常**：通常是字段类型异常引起，您可以根据页面提示，调整相关字段的类型。
 
 ![推演结果异常](../images/faq_deduction_error.png)
 
 
 
-## Tapdata 处理事务的逻辑是什么？
+## TapData 处理事务的逻辑是什么？
 
-通常一个事务有开始、过程、提交、撤回几种可能，因此事务开始执行后，可能会有多个 SQL 发起，此时 Tapdata 即捕获这些变更并缓存起来。
+通常一个事务有开始、过程、提交、撤回几种可能，因此事务开始执行后，可能会有多个 SQL 发起，此时 TapData 即捕获这些变更并缓存起来。
 
-长时间未提交的事务会导致每次启停任务将从该事务开始挖掘，为避免影响源库和增量同步的性能，Tapdata 会清理超过一定时长的未提交事务，如果清理后源库再提交了该事务，可能导致数据不一致。
+长时间未提交的事务会导致每次启停任务将从该事务开始挖掘，为避免影响源库和增量同步的性能，TapData 会清理超过一定时长的未提交事务，如果清理后源库再提交了该事务，可能导致数据不一致。
 
 为避免此类情况发生，请在配置任务时，设置来源节点（如 Oracle 库）的未提交事务生命时长，以符合业务需求。
 
@@ -54,7 +54,7 @@ Tapdata 会自动基于选择源表来推演目标表结构等信息，此处可
 
 
 
-## Tapdata 是否支持将表发布 API 服务？
+## TapData 是否支持将表发布 API 服务？
 
 import Content1 from '../reuse-content/_enterprise-features.md';
 
@@ -77,7 +77,7 @@ import Content2 from '../reuse-content/_enterprise-features.md';
 
 
 
-在 Tapdata 中，您可以将多表的复杂查询固化为物化视图提供 API 服务，您可以基于查询的复杂程度和对实时性的要求选择下述方案：
+在 TapData 中，您可以将多表的复杂查询固化为物化视图提供 API 服务，您可以基于查询的复杂程度和对实时性的要求选择下述方案：
 
 **实时视图方案**
 

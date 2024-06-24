@@ -3,7 +3,7 @@ import Content from '../reuse-content/_enterprise-and-community-features.md';
 
 <Content />
 
-Tapdata Enterprise 与 Tapdata Community 在运行时，会将任务的必要配置、共享缓存等信息存储至 MongoDB 数据库中，为保障生产环境的高可用，在部署 Tapdata 前，需要完成 MongoDB 副本集的部署，本文将介绍具体的部署流程。
+TapData Enterprise 与 TapData Community 在运行时，会将任务的必要配置、共享缓存等信息存储至 MongoDB 数据库中，为保障生产环境的高可用，在部署 TapData 前，需要完成 MongoDB 副本集的部署，本文将介绍具体的部署流程。
 
 ## 部署架构
 
@@ -172,7 +172,7 @@ Tapdata Enterprise 与 Tapdata Community 在运行时，会将任务的必要配
 
 ## 下一步
 
-[部署高可用 Tapdata](install-tapdata-ha.md)
+[部署高可用 TapData](install-tapdata-ha.md)
 
 ## 扩展阅读
 

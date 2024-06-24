@@ -4,11 +4,11 @@ import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
 <Content />
 
-Tapdata 支持丰富的函数，可帮助您更加便捷地完成处理过程的定义，从而在 [JS 节点](../data-pipeline/data-development/process-node#js-process)中引用。除此以外，您还可以根据需求自由定义函数或导入第三方 jar 包来引入函数。
+TapData 支持丰富的函数，可帮助您更加便捷地完成处理过程的定义，从而在 [JS 节点](../data-pipeline/data-development/process-node#js-process)中引用。除此以外，您还可以根据需求自由定义函数或导入第三方 jar 包来引入函数。
 
 ## 操作步骤
 
-1. [登录 Tapdata 平台](../log-in.md)。
+1. [登录 TapData 平台](../log-in.md)。
 
 2. 在左侧导航栏，选择**高级功能** > **函数管理**。
 
@@ -20,7 +20,7 @@ Tapdata 支持丰富的函数，可帮助您更加便捷地完成处理过程的
 
    :::tip
 
-   除此方法外，您还可以单击导入 jar 包**，然后导入包中的函数（需符合 Tapdata 规范），后续在 JS 节点中即可使用该 jar 包中的函数，通用格式为：函数名称.方法名（具体参数）。
+   除此方法外，您还可以单击导入 jar 包**，然后导入包中的函数（需符合 TapData 规范），后续在 JS 节点中即可使用该 jar 包中的函数，通用格式为：函数名称.方法名（具体参数）。
 
    :::
 

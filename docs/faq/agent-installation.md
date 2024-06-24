@@ -4,7 +4,7 @@ import Content from '../reuse-content/_cloud-features.md';
 
 <Content />
 
-本文列举 Tapdata Agent 在部署和运行遇到的常见问题。
+本文列举 TapData Agent 在部署和运行遇到的常见问题。
 
 ## 部署 Agent
 
@@ -18,7 +18,7 @@ Agent 是数据同步、数据异构、数据开发场景中的关键程序，�
 
 | 类别   | 说明                                                         | 架构图                                     |
 | ------ | ------------------------------------------------------------ | ------------------------------------------ |
-| 全托管 | 由 Tapdata Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，可实现一键交付使用，免去部署和运维精力，专注业务本身。 | ![全托管](../images/fully_managed.png)     |
+| 全托管 | 由 TapData Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，可实现一键交付使用，免去部署和运维精力，专注业务本身。 | ![全托管](../images/fully_managed.png)     |
 | 半托管 | 由您提供设备来部署和运维 Agent，为其运行提供计算/存储资源，可充分利用现有硬件资源，获得更低的价格的同时，进一步提升安全性。 | ![半托管](../images/self_host_managed.png) |
 
 
@@ -28,7 +28,7 @@ Agent 是数据同步、数据异构、数据开发场景中的关键程序，�
 
 通常数据流转应用场景对时效性有较高的要求，因此，可将 Agent 部署在数据库所属的本地网络中降低网络延迟。
 
-更多介绍，见[部署 Tapdata Agent](../quick-start/install/install-tapdata-agent)。
+更多介绍，见[部署 TapData Agent](../quick-start/install/install-tapdata-agent)。
 
 ### 需要部署多少个 Agent？
 
@@ -56,7 +56,7 @@ Agent 是数据同步、数据异构、数据开发场景中的关键程序，�
 
 ### 如何再次获取部署所需的 token？
 
-1 个 Token 仅用于部署 1 个 Agent，如需部署多个 Agent，请前往 Tapdata Cloud 创建 Agent。
+1 个 Token 仅用于部署 1 个 Agent，如需部署多个 Agent，请前往 TapData Cloud 创建 Agent。
 
 ### Agent 一直是部署状态检测中？
 
@@ -80,7 +80,7 @@ Agent 是数据同步、数据异构、数据开发场景中的关键程序，�
 
   ![命令查看 Agent 状态](../images/agent_status_cli.png)
 
-* **通过界面查看**：登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)，单击左侧导航栏的 **资源管理**即可查看所有 Agent 的状态，单击 Agent 名称还可以获取到该 Agent 安装的目录、日志等信息。
+* **通过界面查看**：登录 [TapData Cloud 平台](https://cloud.tapdata.net/console/v3/)，单击左侧导航栏的 **资源管理**即可查看所有 Agent 的状态，单击 Agent 名称还可以获取到该 Agent 安装的目录、日志等信息。
 
   ![界面查看 Agent 状态](../images/agent_status_ui_cn.png)
 
@@ -90,7 +90,7 @@ Agent 是数据同步、数据异构、数据开发场景中的关键程序，�
 
 ### Agent 正常运行，界面上却显示为离线？
 
-Agent 每分钟向 Tapdata Cloud 上报一次心跳信息，如果  Tapdata Cloud 连续五分钟没有收到心跳信息则会显示该 Agent 离线，通常由于网络波动引起，您可以检查 Agent 的状态以确认。
+Agent 每分钟向 TapData Cloud 上报一次心跳信息，如果  TapData Cloud 连续五分钟没有收到心跳信息则会显示该 Agent 离线，通常由于网络波动引起，您可以检查 Agent 的状态以确认。
 
 Agent 离线不影响已运行任务的正常运行，但是新建任务会受到影响。 
 
@@ -103,20 +103,20 @@ Agent 离线不影响已运行任务的正常运行，但是新建任务会受�
   * **全新安装**
     1. 执行命令停止服务：`./tapdata stop -f`。
     2. 删除安装目录。
-    3. 在 Tapdata Cloud 上创建 Agent 并根据提示完成部署。
+    3. 在 TapData Cloud 上创建 Agent 并根据提示完成部署。
   * **保留配置重装**
     1. 保存 Agent 安装目录中的配置文件 **application.yml**。
     2. 执行命令停止服务：`./tapdata stop -f`。
     3. 删除安装目录。
     4. 创建新的安装目录，并将 **application.yml** 复制到该目录。
-    5. 下载 tapdata 工具。
+    5. 下载 TapData 工具。
     6. 执行 `./tapdata start backend `
 
 ### Agent 运行时报错：“OutOfMemoryError”
 
 需要确认部署 Agent 设备是否具有充足的可用内存，具体解决方案如下：
 
-* 内存不足：更换部署 Agent 的设备，也可以尝试调小 Tapdata Cloud 平台中任务的**每次读取数量**配置值。
+* 内存不足：更换部署 Agent 的设备，也可以尝试调小 TapData Cloud 平台中任务的**每次读取数量**配置值。
 
 * 内存充足
 

@@ -1,9 +1,9 @@
 # TiDB
-import Content from '../../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content />
 
-TiDB 是 PingCAP 设计、研发的开源分布式关系型数据库，是一款同时支持在线事务处理与在线分析处理的融合型分布式数据库产品。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 TiDB 数据源，后续可将其作为源或目标库来构建数据管道。
+TiDB 是 PingCAP 设计、研发的开源分布式关系型数据库，是一款同时支持在线事务处理与在线分析处理的融合型分布式数据库产品。完成 Agent 部署后，您可以跟随本文教程在 TapData 中添加 TiDB 数据源，后续可将其作为源或目标库来构建数据管道。
 
 ## 支持版本
 
@@ -98,7 +98,7 @@ import TabItem from '@theme/TabItem';
 
 
 ## 添加数据源
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. [登录 TapData 平台](../../user-guide/log-in.md)。
 
 2. 在左侧导航栏，单击**连接管理**。
 
@@ -125,7 +125,7 @@ import TabItem from '@theme/TabItem';
       * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。
       * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。
       * **agent 设置**：默认为**平台自动分配**，您也可以手动指定。
-      * **模型加载频率**：数据源中模型数量大于 1 万时，Tapdata 将按照本参数的设定定期刷新模型。
+      * **模型加载频率**：数据源中模型数量大于 1 万时，TapData 将按照本参数的设定定期刷新模型。
    * **SSL 设置**：选择是否开启 SSL 连接数据源，可进一步提升数据安全性，开启该功能后还需要上传 CA 文件、客户端证书、密钥填写客户端密码。
 
 6. 单击**连接测试**，测试通过后单击**保存**。

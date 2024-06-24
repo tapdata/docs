@@ -3,7 +3,7 @@ import Content from '../reuse-content/_all-features.md';
 
 <Content />
 
-阿里云[表格存储](https://help.aliyun.com/document_detail/27280.html)（Tablestore）是面向海量结构化数据提供 Serverless 表存储服务，同时针对物联网场景深度优化提供一站式的IoTstore解决方案。通过 Tapdata 可以将 Oracle 实时同步至 Tablestore，轻松实现数据的流转，更好满足业务数据架构变化或大数据分析场景。
+阿里云[表格存储](https://help.aliyun.com/document_detail/27280.html)（Tablestore）是面向海量结构化数据提供 Serverless 表存储服务，同时针对物联网场景深度优化提供一站式的IoTstore解决方案。通过 TapData 可以将 Oracle 实时同步至 Tablestore，轻松实现数据的流转，更好满足业务数据架构变化或大数据分析场景。
 
 ## 准备工作
 
@@ -16,7 +16,7 @@ import Content from '../reuse-content/_all-features.md';
 
 ## 配置任务
 
-1. 登录 Tapdata 服务平台。
+1. 登录 TapData 服务平台。
 
 2. 在左侧导航栏，单击**数据复制**。
 

@@ -1,12 +1,31 @@
-# Tapdata Enterprise 更新日志
+# TapData Enterprise 更新日志
 
 import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
-本文介绍 Tapdata Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/release-notes)。
+本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/release-notes)。
 
 
+
+## 3.7.0
+
+### 新增功能
+
+* 支持为用户[授予数据校验权限](../user-guide/manage-system/manage-role.md)，提升权限管理粒度
+* 新增 Mock Source 和 Mock Target 数据源，可用于数据迁移测试场景
+
+### 功能优化
+
+* 优化启动任务时的跳过错误的交互逻辑
+
+### 问题修复
+
+* 修复任务运行模型与配置模型不一致的问题
+* 修复过滤源端数据后，任务事件统计不准确的问题
+* 修复 Oracle 和 PostgreSQL 同步场景下，时区处理异常的问题
+* 修复连接列表加载速度过慢的问题
+* 修复心跳任务重置失败时，可能导致相关联任务无法启动的问题
 
 ## 3.6.0
 
@@ -139,7 +158,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 ### 新增功能
 
 * MongoDB 间的数据同步场景，新增支持 [Capped 集合](https://www.mongodb.com/docs/manual/core/capped-collections/)
-* 数据复制/转换任务支持导入能力，您可以在 [MongoDB Relational Migrator](https://www.mongodb.com/docs/relational-migrator/) 上设计好数据流转流程并将其导出，随后在 Tapdata 数据管道右上角直接导入，进一步提升数据管道设计便利性
+* 数据复制/转换任务支持导入能力，您可以在 [MongoDB Relational Migrator](https://www.mongodb.com/docs/relational-migrator/) 上设计好数据流转流程并将其导出，随后在 TapData 数据管道右上角直接导入，进一步提升数据管道设计便利性
 
 ### 问题修复
 
@@ -359,8 +378,8 @@ import Content from '../reuse-content/_enterprise-features.md';
 - 任务节点配置处理逻辑优化
 - 数据面板中的**平台缓存层**和**数据加工层**中，可展示由数据复制/转换任务生成的连接和表信息
 - 数据面板中的数据目录模式下，支持对表和字段添加描述信息
-- Tapdata 部署流程和提示调整优化
-- Tapdata 启动器优化，重新启动服务无需重复注册数据源
+- TapData 部署流程和提示调整优化
+- TapData 启动器优化，重新启动服务无需重复注册数据源
 - 在 Agent 启动和停止节点时，自动停止 PDK 注册
 - 数据复制任务与数据转换任务配置交互的整体优化
 

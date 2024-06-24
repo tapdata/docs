@@ -1,15 +1,15 @@
 # Zoho CRM
-import Content from '../../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content />
 
-Zoho CRM 可以将您的销售，营销和客户支持活动整合在一起，帮助您在一个平台上实现流程的简化，提升工作效率。Tapdata 支持将 Zoho CRM 作为数据来源构建数据管道，帮助您读取 CRM 中的数据并同步到指定的数据源，快速打通数据流转通道。本文介绍如何在 Tapdata 中添加 Zoho CRM 数据源。
+Zoho CRM 可以将您的销售，营销和客户支持活动整合在一起，帮助您在一个平台上实现流程的简化，提升工作效率。TapData 支持将 Zoho CRM 作为数据来源构建数据管道，帮助您读取 CRM 中的数据并同步到指定的数据源，快速打通数据流转通道。本文介绍如何在 TapData 中添加 Zoho CRM 数据源。
 
 
 
 ## 支持读取的数据
 
-Tapdata 支持将 Zoho CRM 中的数据以表的形式来读取，并同步至目标库，表名与 Zoho CRM 中功能模块对应关系如下：
+TapData 支持将 Zoho CRM 中的数据以表的形式来读取，并同步至目标库，表名与 Zoho CRM 中功能模块对应关系如下：
 
 - **Accounts**：客户
 - **Contacts**：联系人
@@ -20,7 +20,7 @@ Tapdata 支持将 Zoho CRM 中的数据以表的形式来读取，并同步至�
 
 ## 连接 Zoho CRM
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. [登录 TapData 平台](../../user-guide/log-in.md)。
 
 2. 在左侧导航栏，单击**连接管理**。
 

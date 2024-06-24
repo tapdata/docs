@@ -3,12 +3,12 @@ import Content from '../reuse-content/_all-features.md';
 
 <Content />
 
-Tapdata 支持丰富的数据源，具体如下：
+TapData 支持丰富的数据源，具体如下：
 
 :::tip
 
 * 如需同步 DDL 操作，您需要开启 DDL 采集和 DDL 应用，更多介绍，见[DDL 同步说明](../best-practice/handle-schema-change.md)。
-* Tapdata Community 仅支持 ClickHouse、Kafka、MongoDB、MySQL、PostgreSQL 数据源。
+* TapData Community 仅支持 ClickHouse、Kafka、MongoDB、MySQL、PostgreSQL 数据源。
 
 :::
 
@@ -41,6 +41,15 @@ import TabItem from '@theme/TabItem';
 </thead>
 <tbody>
   <tr>
+    <td>AWS Clickhouse</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>23 及以上</td>
+  </tr>
+  <tr>
     <td>ClickHouse</td>
     <td>➖</td>
     <td>➖</td>
@@ -65,7 +74,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>3.2、3.4、3.6、4.0+</td>
+    <td>3.4、3.6、4.0+</td>
   </tr>
   <tr>
     <td>MySQL</td>
@@ -103,15 +112,26 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>2005、2008、2012、2014、2016、2017</td>
   </tr>
+    <tr>
+    <td>TiDB</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>5.4 及以上</td>
+  </tr>
 </tbody>
 </table>
+
+
 
 
 ## Beta 数据源
 
 :::tip
 
-Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测试用例，但尚未通过 Tapdata 认证测试流程，如在使用过程中有疑问，欢迎[联系我们](mailto:team@tapdata.io)。
+Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测试用例，但尚未通过 TapData 认证测试流程，如在使用过程中有疑问，欢迎[联系我们](mailto:team@tapdata.io)。
 
 :::
 
@@ -172,7 +192,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>-</td>
+    <td>不涉及</td>
   </tr>
   <tr>
     <td>Informix</td>
@@ -182,6 +202,24 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>➖</td>
     <td>10 及以上</td>
+  </tr>
+  <tr>
+    <td>Mock Source</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>不涉及</td>
+  </tr>
+  <tr>
+   <td>Mock Target</td>
+   <td>➖</td>
+   <td>➖</td>
+   <td>➖</td>
+   <td>✅</td>
+   <td>➖</td>
+   <td>不涉及</td>
   </tr>
   <tr>
     <td>KingBaseES-R6</td>
@@ -200,6 +238,15 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>✅</td>
     <td>10.x</td>
+  </tr>
+  <tr>
+    <td>MongoDB Below 3.4</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>3.4 以下版本</td>
   </tr>
   <tr>
     <td>Redis</td>
@@ -228,17 +275,9 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>3.x</td>
   </tr>
-  <tr>
-    <td>TiDB</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>5.x</td>
-  </tr>
 </tbody>
 </table>
+
 </TabItem>
 
 <TabItem value="数据仓库/数据湖">
@@ -288,6 +327,15 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>0.15.0</td>
   </tr>
   <tr>
+    <td>Hudi</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>0.11.0</td>
+  </tr>
+  <tr>
     <td>GaussDB（DWS）</td>
     <td>➖</td>
     <td>➖</td>
@@ -316,6 +364,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
   </tr>
 </tbody>
 </table>
+
 </TabItem>
 
 <TabItem value="云数据库/文件/SaaS" >
@@ -372,6 +421,15 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>➖</td>
     <td>➖</td>
     <td>XLS/XLSX 格式，文件位置支持本地、FTP、SFTP、SMB、S3FS、OSS</td>
+  </tr>
+  <tr>
+    <td>Huawei's Cloud GaussDB</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>企业版 2.8 版本（主备版），本地部署时，支持 Standby 8.1 版本</td>
   </tr>
   <tr>
     <td>HubSpot</td>
@@ -439,6 +497,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
 </tbody>
 </table>
 
+
 </TabItem>
 </Tabs>
 
@@ -450,7 +509,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
 
 :::tip
 
-Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚未通过集成测试用例和 Tapdata 认证测试流程，如在使用过程中有疑问，欢迎[联系我们](mailto:team@tapdata.io)。
+Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚未通过集成测试用例和 TapData 认证测试流程，如在使用过程中有疑问，欢迎[联系我们](mailto:team@tapdata.io)。
 
 :::
 
@@ -512,13 +571,22 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
     <td>V8R3</td>
   </tr>
   <tr>
-    <td>OceanBase（MySQL模式）</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
+    <td>OceanBase（MySQL 模式）</td>
     <td>✅</td>
-    <td>➖</td>
-    <td>3.x</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>3.x、4.x</td>
+  </tr>
+  <tr>
+    <td>OceanBase（Oracle 模式）</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>4.x</td>
   </tr>
   <tr>
     <td>OpenGauss</td>

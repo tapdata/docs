@@ -3,7 +3,7 @@ import Content from '../reuse-content/_all-features.md';
 
 <Content />
 
-本文介绍 Tapdata 常见的术语，帮助您快速理解产品和功能概念。
+本文介绍 TapData 常见的术语，帮助您快速理解产品和功能概念。
 
 ## 全量数据同步
 
@@ -15,7 +15,7 @@ import Content from '../reuse-content/_all-features.md';
 
 ## 数据源
 
-从外部连接到Tapdata系统的数据来源。当前支持的数据源主要指数据库（Database），后续将逐步增加File、GridFS、RestAPI、Dummy、Custom、UDP、Cache等类型。
+从外部连接到TapData系统的数据来源。当前支持的数据源主要指数据库（Database），后续将逐步增加File、GridFS、RestAPI、Dummy、Custom、UDP、Cache等类型。
 
 ## 数据复制
 
@@ -37,7 +37,7 @@ import Content from '../reuse-content/_all-features.md';
 
 ## 连接
 
-又称数据源，即从外部连接到Tapdata系统的数据库。当前支持的连接包含：mysql、Oracle、MongoDB、 SQL Server、PostgreSQL、Kafka、 Redis 等。
+又称数据源，即从外部连接到TapData系统的数据库。当前支持的连接包含：mysql、Oracle、MongoDB、 SQL Server、PostgreSQL、Kafka、 Redis 等。
 
 
 
@@ -81,13 +81,13 @@ import Content from '../reuse-content/_all-features.md';
 
 数据迁移或同步的任务中，对数据源节点已存在的数据进行迁移或同步的模式。
 
-## Tapdata Agent
+## TapData Agent
 
 是指运行同步任务的执行程序，负责从管理端获取任务、连接源数据源、执行数据转换、输出到目标数据源。
 
 ## TCM 管理端
 
-Tapdata Cloud 理控制台，让用户可以自主定义编排同步任务，并下发同步任务给到同步实例。
+TapData Cloud 理控制台，让用户可以自主定义编排同步任务，并下发同步任务给到同步实例。
 
 
 

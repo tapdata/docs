@@ -3,7 +3,7 @@ import Content from '../reuse-content/_all-features.md';
 
 <Content />
 
-Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓存、事件发布/订阅、高速队列等场景。Tapdata 支持将关系型数据库（Oracle、MySQL、MongoDB、PostgreSQL、SQL Server）的数据实时同步至 Redis，帮助您快速完成数据流转。
+Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓存、事件发布/订阅、高速队列等场景。TapData 支持将关系型数据库（Oracle、MySQL、MongoDB、PostgreSQL、SQL Server）的数据实时同步至 Redis，帮助您快速完成数据流转。
 
 本文介绍如何通过数据转换任务，将 MySQL 的数据同步至 Redis。
 
@@ -22,7 +22,7 @@ Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓�
 
 ## 操作步骤
 
-1. [登录 Tapdata 平台](../user-guide/log-in.md)。
+1. [登录 TapData 平台](../user-guide/log-in.md)。
 
 2. 在左侧导航栏，选择**数据管道** > **数据转换**。
 
@@ -40,7 +40,7 @@ Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓�
      
    * **高级设置**      
      * **DDL 同步配置**      
-       选择是否启用 **DDL 事件采集**，打开该开关后，Tapdata 会自动采集所选的源端 DDL 事件（如新增字段），如果目标端支持 DDL 写入即可实现 DDL 语句的同步。      
+       选择是否启用 **DDL 事件采集**，打开该开关后，TapData 会自动采集所选的源端 DDL 事件（如新增字段），如果目标端支持 DDL 写入即可实现 DDL 语句的同步。      
        
      * **增量同步方式**      
        选择**实时日志解析**或**字段轮询**，选择为**轮询**时，您还需要指定轮询的字段、时间间隔和每次读取行数。**实时日志解析**会使用数据源事务日志进行解析并同步增量事件，**字段轮询**会通过对字段的轮询进行增量事件同步，其中**字段轮询**通常无法同步删除事件。      
@@ -123,7 +123,7 @@ Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓�
 
 ## 结果验证
 
-根据上述任务设置，Tapdata 会将源 MySQL 中 **customer** 表的数据实时同步到 Redis 中，且存储的键类型为 String。
+根据上述任务设置，TapData 会将源 MySQL 中 **customer** 表的数据实时同步到 Redis 中，且存储的键类型为 String。
 
 我们在 MySQL 中随机查询一条数据，例如查询 id 为 `879f660510764c4ea4127447e7ca44b8` 的记录，结果如下：
 

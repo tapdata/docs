@@ -1,9 +1,9 @@
 # KingbaseES-R3
-import Content1 from '../../reuse-content/_all-features.md';
+import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content1 />
 
-金仓数据库管理系统（KingbaseES）是北京人大金仓信息技术股份有限公司自主研发的、具有自主知识产权的商用关系型数据库管理系统。本文将介绍如何在 Tapdata 中添加 KingbaseES-R3 数据源，后续可将其作为源或目标库来构建数据管道。
+金仓数据库管理系统（KingbaseES）是北京人大金仓信息技术股份有限公司自主研发的、具有自主知识产权的商用关系型数据库管理系统。本文将介绍如何在 TapData 中添加 KingbaseES-R3 数据源，后续可将其作为源或目标库来构建数据管道。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -72,7 +72,7 @@ GRANT SELECT,INSERT,UPDATE,DELETE,TRUNCATE ON ALL TABLES IN SCHEMA schemaname TO
 
 ## 添加数据源
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. [登录 TapData 平台](../../user-guide/log-in.md)。
 
 2. 在左侧导航栏，单击**连接管理**。
 
@@ -98,7 +98,7 @@ GRANT SELECT,INSERT,UPDATE,DELETE,TRUNCATE ON ALL TABLES IN SCHEMA schemaname TO
      * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。
      * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。
      * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
-     * **模型加载频率**：数据源中模型数量大于 1 万时，Tapdata 将按照设置的时间定期刷新模型。
+     * **模型加载频率**：数据源中模型数量大于 1 万时，TapData 将按照设置的时间定期刷新模型。
    
 6. 单击**连接测试**，测试通过后单击**保存**。
 

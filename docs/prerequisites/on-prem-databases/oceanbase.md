@@ -1,9 +1,9 @@
 # OceanBase
-import Content from '../../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content />
 
-OceanBase 数据库是一个金融级分布式关系数据库，Tapdata 支持将 OceanBase 作为目标库，帮助您快速构建数据流转链路。接下来，我们将介绍如何在 Tapdata 平台中连接 OceanBase 数据源。
+OceanBase 数据库是一个金融级分布式关系数据库，TapData 支持将 OceanBase 作为目标库，帮助您快速构建数据流转链路。接下来，我们将介绍如何在 TapData 平台中连接 OceanBase 数据源。
 
 ## 支持版本
 
@@ -15,7 +15,7 @@ import Content1 from '../../reuse-content/alpha/alpha.md';
 
 ## 准备工作
 
-1. 确保 Tapdata 所属的网络已加入 OceanBase 的[租户白名单](https://www.oceanbase.com/docs/community-observer-cn-10000000000015856)中。
+1. 确保 TapData 所属的网络已加入 OceanBase 的[租户白名单](https://www.oceanbase.com/docs/community-observer-cn-10000000000015856)中。
 
 2. 以 `root` 用户登录到[租户](https://www.oceanbase.com/docs/community-observer-cn-10000000000015851)。
 
@@ -41,7 +41,7 @@ import Content1 from '../../reuse-content/alpha/alpha.md';
 
 ## 添加数据源
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. [登录 TapData 平台](../../user-guide/log-in.md)。
 
 2. 在左侧导航栏，单击**连接管理**。
 
@@ -65,7 +65,7 @@ import Content1 from '../../reuse-content/alpha/alpha.md';
      * **时区**：默认为数据库所用的时区，您也可以根据业务需求手动指定。
    * **高级设置**
      * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
-     * **模型加载频率**：数据源中模型数量大于 1 万时，Tapdata 将按照设置的时间定期刷新模型。
+     * **模型加载频率**：数据源中模型数量大于 1 万时，TapData 将按照设置的时间定期刷新模型。
 
 6. 单击**连接测试**，测试通过后单击**保存**。
 

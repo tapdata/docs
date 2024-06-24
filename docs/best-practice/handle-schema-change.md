@@ -3,13 +3,13 @@ import Content from '../reuse-content/_all-features.md';
 
 <Content />
 
-在使用 Tapdata 进行数据迁移和同步的过程中，了解数据源的表结构变更操作（如 DDL 操作）对数据流转的影响至关重要。Tapdata 致力于无缝处理大多数 DDL 变更，您需要了解表结构变更（如增减列）对数据同步流程的潜在影响，避免影响业务正常运行。
+在使用 TapData 进行数据迁移和同步的过程中，了解数据源的表结构变更操作（如 DDL 操作）对数据流转的影响至关重要。TapData 致力于无缝处理大多数 DDL 变更，您需要了解表结构变更（如增减列）对数据同步流程的潜在影响，避免影响业务正常运行。
 
 
 
 ## 开启 DDL 自动同步
 
-为保障数据复制/转换任务的高可用性和容错性，默认情况下，Tapdata 不会将源库的 DDL 语句同步到目标库，如果需要开启此功能，请按照以下步骤操作：
+为保障数据复制/转换任务的高可用性和容错性，默认情况下，TapData 不会将源库的 DDL 语句同步到目标库，如果需要开启此功能，请按照以下步骤操作：
 
 1. 在创建或编辑[数据复制](../user-guide/data-pipeline/copy-data/create-task.md)或[数据转换](../user-guide/data-pipeline/data-development/create-task.md)任务时，转到源数据库节点的配置页面。
 
@@ -23,7 +23,7 @@ import Content from '../reuse-content/_all-features.md';
 
    :::tip
 
-   除开启该开关外，还需要目标库支持 **DDL** **应用**，您可以通过[支持的数据源](../introduction/supported-databases.md)文档，查询各类数据源对 DDL 事件采集和 DDL 应用的支持情况，也可以在在目标节点的**高级设置**中查看 **DDL 事件应用**的提示信息。
+   除开启该开关外，还需要目标库支持 **DDL** **应用**，您可以通过[支持的数据源](../prerequisites/supported-databases.md)文档，查询各类数据源对 DDL 事件采集和 DDL 应用的支持情况，也可以在在目标节点的**高级设置**中查看 **DDL 事件应用**的提示信息。
 
    :::
 
@@ -31,8 +31,8 @@ import Content from '../reuse-content/_all-features.md';
 
 | DDL 采集     | DDL 应用                                                     |
 | ------------ | ------------------------------------------------------------ |
-| 新增字段     | Tapdata 在目标库新增字段时，会自动适配字段类型，例如从 MySQL 的 **INT** 转换至 Oracle 的 **NUMBER(38,0)**，如遇[不支持的列类型](../user-guide/no-supported-data-type.md)可能导致新增字段失败。 |
-| 修改字段名   | Tapdata 会自动在目标库完成该操作，需注意避免目标库的字段命名限制。 |
+| 新增字段     | TapData 在目标库新增字段时，会自动适配字段类型，例如从 MySQL 的 **INT** 转换至 Oracle 的 **NUMBER(38,0)**，如遇[不支持的列类型](../user-guide/no-supported-data-type.md)可能导致新增字段失败。 |
+| 修改字段名   | TapData 会自动在目标库完成该操作，需注意避免目标库的字段命名限制。 |
 | 修改字段属性 | 在不同类型的数据库间同步时（例如从 MySQL 到 Oracle），需确保目标数据库支持更改后的数据类型和属性。否则，这可能导致同步任务的错误或中断。 |
 | 删除字段     | 从源表中删除列可能会对数据管道产生严重影响，尤其是当该列是数据处理逻辑的关键部分，例如主键或作为同步链路的更新条件字段。在进行此类变更之前，需确保数据管道中的其他组件不再依赖该列。 |
 

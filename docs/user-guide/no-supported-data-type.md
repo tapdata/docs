@@ -5,7 +5,7 @@ import Content from '../reuse-content/_all-features.md';
 
 :::tip
 
-本文仅列举 Tapdata 在同步过程中不支持的字段类型，不在范围的数据源逐步补充。
+本文仅列举 TapData 在同步过程中不支持的字段类型，不在范围的数据源逐步补充。
 
 :::
 

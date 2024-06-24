@@ -88,7 +88,7 @@
 - 加入技术社区 
 
 	<p align="left">
-	<a href="https://20778419.s21i.faiusr.com/4/2/ABUIABAEGAAg3Z6tkAYoqdfZ4AIwjAM4jAM.png" rel="nofollow"><img src="https://20778419.s21i.faiusr.com/4/2/ABUIABAEGAAg3Z6tkAYoqdfZ4AIwjAM4jAM.png" style="zoom: 50%;" /></a>
+	<a href="https://20778419.s21i.faiusr.com/4/2/ABUIABAEGAAg-JPfhwYonMrzlwEwZDhk.png" rel="nofollow"><img src="https://20778419.s21i.faiusr.com/4/2/ABUIABAEGAAg-JPfhwYonMrzlwEwZDhk.png" style="zoom: 100%;" /></a>
 	</p>
 	
 	

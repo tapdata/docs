@@ -18,11 +18,11 @@ import TabItem from '@theme/TabItem';
 
 ## 支持版本
 
-TiDB 5.4 及以上
+TiDB 6.0.0 及以上
 
 ## 注意事项
 
-* 为保障数据的正常同步，TiDB 集群与 TapData 引擎（Agent）之间需能正常通信。
+* 为保障数据的正常同步，TiDB 集群与 TapData 引擎（Agent）之间需处于同一内网且能正常通信。
 
 * 将 TiDB 作为源以实现增量数据同步场景时，您还需要检查下述信息：
 
@@ -30,7 +30,7 @@ TiDB 5.4 及以上
 
   * 为避免 TiCDC 的垃圾回收影响事务或增量数据信息提取，推荐执行命令 `SET GLOBAL tidb_gc_life_time= '24h'` 将其设置为 24 小时。
 
-  * TiDB 版本为 8.0 以上时，如采用 Tapdata Cloud 产品，部署的 Agent 需为[半托管实例](../../faq/agent-installation#semi-and-full-agent)，且需部署在 Linux 平台，更多介绍，见下文的[升级 TiCDC](#ticdc)。
+  * 由于 TiDB 组件间通信限制，当采用 Tapdata Cloud 产品时，部署的 Agent 需为[半托管实例](../../faq/agent-installation#semi-and-full-agent)。
 
 
 
@@ -82,32 +82,6 @@ GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMP
 
 * **database_name**：数据库<span id="ticdc">名称</span>。
 * **username**：用户名。
-
-3. 如需执行增量数据同步，且 TiDB 版本高于 8.0，您还需要跟随下述步骤升级 TiCDC 工具。
-
-   1. 下载 TiCDC 工具，下载地址格式为 `https://tiup-mirrors.pingcap.com/cdc-v${ti-db-version}-linux-${system-architecture}.tar.gz` 。
-
-      * `${ti-db-version}`：TiDB 版本，例如：`8.0.1`
-      * `${system-architecture}`：操作系统架构，例如：`amd64`（即 x86_64） 或者 `arm64`
-
-      例如 8.1.0 版本的 Linux（x86_64 架构）的 TiCDC 下载地址为：https://tiup-mirrors.pingcap.com/cdc-v8.1.0-linux-AMD64.tar.gz
-
-   2. 执行下述命令，解压文件并命名为 `cdc`。
-
-      ```bash
-      # 请替换压缩包文件名为您的真实文件名
-      tar -zxvf cdc-v8.1.0-linux-AMD64.tar.gz cdc
-      ```
-
-   3. 将 `cdc` 文件复制并替换至 `{tapData_dir}/run-resources/ti-db/tool` 目录中。
-
-      :::tip
-
-      `{tapData_dir}` 为 TapData 安装目录，如果提示 `Text file busy`，您需要停止该数据源关联的数据同步任务再执行文件复制。
-
-      :::
-
-   4. 授予 `{tapData_dir}/run-resources/ti-db/tool` 当前用户的可读可写可执行权限。
 
 
 

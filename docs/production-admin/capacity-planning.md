@@ -27,13 +27,7 @@
 
 ## 快速参考表
 
-<table style="undefined;table-layout: fixed; width: 945px"><colgroup>
-<col style="width: 111px">
-<col style="width: 358px">
-<col style="width: 116px">
-<col style="width: 217px">
-<col style="width: 143px">
-</colgroup>
+<table>
 <thead>
   <tr>
     <th>类别</th>
@@ -47,7 +41,7 @@
     <td rowspan="2">全量同步</td>
     <td>高数据规模（表数据 &gt; 1 TB）</td>
     <td>4</td>
-    <td rowspan="5">每 1KB 行大小需要 1 GB<br><br></td>
+    <td rowspan="5">每 1KB 行大小需要 1 GB</td>
     <td>8</td>
   </tr>
   <tr>

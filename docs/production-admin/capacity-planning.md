@@ -27,42 +27,53 @@
 
 ## 快速参考表
 
-<table><thead>
+<table style="undefined;table-layout: fixed; width: 945px"><colgroup>
+<col style="width: 111px">
+<col style="width: 358px">
+<col style="width: 116px">
+<col style="width: 217px">
+<col style="width: 143px">
+</colgroup>
+<thead>
   <tr>
-    <th>业务负载类型</th>
+    <th>类别</th>
+    <th>业务负载</th>
     <th>所需 CPU 核数</th>
     <th>所需内存</th>
     <th>每个 16 核服务器的管道数量</th>
   </tr></thead>
 <tbody>
   <tr>
-    <td>高吞吐量增量复制（RPS &gt; 10,000）</td>
-    <td>2</td>
-    <td rowspan="5">每 1KB 行大小需要 1 GB</td>
+    <td rowspan="2">全量同步</td>
+    <td>高数据规模（表数据 &gt; 1 TB）</td>
+    <td>4</td>
+    <td rowspan="5">每 1KB 行大小需要 1 GB<br><br></td>
     <td>8</td>
   </tr>
   <tr>
-    <td>中等吞吐量增量复制（1,000~9,999 RPS ）</td>
+    <td>中小数据规模（表数据 &lt; 1TB）</td>
+    <td>2</td>
+    <td>16</td>
+  </tr>
+  <tr>
+    <td rowspan="3">增量复制</td>
+    <td>高吞吐量（RPS &gt; 10,000）</td>
+    <td>2</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td>中吞吐量（1,000 ~ 9,999 RPS ）</td>
     <td>1</td>
     <td>16</td>
   </tr>
   <tr>
-    <td>低吞吐量增量复制（RPS &lt; 1,000）</td>
+    <td>低吞吐量（RPS &lt; 1,000）</td>
     <td>0.5</td>
     <td>32</td>
   </tr>
-  <tr>
-    <td>大容量全量同步（表数据 &gt;1 TB）</td>
-    <td>4</td>
-    <td>8</td>
-  </tr>
-  <tr>
-    <td>中/小容量全量同步（表数据 &lt; 1TB）</td>
-    <td>2</td>
-    <td>16</td>
-  </tr>
 </tbody>
 </table>
+
 
 
 

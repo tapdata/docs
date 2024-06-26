@@ -136,7 +136,7 @@ import Content from '../reuse-content/_all-features.md';
 
 10. 确认无误后，单击**启动**。
 
-   操作完成后，您可以在当前页面观察任务的执行情况，如 QPS、延迟、任务时间统计等信息，示例如下：
+   操作完成后，您可以在当前页面观察任务的执行情况，如 RPS（每秒处理记录数）、延迟、任务时间统计等信息，示例如下：
 
    ![任务监控](../images/settle_analytics_result.png)
 

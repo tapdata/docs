@@ -46,7 +46,7 @@ TapData Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，完成
     <th rowspan="2">规格</th>
     <th rowspan="2">运行任务数参考</th>
     <th colspan="2">宿主机硬件推荐 ①</th>
-    <th rowspan="2">性能参考（QPS）</th>
+    <th rowspan="2">性能参考（RPS）</th>
   </tr>
   <tr>
     <th>CPU 核数</th>

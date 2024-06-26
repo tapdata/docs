@@ -35,7 +35,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
   ![编辑共享挖掘](../../images/edit_share_mining.png)
 
-* **监控任务详情**：单击挖掘任务对应**监控**，可查看详细挖掘信息，例如 QPS、增量延迟等关键指标。
+* **监控任务详情**：单击挖掘任务对应**监控**，可查看详细挖掘信息，例如 RPS（每秒处理记录数）、增量延迟等关键指标。
 
   ![](../../images/shared_mining_detail.png)
 

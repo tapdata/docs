@@ -1,6 +1,16 @@
 # 容量规划参考
 
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
+
 本文档提供了一个综合的容量规划参考，旨在帮助用户根据特定环境中的实际需求进行有效的资源分配。实际的系统需求可能会受到工作负载特性、网络条件和服务器规格等多种因素的影响，因此我们推荐在特定的实际环境中进行性能测试，以获得更准确的配置数据。
+
+:::tip
+
+如您选择的是 Tapdata Cloud 产品，请参考[实例规格说明](../billing/billing-overview#spec-info)。
+
+:::
 
 ## 名词定义
 

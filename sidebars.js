@@ -358,6 +358,7 @@ const sidebars = {
      label: '生产部署与运维',
      link: {type: 'doc', id: 'production-admin/README'},
      items: [
+            'production-admin/capacity-planning',
             'production-admin/install-tapdata-ha',
             'production-admin/install-replica-mongodb',
             'production-admin/operation',

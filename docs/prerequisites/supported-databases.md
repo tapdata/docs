@@ -46,12 +46,12 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>➖</td>
     <td>✅</td>
-    <td>➖</td>
+    <td>✅</td>
     <td>23 及以上</td>
   </tr>
   <tr>
     <td>ClickHouse</td>
-    <td>➖</td>
+    <td>✅</td>
     <td>➖</td>
     <td>➖</td>
     <td>✅</td>
@@ -119,10 +119,11 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>5.4 及以上</td>
+    <td>6.0.0 及以上</td>
   </tr>
 </tbody>
 </table>
+
 
 
 

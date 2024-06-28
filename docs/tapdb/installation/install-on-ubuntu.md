@@ -33,35 +33,33 @@ sudo apt-get install libcurl4 libgssapi-krb5-2 libldap-2.5-0 libwrap0 libsasl2-2
 创建 TapDB 实例存放数据的目录。例如：
 
 ```
-sudo mkdir -p /var/lib/mongo
+sudo mkdir -p /var/lib/tapdb
 ```
 
 创建 TapDB 实例存放日志的目录。例如：
 
 ```
-sudo mkdir -p /var/log/mongodb
+sudo mkdir -p /var/log/taplog
 ```
 
 用户启动 TapDB 进程，必须有上述目录的读写权限。例如：
 
 ```
-sudo chown `whoami` /var/lib/mongo     # 或者是其他用户名称
-sudo chown `whoami` /var/log/mongodb   # 或者是其他用户名称
+sudo chown `whoami` /var/lib/tapdb     # 或者是其他用户名称
+sudo chown `whoami` /var/log/taplog   # 或者是其他用户名称
 ```
 
 ### 2. 启动 TapDB
 
-在系统环境中运行 tapdb **（相当于 MongoDB 的 mongod）** 来启动 TapDB。
+在系统环境中运行`tapdb`来启动 TapDB。
 
 ```
-tapdb --dbpath /var/lib/mongo --logpath /var/log/mongodb/mongod.log --fork
+tapdb --dbpath /var/lib/tapdb --logpath /var/log/tapdb/tapdb.log --fork
 ```
-
-tapdb 的命令完全兼容 MongoDB 的 mongod，详情可以参考 MongoDB 的 [--dbpath](https://www.mongodb.com/docs/v4.4/reference/program/mongod/#std-option-mongod.--dbpath)，[--logpath](https://www.mongodb.com/docs/v4.4/reference/program/mongod/#std-option-mongod.--logpath) 和 [Options](https://www.mongodb.com/docs/v4.4/reference/program/mongod/#std-label-mongod-options)。
 
 ### 3. 验证 TapDB 已经启动成功
 
-通过检查进程的日志文件`/var/log/mongodb/mongod.log`，来验证 TapDB 已经启动成功：
+通过检查进程的日志文件`/var/log/tapdb/tapdb.log`，来验证 TapDB 已经启动成功：
 
 ```
 [initandlisten] waiting for connections on port 27017
@@ -71,18 +69,8 @@ tapdb 的命令完全兼容 MongoDB 的 mongod，详情可以参考 MongoDB 的 
 
 ### 4. 开始使用 TapDB
 
-在运行 tapdb 的主机上，启动 tap **（相当于 MongoDB 的 mongo）**；如果 tapdb 是使用的默认的27017端口，可以不带任何命令行选项直接启动 Tap Shell：
+在运行 tapdb 的主机上，启动`tap`；tapdb使用27017作为默认端口，可以不带任何命令行选项直接启动 Tap Shell：
 
 ```
 tap
 ```
-
-tap 的命令完全兼容 MongoDB 的 mongo，详情可以参考 MongoDB 的 [mongo](https://www.mongodb.com/docs/v4.4/reference/program/mongo/#mongodb-binary-bin.mongo)。
-
-## 附加信息
-
-TapDB 也可以通过配置文件启动，方式和 MongoDB 完全兼容，可以参考[配置文件](https://www.mongodb.com/docs/v4.4/reference/configuration-options/)。
-
-TapDB 的[副本集](https://www.mongodb.com/docs/v4.4/reference/glossary/#std-term-replica-set)，以及[分片集群](https://www.mongodb.com/docs/v4.4/tutorial/deploy-shard-cluster/)使用也完全兼容 MongoDB，可以无缝迁移和使用。
-
-TapDB 的分片集路由文件 taps **（相当于 MongoDB 的 mongos）**，使用方式可以参考[mongos](https://www.mongodb.com/docs/v4.4/core/sharded-cluster-query-router/)。

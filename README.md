@@ -1,20 +1,20 @@
 [中文项目介绍](README-CN.md)
 
-# Tapdata Documentation
+# TapData Documentation
 
 <p align="left">
 <a href="https://auth.tapdata.net/" rel="nofollow"><img src="https://20778419.s21i.faiusr.com/4/2/ABUIABAEGAAg39a1kQYoqLyr0gEwyAE4Mw.png" style="zoom: 50%;" /></a> 
 </p>
 
-Welcome to Tapdata documentation!
+Welcome to TapData documentation!
 
-This repository stores all the source files of Tapdata documentation, click to visit: https://docs.tapdata.io
+This repository stores all the source files of TapData documentation, click to visit: https://docs.tapdata.io
 
 If you find documentation issues, feel free to [create an Issue](https://github.com/tapdata/docs/issues/new) to let us know or directly create a Pull Request to help fix or update it.
 
-## What is Tapdata?
+## What is TapData?
 
-[Tapdata](https://tapdata.io/) is a live data platform designed to connect data silos and provide fresh data to the downstream operational applications & operational analytics.
+[TapData](https://tapdata.io/) is a live data platform designed to connect data silos and provide fresh data to the downstream operational applications & operational analytics.
 
 🎮 [Try it for free](https://auth.tapdata.net/)
 
@@ -24,7 +24,7 @@ If you find documentation issues, feel free to [create an Issue](https://github.
 
 We welcome contributions to help improve the documentation! Here is the steps:
 
-> The Tapdata docs are written in Markdown. If you have any questions about the steps blow, please [contact us](#Contact).
+> The TapData docs are written in Markdown. If you have any questions about the steps blow, please [contact us](#Contact).
 
 1. Clone repository.
 
@@ -57,10 +57,10 @@ We welcome contributions to help improve the documentation! Here is the steps:
 
 ```shell
 ├── docs		       # Docs for the current version
-│   ├── cloud		       # Tapdata Cloud Docs
+│   ├── cloud		       # TapData Cloud Docs
 │   │   ├── images	       # Screen shots, illustrations for docs
 │   │   ├── …………
-│   ├── enterprise	       # Tapdata Enterprise Docs
+│   ├── enterprise	       # TapData Enterprise Docs
 │   │   ├── images						
 │   │   ├── …………
 │   └── reuse-content	       # Reuse content, we can use Markdown files as components and import them elsewhere 
@@ -92,5 +92,6 @@ We have a few channels for contact:
 - Wechat: 
 
 <p align="left">
-<a href="https://20778419.s21i.faiusr.com/4/2/ABUIABAEGAAg3Z6tkAYoqdfZ4AIwjAM4jAM.png" rel="nofollow"><img src="https://20778419.s21i.faiusr.com/4/2/ABUIABAEGAAg3Z6tkAYoqdfZ4AIwjAM4jAM.png" style="zoom: 50%;" /></a>
+<a href="https://20778419.s21i.faiusr.com/4/2/ABUIABAEGAAg-JPfhwYonMrzlwEwZDhk.png" rel="nofollow"><img src="https://20778419.s21i.faiusr.com/4/2/ABUIABAEGAAg-JPfhwYonMrzlwEwZDhk.png" style="zoom: 100%;" /></a>
 </p>
+

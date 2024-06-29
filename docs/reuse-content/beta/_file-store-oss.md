@@ -10,7 +10,7 @@
 
    3. 在跳转到的页面填写登录名称、显示名称，选择 OpenAPI 调用方式并单击**确定**。
 
-      ![创建用户](../../cloud/images/create_aliyun_user.png)
+      ![创建用户](../../images/create_aliyun_user.png)
 
    4. 用户创建完成后，单击下载 CSV 文件，该文件包含访问密钥（AccessKey）信息。
 
@@ -28,7 +28,7 @@
 
    3. 在右侧弹出的面板中，选择授权范围，然后搜索并选中 **AliyunOSSReadOnlyAccess** 策略。
 
-      ![授予 OSS 读取权限](../../cloud/images/grant_oss_read.png)
+      ![授予 OSS 读取权限](../../images/grant_oss_read.png)
 
    4. 单击**确定**，然后单击**完成**。
 
@@ -40,4 +40,4 @@
 
    3. 单击左侧的概览标签页，下翻至访问端口即可获取外网访问地址对应的 Endpoint。
    
-      ![获取 Endpoint](../../cloud/images/obtain_oss_endpoint.png)
+      ![获取 Endpoint](../../images/obtain_oss_endpoint.png)

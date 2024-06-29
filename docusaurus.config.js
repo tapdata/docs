@@ -68,7 +68,7 @@ const config = {
     ],
   ],
 
-// Local search engine configuration
+/* Local search engine configuration
   themes: [
     [
       "@easyops-cn/docusaurus-search-local",
@@ -81,7 +81,7 @@ const config = {
         indexBlog: false,
       },
     ],
-  ],
+  ],*/
 
 // An Image Zoom plugin for Docusaurus 2, and integrate hotjar for feedback
   plugins: [
@@ -101,32 +101,33 @@ const config = {
     // Website announcement
     announcementBar: {
             id: 'announcementBar-1',
-            content: `🎉️ 更稳定，更易用，新增数据转换功能，抢先体验全新的 <a target="_blank" rel="noopener noreferrer" href="https://cloud.tapdata.net/console/v3/">Tapdata Cloud 3.0</a> `,
+            content: `🎉️ 更稳定，更易用，新增数据转换功能，抢先体验全新的 <a target="_blank" rel="noopener noreferrer" href="https://cloud.tapdata.net/console/v3/">TapData Cloud 3.0</a> `,
             backgroundColor: '#1d4378',
             textColor: '#ffffff',
             },
     // SEO Configuration, this would become <meta name="keywords" content="cooking, blog"> in the generated HTML
-      metadata: [{name: 'keywords', content: '一站式实时数据平台, Tapdata'}],
+      metadata: [
+        {name: 'keywords', content: '一站式实时数据平台, TapData'},
+      ],
       navbar: {
         title: '首页',
         logo: {
-          alt: 'Tapdata',
+          alt: 'TapData',
           src: 'img/logo.png',
           href: 'https://tapdata.net/',
         },
         items: [
           {
             type: 'doc',
-            docId: 'enterprise/what-is-tapdata-enterprise',
+            docId: 'what-is-tapdata',
             position: 'left',
-            label: 'Tapdata On-Prem',
+            label: 'TapData 帮助文档',
             },
           {
-            type: 'doc',
-            docId: 'cloud/what-is-tapdata-cloud',
-            position: 'left',
-            label: 'Tapdata Cloud',
-          },
+            href: 'https://cloud.tapdata.net/console/v3/',
+            position: 'right',
+            label: '登录 TapData Cloud',
+            },
           {
             type: 'doc',
             docId: 'tapdb/what-is-tapdb',
@@ -139,8 +140,8 @@ const config = {
             dropdownActiveClassDisabled: true,
            },
           {
-            href: 'https://github.com/tapdata/docs',
-            label: 'GitHub',
+            href: 'https://github.com/tapdata/tapdata',
+            label: 'GitHub⭐',
             position: 'right',
           },
         ],
@@ -149,6 +150,13 @@ const config = {
         hotjar: {
         applicationId: '3533951',
     },
+    // algolia search plugin
+     algolia: {
+      appId: '9MM3A6XTHN',
+      apiKey: 'aaa34ed85c8fa940f787d470019fb29b',
+      indexName: 'tapdata',
+      contextualSearch: false,
+      },
       footer: {
         style: 'dark',
         /* links: [
@@ -192,7 +200,7 @@ const config = {
             ],
           },
         ], */
-        copyright: `Copyright © ${new Date().getFullYear()} Tapdata, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} TapData, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
@@ -202,9 +210,22 @@ const config = {
     }),
 
   scripts: [
+    {
+      src: 'https://hm.baidu.com/hm.js?2a8961eabe42165bedcb48eb99150206',
+      async: true,
+    },
     '/js/iframe.js',
-    '/js/replaceIcons.js'
-  ]
+    '/js/replaceIcons.js',
+  ],
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'baidu-site-verification', 
+        content: 'codeva-tYI9V6QTSG'
+      },
+    },
+  ],
 };
 
 module.exports = config;

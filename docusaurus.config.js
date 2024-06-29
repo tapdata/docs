@@ -44,7 +44,7 @@ const config = {
           lastVersion: 'current',
           versions: {
                   current: {
-                    label: '3.x',
+                    label: '6.x',
                   },
                   '2.0': {
                          label: '2.x',
@@ -119,20 +119,10 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'what-is-tapdata',
+            docId: 'tapdb/what-is-tapdb',
             position: 'left',
-            label: 'TapData 帮助文档',
-            },
-          {
-            href: 'https://cloud.tapdata.net/console/v3/',
-            position: 'right',
-            label: '登录 TapData Cloud',
-            },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: true,
-           },
+            label: 'TapDB',
+          },
           {
             href: 'https://github.com/tapdata/tapdata',
             label: 'GitHub⭐',

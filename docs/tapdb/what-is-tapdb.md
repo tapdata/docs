@@ -2,7 +2,7 @@
 sidebar_position: 1
 slug: /
 ---
-# TapDB 简介
+# 什么是 TapDB
 
 TapDB 是 TapData 提供的国产分布式文档数据库；全面兼容文档数据库协议，适配国产芯片鲲鹏，海光，海思, 以及麒麟等操作系统。
 

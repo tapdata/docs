@@ -1,6 +1,8 @@
-# Red Hat/CentOS 上部署（V6 版本）
+# Red Hat/CentOS 上部署
 
 使用本教程手动安装 TapDB 6.0 在 Red Hat Enterprise Linux、CentOS Linux 或 Oracle Linux [ 1 ]，使用下载的.tgz tarball。
+
+早期版本的部署方式，见[附录章节](../appendix/install-on-ubuntu-v4.md)。
 
 ## 注意事项
 

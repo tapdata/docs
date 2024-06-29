@@ -451,7 +451,6 @@ const sidebars = {
      link: {type: 'doc', id: 'tapdb/installation/README'},
      items: [
             'tapdb/installation/install-on-redhat-v6',
-            'tapdb/installation/install-on-ubuntu-v4',
         ]
     },
    {
@@ -463,8 +462,16 @@ const sidebars = {
             'tapdb/administration/backups',
         ]
     }, 
-  'tapdb/license',
-  'tapdb/compatibility',
+   {
+     type: 'category',
+     label: '附录',
+     link: {type: 'doc', id: 'tapdb/appendix/README'},
+     items: [
+            'tapdb/appendix/license',
+            'tapdb/appendix/compatibility',
+            'tapdb/appendix/install-on-ubuntu-v4',
+        ]
+    }, 
 
   ]
 };

@@ -1,7 +1,5 @@
 # 数据库和集合
 
-## 概述
-
 TapDB 将数据记录存储为文档（特别是BSON 文档），这些文档聚集在集合中。数据库存储一个或多个文档集合。
 
 ## 数据库
@@ -21,7 +19,7 @@ use myNewDB
 db.myNewCollection1.insertOne( { x: 1 } )
 ```
 
-`insertOne()`操作会同时创建数据库`myNewDB`和集合`myNewCollection1`如果尚不存在）。确保数据库和集合名称都遵循TapDB命名限制。
+`insertOne()` 操作会同时创建数据库 `myNewDB` 和集合 `myNewCollection1` 如果尚不存在）。确保数据库和集合名称都遵循TapDB命名限制。
 
 ## 集合
 
@@ -37,11 +35,11 @@ db.myNewCollection2.insertOne( { x: 1 } )
 db.myNewCollection3.createIndex( { y: 1 } )
 ```
 
-如果相应的集合尚不存在，则`insertOne()`和`createIndex()`操作都会创建相应的集合。确保集合名称遵循 TapDB命名限制。
+如果相应的集合尚不存在，则 `insertOne()` 和 `createIndex()` 操作都会创建相应的集合。确保集合名称遵循 TapDB命名限制。
 
 ### 显式创建
 
-TapDB 提供了db.createCollection()方法来显式创建具有各种选项的集合，例如设置最大大小或文档验证规则。如果不指定这些选项，则无需显式创建集合，因为 TapDB 会在您首次存储集合数据时创建新集合。
+TapDB 提供了 `db.createCollection()` 方法来显式创建具有各种选项的集合，例如设置最大大小或文档验证规则。如果不指定这些选项，则无需显式创建集合，因为 TapDB 会在您首次存储集合数据时创建新集合。
 
 ### 文档验证
 
@@ -57,4 +55,4 @@ TapDB 提供了db.createCollection()方法来显式创建具有各种选项的�
 
 系统为集合分配了一个不可变的 UUID。集合 UUID 在副本集的所有节点和分片集群的分片中保持不变。
 
-要检索集合的 UUID，请运行listCollections命令或db.getCollectionInfos()方法。
+要检索集合的 UUID，请运行 `listCollections` 命令或 `db.getCollectionInfos()` 方法。

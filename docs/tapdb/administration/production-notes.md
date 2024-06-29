@@ -2,22 +2,25 @@
 
 本页详细介绍了影响 TapDB 的系统配置（尤其是在生产环境中运行时）。
 
-> 警告
-> 
-> **MMAPv1 已删除**
-> TapDB 4.2 删除已弃用的 MMAPv 1存储引擎。要将 MMAPv 1存储引擎部署更改为WiredTiger 存储引擎，请参阅：
->
-> - 将独立实例更改为 WiredTiger
->
-> - 将副本集更改为 WiredTiger
->
-> - 将分片集群更改为 WiredTiger
+:::tip
+
+TapDB 4.2 删除已弃用的 MMAPv 1存储引擎。要将 MMAPv 1存储引擎部署更改为WiredTiger 存储引擎，请参阅：
+
+- 将独立实例更改为 WiredTiger
+
+- 将副本集更改为 WiredTiger
+
+- 将分片集群更改为 WiredTiger
+
+:::
 
 ## 平台支持说明
 
-> 注意
-> 
-> 在 macOS 10.12.x、10.13.x 和 10.14.0 上非正常关闭期间，TapDB 4.0 可能会丢失数据。 Apple 已在 macOS 10.14.1 中修复此问题。
+:::tip
+
+在 macOS 10.12.x、10.13.x 和 10.14.0 上非正常关闭期间，TapDB 4.0 可能会丢失数据。 Apple 已在 macOS 10.14.1 中修复此问题。
+
+:::
 
 ### x86_64
 
@@ -25,29 +28,30 @@ TapDB 需要满足以下最低配置要求的 x86_64 微架构：
 
 - 对于 Intel x86_64，TapDB 需要：
 
-    - Sandy Bridge 或更高版本的酷睿处理器，再或
+    - Sandy Bridge 或更高版本的酷睿处理器
 
     - Tiger Lake 或更高版本的赛扬或奔腾处理器。
 
-- 对于 AMD x86_64，TapDB 需要：
+- 对于 AMD x86_64，TapDB 需要 Bulldozer 或更高版本的处理器。
 
-    - Bulldozer 或更高版本的处理器。
 
-从 TapDB 5.0 、 tapdb 、 taps和旧版tap shell 不再支持不符合最低微架构要求的x86_64平台。
+从 TapDB 5.0 、 tapdb 、 taps 和旧版 tap shell 不再支持不符合最低微架构要求的 x86_64平台。
 
 - TapDB 仅支持运行 Red Hat Compatible Kernel (RHCK) 的 Oracle Linux。TapDB 不支持 Unbreakable Enterprise Kernel (UEK)。
 
-- TapDB 5.0 需要使用 AVX 指令集，该指令集在部分 Intel 和 AMD 处理器
+- TapDB 5.0 需要使用 AVX 指令集，该指令集在部分 Intel 和 AMD 处理器。
 
 ### arm64
 
-arm64 上的 TapDB 需要ARMv8.2-A或后来的微架构。
+arm64 上的 TapDB 需要 ARMv8.2-A 或后来的微架构。
 
-从 TapDB 5.0 、 tapdb 、 taps和旧版tap shell 不再支持不符合最低微架构要求的arm64平台。
+从 TapDB 5.0 、 tapdb 、 taps 和旧版 tap shell 不再支持不符合最低微架构要求的 arm64 平台。
 
-> 注意
-> 
-> TapDB 不再支持缺乏适当 CPU 架构的单板硬件 (Raspberry Pi 4 )。
+:::tip
+
+TapDB 不再支持缺乏适当 CPU 架构的单板硬件 (Raspberry Pi 4 )。
+
+:::
 
 ## 平台支持列表
 
@@ -66,35 +70,35 @@ arm64 上的 TapDB 需要ARMv8.2-A或后来的微架构。
 
 ## TapDB dbPath
 
-`dbPath`目录中的文件必须与配置的 存储引擎 `tapdbdbPath--storageEngine`相对应。必须拥有指定dbPath的读取和写入权限。
+`dbPath` 目录中的文件必须与配置的存储引擎 `tapdbdbPath--storageEngine` 相对应。必须拥有指定 dbPath 的读取和写入权限。
 
-如果您使用防病毒 (AV) 扫描程序或端点检测和响应 (EDR) 扫描程序，请将扫描程序配置为从扫描中排除`database storage path`和`database log path` 。
+如果您使用防病毒 (AV) 扫描程序或端点检测和响应 (EDR) 扫描程序，请将扫描程序配置为从扫描中排除 `database storage path` 和 `database log path` 。
 
-`database storage path`中的数据文件已压缩。此外，如果使用加密存储引擎，数据文件也会被加密。扫描这些文件的 I/O 和 CPU 成本可能会显着降低性能，而不提供任何安全优势。
+`database storage path` 中的数据文件已压缩。此外，如果使用加密存储引擎，数据文件也会被加密。扫描这些文件的 I/O 和 CPU 成本可能会显着降低性能，而不提供任何安全优势。
 
-如不排除 `database storage path` 和 `database log pat`h 中的目录，扫描程序可能会隔离或删除重要文件。丢失或隔离的文件可能会损坏数据库并使 TapDB 实例崩溃。
+如不排除 `database storage path` 和 `database log path` 中的目录，扫描程序可能会隔离或删除重要文件。丢失或隔离的文件可能会损坏数据库并使 TapDB 实例崩溃。
 
 ## 并发
 
 ### WiredTiger
 
-WiredTiger支持读取者和写入者对集合中的文档进行并发访问。客户端可以在写入操作进行时读取文档，并且多个线程可以同时修改集合中的不同文档。
+WiredTiger 支持读取者和写入者对集合中的文档进行并发访问。客户端可以在写入操作进行时读取文档，并且多个线程可以同时修改集合中的不同文档。
 
 ## 数据一致性
 
 ### 日记
 
-TapDB 使用预 写式日志记录 到磁盘上的 日志 。日志保证在 由于崩溃或其他严重故障而终止的情况下，TapDB 可以快速恢复已写入日志但未写入数据文件的 写入操作 tapdb。
+TapDB 使用预写式日志记录到磁盘上的日志。日志保证在由于崩溃或其他严重故障而终止的情况下，TapDB 可以快速恢复已写入日志但未写入数据文件的 写入操作 TapDB。
 
-保持日志功能处于启用状态，以确保tapdb能够在崩溃后恢复其数据文件并使数据文件保持在有效状态。有关更多信息，请参阅日志。
+保持日志功能处于启用状态，以确保 TapDB 能够在崩溃后恢复其数据文件并使数据文件保持在有效状态。有关更多信息，请参阅日志。
 
-从 TapDB 4.0 ，您不能为使用 WiredTiger 存储引擎的副本集成员指定`--nojournal`选项或`storage.journal.enabled: false` 。
+从 TapDB 4.0 ，您不能为使用 WiredTiger 存储引擎的副本集成员指定 `--nojournal` 选项或 `storage.journal.enabled: false` 。
 
 ### 读关注 (read concern)
 
-从 TapDB 3.6 ，如果写入请求确认，则可以使用因果一致会话来读取自己的写入。
+从 TapDB 3.6，如果写入请求确认，则可以使用因果一致会话来读取自己的写入。
 
-TapDB 3.6之前的版本，为了读取您自己的写入，您必须使用`{ w: "majority" }`写关注发出写入操作，然后使用`primary`读取偏好以及`"majority"`或`"linearizable"`读关注发出读取操作。
+TapDB 3.6 之前的版本，为了读取您自己的写入，您必须使用 `{ w: "majority" }` 写关注发出写入操作，然后使用 `primary` 读取偏好以及 `"majority"` 或 `"linearizable"` 读关注发出读取操作。
 
 ### 写关注
 写关注描述了 TapDB 为写入操作请求的确认级别。写关注的级别会影响写入操作的返回速度。当写入操作具有较弱的写关注时，它们会快速返回。对于更强的写关注，客户端在发送写入操作后必须等待，直到 TapDB 在请求的写关注级别确认写入操作。由于写关注不足，写入操作可能在客户端看来已成功，但在某些服务器故障的情况下可能不会持久化。
@@ -105,9 +109,11 @@ TapDB 3.6之前的版本，为了读取您自己的写入，您必须使用`{ w:
 
 务必在可信环境中运行 TapDB，使用网络规则阻止来自所有未知计算机、系统和网络的访问。与任何依赖于网络访问的敏感系统一样，您的 TapDB 部署应该只能由需要访问的特定系统访问，例如应用程序服务器、监控服务和其他 TapDB 组件。
 
-> 重要
-> 
-> 默认情况下，未启用授权，并且tapdb假定环境可信。根据需要启用authorization模式。
+:::tip
+
+默认情况下，未启用授权，并且tapdb假定环境可信。根据需要启用 authorization 模式。
+
+:::
 
 ### 禁用 HTTP 接口
 
@@ -117,9 +123,9 @@ TapDB 3.6之前的版本，为了读取您自己的写入，您必须使用`{ w:
 
 ### 管理连接池大小
 
-通过调整连接池大小以适应您的使用案例，避免tapdb或taps实例的连接资源过载。从当前数据库请求典型数量的110 - 115 % 开始，并根据需要修改连接池大小。
+通过调整连接池大小以适应您的使用案例，避免 TapDB 或 taps 实例的连接资源过载。从当前数据库请求典型数量的 110 - 115 % 开始，并根据需要修改连接池大小。
 
-connPoolStats命令返回有关分片集群中taps和tapdb实例的当前数据库的打开连接数的信息。
+connPoolStats 命令返回有关分片集群中taps和tapdb实例的当前数据库的打开连接数的信息。
 
 ## 硬件考虑因素
 
@@ -153,11 +159,13 @@ WiredTiger 内部缓存和磁盘格式中的数据使用不同的表示形式：
 
 要调整 WiredTiger 内部缓存的大小，请参阅storage.wiredTiger.engineConfig.cacheSizeGB和--wiredTigerCacheSizeGB 。避免将 WiredTiger 内部缓存大小增加到超过其默认值。
 
-> 注意
-> 
-> storage.wiredTiger.engineConfig.cacheSizeGB限制 WiredTiger 内部缓存的大小。操作系统使用可用的空闲内存进行文件系统缓存，这允许压缩的 TapDB 数据文件保留在内存中。此外，操作系统还使用任何空闲 RAM 来缓冲文件系统区块和文件系统缓存。
->
-> 为了容纳额外的 RAM 用户，您可能必须减少 WiredTiger 的内部缓存大小。
+:::tip
+
+storage.wiredTiger.engineConfig.cacheSizeGB限制 WiredTiger 内部缓存的大小。操作系统使用可用的空闲内存进行文件系统缓存，这允许压缩的 TapDB 数据文件保留在内存中。此外，操作系统还使用任何空闲 RAM 来缓冲文件系统区块和文件系统缓存。
+
+为了容纳额外的 RAM 用户，您可能必须减少 WiredTiger 的内部缓存大小。
+
+:::
 
 默认 WiredTiger 内部缓存大小值假定每台计算机有一个tapdb实例。如果一台计算机包含多个 TapDB 实例，则应减少该设置以容纳其他tapdb实例。
 
@@ -226,9 +234,11 @@ TapDB 在搭配 SATA SSD（固态硬盘）的情况下具有很好的效果以�
 
 请参阅设置 vm.swappiness，了解在 Linux 系统上按照这些指南配置交换的说明。
 
-> 注意
-> 
-> 如果您的 TapDB 实例托管在还运行其他软件（例如网络服务器）的系统上，则应选择第一个交换策略。在此情况下，请勿禁用交换。如果可能，强烈建议在自己的专用系统上运行 TapDB。
+:::tip
+
+如果您的 TapDB 实例托管在还运行其他软件（例如网络服务器）的系统上，则应选择第一个交换策略。在此情况下，请勿禁用交换。如果可能，强烈建议在自己的专用系统上运行 TapDB。
+
+:::
 
 #### RAID
 
@@ -258,9 +268,11 @@ TapDB 在搭配 SATA SSD（固态硬盘）的情况下具有很好的效果以�
 
 对于 WiredTiger 存储引擎，您还可以将索引存储在不同的存储设备上。请参阅`storage.wiredTiger.engineConfig.directoryForIndexes` 。
 
-> 注意
-> 
-> 使用其他存储设备会影响创建数据快照式备份的能力，因为这些文件会位于不同的设备和卷上。
+:::tip
+
+使用其他存储设备会影响创建数据快照式备份的能力，因为这些文件会位于不同的设备和卷上。
+
+:::
 
 #### 调度
 
@@ -268,17 +280,19 @@ TapDB 在搭配 SATA SSD（固态硬盘）的情况下具有很好的效果以�
 
 对于通过虚拟机监控程序连接到虚拟机实例或由云托管提供商托管的本地区块设备，客户机操作系统应使用cfq调度程序以获得最佳性能。 cfq调度器允许操作系统将 I/O 调度推迟到底层虚拟机监控程序。
 
-> 注意
-> 
-> 如果满足以下所有条件，则可以使用noop调度器进行调度：
->
-> - 虚拟机监视器为 VMware。
->
-> - 使用副本集拓扑结构或分片集群。
->
-> - 虚拟机位于同一虚拟主机上。
->
-> - 包含 DBpaths 的底层存储是一个常见的 LUN 块存储。
+:::tip
+
+如果满足以下所有条件，则可以使用noop调度器进行调度：
+
+- 虚拟机监视器为 VMware。
+
+- 使用副本集拓扑结构或分片集群。
+
+- 虚拟机位于同一虚拟主机上。
+
+- 包含 DBpaths 的底层存储是一个常见的 LUN 块存储。
+
+:::
 
 ##### 调度物理服务器
 
@@ -363,9 +377,11 @@ TapDB 使用 GNU C 库 (glibc)（在 Linux 上运行）。通常，每个 Linux 
 
 #### fsync() 用于目录
 
-> 重要
->
->TapDB 需要的文件系统要能够在fsync() 支持 目录上。例如，HGFS 和 Virtual Box 的共享文件夹不 支持此操作。
+:::tip
+
+TapDB 需要的文件系统要能够在fsync() 支持 目录上。例如，HGFS 和 Virtual Box 的共享文件夹不 支持此操作。
+
+:::
 
 #### 将 vm.swappiness 设置为 1 或 0
 
@@ -381,15 +397,19 @@ TapDB 使用 GNU C 库 (glibc)（在 Linux 上运行）。通常，每个 Linux 
 
 在可以避免交换或将交换保持在最低限度的情况下，TapDB 性能最佳。因此，您应根据应用程序需求和集群配置，将 vm.swappiness 设置为 1 或 0。
 
-> 注意
->
-> 大多数系统和用户进程在 cgroup 中运行，默认情况下将 vm.swappiness 设置为 60。如果运行的是 RHEL/CentOS，请将 vm.force_cgroup_v2_swappiness 设置为 1，以确保指定的 vm.swappiness 值覆盖任何 cgroup 默认值。
+:::tip
+
+大多数系统和用户进程在 cgroup 中运行，默认情况下将 vm.swappiness 设置为 60。如果运行的是 RHEL/CentOS，请将 vm.force_cgroup_v2_swappiness 设置为 1，以确保指定的 vm.swappiness 值覆盖任何 cgroup 默认值。
+
+:::
 
 [4]	对于 3.5 之前的 Linux 内核版本或 RHEL 之前的 2.6.32-303 / CentOS 内核版本，将 vm.swappiness 设置为 0 时，内核仍能在某些紧急情况下进行交换。
 
-> 注意
->
-> 如果 TapDB 实例托管在还运行其他软件（例如网络服务器）的系统上，则应将 vm.swappiness 设置为 1。如果可能，强烈建议在自己的专用系统上运行 TapDB。
+:::tip
+
+如果 TapDB 实例托管在还运行其他软件（例如网络服务器）的系统上，则应将 vm.swappiness 设置为 1。如果可能，强烈建议在自己的专用系统上运行 TapDB。
+
+:::
 
 - 要检查系统上的当前交换设置，请运行：
 
@@ -409,10 +429,12 @@ TapDB 使用 GNU C 库 (glibc)（在 Linux 上运行）。通常，每个 Linux 
      ```
     sudo sysctl -p
      ```
-  
-> 注意
-> 
-> 如果正在运行 RHEL/CentOS 并使用tuned性能配置文件，则还必须编辑所选配置文件以将 vm.swappiness 设置为 1 或 0。
+
+:::tip
+
+如果正在运行 RHEL/CentOS 并使用tuned性能配置文件，则还必须编辑所选配置文件以将 vm.swappiness 设置为 1 或 0。
+
+:::
 
 #### 建议配置
 

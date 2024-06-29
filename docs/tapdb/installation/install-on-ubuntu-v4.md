@@ -1,6 +1,6 @@
-# 在 Ubuntu 平台上部署
+# 在 Ubuntu 上部署（V4 版本）
 
-本文档说明在 Ubuntu Linux 系统上的部署方式。
+本文档说明在 Ubuntu Linux 系统上的部署  TapDB 4.0 的具体流程。
 
 # 注意事项
 

@@ -4,8 +4,8 @@
 
 ## 版本号
 
-TapDB 的各个版本都对应于MongoDB的版本号；
-TapDB 的使用方式也都兼容MongoDB各版本的文档。
+TapDB 的各个版本都对应于 MongoDB 的版本号；
+TapDB 的使用方式也都兼容 MongoDB 各版本的文档。
 
 ## 副本集/分片配置
 

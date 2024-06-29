@@ -1,22 +1,15 @@
-# 使用 .tgz 在 Red Hat 或 CentOS 上安装 TapDB Tarball
+# Red Hat/CentOS 上部署（V6 版本）
 
-## 概述
-
-使用本教程手动安装 TapDB 6.0 TapDB 在 Red Hat Enterprise Linux、CentOS Linux 或 Oracle Linux [ 1 ]，使用下载的.tgz tarball。
+使用本教程手动安装 TapDB 6.0 在 Red Hat Enterprise Linux、CentOS Linux 或 Oracle Linux [ 1 ]，使用下载的.tgz tarball。
 
 ## 注意事项
 
-### TapDB Shell tapsh
-
-使用.tgz包安装服务器时，需要按照tapsh 安装说明单独下载并安装tapsh 。
-
-### 生产说明
-
-在生产环境中部署 TapDB 之前，请考虑[生产说明](../../administration/production-notes.md)文档，其中提供了针对生产 TapDB 部署的性能注意事项和配置建议。
+* 使用 .tgz 包安装服务器时，需要按照 tapsh 安装说明单独下载并安装tapsh。
+* 在生产环境中部署 TapDB 之前，请考虑[生产说明](../administration/production-notes.md)文档，其中提供了针对生产 TapDB 部署的性能注意事项和配置建议。
 
 ## 安装 TapDB
 
-### 先决条件
+### 前提条件
 
 使用以下命令安装 TapDB .tgz Tarball 所需的依赖项：
 
@@ -24,7 +17,7 @@
 sudo yum install libcurl openssl xz-libs
 ```
 
-### 步骤
+### 操作步骤
 
 请按照以下步骤从 .tgz 手动安装 TapDB。
 
@@ -55,7 +48,7 @@ sudo yum install libcurl openssl xz-libs
         ```
         sudo ln -s  /path/to/the/TapDB-directory/bin/* /usr/local/bin/
         ```
-      
+    
 4. 安装 TapDB Shell (tapsh)。
 
    安装 tapsh 然后使用 TapDB Shell 连接到您的部署。
@@ -64,15 +57,15 @@ sudo yum install libcurl openssl xz-libs
 
 ## 运行 TapDB
 
-### 先决条件
-
-ulimit
+### 前提条件
 
 大多数类 Unix 操作系统都会限制进程可以使用的系统资源。这些限制可能会对 TapDB 操作产生负面影响，应该进行调整。
 
-> 注意:
->
-> 如果打开文件数的 ulimit 值低于 64000，TapDB 会生成启动警告。
+:::tip
+
+如果打开文件数的 ulimit 值低于 64000，TapDB 会生成启动警告。
+
+:::
 
 ### 目录路径
 
@@ -122,17 +115,19 @@ sudo chown -R tapdb:tapdb /var/log/tapdb
 
 #### 配置 SELinux
 
-> 警告:
-> 
-> 配置不当的 SELinux 策略可能会不安全，或者可能会阻止您的tapdb实例运行。
->
-> 如果 SELinux 处于enforcing（强制执行）模式，则须为 TapDB 自定义 SELinux 策略以
->
-> - 允许访问 cgroup
->
-> - 允许访问 netstat
+:::warning
 
-### 步骤
+配置不当的 SELinux 策略可能会不安全，或者可能会阻止您的tapdb实例运行。
+
+如果 SELinux 处于enforcing（强制执行）模式，则须为 TapDB 自定义 SELinux 策略以
+
+- 允许访问 cgroup
+
+- 允许访问 netstat
+
+:::
+
+### 操作步骤
 
 请按照以下步骤在您的系统上运行 TapDB。 参照这些操作说明的前提是您在使用默认设置。
 
@@ -198,6 +193,8 @@ sudo chown -R tapdb:tapdb /var/log/tapdb
 
 - 通过命令行参数--bind_ip
 
-> 警告:
-> 
-> 在绑定到非本地主机（例如可公开访问）的 IP 地址之前，请确保您已保护集群免遭未经授权的访问。
+:::warning
+
+在绑定到非本地主机（例如可公开访问）的 IP 地址之前，请确保您已保护集群免遭未经授权的访问。
+
+::::

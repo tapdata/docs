@@ -119,26 +119,10 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'what-is-tapdata',
-            position: 'left',
-            label: 'TapData 帮助文档',
-            },
-          {
-            href: 'https://cloud.tapdata.net/console/v3/',
-            position: 'right',
-            label: '登录 TapData Cloud',
-            },
-          {
-            type: 'doc',
             docId: 'tapdb/what-is-tapdb',
             position: 'left',
             label: 'TapDB',
           },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: true,
-           },
           {
             href: 'https://github.com/tapdata/tapdata',
             label: 'GitHub⭐',

@@ -35,7 +35,7 @@ TapDB 需要满足以下最低配置要求的 x86_64 微架构：
 - 对于 AMD x86_64，TapDB 需要 Bulldozer 或更高版本的处理器。
 
 
-从 TapDB 5.0 、 tapdb 、 taps 和旧版 tap shell 不再支持不符合最低微架构要求的 x86_64平台。
+从 TapDB 5.0 、 tapdb 、 taps 和旧版 TapDB shell 不再支持不符合最低微架构要求的 x86_64平台。
 
 - TapDB 仅支持运行 Red Hat Compatible Kernel (RHCK) 的 Oracle Linux。TapDB 不支持 Unbreakable Enterprise Kernel (UEK)。
 
@@ -45,7 +45,7 @@ TapDB 需要满足以下最低配置要求的 x86_64 微架构：
 
 arm64 上的 TapDB 需要 ARMv8.2-A 或后来的微架构。
 
-从 TapDB 5.0 、 tapdb 、 taps 和旧版 tap shell 不再支持不符合最低微架构要求的 arm64 平台。
+从 TapDB 5.0 、 tapdb 、 taps 和旧版 TapDB shell 不再支持不符合最低微架构要求的 arm64 平台。
 
 :::tip
 

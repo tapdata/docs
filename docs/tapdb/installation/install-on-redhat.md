@@ -1,4 +1,6 @@
-# Red Hat/CentOS 上部署
+# Red Hat/CentOS 上安装
+
+## 概述
 
 使用本教程手动安装 TapDB 6.0 在 Red Hat Enterprise Linux、CentOS Linux 或 Oracle Linux [ 1 ]，使用下载的.tgz tarball。
 
@@ -6,7 +8,6 @@
 
 ## 注意事项
 
-* 使用 .tgz 包安装服务器时，需要按照 tapsh 安装说明单独下载并安装tapsh。
 * 在生产环境中部署 TapDB 之前，请考虑[生产说明](../administration/production-notes.md)文档，其中提供了针对生产 TapDB 部署的性能注意事项和配置建议。
 
 ## 安装 TapDB
@@ -25,37 +26,31 @@ sudo yum install libcurl openssl xz-libs
 
 1. 下载 tarball。
 
-    安装所需的必备包后，请从链接下载 TapDB Community tgz tarball：
+    安装所需的必备包后，请从链接下载 TapDB tgz tarball：
 
 2. 从下载的存档中提取文件。
 
     例如，从系统 shell 中，您可以使用 tar 命令进行提取：
 
     ```
-    tar -zxvf TapDB-linux-*-6.0.tgz
+    tar -zxvf tapdb-linux-*-6.0.tgz
     ```
 
 3. 确保二进制文件位于 PATH 环境变量中列出的目录下。
 
     TapDB 二进制文件位于 tarball 的 bin/ 目录中。您可以执行以下任一操作：
 
-    - 将二进制文件复制到 PATH 变量中列出的目录中，例如 `/usr/local/bin`（根据需要使用您的安装目录来更新 `/path/to/the/TapDB-directory/`）
+    - 将二进制文件复制到 PATH 变量中列出的目录中，例如 `/usr/local/bin`（根据需要使用您的安装目录来更新 `/path/to/the/tapdb-directory/`）
 
         ```
-        sudo cp /path/to/the/TapDB-directory/bin/* /usr/local/bin/
+        sudo cp /path/to/the/tapdb-directory/bin/* /usr/local/bin/
         ```
 
     - 创建指向 PATH 变量中所列目录的二进制文件的符号链接，例如 `/usr/local/bin`（根据需要使用您的安装目录更新 `/path/to/the/TapDB-directory/`）：
 
         ```
-        sudo ln -s  /path/to/the/TapDB-directory/bin/* /usr/local/bin/
+        sudo ln -s  /path/to/the/tapdb-directory/bin/* /usr/local/bin/
         ```
-    
-4. 安装 TapDB Shell (tapsh)。
-
-   安装 tapsh 然后使用 TapDB Shell 连接到您的部署。
-
-   从链接下载版本的软件包并解压缩。
 
 ## 运行 TapDB
 
@@ -175,13 +170,11 @@ sudo chown -R tapdb:tapdb /var/log/tapdb
 
 4. 开始使用 TapDB。
 
-    tapsh在与 相同的主机上启动tapdb 会话。您可以运行不带任何命令行选项的tapsh tapdb，以连接到使用默认端口 在本地主机上运行的27017 }。
+    tap在与相同的主机上启动tapdb 会话。您可以运行不带任何命令行选项的tap tapdb，以连接到使用默认端口 在本地主机上运行的27017 }。
 
     ```
-    tapsh
+    tap
     ```
-
-    有关使用tapsh连接的更多信息，例如连接到在不同主机和/或端口上运行的tapdb实例，请参阅tapsh 文档。
 
 ## 更多信息
 
@@ -199,4 +192,4 @@ sudo chown -R tapdb:tapdb /var/log/tapdb
 
 在绑定到非本地主机（例如可公开访问）的 IP 地址之前，请确保您已保护集群免遭未经授权的访问。
 
-::::
+:::

@@ -6,6 +6,26 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.9.0
+
+### 新增功能
+
+* 创建[共享缓存](../user-guide/advanced-settings/share-cache.md)新增使用共享挖掘按钮，简化缓存任务配置，提升缓存共享的效率和灵活性
+
+### 功能优化
+
+* ElasticSearch 数据源添加字段限制配置参数
+* MongoDB 数据源开启 preimage 能力时，优化异常处理逻辑
+
+### 问题修复
+
+- 修复任务事件统计指标上报时偶现丢失部分指标的问题
+- 修复共享缓存任务未执行共享挖掘时，如果数据没有变化，在重启或升级引擎时可能因超出日志时间窗口而导致任务错误的问题
+- 修复在写入模式为更新子文档的场景下，源表的 unset 操作可能导致任务报错的问题
+- 修复 MongoDB 与 MySQL 执行 Join 合并场景下，MongoDB 集合中包含时间类型可能引发报错的问题
+- 修复在主从合并场景下，增量更新事件意外执行反查的问题
+- 修复主从合并节点修改列时的冲突报错问题
+
 ## 3.8.0
 
 ### 功能优化

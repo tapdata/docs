@@ -44,7 +44,7 @@ TapDB 中的副本集是一组维护相同数据集的 tapdb 进程。副本集�
 
 - 在diagnostic log
 
-- 记录在 REPL 组件下，该组件将含有文本 applied op: <oplog entry> took <num>ms。
+- 记录在 REPL 组件下，该组件将含有文本 `applied op: <oplog entry> took <num>ms`。
 
 - 不依赖日志级别（系统级别或组件级别）
 

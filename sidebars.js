@@ -450,7 +450,7 @@ const sidebars = {
      label: '安装 TapDB',
      link: {type: 'doc', id: 'tapdb/installation/README'},
      items: [
-            'tapdb/installation/install-on-redhat-v6',
+            'tapdb/installation/install-on-redhat',
         ]
     },
    {

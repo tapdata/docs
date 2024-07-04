@@ -450,9 +450,66 @@ const sidebars = {
      label: '安装 TapDB',
      link: {type: 'doc', id: 'tapdb/installation/README'},
      items: [
+            'tapdb/installation/install-on-debian',
             'tapdb/installation/install-on-redhat',
+            'tapdb/installation/install-on-ubuntu',
         ]
     },
+   {
+     type: 'category',
+     label: 'CRUD 操作',
+     link: {type: 'doc', id: 'tapdb/crud/README'},
+     items: [
+            'tapdb/crud/bulk-write-operations',
+            'tapdb/crud/tapdb-crud',
+        ]
+    },
+   'tapdb/aggregation/tapdb-aggregation',
+   'tapdb/indexes/tapdb-indexes',
+   'tapdb/transactions/tapdb-transactions',
+   'tapdb/replication/tapdb-replication',
+   'tapdb/sharding/tapdb-sharding',
+   /*{
+     type: 'category',
+     label: '聚合操作',
+     link: {type: 'doc', id: 'tapdb/aggregation/README'},
+     items: [
+            'tapdb/aggregation/tapdb-aggregation',
+        ]
+    },
+   
+   {
+     type: 'category',
+     label: '索引',
+     link: {type: 'doc', id: 'tapdb/indexes/README'},
+     items: [
+            'tapdb/indexes/tapdb-indexes',
+        ]
+    },
+   {
+     type: 'category',
+     label: '事务',
+     link: {type: 'doc', id: 'tapdb/transactions/README'},
+     items: [
+            'tapdb/transactions/tapdb-transactions',
+        ]
+    },
+   {
+     type: 'category',
+     label: '复制',
+     link: {type: 'doc', id: 'tapdb/replication/README'},
+     items: [
+            'tapdb/replication/tapdb-replication',
+        ]
+    },
+   {
+     type: 'category',
+     label: '分片',
+     link: {type: 'doc', id: 'tapdb/sharding/README'},
+     items: [
+            'tapdb/sharding/tapdb-sharding',
+        ]
+    },*/
    {
      type: 'category',
      label: '管理 TapDB',

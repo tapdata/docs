@@ -1,16 +1,14 @@
 # Ubuntu 上安装
 
-## 概述
-
-使用本教程手动安装 TapDB v6.0，使用下载的.tgz tarball 运行 Ubuntu Linux LTS（长期支持）版本上的 Community Edition。
+本文介绍如何在  Ubuntu Linux LTS（长期支持） 平台上，通过下载的 .tgz 文件安装 TapDB v6.0。
 
 ## 注意事项
 
-* 在生产环境中部署 TapDB 之前，请考虑[生产说明](../administration/production-notes.md)文档，其中提供了针对生产 TapDB 部署的性能注意事项和配置建议。
+在生产环境中部署 TapDB 之前，请考虑[生产说明](../administration/production-notes.md)文档，其中提供了针对生产 TapDB 部署的性能注意事项和配置建议。
 
 ## 安装 TapDB
 
-### 先决条件
+### 前提条件
 
 使用以下命令安装 TapDB Community Edition .tgz Tarball 所需的依赖项：
 
@@ -26,22 +24,18 @@ Ubuntu 20.04 (Focal)， Ubuntu 18.04（Bionic）
 sudo apt-get install libcurl4 openssl liblzma5
 ```
 
-### 步骤
+### 操作步骤
 
 请按照以下步骤从 .tgz 手动安装 TapDB。
 
-1. 下载 tarball。
+1. 联系技术支持获取安装包。
 
-   安装所需的必备包后，请从链接下载 TapDB tgz tarball：
-
-2. 从下载的存档中提取文件。
-
-   例如，从系统 shell 中，您可以使用 tar 命令进行提取：
+2. 通过 tar 命令解压安装包。
 
     ```
     tar -zxvf tapdb-linux-*-6.0.tgz
     ```
-
+   
 3. 确保二进制文件位于 PATH 环境变量中列出的目录下。
 
    TapDB 二进制文件位于 tarball 的 bin/ 目录中。您可以执行以下任一操作：
@@ -70,12 +64,12 @@ sudo apt-get install libcurl4 openssl liblzma5
 
 :::
 
-### 步骤
+### 操作步骤
 
 请按照以下步骤运行 TapDB。 这些说明假设您使用的是默认设置。
 
 1. 创建 TapDB 数据与日志目录：
-    
+   
     ```
     sudo mkdir -p /var/lib/tapdb
     sudo mkdir -p /var/log/tapdb
@@ -116,11 +110,9 @@ sudo apt-get install libcurl4 openssl liblzma5
     tap
     ```
 
-## 更多信息
-
 ### 默认绑定本地主机
 
-默认情况下，TapDB 启动时会将bindIp设置为127.0.0.1 ，从而绑定到本地主机网络接口。这意味着tapdb只能接受来自同一计算机上运行的客户端的连接。远程客户端将无法连接到tapdb ，并且tapdb将无法初始化副本集，除非将此值设置为可从远程客户端访问的有效网络接口。
+默认情况下，TapDB 启动时会将bindIp设置为 127.0.0.1 ，从而绑定到本地主机网络接口。这意味着tapdb只能接受来自同一计算机上运行的客户端的连接。远程客户端将无法连接到tapdb ，并且tapdb将无法初始化副本集，除非将此值设置为可从远程客户端访问的有效网络接口。
 
 该值可通过以下任一方式配置：
 

@@ -36,8 +36,6 @@ TapDB 中的副本集是一组维护相同数据集的 tapdb 进程。副本集�
 
 从节点会复制主节点的 oplog 并将操作异步应用于其数据集。通过使从节点的数据集反应主节点数据集的状态，即便一个或多个节点出现故障，副本集也可继续运行。
 
-有关复制机制的更多信息，请参阅副本集 Oplog 和副本集数据同步
-
 ### 慢操作
 
 现在，副本集的从节点会记录应用时间超过慢操作阈值的 oplog 条目。这些慢 oplog 消息：
@@ -64,7 +62,7 @@ TapDB 中的副本集是一组维护相同数据集的 tapdb 进程。副本集�
 
 :::tip
 
-要启用流量控制，副本集/分片集群必须具有： featureCompatibilityVersion (fCV) 为 `4.2` ，且读关注（read concern）为 `majority enabled`。也就是说，如果 fCV 不是 `4.2` 或读关注已被禁用，则已启用的流量控制将不会生效。
+要启用流量控制，副本集/分片集群必须具有： featureCompatibilityVersion (fCV) 为 `4.2` ，且读关注（read concern）为 `majority enabled`。
 
 :::
 

@@ -4,13 +4,7 @@
 
 :::tip
 
-TapDB 4.2 删除已弃用的 MMAPv 1存储引擎。要将 MMAPv 1存储引擎部署更改为WiredTiger 存储引擎，请参阅：
-
-- 将独立实例更改为 WiredTiger
-
-- 将副本集更改为 WiredTiger
-
-- 将分片集群更改为 WiredTiger
+TapDB 4.2 删除已弃用的 MMAPv 1存储引擎，推荐将 MMAPv 1存储引擎部署更改为WiredTiger 存储引擎。
 
 :::
 
@@ -68,7 +62,7 @@ TapDB 不再支持缺乏适当 CPU 架构的单板硬件 (Raspberry Pi 4 )。
 - CentOS 8.5
 - Kylin v10-sp1
 
-## TapDB dbPath
+## dbPath
 
 `dbPath` 目录中的文件必须与配置的存储引擎 `tapdbdbPath--storageEngine` 相对应。必须拥有指定 dbPath 的读取和写入权限。
 

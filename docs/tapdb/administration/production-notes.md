@@ -1,10 +1,10 @@
 # 生产说明
 
-本页详细介绍了影响 TapDB 的系统配置（尤其是在生产环境中运行时）。
+本页详细介绍了影响 TapDB 系统配置的因素，尤其是在生产环境中运行时的注意事项。
 
 :::tip
 
-TapDB 4.2 删除已弃用的 MMAPv 1存储引擎，推荐将 MMAPv 1存储引擎部署更改为WiredTiger 存储引擎。
+TapDB 4.2 删除了已弃用的 MMAPv1 存储引擎，建议将 MMAPv1 存储引擎更改为 WiredTiger 存储引擎。
 
 :::
 
@@ -16,34 +16,35 @@ TapDB 4.2 删除已弃用的 MMAPv 1存储引擎，推荐将 MMAPv 1存储引擎
 
 :::
 
-### x86_64
+### x86_64 架构
 
 TapDB 需要满足以下最低配置要求的 x86_64 微架构：
 
-- 对于 Intel x86_64，TapDB 需要：
+**对于 Intel x86_64**：
 
-    - Sandy Bridge 或更高版本的酷睿处理器
+- Sandy Bridge 或更高版本的酷睿处理器
+- Tiger Lake 或更高版本的赛扬或奔腾处理器
 
-    - Tiger Lake 或更高版本的赛扬或奔腾处理器。
+**对于 AMD x86_64**：
 
-- 对于 AMD x86_64，TapDB 需要 Bulldozer 或更高版本的处理器。
+- Bulldozer 或更高版本的处理器
 
 
-从 TapDB 5.0 、 tapdb 、 taps 和旧版 TapDB shell 不再支持不符合最低微架构要求的 x86_64平台。
+
+从 TapDB 5.0 开始，TapDB、taps 和旧版 TapDB shell 不再支持不符合最低微架构要求的 x86_64 平台。
 
 - TapDB 仅支持运行 Red Hat Compatible Kernel (RHCK) 的 Oracle Linux。TapDB 不支持 Unbreakable Enterprise Kernel (UEK)。
+- TapDB 5.0 需要使用 AVX 指令集，该指令集在部分 Intel 和 AMD 处理器上可用。
 
-- TapDB 5.0 需要使用 AVX 指令集，该指令集在部分 Intel 和 AMD 处理器。
+### arm64 架构
 
-### arm64
+在 arm64 上，TapDB 需要 ARMv8.2-A 或更高版本的微架构。
 
-arm64 上的 TapDB 需要 ARMv8.2-A 或后来的微架构。
-
-从 TapDB 5.0 、 tapdb 、 taps 和旧版 TapDB shell 不再支持不符合最低微架构要求的 arm64 平台。
+从 TapDB 5.0 开始，TapDB、taps 和旧版 TapDB shell 不再支持不符合最低微架构要求的 arm64 平台。
 
 :::tip
 
-TapDB 不再支持缺乏适当 CPU 架构的单板硬件 (Raspberry Pi 4 )。
+TapDB 不再支持缺乏适当 CPU 架构的单板硬件（如 Raspberry Pi 4）。
 
 :::
 

@@ -34,7 +34,7 @@ TapData Enterprise 支持部署至本地数据中心，适用于对数据敏感�
 
 </TabItem>
 
-<TabItem value=" TapData Cloud">
+<TabItem value="TapData Cloud">
 
 TapData Cloud 采用 SaaS（软件及服务）模式，注册 [TapData Cloud 账号](https://cloud.tapdata.net/console/v3/)即可快速开始使用，无需部署和维护基础设施，适用于快速部署和较低前期投资的场景。
 
@@ -52,7 +52,7 @@ TapData Cloud 采用 SaaS（软件及服务）模式，注册 [TapData Cloud 账
 
 </TabItem>
 
-<TabItem value=" TapData Community">
+<TabItem value="TapData Community">
 
 TapData Community 是一个开源的数据集成平台，提供基础的数据同步和转换功能，支持通过 Docker 一键部署。随着项目或企业发展，您可以平滑升级至 TapData Cloud 或 TapData Enterprise，以获得更多高级功能或服务支持。
 

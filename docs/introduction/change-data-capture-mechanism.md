@@ -18,6 +18,8 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
 <TabItem value="基于数据库日志 API">
 ```
+
+
 基于数据库日志 API 解析的 CDC 是一种常用的数据变更捕获技术，它通过读取和解析数据库的事务日志来捕获数据的增量变化。该日志是数据库管理系统用来确保数据完整性和恢复能力的关键组成部分，每个数据库的详细操作都会被记录在这些日志中。
 
 以 MySQL 数据库为例，管理员可以通过修改数据库配置文件（`mysql.cnf`）来启用 Binlog，从而记录数据修改的所有操作，捕获数据的变化详情。
@@ -46,9 +48,12 @@ binlog_row_image  = full
 </TabItem>
 
 <TabItem value="基于字段轮询">
+
+
 字段轮询的 CDC 通过定期查询数据库表中的指定列（如时间戳或递增的标识列）来检测数据变化。通过比较前后的数据，可以确定数据的增量变化。
 
 以 MySQL 为例，假设有一个表 `orders`，其中 `last_updated` 字段记录了每条记录的最后更新时间，TapData 通过定期轮询 `last_updated` 字段来检测数据变化，示例 SQL 如下：
+
 
 ```sql
 -- 查询自上次轮询以来有变化的记录
@@ -62,6 +67,8 @@ SELECT * FROM orders WHERE last_updated > '2024-06-01 00:00:00';
 </TabItem>
 
 <TabItem value="基于触发器">
+
+
 基于触发器的CDC通过在数据库表上创建触发器来捕获数据变化。触发器是一种特殊的存储过程，当特定的数据库事件（如INSERT、UPDATE或DELETE）发生时，触发器会自动执行预定义的操作，将变化的数据记录到另一个表中或发送到外部系统。
 
 以 MySQL 为例，我们首先需要手动创建一个触发器，用于记录 `orders` 表的变化：
@@ -96,7 +103,6 @@ FOR EACH ROW
 BEGIN
     INSERT INTO orders_changes (order_id, change_type) VALUES (OLD.id, 'DELETE');
 END;
-
 ```
 
 完成操作后，后续可以选择自行开发程序来解析和处理这些变更，也可以利用 Debezium 和 Apache Kafka 来实现更高效的增量数据处理。
@@ -120,6 +126,7 @@ END;
 <Tabs className="unique-tabs">
 <TabItem value="特性对比">
 ```
+
 | 类别                | 数据库日志 API | 数据库日志文件         | 字段轮询 | 触发器                 |
 | ------------------- | -------------- | ---------------------- | -------- | ---------------------- |
 | 可区分插入/更新操作 | ✅              | ✅                      | ➖        | ✅                      |

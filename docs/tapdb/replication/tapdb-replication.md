@@ -20,15 +20,15 @@ TapDB 中的副本集是一组维护相同数据集的 TapDB 进程。副本集�
 
 主节点接收所有写入操作。副本集中只能有一个主节点使用 `{ w: "majority" }` 写关注级别对写入请求进行确认；尽管在某些情况下，另一个 TapDB 实例可能会暂时将自身视为主节点。主节点在其操作日志（即 oplog）中记录对其数据集的所有更改。
 
-![](../images/replica-set-read-write-operations-primary.bakedsvg.svg)
+![](../images/replica-set-read-write-operations-primary.bakedsvg.png)
 
 从节点复制主节点的 oplog，并将这些操作应用于其数据集，使其数据集反映主节点的状态。如果主节点不可用，则某个符合条件的从节点将被选举为新的主节点。
 
-![](../images/replica-set-primary-with-two-secondaries.bakedsvg.svg)
+![](../images/replica-set-primary-with-two-secondaries.bakedsvg.png)
 
 在某些情况下（如只有一个主节点和一个从节点，但因成本限制无法添加更多从节点），可以选择将一个 TapDB 实例作为仲裁节点加入副本集。仲裁节点参与选举，但不持有数据（即不提供数据冗余）。
 
-![](../images/replica-set-primary-with-secondary-and-arbiter.bakedsvg.svg)
+![](../images/replica-set-primary-with-secondary-and-arbiter.bakedsvg.png)
 
 在选举期间，仲裁节点始终是仲裁节点，而主节点可能会降级为从节点，从节点也可能被选为主节点。
 
@@ -68,7 +68,7 @@ TapDB 中的副本集是一组维护相同数据集的 TapDB 进程。副本集�
 
 当主节点在超过配置的 `electionTimeoutMillis` 时间段（默认 10 秒）内未与副本集中的其他节点通信时，一个符合条件的从节点将发起选举，并提名自己成为新的主节点。集群将尝试完成新主节点的选举并恢复正常运转。
 
-![](../images/replica-set-trigger-election.bakedsvg.svg)
+![](../images/replica-set-trigger-election.bakedsvg.png)
 
 在成功完成选举之前，副本集无法处理写操作。如果将读取查询配置为在主节点离线时在从节点上运行，那么副本集可以继续为读取查询提供服务。
 
@@ -94,7 +94,7 @@ TapDB 提供镜像读功能，用最近访问的数据预热可选从节点缓�
 
 默认情况下，客户端从主节点读取；但是，客户端可以指定读取偏好以向从节点发送读取操作。
 
-![](../images/replica-set-read-preference-secondary.bakedsvg.svg)
+![](../images/replica-set-read-preference-secondary.bakedsvg.png)
 
 异步复制到从节点意味着在从节点读取到的数据可能不会反映主节点上的最新状态。
 

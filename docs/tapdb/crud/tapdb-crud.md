@@ -14,13 +14,13 @@ TapDB 提供以下方法将文档插入到集合中：
 
 在 TapDB 中，插入操作针对的是单个集合，所有写入操作在单个文档级别上具有原子性。
 
-![](../images/crud-annotated-mongodb-insertOne.bakedsvg.svg)
+![](../images/crud-annotated-mongodb-insertOne.bakedsvg.png)
 
 ## 读取操作
 
 读取操作用于从集合中检索文档，即查询集合中的文档。TapDB 提供 `db.collection.find()` 方法来读取文档，您可以指定查询过滤器或条件来识别要返回的文档。
 
-![](../images/crud-annotated-mongodb-find.bakedsvg.svg)
+![](../images/crud-annotated-mongodb-find.bakedsvg.png)
 
 ## 更新操作
 
@@ -36,7 +36,7 @@ TapDB 提供以下方法将文档插入到集合中：
 
 您可以指定条件或过滤器来识别要更新的文档，这些过滤器使用与读取操作相同的语法。
 
-![](../images/crud-annotated-mongodb-updateMany.bakedsvg.svg)
+![](../images/crud-annotated-mongodb-updateMany.bakedsvg.png)
 
 ## 删除操作
 
@@ -50,7 +50,7 @@ TapDB 提供以下方法将文档插入到集合中：
 
 您可以指定条件或过滤器来识别要删除的文档，这些过滤器使用与读取操作相同的语法。
 
-![](../images/crud-annotated-mongodb-deleteMany.bakedsvg.svg)
+![](../images/crud-annotated-mongodb-deleteMany.bakedsvg.png)
 
 ## 批量写入
 

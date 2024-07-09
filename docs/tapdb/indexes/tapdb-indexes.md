@@ -32,7 +32,7 @@
 
 下图说明了使用索引来选择匹配文档并为其排序的查询：
 
-![](../images/index-for-sort.bakedsvg.svg)
+![](../images/index-for-sort.bakedsvg.png)
 
 TapDB 中的索引与其他数据库系统中的索引类似，您可以在集合级别定义索引，也可以对集合中文档的任何字段或子字段建立索引。
 
@@ -87,7 +87,7 @@ TapDB 提供了许多不同的索引类型来支持特定的数据和查询类�
 
 除了 TapDB 定义的 `_id` 索引外，TapDB 还支持对文档的单个字段创建用户定义的升序/降序索引。
 
-![](../images/index-ascending.bakedsvg.svg)
+![](../images/index-ascending.bakedsvg.png)
 
 对于单字段索引和排序操作，索引键的排序顺序（即升序或降序）并不重要，因为 TapDB 可以沿任一方向遍历索引。
 
@@ -97,7 +97,7 @@ TapDB 还支持针对多个字段的用户自定义索引，即复合索引。
 
 复合索引中列出的字段顺序很重要。例如，复合索引 `{ userid: 1, score: -1 }` 按 `userid` 排序，然后在每个 `userid` 值中按 `score` 排序。
 
-![](../images/index-compound-key.bakedsvg.svg)
+![](../images/index-compound-key.bakedsvg.png)
 
 对于复合索引和排序操作，排序顺序（即 升序或降序）可以决定索引是否可以支持排序操作。 
 
@@ -105,7 +105,7 @@ TapDB 还支持针对多个字段的用户自定义索引，即复合索引。
 
 TapDB 使用多键索引来索引存储在数组中的内容。如果对保存数组值的字段建立索引，TapDB 会为数组的每个唯一元素创建单独的索引项。多键索引允许查询通过匹配数组的一个或多个元素来选择包含数组的文档。如果索引字段包含数组值，TapDB 会自动判断是否创建多键索引，无需显式指定多键类型。
 
-![](../images/index-multikey.bakedsvg.svg)
+![](../images/index-multikey.bakedsvg.png)
 
 ### 地理空间索引
 
@@ -243,7 +243,7 @@ db.myColl.find( { score: 5, category: "cafe" } )
 
 当查询条件和查询投影仅包含索引字段时，TapDB 会直接从索引返回结果，而无需扫描任何文档或将文档调入内存。 这些覆盖查询可以非常高效。
 
-![](../images/index-for-covered-query.bakedsvg.svg)
+![](../images/index-for-covered-query.bakedsvg.png)
 
 ## 索引并集
 

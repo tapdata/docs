@@ -87,13 +87,13 @@ taps 支持对冲读取以最大限度地减少延迟。
 
 数据库可以混合使用分片集合和非分片集合。分片集合被分区并分布在集群中的分片上。非分片集合存储在主分片上。每个数据库都有自己的主分片。
 
-![](../images/sharded-cluster-primary-shard.bakedsvg.svg)
+![](../images/sharded-cluster-primary-shard.bakedsvg.png)
 
 ## 连接到分片集群
 
 您必须连接到 taps 路由器才能与分片集群中的任何集合进行交互。这包括分片集合和非分片集合。客户端不应连接到单个分片来执行读取或写入操作。
 
-![](../images/sharded-cluster-mixed.bakedsvg.svg)
+![](../images/sharded-cluster-mixed.bakedsvg.png)
 
 您可以使用 TapDB shell 连接到 TapDB 实例的相同方式，或使用 TapDB 驱动程序连接到 taps。
 
@@ -111,7 +111,7 @@ TapDB 在使用哈希索引解析查询时会自动计算哈希值，应用程�
 
 :::
 
-![](../images/sharding-hash-based.bakedsvg.svg)
+![](../images/sharding-hash-based.bakedsvg.png)
 
 虽然分片键的范围可能“接近”，但其哈希值不太可能位于同一块上。哈希分布有利于更均匀的数据分布，尤其是在分片键单调变化的数据集中。
 
@@ -121,7 +121,7 @@ TapDB 在使用哈希索引解析查询时会自动计算哈希值，应用程�
 
 范围分片根据分片键值将数据划分为不同范围，并根据分片键值为每个块分配范围。
 
-![](../images/sharding-range-based.bakedsvg.svg)
+![](../images/sharding-range-based.bakedsvg.png)
 
 一系列值“接近”的分片键更有可能位于同一块上。这允许进行有针对性的操作，因为 taps 可以将操作仅路由到包含所需数据的分片。
 
@@ -137,7 +137,7 @@ TapDB 在使用哈希索引解析查询时会自动计算哈希值，应用程�
 
 每个区域涵盖一个或多个分片键值范围，并始终包括其下边界但不包括其上边界。
 
-![](../images/sharded-cluster-zones.bakedsvg.svg)
+![](../images/sharded-cluster-zones.bakedsvg.png)
 
 定义区域覆盖的新范围时，必须使用分片键中包含的字段。如果使用复合分片键，则范围必须包含分片键的前缀。更多详细信息，请参阅区域中的分片键。
 

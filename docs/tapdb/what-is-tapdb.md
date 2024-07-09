@@ -10,7 +10,7 @@ TapDB 是 TapData 提供的国产分布式文档数据库；全面兼容文档�
 
 TapDB 中的记录是一个文档，它是由字段和值对组成的数据结构。TapDB 文档类似于 JSON 对象。字段值可以包含其他文档、数组和文档数组。
 
-![](images/json_example.svg)
+![](images/json_example.png)
 
 使用文档的优点是：
 

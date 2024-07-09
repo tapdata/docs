@@ -24,7 +24,7 @@ db.myNewCollection1.insertOne( { x: 1 } )
 ## 集合
 
 TapDB 将文档存储在集合中。集合类似于关系数据库中的表。
-![](../images/collection.svg)
+![](../images/collection.png)
 
 ### 创建集合
 

@@ -2,7 +2,7 @@
 
 TapDB 将数据记录存储为 BSON 文档。 BSON 是 JSON 文档的二进制表示形式，但它包含的数据类型比 JSON 更多。有关 BSON 规范，请参阅 bsonspec.org 。另请参阅 BSON 类型。
 
-![](../images/json_example.svg)
+![](../images/json_example.png)
 
 ## 文档结构
 

@@ -185,19 +185,19 @@ TTL 索引是一种特殊索引，TapDB 可以使用它在一定时间后自动�
 
 例如，集合 `myColl` 在字符串字段 `category` 上具有一个索引，排序规则语言环境为 `"fr"`：
 
-```
+```sql
 db.myColl.createIndex( { category: 1 }, { collation: { locale: "fr" } } )
 ```
 
 以下查询操作指定了与索引相同的排序规则，因此可以使用索引：
 
-```
+```sql
 db.myColl.find( { category: "cafe" } ).collation( { locale: "fr" } )
 ```
 
 而以下查询操作默认使用“简易的”二进制排序器，因此无法使用索引：
 
-```
+```sql
 db.myColl.find( { category: "cafe" } )
 ```
 
@@ -205,7 +205,7 @@ db.myColl.find( { category: "cafe" } )
 
 例如，集合 `myColl` 在数值字段 `score` 和 `price` 以及字符串字段 `category` 上有一个复合索引；该索引使用排序规则语言环境 `"fr"` 创建，用于进行字符串比较：
 
-```
+```sql
 db.myColl.createIndex(
     { score: 1, price: 1, category: 1 },
     { collation: { locale: "fr" } } )
@@ -213,19 +213,18 @@ db.myColl.createIndex(
 
 以下操作使用 `"simple"` 二进制排序规则进行字符串比较，它们可以使用索引：
 
-```
+```sql
 db.myColl.find( { score: 5 } ).sort( { price: 1 } )
 db.myColl.find( { score: 5, price: { $gt: NumberDecimal( "10" ) } } ).sort( { price: 1 } )
 ```
 
 以下操作使用 `"simple"` 二进制排序规则对 `category` 字段进行字符串比较，但只能利用索引的 `score: 5` 部分：
 
-```
+```sql
 db.myColl.find( { score: 5, category: "cafe" } )
-
 ```
 
-:::info
+:::tip
 
 与文档键（包括嵌入式文档键）的匹配使用简单的二进制比较。这意味着类似“foo.bár”的键的查询不会匹配“foo.bar”键，无论您为 `strength` 参数设置了什么值。
 

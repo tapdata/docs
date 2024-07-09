@@ -14,7 +14,7 @@
 
 使用以下命令安装 TapDB .tgz Tarball 所需的依赖项：
 
-```
+```bash
 sudo yum install libcurl openssl xz-libs
 ```
 
@@ -26,7 +26,7 @@ sudo yum install libcurl openssl xz-libs
 
 2. 通过 tar 命令解压安装包。
 
-    ```
+    ```bash
     tar -zxvf tapdb-linux-*-6.0.tgz
     ```
     
@@ -36,13 +36,13 @@ sudo yum install libcurl openssl xz-libs
 
     - 将二进制文件复制到 PATH 变量中列出的目录中，例如 `/usr/local/bin`（根据需要使用您的安装目录来更新 `/path/to/the/tapdb-directory/`）
 
-        ```
+        ```bash
         sudo cp /path/to/the/tapdb-directory/bin/* /usr/local/bin/
         ```
 
     - 创建指向 PATH 变量中所列目录的二进制文件的符号链接，例如 `/usr/local/bin`（根据需要使用您的安装目录更新 `/path/to/the/TapDB-directory/`）：
 
-        ```
+        ```bash
         sudo ln -s  /path/to/the/tapdb-directory/bin/* /usr/local/bin/
         ```
 
@@ -70,14 +70,14 @@ sudo yum install libcurl openssl xz-libs
 
 创建 TapDB 数据与日志目录：
 
-```
+```bash
 sudo mkdir -p /var/lib/tapdb
 sudo mkdir -p /var/log/tapdb
 ```
 
 默认情况下，TapDB 使用 tapdb 用户帐户运行。创建一个 tapdb 和一个 TapDB 群组。确保 tapdb 属于该群组，然后将这些目录的所有者和群组设为 tapdb：
 
-```
+```bash
 sudo chown -R tapdb:tapdb /var/lib/tapdb
 sudo chown -R tapdb:tapdb /var/log/tapdb
 ```
@@ -96,7 +96,7 @@ sudo chown -R tapdb:tapdb /var/log/tapdb
 
 3. 确保运行 TapDB 的用户有权访问这些目录：
 
-    ```
+    ```bash
     sudo chown -R tapdb:tapdb <directory>
     ```
 
@@ -126,19 +126,19 @@ sudo chown -R tapdb:tapdb /var/log/tapdb
 
     创建 TapDB 实例存储其数据的目录。例如：
 
-    ```
+    ```bash
     sudo mkdir -p /var/lib/tapdb
     ```
 
     创建 TapDB 实例用于存储日志的目录。例如：
 
-    ```
+    ```bash
     sudo mkdir -p /var/log/tapdb
     ```
 
     启动 TapDB 进程的用户必须具有对这些目录的读取和写入权限。例如，如果你打算自己运行 TapDB：
 
-    ```
+    ```bash
     sudo chown `whoami` /var/lib/tapdb   # Or substitute another user
     sudo chown `whoami` /var/log/tapdb   # Or substitute another user
     ```
@@ -146,7 +146,7 @@ sudo chown -R tapdb:tapdb /var/log/tapdb
 
     要运行 TapDB，请在系统提示符下运行tapdb进程。
 
-    ```
+    ```bash
     tapdb --dbpath /var/lib/tapdb --logpath /var/log/tapdb/tapdb.log --fork
     ```
 
@@ -156,7 +156,7 @@ sudo chown -R tapdb:tapdb /var/log/tapdb
 
     检查日志文件 `/var/log/TapDB/tapdb.log` 中以下行的进程输出，验证 TapDB 是否成功启动：
 
-    ```
+    ```bash
     [initandlisten] waiting for connections on port 27017
     ```
 
@@ -164,7 +164,7 @@ sudo chown -R tapdb:tapdb /var/log/tapdb
 
     tap 在与相同的主机上启动 tapdb 会话。您可以运行不带任何命令行选项的 tap tapdb，以连接到使用默认端口 在本地主机上运行的 27017。
 
-    ```
+    ```bash
     tap
     ```
 

@@ -196,16 +196,16 @@ TapDB 在搭配 SATA SSD（固态硬盘）的情况下具有很好的效果以�
 
 1. 使用以下命令禁用区域回收：
 
-    ```
+    ```bash
     echo 0 | sudo tee /proc/sys/vm/zone_reclaim_mode
     ```
-    ```
+    ```bash
     sudo sysctl -w vm.zone_reclaim_mode=0
     ```
 
 2. 确保tapdb和taps由numactl启动。这通常是通过平台的初始化系统配置的。运行以下命令，确定平台上正在使用的初始化系统：
 
-    ```
+    ```bash
     ps --no-headers -o comm 1
     ```
 
@@ -360,13 +360,13 @@ TapDB 使用 GNU C 库 (glibc)（在 Linux 上运行）。通常，每个 Linux 
 
 - 在 RHEL / CentOS 上，以下命令会更新系统提供的 GNU C 库：
 
-    ```
+    ```bash
     sudo yum update glibc
     ```
 
 - 在 Ubuntu / Debian 上，以下命令会更新系统提供的 GNU C 库：
 
-    ```
+    ```bash
     sudo apt-get install libc6
     ```
 
@@ -408,7 +408,7 @@ TapDB 需要的文件系统要能够在fsync() 支持 目录上。例如，HGFS 
 
 - 要检查系统上的当前交换设置，请运行：
 
-    ```
+    ```bash
     cat /proc/sys/vm/swappiness
     ```
 
@@ -416,12 +416,12 @@ TapDB 需要的文件系统要能够在fsync() 支持 目录上。例如，HGFS 
 
     1. 编辑 /etc/sysctl.conf 文件并添加以下行：
 
-     ```
+     ```bash
      vm.swappiness = 1
      ```
 
      2. 运行如下命令以应用设置：
-     ```
+     ```bash
     sudo sysctl -p
      ```
 
@@ -459,28 +459,28 @@ TapDB 需要的文件系统要能够在fsync() 支持 目录上。例如，HGFS 
 
 在 Linux 平台上，您可能会在 TapDB 日志中看到以下语句之一：
 
-```
+```bash
 <path to TLS/SSL libs>/libssl.so.<version>: no version information available (required by /usr/bin/tapdb)
 <path to TLS/SSL libs>/libcrypto.so.<version>: no version information available (required by /usr/bin/tapdb)
 ```
 
 这些警告表明系统的 TLS/SSL 库与编译tapdb所针对的 TLS/SSL 库不同。通常，这些消息不需要干预；但是，您可以使用以下操作来确定tapdb期望的符号版本：
 
-```
+```bash
 objdump -T <path to tapdb>/tapdb | grep " SSL_"
 objdump -T <path to tapdb>/tapdb | grep " CRYPTO_"
 ```
 
 这些操作将返回类似于以下行之一的输出：
 
-```
+```bash
 0000000000000000      DF *UND*       0000000000000000  libssl.so.10 SSL_write
 0000000000000000      DF *UND*       0000000000000000  OPENSSL_1.0.0 SSL_write
 ```
 
 此输出中的最后两个字符串是符号版本和符号名称。将这些值与以下操作返回的值进行比较，以检测符号版本不匹配情况：
 
-```
+```bash
 objdump -T <path to TLS/SSL libs>/libssl.so.1*
 objdump -T <path to TLS/SSL libs>/libcrypto.so.1*
 ```
@@ -533,7 +533,7 @@ KVM 支持内存复用，因而可以为虚拟机分配比物理机可用内存�
 
 例如，以下命令将显示扩展统计信息以及每个显示报告的时间，流量以 MB/s 为单位，间隔时间为一秒：
 
-```
+```bash
 iostat -xmt 1
 ```
 

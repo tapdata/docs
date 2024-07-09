@@ -102,7 +102,7 @@ import Content from '../../../reuse-content/_all-features.md';
 
    :::
 
-10. 启动成功后会自动跳转至任务监控页面，您可以查看任务的 QPS、延迟、任务事件等信息。
+10. 启动成功后会自动跳转至任务监控页面，您可以查看任务的 RPS（每秒处理记录数）、延迟、任务事件等信息。
 
     ![任务监控](../../../images/copy_data_monitor_cn.png)
 

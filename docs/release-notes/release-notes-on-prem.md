@@ -193,7 +193,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ### 功能优化
 
-- [任务监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)，增加增量阶段的时间过滤选项，便于快速观察增量阶段的 QPS
+- [任务监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)，增加增量阶段的时间过滤选项，便于快速观察增量阶段的 RPS
 - 针对可能对数据库造成影响的关键操作（例如过滤源表数据），增加相关提示信息
 
 ### 问题修复
@@ -254,7 +254,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 - 支持对 [Oracle 数据源](../prerequisites/on-prem-databases/oracle#advanced)加载表注释，可在配置数据源时的高级选项中开启，方便通过注释信息快速识别表的业务含义
 - 支持在 [Windows 平台中部署 Tapdata](../quick-start/install/install-tapdata-enterprise/install-on-windows.md)，进一步丰富部署平台支持度
-- 任务运行[监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)中，支持基于事件大小的维度来查看 QPS 信息
+- 任务运行[监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)中，支持基于事件大小的维度来查看 RPS 信息
 
 ### 问题修复
 

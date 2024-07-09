@@ -6,7 +6,7 @@ TapDB 将数据记录存储为文档（特别是BSON 文档），这些文档聚
 
 在 TapDB 中，数据库用于保存一个或多个文档集合。要选择要使用的数据库，请在 TapDB shell 中执行 `use <db>` 语句，如下例所示：
 
-```
+```sql
 use myDB
 ```
 
@@ -14,7 +14,7 @@ use myDB
 
 如果数据库不存在，TapDB 会在您首次向该数据库存储数据时创建该数据库。因此，您可以切换到一个不存在的数据库，并在 TapDB shell
 
-```
+```sql
 use myNewDB
 db.myNewCollection1.insertOne( { x: 1 } )
 ```
@@ -24,13 +24,16 @@ db.myNewCollection1.insertOne( { x: 1 } )
 ## 集合
 
 TapDB 将文档存储在集合中。集合类似于关系数据库中的表。
+
+
 ![](../images/collection.png)
+
 
 ### 创建集合
 
 如果集合不存在，TapDB 会在您首次存储该集合的数据时创建该集合。
 
-```
+```sql
 db.myNewCollection2.insertOne( { x: 1 } )
 db.myNewCollection3.createIndex( { y: 1 } )
 ```

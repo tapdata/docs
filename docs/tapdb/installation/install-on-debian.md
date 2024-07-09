@@ -14,7 +14,7 @@
 
 Debian 11 (Bullseye)，Debian 10 (Buster)
 
-```
+```bash
 sudo apt-get install libcurl4 openssl liblzma5
 ```
 
@@ -27,7 +27,7 @@ sudo apt-get install libcurl4 openssl liblzma5
 
 2. 通过 tar 命令解压安装包。
 
-    ```
+    ```bash
     tar -zxvf tapdb-linux-*-6.0.tgz
     ```
    
@@ -37,13 +37,13 @@ sudo apt-get install libcurl4 openssl liblzma5
 
     - 将二进制文件复制到 PATH 变量中列出的目录中，例如 `/usr/local/bin`（根据需要使用您的安装目录来更新 `/path/to/the/tapdb-directory/`）
 
-        ```
+        ```bash
         sudo cp /path/to/the/tapdb-directory/bin/* /usr/local/bin/
         ```
 
     - 创建指向 PATH 变量中所列目录的二进制文件的符号链接，例如 `/usr/local/bin`（根据需要使用您的安装目录更新 `/path/to/the/tapdb-directory/`）：
 
-        ```
+        ```bash
         sudo ln -s  /path/to/the/tapdb-directory/bin/* /usr/local/bin/
         ```
 
@@ -72,7 +72,7 @@ sudo apt-get install libcurl4 openssl liblzma5
 
    启动 TapDB 进程的用户必须具有对这些目录的读取和写入权限。例如，如果你打算自己运行 TapDB：
 
-    ```
+    ```bash
     sudo chown `whoami` /var/lib/tap     # Or substitute another user
     sudo chown `whoami` /var/log/tapdb   # Or substitute another user
     ```
@@ -81,7 +81,7 @@ sudo apt-get install libcurl4 openssl liblzma5
 
    要运行 TapDB，请在系统提示符下运行tapdb进程。
 
-    ```
+    ```bash
     tapdb --dbpath /var/lib/tap --logpath /var/log/tapdb/tapdb.log --fork
     ```
 
@@ -91,7 +91,7 @@ sudo apt-get install libcurl4 openssl liblzma5
 
    检查日志文件 `/var/log/TapDB/tapdb.log` 中以下行的进程输出，验证 TapDB 是否成功启动：
 
-    ```
+    ```bash
     [initandlisten] waiting for connections on port 27017
     ```
 
@@ -99,7 +99,7 @@ sudo apt-get install libcurl4 openssl liblzma5
 
    tap 在与相同的主机上启动tapdb 会话。您可以运行不带任何命令行选项的 tap，以连接到使用默认端口在本地主机上运行的 27017。
 
-    ```
+    ```bash
     tap
     ```
 

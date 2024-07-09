@@ -147,7 +147,7 @@ TapDB 提供镜像读功能，用最近访问的数据预热可选从节点缓�
 
 默认情况下启用镜像读取并使用默认的采样率（0.01）。要禁用镜像读取，请将 `mirrorReads` 参数设置为 `{ samplingRate: 0.0 }`：
 
-```
+```sql
 db.adminCommand( {
     setParameter: 1,
     mirrorReads: { samplingRate: 0.0 }
@@ -172,7 +172,7 @@ db.adminCommand( {
 
 如果您在下列操作中指定以下字段，`serverStatus` 命令和 `db.serverStatus()` Shell 方法会返回 `mirroredReads` 指标：
 
-```
+```sql
 db.serverStatus( { mirroredReads: 1 } )
 ```
 

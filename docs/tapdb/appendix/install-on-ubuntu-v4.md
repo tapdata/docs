@@ -16,7 +16,7 @@
 
 以下命令在系统中安装TapDB 安装包的依赖文件：
 
-```
+```bash
 sudo apt-get install libcurl4 libgssapi-krb5-2 libldap-2.5-0 libwrap0 libsasl2-2 libsasl2-modules libsasl2-modules-gssapi-mit snmp openssl liblzma5
 ```
 
@@ -32,19 +32,19 @@ sudo apt-get install libcurl4 libgssapi-krb5-2 libldap-2.5-0 libwrap0 libsasl2-2
 
 创建 TapDB 实例存放数据的目录。例如：
 
-```
+```bash
 sudo mkdir -p /var/lib/tapdb
 ```
 
 创建 TapDB 实例存放日志的目录。例如：
 
-```
+```bash
 sudo mkdir -p /var/log/taplog
 ```
 
 用户启动 TapDB 进程，必须有上述目录的读写权限。例如：
 
-```
+```bash
 sudo chown `whoami` /var/lib/tapdb     # 或者是其他用户名称
 sudo chown `whoami` /var/log/taplog   # 或者是其他用户名称
 ```
@@ -53,7 +53,7 @@ sudo chown `whoami` /var/log/taplog   # 或者是其他用户名称
 
 在系统环境中运行`tapdb`来启动 TapDB。
 
-```
+```bash
 tapdb --dbpath /var/lib/tapdb --logpath /var/log/tapdb/tapdb.log --fork
 ```
 
@@ -61,7 +61,7 @@ tapdb --dbpath /var/lib/tapdb --logpath /var/log/tapdb/tapdb.log --fork
 
 通过检查进程的日志文件`/var/log/tapdb/tapdb.log`，来验证 TapDB 已经启动成功：
 
-```
+```bash
 [initandlisten] waiting for connections on port 27017
 ```
 
@@ -71,6 +71,6 @@ tapdb --dbpath /var/lib/tapdb --logpath /var/log/tapdb/tapdb.log --fork
 
 在运行 tapdb 的主机上，启动`tap`；tapdb使用27017作为默认端口，可以不带任何命令行选项直接启动 Tap Shell：
 
-```
+```bash
 tap
 ```

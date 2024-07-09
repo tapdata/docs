@@ -295,49 +295,13 @@ TapDB shell 提供 `db.collection.countDocuments()` 辅助方法，该方法使�
 
 要获取事务状态和指标，请使用以下方法：
 
-<table>
-  <tr>
-    <td >源</td>
-    <td >返回</td>
-  </tr>
-  <tr>
-    <td>
-      db.serverStatus() 方法<br />
-      serverStatus 命令
-    </td>
-    <td>返回事务指标。</td>
-  </tr>
-  <tr>
-    <td>
-      $currentOp 聚合管道
-    </td>
-    <td>
-      返回：<br />
-      $currentOp.transaction 如果操作属于事务的一部分。<br />
-      有关在事务中持有锁的非活动会话的信息。<br />
-      $currentOp.twoPhaseCommitCoordinator 涉及写入多个分片的分片事务的指标。
-    </td>
-  </tr>
-  <tr>
-    <td>
-      db.currentOp() 方法<br />
-      currentOp 命令
-    </td>
-    <td>
-      返回：<br />
-      currentOp.transaction 如果操作属于事务的一部分。<br />
-      currentOp.twoPhaseCommitCoordinator 涉及写入多个分片的分片事务的指标。
-    </td>
-  </tr>
-  <tr>
-    <td>
-      tapdb 和 taps 日志消息
-    </td>
-    <td>
-      在 TXN 日志组件中包含有关慢速事务（即超过 operationProfiling.slowOpThresholdMs 阈值的事务）的信息。
-    </td>
-  </tr>
-</table>
+| 源                                       | 返回                                                         |
+| ---------------------------------------- | ------------------------------------------------------------ |
+| db.serverStatus() 方法 serverStatus 命令 | 返回事务指标。                                               |
+| $currentOp 聚合管道                      | 返回： $currentOp.transaction 如果操作属于事务的一部分。 有关在事务中持有锁的非活动会话的信息。 $currentOp.twoPhaseCommitCoordinator 涉及写入多个分片的分片事务的指标。 |
+| db.currentOp() 方法 currentOp 命令       | 返回： currentOp.transaction 如果操作属于事务的一部分。 currentOp.twoPhaseCommitCoordinator 涉及写入多个分片的分片事务的指标。 |
+| tapdb 和 taps 日志消息                   | 在 TXN 日志组件中包含有关慢速事务（即超过 operationProfiling.slowOpThresholdMs 阈值的事务）的信息。 |
+
 
 ### 特征兼容性版本 (FCV)
 
@@ -350,7 +314,7 @@ TapDB shell 提供 `db.collection.countDocuments()` 辅助方法，该方法使�
 
 要检查成员的 FCV，请连接到该成员并运行以下命令：
 
-```
+```sql
 db.adminCommand( { getParameter: 1, featureCompatibilityVersion: 1 } )
 ```
 

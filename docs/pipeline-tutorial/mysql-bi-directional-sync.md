@@ -53,7 +53,10 @@ Tapdata 支持 MySQL ↔ MySQL、PostgreSQL ↔ PostgreSQL、MongoDB ↔ MongoDB
 
 1. [登录 TapData 平台](../user-guide/log-in.md)。
 
-2. 在左侧导航栏，单击**数据复制**。
+2. 基于产品类型选择操作入口：
+
+   * TapData Cloud：在左侧导航栏，单击**数据复制**。
+   * TapData Enterprise 或 TapData Community：在左侧导航栏，选择**数据管道** > **数据复制**。
 
 3. 创建正向数据同步任务。
 

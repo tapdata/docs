@@ -45,7 +45,7 @@ TapData 支持在数据复制任务中添加处理节点，满足对数据进行
 
 5. 单击**多表合并**节点，选择合并后的表名。
 
-   ![多表合并节点设置](../../..images/union_node_settings.png)
+   ![多表合并节点设置](../../../images/union_node_settings.png)
 
 6. 单击**表编辑**节点，为表指定的库内唯一的新名称，例如 **student_merge**。
 

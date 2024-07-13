@@ -369,6 +369,7 @@ const sidebars = {
      label: '同步案例',
      link: {type: 'doc', id: 'pipeline-tutorial/README'},
      items: [
+            'pipeline-tutorial/mysql-two-way-sync',
             'pipeline-tutorial/excel-to-mysql',
             'pipeline-tutorial/mysql-to-aliyun',
             'pipeline-tutorial/mysql-to-bigquery',

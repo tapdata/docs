@@ -120,7 +120,7 @@ Tapdata 支持 MySQL ↔ MySQL、PostgreSQL ↔ PostgreSQL、MongoDB ↔ MongoDB
 
    :::tip
 
-   对于 Tapdata Enterprise 产品，您还可以通过[数据校验](../ser-guide/data-pipeline/verify-data.md)功能，定期对同步两端的数据表执行校验，更好满足业务需求。
+   对于 Tapdata Enterprise 产品，您还可以通过[数据校验](../user-guide/data-pipeline/verify-data.md)功能，定期对同步两端的数据表执行校验，更好满足业务需求。
 
    :::
 

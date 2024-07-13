@@ -21,7 +21,7 @@ TapData 支持在数据复制任务中添加处理节点，满足对数据进行
 
 希望对 2 个表结构相同的 **student1** 和 **student2** 表执行追加合并操作（Union），然后将结果存在 **student_merge** 表中，表结构及数据如下：
 
-![追加合并数据示例](/Users/walter/Documents/GitHub/docs/docs/images/table_union_demo.png)
+![追加合并数据示例](../../../images/table_union_demo.png)
 
 
 
@@ -45,7 +45,7 @@ TapData 支持在数据复制任务中添加处理节点，满足对数据进行
 
 5. 单击**多表合并**节点，选择合并后的表名。
 
-   ![多表合并节点设置](/Users/walter/Documents/GitHub/docs/docs/images/union_node_settings.png)
+   ![多表合并节点设置](../../..images/union_node_settings.png)
 
 6. 单击**表编辑**节点，为表指定的库内唯一的新名称，例如 **student_merge**。
 

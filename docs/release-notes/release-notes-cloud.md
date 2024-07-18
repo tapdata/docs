@@ -24,7 +24,7 @@ import TabItem from '@theme/TabItem';
 - 数据复制任务新增[多表合并](../user-guide/data-pipeline/copy-data/process-node#union-node)节点，可对同一数据库中的多个表执行合并操作（UNION），可用于整合和分析数据等场景
 - [Doris](../prerequisites/warehouses-and-lake/doris.md) 数据源支持无证书的 HTTPS 连接方式
 - MySQL、Oracle、OpenGauss、SQL Server、PostgreSQL 数据源，支持任务配置时，在节点的高级配置中启用 **Hash 分片**功能，可大幅提升大表的全量数据同步速度
-- 新增 VastBase 数据源，成熟度为 Beta，进一步丰富数据源种类
+- 新增 [VastBase](../prerequisites/on-prem-databases/vastbase) 数据源，成熟度为 Beta，进一步丰富数据源种类
 
 #### 功能优化
 

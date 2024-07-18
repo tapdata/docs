@@ -78,19 +78,13 @@ Vastbase G100 2.2 版本
    * **schema_name**：Schema 名称。
    * **table_name**：表名称。
 
-4. 执行下述命令，修改相关参数以支持 wal2json 逻辑解码能力。
+4. 执行下述命令，修改相关参数以支持 [wal2json](https://docs.vastdata.com.cn/zh/docs/VastbaseG100Ver2.2.10/doc/%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97/wal2json%E6%8F%92%E4%BB%B6.html)  逻辑解码能力。
 
-   ```bash
+   ```sql
 ALTER SYSTEM SET wal_level to logical;
    ALTER SYSTEM SET max_wal_senders to 10;
 ALTER SYSTEM SET max_replication_slots to 10;
    ```
-
-   :::tip
-
-   Vastbase 内置 [wal2json](https://docs.vastdata.com.cn/zh/docs/VastbaseG100Ver2.2.10/doc/%E5%BC%80%E5%8F%91%E8%80%85%E6%8C%87%E5%8D%97/wal2json%E6%8F%92%E4%BB%B6.html) 逻辑解码插件，使用该插件可以访问 INSERT 和 UPDATE 生成的元组，解析 WAL 中的内容，从而获取数据的增量变更。
-
-   :::
 
 4. 在业务低峰期重启数据库实例。
 

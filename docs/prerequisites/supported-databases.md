@@ -8,7 +8,7 @@ TapData 支持丰富的数据源，具体如下：
 :::tip
 
 * 如需同步 DDL 操作，您需要开启 DDL 采集和 DDL 应用，更多介绍，见[DDL 同步说明](../best-practice/handle-schema-change.md)。
-* TapData Community 仅支持 ClickHouse、Kafka、MongoDB、MySQL、PostgreSQL 数据源。
+* TapData Community 仅支持 AWS ClickHouse、BigQuery、ClickHouse、Doris、Dummy、ElasticSearch、Kafka、MariaDB、Mock Source、Mock Target、MongoDB、MongoDB Atlas、MySQL、PostgreSQL、Redis、TDengine 数据源。
 
 :::
 
@@ -275,6 +275,15 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>✅</td>
     <td>3.x</td>
+  </tr>
+  <tr>
+    <td>Vastbase</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>G100 2.2</td>
   </tr>
 </tbody>
 </table>

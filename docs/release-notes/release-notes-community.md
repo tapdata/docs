@@ -6,6 +6,29 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.10
+
+### 新增功能
+
+- 数据复制任务新增[多表合并](../user-guide/data-pipeline/copy-data/process-node#union-node)节点，可对同一数据库中的多个表执行合并操作（UNION），可用于整合和分析数据等场景
+- [Doris](../prerequisites/warehouses-and-lake/doris.md) 数据源支持无证书的 HTTPS 连接方式
+- MySQL、Oracle、OpenGauss、SQL Server、PostgreSQL 数据源，支持任务配置时，在节点的高级配置中启用 **Hash 分片**功能，可大幅提升大表的全量数据同步速度
+- 新增 [VastBase](../prerequisites/on-prem-databases/vastbase) 数据源，成熟度为 Beta，进一步丰富数据源种类
+
+### 功能优化
+
+- 优化时区类字段的同步逻辑
+
+### 问题修复
+
+- 修复源端 MySQL 不支持增量时，任务报错信息不明确且错误码的详细信息中缺少相关提示的问题
+- 修复任务警告的警报格式不正确的问题
+- 修复导入的任务显示有运行记录，且当前运行记录状态显示为删除中的问题
+- 修复任务目标表关联键设置后，编辑任务时自动推演模型错误地修改关联键的问题
+- 修复 Python 节点移除字段可能失败的问题
+- 修复在主从合并操作中，删除主节点后，主从合并节点配置异常导致任务错误的问题
+- 修复在引擎服务器未设置 UTF 字符编码的场景下，如果源端发生 DDL，导致任务的中文节点名称出现乱码的问题
+
 ## 3.9.0
 
 ### 新增功能

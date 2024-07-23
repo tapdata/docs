@@ -132,6 +132,7 @@ const sidebars = {
                           'prerequisites/on-prem-databases/sqlserver',
                           'prerequisites/on-prem-databases/tdengine',
                           'prerequisites/on-prem-databases/tidb',
+                          'prerequisites/on-prem-databases/vastbase',
                           ]
                   },
                   {

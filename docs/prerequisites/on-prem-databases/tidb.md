@@ -142,6 +142,10 @@ GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, DROP ON *.* TO 'username';
 
   - **20160** 端口：用于 TiKV 对外提供存储服务，包括处理 TiDB 的 SQL 请求、读写数据以及和其他 TiKV 节点之间的内部通信（如 Raft 协议的消息）。
 
+* 问：TapData 对 TiDB 的部署架构有要求吗？
+
+  答：TiDB 的单机或集群部署架构均可得到支持。
+
 * 问：如果我的 TiDB 版本不在 6.0.0 ～ 8.1.9 范围内，需要执行增量数据同步，应该怎么办？
 
   答：TapData 的 TiDB 连接器集成了 TiCDC，可基于数据变更日志解析为有序的行级变更数据。如果您的数据库在支持版本以外，您可以前往 [Github: tiflow](https://github.com/pingcap/tiflow/releases) 下载支持对应版本的 Tiflow 组件，然后跟随下述步骤自行编译 cdc 工具：

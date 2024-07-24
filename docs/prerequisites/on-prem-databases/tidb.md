@@ -146,7 +146,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, DROP ON *.* TO 'username';
 
   答：TapData 的 TiDB 连接器集成了 TiCDC，可基于数据变更日志解析为有序的行级变更数据。如果您的数据库在支持版本以外，您可以前往 [Github: tiflow](https://github.com/pingcap/tiflow/releases) 下载支持对应版本的 Tiflow 组件，然后跟随下述步骤自行编译 cdc 工具：
 
-  :::note
+  :::warning
 
   扩展其他版本的 Tiflow 组件可能带来不确定因素或影响正在运行的任务，请谨慎操作。
 

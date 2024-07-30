@@ -40,17 +40,6 @@ const config = {
         docs: {
           routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: require.resolve('./sidebars.js'),
-          // Configuring versioning behavior and label
-          lastVersion: 'current',
-          versions: {
-                  current: {
-                    label: '3.x',
-                  },
-                  '2.0': {
-                         label: '2.x',
-                         path: '2.0',
-                         },
-                  },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -128,11 +117,6 @@ const config = {
             position: 'right',
             label: '登录 TapData Cloud',
             },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: true,
-           },
           {
             href: 'https://github.com/tapdata/tapdata',
             label: 'GitHub⭐',

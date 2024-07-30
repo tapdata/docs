@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+slug: /
+---
+
 # 支持的数据源
 import Content from '../reuse-content/_all-features.md';
 

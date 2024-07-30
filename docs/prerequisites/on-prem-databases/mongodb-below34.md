@@ -1,4 +1,4 @@
-# MongoDB
+# MongoDB Below 3.4
 import Content from '../../reuse-content/_all-features.md';
 
 <Content />
@@ -11,8 +11,7 @@ MongoDB 3.2、3.4、3.6、4.0、4.2
 
 :::tip
 
-- TapData 基于 MongoDB 的 Change Stream 实现，此特性在 MongoDB 4.0 开始支持，因此，推荐源和目标数据库的版本为 4.0 及以上。
-- MongoDB 为 3.4 及以下时，请选择名为 **MongoDB Below 3.4** 的数据源。
+MongoDB 为 3.4 以上时，请选择名为 **MongoDB** 的数据源。
 
 :::
 

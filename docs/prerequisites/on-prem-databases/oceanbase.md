@@ -1,7 +1,5 @@
 # OceanBase
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 OceanBase 数据库是一个金融级分布式关系数据库，TapData 支持将 OceanBase 作为目标库，帮助您快速构建数据流转链路。接下来，我们将介绍如何在 TapData 平台中连接 OceanBase 数据源。
 

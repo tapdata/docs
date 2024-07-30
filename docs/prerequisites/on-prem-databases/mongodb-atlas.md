@@ -1,7 +1,5 @@
 # MongoDB Atlas
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 MongoDB Atlas 是 MongoDB 提供的多云应用程序数据平台，TapData 支持将 MongoDB Atlas 作为源或目标库构建数据管道，本文介绍如何在 TapData 中添加 MongoDB Atlas 数据源。
 

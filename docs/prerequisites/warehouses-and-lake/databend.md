@@ -1,7 +1,5 @@
 # Databend
-import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content1 />
 
 Databend 是一个开源的 Elastic 和 Workload-Aware 现代云数据仓库，Databend 使用最新的矢量化查询处理技术，帮助用户在对象存储上进行快速的数据分析。
 

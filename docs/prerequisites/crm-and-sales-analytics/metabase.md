@@ -1,7 +1,5 @@
 # Metabase
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 ### 1、填写连接名称（必填）
 

@@ -1,7 +1,5 @@
 # TiDB
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 TiDB 是 PingCAP 设计、研发的开源分布式关系型数据库，是一款同时支持在线事务处理与在线分析处理的融合型分布式数据库产品。完成 Agent 部署后，您可以跟随本文教程在 TapData 中添加 TiDB 数据源，后续可将其作为源或目标库来构建数据管道。
 

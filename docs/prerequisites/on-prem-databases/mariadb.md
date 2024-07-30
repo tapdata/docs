@@ -1,7 +1,5 @@
 # MariaDB
-import Content1 from '../../reuse-content/_all-features.md';
 
-<Content1 />
 
 MariaDB 是一个通用的开源关系数据库管理系统，可用于高可用性事务数据、分析、作为嵌入式服务器，并且广泛的工具和应用程序支持 MariaDB。完成 Agent 部署后，您可以跟随本文教程在 TapData 中添加 MariaDB 数据源，后续可将其作为源或目标库来构建数据管道。
 

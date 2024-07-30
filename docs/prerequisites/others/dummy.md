@@ -1,7 +1,5 @@
 # Dummy
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Dummy 是测试数据源，可以生成测试数据。本文介绍如何在 Tapdata 中添加 Dummy 数据源。
 

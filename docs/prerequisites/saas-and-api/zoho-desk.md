@@ -1,7 +1,5 @@
 # Zoho-Desk
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 ### 写在前面
 

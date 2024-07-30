@@ -1,7 +1,5 @@
 # Vastbase
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Vastbase 数据库是海量数据基于开源 openGauss 内核开发的企业级关系型数据库，在原有功能基础上增加了大量 Oracle 兼容特性和安全增强，同时整合 GIS/流计算等一系列专业应用领域的企业级功能。TapData 支持将 Vastbase 作为源或目标库构建数据管道，本文介绍如何在 TapData 中添加 Vastbase 数据源。
 

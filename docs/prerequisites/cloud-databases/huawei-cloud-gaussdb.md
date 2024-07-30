@@ -1,8 +1,6 @@
 # Huawei Cloud GaussDB
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 GaussDB 是华为自主创新研发的分布式关系型数据库，支持分布式事务，同城跨 AZ 部署，数据 0 丢失，支持 1000+ 的扩展能力，PB 级海量存储，可为企业提供功能全面，稳定可靠，扩展性强，性能优越的企业级数据库服务。TapData 支持将 GaussDB 作为源或目标数据库，帮助您快速构建数据流转链路。接下来，我们将介绍如何在 TapData 平台中连接 GaussDB 数据源。
 

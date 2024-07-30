@@ -1,7 +1,5 @@
 # Custom Connection
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 如果现有的数据源暂未满足您的需求，您也可以基于业务需求创建自定义连接，本文介绍配置流程。
 

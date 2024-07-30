@@ -1,7 +1,5 @@
 # Quick API
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 ## 输入从PostMan导出的JSON格式的API文本（必填）
 

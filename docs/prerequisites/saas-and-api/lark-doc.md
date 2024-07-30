@@ -1,7 +1,5 @@
 # Lark Doc
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 本文介绍如何添加 Lark Doc（飞书文档）数据源。
 

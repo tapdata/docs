@@ -1,7 +1,5 @@
 # Oracle
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Oracle Database（简称 Oracle）是甲骨文公司的一款关系数据库管理系统。完成 Agent 部署后，您可以跟随本文教程在 TapData 中添加 Oracle 数据源，后续可将其作为源或目标库来构建数据管道。
 ```mdx-code-block

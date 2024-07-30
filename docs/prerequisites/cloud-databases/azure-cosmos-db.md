@@ -1,8 +1,6 @@
 # Azure Cosmos DB
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Azure Cosmos DB 是一个完全托管的 NoSQL 和关系数据库，适用于新式应用开发，包括 AI、数字商业、物联网、预订管理和其他类型的解决方案的开发。本文介绍如何在 Tapdata 平台中，连接 Azure Cosmos DB，帮助实现云端数据的快速流转。
 

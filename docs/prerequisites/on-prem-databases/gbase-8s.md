@@ -1,7 +1,5 @@
 # GBase 8s
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 GBase 8s 数据库是一款基于 informix 研发的数据库，保留了大部分原生的语法、特性及字段类型，并且引入了大量 Oracle 的优势特性。
 

@@ -1,7 +1,5 @@
 # YashanDB
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 崖山数据库管理系统（YashanDB）是深圳计算科学研究院在经典数据库理论基础上，融入新的原创理论，自主设计、研发的新型数据库管理系统。Tapdata 支持将 YashanDB 作为目标库来构建数据管道，帮助您快速完成数据流转。
 

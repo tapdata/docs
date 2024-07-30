@@ -1,7 +1,5 @@
 # Aliyun RDS for MySQL
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 阿里云关系型数据库 RDS（Relational Database Service）是一种稳定可靠、可弹性伸缩的在线数据库服务。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 Aliyun RDS for MySQL 数据源，后续可将其作为源或目标库来构建数据管道。
 

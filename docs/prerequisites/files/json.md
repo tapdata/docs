@@ -1,7 +1,5 @@
 # JSON
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Tapdata 支持读取 Local（本地）、FTP、SFTP、SMB、S3FS 或 OSS 上的文件，支持的文件类型包括 [CSV](csv.md)、[EXCEL](excel.md)、JSON 和 [XML](xml.md)，满足多样化的数据流转需求。
 

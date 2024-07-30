@@ -1,7 +1,5 @@
 # GreenPlum
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Greenplum 数据库是一种大规模并行处理（MPP）数据库服务器，其架构特别针对管理大规模分析型数据仓库以及商业智能工作负载而设计。本文介绍如何在 Tapdata 平台上连接 GreenPlum。
 

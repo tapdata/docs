@@ -22,6 +22,39 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017、2019、2022
 
 </details>
 
+## 注意事项
+
+SQL Server 作为源库时，如果对增量同步表的字段执行了 DDL 操作（如增加字段），您需要执行下述操作重启变更数据捕获，否则可能出现数据无法同步或报错等情况。
+
+<details>
+<summary>重启对应表的变更数据捕获</summary>
+
+```sql
+--关闭该表的变更数据捕获
+  go
+  EXEC sys.sp_cdc_disable_table
+  @source_schema = N'[Schema]',
+  @source_name = N'[Table]',
+  @capture_instance = N'[Schema_Table]'
+  go
+  // capture_instance一般为schema_table的格式拼接而成，可以通过以下命令，查询实际的值
+  exec sys.sp_cdc_help_change_data_capture
+  @source_schema = N'[Schema]',
+  @source_name = N'[Table]';
+  
+  
+  --启动该表的变更数据捕获
+  use [数据库名称]
+  go
+  EXEC sys.sp_cdc_enable_table
+  @source_schema = N'[Schema]',
+  @source_name = N'[Table]',
+  @role_name = N'[Role]'
+  go
+```
+
+</details>
+
 ## 准备工作
 
 ### 作为源库
@@ -240,7 +273,7 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017、2019、2022
 
 * 清理变更数据捕获日志
 
-  SQL Server 不会自动变更数据捕获日志，需要进行如下设置开启清理任务。
+  SQL Server 不会自动清理变更数据捕获日志，需要进行如下设置开启清理任务。
 
   ```sql
   --retention 的单位为分钟，本处设定清理周期为2天
@@ -250,32 +283,6 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017、2019、2022
       @job_type = N'cleanup',  
       @retention = 2880;  
   GO 
-  ```
-
-* 如果对增量同步表的字段执行了 DDL 操作（如增加字段），您需要执行下述操作重启变更数据捕获，否则可能出现数据无法同步或报错等情况。
-
-  ```sql
-  --关闭该表的变更数据捕获
-  go
-  EXEC sys.sp_cdc_disable_table
-  @source_schema = N'[Schema]',
-  @source_name = N'[Table]',
-  @capture_instance = N'[Schema_Table]'
-  go
-  // capture_instance一般为schema_table的格式拼接而成，可以通过以下命令，查询实际的值
-  exec sys.sp_cdc_help_change_data_capture
-  @source_schema = N'[Schema]',
-  @source_name = N'[Table]';
-  
-  
-  --启动该表的变更数据捕获
-  use [数据库名称]
-  go
-  EXEC sys.sp_cdc_enable_table
-  @source_schema = N'[Schema]',
-  @source_name = N'[Table]',
-  @role_name = N'[Role]'
-  go
   ```
 
   

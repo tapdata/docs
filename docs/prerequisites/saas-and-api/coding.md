@@ -19,7 +19,7 @@ Coding 是腾讯云旗下的一站式 DevOps 研发管理平台，围绕 DevOps 
 
 ## 连接 Coding
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 2. 在左侧导航栏，单击**连接管理**。
 3. 单击页面右侧的**创建**。
 4. 在弹出的对话框中，搜索并选择 **Coding**。
@@ -41,29 +41,29 @@ Coding 是腾讯云旗下的一站式 DevOps 研发管理平台，围绕 DevOps 
 
 1. 一键生成服务URL，并复制到剪切板。
 
-   ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/doc/coding/generate.PNG)
+   ![img](../../images/generate.PNG)
 
 2. 进入您的团队并选择对应的项目。
 
-   ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/doc/coding/init.PNG)
+   ![img](../../images/init.PNG)
 
 3. 进入项目设置后，找到开发者选项。
 
-   ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/doc/coding/developer.PNG)
+   ![img](../../images/developer.PNG)
 
 4. 找到ServerHook，再找到右上角点的新建ServerHook按钮并点击。
 
-   ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/doc/coding/init-webhook.PNG)
+   ![img](../../images/init-webhook.PNG)
 
 5. 进入Webhook配置，第一步我们选择Http Webhook后点击下一步。
 
-   ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/doc/coding/webhook.PNG)
+   ![img](../../images/webhook.PNG)
 
 6.  配置我们需要的监听的事件类型。
 
-   ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/doc/coding/monitor.PNG)
+   ![img](../../images/monitor.PNG)
 
 7.  粘贴我们最开始在创建数据源页面生成的服务URL到此。
 
-   ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/doc/coding/url.PNG)
+   ![img](../../images/url.PNG)
 

@@ -14,7 +14,7 @@ OceanBase 4.x（企业版）
 
    :::tip
 
-   OceanBase（Oracle 模式）高度兼容 Oracle，支持 Oracle 的绝大部分功能，对于源读取和目标写入相关授权要求完全可以参考 [Oracle 的相关文档](oracle.md)。
+   OceanBase（Oracle 模式）高度兼容 Oracle，支持 Oracle 的绝大部分功能，对于源读取和目标写入相关授权要求完全可以参考 Oracle 的相关文档。
 
    :::
 

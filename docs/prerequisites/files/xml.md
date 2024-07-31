@@ -1,7 +1,7 @@
 # XML
 
 
-Tapdata 支持读取 Local（本地）、FTP、SFTP、SMB、S3FS 或 OSS 上的文件，支持的文件类型包括 [CSV](csv.md)、[EXCEL](excel.md)、[JSON](json.md) 和 XML，满足多样化的数据流转需求。
+Tapdata 支持读取 Local（本地）、FTP、SFTP、SMB、S3FS 或 OSS 上的文件，支持的文件类型包括 CSV、EXCEL、JSON 和 XML，满足多样化的数据流转需求。
 
 可扩展标记语言（XML）一种数据表示格式，可以描述非常复杂的数据结构，常用于传输和存储数据。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 CSV 数据源，后续可将其作为源库来构建数据管道。
 
@@ -41,7 +41,7 @@ import Content3 from '../../reuse-content/beta/_file-store-oss.md';
 
 ## 添加数据源
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

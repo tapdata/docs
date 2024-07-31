@@ -47,10 +47,10 @@
 1. 您需要使用用户的注册手机号或邮箱发送指定消息到此人；
 2. 您需要保证当前手机号或邮箱的使用者存在于此应用的可见范围，如不在当前应用版本的可见范围，将无法发送消息到这个用户，如有必要，您可在应用版本管理与发布中查看最新版本下的可见范围，并创建新的版本并将此用户添加到可见范围。
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/FeiShu/doc/version.PNG)
+![img](../../images/version.PNG)
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/FeiShu/doc/rang.PNG)
+![img](../../images/rang.PNG)
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/FeiShu/doc/createdVersion.PNG)
+![img](../../images/createdVersion.PNG)
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/FeiShu/doc/modifyRang.PNG)
+![img](../../images/modifyRang.PNG)

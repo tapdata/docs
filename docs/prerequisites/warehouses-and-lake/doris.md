@@ -18,7 +18,7 @@ Dorix 1.x、2.x
 
 ## 注意事项
 
-如需使用 Doris 作为源库并同步增量数据变更，您需要[创建数据转换任务](../../user-guide/data-pipeline/data-development/create-task.md)并选择**增量同步方式**为**字段轮询**。
+如需使用 Doris 作为源库并同步增量数据变更，您需要创建数据转换任务并选择**增量同步方式**为**字段轮询**。
 
 ## 准备工作
 
@@ -76,7 +76,7 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
 
 ## 连接 Doris
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 
@@ -103,7 +103,7 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
       - **时间类型的时区**：默认为数据库所用的时区，您也可以根据业务需求手动指定。 
       - **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
       - **模型加载时间**：当数据源中模型数量小于 10,000 时，每小时刷新一次模型信息；如果模型数据超过 10,000，则每天按照您指定的时间刷新模型信息。
-      - **开启心跳表**：当连接类型选择为**源头和目标**、**源头**时，支持打开该开关，由 Tapdata 在源库中创建一个名为 **_tapdata_heartbeat_table** 的心跳表并每隔 10 秒更新一次其中的数据（数据库账号需具备相关权限），用于数据源连接与任务的健康度监测，更多介绍，见[通过心跳表监测数据同步链路](../../best-practice/heart-beat-task.md)。
+      - **开启心跳表**：当连接类型选择为**源头和目标**、**源头**时，支持打开该开关，由 Tapdata 在源库中创建一个名为 **_tapdata_heartbeat_table** 的心跳表并每隔 10 秒更新一次其中的数据（数据库账号需具备相关权限），用于数据源连接与任务的健康度监测。
 
 6. 单击页面下方的**连接测试**，提示通过后单击**保存**。
 

@@ -18,7 +18,7 @@ TapData 支持将 Zoho CRM 中的数据以表的形式来读取，并同步至�
 
 ## 连接 Zoho CRM
 
-1. [登录 TapData 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

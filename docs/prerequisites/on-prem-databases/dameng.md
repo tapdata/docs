@@ -11,9 +11,6 @@
 
 DM 7.x、8.x
 
-import Content1 from '../../reuse-content/beta/_beta.md';
-
-<Content1 />
 
 ## 准备工作
 
@@ -101,7 +98,7 @@ import Content1 from '../../reuse-content/beta/_beta.md';
 
 ## 添加数据源
 
-1. [登录 TapData 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

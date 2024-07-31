@@ -24,7 +24,7 @@ SelectDB Cloud 2.0.13 以上
 
 ## 连接 SelectDB
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

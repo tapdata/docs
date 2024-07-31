@@ -5,18 +5,16 @@
 
 您需要前往 https://open.feishu.cn/app 找到对应的应用，并在应用的 ***凭证与基础信息*** 中找到：
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/FeiShu/doc/findApp.PNG)
-
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/FeiShu/doc/appIdAndSecret.PNG)
+![](../../images/obtain_feishu_app_ak.png)
 
 1. 获取到***App ID***,并填写到此处。
 2. 获取到***App Secret***,并填写到此处。
 
 此时，飞书数据源创建成功！
 
-### 注意事项
+## 注意事项
 
-#### 飞书获取审批类型Code
+### 飞书获取审批类型Code
 
 ***注意事项：***：
 
@@ -24,6 +22,6 @@
 
 审批类型Code需要在飞书管理员后台获取，如图所示位置：
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/LarkApproval/doc/ht.jpg)
+![img](../../images/ht.jpg)
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/LarkApproval/doc/code.jpg)
+![img](../../images/code.jpg)

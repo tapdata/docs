@@ -9,7 +9,7 @@ Redis 2.8 ~ 6.0
 
 ## 连接 Redis
 
-1. [登录 TapData 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 
@@ -40,6 +40,3 @@ Redis 2.8 ~ 6.0
    如提示连接测试失败，请根据页面提示进行修复。
 
    :::
-
-## 相关文档
-[MySQL 实时同步至 Redis](../../pipeline-tutorial/mysql-to-redis.md)

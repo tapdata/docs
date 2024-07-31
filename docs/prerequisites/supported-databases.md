@@ -14,8 +14,6 @@ TapData 支持丰富的数据源，具体如下：
 
 :::
 
-
-
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

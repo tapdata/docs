@@ -18,9 +18,7 @@ KingbaseES-R6 支持的数据库模式为 Oracle、PostgreSQL 和 MySQL，需注
 
 :::
 
-import Content from '../../reuse-content/beta/_beta.md';
 
-<Content />
 
 ## <span id="prerequisite">准备工作</span>
 

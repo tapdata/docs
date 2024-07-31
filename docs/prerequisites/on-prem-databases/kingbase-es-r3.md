@@ -13,9 +13,6 @@ import TabItem from '@theme/TabItem';
 
 KingBaseES-V8R3
 
-import Content from '../../reuse-content/alpha/alpha.md';
-
-<Content />
 
 ## <span id="prerequisite">准备工作</span>
 

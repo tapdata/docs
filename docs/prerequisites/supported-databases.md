@@ -4,9 +4,7 @@ slug: /
 ---
 
 # 支持的数据源
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 TapData 支持丰富的数据源，具体如下：
 

@@ -9,9 +9,7 @@ import TabItem from '@theme/TabItem';
 ## 支持版本
 MariaDB 10.x
 
-import Content from '../../reuse-content/beta/_beta.md';
 
-<Content />
 
 ## 准备工作
 

@@ -25,7 +25,7 @@ Databend v0.9 及以上
    示例：创建一个名为 tapdata 的账号。
 
    ```sql
-   CREATE USER 'tapdata' IDENTIFIED BY 'Tap@123456';
+   CREATE USER 'tapdata' IDENTIFIED BY 'your_password';
    ```
 
 2. 为刚创建的账号授予指定数据库的所有权限，以便 Tapdata 可自动创建同步的目标表，您也可以基于业务需求设置更精细化的权限控制。更多介绍，见 [GRANT 语法](https://databend.rs/doc/sql-commands/ddl/user/grant-privileges)。

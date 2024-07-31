@@ -26,7 +26,7 @@ MariaDB 10.x
    * **username**：用户名。
    * **password**：密码。
    * **host**：允许该账号登录的主机，百分号（%）表示允许任意主机。
-     示例：创建一个名为 tapdata 的账号：`CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';`
+     示例：创建一个名为 tapdata 的账号：`CREATE USER 'tapdata'@'%' IDENTIFIED BY 'your_password';`
    
 2. 为刚创建的账号授予权限，简易示例如下，推荐基于业务需求设置更精细化的权限控制。
 
@@ -111,7 +111,7 @@ GRANT SELECT ON *.* TO 'username' IDENTIFIED BY 'password';
    * **username**：用户名。
    * **password**：密码。
    * **host**：允许该账号登录的主机，百分号（%）表示允许任意主机。
-     示例：创建一个名为 tapdata 的账号：`CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';`
+     示例：创建一个名为 tapdata 的账号：`CREATE USER 'tapdata'@'%' IDENTIFIED BY 'your_password';`
 
 2. 为刚创建的账号授予权限。
 

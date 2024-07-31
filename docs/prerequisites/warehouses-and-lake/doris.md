@@ -35,7 +35,7 @@ Dorix 1.x、2.x
    示例：创建一个名为 tapdata 的账号。
 
    ```sql
-   CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
+   CREATE USER 'tapdata'@'%' IDENTIFIED BY 'your_password';
    ```
 
 2. 为刚创建的账号授予权限，您也可以基于业务需求设置更精细化的权限控制。

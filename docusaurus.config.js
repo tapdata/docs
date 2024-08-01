@@ -22,14 +22,10 @@ const config = {
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
-  /*i18n: {
+  // multi language settings
+    i18n: {
       defaultLocale: 'zh-cn',
       locales: ['zh-cn', 'en'],
-    }, */
-
-  i18n: {
-      defaultLocale: 'zh-cn',
-      locales: ['zh-cn'],
     },
 
   presets: [
@@ -106,6 +102,10 @@ const config = {
           href: 'https://tapdata.net/',
         },
         items: [
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          },
           {
             type: 'doc',
             docId: 'what-is-tapdata',

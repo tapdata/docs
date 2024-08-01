@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "Home",
+    "description": "The title in the navbar"
+  },
+  "item.label.TapData 帮助文档": {
+    "message": "TapData Documentation",
+    "description": "Navbar item with label TapData 帮助文档"
+  },
+  "item.label.登录 TapData Cloud": {
+    "message": "Log in TapData Cloud",
+    "description": "Navbar item with label 登录 TapData Cloud"
+  },
+  "item.label.GitHub⭐": {
+    "message": "GitHub⭐",
+    "description": "Navbar item with label GitHub⭐"
+  }
+}

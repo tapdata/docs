@@ -438,6 +438,7 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>✅</td>
     <td>Enterprise version 2.8 (primary-standby), supports Standby version 8.1 for on-prem deployment</td>
   </tr>
+  <tr>
     <td>HubSpot</td>
     <td>✅</td>
     <td>➖</td>

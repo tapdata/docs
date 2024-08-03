@@ -430,7 +430,6 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>XLS/XLSX, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS</td>
   </tr>
   <tr>
-  <tr>
     <td>Huawei's Cloud GaussDB</td>
     <td>✅</td>
     <td>✅</td>

@@ -83,15 +83,6 @@ import TabItem from '@theme/TabItem';
     <td>5.0, 5.1, 5.5, 5.6, 5.7, 8.x</td>
   </tr>
   <tr>
-    <td>Oracle</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>9i, 10g, 11g, 12c, 19c</td>
-  </tr>
-  <tr>
     <td>PostgreSQL</td>
     <td>✅</td>
     <td>✅</td>
@@ -99,15 +90,6 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>9.4 and above</td>
-  </tr>
-  <tr>
-    <td>SQL Server</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>2005, 2008, 2012, 2014, 2016, 2017</td>
   </tr>
    <tr>
     <td>TiDB</td>
@@ -175,15 +157,6 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>7.x, 8.x</td>
   </tr>
   <tr>
-    <td>IBM DB2</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>9.7 LUW</td>
-  </tr>
-  <tr>
     <td>DummyDB</td>
     <td>✅</td>
     <td>✅</td>
@@ -191,15 +164,6 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>✅</td>
     <td>➖</td>
     <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Informix</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>10 and above</td>
   </tr>
   <tr>
     <td>Mock Source</td>
@@ -218,15 +182,6 @@ The beta version of the data sources is in public preview and has passed the bas
    <td>✅</td>
    <td>➖</td>
    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>KingBaseES-R6</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>V8R6</td>
   </tr>
   <tr>
     <td>MariaDB</td>
@@ -254,15 +209,6 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>✅</td>
     <td>➖</td>
     <td>2.8 ~ 6.0</td>
-  </tr>
-  <tr>
-    <td>Sybase</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>ASE 16.0</td>
   </tr>
   <tr>
     <td>TDengine</td>
@@ -314,15 +260,6 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>✅</td>
     <td>➖</td>
     <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Databend</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>0.9 and above</td>
   </tr>
   <tr>
     <td>Doris</td>
@@ -439,60 +376,6 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>Enterprise version 2.8 (primary-standby), supports Standby version 8.1 for on-prem deployment</td>
   </tr>
   <tr>
-    <td>HubSpot</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Lark-IM</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>LarkTask</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Metabase</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Salesforce</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Zoho-CRM</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
     <td>Zoho-Desk</td>
     <td>✅</td>
     <td>✅</td>
@@ -552,33 +435,6 @@ The Alpha version of the data sources is in public preview and has passed the ba
     <td>5.x, 6.x, 7.x</td>
   </tr>
   <tr>
-    <td>Gbase 8a</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>8x</td>
-  </tr>
-  <tr>
-    <td>Gbase 8s</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>8x</td>
-  </tr>
-  <tr>
-    <td>KingBaseES-R3</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>V8R3</td>
-  </tr>
-  <tr>
     <td>OceanBase（MySQL Mode）</td>
     <td>✅</td>
     <td>✅</td>
@@ -586,15 +442,6 @@ The Alpha version of the data sources is in public preview and has passed the ba
     <td>✅</td>
     <td>✅</td>
     <td>3.x, 4.x</td>
-  </tr>
-  <tr>
-    <td>OceanBase（Oracle Mode）</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>4.x</td>
   </tr>
   <tr>
     <td>OpenGauss</td>
@@ -772,15 +619,6 @@ The Alpha version of the data sources is in public preview and has passed the ba
     <td>9.4, 9.5, 9.6, 10.x, 11.x, 12</td>
   </tr>
   <tr>
-    <td>Aliyun RDS SQL Server</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>2008 R2, 2012, 2014, 2016, 2017, 2019</td>
-  </tr>
-  <tr>
     <td>PolarDB MySQL</td>
     <td>✅</td>
     <td>✅</td>
@@ -834,15 +672,6 @@ The Alpha version of the data sources is in public preview and has passed the ba
     <td>➖</td>
     <td>9.4, 9.5, 9.6, 10.x, 11.x, 12</td>
   </tr>
-  <tr>
-    <td>TencentDB SQL Server</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>2008 R2, 2012, 2016, 2017, 2019</td>
-  </tr>
 </tbody>
 </table>
 
@@ -876,15 +705,6 @@ The Alpha version of the data sources is in public preview and has passed the ba
     <td>✅</td>
     <td>➖</td>
     <td>5.14.x</td>
-  </tr>
-  <tr>
-    <td>AI Chat</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>N/A</td>
   </tr>
 <tr>
     <td>Hazelcast</td>
@@ -937,33 +757,6 @@ The Alpha version of the data sources is in public preview and has passed the ba
   </tr>
 </thead>
 <tbody>
-<tr>
-    <td>Alibaba 1688</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>N/A</td>
-  </tr>
-<tr>
-    <td>BesChannels</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>N/A</td>
-  </tr>
-<tr>
-    <td>Feishu-Bitable</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>N/A</td>
-  </tr>
   <tr>
     <td>JSON</td>
     <td>✅</td>
@@ -972,33 +765,6 @@ The Alpha version of the data sources is in public preview and has passed the ba
     <td>➖</td>
     <td>➖</td>
     <td>N/A, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS</td>
-  </tr>
-  <tr>
-    <td>Lark Approval</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Lark Doc</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Shein</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>N/A</td>
   </tr>
   <tr>
     <td>Vika</td>

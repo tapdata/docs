@@ -31,7 +31,6 @@ const sidebars = {
                   items: [
                           'prerequisites/warehouses-and-lake/big-query',
                           'prerequisites/warehouses-and-lake/clickhouse',
-                          'prerequisites/warehouses-and-lake/databend',
                           'prerequisites/warehouses-and-lake/doris',
                           'prerequisites/warehouses-and-lake/gaussdb',
                           'prerequisites/warehouses-and-lake/greenplum',
@@ -47,15 +46,9 @@ const sidebars = {
                   link: {type: 'doc', id: 'prerequisites/on-prem-databases/README'},
                   items: [
                           'prerequisites/on-prem-databases/dameng',
-                          'prerequisites/on-prem-databases/db2',
                           'prerequisites/on-prem-databases/elasticsearch',
-                          'prerequisites/on-prem-databases/gbase-8a',
-                          'prerequisites/on-prem-databases/gbase-8s',
                           'prerequisites/on-prem-databases/hive1',
                           'prerequisites/on-prem-databases/hive3',
-                          'prerequisites/on-prem-databases/informix',
-                          'prerequisites/on-prem-databases/kingbase-es-r3',
-                          'prerequisites/on-prem-databases/kingbase-es-r6',
                           'prerequisites/on-prem-databases/mariadb',
                           'prerequisites/on-prem-databases/mongodb',
                           'prerequisites/on-prem-databases/mongodb-below34',
@@ -64,13 +57,9 @@ const sidebars = {
                           'prerequisites/on-prem-databases/mysql',
                           'prerequisites/on-prem-databases/mysql-pxc',
                           'prerequisites/on-prem-databases/oceanbase',
-                          'prerequisites/on-prem-databases/oceanbase-oracle',
                           'prerequisites/on-prem-databases/opengauss',
-                          'prerequisites/on-prem-databases/oracle',
                           'prerequisites/on-prem-databases/postgresql',
                           'prerequisites/on-prem-databases/redis',
-                          'prerequisites/on-prem-databases/sqlserver',
-                          'prerequisites/on-prem-databases/sybase',
                           'prerequisites/on-prem-databases/tdengine',
                           'prerequisites/on-prem-databases/tidb',
                           'prerequisites/on-prem-databases/vastbase',
@@ -88,7 +77,6 @@ const sidebars = {
                            'prerequisites/cloud-databases/aliyun-rds-for-mongodb',
                            'prerequisites/cloud-databases/aliyun-rds-for-mysql',
                            'prerequisites/cloud-databases/aliyun-rds-for-pg',
-                           'prerequisites/cloud-databases/aliyun-rds-for-sql-server',
                            'prerequisites/cloud-databases/amazon-rds-mysql',
                            'prerequisites/cloud-databases/huawei-cloud-gaussdb',
                            'prerequisites/cloud-databases/polardb-mysql',                           
@@ -96,8 +84,6 @@ const sidebars = {
                            'prerequisites/cloud-databases/tencentdb-for-mariadb',
                            'prerequisites/cloud-databases/tencentdb-for-mongodb',
                            'prerequisites/cloud-databases/tencentdb-for-pg',
-                           'prerequisites/cloud-databases/tencentdb-for-sql-server',
-                           'prerequisites/cloud-databases/tencentdb-td-mysql',
                           ]
                    },
                   {
@@ -106,23 +92,10 @@ const sidebars = {
                    link: {type: 'doc', id: 'prerequisites/mq-and-middleware/README'},
                    items: [
                            'prerequisites/mq-and-middleware/activemq',
-                           'prerequisites/mq-and-middleware/ai-chat',
-                           'prerequisites/mq-and-middleware/bes-channels',
                            'prerequisites/mq-and-middleware/hazelcast-cloud',
                            'prerequisites/mq-and-middleware/kafka',
                            'prerequisites/mq-and-middleware/rabbitmq',
                            'prerequisites/mq-and-middleware/rocketmq',
-                          ]
-                   },
-                   {
-                   type: 'category',
-                   label: '客户管理与销售运营分析',
-                   link: {type: 'doc', id: 'prerequisites/crm-and-sales-analytics/README'},
-                   items: [
-                           'prerequisites/crm-and-sales-analytics/hubspot',
-                           'prerequisites/crm-and-sales-analytics/metabase',
-                           'prerequisites/crm-and-sales-analytics/salesforce',
-                           'prerequisites/crm-and-sales-analytics/zoho-crm',
                           ]
                    },
                    {
@@ -131,24 +104,9 @@ const sidebars = {
                     link: {type: 'doc', id: 'prerequisites/saas-and-api/README'},
                     items: [
                             'prerequisites/saas-and-api/coding',
-                            'prerequisites/saas-and-api/feishu-bitable',
-                            'prerequisites/saas-and-api/github',
-                            'prerequisites/saas-and-api/lark-approval',
-                            'prerequisites/saas-and-api/lark-doc',
-                            'prerequisites/saas-and-api/lark-im',
-                            'prerequisites/saas-and-api/lark-task',
                             'prerequisites/saas-and-api/quick-api',
                             'prerequisites/saas-and-api/vika',
                             'prerequisites/saas-and-api/zoho-desk',
-                           ]
-                   },
-                   {
-                    type: 'category',
-                    label: '电商平台',
-                    link: {type: 'doc', id: 'prerequisites/e-commerce/README'},
-                    items: [
-                            'prerequisites/e-commerce/alibaba-1688',
-                            'prerequisites/e-commerce/shein',
                            ]
                    },
                    {

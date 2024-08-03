@@ -1,8 +1,6 @@
 # Informix
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Informix is a product family within IBM's Information Management division that is centered on several relational database management system and Multi-model database offerings.
 
@@ -10,7 +8,7 @@ This article describes how to connect to Informix data sources on TapData Cloud.
 
 ## Connect to Informix
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 

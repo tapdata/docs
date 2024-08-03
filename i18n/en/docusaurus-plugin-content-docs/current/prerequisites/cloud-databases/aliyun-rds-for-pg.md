@@ -1,8 +1,6 @@
 # Aliyun RDS for PostgreSQL
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Follow the instructions below to successfully add and use PostgreSQL database in TapData Cloud.
 

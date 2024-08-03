@@ -1,8 +1,6 @@
 # Excel
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Excel is a wide range of data statistics and data analysis software. TapData supports reading Excel files stored on local, FTP, SFTP, SMB, or S3FS to meet a variety of data flow needs.
 
@@ -54,7 +52,7 @@ import Content3 from '../../reuse-content/_files_on_oss.md';
 
 ## Connect to Excel
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 

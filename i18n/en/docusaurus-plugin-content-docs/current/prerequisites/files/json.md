@@ -1,8 +1,6 @@
 # JSON
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on JavaScript object syntax. It is commonly used for transmitting data in web applications. 
 
@@ -50,7 +48,7 @@ import Content3 from '../../reuse-content/_files_on_oss.md';
 
 ## Connect to JSON
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 

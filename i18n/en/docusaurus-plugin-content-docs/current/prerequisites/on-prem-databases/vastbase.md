@@ -1,8 +1,6 @@
 # Vastbase
 
-import Content from '../../reuse-content/_all-features.md';
-
-<Content />
+Log in to TapData Platform.
 
 Vastbase is an enterprise-level relational database based on the open-source openGauss kernel. It adds numerous Oracle-compatible features and security enhancements to the original functionality, along with enterprise-level capabilities in specialized application areas such as GIS and stream computing. TapData supports using Vastbase as either a source or target database to build data pipelines. This document explains how to add a Vastbase data source in TapData.
 
@@ -201,7 +199,7 @@ In this example, we will use Vastbase's built-in [wal2json](https://docs.vastdat
 
 
 ## Add Data Source
-1. [Log in to the TapData platform](../../user-guide/log-in.md).
+1. Log in to the TapData platform.
 
 2. In the left navigation bar, click **Connections**.
 
@@ -226,7 +224,7 @@ In this example, we will use Vastbase's built-in [wal2json](https://docs.vastdat
    * **Advanced Settings**
       * **Additional Parameters**: Additional connection parameters, default is empty.
       * **Timezone**: Defaults to the time zone used by the database, which you can also manually specify according to your business needs.
-      * **CDC Log Caching**: [Mining the source database's](../../user-guide/advanced-settings/share-mining.md) incremental logs, this feature allows multiple tasks to share incremental logs from the source database, avoiding redundant reads and thus significantly reducing the load on the source database during incremental synchronization. Upon enabling this feature, an external storage should be selected to store the incremental log.
+      * **CDC Log Caching**: Mining the source database's incremental logs, this feature allows multiple tasks to share incremental logs from the source database, avoiding redundant reads and thus significantly reducing the load on the source database during incremental synchronization. Upon enabling this feature, an external storage should be selected to store the incremental log.
       * **Contain Table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
       * **Exclude tables**: Once the switch is enabled, you have the option to specify tables to be excluded. You can do this by listing the table names separated by commas (,) in case there are multiple tables to be excluded.
       * **Agent Settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.

@@ -1,8 +1,6 @@
 # BigQuery
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 TapData Cloud offers seamless support for data synchronization and data transformation tasks using [BigQuery](https://cloud.google.com/bigquery/docs) as the target database. BigQuery is a highly efficient, serverless, and cost-effective enterprise data warehouse that provides extensive capabilities for BI (Business Intelligence), machine learning, and AI (Artificial Intelligence). With TapData Cloud, you can easily integrate BigQuery data sources into your workflows. 
 
@@ -10,8 +8,7 @@ This article serves as a comprehensive guide, providing step-by-step instruction
 
 ## Precautions
 
-[Agent](../../quick-start/install/install-tapdata-agent.md)'s machine can access to Google Cloud Services.
-
+Agent's machine can access to Google Cloud Services.
 
 
 ## Preparations
@@ -92,7 +89,7 @@ This article serves as a comprehensive guide, providing step-by-step instruction
 
 ## Connect to BigQuery
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 
@@ -119,6 +116,3 @@ This article serves as a comprehensive guide, providing step-by-step instruction
 
    :::
 
-## Related Topics
-
-[MySQL to BigQuery Real-Time Sync](../../pipeline-tutorial/mysql-to-bigquery.md)

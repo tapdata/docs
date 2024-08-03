@@ -1,8 +1,6 @@
 # OceanBase
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 OceanBase Database is a financial-grade distributed relational database. TapData Cloud supports using OceanBase as a target database to help you quickly build data flow links. Next, we will introduce how to connect to an OceanBase data source on the TapData Cloud.
 
@@ -10,9 +8,7 @@ OceanBase Database is a financial-grade distributed relational database. TapData
 
 OceanBase 3.x
 
-import Content1 from '../../reuse-content/_alpha.md';
-
-<Content1 />
+Log in to TapData Platform.
 
 ## Preparation
 

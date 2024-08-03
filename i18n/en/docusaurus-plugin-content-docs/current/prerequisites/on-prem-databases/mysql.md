@@ -1,8 +1,6 @@
 # MySQL
 
-import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content1 />
 
 MySQL, the highly popular open-source relational database, is widely utilized as a relational data store by numerous websites, applications, and commercial products.
 
@@ -45,7 +43,7 @@ import TabItem from '@theme/TabItem';
 Example: Create an account named tapdata.
 
 ```sql
-CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
+CREATE USER 'tapdata'@'%' IDENTIFIED BY 'your_password';
 ```
 
 
@@ -130,7 +128,7 @@ GRANT SELECT ON *.* TO 'username' IDENTIFIED BY 'password';</pre>
 Example: Create an account named tapdata.
 
 ```sql
-CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
+CREATE USER 'tapdata'@'%' IDENTIFIED BY 'your_password';
 ```
 
 
@@ -205,7 +203,7 @@ To further enhance the security of the data connection, you can choose to enable
 
 ## Connect to MySQL
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 
@@ -234,7 +232,7 @@ To further enhance the security of the data connection, you can choose to enable
 
           For instance, let's consider a scenario where the source database operates in the default database time zone (+8:00), while the target database has a specified time zone of +0:00. In this case, if the source database stores a timestamp as **2020-01-01 16:00:00**, the same timestamp will be interpreted as **2020-01-01 08:00:00** in the target database due to the time zone conversion.
 
-        * **CDC Log Caching**: [Mining the source database's](../../user-guide/advanced-settings/share-mining.md) incremental logs, this feature allows multiple tasks to share incremental logs from the source database, avoiding redundant reads and thus significantly reducing the load on the source database during incremental synchronization. Upon enabling this feature, an external storage should be selected to store the incremental log.
+        * **CDC Log Caching**: Mining the source database's incremental logs, this feature allows multiple tasks to share incremental logs from the source database, avoiding redundant reads and thus significantly reducing the load on the source database during incremental synchronization. Upon enabling this feature, an external storage should be selected to store the incremental log.
 
         * **Contain table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
 
@@ -282,7 +280,4 @@ To further enhance the security of the data connection, you can choose to enable
    FLUSH PRIVILEGES;
    ```
 
-## Related Topics
-
-[MySQL to BigQuery Real-Time Sync](../../pipeline-tutorial/mysql-to-bigquery.md)
 

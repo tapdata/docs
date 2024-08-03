@@ -1,8 +1,6 @@
 # ClickHouse
 
-import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content1 />
 
 ClickHouse® is a high-performance, column-oriented SQL database management system (DBMS) for online analytical processing (OLAP). 
 
@@ -10,15 +8,25 @@ TapData Cloud supports the creation of data pipelines with ClickHouse as the tar
 
 ## Supported Versions
 
-ClickHouse v21.x
+ClickHouse 20.x, 21.x, 22.x, 23.x and 24.x
 
-import Content from '../../reuse-content/_certificate.md';
 
-<Content />
 
 ## Precautions
 
-If binary-related fields are included, you need to remove them via field mapping for data synchronization/development.
+- ClickHouse currently does not support binary-related field types. If such fields are included in the data synchronization/configuration tasks, they can be removed through field mapping; otherwise, they will be automatically converted to Base64 strings upon writing.
+
+- When using ClickHouse as a target database, you can set the merge interval for partitions in the advanced configuration of the ClickHouse node to adjust the frequency of [Optimize Table](https://clickhouse.com/docs/en/sql-reference/statements/optimize) operations, thus achieving a balance between performance and data consistency.
+
+- When using ClickHouse as a source database for incremental synchronization, it employs a field polling method. This means periodically querying a specified column in the database table (such as a timestamp or an incrementing identifier column) to detect data changes.
+
+  :::tip
+
+  In this scenario, DDL operations are not supported for synchronization.
+
+  :::
+
+
 
 ## Preparations
 
@@ -44,7 +52,7 @@ If binary-related fields are included, you need to remove them via field mapping
    Example: Create an account named **tapdata** , using the sha256_password protection mechanism, allowing it to log in from any host.
 
    ```sql
-   CREATE USER tapdata HOST ANY IDENTIFIED WITH sha256_password BY 'Tap@123456';
+   CREATE USER tapdata HOST ANY IDENTIFIED WITH sha256_password BY 'your_password';
    ```
 
 3. To grant permissions to the account you have just created, it is advisable to implement more granular permission controls based on your business needs. For detailed instructions on authorization syntax and further information, see [authorization syntax](https://clickhouse.com/docs/en/sql-reference/statements/grant).
@@ -60,7 +68,7 @@ If binary-related fields are included, you need to remove them via field mapping
 
 ## Connect to ClickHouse
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 

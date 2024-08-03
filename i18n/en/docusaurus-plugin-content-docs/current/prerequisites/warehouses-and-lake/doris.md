@@ -1,8 +1,6 @@
 # Doris
 
-import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content1 />
 
 Apache Doris is a new-generation open-source real-time data warehouse based on MPP architecture, with easier use and higher performance for big data analytics. TapData Cloud supports Doris as a source or target database to build data pipelines to help you quickly complete data flow in big data analytics scenarios.
 
@@ -17,15 +15,13 @@ import TabItem from '@theme/TabItem';
 
 Dorix 1.x, 2.x
 
-import Content from '../../reuse-content/_beta.md';
-
-<Content />
+Log in to TapData Platform.
 
 
 
 ## Precautions
 
-If you want to use Doris as the source database to synchronize incremental data changes, you need to [create a data transformation task](../../user-guide/data-pipeline/data-development/create-task.md) and select **Incremental Synchronization Method** as the **Polling**.
+If you want to use Doris as the source database to synchronize incremental data changes, you need to create a data transformation task and select **Incremental Synchronization Method** as the **Polling**.
 
 ## Preparations
 
@@ -42,7 +38,7 @@ If you want to use Doris as the source database to synchronize incremental data 
    Example: Create an account named tapdata.
 
    ```sql
-   CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
+   CREATE USER 'tapdata'@'%' IDENTIFIED BY 'your_password';
    ```
 
 2. Grant permissions to the account we just created, we recommend setting more granular permissions control based on business needs.
@@ -79,7 +75,7 @@ Please replace the username, password, and host in the command above.
 
 ## Connect to Doris
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 

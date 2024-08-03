@@ -1,8 +1,6 @@
 # Dameng
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Dameng Database Management System (DM) is a new generation of large-scale general-purpose relational databases, providing comprehensive support for SQL standards and mainstream programming language interfaces/development frameworks. It adopts row-column hybrid storage technology, achieving a balance between OLAP and OLTP, and satisfying the needs of HTAP hybrid application scenarios.
 
@@ -12,9 +10,7 @@ After completing the Agent deployment, you can follow this tutorial to add a Dam
 
 DM 7.x, 8.x
 
-import Content1 from '../../reuse-content/_beta.md';
 
-<Content1 />
 
 ## Prerequisites
 
@@ -96,9 +92,9 @@ Before connecting to the Dameng database, you need to complete some preparatory 
    GRANT CREATE TABLE, DELETE TABLE, INSERT TABLE, SELECT TABLE, UPDATE TABLE, CREATE INDEX TO username;
    ```
 
-## Adding a Data Source
+## Connect to Dameng
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation bar, click **Connections**.
 

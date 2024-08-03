@@ -1,8 +1,6 @@
 # MySQL PXC
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Please follow the instructions below to successfully add and use MySQL PXC databases in TapData.
 

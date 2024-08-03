@@ -1,8 +1,6 @@
 # TiDB
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 TiDB is an open-source distributed relational database designed and developed by PingCAP. It is a distributed database product that supports both online transaction processing and online analytical processing. After completing the Agent deployment, you can follow this tutorial to add a TiDB data source in TapData and use it as a source or target database to build data pipelines.
 
@@ -19,19 +17,28 @@ To further simplify the usage process, TapData's TiDB connector integrates TiCDC
 
 ## Supported Versions
 
-TiDB 6.0.0 and above
+* **Full Data Synchronization**: All versions
+* **Incremental Data Synchronization**: 6.0.0 to 8.1.9
+
+## Supported Data Types
+
+* **Full Data Synchronization**: BIGINT, BIGINT UNSIGNED, BINARY, BIT, BLOB, BOOLEAN, CHAR, DATE, DATETIME, DECIMAL, DECIMAL UNSIGNED, DOUBLE, DOUBLE UNSIGNED, ENUM, FLOAT, INT, INT UNSIGNED, INTEGER, JSON, LONGBLOB, LONGTEXT, MEDIUMBLOB, MEDIUMINT, MEDIUMINT UNSIGNED, MEDIUMTEXT, SET, SMALLINT, SMALLINT UNSIGNED, TEXT, TIME, TIMESTAMP, TINYBLOB, TINYINT, TINYINT UNSIGNED, TINYTEXT, VARBINARY, VARCHAR, YEAR
+* **Incremental Data Synchronization**: BIGINT, BIGINT UNSIGNED, BINARY, BIT, BLOB, BOOLEAN, CHAR, CLOB, DATE, DATETIME, DECIMAL, DOUBLE, ENUM, FLOAT, INT, INT UNSIGNED, INTEGER, JSON, LONGBLOB, LONGTEXT, MEDIUMBLOB, MEDIUMINT, MEDIUMINT UNSIGNED, MEDIUMTEXT, REAL, SET, SMALLINT, SMALLINT UNSIGNED, TEXT, TIME, TIMESTAMP, TINYBLOB, TINYINT, TINYINT UNSIGNED, TINYTEXT, VARBINARY, VARCHAR, YEAR
+
+## Supported Sync Operations
+
+- **DML**: INSERT, UPDATE, DELETE
+- **DDL**: ADD COLUMN, CHANGE COLUMN, DROP COLUMN
 
 ## Precautions
 
 * To ensure proper data synchronization, the TiDB cluster and the TapData engine (Agent) must be on the same intranet and able to communicate properly.
-
 * When using TiDB as a source for incremental data synchronization, you need to check the following:
 
-  * The tables to be synchronized must have a primary key or unique index, where the columns in the unique index cannot be NULL and cannot be virtual columns.
-
+  * To further simplify the usage process, TapData's TiDB connector integrates the [TiFlow component](https://github.com/pingcap/tiflow) (version 8.1.0), which parses the data change logs into ordered row-level change data. For more information on the principles and concepts, see the [TiCDC Overview](https://docs.pingcap.com/zh/tidb/stable/ticdc-overview).
+* The tables to be synchronized must have a primary key or unique index, where the columns in the unique index cannot be NULL and cannot be virtual columns.
   * To avoid TiCDC garbage collection affecting transaction or incremental data extraction, it is recommended to set `SET GLOBAL tidb_gc_life_time= '24h'` to 24 hours.
-
-  * Due to communication restrictions between TiDB components, when using Tapdata Cloud, the deployed Agent must be a [semi-managed instance](../../faq/agent-installation#semi-and-full-agent). 
+* Due to communication restrictions between TiDB components, when using Tapdata Cloud, the deployed Agent must be a [semi-managed instance](../../faq/agent-installation#semi-and-full-agent). 
 
 ## <span id="prerequisite">Preparation</span>
 
@@ -81,7 +88,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMP
 
 ## Connect to TiDB
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 
@@ -104,7 +111,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMP
    * **Advanced Settings**:
       * **Other Connection String Parameters**: Additional connection parameters, which are empty by default.
       * **Timezone for Time Types**: Default to the timezone used by the database. You can also manually specify it based on your business requirements.
-      * **CDC Log Caching**: [Mining the source database's](../../user-guide/advanced-settings/share-mining.md) incremental logs, this feature allows multiple tasks to share incremental logs from the source database, avoiding redundant reads and thus significantly reducing the load on the source database during incremental synchronization. Upon enabling this feature, an external storage should be selected to store the incremental log. This parameter is required only when used as a source database.
+      * **CDC Log Caching**: Mining the source database's incremental logs, this feature allows multiple tasks to share incremental logs from the source database, avoiding redundant reads and thus significantly reducing the load on the source database during incremental synchronization. Upon enabling this feature, an external storage should be selected to store the incremental log. This parameter is required only when used as a source database.
       * **Contain Tables**: Default to **All**, and you can also customize and list the tables to include, separated by commas (,).
       * **Exclude Tables**: When enabled, you can specify tables to exclude, separated by commas (,).
       * **Agent Setting**: Default to **Platform Auto Allocation**, but you can also specify it manually.

@@ -1,8 +1,6 @@
 # ActiveMQ
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Please follow the instructions below to ensure successful addition and usage of ActiveMQ in TapData Cloud.
 

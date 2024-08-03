@@ -1,8 +1,6 @@
 # SQL Server
 
-import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content1 />
 
 TapData Cloud provides comprehensive support for building data pipelines utilizing Microsoft SQL Server as both the source and target database. Microsoft SQL Server is a highly regarded relational database management system developed by Microsoft.
 
@@ -21,6 +19,39 @@ This article uses SQL Server 2017, which was deployed on Windows Server 2019 as 
 <details>
 <summary>SQL Server 2005 as a Source Database Solution</summary>
 Since CDC support starts with SQL Server 2008, for earlier versions, you need to use the Custom SQL feature to simulate change data capture. When copying data from an older version, the source table must have a change tracking column, such as <b>last_updated_time</b>, which is updated each time a record is inserted or updated. Then, when creating a data replication task, the task's synchronization type is selected to be <b>full</b>, and the <b>custom SQL</b> is set to <b>true</b> for repeated runs, while providing the appropriate custom SQL for the mapping design.
+</details>
+
+
+
+## Precautions
+
+When using SQL Server as a source database, if you perform DDL operations (such as adding fields) on the tables for incremental synchronization, you need to follow the steps below to restart Change Data Capture. Otherwise, issues like data not syncing or errors may occur.
+
+<details>
+<summary>Restart Change Data Capture for the table</summary>
+
+```sql
+-- Disable Change Data Capture for the table
+go
+EXEC sys.sp_cdc_disable_table
+@source_schema = N'[Schema]',
+@source_name = N'[Table]',
+@capture_instance = N'[Schema_Table]'
+go
+-- The capture_instance is generally a combination of schema and table names. You can query the actual value using the following command
+exec sys.sp_cdc_help_change_data_capture
+@source_schema = N'[Schema]',
+@source_name = N'[Table]';
+
+-- Enable Change Data Capture for the table
+use [DatabaseName]
+go
+EXEC sys.sp_cdc_enable_table
+@source_schema = N'[Schema]',
+@source_name = N'[Table]',
+@role_name = N'[Role]'
+go
+```
 
 </details>
 
@@ -92,7 +123,7 @@ import Content from '../../reuse-content/_preparations.md';
 
    ```sql
    -- Create a login user
-   CREATE LOGIN tapdata WITH password='Tap@123456', default_database=demodata;
+   CREATE LOGIN tapdata WITH password='your_password', default_database=demodata;
 
    -- Create a database user
    CREATE USER tapdata FOR LOGIN tapdata with default_schema=dbo;
@@ -146,7 +177,7 @@ import Content from '../../reuse-content/_preparations.md';
 
    ```sql
    -- Create a login user
-   CREATE LOGIN tapdata WITH password='Tap@123456', default_database=demodata;
+   CREATE LOGIN tapdata WITH password='your_password', default_database=demodata;
 
    -- Create a database user
    CREATE USER tapdata FOR LOGIN tapdata with default_schema=dbo;
@@ -191,7 +222,7 @@ After completing the configuration, be sure to securely store the certificate-re
 
 ## Connect to SQL Server
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 
@@ -218,7 +249,7 @@ After completing the configuration, be sure to securely store the certificate-re
       * **Connection Parameter String**: Additional connection parameters, default empty.
       * **Timezone**: Defaults to the time zone used by the database, which you can also manually specify according to your business needs.
       * **Use SSL/TLS**: Select whether to enable SSL connections for the data source to further enhance data security. After enabling this feature, you will also need to upload the CA certificate, certificate password, and server hostname. The relevant files can be obtained from [Enabling SSL Connection](#ssl).
-      * **CDC Log Caching**: [Mining the source database's](../../user-guide/advanced-settings/share-mining.md) incremental logs, this feature allows multiple tasks to share incremental logs from the source database, avoiding redundant reads and thus significantly reducing the load on the source database during incremental synchronization. Upon enabling this feature, an external storage should be selected to store the incremental log.
+      * **CDC Log Caching**: Mining the source database's incremental logs, this feature allows multiple tasks to share incremental logs from the source database, avoiding redundant reads and thus significantly reducing the load on the source database during incremental synchronization. Upon enabling this feature, an external storage should be selected to store the incremental log.
       * **Contain table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
       * **Exclude tables**: Once the switch is enabled, you have the option to specify tables to be excluded. You can do this by listing the table names separated by commas (,) in case there are multiple tables to be excluded.
       * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
@@ -253,34 +284,6 @@ This section describes the issues you may encounter when using the Change Data C
        @retention = 2880;  
    GO
    ```
-
-* If you perform a DDL operation (such as adding fields) on the fields of the incremental synchronization table, you need to perform the following operation to restart the CDC, otherwise, the data cannot be synchronized or an error is reported.
-
-   ```sql
-   -- Disable the CDC for table
-   go
-   EXEC sys.sp_cdc_disable_table
-   @source_schema = N'schema_name',
-   @source_name = N'table_name',
-   @capture_instance = N'Schema_Table'
-   go
-   // The capture_instance is usually concatenated in the format of schema_table.
-   // You can use the following command to query the actual value.
-   exec sys.sp_cdc_help_change_data_capture
-   @source_schema = N'schema_name',
-   @source_name = N'table_name';
-   
-   -- Enable the CDC for table
-   use database_name
-   go
-   EXEC sys.sp_cdc_enable_table
-   @source_schema = N'schemas',
-   @source_name = N'table_name',
-   @role_name = N'role_name'
-   go
-   ```
-
-
 
 * Turn on Global Change Data Capture
 

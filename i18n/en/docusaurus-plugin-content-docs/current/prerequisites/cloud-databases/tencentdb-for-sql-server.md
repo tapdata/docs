@@ -1,8 +1,6 @@
 # TencentDB for SQL Server
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Tencent Cloud TencentDB for SQL Server is one of the most popular commercial databases in the industry, providing perfect compatibility with Windows-based applications. 
 
@@ -15,7 +13,7 @@ SQL Server 2005, 2008, 2008 R2, 2012, 2014, 2016, and 2017.
 
 ## Connect to TencentDB for SQL Server
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 

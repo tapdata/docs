@@ -1,8 +1,6 @@
 # PolarDB MySQL
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Follow the instructions below to successfully add and use PolarDB MySQL database in TapData Cloud.
 

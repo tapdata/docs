@@ -1,8 +1,6 @@
 # MongoDB Atlas
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 MongoDB Atlas is a multi-cloud application data platform provided by MongoDB. TapData Cloud supports building data pipelines with MongoDB Atlas as the source or target database.
 
@@ -65,7 +63,7 @@ Before establishing the connection, it is essential to complete the necessary pr
 
 ## Connect to MongoDB Atlas
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 

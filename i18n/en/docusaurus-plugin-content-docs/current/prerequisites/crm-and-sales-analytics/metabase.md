@@ -1,8 +1,6 @@
 # Metabase
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 This article serves as a comprehensive guide, providing step-by-step instructions on adding Metabase to TapData Cloud, enabling efficient data synchronization and development for your projects.
 

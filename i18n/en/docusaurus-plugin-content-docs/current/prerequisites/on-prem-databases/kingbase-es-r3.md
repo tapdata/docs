@@ -1,8 +1,6 @@
 # KingbaseES-R3
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 The Kingbase Database Management System (KingbaseES) is a commercial relational database management system developed independently by Beijing Kingbase Technology Inc, with proprietary intellectual property rights. This article will introduce how to add KingbaseES-R3 data source in TapData Cloud, which can then be used as a source or target database to build data pipelines.
 
@@ -15,9 +13,7 @@ import TabItem from '@theme/TabItem';
 
 KingBaseES-V8R3
 
-import Content1 from '../../reuse-content/_alpha.md';
-
-<Content1 />
+Log in to TapData Platform.
 
 ## Prerequisites
 
@@ -74,7 +70,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE, TRUNCATE ON ALL TABLES IN SCHEMA schema_na
 
 ## Connect to KingbaseES-R3
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 

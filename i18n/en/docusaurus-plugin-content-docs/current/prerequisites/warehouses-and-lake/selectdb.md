@@ -1,8 +1,6 @@
 # SelectDB
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 SelectDB is a cloud-native real-time data warehouse built on the basis of Apache Doris by the same core developers. 
 
@@ -32,7 +30,7 @@ GRANT PROCESS ON *.* TO 'tapdata' IDENTIFIED BY 'password';
 
 ## Connect to SelectDB
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 

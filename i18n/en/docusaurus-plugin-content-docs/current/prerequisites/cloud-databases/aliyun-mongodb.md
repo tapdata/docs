@@ -1,8 +1,6 @@
 # Aliyun MongoDB
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Please follow the instructions below to ensure that the Aliyun MongoDB database is successfully added and used in TapData Cloud.
 

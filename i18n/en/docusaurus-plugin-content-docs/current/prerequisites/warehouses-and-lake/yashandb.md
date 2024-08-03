@@ -1,16 +1,12 @@
 # YashanDB
 
-import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content1 />
 
 YashanDB is powered by Bounded Evaluation, which uniquely delivers Just in Time analytic capabilities focusing on conquering some of the challenges surrounding big data characterized by Volume, Velocity and Variety. TapData Cloud supports using YashanDB as a target database to build data pipelines, facilitating rapid data transfer.
 
 This article will guide you through connecting a YashanDB data source on the TapData Cloud.
 
-import Content from '../../reuse-content/_certificate.md';
 
-<Content />
 
 ## Preparation
 

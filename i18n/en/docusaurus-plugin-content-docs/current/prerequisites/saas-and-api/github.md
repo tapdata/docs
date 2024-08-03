@@ -1,8 +1,6 @@
 # GitHub
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 GitHub is a website and cloud-based service that helps developers store and manage their code, as well as track and control changes to their code. TapData supports building data pipelines with GitHub as a source database, helping you to read the Issue and Pull Requests change data of the specified repository and synchronize to the specified data source. 
 
@@ -12,7 +10,7 @@ This article describes how to add GitHub data source to TapData Cloud.
 
 ## Procedure
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 

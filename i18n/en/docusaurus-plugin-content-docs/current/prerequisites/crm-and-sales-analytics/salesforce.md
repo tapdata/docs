@@ -1,14 +1,12 @@
 # Salesforce
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Salesforce is a massive infrastructure of customer relationship management software products that help marketing, sales, commerce, service, and IT teams connect with their customers. TapData Cloud supports building data pipelines with Salesforce as a source database, and this article describes how to add Salesforce data sources to TapData Cloud.
 
 ## Connect to Salesforce
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 

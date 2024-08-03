@@ -1,8 +1,6 @@
 # Quick API
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 ### 1. Fill in the connection name (required)
 

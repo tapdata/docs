@@ -1,8 +1,6 @@
 # KingbaseES-R6
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 The Kingbase Database Management System (KingbaseES) is a commercial relational database management system developed independently by Beijing Kingbase Technology Inc, with proprietary intellectual property rights. KingbaseES-R6 is compatible with most features of Postgres 9.6 version. This article will introduce how to add KingbaseES-R6 data source in TapData Cloud, which can then be used as a source or target database to build data pipelines.
 
@@ -21,9 +19,7 @@ The database modes supported by KingbaseES-R6 are Oracle, PostgreSQL, and MySQL.
 
 :::
 
-import Content1 from '../../reuse-content/_beta.md';
 
-<Content1 />
 
 ## Prerequisites
 
@@ -86,12 +82,12 @@ GRANT SELECT, INSERT, UPDATE, DELETE, TRUNCATE ON ALL TABLES IN SCHEMA schema_na
    - **schema_name**: The name of the schema.
    - **table_name**: The name of the table.
 
-   After completing this operation, you will also need to contact [technical support](../../support.md) to provide the relevant plugin for installation on the server hosting KingbaseES-R6.
+   After completing this operation, you will also need to contact technical support to provide the relevant plugin for installation on the server hosting KingbaseES-R6.
 
 
 ## Connect to KingbaseES-R6
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 
@@ -116,7 +112,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE, TRUNCATE ON ALL TABLES IN SCHEMA schema_na
      * **Log Plugin Name**: To read the data changes of KingbaseES-R6 and achieve incremental data synchronization, you need to complete the installation of the plugin according to the guidance of the [preparations](#preparations).
    * **Advanced Settings**
      * **Timezone**: Defaults to the time zone used by the database, which you can also manually specify according to your business needs.
-     * **CDC Log Caching**: [Mining the source database's](../../user-guide/advanced-settings/share-mining.md) incremental logs, this feature allows multiple tasks to share incremental logs from the source database, avoiding redundant reads and thus significantly reducing the load on the source database during incremental synchronization. Upon enabling this feature, an external storage should be selected to store the incremental log.
+     * **CDC Log Caching**: Mining the source database's incremental logs, this feature allows multiple tasks to share incremental logs from the source database, avoiding redundant reads and thus significantly reducing the load on the source database during incremental synchronization. Upon enabling this feature, an external storage should be selected to store the incremental log.
      * **Contain Table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
      * **Exclude Tables**: Once the switch is enabled, you have the option to specify tables to be excluded. You can do this by listing the table names separated by commas (,) in case there are multiple tables to be excluded.
      * **Agent Settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.

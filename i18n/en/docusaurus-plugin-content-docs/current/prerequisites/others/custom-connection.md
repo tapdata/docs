@@ -1,8 +1,6 @@
 # Custom Connection
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 If the existing data sources don't meet your requirements, you can create custom connections based on your business needs. This article outlines the configuration process.
 

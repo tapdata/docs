@@ -1,8 +1,6 @@
 # Coding
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Coing provides a one-stop R&D management platform and cloud-native development tools to help enterprises improve R&D management efficiency.
 

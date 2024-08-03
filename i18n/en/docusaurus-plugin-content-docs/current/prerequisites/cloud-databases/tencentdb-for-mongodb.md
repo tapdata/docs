@@ -1,8 +1,6 @@
 # TencentDB for MongoDB
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 ## Supported versions
 

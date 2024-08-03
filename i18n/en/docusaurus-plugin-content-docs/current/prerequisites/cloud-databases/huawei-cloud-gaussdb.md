@@ -1,8 +1,6 @@
 # Huawei Cloud GaussDB
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 GaussDB is a distributed relational database independently developed by Huawei, supporting distributed transactions, cross-AZ deployment, and zero data loss. It offers scalability of over 1000 nodes, PB-level massive storage, providing enterprises with a comprehensive, stable, reliable, scalable, and high-performance enterprise-grade database service. TapData supports using GaussDB as a source or target database, helping you quickly build data flow pipelines. Next, we will introduce how to connect GaussDB data sources in the TapData platform.
 
@@ -74,7 +72,7 @@ To achieve incremental data reading, TapData requires Huawei Cloud GaussDB's [lo
 
 ## Connect to GaussDB
 
-1. [Log in to the TapData platform](../../user-guide/log-in.md).
+1. Log in to the TapData platform.
 
 2. In the left navigation bar, click **Connection Management**.
 
@@ -102,7 +100,7 @@ To achieve incremental data reading, TapData requires Huawei Cloud GaussDB's [lo
    
    * **Advanced Settings**
    
-     * **CDC Log Caching**: [Mining the source database's](../../user-guide/advanced-settings/share-mining.md) incremental logs, this feature allows multiple tasks to share incremental logs from the source database, avoiding redundant reads and thus significantly reducing the load on the source database during incremental synchronization. Upon enabling this feature, an external storage should be selected to store the incremental log.
+     * **CDC Log Caching**: Mining the source database's incremental logs, this feature allows multiple tasks to share incremental logs from the source database, avoiding redundant reads and thus significantly reducing the load on the source database during incremental synchronization. Upon enabling this feature, an external storage should be selected to store the incremental log.
    
      * **Contain table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
    

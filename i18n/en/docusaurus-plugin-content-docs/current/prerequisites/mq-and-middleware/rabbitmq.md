@@ -1,8 +1,6 @@
 # RabbitMQ
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Please follow the instructions below to ensure successful addition and useage of RabbitMQ in TapData Cloud.
 

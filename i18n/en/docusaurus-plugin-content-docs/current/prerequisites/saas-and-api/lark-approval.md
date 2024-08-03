@@ -1,8 +1,6 @@
 # Lark Approval
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 This article describes how to connect to Lark Approval data sources on TapData Cloud.
 

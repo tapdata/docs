@@ -1,8 +1,6 @@
 # Db2
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 IBM Db2, a relational database, offers high performance, scalability, and reliability for structured data storage and management. TapData Cloud supports Db2 as both a source and target database, aiding in rapid data linkage construction. This guide introduces connecting a Db2 data source on TapData Cloud.
 
@@ -10,9 +8,7 @@ IBM Db2, a relational database, offers high performance, scalability, and reliab
 
 Db2 versions 9.7 to 11.5, deployed on LUW (Linux, Unix, Windows) platforms
 
-import Content1 from '../../reuse-content/_beta.md';
 
-<Content1 />
 
 ## Limitations
 
@@ -97,7 +93,7 @@ This article describes the steps to prepare for creating a Db2 data source conne
 
 ## Adding a Data Source
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation bar, click **Connections**.
 
@@ -118,7 +114,7 @@ This article describes the steps to prepare for creating a Db2 data source conne
      - **Schema**: Schema name, one connection per Schema. For multiple Schemas, create multiple data connections.
      - **Connection String Parameters**: Extra connection parameters, default is empty.
      - **User**, **Password**: The database username and corresponding password.
-     - **Grpc Server Host**, **Grpc Server Port**: Contact the [TapData Team](../../support.md) for raw log collection components to capture Db2 incremental data, default service port is **1031**.
+     - **Grpc Server Host**, **Grpc Server Port**: Contact the TapData Support Team for raw log collection components to capture Db2 incremental data, default service port is **1031**.
 
    * **Advanced Settings**
      - **Contain table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).

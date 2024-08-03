@@ -1,8 +1,5 @@
 # Configure Network Access
 
-import Content from '../reuse-content/_cloud-features.md';
-
-<Content />
 
 Before deploying the Agent, you need to refer to the requirements in this document and adjust the relevant firewall to ensure its communication ability. The workflow of the Agent is shown below:
 

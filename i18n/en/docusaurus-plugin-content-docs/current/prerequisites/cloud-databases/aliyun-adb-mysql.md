@@ -1,8 +1,6 @@
 # Aliyun ADB MySQL
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Please follow the instructions below to successfully add and use Aliyun ADB MySQL database in TapData Cloud.
 

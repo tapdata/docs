@@ -1,8 +1,6 @@
 # XML
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Extensible Markup Language (XML) lets you define and store data in a shareable manner. XML supports information exchange between computer systems such as websites, databases, and third-party applications. 
 
@@ -51,7 +49,7 @@ import Content3 from '../../reuse-content/_files_on_oss.md';
 
 ## Connect to XML
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 

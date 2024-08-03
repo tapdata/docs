@@ -1,16 +1,14 @@
+---
+sidebar_position: 1
+slug: /
+---
+
 # Supported Data Sources
-
-import Content from '../reuse-content/_all-features.md';
-
-<Content />
 
 TapData supports rich data sources as follows:
 
 :::tip
-
-* If you need to synchronize DDL operations, you need to enable DDL collection and DDL apply. For more information, see [Handle DDL Changes During Data Sync](../best-practice/handle-schema-changes.md).
-* The TapData Community only supports the following data sources: AWS ClickHouse, BigQuery, ClickHouse, Doris, Dummy, ElasticSearch, Kafka, MariaDB, Mock Source, Mock Target, MongoDB, MongoDB Atlas, MySQL, PostgreSQL, Redis, and TDengine.
-
+If you need to synchronize DDL operations, you need to enable DDL collection and DDL apply.
 :::
 
 
@@ -55,7 +53,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>✅</td>
-    <td>21.x</td>
+    <td>ClickHouse 20.x, 21.x, 22.x, 23.x and 24.x</td>
   </tr>
   <tr>
     <td>Kafka</td>
@@ -1022,6 +1020,5 @@ The Alpha version of the data sources is in public preview and has passed the ba
   </tr>
 </tbody>
 </table>
-
 </TabItem>
 </Tabs>

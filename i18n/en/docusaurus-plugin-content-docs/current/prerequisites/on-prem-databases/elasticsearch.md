@@ -1,8 +1,6 @@
 # Elasticsearch
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Elasticsearch is a distributed, RESTful search and analytics engine capable of addressing a growing number of use cases.
 
@@ -14,7 +12,7 @@ Elasticsearch 7.6
 
 ## Connect to Elasticsearch
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 

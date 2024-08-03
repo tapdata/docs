@@ -1,8 +1,6 @@
 # MariaDB
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 MariaDB is a versatile open-source relational database management system used for high-availability transaction data, analytics, as an embedded server, and is widely supported by various tools and applications. TapData Cloud provides comprehensive support for building data pipelines utilizing MariaDB as both the source and target database.
 
@@ -16,9 +14,7 @@ import TabItem from '@theme/TabItem';
 
 MariaDB 10.x
 
-import Content1 from '../../reuse-content/_beta.md';
 
-<Content1 />
 
 ## Preparations
 
@@ -42,7 +38,7 @@ To ensure smooth execution of tasks, you need to enable Binlog in the MariaDB da
 
    * **username**: Enter user name.
    * **password**: Enter password.
-   * **host**: Enter the host that can be accessed by the account, percent (%) means to allow all host. Example: Create an account named tapdata: `CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';`
+   * **host**: Enter the host that can be accessed by the account, percent (%) means to allow all host. Example: Create an account named tapdata: `CREATE USER 'tapdata'@'%' IDENTIFIED BY 'your_password';`
    
 2. Grant privileges to the newly created account. Below is a simplified example, and it is recommended to set more detailed permissions based on business needs.
 
@@ -127,7 +123,7 @@ GRANT SELECT ON *.* TO 'username' IDENTIFIED BY 'password';
 
    * **username**: Enter user name.
    * **password**: Enter password.
-   * **host**: Enter the host that can be accessed by the account, percent (%) means to allow all host. Example: Create an account named tapdata: `CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';`
+   * **host**: Enter the host that can be accessed by the account, percent (%) means to allow all host. Example: Create an account named tapdata: `CREATE USER 'tapdata'@'%' IDENTIFIED BY 'your_password';`
 
 2. Grant privileges to the newly created account.
 
@@ -245,7 +241,7 @@ To further enhance the security of the data link, you can choose to enable SSL (
 
 ## Connect to MariaDB
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 

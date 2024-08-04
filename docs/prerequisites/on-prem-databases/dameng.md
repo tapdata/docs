@@ -1,7 +1,5 @@
 # Dameng（达梦）
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 达梦数据库管理系统（DM）是新一代大型通用关系型数据库，全面支持 SQL 标准和主流编程语言接口/开发框架。行列融合存储技术，在兼顾 OLAP 和 OLTP 的同时，满足 HTAP 混合应用场景。
 
@@ -13,9 +11,6 @@ import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 DM 7.x、8.x
 
-import Content1 from '../../reuse-content/beta/_beta.md';
-
-<Content1 />
 
 ## 准备工作
 
@@ -103,7 +98,7 @@ import Content1 from '../../reuse-content/beta/_beta.md';
 
 ## 添加数据源
 
-1. [登录 TapData 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

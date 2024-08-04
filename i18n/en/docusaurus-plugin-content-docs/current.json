@@ -1,0 +1,190 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.附录": {
+    "message": "附录",
+    "description": "The label for category 附录 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.最佳实践": {
+    "message": "最佳实践",
+    "description": "The label for category 最佳实践 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.产品计费": {
+    "message": "产品计费",
+    "description": "The label for category 产品计费 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.常见问题": {
+    "message": "常见问题",
+    "description": "The label for category 常见问题 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.产品简介": {
+    "message": "产品简介",
+    "description": "The label for category 产品简介 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.同步实践教程": {
+    "message": "同步实践教程",
+    "description": "The label for category 同步实践教程 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.连接数据源": {
+    "message": "Connect Data Sources",
+    "description": "The label for category 连接数据源 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.云数据库": {
+    "message": "Cloud Databases",
+    "description": "The label for category 云数据库 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.客户管理与销售运营分析": {
+    "message": "CRM and Sales Analytics",
+    "description": "The label for category 客户管理与销售运营分析 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.电商平台": {
+    "message": "E-Commerce",
+    "description": "The label for category 电商平台 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.文件": {
+    "message": "Files",
+    "description": "The label for category 文件 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.消息队列与中间件": {
+    "message": "MQ and Middleware",
+    "description": "The label for category 消息队列与中间件 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.自建数据库": {
+    "message": "On-Premises Databases",
+    "description": "The label for category 自建数据库 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.其他数据源": {
+    "message": "Others",
+    "description": "The label for category 其他数据源 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.SaaS 应用与 API 服务": {
+    "message": "SaaS and APIs",
+    "description": "The label for category SaaS 应用与 API 服务 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.数据仓库与数据湖": {
+    "message": "Warehouse and Lakes",
+    "description": "The label for category 数据仓库与数据湖 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.生产部署与运维": {
+    "message": "生产部署与运维",
+    "description": "The label for category 生产部署与运维 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.快速入门": {
+    "message": "快速入门",
+    "description": "The label for category 快速入门 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.部署 Tapdata": {
+    "message": "部署 Tapdata",
+    "description": "The label for category 部署 Tapdata in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.TapData Cloud": {
+    "message": "TapData Cloud",
+    "description": "The label for category TapData Cloud in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.TapData Enterprise": {
+    "message": "TapData Enterprise",
+    "description": "The label for category TapData Enterprise in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.更新日志": {
+    "message": "更新日志",
+    "description": "The label for category 更新日志 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.reuse-content": {
+    "message": "reuse-content",
+    "description": "The label for category reuse-content in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.certificate": {
+    "message": "certificate",
+    "description": "The label for category certificate in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.故障排查": {
+    "message": "故障排查",
+    "description": "The label for category 故障排查 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.用户指南": {
+    "message": "用户指南",
+    "description": "The label for category 用户指南 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.高级功能": {
+    "message": "高级功能",
+    "description": "The label for category 高级功能 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.数据管道": {
+    "message": "数据管道",
+    "description": "The label for category 数据管道 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.数据复制": {
+    "message": "数据复制",
+    "description": "The label for category 数据复制 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.数据转换": {
+    "message": "数据转换",
+    "description": "The label for category 数据转换 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.数据服务": {
+    "message": "数据服务",
+    "description": "The label for category 数据服务 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.系统管理": {
+    "message": "系统管理",
+    "description": "The label for category 系统管理 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.其他设置": {
+    "message": "其他设置",
+    "description": "The label for category 其他设置 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.实时数据中心": {
+    "message": "实时数据中心",
+    "description": "The label for category 实时数据中心 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.数据服务平台模式": {
+    "message": "数据服务平台模式",
+    "description": "The label for category 数据服务平台模式 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.数据集成模式": {
+    "message": "数据集成模式",
+    "description": "The label for category 数据集成模式 in sidebar tutorialSidebar"
+  },
+  "sidebar.TapData.category.连接数据源": {
+    "message": "Connect Data Sources",
+    "description": "The label for category 连接数据源 in sidebar TapData"
+  },
+  "sidebar.TapData.category.数据仓库与数据湖": {
+    "message": "Warehouse and Lakes",
+    "description": "The label for category 数据仓库与数据湖 in sidebar TapData"
+  },
+  "sidebar.TapData.category.自建数据库": {
+    "message": "On-Premises Databases",
+    "description": "The label for category 自建数据库 in sidebar TapData"
+  },
+  "sidebar.TapData.category.云数据库": {
+    "message": "Cloud Databases",
+    "description": "The label for category 云数据库 in sidebar TapData"
+  },
+  "sidebar.TapData.category.消息队列与中间件": {
+    "message": "MQ and Middleware",
+    "description": "The label for category 消息队列与中间件 in sidebar TapData"
+  },
+  "sidebar.TapData.category.客户管理与销售运营分析": {
+    "message": "CRM and Sales Analytics",
+    "description": "The label for category 客户管理与销售运营分析 in sidebar TapData"
+  },
+  "sidebar.TapData.category.SaaS 应用与 API 服务": {
+    "message": "SaaS and APIs",
+    "description": "The label for category SaaS 应用与 API 服务 in sidebar TapData"
+  },
+  "sidebar.TapData.category.电商平台": {
+    "message": "E-Commerce",
+    "description": "The label for category 电商平台 in sidebar TapData"
+  },
+  "sidebar.TapData.category.文件": {
+    "message": "Files",
+    "description": "The label for category 文件 in sidebar TapData"
+  },
+  "sidebar.TapData.category.其他": {
+    "message": "Others",
+    "description": "The label for category 其他 in sidebar TapData"
+  }
+}

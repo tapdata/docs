@@ -1,7 +1,5 @@
 # Tablestore
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 阿里云[表格存储](https://help.aliyun.com/document_detail/27280.html)（Tablestore）是面向海量结构化数据提供 Serverless 表存储服务，同时针对物联网场景深度优化提供一站式的IoTstore解决方案。
 
@@ -30,7 +28,7 @@ import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 ## 添加数据源
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

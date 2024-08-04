@@ -1,7 +1,5 @@
 # Vika
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 ### 维格表限制
 

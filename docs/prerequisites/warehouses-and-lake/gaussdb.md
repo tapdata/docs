@@ -1,7 +1,5 @@
 # GaussDB（DWS）
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 数据仓库服务 GaussDB（DWS）是完全托管的企业级云上数据仓库服务，具备免运维、在线扩展、高效的多源数据加载能力，兼容 PostgreSQL 生态。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 GaussDB 数据源，后续可将其作为目标库来构建数据管道。
 
@@ -29,7 +27,7 @@ GaussDB（DWS） 8.1.3
 
 ## 连接 GaussDB
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

@@ -1,7 +1,5 @@
 # SelectDB
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 SelectDB Cloud 是基于 Apache Doris 内核打造的全托管的云原生实时数据仓库服务。本文介绍如何在 Tapdata 中连接 SelectDB Cloud （简称 SelectDB）数据源。
 
@@ -26,7 +24,7 @@ SelectDB Cloud 2.0.13 以上
 
 ## 连接 SelectDB
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

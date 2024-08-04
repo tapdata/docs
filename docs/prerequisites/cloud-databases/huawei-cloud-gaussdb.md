@@ -1,8 +1,6 @@
 # Huawei Cloud GaussDB
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 GaussDB 是华为自主创新研发的分布式关系型数据库，支持分布式事务，同城跨 AZ 部署，数据 0 丢失，支持 1000+ 的扩展能力，PB 级海量存储，可为企业提供功能全面，稳定可靠，扩展性强，性能优越的企业级数据库服务。TapData 支持将 GaussDB 作为源或目标数据库，帮助您快速构建数据流转链路。接下来，我们将介绍如何在 TapData 平台中连接 GaussDB 数据源。
 
@@ -74,7 +72,7 @@ import TabItem from '@theme/TabItem';
 
 ## 连接 GaussDB
 
-1. [登录 TapData 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 
@@ -102,7 +100,7 @@ import TabItem from '@theme/TabItem';
 
    * **高级设置**
 
-     * **共享挖掘**：[挖掘源库](../../user-guide/advanced-settings/share-mining.md)的增量日志，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力，开启该功能后还需要选择一个外存用来存储增量日志信息。
+     * **共享挖掘**：挖掘源库的增量日志，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力，开启该功能后还需要选择一个外存用来存储增量日志信息。
 
      * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。
 

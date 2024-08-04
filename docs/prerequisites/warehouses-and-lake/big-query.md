@@ -1,7 +1,5 @@
 # BigQuery
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 [BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) 是 Google Cloud 的全代管式 PB 级经济实惠的分析数据仓库，可让您近乎实时地分析大量数据。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 BigQuery 数据源，后续可将其作为目标库来构建数据管道。
 
@@ -91,7 +89,7 @@ import Content from '../../reuse-content/_all-features.md';
 
 ## 添加数据源
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

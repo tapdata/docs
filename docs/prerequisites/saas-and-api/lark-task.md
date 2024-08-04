@@ -1,7 +1,5 @@
 # LarkTask
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 飞书是一款协作与管理平台，支持即时通讯、音视频会议等功能。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加  Larktask（飞书任务）数据源，后续可将其作为目标库来构建数据管道。
 
@@ -26,7 +24,7 @@ import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 ## 添加数据源
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

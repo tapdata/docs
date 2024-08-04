@@ -1,7 +1,5 @@
 # TDengine
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 TDengine 是一款开源、高性能、云原生的时序数据库，可适用于物联网、车联网、工业互联网、金融、IT 运维等场景。本文介绍如何在 TapData 上连接 TDengine 数据源，帮助您快速实现数据流转。
 
@@ -21,7 +19,7 @@ TDengine 3.x
 
 ## 操作步骤
 
-1. [登录 TapData 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

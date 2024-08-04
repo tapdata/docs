@@ -1,14 +1,16 @@
-# 支持的数据源
-import Content from '../reuse-content/_all-features.md';
+---
+sidebar_position: 1
+slug: /
+---
 
-<Content />
+# 支持的数据源
+
 
 TapData 支持丰富的数据源，具体如下：
 
 :::tip
 
-* 如需同步 DDL 操作，您需要开启 DDL 采集和 DDL 应用，更多介绍，见[DDL 同步说明](../best-practice/handle-schema-change.md)。
-* TapData Community 仅支持 AWS ClickHouse、BigQuery、ClickHouse、Doris、Dummy、ElasticSearch、Kafka、MariaDB、Mock Source、Mock Target、MongoDB、MongoDB Atlas、MySQL、PostgreSQL、Redis、TDengine 数据源。
+如需同步 DDL 操作，您需要在配置任务时为节点开启 DDL 采集和 DDL 应用。
 
 :::
 
@@ -56,7 +58,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>✅</td>
-    <td>21.x</td>
+    <td>20.x、21.x、22.x、23.x、24.x</td>
   </tr>
   <tr>
     <td>Kafka</td>

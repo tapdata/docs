@@ -1,7 +1,5 @@
 # MySQL
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 MySQL 是应用最广泛的开源关系数据库，是许多网站、应用程序、商业产品使用的关系数据存储。完成 Agent 部署后，您可以跟随本文教程在 TapData 中添加 MySQL 数据源，后续可将其作为源或目标库来构建数据管道。
 
@@ -83,7 +81,7 @@ import Content2 from '../../reuse-content/certificate/_mysql-as-target.md';
 
 ## 添加数据源
 
-1. [登录 TapData 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 
@@ -107,7 +105,7 @@ import Content2 from '../../reuse-content/certificate/_mysql-as-target.md';
         * **连接参数**：额外的连接参数，默认为空。
         * **时区**：默认为数据库所用的时区，您也可以根据业务需求手动指定。
           如果源库为默认数据库时区（+8:00），目标端数据库为指定时区+0:00，那么假设源端数据库存储的时间为 2020-01-01 16:00:00，目标端数据库存储的时间则为 2020-01-01 08:00:00
-        * **共享挖掘**：[挖掘源库](../../user-guide/advanced-settings/share-mining.md)的增量日志，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力，开启该功能后还需要选择一个外存用来存储增量日志信息。
+        * **共享挖掘**：挖掘源库的增量日志，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力，开启该功能后还需要选择一个外存用来存储增量日志信息。
         * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。
         * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。
         * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
@@ -149,9 +147,3 @@ import Content2 from '../../reuse-content/certificate/_mysql-as-target.md';
   UPDATE mysql.user SET Grant_priv='Y' WHERE user='username';
   FLUSH PRIVILEGES;
   ```
-
-## 相关文档
-
-* [MySQL 实时同步至 Redis](../../pipeline-tutorial/mysql-to-redis.md)
-* [采集 Excel 数据至 MySQL](../../pipeline-tutorial/excel-to-mysql.md)
-* [构建数组提取链路简化数据分析](../../pipeline-tutorial/extract-array.md)

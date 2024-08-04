@@ -1,7 +1,5 @@
 # MariaDB
-import Content1 from '../../reuse-content/_all-features.md';
 
-<Content1 />
 
 MariaDB 是一个通用的开源关系数据库管理系统，可用于高可用性事务数据、分析、作为嵌入式服务器，并且广泛的工具和应用程序支持 MariaDB。完成 Agent 部署后，您可以跟随本文教程在 TapData 中添加 MariaDB 数据源，后续可将其作为源或目标库来构建数据管道。
 
@@ -11,9 +9,7 @@ import TabItem from '@theme/TabItem';
 ## 支持版本
 MariaDB 10.x
 
-import Content from '../../reuse-content/beta/_beta.md';
 
-<Content />
 
 ## 准备工作
 
@@ -30,7 +26,7 @@ import Content from '../../reuse-content/beta/_beta.md';
    * **username**：用户名。
    * **password**：密码。
    * **host**：允许该账号登录的主机，百分号（%）表示允许任意主机。
-     示例：创建一个名为 tapdata 的账号：`CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';`
+     示例：创建一个名为 tapdata 的账号：`CREATE USER 'tapdata'@'%' IDENTIFIED BY 'your_password';`
    
 2. 为刚创建的账号授予权限，简易示例如下，推荐基于业务需求设置更精细化的权限控制。
 
@@ -115,7 +111,7 @@ GRANT SELECT ON *.* TO 'username' IDENTIFIED BY 'password';
    * **username**：用户名。
    * **password**：密码。
    * **host**：允许该账号登录的主机，百分号（%）表示允许任意主机。
-     示例：创建一个名为 tapdata 的账号：`CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';`
+     示例：创建一个名为 tapdata 的账号：`CREATE USER 'tapdata'@'%' IDENTIFIED BY 'your_password';`
 
 2. 为刚创建的账号授予权限。
 
@@ -232,7 +228,7 @@ DROP ON *.* TO 'username';
 
 ## 添加数据源
 
-1. [登录 TapData 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

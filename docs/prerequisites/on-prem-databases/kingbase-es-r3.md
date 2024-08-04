@@ -1,7 +1,5 @@
 # KingbaseES-R3
-import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content1 />
 
 金仓数据库管理系统（KingbaseES）是北京人大金仓信息技术股份有限公司自主研发的、具有自主知识产权的商用关系型数据库管理系统。本文将介绍如何在 TapData 中添加 KingbaseES-R3 数据源，后续可将其作为源或目标库来构建数据管道。
 
@@ -15,9 +13,6 @@ import TabItem from '@theme/TabItem';
 
 KingBaseES-V8R3
 
-import Content from '../../reuse-content/alpha/alpha.md';
-
-<Content />
 
 ## <span id="prerequisite">准备工作</span>
 
@@ -72,7 +67,7 @@ GRANT SELECT,INSERT,UPDATE,DELETE,TRUNCATE ON ALL TABLES IN SCHEMA schemaname TO
 
 ## 添加数据源
 
-1. [登录 TapData 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

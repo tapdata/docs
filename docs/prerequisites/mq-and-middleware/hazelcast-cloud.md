@@ -1,7 +1,5 @@
 # Hazelcast
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 请遵循以下说明以确保在 Tapdata 中成功添加和使用 Hazelcast Cloud 数据库。
 
@@ -14,8 +12,8 @@ Hazelcast Cloud 5.20、5.21。可在Hazelcast集群管理中心查看版本支�
 - 以下配置，均可在Hazelcast集群配置中获取
 - 连接客户端：
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/hazelcast/img/connectingCluster.png)
+![img](../../images/connectingCluster.png)
 
 - 令牌、私钥密码、TLS/SSL协议文件：
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/hazelcast/img/parameter.png)
+![img](../../images/parameter.png)

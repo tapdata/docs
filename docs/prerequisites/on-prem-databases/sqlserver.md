@@ -1,8 +1,4 @@
 # SQL Server
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
-
-<Content />
-
 SQL Server 数据库是 Microsoft 开发设计的一个关系数据库智能管理系统（RDBMS）。完成 Agent 部署后，您可以跟随本文教程在 TapData 中添加 SQL Server 数据源，后续可将其作为源或目标库来构建数据管道。
 
 
@@ -19,6 +15,39 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017、2019、2022
 <details>
 <summary>SQL Server 2005 作为源库解决方案</summary>
 由于 CDC 支持从 SQLServer 2008 开始支持，对于较早的版本，您需要使用 Custom SQL 功能来模拟更改数据捕获，在从旧版本复制数据时，源表必须有一个更改跟踪列，比如 <b>LAST_UPDATED_TIME</b>，它在每次插入或更新记录时都会更新；随后在创建数据复制任务时，任务的同步类型选择为<b>全量</b>，将<b>重复运行自定义 SQL</b>设置为 <b>True</b>，同时在映射设计上提供适当的自定义 SQL。
+
+</details>
+
+## 注意事项
+
+SQL Server 作为源库时，如果对增量同步表的字段执行了 DDL 操作（如增加字段），您需要执行下述操作重启变更数据捕获，否则可能出现数据无法同步或报错等情况。
+
+<details>
+<summary>重启对应表的变更数据捕获</summary>
+
+```sql
+--关闭该表的变更数据捕获
+  go
+  EXEC sys.sp_cdc_disable_table
+  @source_schema = N'[Schema]',
+  @source_name = N'[Table]',
+  @capture_instance = N'[Schema_Table]'
+  go
+  // capture_instance一般为schema_table的格式拼接而成，可以通过以下命令，查询实际的值
+  exec sys.sp_cdc_help_change_data_capture
+  @source_schema = N'[Schema]',
+  @source_name = N'[Table]';
+  
+  
+  --启动该表的变更数据捕获
+  use [数据库名称]
+  go
+  EXEC sys.sp_cdc_enable_table
+  @source_schema = N'[Schema]',
+  @source_name = N'[Table]',
+  @role_name = N'[Role]'
+  go
+```
 
 </details>
 
@@ -189,7 +218,7 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017、2019、2022
 
 ## 添加数据源
 
-1. [登录 TapData 平台](../../user-guide/log-in.md)。
+1. 登录 TapData 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 
@@ -214,7 +243,7 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017、2019、2022
       * **其他连接串参数**：额外的连接参数，默认为空。
       * **时间类型的时区**：默认为数据库所用的时区，您也可以根据业务需求手动指定。
       * **使用 SSL/TLS**：选择是否开启 SSL 连接数据源，可进一步提升数据安全性，开启该功能后还需要上传 CA 证书、证书密码和服务器主机名信息，相关文件已在[开启 SSL 连接](#ssl)中获取。
-      * **共享挖掘**：[挖掘源库](../../user-guide/advanced-settings/share-mining.md)的增量日志，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力，开启该功能后还需要选择一个外存用来存储增量日志信息。
+      * **共享挖掘**：挖掘源库的增量日志，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力，开启该功能后还需要选择一个外存用来存储增量日志信息。
       * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。
       * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。
       * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
@@ -240,7 +269,7 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017、2019、2022
 
 * 清理变更数据捕获日志
 
-  SQL Server 不会自动变更数据捕获日志，需要进行如下设置开启清理任务。
+  SQL Server 不会自动清理变更数据捕获日志，需要进行如下设置开启清理任务。
 
   ```sql
   --retention 的单位为分钟，本处设定清理周期为2天
@@ -250,32 +279,6 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017、2019、2022
       @job_type = N'cleanup',  
       @retention = 2880;  
   GO 
-  ```
-
-* 如果对增量同步表的字段执行了 DDL 操作（如增加字段），您需要执行下述操作重启变更数据捕获，否则可能出现数据无法同步或报错等情况。
-
-  ```sql
-  --关闭该表的变更数据捕获
-  go
-  EXEC sys.sp_cdc_disable_table
-  @source_schema = N'[Schema]',
-  @source_name = N'[Table]',
-  @capture_instance = N'[Schema_Table]'
-  go
-  // capture_instance一般为schema_table的格式拼接而成，可以通过以下命令，查询实际的值
-  exec sys.sp_cdc_help_change_data_capture
-  @source_schema = N'[Schema]',
-  @source_name = N'[Table]';
-  
-  
-  --启动该表的变更数据捕获
-  use [数据库名称]
-  go
-  EXEC sys.sp_cdc_enable_table
-  @source_schema = N'[Schema]',
-  @source_name = N'[Table]',
-  @role_name = N'[Role]'
-  go
   ```
 
   

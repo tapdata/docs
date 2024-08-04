@@ -1,7 +1,5 @@
 # Quick API
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 ## 输入从PostMan导出的JSON格式的API文本（必填）
 
@@ -40,7 +38,7 @@ import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
   TAP_PAGE_LIMIT 对应得接口参数为 limit.
 ```
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/quickAPI/doc/TAP_TABLE.PNG)
+![img](../../images/TAP_TABLE.PNG)
 
 **补充说明：** 以上是ZoHo Desk工单接口声明的案例，Coding的获取事项api名称声明案例为：
 
@@ -50,13 +48,13 @@ TAP_TABLE[Issues](PAGE_SIZE_PAGE_INDEX:Response.Data.List)获取事项列表
 
 其语义表示为：设置了事项表名称为Issues，使用了PAGE_SIZE_PAGE_INDEX这个分页逻辑，并指定了API结果中Response.Data.List的数据作为表数据。
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/quickAPI/doc/TAP_TABLE-2.PNG)
+![img](../../images/TAP_TABLE-2.PNG)
 
 ### 登录授权接口声明
 
 您需要使用 TAP_GET_TOKEN 标签声明登录接口。与表数据接口的声明方式一致，需要在接口名称中添加声明标签，登录接口声明标签的关键字是 TAP_GET_TOKEN ，使用此标签表示此数据源在调用API获取数据时会进行access_token的过去判断，那么需要您在连接配置页面进行过期状态描述以及指定access_token获取后的键值匹配。，例如下图表示在Postman对ZoHo Desk进行登录接口的声明：
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/quickAPI/doc/TAP_LOGIN.PNG)
+![img]../../images/TAP_LOGIN.PNG)
 
 * event表示一些Postman 事件，这个我们基本上使用不到。
 * variable表示接口中定义的一些变量，需要保证的是在API上定义的变量一定能在这个variable中找到并存在实际且正确的值，否则这个使用了无法找到或错误值变量的API接口将在不久的将来调用失败。
@@ -71,12 +69,12 @@ TAP_TABLE[Issues](PAGE_SIZE_PAGE_INDEX:Response.Data.List)获取事项列表
 
 例如我们在调用ZoHo获取工单时，access_token过期了，此时返回结果如下图所示，那么您可以将过期状态描述为 errorCode=INVALID_OAUTH ，这样再执行API时可以自动根据返回结果识别为token过期实现自动刷新token。
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/quickAPI/doc/TAP_TABLE-ZoHo.PNG)
+![img](../../images/TAP_TABLE-ZoHo.PNG)
 
 - 3.2 这个状态描述需要您手动通过PostMan访问API总结出来（因为我们无法预知这些Saas平台在access_token过期后以何种响应结果返回）；
 - 3.3 在PostMan对登录（获取API访问权限）的API接口进行声明，当执行API过程中发现了access_token过期后悔调用这个指定的API进行access_token刷新，这个登录接口需要在接口的名称上加上 TAP_GET_TOKEN 这样一个标志性文字。例如：对ZoHo令牌刷新接口的名称为 “TAP_GET_TOKEN刷新AccessToken-登录” ,其加上了 TAP_GET_TOKEN（见左上角） 表示此接口用于实现自动令牌刷新操作。
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/quickAPI/doc/TAP_LOGIN-ZoHo.PNG)
+![img](../../images/TAP_LOGIN-ZoHo.PNG)
 
 - 3.4 过期状态描述有以下描述规则：
 

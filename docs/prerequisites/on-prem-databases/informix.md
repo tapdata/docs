@@ -1,7 +1,5 @@
 # Informix
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Informix 是 IBM 信息管理部门中的产品系列，专注于多个关系型数据库管理系统和多模型数据库产品。
 
@@ -9,7 +7,7 @@ Informix 是 IBM 信息管理部门中的产品系列，专注于多个关系型
 
 ## 连接 Informix
 
-1. [登录 TapData 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏中，点击 **连接**。
 

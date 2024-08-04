@@ -1,7 +1,5 @@
 # Databend
-import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content1 />
 
 Databend 是一个开源的 Elastic 和 Workload-Aware 现代云数据仓库，Databend 使用最新的矢量化查询处理技术，帮助用户在对象存储上进行快速的数据分析。
 
@@ -11,9 +9,7 @@ Databend 是一个开源的 Elastic 和 Workload-Aware 现代云数据仓库，D
 
 Databend v0.9 及以上
 
-import Content from '../../reuse-content/beta/_beta.md';
 
-<Content />
 
 ## 准备工作
 
@@ -29,7 +25,7 @@ import Content from '../../reuse-content/beta/_beta.md';
    示例：创建一个名为 tapdata 的账号。
 
    ```sql
-   CREATE USER 'tapdata' IDENTIFIED BY 'Tap@123456';
+   CREATE USER 'tapdata' IDENTIFIED BY 'your_password';
    ```
 
 2. 为刚创建的账号授予指定数据库的所有权限，以便 Tapdata 可自动创建同步的目标表，您也可以基于业务需求设置更精细化的权限控制。更多介绍，见 [GRANT 语法](https://databend.rs/doc/sql-commands/ddl/user/grant-privileges)。
@@ -46,7 +42,7 @@ import Content from '../../reuse-content/beta/_beta.md';
 
 ## 连接 Databend
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

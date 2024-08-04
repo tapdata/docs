@@ -1,7 +1,5 @@
 # BesChannels
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 致趣·百川 B2B 一站式营销云（BesChannels），专注B2B赛道，帮助B2B市场部获取更多线索、提高线索转化率，为销售输送更多商机。
 

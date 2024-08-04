@@ -108,7 +108,7 @@ TapData Community 是一个开源的数据集成平台，提供基础的数据�
     <td>✅</td>
   </tr>
 <tr>
-  <td><a href="../prerequisites/supported-databases">支持的数据库</a></td>
+  <td>支持的数据库</td>
   <td><span style={{ color: 'blue' }}>100+</span></td>
   <td><span style={{ color: 'blue' }}>100+</span></td>
   <td><span style={{ color: 'grey' }}>16</span></td>

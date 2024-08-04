@@ -1,7 +1,5 @@
 # GBase 8a
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 GBase 8a 数据库是一款基于 MySQL 数据库研发的分析型数据库，对 MySQL 的语法、特性、字段类型基本兼容。
 

@@ -1,7 +1,5 @@
 # Hive1
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 请遵循以下说明以确保在 TapData 中成功添加和使用 Hive 数据库。
 

@@ -1,7 +1,5 @@
 # TencentDB for SQL Server
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 云数据库 SQL Server（TencentDB for SQL Server）具有微软正版授权，具有即开即用、稳定可靠、安全运行、弹性扩缩容等特点，同时也具备高可用架构、数据安全保障和故障秒级恢复功能，让您能专注于应用程序的开发。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 TencentDB for SQL Server 数据源，后续可将其作为源或目标库来构建数据管道。
 
@@ -12,7 +10,7 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017
 
 ## 添加数据源
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

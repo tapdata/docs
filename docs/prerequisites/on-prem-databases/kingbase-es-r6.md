@@ -1,7 +1,5 @@
 # KingbaseES-R6
-import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content1 />
 
 金仓数据库管理系统（KingbaseES）是北京人大金仓信息技术股份有限公司自主研发的、具有自主知识产权的商用关系型数据库管理系统。KingbaseES-R6 可兼容 Postgres 9.6 版本的绝大多数特性，本文将介绍如何在 TapData 中添加 KingbaseES-R6 数据源，后续可将其作为源或目标库来构建数据管道。
 
@@ -20,9 +18,7 @@ KingbaseES-R6 支持的数据库模式为 Oracle、PostgreSQL 和 MySQL，需注
 
 :::
 
-import Content from '../../reuse-content/beta/_beta.md';
 
-<Content />
 
 ## <span id="prerequisite">准备工作</span>
 
@@ -89,14 +85,14 @@ GRANT SELECT,INSERT,UPDATE,DELETE,TRUNCATE ON ALL TABLES IN SCHEMA schemaname TO
    * **schema_name**：Schema 名称。
    * **table_name**：表名称。
 
-   完成操作后，您还需要联系[技术支持](../../support.md)提供相关插件，在 KingbaseES-R6 所属的服务器上进行安装。
+   完成操作后，您还需要联系技术支持提供相关插件，在 KingbaseES-R6 所属的服务器上进行安装。
 
 
 
 
 ## 添加数据源
 
-1. [登录 TapData 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 
@@ -121,7 +117,7 @@ GRANT SELECT,INSERT,UPDATE,DELETE,TRUNCATE ON ALL TABLES IN SCHEMA schemaname TO
      * **日志插件**：如需读取 KingbaseES-R6 的数据变更，实现增量数据同步，您需要根据[准备工作](#prerequisite)的指引，完成插件的安装。
    * **高级设置**
      * **时区**：默认为数据库所用的时区，您也可以根据业务需求手动指定。
-     * **共享挖掘**：[挖掘源库](../../user-guide/advanced-settings/share-mining.md)的增量日志，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力，开启该功能后还需要选择一个外存用来存储增量日志信息。
+     * **共享挖掘**：挖掘源库的增量日志，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力，开启该功能后还需要选择一个外存用来存储增量日志信息。
      * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。
      * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。
      * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。

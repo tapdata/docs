@@ -1,18 +1,18 @@
-# 支持的数据源
-import Content from '../reuse-content/_all-features.md';
+---
+sidebar_position: 1
+slug: /
+---
 
-<Content />
+# 支持的数据源
+
 
 TapData 支持丰富的数据源，具体如下：
 
 :::tip
 
-* 如需同步 DDL 操作，您需要开启 DDL 采集和 DDL 应用，更多介绍，见[DDL 同步说明](../best-practice/handle-schema-change.md)。
-* TapData Community 仅支持 AWS ClickHouse、BigQuery、ClickHouse、Doris、Dummy、ElasticSearch、Kafka、MariaDB、Mock Source、Mock Target、MongoDB、MongoDB Atlas、MySQL、PostgreSQL、Redis、TDengine 数据源。
+如需同步 DDL 操作，您需要在配置任务时为节点开启 DDL 采集和 DDL 应用。
 
 :::
-
-
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -56,7 +56,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>✅</td>
-    <td>21.x</td>
+    <td>20.x、21.x、22.x、23.x、24.x</td>
   </tr>
   <tr>
     <td>Kafka</td>
@@ -86,15 +86,6 @@ import TabItem from '@theme/TabItem';
     <td>5.0、5.1、5.5、5.6、5.7、8.x</td>
   </tr>
   <tr>
-    <td>Oracle</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>9i、10g、11g、12c、19c</td>
-  </tr>
-  <tr>
     <td>PostgreSQL</td>
     <td>✅</td>
     <td>✅</td>
@@ -102,15 +93,6 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>9.4+</td>
-  </tr>
-  <tr>
-    <td>SQL Server</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>2005、2008、2012、2014、2016、2017</td>
   </tr>
     <tr>
     <td>TiDB</td>
@@ -178,15 +160,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>7.x、8.x</td>
   </tr>
   <tr>
-    <td>IBM DB2</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>9.7 LUW</td>
-  </tr>
-  <tr>
     <td>DummyDB</td>
     <td>✅</td>
     <td>✅</td>
@@ -194,15 +167,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>➖</td>
     <td>不涉及</td>
-  </tr>
-  <tr>
-    <td>Informix</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>10 及以上</td>
   </tr>
   <tr>
     <td>Mock Source</td>
@@ -221,15 +185,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
    <td>✅</td>
    <td>➖</td>
    <td>不涉及</td>
-  </tr>
-  <tr>
-    <td>KingBaseES-R6</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>V8R6</td>
   </tr>
   <tr>
     <td>MariaDB</td>
@@ -257,15 +212,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>➖</td>
     <td>2.8 ~ 6.0</td>
-  </tr>
-  <tr>
-    <td>Sybase</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>ASE 16.0</td>
   </tr>
   <tr>
     <td>TDengine</td>
@@ -317,15 +263,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>➖</td>
     <td>不涉及</td>
-  </tr>
-  <tr>
-    <td>Databend</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>0.9 及以上</td>
   </tr>
   <tr>
     <td>Doris</td>
@@ -442,60 +379,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>企业版 2.8 版本（主备版），本地部署时，支持 Standby 8.1 版本</td>
   </tr>
   <tr>
-    <td>HubSpot</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>不涉及</td>
-  </tr>
-  <tr>
-    <td>Lark-IM</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>不涉及</td>
-  </tr>
-  <tr>
-    <td>LarkTask</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>不涉及</td>
-  </tr>
-  <tr>
-    <td>Metabase</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>不涉及</td>
-  </tr>
-  <tr>
-    <td>Salesforce</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>不涉及</td>
-  </tr>
-  <tr>
-    <td>Zoho-CRM</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>不涉及</td>
-  </tr>
-  <tr>
     <td>Zoho-Desk</td>
     <td>✅</td>
     <td>✅</td>
@@ -554,33 +437,6 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
     <td>5.x、6.x、7.x</td>
   </tr>
   <tr>
-    <td>Gbase 8a</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>8x</td>
-  </tr>
-  <tr>
-    <td>Gbase 8s</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>8x</td>
-  </tr>
-  <tr>
-    <td>KingBaseES-R3</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>V8R3</td>
-  </tr>
-  <tr>
     <td>OceanBase（MySQL 模式）</td>
     <td>✅</td>
     <td>✅</td>
@@ -588,15 +444,6 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
     <td>✅</td>
     <td>✅</td>
     <td>3.x、4.x</td>
-  </tr>
-  <tr>
-    <td>OceanBase（Oracle 模式）</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>4.x</td>
   </tr>
   <tr>
     <td>OpenGauss</td>
@@ -834,15 +681,6 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
     <td>➖</td>
     <td>9.4、9.5、9.6、10.x、11.x、12</td>
   </tr>
-  <tr>
-    <td>TencentDB SQL Server</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>2008 R2、2012、2016、2017、2019</td>
-  </tr>
 </tbody>
 </table>
 </TabItem>
@@ -935,33 +773,6 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
   </tr>
 </thead>
 <tbody>
-<tr>
-    <td>Alibaba 1688</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>不涉及</td>
-  </tr>
-<tr>
-    <td>BesChannels</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>不涉及</td>
-  </tr>
-<tr>
-    <td>Feishu-Bitable</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>不涉及</td>
-  </tr>
   <tr>
     <td>JSON</td>
     <td>✅</td>
@@ -970,33 +781,6 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
     <td>➖</td>
     <td>➖</td>
     <td>不涉及，文件位置支持本地、FTP、SFTP、SMB、S3FS、OSS</td>
-  </tr>
-  <tr>
-    <td>Lark Approval</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>不涉及</td>
-  </tr>
-  <tr>
-    <td>Lark Doc</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>不涉及</td>
-  </tr>
-  <tr>
-    <td>Shein</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>不涉及</td>
   </tr>
   <tr>
     <td>Vika</td>

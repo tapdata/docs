@@ -22,14 +22,10 @@ const config = {
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
-  /*i18n: {
+  // multi language settings
+    i18n: {
       defaultLocale: 'zh-cn',
       locales: ['zh-cn', 'en'],
-    }, */
-
-  i18n: {
-      defaultLocale: 'zh-cn',
-      locales: ['zh-cn'],
     },
 
   presets: [
@@ -40,17 +36,6 @@ const config = {
         docs: {
           routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: require.resolve('./sidebars.js'),
-          // Configuring versioning behavior and label
-          lastVersion: 'current',
-          versions: {
-                  current: {
-                    label: '3.x',
-                  },
-                  '2.0': {
-                         label: '2.x',
-                         path: '2.0',
-                         },
-                  },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -118,6 +103,10 @@ const config = {
         },
         items: [
           {
+            type: 'localeDropdown',
+            position: 'right',
+          },
+          {
             type: 'doc',
             docId: 'what-is-tapdata',
             position: 'left',
@@ -128,11 +117,6 @@ const config = {
             position: 'right',
             label: '登录 TapData Cloud',
             },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: true,
-           },
           {
             href: 'https://github.com/tapdata/tapdata',
             label: 'GitHub⭐',

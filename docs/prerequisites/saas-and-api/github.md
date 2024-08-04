@@ -1,13 +1,11 @@
 # GitHub
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 GitHub 是一个用于版本控制和协作的代码托管平台，它允许您和其他人随时随地协同处理项目。Tapdata 支持将 GitHub 作为源库构建数据管道，帮助您读取指定仓库的 Issue 和 Pull Requests 变更数据，并同步到指定的数据源，本文介绍如何在 Tapdata 中添加 GitHub 数据源。
 
 ## 连接 GitHub
 
-1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 

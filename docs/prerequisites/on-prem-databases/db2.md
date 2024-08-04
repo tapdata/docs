@@ -1,7 +1,5 @@
 # Db2
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 IBM Db2 是一种关系数据库，可为存储和管理结构化数据提供高性能、可扩展性和可靠性。TapData 支持将 Db2 作为源和目标库，帮助您快速构建数据链路。接下来，我们将介绍如何在 TapData 平台中连接 Db2 数据源。
 
@@ -9,9 +7,6 @@ IBM Db2 是一种关系数据库，可为存储和管理结构化数据提供高
 
 Db2 为 9.7~11.5 版本，部署在 LUW（Linux, Unix, Windows）平台
 
-import Content1 from '../../reuse-content/beta/_beta.md';
-
-<Content1 />
 
 ## 功能限制
 
@@ -59,7 +54,7 @@ import Content1 from '../../reuse-content/beta/_beta.md';
    * **schema_name**：Schema 名称。
    * **table_name**：表名称。
 
-4. [联系 TapData 团队](../../support.md)，获取并部署裸日志采集组件，实现 Db2 增量数据的捕获。
+4. 联系 TapData 团队，获取并部署裸日志采集组件，实现 Db2 增量数据的捕获。
 
 5. （可选）如源表发生了结构变更（例如删除字段、修改字段属性等），您需要在 Db2 中执行下述存储过程以保障数据正常读取。
 
@@ -101,7 +96,7 @@ import Content1 from '../../reuse-content/beta/_beta.md';
 
 ## 添加数据源
 
-1. [登录 TapData 平台](../../user-guide/log-in.md)。
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 
@@ -123,7 +118,7 @@ import Content1 from '../../reuse-content/beta/_beta.md';
      * **模型**：模型（Schema） 名称，即一个连接对应一个 Schema，如需连接多个 Schema 则需创建多个数据连接。
      * **其他连接串参数**：额外的连接参数，默认为空。
      * **账号**、**密码**：数据库的账号及对应的密码。
-     * **裸日志服务器地址**、裸日志服务器端口：请[联系 TapData 团队](../../support.md)，获取并部署裸日志采集组件，实现 Db2 增量数据的捕获，默认服务端口为 **1031**。
+     * **裸日志服务器地址**、裸日志服务器端口：请联系 TapData 团队，获取并部署裸日志采集组件，实现 Db2 增量数据的捕获，默认服务端口为 **1031**。
 
    * **高级设置**
      

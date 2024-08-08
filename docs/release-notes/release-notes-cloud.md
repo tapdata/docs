@@ -17,12 +17,12 @@ import TabItem from '@theme/TabItem';
   <TabItem value="2024 年" default>
 ```
 
-### 2024-08-02
+### 2024-08-06
 
 #### 新增功能
 
 - 在[数据转换任务配置](../user-guide/data-pipeline/data-development/create-task.md)阶段，源节点模型预览区域支持单表模型的重新加载，提高加载效率
-- 上线云版流量统计和流量账单支付功能
+- 新增时间探测功能，自动探测引擎部署服务器和数据库服务器的时间差，并在任务监控页面展示
 
 #### 功能优化
 

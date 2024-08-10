@@ -6,6 +6,22 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.11
+
+### 新增功能
+
+- 在[数据转换任务配置](../user-guide/data-pipeline/data-development/create-task.md)阶段，源节点模型预览区域支持单表模型的重新加载，提高加载效率
+- 新增时间探测功能，自动探测引擎部署服务器和数据库服务器的时间差，并在任务监控页面展示
+
+### 功能优化
+
+* 用户定义的字段业务描述可直接展示在表样例数据的列名位置
+
+### 问题修复
+
+- 修复 MongoDB 数据库 cursor 超时导致任务无法正常全量同步的问题
+- 修复源节点数据过滤设置中自定义 SQL 过滤开关无法打开的问题
+
 ## 3.10
 
 ### 新增功能

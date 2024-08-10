@@ -6,6 +6,27 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/release-notes)。
 
+## 3.11
+
+### 新增功能
+
+- 在[服务管理列表页](../user-guide/data-service/create-api-service.md)新增表名和 API 地址展示功能，支持关键字快速检索和筛选
+- 在[数据转换任务配置](../user-guide/data-pipeline/data-development/create-task.md)阶段，源节点模型预览区域支持单表模型的重新加载，提高加载效率
+- 新增时间探测功能，自动探测引擎部署服务器和数据库服务器的时间差，并在任务监控页面展示
+
+### 功能优化
+
+* 用户定义的字段业务描述可直接展示在表样例数据的列名位置
+
+### 问题修复
+
+- 修复导入 API 后出现 "System error: null" 报错的问题
+- 修复 API 已删除但在血缘图中仍显示的问题
+- 修复实时数据平台某些表数据量统计为空的问题
+- 修复实时数据平台发布 API 时路径未显示 host 的问题
+- 修复 MongoDB 数据库 cursor 超时导致任务无法正常全量同步的问题
+- 修复源节点数据过滤设置中自定义 SQL 过滤开关无法打开的问题
+
 ## 3.10
 
 ### 新增功能

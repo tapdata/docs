@@ -6,6 +6,23 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.12
+
+### 新增功能
+
+- Kafka 通过 TapData 认证测试流程，升级 GA 级别数据源，拥有更丰富的能力和生产稳定性
+
+### 功能优化
+
+- 优化菜单入口布局结构
+- 优化报错提示和高危操作风险提示
+- 全面提升数据同步性能
+
+### 问题修复
+
+- 修复任务完成后部分任务监控指标丢失的问题
+- 修复 PostgreSQL 数据源，挖掘任务可能出现的运行异常的问题
+
 ## 3.11
 
 ### 新增功能

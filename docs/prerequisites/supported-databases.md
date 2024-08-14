@@ -7,8 +7,7 @@ TapData 支持丰富的数据源，具体如下：
 
 :::tip
 
-* 如需同步 DDL 操作，您需要开启 DDL 采集和 DDL 应用，更多介绍，见[DDL 同步说明](../best-practice/handle-schema-change.md)。
-* TapData Community 仅支持 AWS ClickHouse、BigQuery、ClickHouse、Doris、Dummy、ElasticSearch、Kafka、MariaDB、Mock Source、Mock Target、MongoDB、MongoDB Atlas、MySQL、PostgreSQL、Redis、TDengine 数据源。
+如需同步 DDL 操作，您需要开启 DDL 采集和 DDL 应用，更多介绍，见[DDL 同步说明](../best-practice/handle-schema-change.md)。
 
 :::
 
@@ -48,6 +47,15 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>23 及以上</td>
+  </tr>
+  <tr>
+    <td>Db2</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>9.7 LUW</td>
   </tr>
   <tr>
     <td>ClickHouse</td>
@@ -176,15 +184,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>✅</td>
     <td>7.x、8.x</td>
-  </tr>
-  <tr>
-    <td>IBM DB2</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>9.7 LUW</td>
   </tr>
   <tr>
     <td>DummyDB</td>

@@ -10,7 +10,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ### 新增功能
 
-- Oracle、Kafka、Db2 通过 TapData 认证测试流程，升级 [认证级别数据源](..//prerequisites/supported-databases)，拥有更丰富的能力和生产稳定性
+- Oracle、Kafka、Db2 通过 TapData 认证测试流程，升级 [认证级别数据源](../prerequisites/supported-databases)，拥有更丰富的能力和生产稳定性
 - 配置[告警接收邮箱](../best-practice/alert-via-qqmail.md)时，支持使用代理服务
 
 ### 功能优化

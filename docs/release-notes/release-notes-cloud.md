@@ -21,7 +21,7 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- Oracle、Kafka、Db2 通过 TapData 认证测试流程，升级 [认证级别数据源](..//prerequisites/supported-databases)，拥有更丰富的能力和生产稳定性
+- Oracle、Kafka、Db2 通过 TapData 认证测试流程，升级 [认证级别数据源](../prerequisites/supported-databases)，拥有更丰富的能力和生产稳定性
 - 新增流量账单查看和支付功能
 
 #### 功能优化

@@ -1,5 +1,5 @@
 # RocketMQ
-import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
+import Content1 from '../../reuse-content/_all-features.md';
 
 <Content1 />
 

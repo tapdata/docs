@@ -1,6 +1,5 @@
 # MongoDB
-import Content from 'import Content from '../../reuse-content/_all-features.md';
-_enterprise-and-cloud-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 

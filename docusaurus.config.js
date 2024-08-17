@@ -44,10 +44,6 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-        // Google Analytics
-        gtag: {
-          trackingID: 'G-43PEGV94TX', // Measurement ID, which can be find in Data streams page on Google Analytics platform.
-        },
         blog: false, // Disable the blog plugin
       }),
     ],
@@ -71,7 +67,6 @@ const config = {
 // An Image Zoom plugin for Docusaurus 2, and integrate hotjar for feedback
   plugins: [
     'plugin-image-zoom',
-    'docusaurus-plugin-hotjar'
   ],
 
   themeConfig:
@@ -124,10 +119,6 @@ const config = {
           },
         ],
       },
-      // Hotjar for Feedback
-        hotjar: {
-        applicationId: '3533951',
-    },
     // algolia search plugin
      algolia: {
       appId: '9MM3A6XTHN',

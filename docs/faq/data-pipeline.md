@@ -276,7 +276,7 @@ TapData Cloud 会做 upsert 操作，如果目标已有数据，会识别出来�
 
 ### 增量同步时，如果手动删除了目标表的某个字段引发报错，如何修复？
 
-可编辑该任务，在目标节点前增加一个[增删字段节点](../user-guide/data-pipeline/data-development/process-node#add-and-del-cols)，将已删除的字段过滤，然后重启任务。
+可编辑该任务，在目标节点前增加一个[增删字段节点](../user-guide/data-development/process-node#add-and-del-cols)，将已删除的字段过滤，然后重启任务。
 
 :::tip
 
@@ -292,7 +292,7 @@ TapData Cloud 会做 upsert 操作，如果目标已有数据，会识别出来�
 
 :::tip
 
-启用该功能要求目标节点为弱 Scheme 类的数据源（如 MongoDB/Kafka）等，如果需要对全量和增量阶段都执行数据过滤规则，可以通过添加[行过滤器](../user-guide/data-pipeline/data-development/process-node.md)来实现。
+启用该功能要求目标节点为弱 Scheme 类的数据源（如 MongoDB/Kafka）等，如果需要对全量和增量阶段都执行数据过滤规则，可以通过添加[行过滤器](../user-guide/data-development/process-node.md)来实现。
 
 :::
 

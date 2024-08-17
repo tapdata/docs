@@ -60,7 +60,7 @@ binlog_row_image  = full
 SELECT * FROM orders WHERE last_updated > '2024-06-01 00:00:00';
 ```
 
-完成[权限授予和数据源连接](../prerequisites/on-prem-databases/mysql.md)后，即可在 TapData 中[配置数据转换任务](../user-guide/data-pipeline/data-development/create-task.md)时，为源节点设置增量同步方式为**字段轮询**并选中目标字段（`last_updated`）。
+完成[权限授予和数据源连接](../prerequisites/on-prem-databases/mysql.md)后，即可在 TapData 中[配置数据转换任务](../user-guide/data-development/create-task.md)时，为源节点设置增量同步方式为**字段轮询**并选中目标字段（`last_updated`）。
 
 ![选择字段轮询](..//images/obtain_cdc_via_polling.png)
 
@@ -162,4 +162,4 @@ END;
 
   * **基于数据库日志 API 解析**：默认采集方式，绝大部分数据库均支持，受限于权限限制无法放开日志或某些 SaaS 类数据源，可选择**字段轮询**方式。
   * **基于数据库日志解析**：目前仅 Oracle 和 Db2 数据源支持。
-  * **字段轮询**：可在 TapData 中[配置数据转换任务](../user-guide/data-pipeline/data-development/create-task.md)时，为源节点设置增量同步方式。
+  * **字段轮询**：可在 TapData 中[配置数据转换任务](../user-guide/data-development/create-task.md)时，为源节点设置增量同步方式。

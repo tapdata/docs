@@ -53,10 +53,7 @@ Tapdata 支持 MySQL ↔ MySQL、PostgreSQL ↔ PostgreSQL、MongoDB ↔ MongoDB
 
 1. [登录 TapData 平台](../user-guide/log-in.md)。
 
-2. 基于产品类型选择操作入口：
-
-   * TapData Cloud：在左侧导航栏，单击**数据复制**。
-   * TapData Enterprise 或 TapData Community：在左侧导航栏，选择**数据管道** > **数据复制**。
+2. 在左侧导航栏，单击**数据转换**。
 
 3. 创建正向数据同步任务。
 
@@ -64,7 +61,7 @@ Tapdata 支持 MySQL ↔ MySQL、PostgreSQL ↔ PostgreSQL、MongoDB ↔ MongoDB
 
    2. 在页面左侧，将我们在准备工作创建的两个地域的 MySQL 数据源（分别命名为 Region A 和 Region B），分别拖拽至右侧画布中，然后将其连接起来。
 
-   3. 单击 Region A 节点，选择要同步的表，本案例选择为 `customer` 表。更多参数的介绍（如高级设置），见[创建数据复制任务](../user-guide/data-pipeline/copy-data/create-task.md)。
+   3. 单击 Region A 节点，选择要同步的表，本案例选择为 `customer` 表。更多参数的介绍（如高级设置），见[创建数据复制任务](../user-guide/copy-data/create-task.md)。
 
       ![正向同步 Region A 节点配置](../images/forward_sync_source.png)
 
@@ -123,7 +120,7 @@ Tapdata 支持 MySQL ↔ MySQL、PostgreSQL ↔ PostgreSQL、MongoDB ↔ MongoDB
 
    :::tip
 
-   对于 Tapdata Enterprise 产品，您还可以通过[数据校验](../user-guide/data-pipeline/verify-data.md)功能，对双向同步的两个任务的数据进行持续校验，更好满足业务需求。
+   对于 Tapdata Enterprise 产品，您还可以通过[数据校验](../user-guide/verify-data.md)功能，对双向同步的两个任务的数据进行持续校验，更好满足业务需求。
 
    :::
 
@@ -131,4 +128,4 @@ Tapdata 支持 MySQL ↔ MySQL、PostgreSQL ↔ PostgreSQL、MongoDB ↔ MongoDB
 
 在任务列表页面，您还可以对任务进行启动/停止、监控、编辑、复制、重置、删除等操作。
 
-具体操作，见[管理任务](../user-guide/data-pipeline/copy-data/manage-task.md)。
+具体操作，见[管理任务](../user-guide/copy-data/manage-task.md)。

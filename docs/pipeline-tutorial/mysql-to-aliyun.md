@@ -110,4 +110,4 @@ import Content from '../reuse-content/_enterprise-and-cloud-features.md';
 
 在任务列表页面，您还可以对任务进行启动/停止、监控、编辑、复制、重置、删除等操作。
 
-具体操作，见[管理任务](../user-guide/data-pipeline/copy-data/manage-task.md)。
+具体操作，见[管理任务](../user-guide/copy-data/manage-task.md)。

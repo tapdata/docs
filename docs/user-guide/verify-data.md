@@ -1,6 +1,6 @@
 # 数据校验
 
-import Content from '../../reuse-content/_enterprise-features.md';
+import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 
 ## 操作步骤
 
-1. [登录 TapData 平台](../log-in.md)。
+1. [登录 TapData 平台](log-in.md)。
 
-2. 在左侧导航栏，选择**数据管道** > **数据校验**。
+2. 在左侧导航栏，选择**数据校验**。
 
 3. 在页面右上角，根据校验目标单击**任务一致性校验**或**任意表数据校验**，然后根据下述说明填写各项参数：
 
@@ -24,7 +24,7 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
 <TabItem value="任务一致性校验">
 ```
-![设置校验任务](../../images//check_data_settings.png)
+![设置校验任务](../images/check_data_settings.png)
 
 
 
@@ -46,7 +46,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="任意表数据校验">
 
-![设置校验任务](../../images//check_data_settings_2.png)
+![设置校验任务](../images/check_data_settings_2.png)
 
 
 
@@ -72,7 +72,7 @@ import TabItem from '@theme/TabItem';
 
 5. （可选）单击校验任务对应的**详情**，查看详细校验结果，针对不一致情况可单击**一键修复**完成数据对齐或**下载详情**进行深入分析。
 
-   ![查看校验结果](../../images//check_data_result_cn.png)
+   ![查看校验结果](../images/check_data_result_cn.png)
 
    :::tip
 

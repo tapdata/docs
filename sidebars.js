@@ -268,37 +268,30 @@ const sidebars = {
                     ]
              },             
              {
-              type: 'category',
-              label: '数据管道',
-              link: {type: 'doc', id: 'user-guide/data-pipeline/README'},
-              items:[
-                    {
-                     type: 'category',
-                     label: '数据复制',
-                     link: {type: 'doc', id: 'user-guide/data-pipeline/copy-data/README'},
-                     items:[
-                            'user-guide/data-pipeline/copy-data/create-task',
-                            'user-guide/data-pipeline/copy-data/manage-task',
-                            'user-guide/data-pipeline/copy-data/process-node',
-                            'user-guide/data-pipeline/copy-data/monitor-task',
-                           ]
-                    },
-                    {
-                     type: 'category',
-                     label: '数据转换',
-                     link: {type: 'doc', id: 'user-guide/data-pipeline/data-development/README'},
-                     items:[
-                            'user-guide/data-pipeline/data-development/create-task',
-                            'user-guide/data-pipeline/data-development/create-materialized-view',
-                            'user-guide/data-pipeline/data-development/manage-task',
-                            'user-guide/data-pipeline/data-development/process-node',
-                            'user-guide/data-pipeline/data-development/monitor-task',
-                           ]
-                    },
-                    'user-guide/data-pipeline/verify-data',
-                    'user-guide/data-pipeline/pre-check',
+             type: 'category',
+             label: '数据复制',
+             link: {type: 'doc', id: 'user-guide/copy-data/README'},
+             items:[
+                     'user-guide/copy-data/create-task',
+                     'user-guide/copy-data/manage-task',
+                     'user-guide/copy-data/process-node',
+                     'user-guide/copy-data/monitor-task',
                     ]
              },
+             {
+             type: 'category',
+             label: '数据转换',
+             link: {type: 'doc', id: 'user-guide/data-development/README'},
+             items:[
+                    'user-guide/data-development/create-task',
+                    'user-guide/data-development/create-materialized-view',
+                    'user-guide/data-development/manage-task',
+                    'user-guide/data-development/process-node',
+                    'user-guide/data-development/monitor-task',
+                   ]
+             },
+             'user-guide/verify-data',
+             'user-guide/pre-check',
              {
               type: 'category',
               label: '高级功能',

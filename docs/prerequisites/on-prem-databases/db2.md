@@ -21,9 +21,9 @@ import TabItem from '@theme/TabItem';
 
 | 类别         | 数据类型                                         |
 | ------------ | ------------------------------------------------ |
-| 字符串与文本 | CHARACTER、CLOB、LONG VARCHAR、VARCHAR           |
-| 数值         | BIGINT、DECIMAL、DOUBLE、INTEGER、REAL、SMALLINT |
-| 日期和时间   | DATE、TIME、TIMESTAMP                            |
+| 字符串与文本 | VARCHAR、CHARACTER、CLOB、LONG VARCHAR           |
+| 数值         | INTEGER、DECIMAL、BIGINT、SMALLINT、DOUBLE、REAL |
+| 日期和时间   | TIMESTAMP、DATE、TIME                            |
 | 布尔         | BOOLEAN                                          |
 | 二进制大对象 | BLOB                                             |
 | XML          | XML                                              |

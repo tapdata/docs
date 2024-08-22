@@ -21,9 +21,9 @@ import TabItem from '@theme/TabItem';
 
 | 类别       | 数据类型                                                     |
 | ---------- | ------------------------------------------------------------ |
-| 字符串     | CHAR、NCHAR、VARCHAR2、NVARCHAR2、CLOB、NCLOB                |
-| 数值       | NUMBER、BINARY_FLOAT、BINARY_DOUBLE、FLOAT、INTEGER          |
-| 日期和时间 | DATE、TIMESTAMP、TIMESTAMP WITH LOCAL TIME ZONE、TIMESTAMP WITH TIME ZONE、INTERVAL |
+| 字符串     | VARCHAR2、CHAR、NVARCHAR2、NCHAR、CLOB、NCLOB                |
+| 数值       | NUMBER、INTEGER、FLOAT、BINARY_FLOAT、BINARY_DOUBLE          |
+| 日期和时间 | DATE、TIMESTAMP、TIMESTAMP WITH TIME ZONE、TIMESTAMP WITH LOCAL TIME ZONE、INTERVAL |
 | 其他       | BLOB、XMLTYPE                                                |
 
 :::tip

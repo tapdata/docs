@@ -3,13 +3,14 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const baseUrl = process.env.BASE_URL || '/'
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Tapdata 文档中心',
+  title: 'TapData 文档中心',
   tagline: '一站式实时数据平台',
   url: 'https://docs.tapdata.net',
-  baseUrl: '/',
+  baseUrl,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -183,8 +184,8 @@ const config = {
       src: 'https://hm.baidu.com/hm.js?2a8961eabe42165bedcb48eb99150206',
       async: true,
     },
-    '/js/iframe.js',
-    '/js/replaceIcons.js',
+    `${baseUrl}js/iframe.js`,
+    `${baseUrl}js/replaceIcons.js`,
   ],
   headTags: [
     {

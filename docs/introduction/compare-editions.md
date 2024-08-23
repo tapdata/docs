@@ -264,7 +264,7 @@ TapData Community 是一个开源的数据集成平台，提供基础的数据�
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="../../user-guide/notification">自定义监控</a></td>
+    <td><a href="../user-guide/notification">自定义监控</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>

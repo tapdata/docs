@@ -84,7 +84,7 @@ import TabItem from '@theme/TabItem';
 
 ## 常见问题
 
-关于校验任务出现失败、校验数据不一致等排查方法，见[数据校验常见问题](../../../faq/data-pipeline#check-data)。
+关于校验任务出现失败、校验数据不一致等排查方法，见[数据校验常见问题](../../faq/data-pipeline#check-data)。
 
 
 

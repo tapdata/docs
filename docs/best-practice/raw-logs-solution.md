@@ -13,7 +13,7 @@ import Content from '../reuse-content/_enterprise-and-cloud-features.md';
 * **操作系统要求**：Linux 64 或 Windows 64 平台。
 * **存储要求**：支持的存储文件系统为 ext4、btrfs、zfs、xfs、sshfs；支持的数据库块大小为2k、4k、8k、16k、32k
 * **端口要求**：需开放服务器的部分端口用于服务通信，包含：数据传输默认端口：**8203**、WEB管理默认端口：**8303**、裸日志服务端口：**8190**。
-* **权限要求**：需要裸日志插件的运行用户（操作系统用户）可读取 redo log files；除按照 [Oracle 准备工作](../../prerequisites/on-prem-databases/oracle#source)要求的授予源库权限并开启归档日志外，还需要为数据库用户额外授予下述权限，以模拟 Oracle 的数据信息结构和流程，从而缓存 Oracle Schema 的部分信息，以此来支撑解析 redo log 。
+* **权限要求**：需要裸日志插件的运行用户（操作系统用户）可读取 redo log files；除按照 [Oracle 准备工作](../prerequisites/on-prem-databases/oracle#source)要求的授予源库权限并开启归档日志外，还需要为数据库用户额外授予下述权限，以模拟 Oracle 的数据信息结构和流程，从而缓存 Oracle Schema 的部分信息，以此来支撑解析 redo log 。
   
   ```sql
   -- 替换 <DSTUSER> 为真实的用户名

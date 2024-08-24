@@ -1,4 +1,4 @@
-# 部署高可用 TapData Enterprise
+# 部署高可用 TapData Enterprise（双节点）
 import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />

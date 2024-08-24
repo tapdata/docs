@@ -13,12 +13,12 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 本案例中，机器配置为 **16 核 CPU + 32 GB 内存**，推荐最低配置为 8 核 CPU + 16 GB 内存，操作系统为 CentOS 7 + 或 Ubuntu 16.04 +。
 
-| 部署服务     | 服务端口 | 安装目录       | 工作目录                | 资源规划  |
-| ------------ | -------- | -------------- | ----------------------- | --------- |
-| 管理服务     | 3030     | /data/tapdata/ | /data/tapdata/tap_work  | ？        |
-| 同步治理服务 | 不涉及   | /data/tapdata/ | /data/tapdata/tap_work  | ？        |
-| API 服务     | 3080     | /data/tapdata/ | /data/tapdata/tap_work  | ？        |
-| MongoDB 服务 | 27017    | /data/mongodb/ | /data/mongodb/data/repl | 8 GB 内存 |
+| 部署服务     | 服务端口 | 安装目录       | 工作目录                | 内存资源规划 |
+| ------------ | -------- | -------------- | ----------------------- | ------------ |
+| 管理服务     | 3030     | /data/tapdata/ | /data/tapdata/tap_work  | 8 GB         |
+| 同步治理服务 | 不涉及   | /data/tapdata/ | /data/tapdata/tap_work  | 4 GB         |
+| API 服务     | 3080     | /data/tapdata/ | /data/tapdata/tap_work  | 不涉及       |
+| MongoDB 服务 | 27017    | /data/mongodb/ | /data/mongodb/data/repl | 8 GB         |
 
 ## 准备工作
 

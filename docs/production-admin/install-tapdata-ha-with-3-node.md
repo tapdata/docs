@@ -3,15 +3,15 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
-为保障生产环境的业务可靠性，推荐采用高可用部署的方式，本文介绍如何通过 3 台服务器组建部署高可用的 TapData 服务。
+为保障生产环境的业务可靠性，推荐采用高可用部署的方式，本文介绍如何通过三台服务器组建部署高可用的 TapData 服务。
 
 ## 部署架构
 
-本案例中，假设我们有两个服务器（A 和 B），分别为它们配置了 IP，现在我们希望分别在这两个服务器上部署完整的 TapData 服务，即管理服务、同步治理服务和 API 服务，从而实现整体服务的高可用。
+本案例中，假设我们有三个服务器（架构如下），分别为它们配置了 IP，现在我们希望分别在这三个服务器上部署 **MongoDB 服务**（用于存储 TapData 运行所需信息）和完整的 **TapData 服务**，即管理服务、同步治理服务和 API 服务，从而实现整体服务的高可用。
 
 ![部署架构](../images/tapdata_ha_with_3_node.png)
 
-本案例中，机器配置为 16 核 CPU + 32 GB 内存，推荐最低配置为 8 核 CPU + 32 GB 内存，操作系统为 CentOS 7 + 或 Ubuntu 16.04 +。
+本案例中，机器配置为 **16 核 CPU + 32 GB 内存**，推荐最低配置为 8 核 CPU + 16 GB 内存，操作系统为 CentOS 7 + 或 Ubuntu 16.04 +。
 
 | 部署服务     | 服务端口 | 安装目录       | 工作目录                | 资源规划  |
 | ------------ | -------- | -------------- | ----------------------- | --------- |
@@ -36,19 +36,15 @@ import Content from '../reuse-content/_enterprise-features.md';
    sed -i "s/enforcing/disabled/g" /etc/selinux/config 
    ```
 
-2. 安装环境依赖。
+2. 执行下述命令安装 Java 1.8 版本，安装环境依赖。
 
-   1. 执行下述命令安装 Java 1.8 版本。
-
-      ```bash
-      yum -y install java-1.8.0-openjdk
-      ```
-
-   2. 安装 MongoDB（4.0 及以上版本），该库将作为中间库存储任务等数据，具体操作，见[官方文档](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/)。
+   ```bash
+   yum -y install java-1.8.0-openjdk
+   ```
 
 3. 设置机器时间与时区，保持一致。
 
-4. [部署 MongoDB 副本集](../production-admin/install-replica-mongodb.md)，用于存储 Tapdata Enterprise 运行所产生的任务必要配置、共享缓存等信息。
+4. [部署 MongoDB 副本集](../production-admin/install-replica-mongodb.md)，用于存储 Tapdata 服务运行所产生的任务必要配置、共享缓存等信息。
 
    :::tip
 
@@ -60,11 +56,11 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 :::tip
 
-下述操作，需要在三台服务器上均**分别执行**下述操作以完成部署流程。
+下述操作需要在三台服务器上**分别执行**，从而完成部署流程。
 
 :::
 
-1. 获取 License 文件。在所有待部署的设备上，分别执行下述命令
+1. 获取 License 文件。
 
    1. 执行下述命令获取申请所需的 SID 信息。
 
@@ -184,7 +180,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ## 登录 TapData
 
-为三个服务器均执行上述操作完成部署后，即可在同一内网的设备，通过 http://192.168.1.201:3030、http://192.168.1.202:3030 或 http://192.168.1.203:3030来登录管理页面。
+为三个服务器均执行上述操作完成部署后，即可在同一内网的设备，通过 http://192.168.1.201:3030、http://192.168.1.202:3030 或 http://192.168.1.203:3030来登录管理页面，如配置了本机 DNS 也可以通过服务器对应主机名登录。
 
 :::tip
 首次登录请及时修改密码以保障安全性。

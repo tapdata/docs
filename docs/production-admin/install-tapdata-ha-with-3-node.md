@@ -7,18 +7,18 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ## 部署架构
 
-本案例中，假设我们有三个服务器（架构如下），分别为它们配置了 IP，现在我们希望分别在这三个服务器上部署 **MongoDB 服务**（用于存储 TapData 运行所需信息）和完整的 **TapData 服务**，即管理服务、同步治理服务和 API 服务，从而实现整体服务的高可用。
+本案例中，假设我们有三个服务器（架构如下），分别为它们配置了 IP，现在我们希望分别在这三个服务器上部署 **MongoDB 服务**（用于存储 TapData 运行所需信息）和完整的 **TapData 服务**，从而实现整体服务的高可用。
 
 ![部署架构](../images/tapdata_ha_with_3_node.png)
 
 本案例中，机器配置为 **16 核 CPU + 32 GB 内存**，推荐最低配置为 8 核 CPU + 16 GB 内存，操作系统为 CentOS 7 + 或 Ubuntu 16.04 +。
 
-| 部署服务     | 服务端口 | 安装目录       | 工作目录                | 内存资源规划 |
-| ------------ | -------- | -------------- | ----------------------- | ------------ |
-| 管理服务     | 3030     | /data/tapdata/ | /data/tapdata/tap_work  | 8 GB         |
-| 同步治理服务 | 不涉及   | /data/tapdata/ | /data/tapdata/tap_work  | 4 GB         |
-| API 服务     | 3080     | /data/tapdata/ | /data/tapdata/tap_work  | 不涉及       |
-| MongoDB 服务 | 27017    | /data/mongodb/ | /data/mongodb/data/repl | 8 GB         |
+| 部署服务     | 服务端口 | 角色说明                                                     | 资源规划说明                                            |
+| ------------ | -------- | ------------------------------------------------------------ | ------------------------------------------------------- |
+| 管理服务     | 3030     | 负责提供任务管理服务，任务运行时无需持续占用内存，对负载要求低 | 推荐为总内存的 18%：`32*0.18` = `5.76`，向上取至 6 GB   |
+| 同步治理服务 | 不涉及   | 负责执行数据同步/转换任务及其关联的处理节点，需要较多的计算和内存资源 | 推荐总内存的 35%：`32*0.35` = `11.2`，向上取至 12 GB    |
+| API 服务     | 3080     | 负责以 API 形式发布表数据，为其提供调用和管理服务，由系统自动分配资源，单进程约使用 100 MB 左右内存 | 默认 Woker 进程数为 CPU 核数，推荐基于 API 服务负载调整 |
+| MongoDB 服务 | 27017    | 负责存储 TapData 运行所产生的任务必要配置、共享缓存等信息    | 推荐为总内存的 30%：`32*0.3` = `9.6`，向上取至 10 GB    |
 
 ## 准备工作
 
@@ -48,7 +48,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
    :::tip
 
-   您需要基于机器规格调整 MongoDB 的资源配置，本案例中通过其配置文件，设置的 `cacheSizeGB` 为 `8`，`oplogSizeMB` 为 `512000`，更多配置说明，见 [MongoDB 配置文件选项](https://www.mongodb.com/docs/v4.4/reference/configuration-options)。
+   您需要基于机器规格调整 MongoDB 的资源配置，本案例中通过其配置文件，设置的 `cacheSizeGB` 为 `10`，`oplogSizeMB` 为 `512000`，更多配置说明，见 [MongoDB 配置文件选项](https://www.mongodb.com/docs/v4.4/reference/configuration-options)。
 
    :::
 
@@ -145,8 +145,9 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 5. 调整 TapdData 内存资源配置，本案例中机器内存为 32 GB，MongoDB 服务已分配了 8 GB，即剩余 24 GB 可用内存，参数及说明如下：
 
-   - `tapdataJavaOpts`：控制引擎的内存使用限制，通常设置为总内存的 35%，本案例中设置为 `"-Xms8G -Xmx8G"`
-   - `tapdataTMJavaOpts`：控制管理端的内存使用限制，通常设置为总内存的 18% 左右，本案例中设置为 `"-Xms4G -Xmx4G"`
+   - `tapdataTMJavaOpts`：控制管理服务的内存使用限制，通常设置为总内存的 18% 左右，本案例中设置为 `"-Xms4G -Xmx4G"`
+   - `tapdataJavaOpts`：控制数据同步治理服务的内存使用限制，通常设置为总内存的 35%，本案例中设置为 `"-Xms8G -Xmx8G"`
+   - `apiWorkerCount` ：控制 API 服务中 Woker 的个数，默认为 CPU 核数，可基于 API 服务负载设置，本案例中设置为 4
 
 6. 为 TapData 服务设置开机启动。
 

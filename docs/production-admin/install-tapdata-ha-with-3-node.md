@@ -145,9 +145,9 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 5. 调整 TapdData 内存资源配置，本案例中机器内存为 32 GB，MongoDB 服务已分配了 8 GB，即剩余 24 GB 可用内存，参数及说明如下：
 
-   - `tapdataTMJavaOpts`：控制管理服务的内存使用限制，通常设置为总内存的 18% 左右，本案例中设置为 `"-Xms4G -Xmx4G"`
-   - `tapdataJavaOpts`：控制数据同步治理服务的内存使用限制，通常设置为总内存的 35%，本案例中设置为 `"-Xms8G -Xmx8G"`
-   - `apiWorkerCount` ：控制 API 服务中 Woker 的个数，默认为 CPU 核数，可基于 API 服务负载设置，本案例中设置为 4
+   - `tapdataTMJavaOpts`：控制管理服务的内存使用限制，通常设置为总内存的 18% 左右，本案例中设置为 `"-Xms6G -Xmx6G"`
+   - `tapdataJavaOpts`：控制数据同步治理服务的内存使用限制，通常设置为总内存的 35%，本案例中设置为 `"-Xms12G -Xmx12G"`
+   - `apiWorkerCount` ：控制 API 服务中 Woker 的个数，默认为 CPU 核数，可基于 API 服务负载设置，本案例中设置为 `4`
 
 6. 为 TapData 服务设置开机启动。
 

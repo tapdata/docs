@@ -4,26 +4,45 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
-本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/release-notes)。
+本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/release-notes)
 
 ## 3.12
 
 ### 新增功能
 
-- Oracle、Kafka、Db2 通过 TapData 认证测试流程，升级 [认证级别数据源](../prerequisites/supported-databases)，拥有更丰富的能力和生产稳定性
-- 配置[告警接收邮箱](../best-practice/alert-via-qqmail.md)时，支持使用代理服务
+- Oracle、Dameng、Db2 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+- 在配置[告警接收邮箱](../best-practice/alert-via-qqmail.md)时，支持使用代理服务，以便在受限网络环境中仍能及时接收告警通知
+- 对于 [PostgreSQL 数据源](../prerequisites/on-prem-databases/postgresql.md)，支持通过 walminer 插件进行增量数据同步，满足更多场景
+- 支持 [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md) 同步至 SQL Server 场景下的分区表同步，提升了数据同步的灵活性和效率
+- 新增支持[批量发布 API 功能](../user-guide/data-service/create-api-service.md)，简化了多接口管理，提升了发布效率
+- 数据复制任务支持多表同时读取，提升数据处理的并行能力和任务执行效率
 
 ### 功能优化
 
 - 优化菜单入口布局结构
 - 优化报错提示和高危操作风险提示
 - 全面提升数据同步性能
+- 对于不支持 hash 校验的数据源，默认禁用 hash 校验功能
+- 全量任务同步完成后，再次启动任务将重新全量同步，以确保数据一致性
+- 云版 Agent 部署页面新增网络白名单配置指南，帮助轻松配置 Agent 与管理端的通信
 
 ### 问题修复
 
 - 修复任务完成后部分任务监控指标丢失的问题
-- 修复 PostgreSQL 数据源，挖掘任务可能出现的运行异常的问题
+- 修复中间库缺少必要索引导致的查询效率问题，减少了数据扫描量
+- 修复数据校验下载异常数据时选择“仅显示差异字段”却下载了全部字段的问题
+- 修复在集群管理中修改引擎名称后任务设置仍显示旧名称的问题
+- 修复任务编辑时可能会卡在模型生成中的问题，提升了任务编辑体验
 - 修复编辑 API 时提示名称重复的问题
+- 修复数据复制任务在增量阶段任务停止后再启动时，全量完成时间显示不正确的问题
+- 修复 TDengine 写入超级表时，字段较多引发的 SQL 语句长度超限的问题
+- 修复 TDengine 为源的数据转换任务中，表名含中文时任务报错的问题
+- 修复在 PostgreSQL 数据源上运行挖掘任务时可能出现的异常情况
+- 修复 Oracle 到 Doris 的共享挖掘任务中源表 DDL 事件无法解析的问题
+- 修复 Oracle 同步至 PostgreSQL 无主键表时，出现的插入和删除异常问题，提升了同步可靠性
+- 修复 MongoDB 到 Kafka 的数据转换任务在增量阶段的特定异常问题
+- 修复数据转换任务中，MongoDB oplog 同步到 Kafka 时模型中多了 `_id` 字段的问题
+- 修复 MongoDB oplog 数据复制任务在同步过程中无法正常复制的问题
 
 ## 3.11
 
@@ -59,7 +78,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 ### 功能优化
 
 - 优化时区类字段的同步逻辑
-- 在数据同步/开发任务的任务设置中，在基于标签调度 Agent 的基础上，支持选择调度方式为随机调度或指定优先调度的 Agent。
+- 在数据同步/开发任务的任务设置中，在基于标签调度 Agent 的基础上，支持选择调度方式为随机调度或指定优先调度的 Agent
 - 日志连续挖掘设置优化展示逻辑，当数据库的版本不支持此功能时自动隐藏相关按钮
 
 ### 问题修复
@@ -234,9 +253,9 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ### 问题修复
 
-* 修复了开启多线程同步场景下，DDL 操作无法正常同步的问题
-* 修复了 JS 节点打印日志时，偶发的文件句柄数未及时释放的问题
-* 修复了 MongoDB RM 文件导入异常的问题
+* 修复开启多线程同步场景下，DDL 操作无法正常同步的问题
+* 修复 JS 节点打印日志时，偶发的文件句柄数未及时释放的问题
+* 修复 MongoDB RM 文件导入异常的问题
 
 
 
@@ -367,8 +386,8 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ### 问题修复
 
-- 修复了 MongoDB 作为目标时，INSERT 操作遇到无分片键发生报错的问题
-- 修复了 MongoDB 不支持 REPLACE，即 REPLACE 删掉的字段无法被正常删除的问题
+- 修复 MongoDB 作为目标时，INSERT 操作遇到无分片键发生报错的问题
+- 修复 MongoDB 不支持 REPLACE，即 REPLACE 删掉的字段无法被正常删除的问题
 
 
 
@@ -414,7 +433,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ### 问题修复
 
-* 修复了运行过的任务无法查看运行监控页面的问题
+* 修复运行过的任务无法查看运行监控页面的问题
 
 ## V3.4
 
@@ -462,9 +481,9 @@ import Content from '../reuse-content/_enterprise-features.md';
 ### 问题修复
 
 - 启动TM时如果没配置 java 环境变量，会导致启动不了，此时添加了针对该问题的日志输出
-- 修复了 admin 用户，在个人中心修改用户名后，所有菜单都不能查看的问题
-- 修复了数据复制/数据转换创建任务时，所有数据源都不支持 DDL 的问题
-- 修复了数据复制任务，配置表编辑节点时，添加前后缀输入一个字符加载一次的问题
+- 修复 admin 用户，在个人中心修改用户名后，所有菜单都不能查看的问题
+- 修复数据复制/数据转换创建任务时，所有数据源都不支持 DDL 的问题
+- 修复数据复制任务，配置表编辑节点时，添加前后缀输入一个字符加载一次的问题
 
 
 
@@ -476,7 +495,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 - 数据平台模式下，支持[删除**平台加工层**的表](user-guide/real-time-data-hub/daas-mode/daas-mode-dashboard#release320-daas)
 - 在配置任务的目标节点时，支持[按照系数来调整字段长度](user-guide/copy-data/create-task#release320-col-length)，避免因字符编码不同等原因引发的数据写入失败问题
 - [数据校验](user-guide/verify-data)功能支持 SelectDB 数据源
-- Redis 作为目标节点场景下，存储为 List 或 Hash 格式，且选择为单键方式时，[支持将源表 Schema 写入一个 Hash 键](../pipeline-tutorial/mysql-to-redis#release320-contain-table-head)（默认名称为 `-schema-key-`），其值用来存放源表的表名和列名信息。
+- Redis 作为目标节点场景下，存储为 List 或 Hash 格式，且选择为单键方式时，[支持将源表 Schema 写入一个 Hash 键](../pipeline-tutorial/mysql-to-redis#release320-contain-table-head)（默认名称为 `-schema-key-`），其值用来存放源表的表名和列名信息
 - 新增[**类型过滤**](user-guide/data-development/process-node#release320-type-filter)处理节点，可将快速过滤同类型的列，被过滤的字段将不会传递至下个节点
 - [**字段编辑**](user-guide/copy-data/process-node#column-modification)处理节点，支持蛇形命名和驼峰命名之间的转换
 - 数据复制任务、数据转换任务、数据面板、换成创建时支持[显示表的描述信息](user-guide/copy-data/create-task#310-table-model)，默认来源为表的注释信息
@@ -503,9 +522,9 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ### 问题修复
 
-- 修复了 2 个 Oracle 数据源指定不同的外存，挖掘合并后导致外存不是用户指定的问题
-- 修复了导入任务数据源开启了共享挖掘，外存配置显示为id且不可修改的问题
-- 修复了数据源到平台缓存层的任务合并问题
+- 修复 2 个 Oracle 数据源指定不同的外存，挖掘合并后导致外存不是用户指定的问题
+- 修复导入任务数据源开启了共享挖掘，外存配置显示为id且不可修改的问题
+- 修复数据源到平台缓存层的任务合并问题
 
 
 
@@ -554,19 +573,19 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ### 新增功能
 
-- [集成 GraphQL 能力](../user-guide/data-service/query-via-graphql.md)，丰富 API 查询方式。
-- 为 API [增加应用分类能力](../user-guide/data-service/create-api-service.md)，便于基于业务分类。
-- 新增[时间运算处理节点](user-guide/data-development/process-node#time-calculation)，可灵活应对源目库时区不一致场景。
-- 新增[全量分片能力](../best-practice/full-breakpoint-resumption.md)，目前仅支持 MongoDB。
+- [集成 GraphQL 能力](../user-guide/data-service/query-via-graphql.md)，丰富 API 查询方式
+- 为 API [增加应用分类能力](../user-guide/data-service/create-api-service.md)，便于基于业务分类
+- 新增[时间运算处理节点](user-guide/data-development/process-node#time-calculation)，可灵活应对源目库时区不一致场景
+- 新增[全量分片能力](../best-practice/full-breakpoint-resumption.md)，目前仅支持 MongoDB
 
 ### 功能优化
 
-- [共享缓存功能](../user-guide/advanced-settings/share-mining.md)优化，提供可观测页面，便于观察挖掘进度和故障排查。
-- [全量自定义查询功能](user-guide/data-development/create-task#full-sql-query)，放开仅能使用 JS 节点的限制，也支持添加其它处理节点，节点模型直接使用源表的模型。
-- 增删字段、类型修改、字段改名等字段[处理节点](../user-guide/data-development/process-node.md)，支持字段搜索功能。
-- 连接配置中 Schema 加载频率配置文案调整。
-- **表编辑节点**的表名修改逻辑优化，去掉应用按钮，配置直接生效。
-- 管理进程（frontend）启动时，与同步治理进程一样，增加了 heapDump、stackTrace 相关参数。
-- 增加任务编辑版本，避免多人编辑同一任务时，低版本配置覆盖高版本配置。
-- 数据源配置右侧的说明文档， 支持放大图片。
-- Oracle 数据源错误码实现。
+- [共享缓存功能](../user-guide/advanced-settings/share-mining.md)优化，提供可观测页面，便于观察挖掘进度和故障排查
+- [全量自定义查询功能](user-guide/data-development/create-task#full-sql-query)，放开仅能使用 JS 节点的限制，也支持添加其它处理节点，节点模型直接使用源表的模型
+- 增删字段、类型修改、字段改名等字段[处理节点](../user-guide/data-development/process-node.md)，支持字段搜索功能
+- 连接配置中 Schema 加载频率配置文案调整
+- **表编辑节点**的表名修改逻辑优化，去掉应用按钮，配置直接生效
+- 管理进程（frontend）启动时，与同步治理进程一样，增加了 heapDump、stackTrace 相关参数
+- 增加任务编辑版本，避免多人编辑同一任务时，低版本配置覆盖高版本配置
+- 数据源配置右侧的说明文档， 支持放大图片
+- Oracle 数据源错误码实现

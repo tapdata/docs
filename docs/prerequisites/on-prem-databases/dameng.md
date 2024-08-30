@@ -98,7 +98,7 @@ DM 7.x 和 8.x 版本（单机架构）
 
 4. 如需获取源库的数据变更以实现增量同步，您还需要跟随下述步骤开启数据库的归档功能和归档日志。
 
-   1. 开启归档日志。
+   1. 开启归档日志，详细参数介绍，见[达梦官网](https://eco.dameng.com/document/dm/zh-cn/pm/backup-restore-combat#3.1.2%20%E5%BD%92%E6%A1%A3%E9%85%8D%E7%BD%AE)。
 
       :::tip
 

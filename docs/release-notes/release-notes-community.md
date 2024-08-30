@@ -17,6 +17,8 @@ import Content from '../reuse-content/_community-features.md';
 ### 功能优化
 
 - 全面提升数据同步性能
+- 优化菜单入口布局结构
+- 优化报错提示和高危操作风险提示
 - 对于不支持 hash 校验的数据源，默认禁用 hash 校验功能
 - 全量任务同步完成后，再次启动任务将重新全量同步，以确保数据一致性
 

@@ -328,7 +328,7 @@ import TabItem from '@theme/TabItem';
    ```bash
    # 生成根证书私钥（ pem文件）
    openssl genrsa -out ca.key 2048
-   、
+   
    # 生成根证书签发申请文件（csr 文件）
    openssl req -new -key ca.key -out ca.csr -subj "/C=CN/ST=myprovince/L=mycity/O=myorganization/OU=mygroup/CN=myCA"
    

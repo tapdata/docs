@@ -50,8 +50,6 @@ import TabItem from '@theme/TabItem';
 
 :::
 
-## 增量数据获取方式
-
 ## 功能限制
 
 - PostgreSQL 作为源库时，不支持采集其 DDL（如增加字段），且不支持指定增量数据采集时间。

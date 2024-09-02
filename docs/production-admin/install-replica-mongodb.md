@@ -77,10 +77,24 @@ TapData Enterprise 与 TapData Community 在运行时，会将任务的必要配
      dbPath: /var/lib/mongo
      journal:
        enabled: true
+     directoryPerDB: true
+      syncPeriodSecs: 60
+      engine: wiredTiger
+      wiredTiger:
+         engineConfig:
+            cacheSizeGB: 8
+            journalCompressor: snappy
+            directoryForIndexes: false
+         collectionConfig:
+            blockCompressor: snappy
+         indexConfig:
+            prefixCompression: true
    net:
      port: 27017
      bindIp: 0.0.0.0
+        maxIncomingConnections: 20000
    replication:
+      oplogSizeMB: 512000
      replSetName: repl
    security:
      authorization: enabled
@@ -89,7 +103,7 @@ TapData Enterprise 与 TapData Community 在运行时，会将任务的必要配
 
    :::tip
 
-   上述配置文件中，我们指定了日志文件、存储文件目录、服务端端口、认证等信息，您也可以基于业务需求，增加或调整更多参数。关于参数的详细介绍，见 [MongoDB 配置文件选项](https://www.mongodb.com/docs/v4.4/reference/configuration-options)。
+   上述配置文件中，我们指定了日志文件、存储文件目录、服务端端口、认证等信息，其中，`cacheSizeGB` 可设置为总内存的 30%。您也可以基于业务需求，增加或调整更多参数。关于参数的详细介绍，见 [MongoDB 配置文件选项](https://www.mongodb.com/docs/v4.4/reference/configuration-options)。
 
    :::
 

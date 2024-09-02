@@ -92,6 +92,9 @@ import TabItem from '@theme/TabItem';
       
       -- 授予目标 Schema 的表读取权限
       GRANT SELECT ON ALL TABLES IN SCHEMA schema_name TO username;
+      
+      -- Grant USAGE permission to schema
+      GRANT USAGE ON SCHEMA schema_name TO username;
       ```
       </TabItem>
       

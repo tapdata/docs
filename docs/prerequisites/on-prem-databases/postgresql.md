@@ -36,7 +36,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip
 
-使用 Wal2json 插件获取增量数据时，不支持 `tsvector`、`tsquery`、`regproc`、`regprocedure`、`regoper`、`regoperator`、`regclass`、`regtype`、`regconfig` 和 `regdictionary` 类型；而使用 Walminer 插件时，除了上述类型外，还不支持 `array` 和 `oid`。
+将 PostgreSQL 作为目标库或通过 Wal2json 插件获取其增量数据时，以下数据类型不受支持：`tsvector`、`tsquery`、`regproc`、`regprocedure`、`regoper`、`regoperator`、`regclass`、`regtype`、`regconfig` 和 `regdictionary`。如果使用 Walminer 插件，这些类型同样不受支持，此外还包括 `array` 和 `oid` 类型。
 
 :::
 
@@ -104,12 +104,15 @@ import TabItem from '@theme/TabItem';
       -- 授予目标 Schema 的表读取权限
       GRANT SELECT ON ALL TABLES IN SCHEMA schema_name TO username;
       
+      -- 授予目标 Schema 的 USAGE 权限
+      GRANT USAGE ON SCHEMA schema_name TO username;
+      
       -- 授予复制权限
       ALTER USER username REPLICATION;
       ```
       </TabItem>
       </Tabs>
-
+      
       * **database_name**：数据库名称。
       * **schema_name**：Schema 名称。
       * **username**：用户名。
@@ -310,10 +313,13 @@ import TabItem from '@theme/TabItem';
    -- 授予目标 Schema 的表读写权限
    GRANT SELECT,INSERT,UPDATE,DELETE,TRUNCATE ON ALL TABLES IN SCHEMA schemaname TO username;
    
-	-- 由于 PostgreSQL 自身限制，对于无主键表需要执行下面命令才可正常使用更新和删除（TapData 会自动执行）
-   ALTER TABLE schema_name.table_name REPLICA IDENTITY FULL; 
-   ```
+	-- 授予目标 Schema 的 USAGE 权限
+   GRANT USAGE ON SCHEMA schema_name TO username;
    
+   -- 由于 PostgreSQL 自身限制，对于无主键表需要执行下面命令才可正常使用更新和删除（TapData 会自动执行）
+	ALTER TABLE schema_name.table_name REPLICA IDENTITY FULL; 
+	```
+	
 	* **database_name**：数据库名称。
 	* **schema_name**：Schema 名称。
 	* **username**：用户名。

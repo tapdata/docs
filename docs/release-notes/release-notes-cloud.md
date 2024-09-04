@@ -24,7 +24,6 @@ import TabItem from '@theme/TabItem';
 - Oracle、Dameng、Db2 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
 - 全托管实例新增[流量付费](../billing/billing-overview.md)功能，支持[流量账单查看和支付](../billing/renew-subscribe.md)，让用户轻松监控流量使用，便捷管理账单
 - 对于 [PostgreSQL 数据源](../prerequisites/on-prem-databases/postgresql.md)，支持通过 walminer 插件进行增量数据同步，满足更多场景
-- 支持 [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md) 同步至 SQL Server 场景下的分区表同步，提升了数据同步的灵活性和效率
 - 数据复制任务支持多表同时读取，提升数据处理的并行能力和任务执行效率
 
 #### 功能优化

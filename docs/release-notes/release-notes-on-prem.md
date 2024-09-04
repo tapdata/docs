@@ -13,7 +13,6 @@ import Content from '../reuse-content/_enterprise-features.md';
 - Oracle、Dameng、Db2 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
 - 在配置[告警接收邮箱](../best-practice/alert-via-qqmail.md)时，支持使用代理服务，以便在受限网络环境中仍能及时接收告警通知
 - 对于 [PostgreSQL 数据源](../prerequisites/on-prem-databases/postgresql.md)，支持通过 walminer 插件进行增量数据同步，满足更多场景
-- 支持 [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md) 同步至 SQL Server 场景下的分区表同步，提升了数据同步的灵活性和效率
 - 新增支持[批量发布 API 功能](../user-guide/data-service/create-api-service.md)，简化了多接口管理，提升了发布效率
 - 数据复制任务支持多表同时读取，提升数据处理的并行能力和任务执行效率
 

@@ -19,7 +19,7 @@ TapData 支持通过拖拽式操作完成任务的编排与设置，且支持多
 
 ## 灵活定义数据处理逻辑
 
-TapData 在数据复的基础上，提供了一系列针对单表开发的[数据处理节点](../user-guide/data-pipeline/data-development/process-node.md)（如主从合并、字段计算等），您可以自行定义数据处理逻辑，可满足数据分析、处理、灾备等场景。
+TapData 在数据复的基础上，提供了一系列针对单表开发的[数据处理节点](../user-guide/data-development/process-node.md)（如主从合并、字段计算等），您可以自行定义数据处理逻辑，可满足数据分析、处理、灾备等场景。
 
 ## 可视化任务监控
 

@@ -1,6 +1,6 @@
 # 任务预检查说明
 
-import Content from '../../reuse-content/_all-features.md';
+import Content from '../reuse-content/_all-features.md';
 
 <Content />
 
@@ -10,7 +10,7 @@ import Content from '../../reuse-content/_all-features.md';
 
 数据复制/开发任务配置完成后，执行保存或启动任务，页面底部将展示预检查信息，相关示例如下：
 
-![任务预检查](../../images//task_pre_check.png)
+![任务预检查](../images/task_pre_check.png)
 
 
 

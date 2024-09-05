@@ -49,7 +49,7 @@ TapData 作为一款高效、可靠、安全实时数据平台，可为您提供
 
 1. [登录 TapData 平台](../user-guide/log-in.md)。
 
-2. 在左侧导航栏，选择**数据管道** > **数据转换**。
+2. 在左侧导航栏，单击**数据转换**。
 
 3. 单击页面右侧的**创建**。
 
@@ -107,7 +107,7 @@ TapData 作为一款高效、可靠、安全实时数据平台，可为您提供
 
       :::tip
 
-      如需了解更多关于 JS 节点的用法和支持的函数，见[处理节点](../user-guide/data-pipeline/data-development/process-node.md)。
+      如需了解更多关于 JS 节点的用法和支持的函数，见[处理节点](../user-guide/data-development/process-node.md)。
 
       :::
 
@@ -267,4 +267,4 @@ Processed a total of 1 messages
 
 在任务列表页面，您还可以对任务进行启动/停止、监控、编辑、复制、重置、删除等操作。
 
-具体操作，见[管理任务](../user-guide/data-pipeline/data-development/monitor-task.md)。
+具体操作，见[管理任务](../user-guide/data-development/monitor-task.md)。

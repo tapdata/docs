@@ -3,7 +3,7 @@ import Content from '../reuse-content/_all-features.md';
 
 <Content />
 
-如果遇到任务异常，您可以通过任务的[监控页面](../user-guide/data-pipeline/data-development/monitor-task.md)的底部查看相关日志信息，针对常见的问题，TapData 将其固化为特定的错误码方便您查找，同时提供了错误原因及其解决方案。
+如果遇到任务异常，您可以通过任务的[监控页面](../user-guide/data-development/monitor-task.md)的底部查看相关日志信息，针对常见的问题，TapData 将其固化为特定的错误码方便您查找，同时提供了错误原因及其解决方案。
 
 ## 10001
 
@@ -73,7 +73,7 @@ import Content from '../reuse-content/_all-features.md';
 **解决方案**：
 
 * 参考下方报错信息，比对出错的字段在源库和目标库的类型是否一致，如果不一致，使用数据库的DDL或类似命令进行修正后，再次运行任务。
-* 使用 [JS 处理节点](../user-guide/data-pipeline/data-development/process-node.md#js-process)，将出错字段过滤，如出错字段为 field1，对应的 JS 为\"record.remove('field1')\"。
+* 使用 [JS 处理节点](../user-guide/data-development/process-node.md#js-process)，将出错字段过滤，如出错字段为 field1，对应的 JS 为\"record.remove('field1')\"。
 * 如果用 JS 处理节点对数据类型进行了改动，则应在 JS 编辑框的下方，按照模型语法，将新的类型传递给 Tapdata，删除目标表后，再次运行任务。
 
 
@@ -89,7 +89,7 @@ import Content from '../reuse-content/_all-features.md';
 **解决方案**：
 
 * 参考下方报错信息，找到出错的字段，使用数据库的DDL或类似命令进行修正后，再次运行任务。
-* 使用 [JS 处理节点](../user-guide/data-pipeline/data-development/process-node.md#js-process)，将出错字段过滤，如出错字段为 field1，对应的 JS 为\"record.remove('field1')\"。
+* 使用 [JS 处理节点](../user-guide/data-development/process-node.md#js-process)，将出错字段过滤，如出错字段为 field1，对应的 JS 为\"record.remove('field1')\"。
 * 如果用 JS 处理节点对数据类型进行了改动，则应在 JS 编辑框的下方，按照模型语法，将新的类型传递给 Tapdata，删除目标表后，再次运行任务。
 
 

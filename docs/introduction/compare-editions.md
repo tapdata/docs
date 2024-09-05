@@ -115,31 +115,31 @@ TapData Community 是一个开源的数据集成平台，提供基础的数据�
 </tr>
   <tr>
     <td rowspan="5">数据管道</td>
-    <td><a href="../user-guide/data-pipeline/copy-data">数据复制</a></td>
+    <td><a href="../user-guide/copy-data">数据复制</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="../user-guide/data-pipeline/data-development">数据转换</a></td>
+    <td><a href="../user-guide/data-development">数据转换</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="user-guide/data-pipeline/data-development/create-materialized-view">实时物化视图</a></td>
+    <td><a href="user-guide/data-development/create-materialized-view">实时物化视图</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="../user-guide/data-pipeline/data-development/process-node">表处理节点</a></td>
+    <td><a href="../user-guide/data-development/process-node">表处理节点</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="../user-guide/data-pipeline/copy-data/create-task#310-table-model">节点告警</a></td>
+    <td><a href="../user-guide/copy-data/create-task#310-table-model">节点告警</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>
@@ -171,7 +171,7 @@ TapData Community 是一个开源的数据集成平台，提供基础的数据�
   </tr>
   <tr>
     <td rowspan="6">高级功能</td>
-    <td><a href="../user-guide/data-pipeline/verify-data">数据校验</a></td>
+    <td><a href="../user-guide/verify-data">数据校验</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>

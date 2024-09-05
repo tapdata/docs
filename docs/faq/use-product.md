@@ -81,13 +81,13 @@ import Content2 from '../reuse-content/_enterprise-features.md';
 
 **实时视图方案**
 
-实时视图方案适用于 SQL 语句相对简单，对数据实时性要求高的场景，其核心思想上以多样化的[处理节点](../user-guide/data-pipeline/data-development/process-node)来实现 SQL 语句中的具体操作（如 Join），最终将处理后的数据实时同步到一个新表，最后基于该表创建并发布 API 服务。
+实时视图方案适用于 SQL 语句相对简单，对数据实时性要求高的场景，其核心思想上以多样化的[处理节点](../user-guide/data-development/process-node)来实现 SQL 语句中的具体操作（如 Join），最终将处理后的数据实时同步到一个新表，最后基于该表创建并发布 API 服务。
 
 具体步骤如下：
 
-1. [创建数据转换任务](../user-guide/data-pipeline/data-development/create-task)。
+1. [创建数据转换任务](../user-guide/data-development/create-task)。
 
-2. 将 SQL 语句中的具体操作以处理节点来替代。如下图所示，我们预先将 **customer** 和 **company** 表执行连接（Join）操作（通过[连接节点](../user-guide/data-pipeline/data-development/process-node#join)实现），并将其结果存至 **join_result** 表。
+2. 将 SQL 语句中的具体操作以处理节点来替代。如下图所示，我们预先将 **customer** 和 **company** 表执行连接（Join）操作（通过[连接节点](../user-guide/data-development/process-node#join)实现），并将其结果存至 **join_result** 表。
 
    ![Join 表](../images/join_table_for_api.png)
 
@@ -103,7 +103,7 @@ import Content2 from '../reuse-content/_enterprise-features.md';
 
 具体步骤如下：
 
-1. [创建数据转换任务](../user-guide/data-pipeline/data-development/create-task)。
+1. [创建数据转换任务](../user-guide/data-development/create-task)。
 
 2. 在画布中添加源和目标节点。
 

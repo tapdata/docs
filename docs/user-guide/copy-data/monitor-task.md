@@ -1,5 +1,5 @@
 # 监控数据复制任务
-import Content from '../../../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
@@ -11,7 +11,7 @@ import Content from '../../../reuse-content/_all-features.md';
 
 :::
 
-![](../../../images/monitor_copy_task_overview_cn.png)
+![](../../images/monitor_copy_task_overview_cn.png)
 
 
 
@@ -43,7 +43,7 @@ import Content from '../../../reuse-content/_all-features.md';
 
 ## ③ 节点信息展示区
 
-将鼠标指针悬浮至节点，可展示对应节点的关键指标信息，单击节点右下角的![](../../../images/node_more_icon.png)图标可查看更多细节。
+将鼠标指针悬浮至节点，可展示对应节点的关键指标信息，单击节点右下角的![](../../images/node_more_icon.png)图标可查看更多细节。
 
 - 全量进度：全量时展示即该节点的全量进度。
 - 增量时间点：增量时展示采集增量日志的时间点。此处以（当前引擎的时间-该节点的增量时间点） 的相对时间来表达，具体的增量时间点信息，鼠标移入时会在浮窗里展示。
@@ -57,15 +57,15 @@ import Content from '../../../reuse-content/_all-features.md';
 
 ## ④ <span id="error-code">任务日志展示区</span>
 
-单击页面顶部的![](../../../images/view_log_icon.png)图标，可展示任务日志展示区，在该区域，您可以查看任务运行的进度、日志、运行记录、告警列表和关联任务信息。而在**日志**标签中，您可以根据关键词、周期、等级来过滤日志，也可以下载日志在本地分析。
+单击页面顶部的![](../../images/view_log_icon.png)图标，可展示任务日志展示区，在该区域，您可以查看任务运行的进度、日志、运行记录、告警列表和关联任务信息。而在**日志**标签中，您可以根据关键词、周期、等级来过滤日志，也可以下载日志在本地分析。
 
 此外，针对常见问题，TapData 还支持显示相关错误码。
 
-![错误码](../../../images/error_log_code.png)
+![错误码](../../images/error_log_code.png)
 
-单击该错误码，可在弹出的对话框中详细了解详细的原因及解决方案，更多信息，见[任务错误码及解决方案](../../../troubleshooting/error-code.md)。
+单击该错误码，可在弹出的对话框中详细了解详细的原因及解决方案，更多信息，见[任务错误码及解决方案](../../troubleshooting/error-code.md)。
 
-![错误码详情](../../../images/error_code_pdk10003.png)
+![错误码详情](../../images/error_code_pdk10003.png)
 
 
 
@@ -73,7 +73,7 @@ import Content from '../../../reuse-content/_all-features.md';
 
 ## ⑤ 任务/告警设置区
 
-单击页面顶部的![](../../../images/task_setting_icon.png)图标，可展示任务设置（不可修改)和告警设置，您可以设置告警规则：
+单击页面顶部的![](../../images/task_setting_icon.png)图标，可展示任务设置（不可修改)和告警设置，您可以设置告警规则：
 
 * 任务运行出错告警
 * 任务全量完成通知

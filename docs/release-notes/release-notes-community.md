@@ -6,11 +6,42 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.12
+
+### 新增功能
+
+- Dameng 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+- 对于 [PostgreSQL 数据源](../prerequisites/on-prem-databases/postgresql.md)，支持通过 walminer 插件进行增量数据同步，满足更多场景
+- 数据复制任务支持多表同时读取，提升数据处理的并行能力和任务执行效率
+
+### 功能优化
+
+- 全面提升数据同步性能
+- 优化菜单入口布局结构
+- 优化报错提示和高危操作风险提示
+- 对于不支持 hash 校验的数据源，默认禁用 hash 校验功能
+- 全量任务同步完成后，再次启动任务将重新全量同步，以确保数据一致性
+
+### 问题修复
+
+- 修复任务完成后部分任务监控指标丢失的问题
+- 修复中间库缺少必要索引导致的查询效率问题，减少了数据扫描量
+- 修复数据校验下载异常数据时选择“仅显示差异字段”却下载了全部字段的问题
+- 修复在集群管理中修改引擎名称后任务设置仍显示旧名称的问题
+- 修复任务编辑时可能会卡在模型生成中的问题，提升了任务编辑体验
+- 修复数据复制任务在增量阶段任务停止后再启动时，全量完成时间显示不正确的问题
+- 修复 TDengine 写入超级表时，字段较多引发的 SQL 语句长度超限的问题
+- 修复 TDengine 为源的数据转换任务中，表名含中文时任务报错的问题
+- 修复在 PostgreSQL 数据源上运行挖掘任务时可能出现的异常情况
+- 修复 MongoDB 到 Kafka 的数据转换任务在增量阶段的特定异常问题
+- 修复数据转换任务中，MongoDB oplog 同步到 Kafka 时模型中多了 `_id` 字段的问题
+- 修复 MongoDB oplog 数据复制任务在同步过程中无法正常复制的问题
+
 ## 3.11
 
 ### 新增功能
 
-- 在[数据转换任务配置](../user-guide/data-pipeline/data-development/create-task.md)阶段，源节点模型预览区域支持单表模型的重新加载，提高加载效率
+- 在[数据转换任务配置](../user-guide/data-development/create-task.md)阶段，源节点模型预览区域支持单表模型的重新加载，提高加载效率
 - 新增时间探测功能，自动探测引擎部署服务器和数据库服务器的时间差，并在任务监控页面展示
 
 ### 功能优化
@@ -26,7 +57,7 @@ import Content from '../reuse-content/_community-features.md';
 
 ### 新增功能
 
-- 数据复制任务新增[多表合并](../user-guide/data-pipeline/copy-data/process-node#union-node)节点，可对同一数据库中的多个表执行合并操作（UNION），可用于整合和分析数据等场景
+- 数据复制任务新增[多表合并](../user-guide/copy-data/process-node#union-node)节点，可对同一数据库中的多个表执行合并操作（UNION），可用于整合和分析数据等场景
 - [Doris](../prerequisites/warehouses-and-lake/doris.md) 数据源支持无证书的 HTTPS 连接方式
 - MySQL、Oracle、OpenGauss、SQL Server、PostgreSQL 数据源，支持任务配置时，在节点的高级配置中启用 **Hash 分片**功能，可大幅提升大表的全量数据同步速度
 - 新增 [VastBase](../prerequisites/on-prem-databases/vastbase) 数据源，成熟度为 Beta，进一步丰富数据源种类

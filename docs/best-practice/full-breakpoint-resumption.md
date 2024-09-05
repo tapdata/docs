@@ -27,7 +27,7 @@ import Content from '../reuse-content/_all-features.md';
 
 1. [登录 TapData 平台](../user-guide/log-in.md)。
 
-2. 在左侧导航栏，选择**数据管道** > **数据复制**。
+2. 在左侧导航栏，单击**数据转换**。
 
 3. 单击页面右侧的**创建**。
 
@@ -101,7 +101,7 @@ import Content from '../reuse-content/_all-features.md';
 
    :::tip
 
-   如提未通过预检查，请根据当前页面的日志提示进行调整。更多信息，见[任务预检查说明](../user-guide/data-pipeline/pre-check.md)。
+   如提未通过预检查，请根据当前页面的日志提示进行调整。更多信息，见[任务预检查说明](../user-guide/pre-check.md)。
 
    :::
 

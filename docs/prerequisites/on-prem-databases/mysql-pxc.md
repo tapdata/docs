@@ -1,5 +1,5 @@
 # MySQL PXC
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 

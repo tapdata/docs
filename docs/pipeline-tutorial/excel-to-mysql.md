@@ -20,7 +20,7 @@ Excel 是使用广泛的数据统计和数据分析软件，TapData 支持读取
 
 1. [登录 TapData 平台](../user-guide/log-in.md)。
 
-2. 在左侧导航栏，选择**数据管道** > **数据转换**。
+2. 在左侧导航栏，单击**数据转换**。
 
 3. 单击页面右侧的**创建**。
 
@@ -115,4 +115,4 @@ Excel 是使用广泛的数据统计和数据分析软件，TapData 支持读取
 
 在任务列表页面，您还可以对任务进行启动/停止、监控、编辑、复制、重置、删除等操作。
 
-具体操作，见[管理任务](../user-guide/data-pipeline/data-development/monitor-task.md)。
+具体操作，见[管理任务](../user-guide/data-development/monitor-task.md)。

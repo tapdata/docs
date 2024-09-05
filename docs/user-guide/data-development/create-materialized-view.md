@@ -1,5 +1,5 @@
 # 构建实时物化视图（Beta）
-import Content from '../../../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
@@ -19,17 +19,15 @@ TapData 的实时物化视图功能正是为解决这类问题而设计，帮助
 
 ## 操作步骤
 
-1. [登录 TapData 平台](../../log-in.md)。
+1. [登录 TapData 平台](../log-in.md)。
 
-2. 基于产品类型选择操作入口：
-   * TapData Cloud：在左侧导航栏，单击**数据转换**。
-   * apdata Enterprise 或 TapData Community：在左侧导航栏，选择**数据管道** > **数据转换**。
+2. 在左侧导航栏，单击**数据转换**。
 
 3. 单击页面右侧的**构建物化视图**，在跳转到任务配置页面完成主表配置。
 
    1. 选择要作为物化视图来源的数据库和表，本案例中选择 **order** 表作为主表。
 
-      ![选择主表](../../../images/select_main_table.png)
+      ![选择主表](../../images/select_main_table.png)
 
    2. 前面我们提到，我们希望能够构建包含用户信息、货品表等完整数据的物化视图，首先我们单击 **+ 新增字段**，在弹出的菜单中选择内嵌文档并输入字段名称为 **user**。
 
@@ -37,7 +35,7 @@ TapData 的实时物化视图功能正是为解决这类问题而设计，帮助
 
       完成设置后，即可看到 **orders** 表中多了一个名为 **user** 的内嵌文档字段。
 
-      ![添加字段](../../../images/add_columns.png)
+      ![添加字段](../../images/add_columns.png)
 
    4. 增加一个 **sub_orders** 字段来存储子订单信息，即在 **orders** 表上单击 **+ 新增字段**, 选择**内嵌数组**并输入路径 **sub_orders**，然后参考上一步骤完成表和关联条件的设置。
 
@@ -45,17 +43,17 @@ TapData 的实时物化视图功能正是为解决这类问题而设计，帮助
 
       完成所有配置后，具体关联关系如下图所示，至此，**orders** 表包含了全部的表信息。
 
-      ![物化视图概览](../../../images/materialized_view_overview.png)
+      ![物化视图概览](../../images/materialized_view_overview.png)
 
 4. 单击 **orders** 表编辑框右上角的 **+ 写入目标**，然后选择要写入的 MongoDB 数据源和集合名称。
 
    如下图所示，我们可以在右侧的目标集合 **order_view** 中看到其字段类型和详情。
 
-   ![选择目标表](../../../images/select_view_write_target.png)
+   ![选择目标表](../../images/select_view_write_target.png)
 
 5. 单击左上角的 **X** 图标返回至任务配置页面，单击右上角的**启动**，即可完成实时物化视图的构建。
 
    启动成功后会自动跳转至任务监控页面，您可以查看任务的 RPS（每秒处理记录数）、延迟、任务事件等信息。
 
-   ![查看](../../../images/monitor_view_task.png)
+   ![查看](../../images/monitor_view_task.png)
 

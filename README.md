@@ -51,7 +51,16 @@ We welcome contributions to help improve the documentation! Here is the steps:
    npm run start
    ```
 
-5. Create a pull request.
+5. Check broken links.
+
+   ```bash
+   # build site
+   npm run build
+   # check broken links and fix it follow the logs
+   npx @untitaker/hyperlink ./build --check-anchors
+   ```
+
+6. Create a pull request.
 
 ## Project structure
 
@@ -94,4 +103,3 @@ We have a few channels for contact:
 <p align="left">
 <a href="https://20778419.s21i.faiusr.com/4/2/ABUIABAEGAAg-JPfhwYonMrzlwEwZDhk.png" rel="nofollow"><img src="https://20778419.s21i.faiusr.com/4/2/ABUIABAEGAAg-JPfhwYonMrzlwEwZDhk.png" style="zoom: 100%;" /></a>
 </p>
-

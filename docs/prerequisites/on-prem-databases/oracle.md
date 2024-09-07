@@ -97,7 +97,7 @@ import TabItem from '@theme/TabItem';
 
 
 
-## 准备工作
+## <span id="prerequisites">准备工作</span>
 
 ### 作为源库
 

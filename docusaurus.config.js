@@ -64,6 +64,12 @@ const config = {
           trackingID: 'G-43PEGV94TX', // Measurement ID, which can be find in Data streams page on Google Analytics platform.
         },
         blog: false, // Disable the blog plugin
+        sitemap: {
+          changefreq: 'daily',
+          priority: 0.5,
+          ignorePatterns: ['/reuse/**'],
+          filename: 'sitemap.xml',
+        },
       }),
     ],
   ],

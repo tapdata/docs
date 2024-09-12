@@ -70,6 +70,7 @@ const sidebars = {
             'tapdb/appendix/license',
             'tapdb/appendix/compatibility',
             'tapdb/appendix/install-on-ubuntu-v4',
+            'tapdb/appendix/docker-images',
         ]
     }, 
 

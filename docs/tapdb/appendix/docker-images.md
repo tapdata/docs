@@ -4,7 +4,11 @@
 
 ## 导入镜像包
 
-tapdb-4.4xcl-x86_64-kylin-v10-sp2.tgz：表示 TapDB v4.4(对应 MongoDB v4.4)，架构是 x86_64，系统环境是 Kylin v10 SP2
+镜像包名称：`tapdb-4.4xcl-x86_64-kylin-v10-sp2-img.tgz`
+
+* `tapdb-4.4xcl-x86_64`：表示 TapDB 版本为 v4.4（对应 MongoDB v4.4），架构是 x86_64
+* `kylin-v10-sp2`：表示系统环境是 Kylin v10 SP2
+* `-img`：表示这是一个镜像包
 
 ```shell
 # 导入镜像文件
@@ -15,9 +19,7 @@ sudo docker load -i tapdb-4.4xcl-x86_64-kylin-v10-sp2-img.tgz
 
 默认情况下，DB storage 在容器的 `/data/db` 目录；
 
-license 文件在容器中的路径是, `/tapdb/config/license.txt`;
-
-也可以自定义;
+License 文件在容器中的路径是 `/tapdb/config/license.txt`，也可以自定义。
 
 ```shell
 # 默认情况启动容器
@@ -25,7 +27,8 @@ sudo docker run -it \
 --name tapdb \
 -v <本地license文件所在目录>:/tapdb/config \
 -p 27017:27017 \
-tapdb-4.4xcl-x86_64-kylin-v10-sp2:x86_64
+tapdb-4.4xcl-x86_64-kylin-v10-sp2:x86_64 \
+tapdb --license=/tapdb/config/license.txt
 ```
 
 也可以自定义传入启动参数：

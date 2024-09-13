@@ -47,7 +47,16 @@
    npm run start
    ```
 
-5. 确认无问题后，提交 PR。
+5. 检查并修复断链或无效锚点。
+
+   ```bash
+   # 生成网站静态网页
+   npm run build
+   # 执行检查，基于界面提示修复
+   npx @untitaker/hyperlink ./build --check-anchors
+   ```
+
+6. 确认无问题后，提交 PR。
 
 ## 目录结构说明
 

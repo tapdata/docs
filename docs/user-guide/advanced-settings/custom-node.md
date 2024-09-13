@@ -56,7 +56,7 @@ import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
 1. [登录 TapData 平台](../log-in.md)。
 
-2. 在左侧导航栏，选择**数据管道** > **自定义节点**。
+2. 在左侧导航栏，选择**高级功能** > **自定义节点**。
 
 3. 在页面右侧，单击**新增**。
 
@@ -86,7 +86,7 @@ import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
 6. 点击右上角**保存**按钮。
 
-7. [创建数据转换任务](../data-pipeline/data-development/create-task.md)，在源头和目标节点间，增加我们刚刚创建的手机号脱敏节点，并填写手机号对应的字段，本案例为 mobile。
+7. [创建数据转换任务](../data-development/create-task.md)，在源头和目标节点间，增加我们刚刚创建的手机号脱敏节点，并填写手机号对应的字段，本案例为 mobile。
 
    ![手机号脱敏](../../images/masking_mobile_cn.png)
 
@@ -110,7 +110,7 @@ import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
 1. [登录 TapData 平台](../log-in.md)。
 
-2. 在左侧导航栏，选择**数据管道** > **自定义节点**。
+2. 在左侧导航栏，选择**高级功能** > **自定义节点**。
 
 3. 在页面右侧，单击**新增**。
 
@@ -143,6 +143,6 @@ import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
    5. 点击右上角**保存**按钮。
 
-   6. [创建数据转换任务](../data-pipeline/data-development/create-task.md)，在源头和目标节点间，增加我们刚刚创建的 CSV 转义节点，然后选择相关字段。
+   6. [创建数据转换任务](../data-development/create-task.md)，在源头和目标节点间，增加我们刚刚创建的 CSV 转义节点，然后选择相关字段。
 
       ![csv_formatting_cn](../../images/csv_formatting_cn.png)

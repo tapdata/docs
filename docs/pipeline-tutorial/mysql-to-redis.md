@@ -9,7 +9,7 @@ Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓�
 
 :::tip
 
-如需同时将源 MySQL 中的数据表同步到 Redis，可[创建数据复制任务](../user-guide/data-pipeline/copy-data/create-task.md)，配置流程与本文类似。
+如需同时将源 MySQL 中的数据表同步到 Redis，可[创建数据复制任务](../user-guide/copy-data/create-task.md)，配置流程与本文类似。
 
 :::
 
@@ -24,7 +24,7 @@ Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓�
 
 1. [登录 TapData 平台](../user-guide/log-in.md)。
 
-2. 在左侧导航栏，选择**数据管道** > **数据转换**。
+2. 在左侧导航栏，单击**数据转换**。
 
 3. 单击页面右侧的**创建**。
 
@@ -115,7 +115,7 @@ Redis 是基于内存的 key-value（键值对）数据库，可用于数据缓�
 
 8. 确认无误后，单击**启动**。
 
-   操作完成后，您可以在当前页面观察任务的执行情况，如 QPS、延迟、任务时间统计等信息，示例如下：
+   操作完成后，您可以在当前页面观察任务的执行情况，如 RPS（每秒处理记录数）、延迟、任务时间统计等信息，示例如下：
 
    ![监控任务执行情况](../images/mysql_to_redis_result.png)
 
@@ -164,4 +164,4 @@ registry_date: 15-07-2011
 
 在任务列表页面，您还可以对任务进行启动/停止、监控、编辑、复制、重置、删除等操作。
 
-具体操作，见[管理任务](../user-guide/data-pipeline/data-development/monitor-task.md)。
+具体操作，见[管理任务](../user-guide/data-development/monitor-task.md)。

@@ -65,6 +65,6 @@ import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
   ![共享缓存](../../images/apply_external_storage_shared_cache_cn.png)
 
-* 创建数据复制/开发任务时，增加[处理节点](../data-pipeline/data-development/process-node.md)（如连接节点）时，可选择外存。
+* 创建数据复制/开发任务时，增加[处理节点](../data-development/process-node.md)（如连接节点）时，可选择外存。
 
   ![处理节点](../../images/apply_external_storage_join_cn.png)

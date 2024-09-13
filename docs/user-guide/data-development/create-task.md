@@ -1,5 +1,5 @@
 # 创建数据转换任务
-import Content from '../../../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
@@ -9,11 +9,10 @@ TapData 的数据转换任务支持在源/目标节点间增加处理节点，�
 
 本案例中，我们将演示如何通过数据转换任务，在不改变源表（**customer** 表）的结构和数据的情况下，将表结构中的 **birthdate** 字段类型从 **STRING** 转换为 **DATE**，同时筛选出生日期晚于 **1991-01-01** 的用户，最后将表结构和筛选后的数据应用至新的表（**customer_new**）中。
 
-1. [登录 TapData 平台](../../log-in.md)。
+1. [登录 TapData 平台](../log-in.md)。
 
-2. 基于产品类型选择操作入口：
-    * TapData Cloud：在左侧导航栏，单击**数据转换**。
-    * apdata Enterprise 或 TapData Community：在左侧导航栏，选择**数据管道** > **数据转换**。
+2. 在左侧导航栏，单击**数据转换**。
+
 3. 单击页面右侧的**创建**，跳转到任务配置页面。
 
 4. 在页面左侧的**连接**区域，依次拖拽作为源和目标的数据连接至右侧画布中。
@@ -28,17 +27,17 @@ TapData 的数据转换任务支持在源/目标节点间增加处理节点，�
 
 6. 将上述四个节点按照数据流转顺序连接起来，如下图所示。
 
-   ![连接节点](../../../images/connect_data_dev_nodes.png)
+   ![连接节点](../../images/connect_data_dev_nodes.png)
 
 7. 根据下述说明，依次完成各节点配置。
 
    1. 在画布中，单击最左侧的源节点，根据下述说明完成右侧面板的<span id="full-sql-query">参数配置</span>。
 
-      ![源节点设置](../../../images/data_dev_source_node_setting.png)
+      ![源节点设置](../../images/data_dev_source_node_setting.png)
 
       * **基础设置**      
         * **节点名称**：默认为连接名称，您也可以设置一个具有业务意义的名称。
-        * **表**：选择要操作的源表，下方将展示表的结构信息，包含列名和列类型。 
+        * **表**：选择要操作的源表，下方将展示表的结构信息，包含列名和列类型，可单击**模型**旁的刷新按钮以重载该表的模型。
       * **高级设置**      
         * **DDL 同步配置**      
           选择是否启用 **DDL 事件采集**，打开该开关后，TapData 会自动采集所选的源端 DDL 事件（如新增字段），如果目标端支持 DDL 写入即可实现 DDL 语句的同步。 
@@ -60,11 +59,11 @@ TapData 的数据转换任务支持在源/目标节点间增加处理节点，�
 
    2. 单击**类型修改**节点，然后在右侧面板中，修改 **birthdate** 字段的类型为 **Date**。
 
-      ![修改字段类型](../../../images/data_dev_column_type_setting.png)
+      ![修改字段类型](../../images/data_dev_column_type_setting.png)
 
    3. 单击 Row Filter 节点，根据下述说明完成右侧面板的参数配置。
 
-      ![Row Filter 节点设置](../../../images/data_dev_row_filter_setting.png)
+      ![Row Filter 节点设置](../../images/data_dev_row_filter_setting.png)
 
       * **执行动作**：选择为**保留匹配数据**。
       * **条件表达式**：填写数据匹配的表达式，本案例填写为 `record.birthdate >= '1990-01-01'`，支持的符号如下：
@@ -75,7 +74,7 @@ TapData 的数据转换任务支持在源/目标节点间增加处理节点，�
 
    4. 单击最后的目标数据节点，根据下述说明完成右侧面板的<span id="target-node-set">参数配置</span>。
 
-      ![节点基础设置](../../../images/data_dev_target_node_basic_setting.png)
+      ![节点基础设置](../../images/data_dev_target_node_basic_setting.png)
 
       * **基础设置**      
         * **节点名称**：默认为连接名称，您也可以设置一个具有业务意义的名称。
@@ -101,11 +100,11 @@ TapData 的数据转换任务支持在源/目标节点间增加处理节点，�
    * **同步类型**：可选择**全量+增量**，也可单独选择**全量**或**增量**。
      全量表示将源端的存量数据复制到目标端，增量表示将源端实时产生的新数据或数据变更复制到目标端，二者结合可用于实时数据同步场景。
    * **任务描述**：填写任务的描述信息。
-   * **高级设置**：设置任务开始的时间、[共享挖掘](../../advanced-settings/share-mining.md)、增量数据处理模式、处理器线程数、Agent 等。
+   * **高级设置**：设置任务开始的时间、[共享挖掘](../advanced-settings/share-mining.md)、增量数据处理模式、处理器线程数、Agent 等。
 
 9. 单击**保存**或**启动**按钮完成创建，为保障任务的正常运行，TapData 会基于节点配置和数据源特征进行预检查，同时打印日志信息。
 
-   ![任务预检查](../../../images/dev_task_pre_check.png.png)
+   ![任务预检查](../../images/dev_task_pre_check.png.png)
 
    :::tip
 
@@ -113,9 +112,9 @@ TapData 的数据转换任务支持在源/目标节点间增加处理节点，�
 
    :::
 
-10. 启动成功后会自动跳转至任务监控页面，您可以查看任务的 QPS、延迟、任务事件等信息。
+10. 启动成功后会自动跳转至任务监控页面，您可以查看任务的 RPS（每秒处理记录数）、延迟、任务事件等信息。
 
-    ![监控任务状态](../../../images/data_dev_monitor_cn.png)
+    ![监控任务状态](../../images/data_dev_monitor_cn.png)
 
    
 

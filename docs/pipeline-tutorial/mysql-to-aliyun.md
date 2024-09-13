@@ -82,7 +82,7 @@ import Content from '../reuse-content/_enterprise-and-cloud-features.md';
 
 8. 确认无误后，单击**启动**。
 
-   操作完成后，您可以在当前页面观察任务的执行情况，如 QPS、延迟、任务时间统计等信息，示例如下：
+   操作完成后，您可以在当前页面观察任务的执行情况，如 RPS（每秒处理记录数）、延迟、任务时间统计等信息，示例如下：
 
    ![查看任务运行详情](../images/local_to_aliyun_rds_mysql_monitor_task.png)
 
@@ -110,4 +110,4 @@ import Content from '../reuse-content/_enterprise-and-cloud-features.md';
 
 在任务列表页面，您还可以对任务进行启动/停止、监控、编辑、复制、重置、删除等操作。
 
-具体操作，见[管理任务](../user-guide/data-pipeline/copy-data/manage-task.md)。
+具体操作，见[管理任务](../user-guide/copy-data/manage-task.md)。

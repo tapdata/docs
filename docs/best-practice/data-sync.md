@@ -57,7 +57,7 @@ import Content from '../reuse-content/_all-features.md';
 | 类别               | 说明                                                         |
 | ------------------ | ------------------------------------------------------------ |
 | **实时监控**       | 任务启动后，通过任务监控页面，观察任务运行细节，例如全量同步阶段的同步速率、源库的数据变更等信息，及时发现和解决问题。如遇任务异常，可通过任务日志，了解[错误码和解决方案](../troubleshooting/error-code.md)。 |
-| **数据一致性校验** | 对数据表[执行数据校验](../user-guide/data-pipeline/verify-data.md)，支持定期校验及多种校验方法（如字段值校验），可帮助您进一步验证和确保数据流转的正确性，满足生产环境的严苛要求。 |
+| **数据一致性校验** | 对数据表[执行数据校验](../user-guide/verify-data.md)，支持定期校验及多种校验方法（如字段值校验），可帮助您进一步验证和确保数据流转的正确性，满足生产环境的严苛要求。 |
 
 
 
@@ -74,5 +74,5 @@ import Content from '../reuse-content/_all-features.md';
 
 ## 相关文档
 
-* [创建数据复制任务](../user-guide/data-pipeline/copy-data/README.md)
+* [创建数据复制任务](../user-guide/copy-data/README.md)
 * [常见问题](../faq/README.md)

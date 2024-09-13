@@ -17,6 +17,113 @@ import TabItem from '@theme/TabItem';
   <TabItem value="2024 年" default>
 ```
 
+### 2024-08-21
+
+#### 新增功能
+
+- Oracle、Dameng、Db2 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+- 全托管实例新增[流量付费](../billing/billing-overview.md)功能，支持[流量账单查看和支付](../billing/renew-subscribe.md)，让用户轻松监控流量使用，便捷管理账单
+- 对于 [PostgreSQL 数据源](../prerequisites/on-prem-databases/postgresql.md)，支持通过 walminer 插件进行增量数据同步，满足更多场景
+- 数据复制任务支持多表同时读取，提升数据处理的并行能力和任务执行效率
+
+#### 功能优化
+
+- Agent 部署页面新增网络白名单配置指南，帮助轻松配置 Agent 与管理端的通信
+- 优化报错提示和高危操作风险提示
+- 全面提升数据同步性能
+- 对于不支持 hash 校验的数据源，默认禁用 hash 校验功能
+- 全量任务同步完成后，再次启动任务将重新全量同步，以确保数据一致性
+
+#### 问题修复
+
+- 修复任务完成后部分任务监控指标丢失的问题
+- 修复中间库缺少必要索引导致的查询效率问题，减少了数据扫描量
+- 修复数据校验下载异常数据时选择“仅显示差异字段”却下载了全部字段的问题
+- 修复在集群管理中修改引擎名称后任务设置仍显示旧名称的问题
+- 修复任务编辑时可能会卡在模型生成中的问题，提升了任务编辑体验
+- 修复大规格 Agent 在低配置服务器上由于内存不足无法启动的问题
+- 修复 Agent 可能出现的 OOM 报错问题，增强了内存管理和稳定性
+- 修复全量任务有时会卡在运行中状态的问题，提升了任务执行的顺畅性
+- 修复数据复制任务在增量阶段任务停止后再启动时，全量完成时间显示不正确的问题
+- 修复 TDengine 写入超级表时，字段较多引发的 SQL 语句长度超限的问题
+- 修复 TDengine 为源的数据转换任务中，表名含中文时任务报错的问题
+- 修复在 PostgreSQL 数据源上运行挖掘任务时可能出现的异常情况
+- 修复 Oracle 到 Doris 的共享挖掘任务中源表 DDL 事件无法解析的问题
+- 修复 Oracle 同步至 PostgreSQL 无主键表时，出现的插入和删除异常问题，提升了同步可靠性
+- 修复 MongoDB 到 Kafka 的数据转换任务在增量阶段的特定异常问题
+- 修复数据转换任务中，MongoDB oplog 同步到 Kafka 时模型中多了 `_id` 字段的问题
+- 修复 MongoDB oplog 数据复制任务在同步过程中无法正常复制的问题
+
+### 2024-08-06
+
+#### 新增功能
+
+- 在[数据转换任务配置](../user-guide/data-development/create-task.md)阶段，源节点模型预览区域支持单表模型的重新加载，提高加载效率
+- 新增时间探测功能，自动探测引擎部署服务器和数据库服务器的时间差，并在任务监控页面展示
+
+#### 功能优化
+
+* 用户定义的字段业务描述可直接展示在表样例数据的列名位置
+
+#### 问题修复
+
+- 修复实时数据平台某些表数据量统计为空的问题
+- 修复实时数据平台发布 API 时路径未显示 host 的问题
+- 修复 MongoDB 数据库 cursor 超时导致任务无法正常全量同步的问题
+- 修复源节点数据过滤设置中自定义 SQL 过滤开关无法打开的问题
+- 修复云版线上全托管 Agent 的邮件告警格式错误的问题
+
+### 2024-07-20
+
+#### 新增功能
+
+- 数据复制任务新增[多表合并](../user-guide/copy-data/process-node#union-node)节点，可对同一数据库中的多个表执行合并操作（UNION），可用于整合和分析数据等场景
+- [Doris](../prerequisites/warehouses-and-lake/doris.md) 数据源支持无证书的 HTTPS 连接方式
+- MySQL、Oracle、OpenGauss、SQL Server、PostgreSQL 数据源，支持任务配置时，在节点的高级配置中启用 **Hash 分片**功能，可大幅提升大表的全量数据同步速度
+- 新增 [VastBase](../prerequisites/on-prem-databases/vastbase) 数据源，成熟度为 Beta，进一步丰富数据源种类
+
+#### 功能优化
+
+- 优化时区类字段的同步逻辑
+- 日志连续挖掘设置优化展示逻辑，当数据库的版本不支持此功能时自动隐藏相关按钮
+
+#### 问题修复
+
+- 修复采用了共享挖掘的 MongoDB 同步任务中，增量同步延迟显示的问题
+- 修复源端 MySQL 不支持增量时，任务报错信息不明确且错误码的详细信息中缺少相关提示的问题
+- 修复任务警告的警报格式不正确的问题
+- 修复导入的任务显示有运行记录，且当前运行记录状态显示为删除中的问题
+- 修复在创建 FDM 复制任务时，修改表名时未正常显示的问题
+- 修复任务目标表关联键设置后，编辑任务时自动推演模型错误地修改关联键的问题
+- 修复 Python 节点移除字段可能失败的问题
+- 修复在主从合并操作中，删除主节点后，主从合并节点配置异常导致任务错误的问题
+- 修复应用管理中，创建应用时提示标签名称已存在的问题
+- 修复在引擎服务器未设置 UTF 字符编码的场景下，如果源端发生 DDL，导致任务的中文节点名称出现乱码的问题
+
+### 2024-07-05
+
+#### 功能优化
+
+* [实时数据中心](../user-guide/real-time-data-hub/README.md)功能优化：
+  * 数据加工层支持显示库中所有模型
+  * 平台缓存层与平台加工层可选择不同的的连接，设置后不可调整
+  * 增加 API 发布入口
+  * 优化模型详情的展示
+* ElasticSearch 数据源添加字段限制配置参数
+* MongoDB 数据源开启 preimage 能力时，优化异常处理逻辑
+
+#### 问题修复
+
+- 修复任务事件统计指标上报时偶现丢失部分指标的问题
+- 修复共享缓存任务未执行共享挖掘时，如果数据没有变化，在重启或升级引擎时可能因超出日志时间窗口而导致任务错误的问题
+- 修复在 MDM_model 下禁用从节点后导致任务启动失败的问题
+- 修复实时数据中心的血缘图偶现无法展示的问题
+- 修复在写入模式为更新子文档的场景下，源表的 unset 操作可能导致任务报错的问题
+- 修复 MongoDB 与 MySQL 执行 Join 合并场景下，MongoDB 集合中包含时间类型可能引发报错的问题
+- 修复在实时数据中心创建的任务无法添加主从合并节点的问题
+- 修复在主从合并场景下，增量更新事件意外执行反查的问题
+- 修复主从合并节点修改列时的冲突报错问题
+
 ### 2024-06-21
 
 #### 新增功能
@@ -57,7 +164,7 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-* 支持在[配置数据转换任务](../user-guide/data-pipeline/data-development/create-task#target-node-set)时，为目标表名动态生成日期后缀，适用于每日定期执行批处理的场景
+* 支持在[配置数据转换任务](../user-guide/data-development/create-task#target-node-set)时，为目标表名动态生成日期后缀，适用于每日定期执行批处理的场景
 * 支持在配置 Doris 数据源时设置分区
 * 支持 OceanBase 数据源的 Oracle 模式，数据源名称为 Oceanbase(Oracle)
 
@@ -79,12 +186,12 @@ import TabItem from '@theme/TabItem';
 * 支持 MySQL 间、PostgreSQL 间的双向数据同步能力，更好满足多活和容灾场景
 * 支持 [MongoDB Relmig](https://www.mongodb.com/docs/relational-migrator/) 1.3.0 以上版本的文件导入能力，进一步完善生态对接能力
 * 支持同步 MongoDB 的 [Oplog](https://www.mongodb.com/docs/manual/core/replica-set-oplog/)（操作日志）数据
-* 支持在配置数据转换任务时，在源节点的**[高级设置](../user-guide/data-pipeline/data-development/create-task#full-sql-query)**中选择对表的时间字段进行过滤（例如相对日期）
-* 支持在[任务列表](../user-guide/data-pipeline/copy-data/manage-task.md)页面，展示任务里程碑信息，帮助用户快速获知任务的关键进度状况
+* 支持在配置数据转换任务时，在源节点的**[高级设置](../user-guide/data-development/create-task#full-sql-query)**中选择对表的时间字段进行过滤（例如相对日期）
+* 支持在[任务列表](../user-guide/copy-data/manage-task.md)页面，展示任务里程碑信息，帮助用户快速获知任务的关键进度状况
 
 #### 功能优化
 
-* 优化 [Unwind 节点](../user-guide/data-pipeline/data-development/process-node#unwind)，支持设置展开模式，如内嵌对象或平铺字段
+* 优化 [Unwind 节点](../user-guide/data-development/process-node#unwind)，支持设置展开模式，如内嵌对象或平铺字段
 * 优化全量同步详情页面展示，支持通过表名快速过滤表
 
 #### 问题修复
@@ -96,8 +203,8 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-* [数据复制任务](../user-guide/data-pipeline/copy-data/create-task.md)支持表级别的断点续传能力，任务重启时可以直接从未完成同步的表继续同步
-* 支持通过拖拽快速[设置任务标签](../user-guide/data-pipeline/copy-data/manage-task.md)
+* [数据复制任务](../user-guide/copy-data/create-task.md)支持表级别的断点续传能力，任务重启时可以直接从未完成同步的表继续同步
+* 支持通过拖拽快速[设置任务标签](../user-guide/copy-data/manage-task.md)
 * 支持 MySQL 主从架构，发生主从切换后，相关任务可继续正常同步数据
 
 #### 功能优化
@@ -149,7 +256,7 @@ import TabItem from '@theme/TabItem';
 
 * 支持设置[默认告警接收人](../user-guide/workshop.md#notifications)，可自定义告警接收邮箱地址（支持多个）
 * [DDL 同步设置](../best-practice/handle-schema-change.md)，新增**遇到 DDL 操作时任务报错停止**和**自动忽略 DDL**选项，可适应不同业务场景需求
-* 新增[时间字段注入](../user-guide/data-pipeline/data-development/process-node.md#time_injection)节点，可在数据同步过程中为流经的数据增加一个自定义的时间戳字段，从而提供更灵活的方式来获取源库的增量变更
+* 新增[时间字段注入](../user-guide/data-development/process-node.md#time_injection)节点，可在数据同步过程中为流经的数据增加一个自定义的时间戳字段，从而提供更灵活的方式来获取源库的增量变更
 
 #### 功能优化
 
@@ -167,13 +274,13 @@ import TabItem from '@theme/TabItem';
 #### 功能优化
 
 - 优化 [Google 云市场](https://console.cloud.google.com/marketplace/product/tapdata-public/detail)用户的新手引导流程
-- [任务监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)，增加增量阶段的时间过滤选项，便于快速观察增量阶段的 QPS
+- [任务监控页面](../user-guide/copy-data/monitor-task.md)，增加增量阶段的时间过滤选项，便于快速观察增量阶段的 RPS
 - 针对可能对数据库造成影响的关键操作（例如过滤源表数据），增加相关提示信息
 - 优化实例订阅到期后的退订逻辑
 
 #### 问题修复
 
-* 修复[主从合并节点](../user-guide/data-pipeline/data-development/process-node.md#pri-sec-merged)，当主表与子表关键条件变化时，最终数据与预期不符合的问题
+* 修复[主从合并节点](../user-guide/data-development/process-node.md#pri-sec-merged)，当主表与子表关键条件变化时，最终数据与预期不符合的问题
 
 ### 2024-01-12
 
@@ -224,7 +331,7 @@ import TabItem from '@theme/TabItem';
 #### 功能优化
 
 - 优化数据源连接方式，[SQL Server](../prerequisites/on-prem-databases/sqlserver.md) 可支持 SSL 连接，可帮助进一步提升数据安全性
-- 优化[数据复制任务](../user-guide/data-pipeline/copy-data/create-task.md)的目标节点字段类型调整方式，在手动输入的基础上，支持直接选择目标数据库常用类型
+- 优化[数据复制任务](../user-guide/copy-data/create-task.md)的目标节点字段类型调整方式，在手动输入的基础上，支持直接选择目标数据库常用类型
 - 针对任务的源节点设置，支持设置增量阶段每批读取的条数，更好适应增量同步的性能需求
 
 #### 问题修复
@@ -237,7 +344,7 @@ import TabItem from '@theme/TabItem';
 #### 新增功能
 
 * 支持对 [Oracle 数据源](../prerequisites/on-prem-databases/oracle#advanced)加载表注释，可在配置数据源时的高级选项中开启，方便通过注释信息快速识别表的业务含义
-* 任务运行[监控页面](../user-guide/data-pipeline/copy-data/monitor-task.md)中，支持基于事件大小的维度来查看 QPS 信息
+* 任务运行[监控页面](../user-guide/copy-data/monitor-task.md)中，支持基于事件大小的维度来查看 RPS 信息
 
 #### 功能优化
 
@@ -267,13 +374,13 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- MongoDB 作为目标时，新增支持[自动创建分片集合](../user-guide/data-pipeline/copy-data/create-task.md#advanced-settings)
-- 新增 [Unwind 处理节点](../user-guide/data-pipeline/data-development/process-node.md#Unwind)，可帮助您高效地将数组中的每个元素“展开”，将每个元素转换为独立的数据行
+- MongoDB 作为目标时，新增支持[自动创建分片集合](../user-guide/copy-data/create-task.md#advanced-settings)
+- 新增 [Unwind 处理节点](../user-guide/data-development/process-node.md#Unwind)，可帮助您高效地将数组中的每个元素“展开”，将每个元素转换为独立的数据行
 - 配置任务时，新增支持禁用节点能力，鼠标悬停至节点上即可选择该功能，可帮助减少数据在处理过程中的流转成本
 
 #### 功能优化
 
-- [配置数据复制任务](../user-guide/data-pipeline/copy-data/create-task.md)时，可通过**可选择的表范围**下拉框快速过滤出有主键或无主键表，其中有主键表包含具有唯一索引的无主键表
+- [配置数据复制任务](../user-guide/copy-data/create-task.md)时，可通过**可选择的表范围**下拉框快速过滤出有主键或无主键表，其中有主键表包含具有唯一索引的无主键表
 - 新用户的功能介绍引导流程中，新增 Demo 数据源，帮助您快速完成教程，构建起第一个数据流转任务
 - 优化引擎界面操作按钮前端显示效果
 
@@ -286,7 +393,7 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- 新增[构建物化视图](../user-guide/data-pipeline/data-development/create-materialized-view.md)功能，可快速构建实时数据模型
+- 新增[构建物化视图](../user-guide/data-development/create-materialized-view.md)功能，可快速构建实时数据模型
 - Kafka 数据源新增支持设置副本数和分区数
 - MongoDB 间同步时，新增对 `$unset` 操作的支持
 
@@ -305,7 +412,7 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-* 新增 [Python 处理节点](../user-guide/data-pipeline/data-development/process-node.md#python)，支持通过 Python 脚本来自定义数据处理逻辑，相较于 JS 处理节点性能有一定提升
+* 新增 [Python 处理节点](../user-guide/data-development/process-node.md#python)，支持通过 Python 脚本来自定义数据处理逻辑，相较于 JS 处理节点性能有一定提升
 * 新增**联系我们**入口，方便用户遇到问题时快速联系技术支持
 
 #### 功能优化
@@ -318,7 +425,7 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- 新增[主从合并节点](../user-guide/data-pipeline/data-development/process-node.md#pri-sec-merged)，可实现宽表的快速构建和实时更新，帮助您更好地实现数据分析
+- 新增[主从合并节点](../user-guide/data-development/process-node.md#pri-sec-merged)，可实现宽表的快速构建和实时更新，帮助您更好地实现数据分析
 
 #### 功能优化
 
@@ -357,9 +464,9 @@ import TabItem from '@theme/TabItem';
 #### 新增功能
 
 - 页面顶部新增专业版订阅入口，专业版处理性能更高，可基于任务数自由购买规格
-- 当任务配置为全量+增量时，支持开启[定期调度任务功能](../user-guide/data-pipeline/copy-data/create-task.md#task-attr)，到达该时间点后任务会自动停止、重置并重新运行
-- 对于[增删字段节点](../user-guide/data-pipeline/data-development/process-node.md#add-and-del-cols)，支持字段顺序调整功能
-- 任务设置新增[动态调整内存功能](../user-guide/data-pipeline/copy-data/create-task.md#task-attr)（默认开启），全量同步阶段，识别内存占用量并自动调整内存队列，可有效避免内存资源短缺场景下的内存溢出
+- 当任务配置为全量+增量时，支持开启[定期调度任务功能](../user-guide/copy-data/create-task.md#task-attr)，到达该时间点后任务会自动停止、重置并重新运行
+- 对于[增删字段节点](../user-guide/data-development/process-node.md#add-and-del-cols)，支持字段顺序调整功能
+- 任务设置新增[动态调整内存功能](../user-guide/copy-data/create-task.md#task-attr)（默认开启），全量同步阶段，识别内存占用量并自动调整内存队列，可有效避免内存资源短缺场景下的内存溢出
 
 #### 问题修复
 

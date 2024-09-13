@@ -30,13 +30,13 @@ import Content from '../reuse-content/_all-features.md';
 
    :::tip
 
-   由于 Tablestore 单个表的列数量不可超过 32 个，如 Oracle 中待同步表的列数量超过 32，您可以在页面左侧拖拽一个**字段编辑节点**进来，将其作为 Oracle 和 Tablestore 的中间节点连接起来，然后在**字段编辑节点**中屏蔽与业务无关的列以满足需求，更多介绍，见[处理节点](../user-guide/data-pipeline/data-development/process-node.md)。
+   由于 Tablestore 单个表的列数量不可超过 32 个，如 Oracle 中待同步表的列数量超过 32，您可以在页面左侧拖拽一个**字段编辑节点**进来，将其作为 Oracle 和 Tablestore 的中间节点连接起来，然后在**字段编辑节点**中屏蔽与业务无关的列以满足需求，更多介绍，见[处理节点](../user-guide/data-development/process-node.md)。
 
    :::
 
 6. 确认无误后，单击**启动**。
 
-   操作完成后，您可以在当前页面观察任务的执行情况，如 QPS、延迟、任务时间统计等信息，示例如下：
+   操作完成后，您可以在当前页面观察任务的执行情况，如 RPS（每秒处理记录数）、延迟、任务时间统计等信息，示例如下：
    
    ![查看任务运行详情](../images/oracle_to_tablestore_monitor_cn.png)
 

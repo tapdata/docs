@@ -1,9 +1,80 @@
 # 为复制任务添加处理节点
-import Content from '../../../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
 TapData 支持在数据复制任务中添加处理节点，满足对数据进行过滤、字段调整等需求。
+
+## <span id="union-node">多表合并节点</span>
+
+通过**多表合并**节点，您可以将多个结构相同/相似的表，合并输出至一个表中，TapData 会将字段名一致的数据进行合并，详细规则如下：
+
+- 如果推演出的类型长度和精度不同，则选择最大长度精度。
+- 如果推演出的类型不同，则将其转换为一个通用类型。
+- 当所有源表的主键字段一致时，则保留主键，否则移除该主键。
+- 当所有源表的相同字段都有非空限制时，则保留非空限制，否则移除非空限制。
+- 源表的唯一索引不会同步到目标表。
+
+
+
+**场景示例：**
+
+希望对 2 个表结构相同的 **student1** 和 **student2** 表执行追加合并操作（Union），然后将结果存在 **student_merge** 表中，表结构及数据如下：
+
+![追加合并数据示例](../../images/table_union_demo.png)
+
+
+
+**操作流程**：
+
+1. [登录 TapData 平台](../log-in.md)。
+
+2. 在左侧导航栏，单击**数据复制**。
+
+3. 单击页面右侧的**创建**，在页面左侧依次拖入源节点、多表合并节点、表编辑、目标节点，然后将它们连接起来。
+
+   ![连接多表合并节点](../../images/add_union_node_in_data_copy.png)
+
+   :::tip
+
+   此场景下，我们通过表编辑节点，为合并后的表指定一个新名字以避免覆盖原表数据。
+
+   :::
+
+4. 单击第一个节点（即源节点），在页面右侧的面板中选择待合并的表（**student1** / **student2**）。
+
+5. 单击**多表合并**节点，选择合并后的表名。
+
+   ![多表合并节点设置](../../images/union_node_settings.png)
+
+6. 单击**表编辑**节点，为表指定的库内唯一的新名称，例如 **student_merge**。
+
+7. 单击目标节点，预览表结构并确认无误，单击右上角的**启动**。
+
+
+
+**结果验证**：
+
+查询 **student_merge** 表，结果如下：
+
+```sql
+mysql> select * from student_merge;
++---------+------+--------+------+-------+--------+
+| stu_id  | name | gender | age  | class | scores |
++---------+------+--------+------+-------+--------+
+| 2201101 | Lily | F      |   18 |  NULL |   NULL |
+| 2201102 | Lucy | F      |   18 |  NULL |   NULL |
+| 2201103 | Tom  | M      |   18 |  NULL |   NULL |
+| 2202101 | Lily | F      |   18 |     2 |    632 |
+| 2202102 | Lucy | F      |   18 |     2 |    636 |
+| 2202103 | Tom  | M      |   18 |     2 |    532 |
++---------+------+--------+------+-------+--------+
+6 rows in set (0.00 sec)
+```
+
+
+
+
 
 ## 表编辑节点
 
@@ -15,7 +86,7 @@ TapData 支持在数据复制任务中添加处理节点，满足对数据进行
 
 除此以外，您也可以直接为单个目标表填写新表名。
 
-![](../../../images/copy_data_1.png)
+![](../../images/copy_data_1.png)
 
 
 
@@ -30,7 +101,7 @@ TapData 支持在数据复制任务中添加处理节点，满足对数据进行
 
 此外，您还可以选中目标字段单击**屏蔽**，被屏蔽的字段将不会传递至下个节点。
 
-![](../../../images/data_copy_column_modification.png)
+![](../../images/data_copy_column_modification.png)
 
 
 
@@ -38,17 +109,17 @@ TapData 支持在数据复制任务中添加处理节点，满足对数据进行
 
 支持通过 JavaScript 脚本或者 Java 代码对数据进行处理，编写代码时需先检测是否与源节点及目标节点相连，若未相连则无法编辑代码。  
 
-![](../../../images/copy_data_4.png)
+![](../../images/copy_data_4.png)
 
 脚本写完后可节点下方试运行按钮查看输入输出以便进行调试
 
-![](../../../images/copy_data_5.png)
+![](../../images/copy_data_5.png)
 
 ### JS 节点的模型声明
 
 针对JS节点，Tapdata会通过采样数据试运行的方式来推演节点的模型信息。如果发现推演出的模型不准确，丢失或者多了某些字段，可以通过模型声明显式的来定义模型里的字段信息。
 
-![](../../../images/create_task_5.png)
+![](../../images/create_task_5.png)
 
 在复制任务中，模型声明支持的方法如下所示
 
@@ -91,8 +162,8 @@ TapModelDeclare.removeIndex(schemaApplyResultList, 'indexName')
 
 ### JS 内置函数说明
 
-* [标准 JS 内置函数](../../../appendix/standard-js.md)：可对数据记录进行处理与运算，如将日期字符串转换为 Date 类型。
-* [增强 JS 内置函数（Beta）](../../../appendix/enhanced-js.md)：支持标准 JS 内置函数的基础上，可实现外部调用（如网络、数据库等）。
+* [标准 JS 内置函数](../../appendix/standard-js.md)：可对数据记录进行处理与运算，如将日期字符串转换为 Date 类型。
+* [增强 JS 内置函数（Beta）](../../appendix/enhanced-js.md)：支持标准 JS 内置函数的基础上，可实现外部调用（如网络、数据库等）。
 
 
 
@@ -106,9 +177,9 @@ TapModelDeclare.removeIndex(schemaApplyResultList, 'indexName')
 
 **操作流程**：
 
-1. [登录 TapData 平台](../../log-in.md)。
+1. [登录 TapData 平台](../log-in.md)。
 
-2. 在左侧导航栏，选择**数据管道** > **数据复制**。
+2. 在左侧导航栏，单击**数据复制**。
 
 3. 单击页面右侧的**创建**。
 
@@ -118,7 +189,7 @@ TapModelDeclare.removeIndex(schemaApplyResultList, 'indexName')
 
 6. 单击**时间运算**节点，在右侧的面板中选择要运算的时间类型和运算方式。
 
-   ![时间运算](../../../images/time_calculation.png)
+   ![时间运算](../../images/time_calculation.png)
 
    * **节点名称**：默认为连接名称，您也可以设置一个具有业务意义的名称。
    * **请选择您要运算的时间类型**：TapData 会自动检测支持的时间类型并展现，您需要基于业务需求选择，此外，您还可以单击**模型**标签页，查看时间类型与列名的对应关系。
@@ -159,7 +230,7 @@ SELECT birthdate FROM customer_new_time WHERE id="00027f47eef64717aa8ffb8115f1e6
 
 具体操作：将**类型过滤**节点添加到画布并与数据源连接起来，单击该节点并选择要过滤的字段类型（暂不支持指定精度）：
 
-![类型过滤](../../../images/data_type_filter.png)
+![类型过滤](../../images/data_type_filter.png)
 
 :::tip
 
@@ -171,6 +242,6 @@ SELECT birthdate FROM customer_new_time WHERE id="00027f47eef64717aa8ffb8115f1e6
 
 在实时数据集成和同步过程中，捕获并同步增量数据是确保数据一致性和时效性的关键。当数据源不具备完整的 CDC 支持或受限于权限控制无法获取增量日志，我们可以为数据同步链路增加**时间字段注入**节点来为读取到的源表数据自动增加时间戳信息，随后在目标表的配置中选择使用此字段（类型为 **DATETIME**）进行轮询，来实现增量数据的获取，从而进一步提升实时数据获取方式的灵活性。
 
-![时间字段注入](../../../images/time_field.png)
+![时间字段注入](../../images/time_field.png)
 
 ## 

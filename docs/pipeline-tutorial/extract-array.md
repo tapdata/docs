@@ -60,7 +60,7 @@ import Content from '../reuse-content/_all-features.md';
 
 1. [登录 TapData 平台](../user-guide/log-in.md)。
 
-2. 在左侧导航栏，选择**数据管道** > **数据转换**。
+2. 在左侧导航栏，单击**数据转换**。
 
 3. 单击页面右侧的**创建**。
 
@@ -78,7 +78,7 @@ import Content from '../reuse-content/_all-features.md';
 
    ![选择源表](../images/select_fin_oper_settle.png)
 
-   如需了解更多配置介绍，见[创建数据转换任务](../user-guide/data-pipeline/data-development/create-task.md)。
+   如需了解更多配置介绍，见[创建数据转换任务](../user-guide/data-development/create-task.md)。
 
 6. 单击中间的标准 JS 节点，在右侧面板中的脚本文本框中输入下述代码。
 
@@ -125,7 +125,7 @@ import Content from '../reuse-content/_all-features.md';
 
    ![选择目标表](../images/select_settle_analytics.png)
 
-   如需了解更多配置介绍，见[创建数据转换任务](../user-guide/data-pipeline/data-development/create-task.md)。
+   如需了解更多配置介绍，见[创建数据转换任务](../user-guide/data-development/create-task.md)。
 
 9. （可选）单击页面右上角的**设置**，配置任务属性。
 
@@ -136,7 +136,7 @@ import Content from '../reuse-content/_all-features.md';
 
 10. 确认无误后，单击**启动**。
 
-   操作完成后，您可以在当前页面观察任务的执行情况，如 QPS、延迟、任务时间统计等信息，示例如下：
+   操作完成后，您可以在当前页面观察任务的执行情况，如 RPS（每秒处理记录数）、延迟、任务时间统计等信息，示例如下：
 
    ![任务监控](../images/settle_analytics_result.png)
 
@@ -172,4 +172,4 @@ oper_code_settle: 000830
 
 在任务列表页面，您还可以对任务进行启动/停止、监控、编辑、复制、重置、删除等操作。
 
-具体操作，见[管理任务](../user-guide/data-pipeline/data-development/monitor-task.md)。
+具体操作，见[管理任务](../user-guide/data-development/monitor-task.md)。

@@ -143,7 +143,30 @@ KingbaseES-R6 支持的数据库模式为 Oracle、PostgreSQL 和 MySQL，需注
 
    4. 安装日志插件。
 
-      * **wal2json**：需要联系[技术支持](../../support.md)提供相关插件，在 KingbaseES-R6 所属的服务器上进行安装。
+      * **wal2json**：登录 KingbaseES-R6 所属的服务器，跟随下述步骤完成插件的编译，最后将生成的 `wal2json.so` 文件复制到  KingbaseES-R6 对应目录，本案例中为 `/home/kingbase5b/ES/V8/KESRealPro/V008R006C005B0054/Server/lib/`。
+      
+        ```bash
+        # 下载插件
+        git clone https://github.com/eulerto/wal2json.git && cd wal2json
+        
+        # 修改 Makefile 内容：
+        PG_CONFIG = pg_config
+        PGXS := $(shell $(PG_CONFIG) --pgxs)
+        
+        # 替换为
+        PG_CONFIG = sys_config
+        PGXS := $(shell $(PG_CONFIG) --sysxs)
+        
+        # 切换用户
+        su kingbase
+        
+        # 复制资源文件
+        cp -a /home/kingbase/ES/V8/KESRealPro/V008R006C005B0054/Server/lib/plc/.server /home/kingbase/ES/V8/KESRealPro/V008R006C005B0054/Server/include/server
+        
+        # 执行 make，目录下即可生成 wal2json.so
+        make
+        ```
+      
       * **walminer**：V87B 以上的版本内置该插件，使用方法，见 [WalMiner 使用示例](https://help.kingbase.com.cn/v8/admin/reference/walminer/walminer-4.html)。该方式不依赖逻辑复制，无需设置 `wal_level` 为 `logical`，也不需要调整复制槽配置，但需授予超级管理员权限。
 
 ### 作为目标库
@@ -205,7 +228,6 @@ KingbaseES-R6 支持的数据库模式为 Oracle、PostgreSQL 和 MySQL，需注
      * **密码**：数据库账号对应的密码。
      * **日志插件**：如需读取 KingbaseES-R6 的数据变更，实现增量数据同步，您需要根据[准备工作](#prerequisite)的指引，完成插件的安装。
    * **高级设置**
-     * **时区**：默认配置为 0 时区，如果设置为其他时区，可能会影响数据同步的时间。受影响的字段包括不带时区的字段，如 `timestamp (without time zone)` 和 `time (without time zone)`。带时区的字段（如 `timestamp with time zone` 和 `time with time zone`）及 `date` 类型不受影响。
      * **共享挖掘**：[挖掘源库](../../user-guide/advanced-settings/share-mining.md)的增量日志，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力，开启该功能后还需要选择一个外存用来存储增量日志信息。
      * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。
      * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。

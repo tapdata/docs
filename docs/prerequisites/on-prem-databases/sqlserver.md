@@ -53,6 +53,8 @@ import TabItem from '@theme/TabItem';
                              @retention = 24;
   ```
 
+* SQL Server 的 CDC 方案对 DDL 采集支持较弱，隐式提交的 DDL 不会记录在 cdc.ddl_history 表中，可能影响同步。此外，执行 DDL 操作后，CT 表不会自动更新，系统通过轮询检测并重建 CT 表，因此 DDL 和 DML 在短时间内或同一事务中同时发生，可能导致 DML 数据丢失。
+
 * SQL Server 作为源库时，如果对增量同步表的字段执行了 DDL 操作（如增加字段），您需要执行下述操作重启变更数据捕获，否则可能出现数据无法同步或报错等情况。
 
 <details>
@@ -220,9 +222,6 @@ import TabItem from '@theme/TabItem';
         - **table_name**：数据表的名称。
         - **role_name**：可以访问更改数据的角色，如不希望使用设置角色，可将其设置为 NULL，如果在启用增量复制时指定了角色，则需确保数据库用户具有适当的角色，以便 TapData 可以访问增量复制表。
         - **capture_instance**：默认值为 NULL，由系统自动生成。如果存在残留的 CDC 资源，可能会因 **capture_instance** 冲突导致无法启动表的 CDC。此时可以通过指定一个新的 capture_instance 来启用。
-
-
-4. （可选）如需向从节点读取增量数据以实现数据同步，您需要为从节点设置上述步骤。
 
 
 

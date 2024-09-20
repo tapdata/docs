@@ -28,12 +28,13 @@ Clickhouse 20.x、21.x、22.x、23.x、24.x
 
 ## 支持同步的操作
 
-**DML**：INSERT、UPDATE、DELETE
+* **DML**：INSERT、UPDATE、DELETE
+* **DDL**（仅在作为目标时支持）：ADD COLUMN、CHANGE COLUMN、DROP COLUMN、RENAME COLUMN
 
 :::tip
 
-* 作为同步的源库时，如需实现增量同步，其实现方式为字段轮询，即通过定期查询数据库表中的指定列（如时间戳或递增的标识列）来检测数据变化，不支持同步 DDL 操作。更多介绍，见[变更数据捕获（CDC）](../../introduction/change-data-capture-mechanism)。
-* 作为同步的目标库时，您还可以通过任务节点的高级配置，选择写入策略：插入冲突场景下，可选择转为更新或丢弃；更新失败场景下，可选择转为插入或仅打印日志。
+* 作为源库进行增量同步时，需通过字段轮询的方式检测数据变化，且不支持采集 DDL 操作，详见[变更数据捕获（CDC）](../../introduction/change-data-capture-mechanism.md)。
+* 作为目标库时，您还可以通过任务节点的高级配置，选择写入策略：插入冲突场景下，可选择转为更新或丢弃；更新失败场景下，可选择转为插入或仅打印日志。
 
 :::
 

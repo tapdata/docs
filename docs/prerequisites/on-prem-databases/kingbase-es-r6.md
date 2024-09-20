@@ -202,7 +202,7 @@ KingbaseES-R6 支持的数据库模式为 Oracle、PostgreSQL 和 MySQL，需注
 
 
 
-## 添加数据源
+## 连接 KingbaseES-R6
 
 1. [登录 TapData 平台](../../user-guide/log-in.md)。
 

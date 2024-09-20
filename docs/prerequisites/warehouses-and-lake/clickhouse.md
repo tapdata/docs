@@ -3,7 +3,7 @@ import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
-ClickHouse 是一个用于联机分析（OLAP）的列式数据库管理系统（DBMS）。完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 ClickHouse 数据源，后续可将其作为**源**或**目标库**来构建数据管道。
+[ClickHouse](https://clickhouse.com/) 是一个用于联机分析（OLAP）的高性能列式数据库管理系统。本文将介绍如何在 TapData 中添加 ClickHouse 数据源，后续可将其作为**源**或**目标库**来构建实时数据链路。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -12,19 +12,35 @@ import TabItem from '@theme/TabItem';
 
 ## 支持版本
 
-ClickHouse 20.x、21.x
+Clickhouse 20.x、21.x、22.x、23.x、24.x
+
+## 支持数据类型
+
+| 类别      | 数据类型                                                     |
+| --------- | ------------------------------------------------------------ |
+| 字符串    | FixedString、String、UUID                                    |
+| 整数      | Int8、UInt8、Int16、UInt16、Int32、UInt32、UInt64、Int128、UInt128、Int256、UInt256 |
+| 浮点数    | Float32、Float64                                             |
+| 数值      | Decimal                                                      |
+| 日期/时间 | Date、Date32、DateTime、DateTime64                           |
+| 枚举      | Enum8、Enum16                                                |
+| 复合      | Tuple                                                        |
+
+## 支持同步的操作
+
+**DML**：INSERT、UPDATE、DELETE
+
+:::tip
+
+* 作为同步的源库时，如需实现增量同步，其实现方式为字段轮询，即通过定期查询数据库表中的指定列（如时间戳或递增的标识列）来检测数据变化，不支持同步 DDL 操作。更多介绍，见[变更数据捕获（CDC）](../../introduction/change-data-capture-mechanism)。
+* 作为同步的目标库时，您还可以通过任务节点的高级配置，选择写入策略：插入冲突场景下，可选择转为更新或丢弃；更新失败场景下，可选择转为插入或仅打印日志。
+
+:::
 
 ## 注意事项
 
-- ClickHouse 暂不支持 binary 相关的字段类型，如包含在配置数据同步/开发任务时，可通过字段映射将其删除，否则会自动转成 Base64 字符串写入。
-- ClickHouse 作为目标库时，可在 ClickHouse 节点的高级配置中，设定合并分区间隔以调整 [Optimize Table](https://clickhouse.com/docs/en/sql-reference/statements/optimize) 频率，从而实现性能与数据一致性间的平衡。
-- ClickHouse 作为源库时，如需实现增量同步，其实现方式为字段轮询，即通过定期查询数据库表中的指定列（如时间戳或递增的标识列）来检测数据变化。更多介绍，见[变更数据捕获（CDC）](../../introduction/change-data-capture-mechanism)。
-
-  :::tip
-
-  此场景下，不支持同步 DDL 操作。
-
-  :::
+* 暂不支持 **BINARY** 相关的字段类型，如包含在配置数据同步/开发任务时，可通过字段映射将其删除，否则会自动转成 Base64 字符串写入。
+* 作为同步的目标库时，如果选择由 TapData 自动建表，源表有主键时使用 `ReplacingMergeTree` 引擎，主键字段作为排序键；无主键时使用 `MergeTree` 引擎，排序键位空。
 
 ## 准备工作
 
@@ -76,7 +92,7 @@ GRANT SELECT, INSERT, CREATE TABLE, ALTER TABLE, ALTER UPDATE, DROP TABLE, TRUNC
    * **database_name**：要授予权限的数据库名称。
    * **usernmae**：用户名。
 
-## 添加数据源
+## 连接 ClickHouse
 
 1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
 
@@ -84,25 +100,25 @@ GRANT SELECT, INSERT, CREATE TABLE, ALTER TABLE, ALTER UPDATE, DROP TABLE, TRUNC
 
 3. 在页面右侧，单击**创建连接**。
 
-4. 在跳转到的页面，单击**认证数据源**标签页，然后选择 **ClickHouse**。
+4. 在弹出的对话框中，搜索并选择 **ClickHouse**。
 
 5. 根据下述说明完成数据源配置。
 
    ![clickhouse_connection](../../images/clickhouse_connection.png)
 
-   * 连接信息设置
+   * **连接设置**
       * **连接名称**：填写具有业务意义的独有名称。
-      * **连接类型**：仅支持将 ClickHouse 数据库作为目标。
+      * **连接类型**：支持将 ClickHouse 作为源或目标库。
       * **地址**：数据库连接地址。
       * **端口**：数据库的 HTTP API 服务端口，默认为 **8123**，如开启了 SSL 加密，默认端口为 8443，更多介绍，见[网络端口说明](https://clickhouse.com/docs/en/guides/sre/network-ports/)。
       * **数据库名称**：数据库名称，即一个连接对应一个数据库，如有多个数据库则需创建多个数据连接。
       * **账号**、**密码**：数据库的账号和密码。
-   * 高级设置
+   * **高级设置**
       * **连接参数**：额外的连接参数，默认为空。
-      * **时区**：默认为数据库所用的时区，您也可以根据业务需求手动指定。
+      * **时区**：默认时区为 0 时区（UTC），如果设置为其他时区，将影响数据同步的时间准确性，特别是对于不带时区信息的字段（如 `DateTime`）。
       * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定。
-      * **模型加载时间**：当数据源中模型数量小于 10,000 时，每小时刷新一次模型信息；如果模型数据超过 10,000，则每天按照您指定的时间刷新模型信息。
-      * **开启心跳表**：当连接类型选择为**源头和目标**、**源头**时，支持打开该开关，由 Tapdata 在源库中创建一个名为 **_tapdata_heartbeat_table** 的心跳表并每隔 10 秒更新一次其中的数据（数据库账号需具备相关权限），用于数据源连接与任务的健康度监测，更多介绍，见[通过心跳表监测数据同步链路](../../best-practice/heart-beat-task.md)。
+      * **模型加载时间**：如果数据源中的模型数量少于10,000个，则每小时更新一次模型信息。但如果模型数量超过10,000个，则刷新将在您指定的时间每天进行。
+      * **开启心跳表**：当连接类型为源头或目标时，可启用该开关。TapData 会在源库创建 `_tapdata_heartbeat_table` 心跳表，并每 10 秒更新一次（需具备相应权限），用于监测数据源连接与任务的健康状况。心跳任务在数据复制/开发任务启动后自动启动，您可在数据源编辑页面[查看心跳任务](../../best-practice/heart-beat-task.md)。
 
 6. 单击**连接测试**，测试通过后单击**保存**。
 
@@ -112,3 +128,21 @@ GRANT SELECT, INSERT, CREATE TABLE, ALTER TABLE, ALTER UPDATE, DROP TABLE, TRUNC
 
    :::
 
+## 节点高级特性
+
+在配置数据同步/转换任务时，将 ClickHouse 作为目标节点时，可在节点的高级配置中，设定合并分区间隔以调整 [Optimize Table](https://clickhouse.com/docs/en/sql-reference/statements/optimize) 频率，从而实现性能与数据一致性间的平衡。
+
+![ClickHouse 节点高级特性](../../images/clickhouse_node_advanced_settings.png)
+
+
+
+## 性能测试
+
+### 测试环境
+
+* ClickHouse 环境：ecs.u1-c1m2.2xlarge 机型，拥有 8 CPU 核数，16 GB 内存和 100GB ESSD 磁盘。
+* 表结构：测试表拥有 53 个字段，包括 30 个长度为 8 的随机字符串、21 个随机浮点数字段,、以及 1 个主键字段、1 个标题、1 个日期字段，平均单条数据约为 1KB。
+
+### 测试结果
+
+本次性能测试模拟了全量数据写入场景，记录处理速率（RPS）最高可达 25 万。测试结果仅供当前环境下参考，并非 TapData 的性能上限。

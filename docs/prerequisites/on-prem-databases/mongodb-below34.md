@@ -1,9 +1,6 @@
-# MongoDB
-import Content from '../../reuse-content/_all-features.md';
+# MongoDB Below 3.4
 
-<Content />
-
-[MongoDB](https://www.mongodb.com/) 是一个流行的、开源 NoSQL 数据库，以灵活/可扩展的方式存储和检索数据。本文将介绍如何在 TapData 中添加 MongoDB 数据源，后续可将其作为**源**或**目标库**来构建实时数据链路。
+[MongoDB](https://www.mongodb.com/) 是一个流行的、开源 NoSQL 数据库，以灵活/可扩展的方式存储和检索数据。本文将介绍如何在 TapData 中添加 MongoDB（3.4 及以下），后续可将其作为**源**或**目标库**来构建实时数据链路。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -14,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 | 类别 | 说明                                                         |
 | ---- | ------------------------------------------------------------ |
-| 版本 | MongoDB 4.0 及以上，当 MongoDB 为 3.4 及以下时，请选择名为 **[MongoDB Below 3.4](mongodb-below34.md)** 的数据源 |
+| 版本 | MongoDB 3.2、3.4，当 MongoDB 为 3.4 以上时，请选择名为 **[MongoDB](mongodb.md)** 的数据源 |
 | 架构 | ●  作为源：支持副本集和分片集群架构，此外，还支持基于分片集群的从节点执行全量与增量数据同步<br />●  作为目标：支持单节点、副本集、分片集群架构 |
 
 ## 支持数据类型
@@ -43,6 +40,8 @@ import TabItem from '@theme/TabItem';
 
 ### 作为源库
 
+### 作为源库
+
 1. 保障源库的架构为副本集或分片集群，如果为单节点架构，您可以将其配置为单成员的副本集以开启 Oplog。
    具体操作，见[如何将单节点转为副本集](https://docs.mongodb.com/manual/tutorial/convert-standalone-to-replica-set/)。
 
@@ -55,6 +54,7 @@ import TabItem from '@theme/TabItem';
    <Tabs className="unique-tabs">
    <TabItem value="授予指定库的读权限">
    ```
+
    ```sql
    use admin
    db.createUser(
@@ -70,6 +70,7 @@ import TabItem from '@theme/TabItem';
      }
    )
    ```
+
    </TabItem>
 
    <TabItem value="授予所有库的读权限">
@@ -87,6 +88,7 @@ import TabItem from '@theme/TabItem';
      }
     )
    ```
+
    </TabItem>
    </Tabs>
 
@@ -101,15 +103,11 @@ import TabItem from '@theme/TabItem';
    1. [关闭均衡器](https://www.mongodb.com/zh-cn/docs/manual/reference/method/sh.stopBalancer/)（Balancer），避免块迁移对数据一致性的影响。
    2. [清理孤立文档](https://www.mongodb.com/zh-cn/docs/manual/reference/command/cleanupOrphaned/)，避免 _id 冲突。
 
-
-
-
 ### 作为目标库
 
 授予指定库（以 **demodata** 库为例）的写权限，并授予 **clusterMonitor** 角色以供数据验证使用，示例如下：
 
 ```bash
-/* 这是一个过滤条件的注释 */
 use admin
 db.createUser(
   {
@@ -123,14 +121,20 @@ db.createUser(
 )
 ```
 
-## 连接 MongoDB
-1. [登录 TapData 平台](../../user-guide/log-in.md)。
+:::tip
+
+当 MongoDB 为 3.2 版本时，还需额外授予 **local** 数据库的读权限。
+
+:::
+
+## 添加数据源
+1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。
 
 3. 单击页面右侧的**创建**。
 
-4. 在弹出的对话框中，搜索并选择 **MongoDB**。
+4. 在弹出的对话框中，搜索并选择 **MongoDB Below 3.4**。
 
 5. 在跳转到的页面，根据下述说明填写 MongoDB 的连接信息。
 
@@ -140,8 +144,8 @@ db.createUser(
       * **连接名称**：填写具有业务意义的独有名称。
       * **连接类型**：支持将 MongoDB 作为源或目标库。
       * **连接方式**：根据业务需求选择：
-         * **URI 模式**：选择该模式后，您需要填写数据库 URI 连接信息，用户名和密码需拼接在连接串中，例如：` mongodb://admin:password@192.168.0.100:27017/mydb?replicaSet=xxx&authSource=admin`
-         * **标准模式**：选择该模式后，您需要填写数据库地址、名称、账号、密码和其他连接串参数。
+        * **URI 模式**：选择该模式后，您需要填写数据库 URI 连接信息，用户名和密码需拼接在连接串中，例如：` mongodb://admin:password@192.168.0.100:27017/mydb?replicaSet=xxx&authSource=admin`
+        * **标准模式**：选择该模式后，您需要填写数据库地址、名称、账号、密码和其他连接串参数。
    * **高级设置**
       * **使用 TLS/SSL 连接**：根据业务需求选择：
         * **TSL/SSL 连接**：TapData 将连接网络中的单独服务器，该服务器提供到数据库的 [TSL/SSL 通道](https://www.mongodb.com/zh-cn/docs/manual/core/security-transport-encryption/)。如果您的数据库位于不可访问的子网中，则可尝试使用此方法并上传客户端私钥文件、填写私钥密码并选择是否验证服务端证书。
@@ -167,7 +171,7 @@ db.createUser(
 
 在配置数据同步/转换任务时，将 MongoDB 作为源或目标节点时，为更好满足业务复杂需求，最大化发挥性能，TapData 为其内置更多高级特性能力，您可以基于业务需求配置：
 
-![MongoDB 节点高级特性](../../images/mongodb_node_advanced_settings.png)
+![MongoDB 节点高级特性](../../images/mongodb34_node_advanced_settings.png)
 
 ```mdx-code-block
 <Tabs className="unique-tabs">
@@ -176,24 +180,20 @@ db.createUser(
 
 | **配置**                   | **说明**                                                     |
 | -------------------------- | ------------------------------------------------------------ |
-| **文档原像**               | 默认关闭，[文档原像](https://www.mongodb.com/zh-cn/docs/manual/changeStreams/#change-streams-with-document-pre--and-post-images)（也称前映像）是指被替换、更新或删除之前的文档，仅在 MongoDB 6.0 及以上支持并显示该配置，打开后 UPDATE/DELETE 事件会记录原像，TapData 将基于该信息进行数据同步。 |
 | **补充更新数据的完整字段** | 默认开启，启用后会在 **UPDATE** 事件中自动填充完整字段。     |
 | **补充时跳过已删除的事件** | 默认开启，关闭此功能时，以下情况可能导致增量异常：任务使用非 `_id` 字段作为业务判断；源字段类型为子文档并修改属性；源字段类型为内嵌数组且执行 PULL 操作。 |
 | **禁用游标超时**           | 默认关闭，开启后 MongoDB 会禁用游标超时，防止数据同步过程中出现超时错误。 |
-| **写入确认**               | 设置[写关注级别](https://www.mongodb.com/zh-cn/docs/manual/reference/write-concern/)，在分片群集中，`mongos` 会将写关注传递给分片，默认值为 **w1**，可选值如下：<br />●  **w0 / Unacknowledged**：不等待写入确认，最快，但无法确认写入是否成功。<br />●  **w1 / Acknowledged**：确认主节点写入成功，适合大多数场景，性能与安全性的平衡。<br />●  **w3**：确认写入成功至 3 个节点，提高数据安全性。<br />●  **majority**：确认写入已成功至大多数节点，安全性高，但节点较多时性能相对较差。 |
 
 
 </TabItem>
 
 <TabItem value="MongoDB 作为目标节点">
 
-| **配置**             | **说明**                                                     |
-| -------------------- | ------------------------------------------------------------ |
-| **同步索引**         | 默认关闭，启用后，在全量阶段目标库会自动同步源库的索引。     |
-| **同步分区属性**     | 默认关闭，启用后，在 MongoDB 分片集群间进行同步时，能够保持集合的分片属性一致。 |
-| **保存删除数据**     | 默认关闭，开启后会在中间库对删除数据进行缓存。               |
-| **时间序列集合属性** | 默认关闭，启用后，在 MongoDB 5.0 及以上版本之间进行同步时，可同步 TimeSeries 集合及其属性。 |
-| **写入确认**         | 设置[写关注级别](https://www.mongodb.com/zh-cn/docs/manual/reference/write-concern/)，在分片群集中，`mongos` 服务会将写关注传递给分片，默认值为 **w1**，可选值如下：<br />●  **w0 / Unacknowledged**：不等待写入确认，最快，但无法确认写入是否成功。<br />●  **w1 / Acknowledged**：确认主节点写入成功，适合大多数场景，性能与安全性的平衡。<br />●  **w3**：确认写入成功至 3 个节点，提高数据安全性。<br />●  **majority**：确认写入已成功至大多数节点，安全性高，但节点较多时性能相对较差。 |
+| **配置**         | **说明**                                                     |
+| ---------------- | ------------------------------------------------------------ |
+| **同步索引**     | 默认关闭，启用后，在全量阶段目标库会自动同步源库的索引。     |
+| **同步分区属性** | 默认关闭，启用后，在 MongoDB 分片集群间进行同步时，能够保持集合的分片属性一致。 |
+| **保存删除数据** | 默认关闭，开启后会在中间库对删除数据进行缓存。               |
 
 </TabItem>
 </Tabs>

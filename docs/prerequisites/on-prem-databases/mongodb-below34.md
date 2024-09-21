@@ -138,7 +138,7 @@ db.createUser(
 
 5. 在跳转到的页面，根据下述说明填写 MongoDB 的连接信息。
 
-   ![MongoDB 连接示例](../../images/mongodb_connection_cn.png)
+   ![MongoDB 连接示例](../../images/mongodb_below34_connection_cn.png)
 
    * **连接信息设置**
       * **连接名称**：填写具有业务意义的独有名称。

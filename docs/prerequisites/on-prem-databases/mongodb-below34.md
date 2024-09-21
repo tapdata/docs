@@ -127,7 +127,7 @@ db.createUser(
 
 :::
 
-## 添加数据源
+## 连接 MongoDB Below 3.4
 1. 登录 Tapdata 平台。
 
 2. 在左侧导航栏，单击**连接管理**。

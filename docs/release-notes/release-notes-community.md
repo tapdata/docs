@@ -6,6 +6,16 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.13
+
+### 新增功能
+
+* MySQL 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+
+### 问题修复
+
+- 修复开启**建表同步索引**开关后普通索引未正常同步的问题，确保数据同步完整性
+
 ## 3.12
 
 ### 新增功能

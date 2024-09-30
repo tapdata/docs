@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the output file
-output_file="nav_for_docs.json"
+output_file="./static/nav_for_docs.json"
 
 # Initialize the JSON object
 echo "{" > $output_file

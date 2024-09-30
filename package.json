@@ -6,7 +6,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
-    "build:docs": "BASE_URL='/docs/' docusaurus build",
+    "build:docs": "sh convert_sidebars_to_json.sh && BASE_URL='/docs/' docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",

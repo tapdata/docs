@@ -38,9 +38,9 @@ import TabItem from '@theme/TabItem';
 </thead>
 <tbody>
   <tr>
-    <td>AWS Clickhouse</td>
+    <td>AWS ClickHouse</td>
     <td>✅</td>
-    <td>➖</td>
+    <td>✅</td>
     <td>➖</td>
     <td>✅</td>
     <td>✅</td>
@@ -49,11 +49,47 @@ import TabItem from '@theme/TabItem';
   <tr>
     <td>ClickHouse</td>
     <td>✅</td>
-    <td>➖</td>
+    <td>✅</td>
     <td>➖</td>
     <td>✅</td>
     <td>✅</td>
-    <td>ClickHouse 20.x, 21.x, 22.x, 23.x and 24.x</td>
+    <td>20.x, 21.x, 22.x, 23.x, 24.x</td>
+  </tr>
+  <tr>
+    <td>Dameng</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>7.x, 8.x</td>
+  </tr>
+  <tr>
+    <td>Db2</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td> 9.7~11.x（support Linux, UNIX, Windows, AIX and AS400 platform）</td>
+  </tr>
+  <tr>
+    <td>Doris</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>1.2 ~ 3.0</td>
+  </tr>
+  <tr>
+    <td>Kafka-Enhanced</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>Kafka 2.0 ~ 2.5 or Scala 2.12</td>
   </tr>
   <tr>
     <td>Kafka</td>
@@ -62,7 +98,16 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>2.3.x, 0.x, 1.x</td>
+    <td>2.3.x</td>
+  </tr>
+  <tr>
+    <td>KingBaseES-R6</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>R6 V8 ~ V9</td>
   </tr>
   <tr>
     <td>MongoDB</td>
@@ -71,7 +116,16 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>3.4, 3.6, 4.0+</td>
+    <td>4.0 and above</td>
+  </tr>
+  <tr>
+    <td>MongoDB Below 3.4</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>3.2 or 3.4</td>
   </tr>
   <tr>
     <td>MySQL</td>
@@ -80,7 +134,7 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>5.0, 5.1, 5.5, 5.6, 5.7, 8.x</td>
+    <td>5.0 ~ 9</td>
   </tr>
   <tr>
     <td>Oracle</td>
@@ -89,7 +143,7 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>9i, 10g, 11g, 12c, 19c</td>
+    <td>9i, 10g, 11g, 12c, 18c, 19c+</td>
   </tr>
   <tr>
     <td>PostgreSQL</td>
@@ -98,7 +152,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>✅</td>
-    <td>9.4 and above</td>
+    <td>9.4～16</td>
   </tr>
   <tr>
     <td>SQL Server</td>
@@ -107,16 +161,25 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>2005, 2008, 2012, 2014, 2016, 2017</td>
+    <td>2008, 2008 R2, 2012, 2014, 2016, 2017, 2019, 2022</td>
   </tr>
-   <tr>
+  <tr>
+    <td>Sybase</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>16</td>
+  </tr>
+    <tr>
     <td>TiDB</td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>6.0.0 and above</td>
+    <td>6.0.0 ～ 8.1.9</td>
   </tr>
 </tbody>
 </table>
@@ -164,15 +227,6 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>✅</td>
     <td>➖</td>
     <td>N/A</td>
-  </tr>
-  <tr>
-    <td>Dameng</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>7.x, 8.x</td>
   </tr>
   <tr>
     <td>IBM DB2</td>
@@ -236,15 +290,6 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>✅</td>
     <td>✅</td>
     <td>10.x</td>
-  </tr>
-  <tr>
-    <td>MongoDB Below 3.4</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>3.4 or earlier</td>
   </tr>
   <tr>
     <td>Redis</td>
@@ -323,15 +368,6 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>✅</td>
     <td>➖</td>
     <td>0.9 and above</td>
-  </tr>
-  <tr>
-    <td>Doris</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>0.15.0</td>
   </tr>
   <tr>
     <td>Hudi</td>
@@ -568,15 +604,6 @@ The Alpha version of the data sources is in public preview and has passed the ba
     <td>✅</td>
     <td>➖</td>
     <td>8x</td>
-  </tr>
-  <tr>
-    <td>KingBaseES-R3</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>V8R3</td>
   </tr>
   <tr>
     <td>OceanBase（MySQL Mode）</td>

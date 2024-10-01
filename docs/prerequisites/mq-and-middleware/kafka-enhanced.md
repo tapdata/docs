@@ -141,6 +141,8 @@ import TabItem from '@theme/TabItem';
 
 5. 根据下述说明完成数据源配置。
 
+    ![Kafka Enhanced 连接设置](../../images/kafka_enhanced_connection.png)
+
     * **连接设置**
         * **连接名称**：填写具有业务意义的独有名称。
         * **连接类型**：支持将 Kafka 作为源或目标库。
@@ -158,7 +160,7 @@ import TabItem from '@theme/TabItem';
         * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。
         * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
         * **模型加载时间**：如果数据源中的模型数量少于10000个，则每小时更新一次模型信息。但如果模型数量超过10000个，则刷新将在您指定的时间每天进行。
-    
+
 6. 单击**连接测试**，测试通过后单击**保存**。
 
    :::tip
@@ -171,6 +173,8 @@ import TabItem from '@theme/TabItem';
 ## 节点高级配置
 
 在配置数据同步/转换任务时，将 Kafka-Enhanced 作为源或目标节点时，为更好满足业务复杂需求，最大化发挥性能，TapData 为其内置更多高级特性能力，您可以基于业务需求配置：
+
+![Kafka Enhanced 节点高级设置](../../images/kafka_advanced_settings.png)
 
 * 作为源节点
 

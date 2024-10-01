@@ -1,24 +1,44 @@
 # Doris
-
-
-Doris 适用于实时数据分析和报表，支持高并发查询和复杂分析，广泛应用于数据仓库、BI报表和数据可视化。Tapdata 支持将 Doras 作为源或目标库来构建数据管道，帮助您快速完成大数据分析场景下的数据流转。
-
-接下来，跟随本文介绍在 Tapdata 平台上连接 Doris 数据源。
+[Doris](https://doris.apache.org/) 适用于实时数据分析和报表，支持高并发查询和复杂分析，广泛应用于数据仓库、BI报表和数据可视化。Tapdata 支持将 Doras 作为源或目标库来构建数据管道，帮助您快速完成大数据分析场景下的数据流转。接下来，跟随本文介绍在 Tapdata 平台上连接 Doris 数据源。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-## 支持版本
+## 支持版本与架构
 
-Dorix 1.x、2.x
+Dorix 1.2 ~ 3.0（部署架构无限制）
 
+## 支持数据类型
 
+| 类别      | 数据类型                                 |
+| --------- | ---------------------------------------- |
+| 字符串    | CHAR、VARCHAR、STRING、TEXT              |
+| 布尔      | BOOLEAN                                  |
+| 整数      | TINYINT、SMALLINT、INT、BIGINT、LARGEINT |
+| 数值      | DECIMAL、DECIMALV3、FLOAT、DOUBLE        |
+| 日期/时间 | DATE、DATEV2、DATETIME、DATETIMEV2       |
+| 聚合      | HLL                                      |
+
+## 支持同步的操作
+
+* **DML**：INSERT、UPDATE、DELETE
+* **DDL**（仅在作为目标时支持）：ADD COLUMN、CHANGE COLUMN、DROP COLUMN、RENAME COLUMN
+
+:::tip
+
+- 作为源库时，增量数据同步需通过字段轮询的方式实现，且不支持采集 DDL 操作。
+- 作为目标库时，您还可以通过任务节点的高级配置，选择 DML 写入策略：插入冲突场景下是否转为更新。
+
+:::
 
 ## 注意事项
 
-如需使用 Doris 作为源库并同步增量数据变更，您需要创建数据转换任务并选择**增量同步方式**为**字段轮询**。
+* 受限于 Doris 特性，作为同步目标库时应尽量避免频繁的事务性操作（如频繁更新和删除），以免影响写入性能。
+* 当前 TapData 仅支持通过 Stream Load 方式写入数据，因此，对于使用**明细模型**或**聚合模型**创建的表，更新和删除操作的支持尚不完整。
+* 作为同步目标库时，为提升大批量数据插入的性能，建议根据单条记录的大小，将批次大小配置为 1 万 ~ 10 万条记录，注意避免设置过大以免引发 OOM 问题。
+* Doris 作为目标库进行大规模数据入仓时，建议在业务低峰期执行，以避免占用数据库 I/O 资源，影响查询性能。
 
 ## 准备工作
 
@@ -35,7 +55,7 @@ Dorix 1.x、2.x
    示例：创建一个名为 tapdata 的账号。
 
    ```sql
-   CREATE USER 'tapdata'@'%' IDENTIFIED BY 'your_password';
+   CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
    ```
 
 2. 为刚创建的账号授予权限，您也可以基于业务需求设置更精细化的权限控制。
@@ -72,8 +92,6 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
 
 
 
-
-
 ## 连接 Doris
 
 1. 登录 Tapdata 平台。
@@ -100,10 +118,10 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
     - 高级设置
       - **Doris 目录**：Doris 的目录，其层级在数据库之上，如使用默认目录可置空，更多介绍，见[多源数据目录](https://doris.apache.org/zh-CN/docs/1.2/lakehouse/multi-catalog/)。
       - **其他连接参数**：额外的连接参数，默认为空。
-      - **时间类型的时区**：默认为数据库所用的时区，您也可以根据业务需求手动指定。 
+      - **时区**：默认为 0 时区，如果更改为其他时区，不带时区的字段（如 DATETIME、DATETIMEV2）会受到影响，而 DATE、DATE2 类型则不会受到影响。
       - **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
-      - **模型加载时间**：当数据源中模型数量小于 10,000 时，每小时刷新一次模型信息；如果模型数据超过 10,000，则每天按照您指定的时间刷新模型信息。
-      - **开启心跳表**：当连接类型选择为**源头和目标**、**源头**时，支持打开该开关，由 Tapdata 在源库中创建一个名为 **_tapdata_heartbeat_table** 的心跳表并每隔 10 秒更新一次其中的数据（数据库账号需具备相关权限），用于数据源连接与任务的健康度监测。
+      - **模型加载时间**：如果数据源中的模型数量少于10,000个，则每小时更新一次模型信息。但如果模型数量超过10,000个，则刷新将在您指定的时间每天进行。
+      - **开启心跳表**：当连接类型为源头或目标时，可启用该开关。TapData 会在源库创建 `_tapdata_heartbeat_table` 心跳表，并每 10 秒更新一次（需具备相应权限），用于监测数据源连接与任务的健康状况。心跳任务在数据复制/开发任务启动后自动启动，您可在数据源编辑页面查看心跳任务。
 
 6. 单击页面下方的**连接测试**，提示通过后单击**保存**。
 
@@ -112,4 +130,19 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
    如提示连接测试失败，请根据页面提示进行修复。
 
    :::
+
+## 节点高级特性
+
+在配置数据同步/转换任务时，将 Doris 作为目标节点时，为更好满足业务复杂需求，最大化发挥性能，TapData 为其内置更多高级特性能力，您可以基于业务需求配置：
+
+![Doris 节点高级特性](../../images/doris_node_advanced_settings.png)
+
+| 配置               | 说明                                                         |
+| ------------------ | ------------------------------------------------------------ |
+| **键类型**         | 选择建表类型，支持 Unique（默认，主键模型） 、Aggregate（聚合模型）、Duplicate（明细模型），更多介绍，见[数据模型](https://doris.apache.org/zh-CN/docs/table-design/data-model/overview)。<br />当键类型选择为 **Duplicate**，且使用追加模式写入时，由于无更新条件，还需要指定排序字段。 |
+| **分区字段**       | 非传统意义上的分区，而是指建表时的 `DISTRIBUTED BY HASH` 分桶键。若手动设置分桶键，将优先使用；未设置则默认选主键或更新条件字段，若都未指定则使用全字段（不推荐）。 |
+| **分桶数**         | 创建表时选择分桶数，需基于实际业务情况设置，更多介绍，见[分桶数设计建议](https://doris.apache.org/zh-CN/docs/table-design/data-partition#bucket-%E7%9A%84%E6%95%B0%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE%E9%87%8F%E7%9A%84%E5%BB%BA%E8%AE%AE)。 |
+| **表属性**         | 支持基于业务需求，自行指定建表时的[表属性](https://doris.apache.org/zh-CN/docs/sql-manual/sql-statements/Data-Definition-Statements/Create/CREATE-TABLE#properties)。 |
+| **写入缓冲区容量** | 默认为 10240 KB，适当调大可提升大批量插入数据的性能，也可以调低以限制内存的占用避免发生 OOM。 |
+| **写入格式**       | 支持 JSON（默认）和 CSV 两种格式，JSON 格式相较于 CSV 更安全，适合处理复杂数据类型，但性能略低，可基于数据安全性和性能需求选择。 |
 

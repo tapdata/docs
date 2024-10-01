@@ -1,5 +1,9 @@
 # Sybase
 
+import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
+
+<Content />
+
 [Sybase 数据库](https://infocenter.sybase.com/help/index.jsp)，又称 Adaptive Server Enterprise (ASE)，是一款高性能、可靠且可扩展的企业级关系数据库管理系统。Sybase 已进入支持的尾声，推荐尽快迁移至其他数据库以降低风险。通过 TapData，您可以轻松构建实时同步管道，将 Sybase 数据实时同步至其他数据库平台，确保业务连续性。
 
 ## 支持版本与架构
@@ -60,6 +64,8 @@ DML 操作：INSERT、UPDATE、DELETE
 4. 在弹出的对话框中，搜索并选择 **Sybase**。
 
 5. 在跳转到的页面，根据下述说明填写 Sybase 的连接信息。
+
+   ![Sybase 连接设置](../../images/sybase_connection.png)
 
    * **连接信息设置**
      * **连接名称**：填写具有业务意义的独有名称。

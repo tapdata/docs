@@ -93,6 +93,7 @@ const sidebars = {
                    items: [
                            'prerequisites/mq-and-middleware/activemq',
                            'prerequisites/mq-and-middleware/hazelcast-cloud',
+                           'prerequisites/mq-and-middleware/kafka-enhanced',
                            'prerequisites/mq-and-middleware/kafka',
                            'prerequisites/mq-and-middleware/rabbitmq',
                            'prerequisites/mq-and-middleware/rocketmq',

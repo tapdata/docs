@@ -43,9 +43,9 @@ import TabItem from '@theme/TabItem';
 </thead>
 <tbody>
   <tr>
-    <td>AWS Clickhouse</td>
+    <td>AWS ClickHouse</td>
     <td>✅</td>
-    <td>➖</td>
+    <td>✅</td>
     <td>➖</td>
     <td>✅</td>
     <td>✅</td>
@@ -54,11 +54,47 @@ import TabItem from '@theme/TabItem';
   <tr>
     <td>ClickHouse</td>
     <td>✅</td>
-    <td>➖</td>
+    <td>✅</td>
     <td>➖</td>
     <td>✅</td>
     <td>✅</td>
     <td>20.x、21.x、22.x、23.x、24.x</td>
+  </tr>
+  <tr>
+    <td>Dameng（达梦）</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>7.x、8.x</td>
+  </tr>
+  <tr>
+    <td>Db2</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td> 9.7~11.x（支持 Linux、UNIX、Windows、AIX 及 AS400 平台）</td>
+  </tr>
+  <tr>
+    <td>Doris</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>1.2 ~ 3.0</td>
+  </tr>
+  <tr>
+    <td>Kafka-Enhanced</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>Kafka 2.0 ~ 2.5 或 Scala 2.12</td>
   </tr>
   <tr>
     <td>Kafka</td>
@@ -67,7 +103,16 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>2.3.x、0.x、1.x</td>
+    <td>2.3.x</td>
+  </tr>
+  <tr>
+    <td>KingBaseES-R6</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>R6 V8 ~ V9</td>
   </tr>
   <tr>
     <td>MongoDB</td>
@@ -76,7 +121,16 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>3.4、3.6、4.0+</td>
+    <td>4.0 及以上</td>
+  </tr>
+  <tr>
+    <td>MongoDB Below 3.4</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>3.2 或 3.4</td>
   </tr>
   <tr>
     <td>MySQL</td>
@@ -85,7 +139,7 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>5.0、5.1、5.5、5.6、5.7、8.x</td>
+    <td>5.0 ~ 9</td>
   </tr>
   <tr>
     <td>Oracle</td>
@@ -94,7 +148,7 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>9i、10g、11g、12c、19c</td>
+    <td>9i、10g、11g、12c、18c、19c+</td>
   </tr>
   <tr>
     <td>PostgreSQL</td>
@@ -103,7 +157,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>✅</td>
-    <td>9.4+</td>
+    <td>9.4～16</td>
   </tr>
   <tr>
     <td>SQL Server</td>
@@ -112,7 +166,16 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>2005、2008、2012、2014、2016、2017</td>
+    <td>2008、2008 R2、2012、2014、2016、2017、2019、2022</td>
+  </tr>
+  <tr>
+    <td>Sybase</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>16</td>
   </tr>
     <tr>
     <td>TiDB</td>
@@ -121,7 +184,7 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>6.0.0 及以上</td>
+    <td>6.0.0 ～ 8.1.9</td>
   </tr>
 </tbody>
 </table>
@@ -169,24 +232,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>➖</td>
     <td>不涉及</td>
-  </tr>
-  <tr>
-    <td>Dameng</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>7.x、8.x</td>
-  </tr>
-  <tr>
-    <td>IBM DB2</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>9.7 LUW</td>
   </tr>
   <tr>
     <td>DummyDB</td>
@@ -328,15 +373,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>➖</td>
     <td>0.9 及以上</td>
-  </tr>
-  <tr>
-    <td>Doris</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>0.15.0</td>
   </tr>
   <tr>
     <td>Hudi</td>

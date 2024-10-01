@@ -7,6 +7,12 @@ import Content from '../../reuse-content/_all-features.md';
 
 本文将介绍如何在 TapData 中添加 Kafka-Enhanced 数据源，后续可将其作为**源**或**目标库**来构建实时数据链路，可应用于构建实时数仓等场景。
 
+:::tip
+
+Kafka-Enhanced 数据源会在即将发布的 3.15 版本中提供支持。
+
+:::
+
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

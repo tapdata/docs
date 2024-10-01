@@ -17,6 +17,21 @@ import TabItem from '@theme/TabItem';
   <TabItem value="2024 年" default>
 ```
 
+### 2024-09-20
+
+#### 新增功能
+
+* MySQL 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+* 新增[表单模式引导](../user-guide/copy-data/quick-create-task.md)构建复制任务，简化任务创建流程，提升操作便捷性
+
+#### 功能优化
+
+- 挖掘任务新增按今日挖掘数量排序功能，方便任务管理和筛选
+
+#### 问题修复
+
+- 修复开启**建表同步索引**开关后普通索引未正常同步的问题，确保数据同步完整性
+
 ### 2024-08-21
 
 #### 新增功能

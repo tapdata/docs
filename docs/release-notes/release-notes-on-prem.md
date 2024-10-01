@@ -6,6 +6,23 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/release-notes)
 
+## 3.13
+
+### 新增功能
+
+* MySQL 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+
+### 功能优化
+
+- 优化 API 监控页面性能，大幅提升访问速度
+- 挖掘任务新增按今日挖掘数量排序功能，方便任务管理和筛选
+
+### 问题修复
+
+- 修复开启**建表同步索引**开关后普通索引未正常同步的问题，确保数据同步完整性
+- 修复 admin 用户修改用户名后权限丢失的问题，保障权限管理正常
+- 修复发送测试邮件失败时返回成功提示的问题，提升操作反馈准确性
+
 ## 3.12
 
 ### 新增功能

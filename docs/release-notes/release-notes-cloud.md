@@ -17,6 +17,23 @@ import TabItem from '@theme/TabItem';
   <TabItem value="2024 年" default>
 ```
 
+### 2024-10-10
+
+#### 新增功能
+
+* Doris、ClickHouse、KingBaseES-R6、PostgreSQL、SQL Server、MongoDB 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+* PostgreSQL 作为源数据时，支持在任务设置中指定增量数据的时间点
+
+#### 功能优化
+
+* Elasticsearch 数据源在任务配置时，支持选择写入更新策略
+* 数据复制任务源节点的表选择范围默认为主键表，并增加提示文案
+
+#### 问题修复
+
+- 修复新任务开启心跳表后，任务进入增量阶段时出现异常的问题
+- 修复任务卡在全量阶段，重置后无法进入增量阶段的问题
+
 ### 2024-09-20
 
 #### 新增功能

@@ -169,3 +169,21 @@ import Content from '../../reuse-content/_enterprise-features.md';
 - 重试间隔（秒）
 - 最大重试时间（分钟）
 
+
+
+## <span id="ldap">LDAP 登录设置</span>
+
+![LDAP 认证设置](../../images/ldap_settings.png)
+
+TapData 支持对接 LDAP（轻量级目录访问协议）进行用户登录认证。通过集成 LDAP，企业可以将用户管理统一在现有的目录服务中，提升用户管理的效率和安全性，简化管理流程，确保数据平台的安全合规性，参数配置说明如下：
+
+* **使用 LDAP 登录**：是否启用 LDAP 进行用户登录认证。
+* **LDAP 服务器地址**：LDAP 服务器的主机地址或 IP，TapData 将通过该地址与 LDAP 服务器进行连接和通信。
+* **LDAP 服务器端口**：用于与 LDAP 服务器建立通信的端口号，非加密连接使用默认端口 `389`，而 SSL 加密连接使用端口 `636`。
+* **LDAP Base DN**：LDAP 查询的起点，用于指定在 Active Directory (AD) 中的用户搜索范围。支持多个组，并使用分号 `;` 进行分隔，例如：`cn=Users,dc=example,dc=com;cn=Test,dc=example,dc=com`。通过配置多个 Base DN，可以灵活定义不同的用户组进行认证，确保精确覆盖需要的搜索范围。
+* LDAP 目录中用户搜索的起始位置（Distinguished Name）。指定 Base DN 后，TapData 将从该位置开始查找用户信息。
+* **LDAP 账号**：用于与 LDAP 服务器进行身份验证的账号，一般是具备查询权限的 LDAP 管理员账号，格式为完整的 Distinguished Name（DN），例如 `administrator@ad.tapdata.io`。
+* **LDAP 密码**：对应于 LDAP 账号的密码，用于身份验证并允许 TapData 从 LDAP 服务器获取用户信息。
+* **是否启用 SSL**：指定是否通过 SSL 加密方式连接到 LDAP 服务器，启用后还需要上传 SSL 证书文件。
+
+完成设置后，可单击**连接测试**以验证配置正确性。

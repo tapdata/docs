@@ -5,7 +5,7 @@
 
 :::tip
 
-Kafka-Enhanced 数据源会在即将发布的 3.15 版本中提供支持。
+Kafka-Enhanced 数据源在 3.15 版本开始支持。
 
 :::
 
@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 ## 支持版本与架构
 
-* **版本**：Kafka 2.0 ~ 2.5 或 Scala 2.12 
+* **版本**：Kafka 2.0 ~ 2.5（基于 Scala 2.12 构建）
 * **架构**：单机或集群架构
 
 ## 支持数据类型

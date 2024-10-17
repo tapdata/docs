@@ -6,6 +6,23 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.15
+
+### 新增功能
+
+* TiDB 已通过 TapData 认证测试流程，升级为[认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+
+### 功能优化
+
+- 优化处理节点的缓存管理逻辑，增强资源使用效率，提升任务执行速度
+
+### 问题修复
+
+- 修复开启心跳表后，任务表显示无延迟但数据未同步的问题
+- 修复设置标签时无法查看所有标签的问题
+- 修复任务重试开始时间显示为 1970 年的问题
+- 修复 Elasticsearch 作为目标库时，创建索引失败的问题
+
 ## 3.14
 
 ### 新增功能

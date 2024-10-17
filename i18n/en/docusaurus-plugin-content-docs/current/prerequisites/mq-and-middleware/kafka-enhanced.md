@@ -6,7 +6,7 @@ This article explains how to add a Kafka-Enhanced data source in TapData, allowi
 
 :::tip
 
-Kafka Enhanced will be available in the upcoming version 3.15.
+Kafka-Enhanced data source has been supported since version 3.15.
 
 :::
 
@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 ## Supported Versions and Architectures
 
-* **Versions**: Kafka 2.0 ~ 2.5 or Scala 2.12 
+* **Versions**: Kafka 2.0 ~ 2.5 (built on Scala 2.12)
 * **Architectures**: Single-node or cluster
 
 ## Supported Data Types

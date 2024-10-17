@@ -6,6 +6,26 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/release-notes)
 
+## 3.14
+
+### 新增功能
+
+* Doris、ClickHouse、KingBaseES-R6、PostgreSQL、SQL Server、MongoDB 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+* 支持通过 [LDAP 对接 Active Directory (AD) 进行用户登录认证](../user-guide/other-settings/system-settings#ldap)，实现统一用户身份管理
+* PostgreSQL 作为源数据时，支持在任务设置中指定增量数据的时间点
+
+### 功能优化
+
+* Elasticsearch 数据源在任务配置时，支持选择写入更新策略
+* 数据复制任务源节点的表选择范围默认为主键表，并增加提示文案
+
+### 问题修复
+
+- 修复新任务开启心跳表后，任务进入增量阶段时出现异常的问题
+- 修复数据校验任务列表只能显示一页的问题
+- 修复任务卡在全量阶段，重置后无法进入增量阶段的问题
+- 修复共享挖掘源节点选择表后，自动刷新导致取消勾选的问题
+
 ## 3.13
 
 ### 新增功能

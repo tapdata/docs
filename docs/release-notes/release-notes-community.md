@@ -6,6 +6,23 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.14
+
+### 新增功能
+
+* Doris、ClickHouse、PostgreSQL、MongoDB 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+* PostgreSQL 作为源数据时，支持在任务设置中指定增量数据的时间点
+
+### 功能优化
+
+* Elasticsearch 数据源在任务配置时，支持选择写入更新策略
+* 数据复制任务源节点的表选择范围默认为主键表，并增加提示文案
+
+### 问题修复
+
+- 修复新任务开启心跳表后，任务进入增量阶段时出现异常的问题
+- 修复任务卡在全量阶段，重置后无法进入增量阶段的问题
+
 ## 3.13
 
 ### 新增功能

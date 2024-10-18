@@ -17,6 +17,25 @@ import TabItem from '@theme/TabItem';
   <TabItem value="2024 年" default>
 ```
 
+### 2024-10-17
+
+#### 新增功能
+
+* Kafka-Enhanced、TiDB 已通过 TapData 认证测试流程，升级为[认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+
+#### 功能优化
+
+- 为 SQL Server 大量表（超过 500 表）同步场景，增加[多线程 CT 表轮询](../prerequisites/on-prem-databases/sqlserver#advanced-settings)开关，优化增量采集性能，提升同步效率
+- 优化处理节点的缓存管理逻辑，增强资源使用效率，提升任务执行速度
+- 为 Oracle LogMiner PGA 超出限制错误引入自动重试机制，增强容错能力
+
+#### 问题修复
+
+- 修复开启心跳表后，任务表显示无延迟但数据未同步的问题
+- 修复设置标签时无法查看所有标签的问题
+- 修复任务重试开始时间显示为 1970 年的问题
+- 修复 Elasticsearch 作为目标库时，创建索引失败的问题
+
 ### 2024-10-10
 
 #### 新增功能

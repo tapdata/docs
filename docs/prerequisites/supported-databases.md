@@ -91,7 +91,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>Kafka 2.0 ~ 2.5 或 Scala 2.12</td>
+    <td>Kafka 2.0 ~ 2.5（基于 Scala 2.12 构建）</td>
   </tr>
   <tr>
     <td>Kafka</td>

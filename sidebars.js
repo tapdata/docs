@@ -357,6 +357,32 @@ const sidebars = {
     },
     {
      type: 'category',
+     label: 'TapFlow 开发者指南',
+     link: {type: 'doc', id: 'tapflow/README'},
+     items: [
+            'tapflow/introduction',
+            'tapflow/quick-start',
+            {
+             type: 'category',
+             label: '命令参考',
+             link: {type: 'doc', id: 'tapflow/tapcli-reference/README'},
+             items: [
+                    'tapflow/tapcli-reference/manage-data-sources',
+                    'tapflow/tapcli-reference/manage-real-time-jobs',
+             ]
+            },
+            {
+             type: 'category',
+             label: '典型案例',
+             link: {type: 'doc', id: 'tapflow/tapflow-tutorial/README'},
+             items: [
+                    'tapflow/tapflow-tutorial/build-real-time-wide-table',
+             ]
+            },            
+            ]
+    },    
+    {
+     type: 'category',
      label: '生产部署与运维',
      link: {type: 'doc', id: 'production-admin/README'},
      items: [

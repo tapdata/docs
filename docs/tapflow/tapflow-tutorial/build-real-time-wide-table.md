@@ -208,7 +208,9 @@ TapFlow 是一个编程框架，支持实时数据复制、数据处理和物化
    }
    ```
 
-   
+   ## 扩展阅读
+
+   [将数据发布为 API](../../user-guide/data-service/create-api-service.md)
 
 
 

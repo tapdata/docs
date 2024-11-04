@@ -6,6 +6,23 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.16
+
+### 新增功能
+
+- 新增对 [Elasticsearch 数据源](../prerequisites/on-prem-databases/elasticsearch.md)的 HTTPS 连接支持，提升数据传输的安全性，满足更多数据安全合规要求
+- 新增通过新增哈希字段（默认名称为` _no_pk_hash`）的方式支持无主键表的同步，保障无主键场景下的数据一致性和同步稳定性
+
+### 功能优化
+
+- 增强 Row Filter 节点的数据筛选逻辑，确保当数据状态从符合条件变为不符合条件时，目标数据能同步更新以保持一致性
+
+### 问题修复
+
+- 修复全量同步详情中无法显示已完成、同步中和未开始的所有表的问题
+- 修复耗时及里程碑统计不准确的问题
+- 修复 DNS 解析失败时，MongoDB Atlas 无法正常工作的情况
+
 ## 3.15
 
 ### 新增功能

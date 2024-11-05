@@ -366,6 +366,22 @@ import TabItem from '@theme/TabItem';
   由于 CDC 支持从 SQLServer 2008 开始支持，对于较早的版本，您需要使用 Custom SQL 功能来模拟更改数据捕获，在从旧版本复制数据时，源表必须有一个更改跟踪列，比如 <b>LAST_UPDATED_TIME</b>，它在每次插入或更新记录时都会更新；随后在创建数据复制任务时，任务的同步类型选择为<b>全量</b>，将<b>重复运行自定义 SQL</b>设置为 <b>True</b>，同时在映射设计上提供适当的自定义 SQL。
   </details>
 
+* 问：SQL Server 中个别表无法启用 CDC，但其他表正常使用，如何在不执行库级重启的前提下进行修复？
+
+  答：您可以通过手动清理该表的 CDC 元数据（如更改捕获表等）来解决问题，清理的 SQL 语句如下：
+
+  ```sql
+  -- 需替换为真实的 schema 名和表名
+  DROP TABLE cdc.<schema>_<tableName>_CT;
+  DELETE FROM cdc.captured_columns WHERE object_id = OBJECT_ID('<schema>.<tableName>');
+  DELETE FROM cdc.change_tables WHERE capture_instance = '<schema>_<tableName>';
+  DROP FUNCTION cdc.fn_cdc_get_all_changes_<schema>_<tableName>;
+  DROP FUNCTION cdc.fn_cdc_get_net_changes_<schema>_<tableName>;
+  ```
+
+  
+
+
 ## 扩展阅读
 
 

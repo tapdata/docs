@@ -28,7 +28,7 @@ import TabItem from '@theme/TabItem';
 | 位           | bit、bit varying                                             |
 | 布尔         | boolean                                                      |
 | 日期和时间   | timestamp without time zone、timestamp with time zone、date、time without time zone、time with time zone、interval |
-| 空间数据类型 | point、polygon、circle、path、box、line、lseg                |
+| 空间数据类型 | geometry、point、polygon、circle、path、box、line、lseg      |
 | 网络地址类型 | inet、cidr、macaddr                                          |
 | 标识符类型   | uuid、oid、regproc、regprocedure、regoper、regoperator、regclass、regtype、regconfig、regdictionary |
 | 文本搜索类型 | tsvector、tsquery                                            |

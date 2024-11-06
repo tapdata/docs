@@ -13,11 +13,31 @@ import TabItem from '@theme/TabItem';
 
 1. [下载并安装 Python 3](https://www.python.org/downloads/)，版本为 Python 3.6 及以上。
 
-2. 执行 `pip3 install tapcli` 安装 TapData shell 工具。
+2. 执行下述命令创建虚拟环境，以便隔离依赖包，避免与系统 Python 环境冲突。
 
-3. 输入 `tap` 启动 TapData Shell 。
+   ```bash
+   python3 -m venv tapcli_env
+   ```
 
-4. 基于 TapData [部署方式](../quick-start/install/README.md)选择要连接产品系列，然后设置连接所需的认证信息，本案例以连接至 TapData Cloud 平台为例：
+3. 执行下述命令激活虚拟环境。
+
+   ```bash
+   source tapcli_env/bin/activate
+   ```
+
+4. 执行下述命令安装 TapData Shell 及其所需的依赖包。
+
+   ```bash
+   pip3 install tapcli
+   # 或者
+   pip install tapcli
+   ```
+
+   至此已完成安装，后续退出命令行后需要再次使用 TapData Shell 前需要先激活虚拟环境。
+
+5. 输入 `tap` 启动 TapData Shell 。
+
+6. 基于 TapData [部署方式](../quick-start/install/README.md)选择要连接产品系列，然后设置连接所需的认证信息，本案例以连接至 TapData Cloud 平台为例：
 
    ```bash
    Tap Flow requires TapData Live Data Platform(LDP) cluster to run. 
@@ -31,21 +51,22 @@ import TabItem from '@theme/TabItem';
    (if pressed enter/C)
    # You may obtain the keys by log onto TapFlow Cloud, and click: "User Center" on the top right, then copy & paste the accesskey and secret key pair.
    # You can sign up for a new account from: https://cloud.tapdata.io if you don't have one
+   # 
    Enter AK:   xxxxxxxxxxxxxxx
    Enter SK:   xxxxxxxxxxxxxxx
    ```
 
-   * 输入 `C` 或回车键：即连接至 TapData Cloud 平台，此时需要输入访问密钥（Access Key）和密钥（Secret Key）。
-   
+   * 输入 `C` 或回车键：即连接至 TapData Cloud 平台，此时需要输入访问密钥（Access Key）和密钥（Secret Key），输入时字符不可见，输入完成按回车键即可。
+
    * 输入 `L`：即连接至本地部署的 TapData Enterprise 平台，此时需要请输入服务器地址和访问码。
-   
+
      <details>
      <summary>如何获取访问密钥？</summary>
-   
+
      <Tabs className="unique-tabs">
      <TabItem value="TapData Cloud 平台">
      
-     注册并登录 [ TapData Cloud 平台](https://cloud.tapdata.net/)，单击右上角的用户名并选择**用户中心**，即可获取 Access Key 和 Secret Key 信息。
+     注册并登录 [TapData Cloud 平台](https://cloud.tapdata.net/)，单击右上角的用户名并选择**用户中心**，即可获取 Access Key 和 Secret Key 信息。
      
      ![获取 TapData Cloud 平台的 AK 信息](../images/obtain_cloud_ak.png)
      
@@ -61,7 +82,6 @@ import TabItem from '@theme/TabItem';
      </Tabs>     
      
      </details>
-     
 
 密钥信息验证通过后，命令行将打印欢迎信息和当前的 Agent 等信息，表示已成功连接到 TapData 实时数据平台，此时可通过 `h` 命令查看帮助信息。
 

@@ -38,7 +38,7 @@ TapFlow 是一个编程框架，支持实时数据复制、数据处理和物化
 
 1. 执行 `tap` 进入 TapData Shell 命令交互窗口。
 
-2. 指定实时同步任务的源表。
+2. 指定数据流任务的源表。
 
    ```python
    # 创建数据同步任务对象，并设置主表 "ecom_orders" 作为数据流的起点
@@ -80,7 +80,7 @@ TapFlow 是一个编程框架，支持实时数据复制、数据处理和物化
                      relation=[["seller_id", "order_items.seller_id"]]);  # 使用 seller_id 作为关联键
    ```
 
-4. 将数据同步任务的输出指定为 MongoDB 重名为 `orderSingleView` 的集合，形成一个实时物化视图，包含完整的订单、客户、支付、商品和卖家数据。
+4. 将数据流的输出指定为 MongoDB 重名为 `orderSingleView` 的集合，形成一个实时物化视图，包含完整的订单、客户、支付、商品和卖家数据。
 
    ```python
    # 指定数据写入的目标 MongoDB 集合名称

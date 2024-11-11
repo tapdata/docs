@@ -361,16 +361,17 @@ const sidebars = {
      link: {type: 'doc', id: 'tapflow/README'},
      items: [
             'tapflow/introduction',
-            'tapflow/quick-start',
+            'tapflow/quick-start',            
             {
              type: 'category',
-             label: '命令参考',
-             link: {type: 'doc', id: 'tapflow/tapcli-reference/README'},
+             label: 'API 参考',
+             link: {type: 'doc', id: 'tapflow/api-reference/README'},
              items: [
-                    'tapflow/tapcli-reference/manage-data-sources',
-                    'tapflow/tapcli-reference/manage-real-time-jobs',
+                    'tapflow/api-reference/data-source',
+                    'tapflow/api-reference/data-flow',
              ]
             },
+            'tapflow/tapcli-reference',
             {
              type: 'category',
              label: '典型案例',

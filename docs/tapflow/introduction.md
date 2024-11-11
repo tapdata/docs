@@ -4,13 +4,13 @@ import Content from '../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content />
 
-**TapFlow** 是一个基于[变更数据捕获](../introduction/change-data-capture-mechanism.md)（CDC）技术的的流式数据处理的开发框架。除了通过[图形化界面](../user-guide/data-development/create-task.md)使用 TapData 产品外，您还可以通过 TapFlow 提供的丰富 API 和工具，快速实现同构或异构数据源的实时处理任务，满足灵活、自动化的数据集成和流式处理场景。
+**TapFlow** 是一个基于[变更数据捕获](../introduction/change-data-capture-mechanism.md)（CDC）技术的的流式数据处理的开发框架。除了通过[图形化界面](../user-guide/data-development/create-task.md)使用 TapData 产品外，您还可以通过 TapFlow 提供的丰富 API 和命令行工具，快速实现同构或异构数据源的实时复制及开发任务，满足灵活、自动化的数据集成和流式处理场景。
 
 ## 工作原理
 
 ![TapFlow 工作原理](../images/tapflow_introduction.png)
 
-TapFlow 的数据处理流程主要包括以下步骤：
+TapFlow 典型应用场景如上，数据处理流程主要包括以下步骤：
 
 - **数据采集**：通过 Tap CDC 连接并监控数据源中的更新事件（如新增、更新、删除操作），并将其转化为数据流。
 - **数据流处理**：支持用户使用 API 或图形化界面对数据流进行实时处理，包括数据的合并、清洗、转换等复杂操作。
@@ -18,14 +18,14 @@ TapFlow 的数据处理流程主要包括以下步骤：
 
 ## 核心特性
 
-* **丰富数据源支持**：可快速连接常见关系型数据库（如 Oracle、DB2、MySQL）、非关系型数据库（如 MongoDB），以及消息队列（如 Kafka）。
-* **高性能实时处理**：通过 CDC 实现数据源的实时更新监控，支持高并发数据处理，每秒高达数十万事件，提供毫秒级延迟的高吞吐读取能力。
+* **丰富数据源支持**：可快速连接常见关系型数据库（如 Oracle、DB2、MySQL）、非关系型数据库（如 MongoDB）、消息队列（如 Kafka）及主流的国产数据库（如达梦、高斯、人大金仓等）。
+* **高性能实时采集与处理**：通过 CDC 实现数据源的实时更新监控，支持高并发数据处理，每秒高达数十万事件，提供毫秒级延迟的高吞吐读取能力。
 * **灵活部署**：支持云端、私有化部署以及混合部署，满足不同安全性和成本需求。
 * **简单易用**：仅需几行代码即可完成任务配置，支持在数据流中加入 Javascript 和 Python 自定义函数（UDF），实现灵活的业务处理逻辑。
 
 ## 典型应用场景
 
-**TapFlow** 作为 TapData 的管理工具，通过 API 和命令行方式轻松管理数据同步任务，特别适用于以下场景中的实时数据更新：
+**TapFlow** 作为 TapData 的管理工具，通过 API 和命令行方式轻松管理数据流任务，特别适用于以下场景中的实时数据更新：
 
 - **金融交易系统中的余额更新**
   TapFlow 可实现交易完成后的账户余额实时更新，使用户在操作后立即看到最新的账户状态，满足高一致性需求。

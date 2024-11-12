@@ -178,7 +178,7 @@ tap > flow = Flow("Exclude_Fields_Test")  \
 
 **参数说明**：
 
-- **from_table_name**：指定要关联的表名，格式为 `data_source_name.table_name`，其中 `data_source_name` 可通过 `show dbs` 获取，或[新建数据源](manage-data-sources.md)。
+- **from_table_name**：指定要关联的表名，格式为 `data_source_name.table_name`，其中 `data_source_name` 可通过 `show dbs` 获取，或[新建数据源](data-source.md)。
 - **relation**：连接字段的映射关系，母亲仅支持等值连接，将关联表中的记录匹配到主表的记录中。
 - **embed_path**：嵌入数据的路径。可以将关联数据嵌入为子文档（`object`）或数组（`array`）。
 - **embed_type**：定义嵌入的数据结构类型，`object` 表示一对一关系，`array` 表示一对多关系。

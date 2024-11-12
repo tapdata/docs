@@ -71,14 +71,14 @@ table ecom_customers has 99002 records
 
 
 ## 管理数据流任务
-### show jobs
+### show flows
 
 **命令说明**：展示所有数据流任务，包含任务名称、状态及同步类型等信息，其中同步类型包含 **initial_sync**（全量数据同步）和 **cdc**（增量数据同步）
 
 **使用示例**：
 
 ```python
-tap > show jobs
+tap > show flows
 d7c298: Oracle_Sync_Test       complete     sync/initial_sync+cdc
 ```
 

@@ -378,6 +378,7 @@ const sidebars = {
              link: {type: 'doc', id: 'tapflow/tapflow-tutorial/README'},
              items: [
                     'tapflow/tapflow-tutorial/build-real-time-wide-table',
+                    'tapflow/tapflow-tutorial/expand-mogodb-array-to-mysql',
              ]
             },            
             ]

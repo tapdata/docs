@@ -41,7 +41,7 @@ TapFlow 是一个编程框架，支持实时数据复制、数据处理和物化
 2. 指定数据流任务的源表。
 
    ```python
-   # 创建数据同步任务对象，并设置主表 "ecom_orders" 作为数据流的起点
+   # 创建数据流任务对象，并设置主表 "ecom_orders" 作为数据流的起点
    orderFlow = Flow("Order_SingleView_Sync") \
          .read_from("MySQL_ECommerce.ecom_orders");  # 设置 MySQL 源表 ecom_orders
    ```

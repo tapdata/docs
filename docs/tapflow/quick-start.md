@@ -155,7 +155,7 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 1. 将创建一个名为 **MySQL_to_MongoDB_Order_Sync** 的数据流，将 MySQL 的订单数据同步到 MongoDB 的目标集合中。
 
    ```python
-   # 创建数据同步任务对象，并指定源表和目标表
+   # 创建数据流任务对象，并指定源表和目标表
    myflow = Flow("MySQL_to_MongoDB_Order") \
           .read_from("MySQL_ECommerce.ecom_orders") \
           .write_to("MongoDB_ECommerce.orders_collection") \

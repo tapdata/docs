@@ -2,7 +2,7 @@
 
 # 数据流 API
 
-本文介绍使用 TapFlow API 管理数据流的完整参考，包括管理数据源、定义任务、执行数据过滤等操作。
+本文介绍使用 TapFlow API 管理数据流的完整参考，包括定义任务来源/目标、执行数据处理等操作。
 
 ## 创建数据流任务
 
@@ -201,4 +201,4 @@ tap > flow = Flow("Order_Payment_Join")
 
 ## 扩展阅读
 
-通过 [TapData Shell](../tapcli-reference) 管理数据流任务，流入启停任务、查看任务状态、删除任务等操作。
+通过 [Tap Shell](../tapcli-reference) 管理数据流任务，流入启停任务、查看任务状态、删除任务等操作。

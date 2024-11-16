@@ -1,13 +1,13 @@
 # 快速入门
 
-本文将演示如何使用 TapData Shell 构建最简单的数据流任务，以帮助您快速掌握数据复制和流式处理的操作流程。如需了解如何利用 TapFlow 的多表处理功能来实现更复杂的业务需求（如实时宽表），推荐阅读[典型案例](tapflow-tutorial/README.md)。
+本文将演示如何使用 Tap Shell 构建最简单的数据流任务，以帮助您快速掌握数据复制和流式处理的操作流程。如需了解如何利用 TapFlow 的多表处理功能来实现更复杂的业务需求（如实时宽表），推荐阅读[典型案例](tapflow-tutorial/README.md)。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-## 步骤一：安装 TapData Shell 
+## 步骤一：安装 Tap Shell 
 
 1. [下载并安装 Python 3](https://www.python.org/downloads/)，版本为 Python 3.6 及以上。
 
@@ -17,21 +17,21 @@ import TabItem from '@theme/TabItem';
    python3 -m venv tapcli_env
    ```
 
-3. 执行下述命令激活虚拟环境，安装 TapData Shell 及其所需的依赖包。
+3. 执行下述命令激活虚拟环境，安装 Tap Shell 及其所需的依赖包。
 
    ```bash
    # 激活虚拟环境
    source tapcli_env/bin/activate
    
-   # 安装 TapData Shell
+   # 安装 Tap Shell
    pip3 install tapcli
    # 或者
    pip install tapcli
    ```
 
-   至此已完成安装，退出命令行后再次使用 TapData Shell 前，需要先激活虚拟环境。
+   至此已完成安装，退出命令行后再次使用 Tap Shell 前，需要先激活虚拟环境。
 
-5. 输入 `tap` 启动 TapData Shell 。
+5. 输入 `tap` 启动 Tap Shell 。
 
 6. 基于 TapData [部署方式](../quick-start/install/README.md)选择要连接产品系列，然后设置连接所需的认证信息，本案例以连接至 TapData Cloud 平台为例：
 
@@ -93,7 +93,7 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 
 ## 步骤二：配置数据源
 
-接下来，我们通过 TapData Shell 完成数据源配置，这里我们将 MySQL 数据库作为源库，MongoDB 作为目标库。
+接下来，我们通过 Tap Shell 完成数据源配置，这里我们将 MySQL 数据库作为源库，MongoDB 作为目标库。
 
 1. 执行下述格式的命令，添加源 MySQL  数据库，名称保存为 `MySQL_ECommerce`。
 
@@ -133,7 +133,7 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 
 :::tip
 
-- TapData Shell 支持连接[数十种常见数据源](../prerequisites/supported-databases.md)，每种数据源类型的配置参数可能略有不同，如需了解更多的权限和参数等说明，见[连接数据源](../prerequisites/README.md)。
+- Tap Shell 支持连接[数十种常见数据源](../prerequisites/supported-databases.md)，每种数据源类型的配置参数可能略有不同，如需了解更多的权限和参数等说明，见[连接数据源](../prerequisites/README.md)。
 - 若出现 “**load schema status: error**” 错误，通常是权限或配置问题，可再次使用相同名称重试，系统会提示 “**database MongoDB_ECommerce exists, will update its config**” 并覆盖原配置。 
 
 :::
@@ -142,7 +142,7 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 
 ## 步骤三：创建数据流
 
-在完成数据源配置后，我们可以通过 TapData Shell 创建一个数据流，将 MySQL 数据同步到 MongoDB。
+在完成数据源配置后，我们可以通过 Tap Shell 创建一个数据流，将 MySQL 数据同步到 MongoDB。
 
 <details><summary>什么是数据流（Data Flow）？</summary>
 在 Tapdata 中，数据流（Data Flow）是一个执行单元，用于在数据源之间进行数据同步、处理和转换。它可以包含多个数据同步任务，将不同数据源的数据整合、清洗、转换后写入目标系统，实现从源到目标的高效数据流动。

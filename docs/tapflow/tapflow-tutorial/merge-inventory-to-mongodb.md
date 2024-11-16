@@ -60,7 +60,7 @@ flowchart LR
 
 ## 准备工作
 
-安装 TapData Shell，并确保已经成功连接 MySQL 和 MongoDB 数据库，详细的安装和配置步骤见[快速入门](../quick-start.md)。
+安装 Tap，并确保已经成功连接 MySQL 和 MongoDB 数据库，详细的安装和配置步骤见[快速入门](../quick-start.md)。
 
 本案例中，为便于阅读，我们假设 3 个区域的的表都存储在同一数据库中，对应的 MySQL 数据源名称为 **MySQL_Demo**，而作为目标库的 MongoDB 数据源名称为 **MongoDB_Demo**。
 
@@ -68,7 +68,7 @@ flowchart LR
 
 接下来，我们将展示如何使用 TapFlow 将不同区域的库存数据整合至 MongoDB。此过程中，我们将通过 JavaScript 处理为每条记录添加区域标识字段，并将 `PK_CERT_NBR` 字段值进行标准化处理，从而方便后续的查询和分析。
 
-1. 执行 `tap` 进入 TapData Shell 命令交互窗口。
+1. 执行 `tap` 进入 Tap Shell 命令交互窗口。
 
 2. 为数据流添加 JavaScript 处理逻辑。
 

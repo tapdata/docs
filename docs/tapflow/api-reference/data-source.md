@@ -79,4 +79,4 @@ load schema status: finished
 
 ## 扩展阅读
 
-通过 [TapData Shell](../tapcli-reference) 管理数据源，例如查看数据源的状态、表结构信息、删除数据源等。
+通过 [Tap Shell](../tapcli-reference) 管理数据源，例如查看数据源的状态、表结构信息、删除数据源等。

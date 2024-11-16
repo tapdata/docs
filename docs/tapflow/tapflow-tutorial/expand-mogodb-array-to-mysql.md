@@ -91,7 +91,7 @@ TapFlow 提供强大的数据转换和处理功能，轻松将嵌套数组结构
 
    任务启动后，TapFlow 将持续捕获源 MongoDB 的数据变动，并将数每个 `order_payments` 数组元素实时加工并同步到 MySQL 目标表中。
 
-7. 在任务运行过程中，您可以通过 `stats MySQL_to_MongoDB_Order` 命令来查看任务的状态和运行统计信息。
+7. 在任务运行过程中，您可以通过 `status MySQL_to_MongoDB_Order` 命令来查看任务的状态和运行统计信息。
 
    除此以外，您也可以[通过 Web UI 查看任务状态](../../user-guide/data-development/monitor-task)。
 

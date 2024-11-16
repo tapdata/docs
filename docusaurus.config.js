@@ -74,6 +74,11 @@ const config = {
     ],
   ],
 
+markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+
 /* Local search engine configuration
   themes: [
     [

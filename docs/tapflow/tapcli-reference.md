@@ -84,15 +84,15 @@ d7c298: Oracle_Sync_Test       complete     sync/initial_sync+cdc
 
 
 
-### **stats <flow name/id>**
+### **status <flow name/id>**
 
 **命令说明**：显示数据流任务的运行统计信息。
 
 **使用示例**：
 
 ```python
-stats MySQL_A_to_B
-job current status is: running, qps is: 0.0, total rows: 0, delay is: 0ms
+status MySQL_A_to_B
+job current status is: running, qps is: 31808.0, total rows: 1300000, delay is: 706ms
 ```
 
 

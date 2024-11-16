@@ -89,10 +89,10 @@ TapFlow 是一个编程框架，支持实时数据复制、数据处理和物化
    orderFlow.save()
    ```
 
-5. 执行 `orderFlow.start()` 启动任务，任务启动成功后可通过 stat 命令查看任务运行状态，示例如下：
+5. 执行 `orderFlow.start()` 启动任务，任务启动成功后可通过 status 命令查看任务运行状态，示例如下：
 
    ```python
-   stats Order_SingleView_Sync
+   status Order_SingleView_Sync
    job current status is: running, qps is: 3521.2, total rows: 99441, delay is: 332ms 
    ```
 

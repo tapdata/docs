@@ -108,9 +108,9 @@ flowchart LR
    ```python
    # 定义数据流任务，合并区域表并应用 JS 数据处理逻辑
    inventoryFlow = Flow("Inventory_Merge") \
-                   .read_from("MySQL_Demo.usaPOSGoldMaterial").js(usaWarehouseJs).union() \
-                   .read_from("MySQL_Demo.canPOSGoldMaterial").js(canWarehouseJs).union() \
-                   .read_from("MySQL_Demo.sgPOSGoldMaterial").js(sgWarehouseJs).union()
+       .read_from("MySQL_Demo.usaPOSGoldMaterial").js(usaWarehouseJs).union() \
+       .read_from("MySQL_Demo.canPOSGoldMaterial").js(canWarehouseJs).union() \
+       .read_from("MySQL_Demo.sgPOSGoldMaterial").js(sgWarehouseJs).union()
    ```
 
 4. 定义数据写入的目标 MongoDB 集合为 `cn_can_sg_inventory_merge`，同时设置联合主键字段为 `INVNT_ID`、`SEQ_NBR`、`FROM`，以确保在数据写入过程中，每条记录的唯一性和准确性。

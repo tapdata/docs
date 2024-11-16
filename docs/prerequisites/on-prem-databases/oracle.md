@@ -615,7 +615,7 @@ XE=
 
 ## 相关文档
 
-[Oracle 实时同步到 Kakfa](../../pipeline-tutorial/oracle-to-kafka.md)
+[Oracle 实时同步到 Kakfa](../../case-practices/pipeline-tutorial/oracle-to-kafka.md)
 
 
 

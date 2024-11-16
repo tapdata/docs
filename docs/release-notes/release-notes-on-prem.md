@@ -84,7 +84,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 ### 新增功能
 
 - Oracle、Dameng、Db2 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
-- 在配置[告警接收邮箱](../best-practice/alert-via-qqmail.md)时，支持使用代理服务，以便在受限网络环境中仍能及时接收告警通知
+- 在配置[告警接收邮箱](../case-practices/best-practice/alert-via-qqmail.md)时，支持使用代理服务，以便在受限网络环境中仍能及时接收告警通知
 - 对于 [PostgreSQL 数据源](../prerequisites/on-prem-databases/postgresql.md)，支持通过 walminer 插件进行增量数据同步，满足更多场景
 - 新增支持[批量发布 API 功能](../user-guide/data-service/create-api-service.md)，简化了多接口管理，提升了发布效率
 - 数据复制任务支持多表同时读取，提升数据处理的并行能力和任务执行效率
@@ -304,7 +304,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ### 功能优化
 
-* 优化数据同步任务场景下，源节点中的 [DDL 同步设置](../best-practice/handle-schema-change.md)，选择遇到 DDL 报错时可配置要忽略的 DDL 语句（基于正则表达式）
+* 优化数据同步任务场景下，源节点中的 [DDL 同步设置](../case-practices/best-practice/handle-schema-change.md)，选择遇到 DDL 报错时可配置要忽略的 DDL 语句（基于正则表达式）
 * 优化数据校验能力，支持对包含处理节点的任务进行校验
 * 优化数据校验结果页展示，支持快速过滤一致和不一致的表
 
@@ -335,8 +335,8 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ### 新增功能
 
-* 支持在 License 到期前一周发送邮件提醒（每天一次），可结合[配置 SMTP 邮件服务](../best-practice/alert-via-qqmail.md)来提升运维便利性
-* [DDL 同步设置](../best-practice/handle-schema-change)，新增**遇到 DDL 操作时任务报错停止**和**自动忽略 DDL**选项，可适应不同业务场景需求
+* 支持在 License 到期前一周发送邮件提醒（每天一次），可结合[配置 SMTP 邮件服务](../case-practices/best-practice/alert-via-qqmail.md)来提升运维便利性
+* [DDL 同步设置](../case-practices/best-practice/handle-schema-change)，新增**遇到 DDL 操作时任务报错停止**和**自动忽略 DDL**选项，可适应不同业务场景需求
 * 新增[时间字段注入](../user-guide/data-development/process-node#time_injection)节点，可在数据同步过程中为流经的数据增加一个自定义的时间戳字段，从而提供更灵活的方式来获取源库的增量变更
 * 支持设置引擎日志的过期时间和日志大小，实现日志的自动清理
 
@@ -415,7 +415,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 ### 新增功能
 
 - 支持对 [Oracle 数据源](../prerequisites/on-prem-databases/oracle#advanced)加载表注释，可在配置数据源时的高级选项中开启，方便通过注释信息快速识别表的业务含义
-- 支持在 [Windows 平台中部署 Tapdata](../quick-start/install/install-tapdata-enterprise/install-on-windows.md)，进一步丰富部署平台支持度
+- 支持在 [Windows 平台中部署 Tapdata](../installment/install-tapdata-enterprise/install-on-windows.md)，进一步丰富部署平台支持度
 - 任务运行[监控页面](../user-guide/copy-data/monitor-task.md)中，支持基于事件大小的维度来查看 RPS 信息
 
 ### 问题修复
@@ -471,7 +471,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 - 新增[构建物化视图](../user-guide/data-development/create-materialized-view.md)功能，可快速构建实时数据模型
 - 新增支持对[共享挖掘](../user-guide/advanced-settings/share-mining.md)任务的源节点进行配置调整，支持设置是否启用**增量多线程写入**和**补充更新数据的完整字段**
-- Kafka 数据源新增支持[设置副本数和分区数](../pipeline-tutorial/oracle-to-kafka#advanced_settings)
+- Kafka 数据源新增支持[设置副本数和分区数](../case-practices/pipeline-tutorial/oracle-to-kafka#advanced_settings)
 - MongoDB 间同步时，新增对 `$unset` 操作的支持
 
 ### 功能优化
@@ -490,7 +490,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ### 功能优化
 
-* 优化[数据源错误码](../troubleshooting/error-code.md)，覆盖更多场景并提供解决方案
+* 优化[数据源错误码](../administration/troubleshooting/error-code.md)，覆盖更多场景并提供解决方案
 
 
 
@@ -543,7 +543,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ### 功能优化
 
-- [支持滚动升级](../production-admin/operation.md#release330-upgrade)，相较于停机升级方式，可进一步降低业务影响
+- [支持滚动升级](../administration/operation.md#release330-upgrade)，相较于停机升级方式，可进一步降低业务影响
 - [共享挖掘任务](../user-guide/advanced-settings/share-mining.md)报错后，关联任务增加告警提示
 - 在[行过滤器处理节点](../user-guide/data-development/process-node.md)中，使用 DATE 类型过滤时，增加使用示例
 - [时间运算节点](../user-guide/data-development/process-node#date-calculation)，支持展示调整的字段
@@ -567,7 +567,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 - 数据平台模式下，支持[删除**平台加工层**的表](../user-guide/real-time-data-hub/daas-mode/daas-mode-dashboard#release320-daas)
 - 在配置任务的目标节点时，支持[按照系数来调整字段长度](../user-guide/copy-data/create-task#release320-col-length)，避免因字符编码不同等原因引发的数据写入失败问题
 - [数据校验](../user-guide/verify-data)功能支持 SelectDB 数据源
-- Redis 作为目标节点场景下，存储为 List 或 Hash 格式，且选择为单键方式时，[支持将源表 Schema 写入一个 Hash 键](../pipeline-tutorial/mysql-to-redis#release320-contain-table-head)（默认名称为 `-schema-key-`），其值用来存放源表的表名和列名信息
+- Redis 作为目标节点场景下，存储为 List 或 Hash 格式，且选择为单键方式时，[支持将源表 Schema 写入一个 Hash 键](../case-practices/pipeline-tutorial/mysql-to-redis#release320-contain-table-head)（默认名称为 `-schema-key-`），其值用来存放源表的表名和列名信息
 - 新增[**类型过滤**](../user-guide/data-development/process-node#release320-type-filter)处理节点，可将快速过滤同类型的列，被过滤的字段将不会传递至下个节点
 - [**字段编辑**](../user-guide/copy-data/process-node#column-modification)处理节点，支持蛇形命名和驼峰命名之间的转换
 - 数据复制任务、数据转换任务、数据面板、换成创建时支持[显示表的描述信息](../user-guide/copy-data/create-task#310-table-model)，默认来源为表的注释信息
@@ -648,7 +648,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 - [集成 GraphQL 能力](../user-guide/data-service/query-via-graphql.md)，丰富 API 查询方式
 - 为 API [增加应用分类能力](../user-guide/data-service/create-api-service.md)，便于基于业务分类
 - 新增[时间运算处理节点](../user-guide/data-development/process-node#date-calculation)，可灵活应对源目库时区不一致场景
-- 新增[全量分片能力](../best-practice/full-breakpoint-resumption.md)，目前仅支持 MongoDB
+- 新增[全量分片能力](../case-practices/best-practice/full-breakpoint-resumption.md)，目前仅支持 MongoDB
 
 ### 功能优化
 

@@ -41,7 +41,7 @@ binlog_row_image  = full
 <TabItem value="基于数据库日志文件">
 对于 Oracle 和 Db2 数据源，为进一步提高数据变更捕获的效率，TapData 提供基于数据库日志 API 解析（LogMiner）CDC 的基础上，还开发了直接解析原生的二进制日志文件的能力，从而实现更高效的事件捕获，可获得更高的采集性能（每秒处理记录数 RPS 20,000 以上），降低采集增量数据对源库的影响。
 
-该方案需要额外安装日志解析插件，以 Oracle 数据库为例为例，联系 [TapData 技术支持](../support.md)完成插件部署后，在[配置 Oracle 连接](../prerequisites/on-prem-databases/oracle.md)时，可选择日志插件为 **bridge**，然后填写裸日志服务的 IP 地址，默认服务端口为 **8190**。
+该方案需要额外安装日志解析插件，以 Oracle 数据库为例为例，联系 [TapData 技术支持](../appendix/support.md)完成插件部署后，在[配置 Oracle 连接](../prerequisites/on-prem-databases/oracle.md)时，可选择日志插件为 **bridge**，然后填写裸日志服务的 IP 地址，默认服务端口为 **8190**。
 
 ![设置裸日志插件](..//images/raw_log_configuration.png)
 

@@ -59,7 +59,7 @@ import Content from '../reuse-content/_all-features.md';
 
 只需简单 3 步，即可体验 TapData 强大、便捷的数据流转能力：
 
-* [安装 Tapdata](../quick-start/install/README.md)
+* [安装 Tapdata](../installment/README.md)
 * [连接数据库](../quick-start/connect-database.md)
 * [创建复制/开发任务](../quick-start/create-task.md)
 

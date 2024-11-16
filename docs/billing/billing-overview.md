@@ -110,7 +110,7 @@ TapData Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，完成
 
 :::tip
 
-在[购买 Agent 实例](purchase.md)时，如您选择**半托管模式**，您需要提供宿主机以[部署 Agent](../quick-start/install/install-tapdata-agent/README.md)，同时为保障最大程度地保障数据流转性能，需确保其拥有足够的计算、存储和带宽等资源；如您选择**全托管模式**，则由 TapData Cloud 提供所有的计算和存储资源。
+在[购买 Agent 实例](purchase.md)时，如您选择**半托管模式**，您需要提供宿主机以[部署 Agent](../installment/install-tapdata-agent/README.md)，同时为保障最大程度地保障数据流转性能，需确保其拥有足够的计算、存储和带宽等资源；如您选择**全托管模式**，则由 TapData Cloud 提供所有的计算和存储资源。
 
 :::
 

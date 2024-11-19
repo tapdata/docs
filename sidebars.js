@@ -47,25 +47,25 @@ const sidebars = {
     {
      type: 'category',
      label: '安装指南',
-     link: {type: 'doc', id: 'installment/README'},
+     link: {type: 'doc', id: 'installation/README'},
      items: [
             {
             type: 'category',
             label: 'TapData Enterprise',
-            link: {type: 'doc', id: 'installment/install-tapdata-enterprise/README'},
+            link: {type: 'doc', id: 'installation/install-tapdata-enterprise/README'},
             items: [
-                     'installment/install-tapdata-enterprise/install-tapdata-stand-alone',
-                     'installment/install-tapdata-enterprise/install-on-windows',
+                     'installation/install-tapdata-enterprise/install-tapdata-stand-alone',
+                     'installation/install-tapdata-enterprise/install-on-windows',
                      ]
             },
-            'installment/install-tapdata-community',
+            'installation/install-tapdata-community',
             {
             type: 'category',
             label: 'TapData Cloud Agent',
-            link: {type: 'doc', id: 'installment/install-tapdata-agent/README'},
+            link: {type: 'doc', id: 'installation/install-tapdata-agent/README'},
             items: [
-                     'installment/install-tapdata-agent/agent-on-selfhosted',
-                     'installment/install-tapdata-agent/agent-on-compute-nest',
+                     'installation/install-tapdata-agent/agent-on-selfhosted',
+                     'installation/install-tapdata-agent/agent-on-compute-nest',
                  ]
             },
             ]

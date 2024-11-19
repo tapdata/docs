@@ -58,7 +58,7 @@ Agent 是数据同步、数据异构、数据开发场景中的关键程序，�
 
 8. 支付成功后，页面将自动跳转回 TapData Cloud 平台，可查看到您购买的 Agent 实例处于**待部署**状态。
    :::tip
-   如您选择的是**全托管模式**，Agent 将自动完成部署；如您选择的是**半托管模式**，您需要手动在您的设备上[部署 Agent](../installment/install-tapdata-agent/README.md)。
+   如您选择的是**全托管模式**，Agent 将自动完成部署；如您选择的是**半托管模式**，您需要手动在您的设备上[部署 Agent](../installation/install-tapdata-agent/README.md)。
    :::
 
 
@@ -123,7 +123,7 @@ Agent 是数据同步、数据异构、数据开发场景中的关键程序，�
       ![创建 Agent](../images/create_agent_via_aliyun_market_code.png)
 
       :::tip
-      如您选择的是**全托管模式**，您还需要选择部署的地区并单击**部署**，TapData Cloud 将自动完成 Agent 的部署；如您选择的是**半托管模式**，您需要根据跳转到的页面的提示，在您的设备上[部署 Agent](../installment/install-tapdata-agent/README.md)。
+      如您选择的是**全托管模式**，您还需要选择部署的地区并单击**部署**，TapData Cloud 将自动完成 Agent 的部署；如您选择的是**半托管模式**，您需要根据跳转到的页面的提示，在您的设备上[部署 Agent](../installation/install-tapdata-agent/README.md)。
       :::
 
 

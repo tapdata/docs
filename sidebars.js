@@ -385,7 +385,7 @@ const sidebars = {
     },
     {
      type: 'category',
-     label: '实时同步实践',
+     label: '案例实践',
      link: {type: 'doc', id: 'case-practices/README'},
      items: [
              {

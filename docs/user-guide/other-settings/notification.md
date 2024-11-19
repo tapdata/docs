@@ -1,6 +1,6 @@
 # 通知与告警设置
 
-import Content from '../reuse-content/_enterprise-and-community-features.md';
+import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
 <Content />
 
@@ -14,9 +14,9 @@ TapData 支持自定义系统和告警设置，同时支持通过 Webhook 对接
 
 ## 通知设置
 
-[登录 TapData 平台](log-in.md)后，单击右上角的 ![setting_icon](../images/setting_icon.png) > **通知设置**，可根据自定义的通知规则设置，自动触发通知发送流程，主要包括任务运行通知和 Agent 通知两种类型：具体包含的通知项如下所示：
+[登录 TapData 平台](../log-in.md)后，单击右上角的 ![setting_icon](../../images/setting_icon.png) > **通知设置**，可根据自定义的通知规则设置，自动触发通知发送流程，主要包括任务运行通知和 Agent 通知两种类型：具体包含的通知项如下所示：
 
-![](../images/system_notification_1.png)
+![](../../images/system_notification_1.png)
 
 - 任务被启动系统通知
 - 任务被停止系统通知
@@ -44,11 +44,11 @@ TapData 支持自定义系统和告警设置，同时支持通过 Webhook 对接
 
 通过告警设置，您可以设置告警事件的通知方式和发送间隔：
 
-![](../images/system_notification_2.png)
+![](../../images/system_notification_2.png)
 
 ## Webhook 告警
 
 通过 Webhook 告警功能，您只需填写服务 URL 即可与您的告警平台或第三方平台实现快速对接，从而实现更多的通知方式，例如即时通讯平台。
 
-![Webhook 设置](../images/webhook_settings.png)
+![Webhook 设置](../../images/webhook_settings.png)
 

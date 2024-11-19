@@ -315,7 +315,7 @@ const sidebars = {
              },
              {
               type: 'category',
-              label: '数据服务',
+              label: '发布数据 API',
               link: {type: 'doc', id: 'user-guide/data-service/README'},
               items:[
                      'user-guide/data-service/manage-app',
@@ -346,12 +346,12 @@ const sidebars = {
               link: {type: 'doc', id: 'user-guide/other-settings/README'},
               items:[
                      'user-guide/other-settings/system-settings',
+                     'user-guide/other-settings/notification',
                      'user-guide/other-settings/manage-license',
                      'user-guide/other-settings/check-version',
                     ]
              },
              'user-guide/operation-log',
-             'user-guide/notification',
              'user-guide/no-supported-data-type',
         ]
     },

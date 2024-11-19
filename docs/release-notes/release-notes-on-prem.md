@@ -241,7 +241,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 ### 新增功能
 
 * 支持在[配置数据转换任务](../user-guide/data-development/create-task.md#target-node-set)时，为目标表名动态生成日期后缀，适用于每日定期执行批处理的场景
-* 支持[通过 Webhook 对接第三方平台](../user-guide/notification.md)，实现告警事件的更多推送渠道
+* 支持[通过 Webhook 对接第三方平台](../user-guide/other-settings/notification.md)，实现告警事件的更多推送渠道
 * 支持在[配置数据校验任务](../user-guide/verify-data.md)时，对 MySQL、Oracle、SQL Server、PostgreSQL 和 GaussDB 数据源间执行 Hash 校验，提升校验效率
 * 支持在配置 Doris 数据源时设置分区
 * 支持 OceanBase 数据源的 Oracle 模式，数据源名称为 Oceanbase(Oracle)

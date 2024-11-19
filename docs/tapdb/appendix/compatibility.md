@@ -1,6 +1,4 @@
-# 兼容性
-
-为了方便用户对原有 MongoDB 实例的迁移，TapDB 完全兼容 MongoDB；
+# TapDB 兼容性
 
 ## 版本号
 

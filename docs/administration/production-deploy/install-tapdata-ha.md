@@ -1,5 +1,5 @@
 # 部署高可用 TapData Enterprise（双节点）
-import Content from '../reuse-content/_enterprise-features.md';
+import Content from '../../reuse-content/_enterprise-features.md';
 
 <Content />
 
@@ -22,7 +22,7 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
 
 :::tip
 
-此环境中，我们已完成了  [MongoDB 副本集](../../production-admin/install-replica-mongodb.md)的部署，可为 TapData 服务提供运行数据的存储服务。
+此环境中，我们已完成了  [MongoDB 副本集](install-replica-mongodb.md)的部署，可为 TapData 服务提供运行数据的存储服务。
 
 :::
 

@@ -1,5 +1,5 @@
 # MySQL 实时同步到 Redis
-import Content from '../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 

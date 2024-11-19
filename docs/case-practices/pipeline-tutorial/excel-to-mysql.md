@@ -1,5 +1,5 @@
 # 采集 Excel 数据至 MySQL
-import Content from '../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 

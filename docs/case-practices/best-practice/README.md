@@ -1,5 +1,5 @@
 # 最佳实践
-import Content from '../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 

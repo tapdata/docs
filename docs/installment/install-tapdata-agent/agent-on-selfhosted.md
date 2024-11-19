@@ -1,6 +1,6 @@
 # 在本地设备上安装 Agent
 
-import Content from '../../../reuse-content/_cloud-features.md';
+import Content from '../../reuse-content/_cloud-features.md';
 
 <Content />
 
@@ -46,7 +46,7 @@ TapData Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，您可
 
        :::
 
-   * **Agent 规格**：基于业务所需的任务数量和性能要求选择产品规格。您可以免费创建**SMALL**规格的示例，关于产品定价和规格的详细说明，见[计费概述](../../../billing/billing-overview)。
+   * **Agent 规格**：基于业务所需的任务数量和性能要求选择产品规格。您可以免费创建**SMALL**规格的示例，关于产品定价和规格的详细说明，见[计费概述](../../billing/billing-overview.md)。
 
    * **订阅周期**：选择所需的订阅周期，为了避免实例过期影响任务执行，推荐选择包年（**9折**）或包月（**95折**）。
 

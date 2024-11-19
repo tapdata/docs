@@ -1,6 +1,6 @@
 # TapData Community
 
-import Content from '../../reuse-content/_community-features.md';
+import Content from '../reuse-content/_community-features.md';
 
 <Content />
 

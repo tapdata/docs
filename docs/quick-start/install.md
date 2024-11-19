@@ -14,7 +14,7 @@ TapData 提供多种部署选项，满足从快速验证到高安全性本地部
 访问 [TapData Cloud](https://cloud.tapdata.net/console/v3/)，完成注册并登录后，系统将自动分配一个共享的免费 TapData Agent。以下文档可帮助您快速上手：
 
 - **[连接数据源](connect-database.md)**：将主流数据库或其他数据源连接至 TapData 平台。
-- **[创建数据复制或转换任务](../datasource/connect-datasource.md)**：实现实时数据同步或复杂数据转换。
+- **[创建数据复制或转换任务](connect-database.md)**：实现实时数据同步或复杂数据转换。
 
 
 ## 其他部署方式

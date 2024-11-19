@@ -96,7 +96,7 @@ TapData Community 是一个开源的数据集成平台，提供基础的数据�
     <td>本地</td>
   </tr>
   <tr>
-    <td><a href="../production-admin/install-tapdata-ha">处理引擎横向扩展</a></td>
+    <td><a href="../administration/production-deploy/install-tapdata-ha">处理引擎横向扩展</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>
@@ -201,7 +201,7 @@ TapData Community 是一个开源的数据集成平台，提供基础的数据�
     <td>➖</td>
   </tr>
   <tr>
-    <td><a href="../best-practice/heart-beat-task">心跳任务管理</a></td>
+    <td><a href="../case-practices/best-practice/heart-beat-task">心跳任务管理</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>

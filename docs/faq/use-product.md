@@ -23,7 +23,7 @@ TapData 提供 **Cloud** 和 **Enterprise** 两种部署方式，满足您多样
 
 | 产品         | 适用场景                                                     | 定价说明                                                     |
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| TapData Cloud | 注册 [TapData Cloud](https://cloud.tapdata.net/console/v3/) 账号即可使用，适合需要快速部署、低前期投资场景，帮助您更好地专注于业务发展而非基础设施管理。 | 免费提供 1 个 SMALL 规格的 Agent 实例（半托管模式），您也可以按照业务需求，订阅更高规格或更多数量的 Agent 实例。更多介绍，见[产品计费](billing/billing-overview.md)。 |
+| TapData Cloud | 注册 [TapData Cloud](https://cloud.tapdata.net/console/v3/) 账号即可使用，适合需要快速部署、低前期投资场景，帮助您更好地专注于业务发展而非基础设施管理。 | 免费提供 1 个 SMALL 规格的 Agent 实例（半托管模式），您也可以按照业务需求，订阅更高规格或更多数量的 Agent 实例。更多介绍，见[产品计费](../billing/billing-overview.md)。 |
 | TapData Enterprise | 支持部署至本地数据中心，适合对数据敏感性或网络隔离有严格要求的场景，如金融机构、政府部门或希望完全控制数据的大型企业。 | 基于部署的服务器节点数量，按年支付相应的订阅费用。在正式采购前，您可以点击“[申请试用](https://tapdata.net/tapdata-on-prem/demo.html)‍”‍，TapData 工程师会联系您并协助您试用。更多介绍，见[产品定价](https://tapdata.net/pricing.html)。 |
 
 ## 连接测试失败怎么办？
@@ -81,13 +81,13 @@ import Content2 from '../reuse-content/_enterprise-features.md';
 
 **实时视图方案**
 
-实时视图方案适用于 SQL 语句相对简单，对数据实时性要求高的场景，其核心思想上以多样化的[处理节点](../user-guide/data-development/process-node)来实现 SQL 语句中的具体操作（如 Join），最终将处理后的数据实时同步到一个新表，最后基于该表创建并发布 API 服务。
+实时视图方案适用于 SQL 语句相对简单，对数据实时性要求高的场景，其核心思想上以多样化的[处理节点](../user-guide/data-development/process-node.md)来实现 SQL 语句中的具体操作（如 Join），最终将处理后的数据实时同步到一个新表，最后基于该表创建并发布 API 服务。
 
 具体步骤如下：
 
-1. [创建数据转换任务](../user-guide/data-development/create-task)。
+1. [创建数据转换任务](../user-guide/data-development/create-task.md)。
 
-2. 将 SQL 语句中的具体操作以处理节点来替代。如下图所示，我们预先将 **customer** 和 **company** 表执行连接（Join）操作（通过[连接节点](../user-guide/data-development/process-node#join)实现），并将其结果存至 **join_result** 表。
+2. 将 SQL 语句中的具体操作以处理节点来替代。如下图所示，我们预先将 **customer** 和 **company** 表执行连接（Join）操作（通过[连接节点](../user-guide/data-development/process-node.md#join)实现），并将其结果存至 **join_result** 表。
 
    ![Join 表](../images/join_table_for_api.png)
 
@@ -103,7 +103,7 @@ import Content2 from '../reuse-content/_enterprise-features.md';
 
 具体步骤如下：
 
-1. [创建数据转换任务](../user-guide/data-development/create-task)。
+1. [创建数据转换任务](../user-guide/data-development/create-task.md)。
 
 2. 在画布中添加源和目标节点。
 

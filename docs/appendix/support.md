@@ -1,5 +1,5 @@
 # 获取支持
-import Content from './reuse-content/_all-features.md';
+import Content from '../reuse-content/_all-features.md';
 
 <Content />
 

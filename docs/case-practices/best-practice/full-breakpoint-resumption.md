@@ -1,5 +1,5 @@
 # 通过全量断点续传保障海量数据迁移
-import Content from '../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 

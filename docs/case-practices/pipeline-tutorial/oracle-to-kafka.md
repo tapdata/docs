@@ -1,5 +1,5 @@
 # Oracle 实时同步到 Kakfa
-import Content from '../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
@@ -209,7 +209,7 @@ kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kafka_demo_t
 
 稍等一会后，在 TapData 的任务监控页面，可查看到 TapData 已经将本次数据更新同步到 Kafka 中。
 
-![数据更新监控](..//images/monitor_update_detail.png)
+![数据更新监控](../../images/monitor_update_detail.png)
 
 而回到我们的 Kafka 的监听命令行中，也看到了最新的数据变更消息，此处可以看到数据变化前后的详细数据，后续可快捷地接入下游应用（如 Flink 等）。
 

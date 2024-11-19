@@ -121,7 +121,3 @@ TapData Cloud 基于 MongoDB 的 Change Stream 实现，此特性在 MongoDB 4.0
 
 
 
-## 下一步
-
-[连接 MongoDB 数据库](../user-guide/connect-database/certified/connect-mongodb.md)
-

@@ -1,5 +1,5 @@
 # Oracle 实时同步至 Tablestore
-import Content from '../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 

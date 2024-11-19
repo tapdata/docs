@@ -15,7 +15,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 - **[Skip Filter（跳过指定记录数过滤器）](#skip)**：跳过指定行数返回数据。
 - **[Where Filter（查询条件过滤器）](#where)**：根据一组具有逻辑关系的条件查询匹配数据并返回，类似 SQL 的 WHERE 子句。
 
-本案例中，我们已经将 customer 表[发布为 API 服务](create-api-service)，该表的数据来源于随机生成，其表结构和数据样例如下：
+本案例中，我们已经将 customer 表[发布为 API 服务](create-api-service.md)，该表的数据来源于随机生成，其表结构和数据样例如下：
 
 ```sql
 mysql> SELECT * FROM customer LIMIT 1\G;

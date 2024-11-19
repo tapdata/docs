@@ -1,5 +1,5 @@
 # 任务日志错误与排查指南
-import Content from '../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
@@ -9,7 +9,7 @@ import Content from '../reuse-content/_all-features.md';
 
 ## 查看任务日志
 
-通过[任务的监控页面](../user-guide/copy-data/monitor-task#error-code)下方，即可查看任务的运行日志，针对常见的问题，TapData 已将其固化为特定的[错误码](error-code.md)方便您查找，同时提供了错误原因及其解决方案。如为找到相关错误码，您也可以基于本文提供的日志关键字来进行排查或联系技术支持。
+通过[任务的监控页面](../../user-guide/copy-data/monitor-task.md#error-code)下方，即可查看任务的运行日志，针对常见的问题，TapData 已将其固化为特定的[错误码](error-code.md)方便您查找，同时提供了错误原因及其解决方案。如为找到相关错误码，您也可以基于本文提供的日志关键字来进行排查或联系技术支持。
 
 ## Oracle
 
@@ -166,4 +166,4 @@ curl -H "Content-Type: application/json" -XPUT http://esHost:9200/_all/_settings
 
 **发生场景**：从 MongoDB 同步到 ElasticSearch，任务运行一段时间后，日志提示上述错误后任务停止。
 
-**解决方案**：在 MongoDB 中，同一个字段有NaN和float两种类型，ElasticSearch 无法完成数据写入导致报错，可为任务的链路中增加一个 [JS 处理节点](../user-guide/data-development/process-node#js-process)，内容为 `MapUtils.removeNullValue(record);`，随后启重新启动任务。
+**解决方案**：在 MongoDB 中，同一个字段有NaN和float两种类型，ElasticSearch 无法完成数据写入导致报错，可为任务的链路中增加一个 [JS 处理节点](../../user-guide/data-development/process-node.md#js-process)，内容为 `MapUtils.removeNullValue(record);`，随后启重新启动任务。

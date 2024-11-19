@@ -1,6 +1,6 @@
 # 计算巢服务上安装 Agent
 
-import Content from '../../../reuse-content/_cloud-features.md';
+import Content from '../../reuse-content/_cloud-features.md';
 
 <Content />
 

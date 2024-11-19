@@ -1,5 +1,5 @@
 # 构建数组提取链路简化数据分析
-import Content from '../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 

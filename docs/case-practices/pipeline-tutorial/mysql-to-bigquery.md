@@ -1,5 +1,5 @@
 # MySQL 实时同步至 BigQuery
-import Content from '../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 

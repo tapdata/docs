@@ -1,5 +1,5 @@
 # MySQL 实时同步至阿里云
-import Content from '../reuse-content/_enterprise-and-cloud-features.md';
+import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content />
 

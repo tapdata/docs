@@ -71,5 +71,5 @@ Authorization: bearer eyJhbGciOiJIUzI1NiJ9.eyJjbGllbnRJ********
 
 ## 推荐阅读
 
-* [通过 RESTful 查询 API](query-via-restful)
-* [通过 GraphQL 查询 API](query-via-graphql)
+* [通过 RESTful 查询 API](query-via-restful.md)
+* [通过 GraphQL 查询 API](query-via-graphql.md)

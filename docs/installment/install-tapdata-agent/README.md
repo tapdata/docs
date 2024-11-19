@@ -1,6 +1,6 @@
 # TapData Cloud
 
-import Content2 from '../../../reuse-content/_cloud-features.md';
+import Content2 from '../../reuse-content/_cloud-features.md';
 
 <Content2 />
 

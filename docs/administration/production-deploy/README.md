@@ -1,6 +1,6 @@
 # 生产部署与运维
 
-import Content2 from '../reuse-content/_enterprise-features.md';
+import Content2 from '../../reuse-content/_enterprise-features.md';
 
 <Content2 />
 

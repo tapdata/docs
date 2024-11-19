@@ -1,6 +1,6 @@
 # 在 Linux 平台部署
 
-import Content from '../../../reuse-content/_enterprise-features.md';
+import Content from '../../reuse-content/_enterprise-features.md';
 
 <Content />
 

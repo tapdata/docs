@@ -1,5 +1,5 @@
 # 部署 MongoDB 副本集
-import Content from '../reuse-content/_enterprise-and-community-features.md';
+import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
 <Content />
 
@@ -186,7 +186,7 @@ TapData Enterprise 与 TapData Community 在运行时，会将任务的必要配
 
 ## 下一步
 
-[部署高可用 TapData](../administration/production-installment/install-tapdata-ha.md)
+[部署高可用 TapData](install-tapdata-ha.md)
 
 ## 扩展阅读
 

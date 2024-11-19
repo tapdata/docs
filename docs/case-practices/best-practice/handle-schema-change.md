@@ -1,5 +1,5 @@
 # 处理 DDL 变更
-import Content from '../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
@@ -46,7 +46,7 @@ import Content from '../reuse-content/_all-features.md';
 
 如果因 DDL 同步错误而导致数据同步任务中断，您可以在选择源数据库中撤销相关 DDL 操作，或者选择重新加载数据源的 Schema，然后重置并重启任务来修复。
 
-此外，您还可以通过查看[任务日志](../user-guide/copy-data/monitor-task)和错误码，可以帮助您诊断和解决任务失败的问题，正常的 DDL 采集与应用日志示例如下：
+此外，您还可以通过查看[任务日志](../../user-guide/copy-data/monitor-task.md)和错误码，可以帮助您诊断和解决任务失败的问题，正常的 DDL 采集与应用日志示例如下：
 
 ![DDL 日志信息](../../images/ddl_apply_logs.png)
 
@@ -61,7 +61,7 @@ import Content from '../reuse-content/_all-features.md';
 1. **变更前验证**：在生产环境应用 DDL 变更之前，在测试环境进行完整的验证，识别可能中断同步的潜在问题。
 2. **计划与通知**： 安排在业务低峰时段进行 DDL 变更，并提前通知相关团队。
 3. **管道配置更新：**定期回顾并更新您的数据管道配置，以符合最新的表结构。
-4. **监控和预警：**为您的数据管道设置[监控](../user-guide/copy-data/monitor-task)和[告警](alert-via-qqmail.md)，以便在遇到不支持的DDL操作时快速响应。
+4. **监控和预警：**为您的数据管道设置[监控](../../user-guide/copy-data/monitor-task.md)和[告警](alert-via-qqmail.md)，以便在遇到不支持的DDL操作时快速响应。
 
 
 

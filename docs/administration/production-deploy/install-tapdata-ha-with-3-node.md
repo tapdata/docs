@@ -1,5 +1,5 @@
 # 部署高可用 TapData Enterprise（三节点）
-import Content from '../reuse-content/_enterprise-features.md';
+import Content from '../../reuse-content/_enterprise-features.md';
 
 <Content />
 
@@ -44,7 +44,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 3. 设置机器时间与时区，保持一致。
 
-4. [部署 MongoDB 副本集](../../production-admin/install-replica-mongodb.md)，用于存储 Tapdata 服务运行所产生的任务必要配置、共享缓存等信息。
+4. [部署 MongoDB 副本集](install-replica-mongodb.md)，用于存储 Tapdata 服务运行所产生的任务必要配置、共享缓存等信息。
 
    :::tip
 

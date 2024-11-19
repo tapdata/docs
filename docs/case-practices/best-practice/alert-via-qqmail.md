@@ -1,5 +1,5 @@
 # 通过 QQ 邮箱发送告警信息
-import Content from '../reuse-content/_enterprise-features.md';
+import Content from '../../reuse-content/_enterprise-features.md';
 
 <Content />
 

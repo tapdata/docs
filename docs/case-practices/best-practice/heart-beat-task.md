@@ -1,5 +1,5 @@
 # 通过心跳表监测数据同步链路
-import Content from '../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 

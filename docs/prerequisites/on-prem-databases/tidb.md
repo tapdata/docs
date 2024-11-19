@@ -55,7 +55,7 @@ import TabItem from '@theme/TabItem';
 
   * TapData 引擎需要部署运行在 **arm 或 amd** 系统架构下。
   
-  * 由于 TiDB 组件间通信限制，当采用 Tapdata Cloud 产品时，部署的 Agent 需为[半托管实例](../../faq/agent-installation#semi-and-full-agent)。
+  * 由于 TiDB 组件间通信限制，当采用 Tapdata Cloud 产品时，部署的 Agent 需为[半托管实例](../../faq/agent-installation.md#semi-and-full-agent)。
 
 ## <span id="prerequisite">准备工作</span>
 

@@ -1,5 +1,5 @@
 # 任务错误码及解决方案
-import Content from '../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 

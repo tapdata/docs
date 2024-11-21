@@ -98,6 +98,7 @@ const sidebars = {
                           'prerequisites/warehouses-and-lake/doris',
                           'prerequisites/warehouses-and-lake/gaussdb',
                           'prerequisites/warehouses-and-lake/greenplum',
+                          'prerequisites/warehouses-and-lake/hudi',
                           'prerequisites/warehouses-and-lake/selectdb',
                           'prerequisites/warehouses-and-lake/tablestore',
                           'prerequisites/warehouses-and-lake/yashandb',
@@ -120,6 +121,7 @@ const sidebars = {
                           'prerequisites/on-prem-databases/kingbase-es-r6',
                           'prerequisites/on-prem-databases/mariadb',
                           'prerequisites/on-prem-databases/mongodb',
+                          'prerequisites/on-prem-databases/mongodb-below34',
                           'prerequisites/on-prem-databases/mrs-hive3',
                           'prerequisites/on-prem-databases/mysql',
                           'prerequisites/on-prem-databases/mysql-pxc',
@@ -129,6 +131,7 @@ const sidebars = {
                           'prerequisites/on-prem-databases/postgresql',
                           'prerequisites/on-prem-databases/redis',
                           'prerequisites/on-prem-databases/sqlserver',
+                          'prerequisites/on-prem-databases/sybase',
                           'prerequisites/on-prem-databases/tdengine',
                           'prerequisites/on-prem-databases/tidb',
                           'prerequisites/on-prem-databases/vastbase',
@@ -168,6 +171,7 @@ const sidebars = {
                            'prerequisites/mq-and-middleware/ai-chat',
                            'prerequisites/mq-and-middleware/bes-channels',
                            'prerequisites/mq-and-middleware/hazelcast-cloud',
+                           'prerequisites/mq-and-middleware/kafka-enhanced',
                            'prerequisites/mq-and-middleware/kafka',
                            'prerequisites/mq-and-middleware/rabbitmq',
                            'prerequisites/mq-and-middleware/rocketmq',
@@ -190,6 +194,7 @@ const sidebars = {
                     link: {type: 'doc', id: 'prerequisites/saas-and-api/README'},
                     items: [
                             'prerequisites/saas-and-api/coding',
+                            'prerequisites/saas-and-api/feishu-bitable',
                             'prerequisites/saas-and-api/github',
                             'prerequisites/saas-and-api/lark-approval',
                             'prerequisites/saas-and-api/lark-doc',
@@ -228,6 +233,8 @@ const sidebars = {
                             'prerequisites/others/custom-connection',
                             'prerequisites/others/dummy',
                             'prerequisites/others/http-receiver',
+                            'prerequisites/others/mock-source',
+                            'prerequisites/others/mock-target',
                            ]
                    },
          ]
@@ -273,6 +280,7 @@ const sidebars = {
              link: {type: 'doc', id: 'user-guide/copy-data/README'},
              items:[
                      'user-guide/copy-data/create-task',
+                     'user-guide/copy-data/quick-create-task',
                      'user-guide/copy-data/manage-task',
                      'user-guide/copy-data/process-node',
                      'user-guide/copy-data/monitor-task',

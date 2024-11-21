@@ -6,6 +6,79 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/release-notes)
 
+## 3.16
+
+### 新增功能
+- 新增对 [Elasticsearch 数据源](../prerequisites/on-prem-databases/elasticsearch.md)的 HTTPS 连接支持，提升数据传输的安全性，满足更多数据安全合规要求
+- 新增通过新增哈希字段（默认名称为` _no_pk_hash`）的方式支持无主键表的同步，保障无主键场景下的数据一致性和同步稳定性
+
+### 功能优化
+- 增强 Row Filter 节点的数据筛选逻辑，确保当数据状态从符合条件变为不符合条件时，目标数据能同步更新以保持一致性
+- 优化 Oracle 对联合主键变更的支持
+
+### 问题修复
+- 修复全量同步详情中无法显示已完成、同步中和未开始的所有表的问题
+- 修复耗时及里程碑统计不准确的问题
+- 修复 DNS 解析失败时，MongoDB Atlas 无法正常工作的情况
+
+## 3.15
+
+### 新增功能
+
+* Kafka-Enhanced、TiDB 已通过 TapData 认证测试流程，升级为[认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+
+### 功能优化
+
+- 为 SQL Server 大量表（超过 500 表）同步场景，增加[多线程 CT 表轮询](../prerequisites/on-prem-databases/sqlserver#advanced-settings)开关，优化增量采集性能，提升同步效率
+- 优化处理节点的缓存管理逻辑，增强资源使用效率，提升任务执行速度
+- 为 Oracle LogMiner PGA 超出限制错误引入自动重试机制，增强容错能力
+
+### 问题修复
+
+- 修复开启心跳表后，任务表显示无延迟但数据未同步的问题
+- 修复设置标签时无法查看所有标签的问题
+- 修复任务重试开始时间显示为 1970 年的问题
+- 修复 Elasticsearch 作为目标库时，创建索引失败的问题
+- 修复校验任务中，差异校验结果不一致时全量重新校验的问题
+- 修复关联键校验任务结果不一致时，下载详情为空的问题
+
+## 3.14
+
+### 新增功能
+
+* Doris、ClickHouse、KingBaseES-R6、PostgreSQL、SQL Server、MongoDB 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+* 支持通过 [LDAP 对接 Active Directory (AD) 进行用户登录认证](../user-guide/other-settings/system-settings#ldap)，实现统一用户身份管理
+* PostgreSQL 作为源数据时，支持在任务设置中指定增量数据的时间点
+
+### 功能优化
+
+* Elasticsearch 数据源在任务配置时，支持选择写入更新策略
+* 数据复制任务源节点的表选择范围默认为主键表，并增加提示文案
+
+### 问题修复
+
+- 修复新任务开启心跳表后，任务进入增量阶段时出现异常的问题
+- 修复数据校验任务列表只能显示一页的问题
+- 修复任务卡在全量阶段，重置后无法进入增量阶段的问题
+- 修复共享挖掘源节点选择表后，自动刷新导致取消勾选的问题
+
+## 3.13
+
+### 新增功能
+
+* MySQL 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+
+### 功能优化
+
+- 优化 API 监控页面性能，大幅提升访问速度
+- 挖掘任务新增按今日挖掘数量排序功能，方便任务管理和筛选
+
+### 问题修复
+
+- 修复开启**建表同步索引**开关后普通索引未正常同步的问题，确保数据同步完整性
+- 修复 admin 用户修改用户名后权限丢失的问题，保障权限管理正常
+- 修复发送测试邮件失败时返回成功提示的问题，提升操作反馈准确性
+
 ## 3.12
 
 ### 新增功能

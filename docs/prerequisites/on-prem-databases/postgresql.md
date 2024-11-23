@@ -134,8 +134,16 @@ import TabItem from '@theme/TabItem';
 4. 登录 PostgreSQL 所属的服务器，根据业务需求和版本选择要安装的解码器插件：
 
    - [Wal2json](https://github.com/eulerto/wal2json/blob/master/README.md)（推荐）：适用于 PostgreSQL 9.4 及以上，将 WAL 日志转换为 JSON 格式，操作简单，需要源表包含主键，否则无法同步删除操作。
-   - [Pgoutput](https://www.postgresql.org/docs/15/sql-createsubscription.html)：PostgreSQL 10 引入的内置逻辑复制协议，无需额外安装。对于含主键表且 `replica identity` 设置为 `default` 的情况，更新事件中的 `before` 会为空，可以通过设置 `replica identity full` 解决。
+
+   - [Pgoutput](https://www.postgresql.org/docs/15/sql-createsubscription.html)：PostgreSQL 10 引入的内置逻辑复制协议，无需额外安装。对于含主键表且 `replica identity` 为 `default` 的情况，更新事件中的 `before` 字段会为空，可通过设置 `replica identity full` 解决。此外，如您未授予数据库级**创建**权限，需使用以下命令创建所需 PUBLICATION：
+
+     ```sql
+     CREATE PUBLICATION dbz_publication_root FOR ALL TABLES WITH (publish_via_partition_root = TRUE);
+     CREATE PUBLICATION dbz_publication FOR ALL TABLES;
+     ```
+
    - [Decoderbufs](https://github.com/debezium/postgres-decoderbufs)：适用于 PostgreSQL 9.6 及以上，利用 Google Protocol Buffers 解析 WAL 日志，但配置较为复杂。
+
    - [Walminer](https://gitee.com/movead/XLogMiner/tree/master/)：不依赖逻辑复制，无需设置 `wal_level` 为 `logical`，也不需要调整复制槽配置，但需授予超级管理员权限。
 
    接下来，我们以 **Wal2json** 为例演示安装流程。

@@ -4,7 +4,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
-本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/release-notes)
+本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)
 
 ## 3.18.0
 

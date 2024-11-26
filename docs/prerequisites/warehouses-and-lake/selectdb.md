@@ -42,7 +42,7 @@ SelectDB Cloud 2.0.13 以上
     - **连接类型**：仅支持**目标**。
     - **FE 地址**：FE 节点的公网连接地址。
     - **JDBC 端口**：数据库的服务端口。
-    - **Http 接口地址**：HTTP 协议访问地址，关于地址的介绍及获取方式，见[官方文档](https://cn.selectdb.com/cloud-docs/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E8%BF%9E%E6%8E%A5%E4%BB%93%E5%BA%93)。
+    - **Http 接口地址**：HTTP 协议访问地址，关于地址的介绍及获取方式，见[官方文档](https://docs.selectdb.com/docs/cloud/management-guide/connections/connect-style)。
     - **数据库**：数据库名称，即一个连接对应一个数据库，如有多个数据库则需创建多个数据连接。
     - **账号**、**密码**：分别填写数据库的账号和密码。
     - **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。

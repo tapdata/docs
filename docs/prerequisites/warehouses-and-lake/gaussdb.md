@@ -3,6 +3,7 @@ import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
+数据仓库服务 GaussDB（DWS）是完全托管的企业级云上数据仓库服务，具备免运维、在线扩展、高效的多源数据加载能力，兼容 PostgreSQL 生态。TapData 支持将 GaussDB（DWS） 作为源和目标库，帮助您快速构建数据链路。接下来，我们将介绍如何在 TapData 平台中连接 GaussDB（DWS） 数据源。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';

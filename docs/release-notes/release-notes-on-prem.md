@@ -4,9 +4,41 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
-本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/release-notes)
+本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)
 
-## 3.16
+## 3.18.0
+
+### 功能优化
+
+- 页面顶部增加内置帮助文档入口，在网络隔离场景下可快速了解功能使用介绍
+- 优化数据校验逻辑，支持 Boolean 与数值 0/1 的比对，保障异构数据源同步场景下的数据校验准确性
+- 复制任务表名选择时，支持一键复制所有已选择表名，提升操作效率
+- 优化内置错误码覆盖范围，提升问题定位和诊断能力
+- 优化任务执行过程中的里程碑展示和逻辑
+- 脚本处理节点的日志支持拆分显示，提升日志查看体验
+
+### 问题修复
+
+- 修复 PostgreSQL 同步到 SQL Server 时，任务同步前主表未创建分区子表，后续新增分区子表无法同步的问题
+- 修复因 MongoDB 索引未被正确加载，导致在加载 Schema 时无法获取索引的问题
+- 修复挖掘任务里程碑卡在表结构复制阶段的问题
+
+## 3.17.0
+
+### 新增功能
+
+- 支持 PostgreSQL 实时同步到 SQL Server 场景中的分区表同步能力
+
+### 功能优化
+
+- 优化内置错误码覆盖范围，提升问题快速定位和诊断能力
+
+### 问题修复
+
+- 修复编辑页面重置任务失败后，保存任务时提示“当前状态不允许”的问题
+- 修复复制任务中删除正在同步的表后重新添加时，无法正常恢复同步的问题
+
+## 3.16.0
 
 ### 新增功能
 - 新增对 [Elasticsearch 数据源](../prerequisites/on-prem-databases/elasticsearch.md)的 HTTPS 连接支持，提升数据传输的安全性，满足更多数据安全合规要求
@@ -21,7 +53,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 - 修复耗时及里程碑统计不准确的问题
 - 修复 DNS 解析失败时，MongoDB Atlas 无法正常工作的情况
 
-## 3.15
+## 3.15.0
 
 ### 新增功能
 
@@ -42,7 +74,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 - 修复校验任务中，差异校验结果不一致时全量重新校验的问题
 - 修复关联键校验任务结果不一致时，下载详情为空的问题
 
-## 3.14
+## 3.14.0
 
 ### 新增功能
 
@@ -62,7 +94,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 - 修复任务卡在全量阶段，重置后无法进入增量阶段的问题
 - 修复共享挖掘源节点选择表后，自动刷新导致取消勾选的问题
 
-## 3.13
+## 3.13.0
 
 ### 新增功能
 
@@ -79,7 +111,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 - 修复 admin 用户修改用户名后权限丢失的问题，保障权限管理正常
 - 修复发送测试邮件失败时返回成功提示的问题，提升操作反馈准确性
 
-## 3.12
+## 3.12.0
 
 ### 新增功能
 
@@ -116,7 +148,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 - 修复数据转换任务中，MongoDB oplog 同步到 Kafka 时模型中多了 `_id` 字段的问题
 - 修复 MongoDB oplog 数据复制任务在同步过程中无法正常复制的问题
 
-## 3.11
+## 3.11.0
 
 ### 新增功能
 
@@ -137,7 +169,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 - 修复 MongoDB 数据库 cursor 超时导致任务无法正常全量同步的问题
 - 修复源节点数据过滤设置中自定义 SQL 过滤开关无法打开的问题
 
-## 3.10
+## 3.10.0
 
 ### 新增功能
 

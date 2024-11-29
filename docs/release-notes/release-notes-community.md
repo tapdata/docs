@@ -6,7 +6,31 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
-## 3.16
+## 3.18.0
+
+### 功能优化
+
+- 复制任务表名选择时，支持一键复制所有已选择表名，提升操作效率
+- 优化内置错误码覆盖范围，提升问题定位和诊断能力
+- 优化任务执行过程中的里程碑展示和逻辑
+- 脚本处理节点的日志支持拆分显示，提升日志查看体验
+
+### 问题修复
+
+- 修复因 MongoDB 索引未被正确加载，导致在加载 Schema 时无法获取索引的问题
+
+## 3.17.0
+
+### 功能优化
+
+- 优化内置错误码覆盖范围，提升问题快速定位和诊断能力
+
+### 问题修复
+
+- 修复编辑页面重置任务失败后，保存任务时提示“当前状态不允许”的问题
+- 修复复制任务中删除正在同步的表后重新添加时，无法正常恢复同步的问题
+
+## 3.16.0
 
 ### 新增功能
 
@@ -23,7 +47,7 @@ import Content from '../reuse-content/_community-features.md';
 - 修复耗时及里程碑统计不准确的问题
 - 修复 DNS 解析失败时，MongoDB Atlas 无法正常工作的情况
 
-## 3.15
+## 3.15.0
 
 ### 新增功能
 
@@ -40,7 +64,7 @@ import Content from '../reuse-content/_community-features.md';
 - 修复任务重试开始时间显示为 1970 年的问题
 - 修复 Elasticsearch 作为目标库时，创建索引失败的问题
 
-## 3.14
+## 3.14.0
 
 ### 新增功能
 
@@ -57,7 +81,7 @@ import Content from '../reuse-content/_community-features.md';
 - 修复新任务开启心跳表后，任务进入增量阶段时出现异常的问题
 - 修复任务卡在全量阶段，重置后无法进入增量阶段的问题
 
-## 3.13
+## 3.13.0
 
 ### 新增功能
 
@@ -67,7 +91,7 @@ import Content from '../reuse-content/_community-features.md';
 
 - 修复开启**建表同步索引**开关后普通索引未正常同步的问题，确保数据同步完整性
 
-## 3.12
+## 3.12.0
 
 ### 新增功能
 
@@ -98,7 +122,7 @@ import Content from '../reuse-content/_community-features.md';
 - 修复数据转换任务中，MongoDB oplog 同步到 Kafka 时模型中多了 `_id` 字段的问题
 - 修复 MongoDB oplog 数据复制任务在同步过程中无法正常复制的问题
 
-## 3.11
+## 3.11.0
 
 ### 新增功能
 
@@ -114,7 +138,7 @@ import Content from '../reuse-content/_community-features.md';
 - 修复 MongoDB 数据库 cursor 超时导致任务无法正常全量同步的问题
 - 修复源节点数据过滤设置中自定义 SQL 过滤开关无法打开的问题
 
-## 3.10
+## 3.10.0
 
 ### 新增功能
 

@@ -59,7 +59,7 @@ import Content1 from '../reuse-content/_all-features.md';
 
 ### 任务状态一直处于“启动中”，如何解决？
 
-您可以联系我们[获取技术支持](../support.md)。
+您可以联系我们[获取技术支持](../appendix/support.md)。
 
 ### 重置任务失败？
 
@@ -242,7 +242,7 @@ TapData Cloud 会做 upsert 操作，如果目标已有数据，会识别出来�
 
 ### 支持同步 DDL 变更吗？
 
-支持，您需要在配置任务时打开对应的开关，此外，您需要了解表结构变更（如增减列）对数据同步流程的潜在影响，避免影响业务正常运行。更多介绍，见 [DDL 同步说明](../best-practice/handle-schema-change.md)。
+支持，您需要在配置任务时打开对应的开关，此外，您需要了解表结构变更（如增减列）对数据同步流程的潜在影响，避免影响业务正常运行。更多介绍，见 [DDL 同步说明](../case-practices/best-practice/handle-schema-change.md)。
 
 
 
@@ -270,17 +270,17 @@ TapData Cloud 会做 upsert 操作，如果目标已有数据，会识别出来�
 
 ### 支持同步 DDL 变更吗？
 
-支持，您需要在配置任务时打开对应的开关，此外，您需要了解表结构变更（如增减列）对数据同步流程的潜在影响，避免影响业务正常运行。更多介绍，见 [DDL 同步说明](../best-practice/handle-schema-change.md)。
+支持，您需要在配置任务时打开对应的开关，此外，您需要了解表结构变更（如增减列）对数据同步流程的潜在影响，避免影响业务正常运行。更多介绍，见 [DDL 同步说明](../case-practices/best-practice/handle-schema-change.md)。
 
 
 
 ### 增量同步时，如果手动删除了目标表的某个字段引发报错，如何修复？
 
-可编辑该任务，在目标节点前增加一个[增删字段节点](../user-guide/data-development/process-node#add-and-del-cols)，将已删除的字段过滤，然后重启任务。
+可编辑该任务，在目标节点前增加一个[增删字段节点](../user-guide/data-development/process-node.md#add-and-del-cols)，将已删除的字段过滤，然后重启任务。
 
 :::tip
 
-在任务运行阶段，请勿手动调整目标表的结构以免因表结构变更引发任务中断，如需调整表结构，应当开启任务的 DDL 操作同步，并在源库调整表结构，更多介绍，见[处理 DDL 变更](../best-practice/handle-schema-change.md)。
+在任务运行阶段，请勿手动调整目标表的结构以免因表结构变更引发任务中断，如需调整表结构，应当开启任务的 DDL 操作同步，并在源库调整表结构，更多介绍，见[处理 DDL 变更](../case-practices/best-practice/handle-schema-change.md)。
 
 :::
 
@@ -356,5 +356,5 @@ TapData 基于多种自研技术保障数据一致性，如果执行校验后提
 
 ### 校验任务提示失败，如何处理？
 
-单击校验任务对应的**详情**，查看相关报错提示，或联系我们[获取技术支持](../support.md)。
+单击校验任务对应的**详情**，查看相关报错提示，或联系我们[获取技术支持](../appendix/support.md)。
 

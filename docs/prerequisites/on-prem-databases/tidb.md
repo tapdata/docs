@@ -55,7 +55,7 @@ import TabItem from '@theme/TabItem';
 
   * TapData 引擎需要部署运行在 **arm 或 amd** 系统架构下。
   
-  * 由于 TiDB 组件间通信限制，当采用 Tapdata Cloud 产品时，部署的 Agent 需为[半托管实例](../../faq/agent-installation#semi-and-full-agent)。
+  * 由于 TiDB 组件间通信限制，当采用 Tapdata Cloud 产品时，部署的 Agent 需为[半托管实例](../../faq/agent-installation.md#semi-and-full-agent)。
 
 ## <span id="prerequisite">准备工作</span>
 
@@ -134,7 +134,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, DROP ON *.* TO 'username';
       * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。
       * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定。
       * **模型加载时间**：当数据源中模型数量小于 10,000 时，每小时刷新一次模型信息；如果模型数据超过 10,000，则每天按照您指定的时间刷新模型信息。
-      * **开启心跳表**：当连接类型为源头或目标时，可启用该开关。TapData 会在源库创建 `_tapdata_heartbeat_table` 心跳表，并每 10 秒更新一次（需具备相应权限），用于监测数据源连接与任务的健康状况。心跳任务在数据复制/开发任务启动后自动启动，您可在数据源编辑页面[查看心跳任务](../../best-practice/heart-beat-task.md)。
+      * **开启心跳表**：当连接类型为源头或目标时，可启用该开关。TapData 会在源库创建 `_tapdata_heartbeat_table` 心跳表，并每 10 秒更新一次（需具备相应权限），用于监测数据源连接与任务的健康状况。心跳任务在数据复制/开发任务启动后自动启动，您可在数据源编辑页面[查看心跳任务](../../case-practices/best-practice/heart-beat-task.md)。
    * **SSL 设置**：选择是否开启 SSL 连接数据源，可进一步提升数据安全性，开启该功能后还需要上传 CA 文件、客户端证书、密钥填写客户端密码。更多介绍，见[生成自签名证书](https://docs.pingcap.com/zh/tidb/stable/generate-self-signed-certificates)。
    
 6. 单击**连接测试**，测试通过后单击**保存**。

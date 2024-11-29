@@ -79,7 +79,7 @@ import TabItem from '@theme/TabItem';
 
 **说明**：采用原生 Kafka 的数据同步方式，仅支持追加写入，类似 `INSERT`，作为源时处理复杂无规律的数据，传递至下游；作为目标时灵活控制分区、头信息、键和值信息，更自由地写入自定义数据。
 
-**典型案例**：用于 **同构数据迁移** 或 **非结构化数据转换**，通过 Kafka -> [JS 处理节点](../../user-guide/data-development/process-node#js-process) -> Kafka/MySQL 的数据链路实现数据过滤和转换。
+**典型案例**：用于 **同构数据迁移** 或 **非结构化数据转换**，通过 Kafka -> [JS 处理节点](../../user-guide/data-development/process-node.md#js-process) -> Kafka/MySQL 的数据链路实现数据过滤和转换。
 
 **样例数据**：
 

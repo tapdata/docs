@@ -43,7 +43,7 @@ import TabItem from '@theme/TabItem';
 
 * 增量数据采集主要通过解析 Binlog 实现，数据变更频繁时，可能会占用数据库一定的 CPU 和磁盘 I/O 资源。
 * 在 MySQL 5.6 及更早版本中，应预处理 **TIME** 类型的时分秒为负数的数据（例如转换为合法的正值），以免增量采集发生异常。
-* 在某些基于 MySQL 内核的数据源，若使用了原生 MySQL 不支持的 Schema 或函数，可能导致增量采集出错，此类情况可联系 [TapData 技术支持](../../support.md)进行适配。
+* 在某些基于 MySQL 内核的数据源，若使用了原生 MySQL 不支持的 Schema 或函数，可能导致增量采集出错，此类情况可联系 [TapData 技术支持](../../appendix/support.md)进行适配。
 
 ## 准备工作
 
@@ -349,6 +349,6 @@ GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMP
 
 ## 相关文档
 
-* [MySQL 实时同步至 Redis](../../pipeline-tutorial/mysql-to-redis.md)
-* [采集 Excel 数据至 MySQL](../../pipeline-tutorial/excel-to-mysql.md)
-* [构建数组提取链路简化数据分析](../../pipeline-tutorial/extract-array.md)
+* [MySQL 实时同步至 Redis](../../case-practices/pipeline-tutorial/mysql-to-redis.md)
+* [采集 Excel 数据至 MySQL](../../case-practices/pipeline-tutorial/excel-to-mysql.md)
+* [构建数组提取链路简化数据分析](../../case-practices/pipeline-tutorial/extract-array.md)

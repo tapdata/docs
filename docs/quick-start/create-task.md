@@ -13,4 +13,4 @@ import Content from '../reuse-content/_all-features.md';
 ## 扩展阅读
 
 * [支持的数据源](../prerequisites/supported-databases.md)
-* [最佳实践文档](../pipeline-tutorial/README.md)
+* [最佳实践文档](../case-practices/pipeline-tutorial/README.md)

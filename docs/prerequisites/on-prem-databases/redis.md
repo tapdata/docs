@@ -44,4 +44,4 @@ Redis 2.8 ~ 6.0
    :::
 
 ## 相关文档
-[MySQL 实时同步至 Redis](../../pipeline-tutorial/mysql-to-redis.md)
+[MySQL 实时同步至 Redis](../../case-practices/pipeline-tutorial/mysql-to-redis.md)

@@ -51,7 +51,7 @@ import Content from '../reuse-content/_community-features.md';
 
 ### 新增功能
 
-* TiDB 已通过 TapData 认证测试流程，升级为[认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+* TiDB 已通过 TapData 认证测试流程，升级为[认证级别数据源](../prerequisites/supported-databases.md)，提供更丰富的特性和更高的生产稳定性
 
 ### 功能优化
 
@@ -68,7 +68,7 @@ import Content from '../reuse-content/_community-features.md';
 
 ### 新增功能
 
-* Doris、ClickHouse、PostgreSQL、MongoDB 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+* Doris、ClickHouse、PostgreSQL、MongoDB 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases.md)，提供更丰富的特性和更高的生产稳定性
 * PostgreSQL 作为源数据时，支持在任务设置中指定增量数据的时间点
 
 ### 功能优化
@@ -85,7 +85,7 @@ import Content from '../reuse-content/_community-features.md';
 
 ### 新增功能
 
-* MySQL 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+* MySQL 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases.md)，提供更丰富的特性和更高的生产稳定性
 
 ### 问题修复
 
@@ -95,7 +95,7 @@ import Content from '../reuse-content/_community-features.md';
 
 ### 新增功能
 
-- Dameng 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+- Dameng 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases.md)，提供更丰富的特性和更高的生产稳定性
 - 对于 [PostgreSQL 数据源](../prerequisites/on-prem-databases/postgresql.md)，支持通过 walminer 插件进行增量数据同步，满足更多场景
 - 数据复制任务支持多表同时读取，提升数据处理的并行能力和任务执行效率
 
@@ -142,10 +142,10 @@ import Content from '../reuse-content/_community-features.md';
 
 ### 新增功能
 
-- 数据复制任务新增[多表合并](../user-guide/copy-data/process-node#union-node)节点，可对同一数据库中的多个表执行合并操作（UNION），可用于整合和分析数据等场景
+- 数据复制任务新增[多表合并](../user-guide/copy-data/process-node.md#union-node)节点，可对同一数据库中的多个表执行合并操作（UNION），可用于整合和分析数据等场景
 - [Doris](../prerequisites/warehouses-and-lake/doris.md) 数据源支持无证书的 HTTPS 连接方式
 - MySQL、Oracle、OpenGauss、SQL Server、PostgreSQL 数据源，支持任务配置时，在节点的高级配置中启用 **Hash 分片**功能，可大幅提升大表的全量数据同步速度
-- 新增 [VastBase](../prerequisites/on-prem-databases/vastbase) 数据源，成熟度为 Beta，进一步丰富数据源种类
+- 新增 [VastBase](../prerequisites/on-prem-databases/vastbase.md) 数据源，成熟度为 Beta，进一步丰富数据源种类
 
 ### 功能优化
 

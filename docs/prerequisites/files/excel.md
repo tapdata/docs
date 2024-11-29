@@ -87,4 +87,4 @@ import Content3 from '../../reuse-content/beta/_file-store-oss.md';
    :::
 
 ## 相关文档
-[采集 Excel 数据至 MySQL](../../pipeline-tutorial/excel-to-mysql.md)
+[采集 Excel 数据至 MySQL](../../case-practices/pipeline-tutorial/excel-to-mysql.md)

@@ -7,7 +7,7 @@ TapData 支持丰富的数据源，具体如下：
 
 :::tip
 
-如需同步 DDL 操作，您需要开启 DDL 采集和 DDL 应用，更多介绍，见[DDL 同步说明](../best-practice/handle-schema-change.md)。
+如需同步 DDL 操作，您需要开启 DDL 采集和 DDL 应用，更多介绍，见[DDL 同步说明](../case-practices/best-practice/handle-schema-change.md)。
 
 :::
 

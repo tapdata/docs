@@ -32,7 +32,7 @@ import Content from '../../reuse-content/beta/_beta.md';
    CREATE USER 'tapdata' IDENTIFIED BY 'Tap@123456';
    ```
 
-2. 为刚创建的账号授予指定数据库的所有权限，以便 Tapdata 可自动创建同步的目标表，您也可以基于业务需求设置更精细化的权限控制。更多介绍，见 [GRANT 语法](https://databend.rs/doc/sql-commands/ddl/user/grant-privileges)。
+2. 为刚创建的账号授予指定数据库的所有权限，以便 Tapdata 可自动创建同步的目标表，您也可以基于业务需求设置更精细化的权限控制。更多介绍，见 [GRANT 语法](https://docs.databend.com/sql/sql-commands/ddl/user/grant)。
 
    ```sql
    -- 请根据下述提示更换 database_name 和 username
@@ -65,7 +65,7 @@ import Content from '../../reuse-content/beta/_beta.md';
       - **端口**：Databend 的服务端口，端口为 **8000**。
       - **数据库名称**：一个连接对应一个数据库，如有多个数据库则需创建多个数据连接。
       - **账号**、**密码**：分别填写数据库的账号和密码。
-      - **连接参数**：额外的[连接参数](https://databend.rs/doc/develop/jdbc#configuring-connection-string)，默认为空。
+      - **连接参数**：额外的[连接参数](https://docs.databend.com/developer/drivers/jdbc#configuring-connection-string)，默认为空。
     - **高级设置**
       - **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
       - **模型加载时间**：当数据源中模型（表）数量小于1万时，每小时刷新一次模型；当大于1万时，则会每天在指定的时间刷新模型。

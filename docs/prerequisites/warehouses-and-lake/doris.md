@@ -125,7 +125,7 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
       - **时区**：默认为 0 时区，如果更改为其他时区，不带时区的字段（如 DATETIME、DATETIMEV2）会受到影响，而 DATE、DATE2 类型则不会受到影响。
       - **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
       - **模型加载时间**：如果数据源中的模型数量少于10,000个，则每小时更新一次模型信息。但如果模型数量超过10,000个，则刷新将在您指定的时间每天进行。
-      - **开启心跳表**：当连接类型为源头或目标时，可启用该开关。TapData 会在源库创建 `_tapdata_heartbeat_table` 心跳表，并每 10 秒更新一次（需具备相应权限），用于监测数据源连接与任务的健康状况。心跳任务在数据复制/开发任务启动后自动启动，您可在数据源编辑页面[查看心跳任务](../../best-practice/heart-beat-task.md)。
+      - **开启心跳表**：当连接类型为源头或目标时，可启用该开关。TapData 会在源库创建 `_tapdata_heartbeat_table` 心跳表，并每 10 秒更新一次（需具备相应权限），用于监测数据源连接与任务的健康状况。心跳任务在数据复制/开发任务启动后自动启动，您可在数据源编辑页面[查看心跳任务](../../case-practices/best-practice/heart-beat-task.md)。
 
 6. 单击页面下方的**连接测试**，提示通过后单击**保存**。
 
@@ -145,7 +145,7 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
 | ------------------ | ------------------------------------------------------------ |
 | **键类型**         | 选择建表类型，支持 Unique（默认，主键模型） 、Aggregate（聚合模型）、Duplicate（明细模型），更多介绍，见[数据模型](https://doris.apache.org/zh-CN/docs/table-design/data-model/overview)。<br />当键类型选择为 **Duplicate**，且使用追加模式写入时，由于无更新条件，还需要指定排序字段。 |
 | **分区字段**       | 非传统意义上的分区，而是指建表时的 `DISTRIBUTED BY HASH` 分桶键。若手动设置分桶键，将优先使用；未设置则默认选主键或更新条件字段，若都未指定则使用全字段（不推荐）。 |
-| **分桶数**         | 创建表时选择分桶数，需基于实际业务情况设置，更多介绍，见[分桶数设计建议](https://doris.apache.org/zh-CN/docs/table-design/data-partition#bucket-%E7%9A%84%E6%95%B0%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE%E9%87%8F%E7%9A%84%E5%BB%BA%E8%AE%AE)。 |
+| **分桶数**         | 创建表时选择分桶数，需基于实际业务情况设置，更多介绍，见[分桶数设计建议](https://doris.apache.org/zh-CN/docs/3.0/table-design/data-partitioning/manual-bucketing#bucket-%E7%9A%84%E6%95%B0%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE%E9%87%8F%E7%9A%84%E5%BB%BA%E8%AE%AE)。 |
 | **表属性**         | 支持基于业务需求，自行指定建表时的[表属性](https://doris.apache.org/zh-CN/docs/sql-manual/sql-statements/Data-Definition-Statements/Create/CREATE-TABLE#properties)。 |
 | **写入缓冲区容量** | 默认为 10240 KB，适当调大可提升大批量插入数据的性能，也可以调低以限制内存的占用避免发生 OOM。 |
 | **写入格式**       | 支持 JSON（默认）和 CSV 两种格式，JSON 格式相较于 CSV 更安全，适合处理复杂数据类型，但性能略低，可基于数据安全性和性能需求选择。 |

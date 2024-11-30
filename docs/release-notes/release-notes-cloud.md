@@ -17,6 +17,36 @@ import TabItem from '@theme/TabItem';
   <TabItem value="2024 年" default>
 ```
 
+### 2024-11-29
+
+#### 功能优化
+
+- 复制任务表名选择时，支持一键复制所有已选择表名，提升操作效率
+- 优化内置错误码覆盖范围，提升问题定位和诊断能力
+- 优化任务执行过程中的里程碑展示和逻辑
+- 脚本处理节点的日志支持拆分显示，提升日志查看体验
+
+#### 问题修复
+
+- 修复 PostgreSQL 同步到 SQL Server 时，任务同步前主表未创建分区子表，后续新增分区子表无法同步的问题
+- 修复因 MongoDB 索引未被正确加载，导致在加载 Schema 时无法获取索引的问题
+- 修复挖掘任务里程碑卡在表结构复制阶段的问题
+
+### 2024-11-15
+
+#### 新增功能
+
+- 支持 PostgreSQL 实时同步到 SQL Server 场景中的分区表同步能力
+
+#### 功能优化
+
+- 优化内置错误码覆盖范围，提升问题快速定位和诊断能力
+
+#### 问题修复
+
+- 修复编辑页面重置任务失败后，保存任务时提示“当前状态不允许”的问题
+- 修复复制任务中删除正在同步的表后重新添加时，无法正常恢复同步的问题
+
 ### 2024-10-30
 
 #### 新增功能
@@ -39,11 +69,11 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-* Kafka-Enhanced、TiDB 已通过 TapData 认证测试流程，升级为[认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+* Kafka-Enhanced、TiDB 已通过 TapData 认证测试流程，升级为[认证级别数据源](../prerequisites/supported-databases.md)，提供更丰富的特性和更高的生产稳定性
 
 #### 功能优化
 
-- 为 SQL Server 大量表（超过 500 表）同步场景，增加[多线程 CT 表轮询](../prerequisites/on-prem-databases/sqlserver#advanced-settings)开关，优化增量采集性能，提升同步效率
+- 为 SQL Server 大量表（超过 500 表）同步场景，增加[多线程 CT 表轮询](../prerequisites/on-prem-databases/sqlserver.md#advanced-settings)开关，优化增量采集性能，提升同步效率
 - 优化处理节点的缓存管理逻辑，增强资源使用效率，提升任务执行速度
 - 为 Oracle LogMiner PGA 超出限制错误引入自动重试机制，增强容错能力
 
@@ -58,7 +88,7 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-* Doris、ClickHouse、KingBaseES-R6、PostgreSQL、SQL Server、MongoDB 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+* Doris、ClickHouse、KingBaseES-R6、PostgreSQL、SQL Server、MongoDB 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases.md)，提供更丰富的特性和更高的生产稳定性
 * PostgreSQL 作为源数据时，支持在任务设置中指定增量数据的时间点
 
 #### 功能优化
@@ -75,7 +105,7 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-* MySQL 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+* MySQL 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases.md)，提供更丰富的特性和更高的生产稳定性
 * 新增[表单模式引导](../user-guide/copy-data/quick-create-task.md)构建复制任务，简化任务创建流程，提升操作便捷性
 
 #### 功能优化
@@ -90,7 +120,7 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- Oracle、Dameng、Db2 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases)，提供更丰富的特性和更高的生产稳定性
+- Oracle、Dameng、Db2 已通过 TapData 认证测试流程，升级为 [认证级别数据源](../prerequisites/supported-databases.md)，提供更丰富的特性和更高的生产稳定性
 - 全托管实例新增[流量付费](../billing/billing-overview.md)功能，支持[流量账单查看和支付](../billing/renew-subscribe.md)，让用户轻松监控流量使用，便捷管理账单
 - 对于 [PostgreSQL 数据源](../prerequisites/on-prem-databases/postgresql.md)，支持通过 walminer 插件进行增量数据同步，满足更多场景
 - 数据复制任务支持多表同时读取，提升数据处理的并行能力和任务执行效率
@@ -146,10 +176,10 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- 数据复制任务新增[多表合并](../user-guide/copy-data/process-node#union-node)节点，可对同一数据库中的多个表执行合并操作（UNION），可用于整合和分析数据等场景
+- 数据复制任务新增[多表合并](../user-guide/copy-data/process-node.md#union-node)节点，可对同一数据库中的多个表执行合并操作（UNION），可用于整合和分析数据等场景
 - [Doris](../prerequisites/warehouses-and-lake/doris.md) 数据源支持无证书的 HTTPS 连接方式
 - MySQL、Oracle、OpenGauss、SQL Server、PostgreSQL 数据源，支持任务配置时，在节点的高级配置中启用 **Hash 分片**功能，可大幅提升大表的全量数据同步速度
-- 新增 [VastBase](../prerequisites/on-prem-databases/vastbase) 数据源，成熟度为 Beta，进一步丰富数据源种类
+- 新增 [VastBase](../prerequisites/on-prem-databases/vastbase.md) 数据源，成熟度为 Beta，进一步丰富数据源种类
 
 #### 功能优化
 
@@ -233,7 +263,7 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-* 支持在[配置数据转换任务](../user-guide/data-development/create-task#target-node-set)时，为目标表名动态生成日期后缀，适用于每日定期执行批处理的场景
+* 支持在[配置数据转换任务](../user-guide/data-development/create-task.md#target-node-set)时，为目标表名动态生成日期后缀，适用于每日定期执行批处理的场景
 * 支持在配置 Doris 数据源时设置分区
 * 支持 OceanBase 数据源的 Oracle 模式，数据源名称为 Oceanbase(Oracle)
 
@@ -255,12 +285,12 @@ import TabItem from '@theme/TabItem';
 * 支持 MySQL 间、PostgreSQL 间的双向数据同步能力，更好满足多活和容灾场景
 * 支持 [MongoDB Relmig](https://www.mongodb.com/docs/relational-migrator/) 1.3.0 以上版本的文件导入能力，进一步完善生态对接能力
 * 支持同步 MongoDB 的 [Oplog](https://www.mongodb.com/docs/manual/core/replica-set-oplog/)（操作日志）数据
-* 支持在配置数据转换任务时，在源节点的**[高级设置](../user-guide/data-development/create-task#full-sql-query)**中选择对表的时间字段进行过滤（例如相对日期）
+* 支持在配置数据转换任务时，在源节点的**[高级设置](../user-guide/data-development/create-task.md#full-sql-query)**中选择对表的时间字段进行过滤（例如相对日期）
 * 支持在[任务列表](../user-guide/copy-data/manage-task.md)页面，展示任务里程碑信息，帮助用户快速获知任务的关键进度状况
 
 #### 功能优化
 
-* 优化 [Unwind 节点](../user-guide/data-development/process-node#unwind)，支持设置展开模式，如内嵌对象或平铺字段
+* 优化 [Unwind 节点](../user-guide/data-development/process-node.md#unwind)，支持设置展开模式，如内嵌对象或平铺字段
 * 优化全量同步详情页面展示，支持通过表名快速过滤表
 
 #### 问题修复
@@ -324,7 +354,7 @@ import TabItem from '@theme/TabItem';
 #### 新增功能
 
 * 支持设置[默认告警接收人](../user-guide/workshop.md)，可自定义告警接收邮箱地址（支持多个）
-* [DDL 同步设置](../best-practice/handle-schema-change.md)，新增**遇到 DDL 操作时任务报错停止**和**自动忽略 DDL**选项，可适应不同业务场景需求
+* [DDL 同步设置](../case-practices/best-practice/handle-schema-change.md)，新增**遇到 DDL 操作时任务报错停止**和**自动忽略 DDL**选项，可适应不同业务场景需求
 * 新增[时间字段注入](../user-guide/data-development/process-node.md#time_injection)节点，可在数据同步过程中为流经的数据增加一个自定义的时间戳字段，从而提供更灵活的方式来获取源库的增量变更
 
 #### 功能优化
@@ -412,7 +442,7 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-* 支持对 [Oracle 数据源](../prerequisites/on-prem-databases/oracle#advanced)加载表注释，可在配置数据源时的高级选项中开启，方便通过注释信息快速识别表的业务含义
+* 支持对 [Oracle 数据源](../prerequisites/on-prem-databases/oracle.md#advanced)加载表注释，可在配置数据源时的高级选项中开启，方便通过注释信息快速识别表的业务含义
 * 任务运行[监控页面](../user-guide/copy-data/monitor-task.md)中，支持基于事件大小的维度来查看 RPS 信息
 
 #### 功能优化
@@ -486,7 +516,7 @@ import TabItem from '@theme/TabItem';
 
 #### 功能优化
 
-* 优化[数据源错误码](../troubleshooting/error-code.md)，覆盖更多场景并提供解决方案
+* 优化[数据源错误码](../administration/troubleshooting/error-code.md)，覆盖更多场景并提供解决方案
 * 配置邮件告警通知时，增加绑定邮箱地址的页面引导
 * 优化任务数达到上限时的提醒，当达到任务数上限时提供快升级的入口
 
@@ -545,8 +575,8 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- 对于[全托管实例](../billing/purchase#hosted-mode)，增加自身出口 IP 地址的显示，便于数据源添加白名单
-- 对于[全托管实例](../billing/purchase#hosted-mode)，增加存储的到期时间，所属的云厂商和地区等信息
+- 对于[全托管实例](../billing/purchase.md#hosted-mode)，增加自身出口 IP 地址的显示，便于数据源添加白名单
+- 对于[全托管实例](../billing/purchase.md#hosted-mode)，增加存储的到期时间，所属的云厂商和地区等信息
 
 #### 功能优化
 
@@ -561,14 +591,14 @@ import TabItem from '@theme/TabItem';
 
 #### 新增功能
 
-- 支持购买[全托管模式](../billing/purchase)的 Agent 实例，由 TapData Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，可实现一键交付使用，免去部署和运维精力，专注业务本身。
+- 支持购买[全托管模式](../billing/purchase.md)的 Agent 实例，由 TapData Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，可实现一键交付使用，免去部署和运维精力，专注业务本身。
 
 ### 20230421
 
 #### 新增功能
 
 - 新增[数据面板](../user-guide/real-time-data-hub)，支持数据集成模式和数据服务平台模式，可满足不同的数据治理需求。
-- 支持[计费功能](../billing/billing-overview)，可选购半托管实例，按照订阅 Agent 实例的规格和数量收费，满足业务对性能的需求。
+- 支持[计费功能](../billing/billing-overview.md)，可选购半托管实例，按照订阅 Agent 实例的规格和数量收费，满足业务对性能的需求。
 
 #### 功能优化
 

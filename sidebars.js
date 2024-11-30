@@ -39,35 +39,36 @@ const sidebars = {
      label: '快速入门',
      link: {type: 'doc', id: 'quick-start/README'},
      items: [
-            {
-             type: 'category',
-             label: '部署 TapData',
-             link: {type: 'doc', id: 'quick-start/install/README'},
-             items: [
-                    {
-                     type: 'category',
-                     label: 'TapData Cloud',
-                     link: {type: 'doc', id: 'quick-start/install/install-tapdata-agent/README'},
-                     items: [
-                     'quick-start/install/install-tapdata-agent/agent-on-selfhosted',
-                     'quick-start/install/install-tapdata-agent/agent-on-compute-nest',
-                     ]
-                     },
-                    {
-                     type: 'category',
-                     label: 'TapData Enterprise',
-                     link: {type: 'doc', id: 'quick-start/install/install-tapdata-enterprise/README'},
-                     items: [
-                     'quick-start/install/install-tapdata-enterprise/install-tapdata-stand-alone',
-                     'quick-start/install/install-tapdata-enterprise/install-on-windows',
-                     ]
-                     },
-                     'quick-start/install/install-tapdata-community'
-             ]
-            },
+            'quick-start/install',
             'quick-start/connect-database',
             'quick-start/create-task',
      ]
+    },
+    {
+     type: 'category',
+     label: '安装指南',
+     link: {type: 'doc', id: 'installation/README'},
+     items: [
+            {
+            type: 'category',
+            label: 'TapData Enterprise',
+            link: {type: 'doc', id: 'installation/install-tapdata-enterprise/README'},
+            items: [
+                     'installation/install-tapdata-enterprise/install-tapdata-stand-alone',
+                     'installation/install-tapdata-enterprise/install-on-windows',
+                     ]
+            },
+            'installation/install-tapdata-community',
+            {
+            type: 'category',
+            label: 'TapData Cloud Agent',
+            link: {type: 'doc', id: 'installation/install-tapdata-agent/README'},
+            items: [
+                     'installation/install-tapdata-agent/agent-on-selfhosted',
+                     'installation/install-tapdata-agent/agent-on-compute-nest',
+                 ]
+            },
+            ]
     },
     {
      type: 'category',
@@ -314,7 +315,7 @@ const sidebars = {
              },
              {
               type: 'category',
-              label: '数据服务',
+              label: '发布数据 API',
               link: {type: 'doc', id: 'user-guide/data-service/README'},
               items:[
                      'user-guide/data-service/manage-app',
@@ -337,7 +338,6 @@ const sidebars = {
                      'user-guide/manage-system/manage-role',
                      'user-guide/manage-system/manage-user',
                      'user-guide/manage-system/manage-cluster',
-                     'user-guide/manage-system/manage-external-storage',
                     ]
              },
              {
@@ -346,62 +346,76 @@ const sidebars = {
               link: {type: 'doc', id: 'user-guide/other-settings/README'},
               items:[
                      'user-guide/other-settings/system-settings',
+                     'user-guide/other-settings/notification',
                      'user-guide/other-settings/manage-license',
                      'user-guide/other-settings/check-version',
                     ]
              },
              'user-guide/operation-log',
-             'user-guide/notification',
              'user-guide/no-supported-data-type',
         ]
     },
     {
      type: 'category',
-     label: '生产部署与运维',
-     link: {type: 'doc', id: 'production-admin/README'},
+     label: '管理与运维',
+     link: {type: 'doc', id: 'administration/README'},
      items: [
-            'production-admin/install-tapdata-ha',
-            'production-admin/install-tapdata-ha-with-3-node',
-            'production-admin/install-replica-mongodb',
-            'production-admin/operation',
-            'production-admin/emergency-plan',
+            {
+              type: 'category',
+              label: '生产部署',
+              link: {type: 'doc', id: 'administration/production-deploy/README'},
+              items:[
+                     'administration/production-deploy/install-tapdata-ha',
+                     'administration/production-deploy/install-tapdata-ha-with-3-node',
+                     'administration/production-deploy/install-replica-mongodb',
+                    ]
+             },
+            'administration/operation',
+            {
+              type: 'category',
+              label: '故障排查',
+              link: {type: 'doc', id: 'administration/troubleshooting/README'},
+              items: [
+                     'administration/troubleshooting/error-code',
+                     'administration/troubleshooting/error-and-solutions',
+                     ]
+            },
+            'administration/emergency-plan',
         ]
     },
     {
      type: 'category',
-     label: '同步案例',
-     link: {type: 'doc', id: 'pipeline-tutorial/README'},
+     label: '案例实践',
+     link: {type: 'doc', id: 'case-practices/README'},
      items: [
-            'pipeline-tutorial/mysql-bi-directional-sync',
-            'pipeline-tutorial/excel-to-mysql',
-            'pipeline-tutorial/mysql-to-aliyun',
-            'pipeline-tutorial/mysql-to-bigquery',
-            'pipeline-tutorial/mysql-to-redis',
-            'pipeline-tutorial/oracle-to-kafka',
-            'pipeline-tutorial/oracle-to-tablestore',
-            'pipeline-tutorial/extract-array',
-        ]
-    },
-    {
-         type: 'category',
-         label: '最佳实践',
-         link: {type: 'doc', id: 'best-practice/README'},
-         items: [
-                'best-practice/data-sync',
-                'best-practice/handle-schema-change',
-                'best-practice/heart-beat-task',
-                'best-practice/alert-via-qqmail',
-                'best-practice/full-breakpoint-resumption',
-                'best-practice/raw-logs-solution',
+             {
+            type: 'category',
+            label: '同步案例',
+            link: {type: 'doc', id: 'case-practices/pipeline-tutorial/README'},
+            items: [
+                    'case-practices/pipeline-tutorial/mysql-bi-directional-sync',
+                    'case-practices/pipeline-tutorial/excel-to-mysql',
+                    'case-practices/pipeline-tutorial/mysql-to-aliyun',
+                    'case-practices/pipeline-tutorial/mysql-to-bigquery',
+                    'case-practices/pipeline-tutorial/mysql-to-redis',
+                    'case-practices/pipeline-tutorial/oracle-to-kafka',
+                    'case-practices/pipeline-tutorial/oracle-to-tablestore',
+                    'case-practices/pipeline-tutorial/extract-array',
+                    ]
+            },
+            {
+             type: 'category',
+             label: '最佳实践',
+             link: {type: 'doc', id: 'case-practices/best-practice/README'},
+             items: [
+                'case-practices/best-practice/data-sync',
+                'case-practices/best-practice/handle-schema-change',
+                'case-practices/best-practice/heart-beat-task',
+                'case-practices/best-practice/alert-via-qqmail',
+                'case-practices/best-practice/full-breakpoint-resumption',
+                'case-practices/best-practice/raw-logs-solution',
             ]
         },
-    {
-     type: 'category',
-     label: '故障排查',
-     link: {type: 'doc', id: 'troubleshooting/README'},
-     items: [
-            'troubleshooting/error-code',
-            'troubleshooting/error-and-solutions',
         ]
     },
     {
@@ -422,7 +436,8 @@ const sidebars = {
      items: [
             'appendix/standard-js',
             'appendix/enhanced-js',
-            'appendix/benchmark'
+            'appendix/benchmark',
+            'appendix/support'
         ]
     },
     {
@@ -435,7 +450,6 @@ const sidebars = {
             'release-notes/release-notes-community'
         ]
     },
-  'support',
  ]
 };
 

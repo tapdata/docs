@@ -2,6 +2,11 @@
 
 TapFlow 是一个编程框架，支持实时数据复制、数据处理和物化视图创建。它提供 API、Python SDK 和命令行工具（Tap Shell），便于高效构建和管理数据同步任务。本文将演示如何使用 Tap Shell 和 Python SDK 来构建一个实时宽表，以支持电商应用中的订单信息多表联合的高效查询。
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## 背景介绍
 
 随着业务和数据规模的快速增长，某电商企业 **XYZ** 在订单和库存管理上面临挑战。订单数据和库存信息分布在不同数据库表中，运营人员在查询订单详情时需要跨表联查，存在以下痛点：
@@ -35,6 +40,11 @@ TapFlow 是一个编程框架，支持实时数据复制、数据处理和物化
 ## 步骤一：构建实时宽表
 
 本案例中，我们通过 Tap Shell 定义的 MySQL 数据源名称为 `MySQL_ECommerce`，MongoDB 数据源名称为 `MongoDB_ECommerce`，接下来，我们将通过命令的形式构建实时宽表。
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="基于交互式命令实现" default>
+```
 
 1. 执行 `tap` 进入 Tap Shell 命令交互窗口。
 
@@ -102,6 +112,100 @@ TapFlow 是一个编程框架，支持实时数据复制、数据处理和物化
    use MongoDB_ECommerce
    count orderSingleView
    ```
+
+</TabItem>
+<TabItem value="基于 Python 编程实现">
+
+以下是一个完整的 Python 示例代码，它展示了如何通过 TapFlow 将多个 MySQL 表实时关联生成一个 MongoDB 宽表视图，可通过 `tap -f real_time_order_view.py` 来执行：
+
+- 主表：`ecom_orders`，包含订单基本信息。
+- 关联表：`ecom_customers`（客户信息）、`ecom_order_payments`（支付信息）、`ecom_order_items`（商品信息）等。
+- 输出：MongoDB 数据库中的 `orderSingleView` 集合，包含完整订单及其关联的客户、支付、商品和卖家信息。
+
+```python title="real-time-wide-table.py"
+# 导入 TapFlow 依赖模块
+from tapflow.lib import *
+
+# 创建数据流任务
+orderFlow = Flow("Order_SingleView_Sync")
+
+# 指定主表 ecom_orders
+orderFlow.read_from("MySQL_ECommerce.ecom_orders")
+
+# 关联客户信息表
+orderFlow.lookup("MySQL_ECommerce.ecom_customers", 
+                 path="customer_info", 
+                 type="object", 
+                 relation=[["customer_id", "customer_id"]])
+
+# 关联支付信息表
+orderFlow.lookup("MySQL_ECommerce.ecom_order_payments", 
+                 path="order_payments", 
+                 type="array", 
+                 relation=[["order_id", "order_id"]])
+
+# 关联订单商品表
+orderFlow.lookup("MySQL_ECommerce.ecom_order_items", 
+                 path="order_items", 
+                 type="array", 
+                 relation=[["order_id", "order_id"]])
+
+# 关联商品信息表
+orderFlow.lookup("MySQL_ECommerce.ecom_products", 
+                 path="order_items.product", 
+                 type="object", 
+                 relation=[["product_id", "order_items.product_id"]])
+
+# 关联卖家信息表
+orderFlow.lookup("MySQL_ECommerce.ecom_sellers", 
+                 path="order_items.seller", 
+                 type="object", 
+                 relation=[["seller_id", "order_items.seller_id"]])
+
+# 指定目标集合
+orderFlow.write_to("MongoDB_ECommerce.orderSingleView")
+
+# 保存并启动任务
+orderFlow.save()
+orderFlow.start()
+print("实时宽表任务已启动。")
+
+# 检查任务运行状态
+while True:
+    status = orderFlow.status()
+    if status == "running":
+        print(f"任务状态：{status}")
+        break
+    elif status == "error":
+        print("任务启动失败，请检查配置或日志。")
+        break
+```
+
+程序执行的示例输出如下：
+
+```bash
+Flow updated: source added
+Flow updated: source added
+Flow updated: new table ecom_customers added as child table                          
+Flow updated: source added
+Flow updated: new table ecom_order_payments added as child table                     
+Flow updated: source added
+Flow updated: new table ecom_order_items added as child table                        
+Flow updated: source added
+Flow updated: new table ecom_products added as child table                           
+Flow updated: source added
+Flow updated: new table ecom_sellers added as child table                            
+Flow updated: sink added
+实时宽表任务已启动。
+任务状态：running
+```
+
+
+
+</TabItem>
+</Tabs>
+
+
 
 ## 步骤二：实时效果验证
 

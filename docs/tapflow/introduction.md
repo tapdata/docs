@@ -4,7 +4,7 @@ import Content from '../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content />
 
-**TapFlow** 是一个基于[变更数据捕获](../introduction/change-data-capture-mechanism.md)（CDC）技术的的流式数据处理的开发框架。除了通过[图形化界面](../user-guide/data-development/create-task.md)使用 TapData 产品外，您还可以通过 TapFlow 提供的丰富 API 和命令行工具（Tap Shell），快速实现同构或异构数据源的实时复制及开发任务，满足灵活、自动化的数据集成和流式处理场景。
+**TapFlow** 是 TapData 实时数据平台 API 开发框架。除了通过[图形化界面](../user-guide/data-development/create-task.md)使用 TapData 产品外，您还可以通过 TapFlow 提供的丰富 API 和命令行工具（Tap Shell），快速实现同构或异构数据源的实时复制及开发任务，满足灵活、自动化的数据集成和流式处理场景，例如构建实时宽表、实时物化视图等。
 
 ## 工作原理
 

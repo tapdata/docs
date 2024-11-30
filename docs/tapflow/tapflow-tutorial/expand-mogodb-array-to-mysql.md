@@ -2,6 +2,12 @@
 
 TapFlow 提供强大的数据转换和处理功能，轻松将嵌套数组结构的文档模型转换为关系型表格结构。本文演示如何将 MongoDB 中的嵌套数组字段展开并实时同步至 MySQL 中的平面表，以支持高效的关系型数据库查询和数据分析。
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+
 ## 需求背景
 
 在现代电商应用中，订单信息通常包含多个支付记录、商品项和客户信息等数据，这些数据通常以嵌套数组的形式存储在 MongoDB 等 NoSQL 数据库中，以简化应用端设计和查询（例如支付记录和商品项）。然而，当需要进行复杂分析或将数据集成到其他关系型系统时，这种结构会带来挑战。
@@ -36,9 +42,14 @@ TapFlow 提供强大的数据转换和处理功能，轻松将嵌套数组结构
 
 ## 准备工作
 
-安装 Tap Shell 并添加 MySQL/MongoDB 数据源，数据源名称分别命名为 MySQL_Demo 和 MongoDB_Demo，具体操作，见[快速入门](../quick-start.md)。
+安装 Tap Shell 并添加 MySQL/MongoDB 数据源，数据源名称分别命名为 **MySQL_Demo** 和 **MongoDB_Demo**，具体操作，见[快速入门](../quick-start.md)。
 
 ## 操作步骤
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="基于交互式命令实现" default>
+```
 
 接下来，我们介绍如何展开 `order_payments` 数组，同时重命名字段以方便后续的业务识别。
 
@@ -94,6 +105,74 @@ TapFlow 提供强大的数据转换和处理功能，轻松将嵌套数组结构
 7. 在任务运行过程中，您可以通过 `status MySQL_to_MongoDB_Order` 命令来查看任务的状态和运行统计信息。
 
    除此以外，您也可以[通过 Web UI 查看任务状态](../../user-guide/data-development/monitor-task)。
+
+
+</TabItem>
+
+<TabItem value="基于 Python 编程实现">
+
+以下是一个完整的 Python 示例代码，展示了如何通过 TapFlow 将 MongoDB 中的 `order_payments` 数组展开并同步到 MySQL 表，同时重命名字段以方便业务使用。运行此脚本可通过 `tap -f unwind_mongo_array.py` 来执行：
+
+- **数据源**：`MongoDB_Demo.order_collection` 集合，包含嵌套的 `order_payments` 数组字段。
+- **处理逻辑**：将数组字段的每个元素作为单独的行存储到目标表，并设置主键用于实时更新。
+- **输出**：处理结果实时保存至MySQL 数据库中的 `unwind_order_payments` 表，字段经过展开和重命名处理。
+
+```python title="unwind_mongo_array.py"
+# 导入 TapFlow 依赖模块
+from tapflow.lib import *
+
+# 创建数据流任务
+flow = Flow("Unwind_MongoDB_Array")
+
+# 指定源 MongoDB 集合
+flow.read_from("MongoDB_Demo.order_collection")
+
+# 仅保留并展开 order_payments 数组字段
+flow.include("order_payments") \
+    .flat_unwind(
+        path="order_payments", 
+        index_name="", 
+        array_elem="OBJECT", 
+        joiner="_"
+    )
+
+# 重命名展开后的字段
+flow.rename_fields({
+    "order_payments_order_id": "order_id",
+    "order_payments_payment_type": "payment_type",
+    "order_payments_payment_installments": "payment_installments",
+    "order_payments_payment_value": "payment_value",
+    "order_payments_payment_sequential": "payment_sequential"
+})
+
+# 指定 MySQL 目标表，并设置主键
+flow.write_to(
+    "MySQL_Demo.unwind_order_payments", 
+    pk=["order_id", "payment_sequential"]
+)
+
+# 保存数据流配置
+flow.save()
+
+# 启动数据流任务
+flow.start()
+print("集合展开数据流任务已启动。")
+
+# 输出任务状态
+while True:
+    status = flow.status()
+    print(f"任务状态：{status}")
+    if status == "running":
+        break
+    elif status == "error":
+        print("任务启动失败，请检查配置或日志。")
+        break
+```
+
+</TabItem>
+</Tabs>
+
+
 
 ## 测试效果
 

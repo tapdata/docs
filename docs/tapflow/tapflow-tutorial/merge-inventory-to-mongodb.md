@@ -2,6 +2,11 @@
 
 TapFlow 提供了强大的数据转换和整合功能，能够将多个区域的 MySQL 库存表合并为 MongoDB 集合。本案例将演示如何利用 TapFlow 的数据处理能力，将不同区域的 POS（Point of Sale）库存数据表进行标准化，然后合并为 MongoDB 中的统一集合，以支持跨区域的统一库存查询和分析。
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## 需求背景
 
 某全球零售公司在加拿大、美国和新加坡分别维护独立的 POS 库存表，用于记录区域仓库的库存情况。这些库存表存储于 MySQL 数据库中，表结构一致，方便区域性的查询与管理。
@@ -66,7 +71,14 @@ flowchart LR
 
 ## 操作步骤
 
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="基于交互式命令实现" default>
+```
+
 接下来，我们将展示如何使用 TapFlow 将不同区域的库存数据整合至 MongoDB。此过程中，我们将通过 JavaScript 处理为每条记录添加区域标识字段，并将 `PK_CERT_NBR` 字段值进行标准化处理，从而方便后续的查询和分析。
+
+
 
 1. 执行 `tap` 进入 Tap Shell 命令交互窗口。
 
@@ -132,6 +144,101 @@ flowchart LR
    # 任务状态输出示例
    job current status is: running, qps is: 62808.0, total rows: 2998889, delay is: 7006ms 
    ```
+
+
+</TabItem>
+<TabItem value="基于 Python 编程实现">
+
+以下是完整的 Python 示例代码，展示了如何通过 TapFlow 将来自多个区域的库存表合并为一个 MongoDB 集合，同时标准化字段值。运行此脚本可通过 `tap -f inventory_merge.py` 来执行：
+
+- **数据源**：来自 MySQL 的 `usaPOSGoldMaterial`、`canPOSGoldMaterial` 和 `sgPOSGoldMaterial` 三个区域的库存表。
+- **处理逻辑**：使用 JavaScript 对字段进行标准化，并通过 `union` 合并不同区域的数据。
+- **输出**：处理结果实时保存至 MongoDB 集合 `inventory_merge_all`，包含不同区域合并后的库存记录，每条记录带有区域标识和标准化的 `NBR` 字段。
+
+```python title="inventory_merge.py"
+# 导入 TapFlow 依赖模块
+from tapflow.lib import *
+
+# 定义 JavaScript 处理逻辑
+usaWarehouseJs = '''
+record.FROM = 'usaWarehouse';
+if (record.PK_CERT_NBR) {
+    var certNbr = record.PK_CERT_NBR;
+    record.NBR = certNbr.includes('|') ? certNbr.split('|')[0] : certNbr;
+}
+return record;
+'''
+
+canWarehouseJs = '''
+record.FROM = 'canWarehouse';
+if (record.PK_CERT_NBR) {
+    var certNbr = record.PK_CERT_NBR;
+    record.NBR = certNbr.includes('|') ? certNbr.split('|')[0] : certNbr;
+}
+return record;
+'''
+
+sgWarehouseJs = '''
+record.FROM = 'sgWarehouse';
+if (record.PK_CERT_NBR) {
+    var certNbr = record.PK_CERT_NBR;
+    record.NBR = certNbr.includes('|') ? certNbr.split('|')[0] : certNbr;
+}
+return record;
+'''
+
+# 创建数据流任务并合并区域数据
+flow = Flow("Inventory_Merge")
+flow.read_from("MySQL_Demo.usaPOSGoldMaterial").js(usaWarehouseJs).union() \
+    .read_from("MySQL_Demo.canPOSGoldMaterial").js(canWarehouseJs).union() \
+    .read_from("MySQL_Demo.sgPOSGoldMaterial").js(sgWarehouseJs).union()
+
+# 指定 MongoDB 目标集合并设置主键
+flow.write_to(
+    "MongoDB_Demo.inventory_merge_all", 
+    pk=["INVNT_ID", "SEQ_NBR", "FROM"]
+)
+
+# 保存任务配置
+flow.save()
+
+# 启动数据流任务
+flow.start()
+print("多表合并数据流任务已启动。")
+
+# 输出任务状态
+while True:
+    status = flow.status()
+    print(f"任务状态：{status}")
+    if status == "running":
+        print("任务已成功启动并运行中。")
+        break
+    elif status == "error":
+        print("任务启动失败，请检查配置或日志。")
+        break
+```
+
+程序执行的示例输出如下：
+
+```bash
+Flow updated: source added
+Flow updated: custom function added
+Flow updated: source added
+Flow updated: custom function added
+Flow updated: source added
+Flow updated: custom function added
+Flow updated: sink added
+多表合并数据流任务已启动。
+任务状态：running
+任务已成功启动并运行中。
+```
+
+
+
+</TabItem>
+</Tabs>
+
+
 
 ## 测试效果
 

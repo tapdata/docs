@@ -356,6 +356,35 @@ const sidebars = {
         ]
     },
     {
+         type: 'category',
+         label: 'TapFlow 开发者指南',
+         link: {type: 'doc', id: 'tapflow/README'},
+         items: [
+                'tapflow/introduction',
+                'tapflow/quick-start',
+                {
+                 type: 'category',
+                 label: 'TapFlow API 参考',
+                 link: {type: 'doc', id: 'tapflow/api-reference/README'},
+                 items: [
+                        'tapflow/api-reference/data-source',
+                        'tapflow/api-reference/data-flow',
+                 ]
+                },
+                'tapflow/tapcli-reference',
+                {
+                 type: 'category',
+                 label: '典型案例',
+                 link: {type: 'doc', id: 'tapflow/tapflow-tutorial/README'},
+                 items: [
+                        'tapflow/tapflow-tutorial/build-real-time-wide-table',
+                        'tapflow/tapflow-tutorial/expand-mogodb-array-to-mysql',
+                        'tapflow/tapflow-tutorial/merge-inventory-to-mongodb',
+                 ]
+                },
+                ]
+     },
+    {
      type: 'category',
      label: '管理与运维',
      link: {type: 'doc', id: 'administration/README'},

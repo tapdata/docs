@@ -33,7 +33,7 @@ import TabItem from '@theme/TabItem';
 
 5. 输入 `tap` 启动 Tap Shell 。
 
-6. 基于 TapData [部署方式](../quick-start/install/README.md)选择要连接产品系列，然后设置连接所需的认证信息，本案例以连接至 TapData Cloud 平台为例：
+6. 基于 TapData [部署方式](../quick-start/install.md)选择要连接产品系列，然后设置连接所需的认证信息，本案例以连接至 TapData Cloud 平台为例：
 
    ```bash
    Tap Flow requires TapData Live Data Platform(LDP) cluster to run. 

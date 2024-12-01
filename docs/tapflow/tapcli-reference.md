@@ -1,4 +1,4 @@
-# Tap Shell命令参考
+# Tap Shell 命令参考
 
 TapFlow 提供了丰富的命令来管理数据源和数据流任务，本文将详细介绍这些命令的用法。如需通过 API 进行数据源与数据流任务的自动化管理，请参考 [API 使用参考](api-reference/README.md)。
 

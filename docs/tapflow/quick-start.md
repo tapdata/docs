@@ -238,26 +238,26 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
    mongodb_target = DataSource('mongodb', 'MongoDB_ECommerce', mongodb_config).type('target').save()
    ```
 
-3. 定义数据流，将数据从 MySQL 的 `ecom_orders` 表同步到 MongoDB 的 `orders_collection` 集合。
+3. 定义并保存数据流，将数据从 MySQL 的 `ecom_orders` 表同步到 MongoDB 的 `orders_collection` 集合。
 
    ```python
    # 创建数据流任务
    flow = Flow("MySQL_to_MongoDB_Order_Sync")
    flow.read_from("MySQL_ECommerce.ecom_orders")
    flow.write_to("MongoDB_ECommerce.orders_collection")
-   ```
-
-4. 保存数据流配置并启动任务。
-
-   ```python
+   
    # 保存数据流配置
    flow.save()
-   
+   ```
+
+4. 启动数据流任务。您可以通过以下方式直接在脚本中启动任务，也可以选择通过 [Tap Shell](tapcli-reference.md) 或其他外部调度器启动以适配不同业务需求。
+
+   ```python
    # 启动数据流任务
    flow.start()
    print("数据流任务已启动。")
    ```
-
+   
 5. （可选）通过以下代码检测任务的运行状态。
 
    ```python

@@ -111,7 +111,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="基于 Python 编程实现">
 
-以下是一个完整的 Python 示例代码，展示了如何通过 TapFlow 将 MongoDB 中的 `order_payments` 数组展开并同步到 MySQL 表，同时重命名字段以方便业务使用。运行此脚本可通过 `tap -f unwind_mongo_array.py` 来执行：
+以下是一个完整的 Python 示例代码，展示了如何通过 TapFlow 将 MongoDB 中的 `order_payments` 数组展开并同步到 MySQL 表，同时重命名字段以方便业务使用。运行此脚本可通过 `python unwind_mongo_array.py` 来执行：
 
 - **数据源**：`MongoDB_Demo.order_collection` 集合，包含嵌套的 `order_payments` 数组字段。
 - **处理逻辑**：将数组字段的每个元素作为单独的行存储到目标表，并设置主键用于实时更新。
@@ -120,6 +120,10 @@ import TabItem from '@theme/TabItem';
 ```python title="unwind_mongo_array.py"
 # 导入 TapFlow 依赖模块
 from tapflow.lib import *
+from tapflow.cli.cli import init
+
+# 初始化配置信息
+init()
 
 # 创建数据流任务
 flow = Flow("Unwind_MongoDB_Array")

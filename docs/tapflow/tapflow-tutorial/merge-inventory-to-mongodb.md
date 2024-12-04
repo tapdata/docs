@@ -149,7 +149,7 @@ flowchart LR
 </TabItem>
 <TabItem value="基于 Python 编程实现">
 
-以下是完整的 Python 示例代码，展示了如何通过 TapFlow 将来自多个区域的库存表合并为一个 MongoDB 集合，同时标准化字段值。运行此脚本可通过 `tap -f inventory_merge.py` 来执行：
+以下是完整的 Python 示例代码，展示了如何通过 TapFlow 将来自多个区域的库存表合并为一个 MongoDB 集合，同时标准化字段值。运行此脚本可通过 `python inventory_merge.py` 来执行：
 
 - **数据源**：来自 MySQL 的 `usaPOSGoldMaterial`、`canPOSGoldMaterial` 和 `sgPOSGoldMaterial` 三个区域的库存表。
 - **处理逻辑**：使用 JavaScript 对字段进行标准化，并通过 `union` 合并不同区域的数据。
@@ -158,6 +158,10 @@ flowchart LR
 ```python title="inventory_merge.py"
 # 导入 TapFlow 依赖模块
 from tapflow.lib import *
+from tapflow.cli.cli import init
+
+# 初始化配置信息
+init()
 
 # 定义 JavaScript 处理逻辑
 usaWarehouseJs = '''

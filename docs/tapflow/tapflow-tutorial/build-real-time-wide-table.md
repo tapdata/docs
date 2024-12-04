@@ -116,7 +116,7 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 <TabItem value="基于 Python 编程实现">
 
-以下是一个完整的 Python 示例代码，它展示了如何通过 TapFlow 将多个 MySQL 表实时关联生成一个 MongoDB 宽表视图，可通过 `tap -f real_time_order_view.py` 来执行：
+以下是一个完整的 Python 示例代码，它展示了如何通过 TapFlow 将多个 MySQL 表实时关联生成一个 MongoDB 宽表视图，可通过 `python real_time_order_view.py` 来执行：
 
 - 主表：`ecom_orders`，包含订单基本信息。
 - 关联表：`ecom_customers`（客户信息）、`ecom_order_payments`（支付信息）、`ecom_order_items`（商品信息）等。
@@ -125,6 +125,10 @@ import TabItem from '@theme/TabItem';
 ```python title="real-time-wide-table.py"
 # 导入 TapFlow 依赖模块
 from tapflow.lib import *
+from tapflow.cli.cli import init
+
+# 初始化配置信息
+init()
 
 # 创建数据流任务
 orderFlow = Flow("Order_SingleView_Sync")

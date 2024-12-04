@@ -1,6 +1,6 @@
 # 快速入门
 
-本文将演示如何使用 Tap Shell 构建最简单的数据流任务，以帮助您快速掌握数据复制和流式处理的操作流程。如需了解如何利用 TapFlow 的多表处理功能来实现更复杂的业务需求（如实时宽表），推荐阅读[典型案例](tapflow-tutorial/README.md)。
+本文将演示如何使用 TapFlow 构建最简单的数据流任务，以帮助您快速掌握数据复制和流式处理的操作流程。如需了解如何利用 TapFlow 的多表处理功能来实现更复杂的业务需求（如实时宽表），推荐阅读[典型案例](tapflow-tutorial/README.md)。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
    python3 -m venv tapflow_env
    ```
 
-3. 执行下述命令激活虚拟环境，安装 Tap Shell 及其所需的依赖包。
+3. 执行下述命令激活虚拟环境，安装 TapFlow 及其所需的依赖包。
 
    ```bash
    # 激活虚拟环境
@@ -208,10 +208,13 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 
 通过编程方式，您可以灵活定义和管理数据流，以下示例展示了如何使用 Python 创建一个从 MySQL 到 MongoDB 的数据流。
 
-1. 在您的 Python 脚本中，导入所需的模块：
+1. 在您的 Python 脚本中，导入所需的模块并初始化配置信息：
 
    ```python
    from tapflow.lib import *
+   from tapflow.cli.cli import init
+   
+   init()
    ```
 
 2. 定义源数据库（MySQL）和目标数据库（MongoDB）的连接配置，并创建对应的连接对象。
@@ -275,7 +278,7 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 6. 将上述代码合并一起保存为 `ecom_flow.py`，然后通过以下命令运行：
 
    ```shell
-   tap -f ecom_flow.py
+   python ecom_flow.py
    ```
 
    输出示例如下：

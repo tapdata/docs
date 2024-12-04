@@ -1,13 +1,13 @@
 # 快速入门
 
-本文将演示如何使用 Tap Flow 构建最简单的数据流任务，以帮助您快速掌握数据复制和流式处理的操作流程。如需了解如何利用 TapFlow 的多表处理功能来实现更复杂的业务需求（如实时宽表），推荐阅读[典型案例](tapflow-tutorial/README.md)。
+本文将演示如何使用 TapFlow 构建最简单的数据流任务，以帮助您快速掌握数据复制和流式处理的操作流程。如需了解如何利用 TapFlow 的多表处理功能来实现更复杂的业务需求（如实时宽表），推荐阅读[典型案例](tapflow-tutorial/README.md)。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-## 步骤一：安装 Tap Flow 
+## 步骤一：安装 TapFlow 
 
 1. [下载并安装 Python 3](https://www.python.org/downloads/)，版本为 Python 3.6 及以上。
 
@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
    python3 -m venv tapflow_env
    ```
 
-3. 执行下述命令激活虚拟环境，安装 Tap Flow 及其所需的依赖包。
+3. 执行下述命令激活虚拟环境，安装 TapFlow 及其所需的依赖包。
 
    ```bash
    # 激活虚拟环境

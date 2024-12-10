@@ -81,13 +81,13 @@ import TabItem from '@theme/TabItem';
    orderFlow.lookup("MySQL_ECommerce.ecom_products", 
                      path="order_items.product",             # 嵌入路径指向 order_items.product
                      type="object",                          # 嵌入类型为对象
-                     relation=[["product_id", "order_items.product_id"]]);  # 使用 product_id 作为关联键
+                     relation=[["order_items.product_id", "product_id"]]);  # 使用 product_id 作为关联键
    
    # 将 'ecom_sellers' 表作为嵌入对象，关联到 order_items 表的 seller_id 字段
    orderFlow.lookup("MySQL_ECommerce.ecom_sellers", 
                      path="order_items.seller",              # 嵌入路径指向 order_items.seller
                      type="object",                          # 嵌入类型为对象
-                     relation=[["seller_id", "order_items.seller_id"]]);  # 使用 seller_id 作为关联键
+                     relation=[["order_items.seller_id", "seller_id"]]);  # 使用 seller_id 作为关联键
    ```
 
 4. 将数据流的输出指定为 MongoDB 重名为 `orderSingleView` 的集合，形成一个实时物化视图，包含完整的订单、客户、支付、商品和卖家数据。
@@ -158,13 +158,13 @@ orderFlow.lookup("MySQL_ECommerce.ecom_order_items",
 orderFlow.lookup("MySQL_ECommerce.ecom_products", 
                  path="order_items.product", 
                  type="object", 
-                 relation=[["product_id", "order_items.product_id"]])
+                 relation=[["order_items.product_id", "product_id"]])
 
 # 关联卖家信息表
 orderFlow.lookup("MySQL_ECommerce.ecom_sellers", 
                  path="order_items.seller", 
                  type="object", 
-                 relation=[["seller_id", "order_items.seller_id"]])
+                 relation=[["order_items.seller_id", "seller_id"]])
 
 # 指定目标集合
 orderFlow.write_to("MongoDB_ECommerce.orderSingleView")

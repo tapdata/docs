@@ -28,7 +28,7 @@ TapData 通过跨地域的数据同步，帮助企业实现如下目标：
 
 :::tip
 
-Tapdata 支持 MySQL ↔ MySQL、PostgreSQL ↔ PostgreSQL、MongoDB ↔ MongoDB、PostgreSQL ↔ MySQL 的双向数据同步，接下来，我们以 MySQL 间的双向同步为例介绍具体的操作流程。
+Tapdata 支持 MySQL ↔ MySQL、PostgreSQL ↔ PostgreSQL、MongoDB ↔ MongoDB、PostgreSQL ↔ MySQL、SQL Server ↔ SQL Server 的双向数据同步，接下来，我们以 MySQL 间的双向同步为例介绍具体的操作流程。
 
 :::
 

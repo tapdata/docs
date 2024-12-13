@@ -18,7 +18,17 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
+### 同步类型说明
 
+TapData 支持全量和增量两种同步方式，涵盖单向同步和双向同步场景，适配多种数据源，具体说明如下：
+
+- **单向同步**：将源数据源中的数据同步至目标数据源，关于增量同步的详细支持情况见本文中的数据源支持详表。
+- **双向同步**：实现源和目标数据源的双向数据流动，确保两端数据实时一致，详见[双向同步配置案例](../case-practices/pipeline-tutorial/mysql-bi-directional-sync.md)。当前支持以下数据源的双向同步，适用于全量和增量同步场景：
+  - MySQL ↔ MySQL
+  - PostgreSQL ↔ PostgreSQL
+  - MongoDB ↔ MongoDB
+  - PostgreSQL ↔ MySQL
+  - SQL Server ↔ SQL Server
 
 ### 认证数据源
 

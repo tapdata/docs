@@ -89,6 +89,12 @@ TapData Cloud Service Running Agent: 1
 Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 ```
 
+:::tip
+
+默认情况下，TapFlow 会在 `~/.tapflow/config.ini` 生成配置文件，您可以通过编辑该文件来调整认证信息，或使用 `tap -f <filename>` 指定自定义的配置文件路径。
+
+:::
+
 ## 步骤二：创建数据流
 
 在完成数据源配置后，我们可以通过下述任意方式来创建一个数据流，将 MySQL 数据同步到 MongoDB：

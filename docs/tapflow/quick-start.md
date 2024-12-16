@@ -91,7 +91,7 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 
 :::tip
 
-默认情况下，TapFlow 会在 `~/.tapflow/config.ini` 生成配置文件，您可以通过编辑该文件来调整认证信息，或使用 `tap -f <filename>` 指定自定义的配置文件路径。
+默认情况下，TapFlow 会在 `~/.tapflow/config.ini` 生成配置文件，您可以通过编辑该文件来调整认证信息，或使用 `tap -c <filename>` 指定自定义的配置文件路径。
 
 :::
 

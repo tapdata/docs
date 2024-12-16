@@ -29,7 +29,7 @@ import TabItem from '@theme/TabItem';
    pip install tapflow
    ```
 
-   至此已完成安装，退出命令行后再次使用 Tap Shell 前，需要先激活虚拟环境。
+   至此已完成安装，退出命令行后再次使用 Tap Shell 前，需要先激活虚拟环境。除本方法外，您也可以使用 [pipx](https://github.com/pypa/pipx) 安装 TapFlow，只需运行 `pipx install tapflow`，pipx 会自动创建并管理虚拟环境。
 
 5. 输入 `tap` 启动 Tap Shell 。
 

@@ -20,7 +20,7 @@ TapFlow 支持[数十种常见数据源](../../prerequisites/supported-databases
 
 ```python
 # 查看 MySQL 数据源的必填和可选参数
-tap > h mysql
+tap> h mysql
 required config:
     database: database_name (Type: string)                                                                                                        
     port: database_port (Type: string)                                                                                                            

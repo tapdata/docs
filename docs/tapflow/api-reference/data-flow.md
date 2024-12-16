@@ -18,12 +18,12 @@
 
 ```python
 # 示例 1：简单表读取
-tap > myflow = Flow("DataFlow_Test")  \
+tap> myflow = Flow("DataFlow_Test")  \
           .read_from("MongoDB_Demo.ecom_orders")
 
 # 示例 2：指定表名，同时指定任务类型为数据复制任务，适用于多表同步场景
-tap > source = Source("MongoDB_Demo", table=["ecom_orders"], mode="migrate")
-tap > myflow = Flow("DataFlow_Test")  \
+tap> source = Source("MongoDB_Demo", table=["ecom_orders"], mode="migrate")
+tap> myflow = Flow("DataFlow_Test")  \
           .read_from(source)
 ```
 
@@ -35,7 +35,7 @@ tap > myflow = Flow("DataFlow_Test")  \
 
 ```python
 # 将数据实时写入到 MongoDB 中
-tap > myflow.write_to("MongoDB_Demo.ecom_orders");
+tap> myflow.write_to("MongoDB_Demo.ecom_orders");
 ```
 
 #### save
@@ -44,7 +44,7 @@ tap > myflow.write_to("MongoDB_Demo.ecom_orders");
 
 ```python
 # 保存并创建持久化数据流任务
-tap > myflow.save();
+tap> myflow.save();
 ```
 
 #### 最简示例
@@ -53,7 +53,7 @@ tap > myflow.save();
 
 ```python
 # 创建数据流任务
-tap > myflow = Flow("DataFlow_Test")  \
+tap> myflow = Flow("DataFlow_Test")  \
           .read_from("MySQL_Demo.ecom_orders", query="SELECT * FROM ecom_orders LIMIT 2000")  \
           .write_to("MongoDB_Demo.Orders")  \
           .save();
@@ -75,9 +75,9 @@ tap > myflow = Flow("DataFlow_Test")  \
 
 ```python
 # 设置为仅全量同步
-tap > myflow.full_sync();
+tap> myflow.full_sync();
 # 保存任务配置
-tap > myflow.save();
+tap> myflow.save();
 ```
 
 ### 仅增量同步
@@ -88,9 +88,9 @@ tap > myflow.save();
 
 ```python
 # 设置为仅增量同步，从最新时间点开始同步
-tap > myflow.only_cdc();
+tap> myflow.only_cdc();
 # 保存任务配置
-tap > myflow.save();
+tap> myflow.save();
 ```
 
 **指定增量数据采集时间点**
@@ -99,10 +99,10 @@ tap > myflow.save();
 
 ```python
 # 设置为仅增量同步，采集 2023-12-14 17:40:00 时间点以后的增量数据
-tap > myflow.only_cdc();
-tap > myflow.config_cdc_start_time(1702546800000, tz="+8");
+tap> myflow.only_cdc();
+tap> myflow.config_cdc_start_time(1702546800000, tz="+8");
 # 保存任务配置
-tap > myflow.save();
+tap> myflow.save();
 ```
 
 - **`start_time`**：增量同步的起始时间，支持 `datetime` 和时间戳（毫秒）。
@@ -114,9 +114,9 @@ tap > myflow.save();
 
 ```python
 # 全量 + 增量任务
-tap > myflow.include_cdc();
+tap> myflow.include_cdc();
 # 保存任务配置
-tap > myflow.save();
+tap> myflow.save();
 ```
 
 
@@ -133,14 +133,14 @@ tap > myflow.save();
 
 ```python
 # 创建数据流任务，保留符合条件的数据
-tap > flow = Flow("Filter_Data_Test")  \
+tap> flow = Flow("Filter_Data_Test")  \
           .read_from(MySQL_Demo.ecom_orders)  \
           .filter("order_amount > 100 and user_gender='male'")  \
           .write_to(MongoDB_Demo.filteredOrders)  \
           .save();
 
 # 创建数据流任务，丢弃符合条件的数据
-tap > flow = Flow("Filter_Data_Discard")  \
+tap> flow = Flow("Filter_Data_Discard")  \
           .read_from(MySQL_Demo.ecom_orders)  \
           .filter("order_amount <= 100 or user_gender='male'", filterType=FilterType.delete)  \
           .write_to(MongoDB_Demo.filteredOrders)  \
@@ -155,14 +155,14 @@ tap > flow = Flow("Filter_Data_Discard")  \
 
 ```python
 # 创建数据流任务，保留符合条件的数据
-tap > flow = Flow("Row_Filter_Test")  \
+tap> flow = Flow("Row_Filter_Test")  \
           .read_from(MySQL_Demo.ecom_orders)  \
           .rowFilter("record.price > 100")  \
           .write_to(MongoDB_Demo.highValueOrders)  \
           .save();
 
 # 创建数据流任务，丢弃符合条件的数据
-tap > flow = Flow("Row_Filter_Discard")  \
+tap> flow = Flow("Row_Filter_Discard")  \
           .read_from(MySQL_Demo.ecom_orders)  \
           .rowFilter("record.price > 100", rowFilterType=RowFilterType.discard)  \
           .write_to(MongoDB_Demo.highValueOrders)  \
@@ -177,7 +177,7 @@ tap > flow = Flow("Row_Filter_Discard")  \
 
 ```python
 # 创建数据流任务，为订单时间字段增加 8 小时
-tap > flow = Flow("Adjust_Time_Test")  \
+tap> flow = Flow("Adjust_Time_Test")  \
           .read_from(MySQL_Demo.ecom_orders)  \
           .adjust_time(addHours=8, t=["order_time"])  \
           .write_to(MongoDB_Demo.adjustedOrders)  \
@@ -194,7 +194,7 @@ tap > flow = Flow("Adjust_Time_Test")  \
 
 ```python
 # 创建数据流任务，为目标表添加前缀和后缀
-tap > flow = Flow("Rename_Table_Test")  \
+tap> flow = Flow("Rename_Table_Test")  \
           .read_from(MySQL_Demo.ecom_orders)  \
           .renameTable(prefix="v1_", suffix="_backup")  \
           .write_to(MongoDB_Demo.versionedTable)  \
@@ -209,7 +209,7 @@ tap > flow = Flow("Rename_Table_Test")  \
 
 ```python
 # 创建数据流任务，添加新字段并指定字段值
-tap > flow = Flow("Add_Field_Test")  \
+tap> flow = Flow("Add_Field_Test")  \
           .read_from(MySQL_Demo.ecom_orders)  \
           .add_fields([['status_flag', 'String', "'completed'"], ['order_value', 'Double', '100.5']])  \
           .write_to(MongoDB_Demo.additionalFieldsCollection)  \
@@ -224,7 +224,7 @@ tap > flow = Flow("Add_Field_Test")  \
 
 ```python
 # 创建数据流任务，重命名指定字段
-tap > flow = Flow("Rename_Fields_Test")  \
+tap> flow = Flow("Rename_Fields_Test")  \
           .read_from(MySQL_Demo.ecom_orders)  \
           .rename_fields({'order_status': 'status', 'order_id': 'id'})  \
           .write_to(MongoDB_Demo.renamedFieldsCollection)  \
@@ -239,7 +239,7 @@ tap > flow = Flow("Rename_Fields_Test")  \
 
 ```python
 # 创建数据流任务，写入到目标库时仅包含指定字段
-tap > flow = Flow("Include_Fields_Test")  \
+tap> flow = Flow("Include_Fields_Test")  \
           .read_from(MySQL_Demo.ecom_orders)  \
           .include("order_status", "order_id")  \
           .write_to(MongoDB_Demo.includedFieldsCollection)  \
@@ -254,7 +254,7 @@ tap > flow = Flow("Include_Fields_Test")  \
 
 ```python
 # 创建数据流任务，写入到目标库时排除指定字段
-tap > flow = Flow("Exclude_Fields_Test")  \
+tap> flow = Flow("Exclude_Fields_Test")  \
           .read_from(MySQL_Demo.ecom_orders)  \
           .exclude("order_status", "order_delivered_customer_date")  \
           .write_to(MongoDB_Demo.excludedFieldsCollection)  \
@@ -269,7 +269,7 @@ tap > flow = Flow("Exclude_Fields_Test")  \
 
 ```python
 # 创建数据流任务，移除 OBJECT_ID 类型的字段
-tap > flow = Flow("Exclude_Type_Test")  \
+tap> flow = Flow("Exclude_Type_Test")  \
           .read_from(MySQL_Demo.ecom_orders)  \
           .exclude_type("OBJECT_ID")  \
           .write_to(MongoDB_Demo.cleanedOrders)  \
@@ -284,7 +284,7 @@ tap > flow = Flow("Exclude_Type_Test")  \
 
 ```python
 # 创建数据流任务，为数据记录注入处理时间字段
-tap > flow = Flow("Add_Date_Field_Test")  \
+tap> flow = Flow("Add_Date_Field_Test")  \
           .read_from(MySQL_Demo.ecom_orders)  \
           .add_date_field("processed_time")  \
           .write_to(MongoDB_Demo.timestampedOrders)  \
@@ -301,16 +301,16 @@ tap > flow = Flow("Add_Date_Field_Test")  \
 
 - **from_table_name**：指定要关联的表名，格式为 `data_source_name.table_name`，其中 `data_source_name` 可通过 `show dbs` 获取，或[新建数据源](data-source.md)。
 - **relation**：连接字段的映射关系，母亲仅支持等值连接，将关联表中的记录匹配到主表的记录中。
-- **embed_path**：嵌入数据的路径。可以将关联数据嵌入为子文档（`object`）或数组（`array`）。
-- **embed_type**：定义嵌入的数据结构类型，`object` 表示一对一关系，`array` 表示一对多关系。
-- **includes**：选择包含在结果中的字段，字段名以逗号分隔。
+- **embed_path**（可选）：嵌入数据的路径。可以将关联数据嵌入为子文档（`object`，默认值）或数组（`array`）。
+- **embed_type**（可选）：定义嵌入的数据结构类型，`object`（默认）表示一对一关系，`array` 表示一对多关系。
+- **includes**（可选）：选择包含在结果中的字段，字段名以逗号分隔。
 
 **使用示例**：
 
 以下示例展示了如何通过 `lookup` 将 `order_payments` 表中的数据嵌入到 `ecom_orders` 表的记录中，从而生成一个包含订单及其支付信息的宽表，并将结果写入 MongoDB 的 `ordersWithPayments` 集合。
 
 ```python
-tap > flow = Flow("Order_Payment_Join")
+tap> flow = Flow("Order_Payment_Join")
           .read_from(MySQL_Demo.ecom_orders)
           .lookup("MySQL_Demo.order_payments", relation=[["order_id", "order_id"]],
                   embed_path="payments", embed_type="array")
@@ -328,7 +328,7 @@ tap > flow = Flow("Order_Payment_Join")
 
 ```python
 # 定义 JavaScript 代码，将确认状态添加到已交付的订单记录中
-tap > jscode = '''
+tap> jscode = '''
 if (record.order_status == 'delivered') {
     record.confirmation_status = 1;  // 为已交付的订单添加确认字段
 }
@@ -336,7 +336,7 @@ return record;  // 返回处理后的记录
 '''
 
 # 创建数据流任务，应用 JavaScript 代码，并将结果写入目标数据库
-tap > flow = Flow("Order_Status_Update")  \
+tap> flow = Flow("Order_Status_Update")  \
           .read_from(MySQL_Demo.ecom_orders)  \
           .js(jscode)  \
           .write_to(MongoDB_Demo.updatedCollection)  \
@@ -352,13 +352,13 @@ tap > flow = Flow("Order_Status_Update")  \
 
 ```python
 # 定义 Python 函数，仅保留已交付的订单
-tap > def pyfunc(record):
+tap> def pyfunc(record):
          if record['order_status'] != 'delivered':
              return None  # 返回 None 以过滤不符合条件的记录
          return record  # 返回处理后的记录
 
 # 创建数据流任务，应用 Python 函数，并将结果写入目标数据库
-tap > flow = Flow("Python_Function")  \
+tap> flow = Flow("Python_Function")  \
           .read_from(MySQL_Demo.ecom_orders)  \
           .py(pyfunc)  \
           .write_to(MongoDB_Demo.pythonProcessedCollection)  \

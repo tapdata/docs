@@ -111,7 +111,7 @@ job current status is: running, qps is: 31808.0, total rows: 1300000, delay is: 
 
 
 
-### start <flow name/id>
+### <span id="start">start</span> <flow name/id>
 
 **命令说明**：启动指定的数据流任务，默认情况下首次启动会执行全量数据同步，完成后自动进入增量数据同步阶段。如果实时同步任务配置为仅全量则完成全量，则仅执行一次全量数据同步；如果配置为仅增量默认，则从指定的起始点或当前时间点开始同步增量数据。
 

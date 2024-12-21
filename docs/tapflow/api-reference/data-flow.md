@@ -248,8 +248,11 @@ print("数据源高级配置完成，准备创建数据流任务...")
 通过 `Sink` 对象，指定目标数据库和表名：
 
 ```python
-# 定义目标表
+# 定义单个目标表
 sink = Sink('database_name.table_name')
+
+# 定义多个目标表
+sink = Sink('database_name', table=['table_name_1', 'table_name_2'])
 ```
 
 ### 配置目标表写入行为

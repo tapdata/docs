@@ -5,7 +5,6 @@
 本文介绍使用 TapFlow API 管理数据流的完整参考，包括定义任务来源/目标、执行数据处理等操作。
 
 
-
 ## 创建数据流任务
 
 创建数据流任务的核心 API 包括 `read_from`、`write_to` 和 `save`，此外，您还可以根据需求添加处理节点或设置任务同步类型。
@@ -57,7 +56,7 @@ flowchart LR
     linkStyle default stroke-width:2px,stroke:#2196f3,curve:basis
 ```
 
-#### read_from
+### read_from
 
 **命令说明**：指定数据流任务的主数据源表，可通过 `data_source_name.table_name` 的方式指定，其中 `data_source_name` 可通过 `show dbs` 获取，或[新建数据源](data-source.md)。
 
@@ -78,7 +77,7 @@ tap> myflow = Flow("DataFlow_Test")  \
 
 如需使用自定义查询，可通过 `query` 参数直接指定，例如 `myflow.read_from("MongoDB_Demo.ecom_orders", query="SELECT * FROM ecom_orders WHERE status='active'")`。
 
-#### write_to
+### write_to
 
 **命令说明**：指定数据流任务的目标表，可通过 `data_source_name.table_name` 的方式定义简单目标表，其中 `data_source_name` 可通过 `show dbs` 获取，或[新建数据源](data-source.md)。
 
@@ -99,7 +98,7 @@ tap> myflow = Flow("DataFlow_Test")  \
           .write_to(sink)
 ```
 
-#### save
+### save
 
 **命令说明**：保存当前任务的配置，使其成为持久化的任务。调用 `save()` 后，该数据流任务即可被启动或停止。
 
@@ -161,6 +160,7 @@ tap> myflow = Flow("DataFlow_Test")  \
 
   正则匹配适用于需要动态监控新增表并自动纳入同步范围的场景。
   
+
 :::
 
 ### 启用 DDL 同步

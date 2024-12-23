@@ -6,6 +6,18 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.19.0
+
+### 功能优化
+
+* 优化和新增引擎的错误码，帮助用户快速定位异常原因
+
+### 问题修复
+
+* 修复将 MongoDB 作为中间库配置 SSL 连接时，系统无法启动的问题
+* 修复包含多字段联合主键的 Oracle 表同步至 GaussDB（DWS）时，在增量同步阶段数据未更新到目标的问题
+* 修复同步数据至 MySQL 时，部分表同步完成后，任务误报缺失建表权限的问题
+
 ## 3.18.0
 
 ### 功能优化

@@ -4,7 +4,25 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
-本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)
+本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)。
+
+## 3.19.0
+
+### 新增功能
+
+* [数据校验](../user-guide/verify-data.md)任务的高级设置中，增加“**自定义排序**”选项，可指定源端和目标端数据库的排序规则，以确保校验时字符排序的一致性
+
+### 功能优化
+
+* 优化和新增引擎的错误码，帮助用户快速定位异常原因
+
+### 问题修复
+
+* 修复将 MongoDB 作为中间库配置 SSL 连接时，系统无法启动的问题
+* 修复包含多字段联合主键的 Oracle 表同步至 GaussDB（DWS）时，在增量同步阶段数据未更新到目标的问题
+* 修复同步数据至 MySQL 时，部分表同步完成后，任务误报缺失建表权限的问题
+* 修复查看挖掘任务源节点列表时出现系统错误的问题
+* 修复实时数据平台表详情中的行数与实际行数不一致的问题
 
 ## 3.18.0
 

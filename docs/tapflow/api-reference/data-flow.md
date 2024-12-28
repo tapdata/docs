@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 ```mdx-code-block
 <Tabs className="unique-tabs">
-<TabItem value="基于用法" default>
+<TabItem value="基础用法" default>
 ```
 在快速入门部分，我们将介绍如何使用基本的 `read_from`、`write_to` 和 `save` API 来创建数据流任务。适用于简单数据实时同步，具体流程如下：
 

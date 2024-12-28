@@ -4,51 +4,47 @@
 
 本文介绍使用 TapFlow API 管理数据流的完整参考，包括定义任务来源/目标、执行数据处理等操作。
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
 
 ## 创建数据流任务
 
-创建数据流任务的核心 API 包括 `read_from`、`write_to` 和 `save`，此外，您还可以根据需求添加处理节点或设置任务同步类型。
+创建数据流任务的核心 API 包括 `read_from`、`write_to` 和 `save`，此外，您还可以根据需求添加处理节点或设置任务同步类型，请跟随下述教程了解基础和进阶用法：
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="基于用法" default>
+```
+在快速入门部分，我们将介绍如何使用基本的 `read_from`、`write_to` 和 `save` API 来创建数据流任务。适用于简单数据实时同步，具体流程如下：
 
 ```mermaid
 %%{ init: { 'theme': 'neo', 'themeVariables': { 'primaryColor': '#1E88E5', 'edgeLabelBackground':'#F1F8E9', 'tertiaryColor': '#FAFAFA'}} }%%
-
 flowchart LR
     %% 数据源部分
     subgraph read_from["read_from（定义源数据表）"]
         direction LR
-        table1["简单表名<br>（data_source.table_name）"]
-        table2["复杂配置（可选）<br>（Source API 实例）"]
-    end
-
-    %% Flow API 管道
-    subgraph flow_api["数据实时加工（可选）"]
-        direction TB
-        process_nodes["数据过滤、重命名表、Lookup 等"]
+        simple_table["data_source.table_name"]
     end
 
     %% 目标表部分
     subgraph write_to["write_to（配置目标数据表）"]
         direction LR
-        simple_target["简单表名<br>（data_source.table_name）"]
-        complex_target["复杂配置（可选）<br>（Sink API 实例）"]
+        simple_target["data_source.table_name"]
     end
 
-    %% 同步类型和保存任务
-    subgraph sync_and_save["任务级配置"]
+    %% 保存数据流任务
+    subgraph sync_and_save["save（保存数据流任务）"]
         direction TB
-        sync_type["同步类型设置（可选）<br>（全量、增量、全量+增量）"]
-        save_task["save<br>保存任务"]
     end
 
     %% 数据流向连接
-    read_from --> process_nodes
-    process_nodes --> write_to
+    read_from --> write_to
     write_to --> sync_and_save
-
 
     %% 样式优化
     style read_from fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,rounded
-    style flow_api fill:#f1f8e9,stroke:#43a047,stroke-width:2px,rounded
     style write_to fill:#ede7f6,stroke:#673ab7,stroke-width:2px,rounded
     style sync_and_save fill:#fffde7,stroke:#fdd835,stroke-width:2px,rounded
 
@@ -56,74 +52,177 @@ flowchart LR
     linkStyle default stroke-width:2px,stroke:#2196f3,curve:basis
 ```
 
-### read_from
+- **read_from**：指定数据流任务的主数据源表，可通过 `data_source_name.table_name` 的方式指定，其中 `data_source_name` 可通过 `show dbs` 获取，或[新建数据源](data-source.md)，示例如下：
 
-**命令说明**：指定数据流任务的主数据源表，可通过 `data_source_name.table_name` 的方式指定，其中 `data_source_name` 可通过 `show dbs` 获取，或[新建数据源](data-source.md)。
+  ```python
+  # 指定要读取的源表
+  tap> myflow = Flow("DataFlow_Test")  \
+            .read_from("MongoDB_Demo.ecom_orders")
+  ```
 
-此外，通过 `Source API` 实例化的对象可以直接作为数据源，特别是在需要更复杂配置（如多表同步、性能优化）的场景，更多使用方法及参数介绍，见[源端进阶设置](#source)。
+- **write_to**：指定数据流任务的目标表，可通过 `data_source_name.table_name` 的方式定义简单目标表，其中 `data_source_name` 可通过 `show dbs` 获取，或[新建数据源](data-source.md)，示例如下：
 
-**使用示例**：
+  ```python
+  # 将源表实时写入 ecom_orders 表
+  tap> myflow = Flow("DataFlow_Test")  \
+            .write_to("MongoDB_Demo.ecom_orders")
+  ```
 
-```python
-# 示例 1：简单表读取
-tap> myflow = Flow("DataFlow_Test")  \
-          .read_from("MongoDB_Demo.ecom_orders")
+- **save**：保存当前任务的配置，使其成为持久化的任务。调用 `save()` 后，该数据流任务即可被启动或停止，示例如下：
 
-# 示例 2：指定表名，同时指定任务类型为数据复制任务，适用于多表同步场景
-tap> source = Source("MongoDB_Demo", table=["ecom_orders"])
-tap> myflow = Flow("DataFlow_Test")  \
-          .read_from(source)
-```
+  ```python
+  # 保存数据流任务
+  tap> myflow.save();
+  ```
 
-如需使用自定义查询，可通过 `query` 参数直接指定，例如 `myflow.read_from("MongoDB_Demo.ecom_orders", query="SELECT * FROM ecom_orders WHERE status='active'")`。
+**最简示例**
 
-### write_to
-
-**命令说明**：指定数据流任务的目标表，可通过 `data_source_name.table_name` 的方式定义简单目标表，其中 `data_source_name` 可通过 `show dbs` 获取，或[新建数据源](data-source.md)。
-
-此外，通过 `Sink API` 实例化的对象可以直接作为目标表配置，特别是在需要更复杂配置（如高并发写入、数据清理或写入行为调整）的场景，更多使用方法及参数介绍，见[目标端进阶设置](#sink)。
-
-**使用示例**：
-
-```python
-# 示例 1：简单表写入
-tap> myflow = Flow("DataFlow_Test")  \
-          .write_to("MongoDB_Demo.ecom_orders")
-
-# 示例 2：使用 Sink API 实例化目标表并配置行为
-tap> sink = Sink("MongoDB_Demo", table="ecom_orders")
-tap> sink.keep_data()         # 保留目标表原有数据
-tap> sink.set_write_batch(500)  # 每批次写入 500 条记录
-tap> myflow = Flow("DataFlow_Test")  \
-          .write_to(sink)
-```
-
-### save
-
-**命令说明**：保存当前任务的配置，使其成为持久化的任务。调用 `save()` 后，该数据流任务即可被启动或停止。
-
-```python
-# 保存并创建持久化数据流任务
-tap> myflow.save();
-```
-
-#### 最简示例
-
-将所有步骤合并成一个完整示例，用于从 MySQL 读取订单数据并写入 MongoDB，保存后可执行 [start](../tapcli-reference.md#start) 命令来启动该任务。
+将上述所有步骤合并成一个完整示例，用于从 MySQL 读取订单数据并写入 MongoDB，保存后可执行 [start](../tapcli-reference.md#start) 命令来启动该任务。
 
 ```python
 # 创建数据流任务
-tap> myflow = Flow("DataFlow_Test")  \
-          .read_from("MySQL_Demo.ecom_orders", query="SELECT * FROM ecom_orders LIMIT 2000")  \
+tap> myflow = Flow("DataFlow_Advanced")  \
+          .read_from("MySQL_Demo.ecom_orders")  \
           .write_to("MongoDB_Demo.Orders")  \
           .save();
 ```
 
-:::tip
+对于更复杂的用法，您可以进一步配置多表读取、数据处理节点和同步类型等，详细内容请见**进阶用法**标签页。
 
-以上为最简示例，TapData 还支持设置 `write_to` 前，[添加处理节点](#add-nodes)来实现更加复杂和个性化的数据流转能力，具体见下文。
+</TabItem>
 
-:::
+<TabItem value="进阶用法">
+
+在此部分，我们将介绍如何进一步配置和定制数据流任务，适用于多表读取、数据处理节点添加和同步类型设置等更复杂场景，具体流程如下：
+
+```mermaid
+%%{ init: { 'theme': 'neo', 'themeVariables': { 'primaryColor': '#1E88E5', 'edgeLabelBackground':'#F1F8E9', 'tertiaryColor': '#FAFAFA'}} }%%
+flowchart LR
+    %% 数据源部分
+    subgraph read_from["read_from（定义源端）"]
+        direction LR
+        table["源表和读取行为<br>（Source API 实例）"]
+    end
+
+    %% Flow API 管道
+    subgraph flow_api["实时加工（可选）"]
+        direction TB
+        process_nodes["数据过滤<br>重命名表<br>Lookup<br>更多..."]
+    end
+
+    %% 目标表部分
+    subgraph write_to["write_to（配置目标端）"]
+        direction LR
+        complex_target["目标表和写入行为<br>（Sink API 实例）"]
+    end
+
+    %% 同步类型设置
+    subgraph sync["配置同步类型（可选）"]
+        direction TB
+        sync_type["全量<br>增量<br>全量+增量"]
+    end
+    
+    %% 保存数据流任务
+    subgraph save["save<br>（保存数据流任务）"]
+    end   
+    
+    %% 数据流向连接
+    read_from --> process_nodes
+    process_nodes --> write_to
+    write_to --> sync
+    sync --> save
+
+    %% 样式优化
+    style read_from fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,rounded
+    style flow_api fill:#f1f8e9,stroke:#43a047,stroke-width:2px,rounded
+    style write_to fill:#ede7f6,stroke:#673ab7,stroke-width:2px,rounded
+    style sync fill:#fff3e0,stroke:#fb8c00,stroke-width:2px,rounded
+    style save fill:#fffde7,stroke:#fdd835,stroke-width:2px,rounded
+    style table fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,rounded
+    style process_nodes fill:#bbdefb,stroke:#1e88e5,stroke-width:2px,rounded
+    style complex_target fill:#d1c4e9,stroke:#673ab7,stroke-width:2px,rounded
+    style sync_type fill:#ffe0b2,stroke:#fb8c00,stroke-width:2px,rounded
+
+
+    %% 连接线和箭头样式优化
+    linkStyle default stroke-width:2px,stroke:#2196f3,curve:basis
+
+```
+
+- **read_from**：指定数据流任务的[源表](data-source.md)，可通过 `data_source_name.table_name` 简单定义，也可使用 `Source API` 实例化对象进行复杂配置（如多表同步、性能优化），更多介绍，见[源端进阶设置](#source)，示例如下：
+
+  ```python
+  # 使用 source API 实例化源表
+  tap> source = Source('MySQL_ECommerce', table=['ecom_orders', 'ecom_customers'])
+  # 配置源端读取行为
+  tap> source.initial_read_size(500) # 设置全量读取批次大小为 500 条
+  tap> myflow = Flow("DataFlow_Advanced")  \
+            .read_from(source)
+  ```
+
+  如需使用自定义查询，可通过 `query` 参数直接指定，例如 `myflow.read_from("MongoDB_Demo.ecom_orders", query="SELECT * FROM ecom_orders WHERE status='active'")`。
+
+- **添加处理节点**：在将数据写入到目标端之前，您可以添加不同类型的处理节点，实现数据预处理、数据结构调整等复杂需求，更多使用方法及参数介绍，见[处理节点说明](#add-nodes)。
+
+- **write_to**：指定数据流任务的[目标表](data-source.md)，可通过 `data_source_name.table_name` 简单定义，也可以通过 `Sink API` 实例化对象进行复杂配置（如高并发写入、写入行为等）的场景，更多介绍，见[目标端进阶设置](#sink)，示例如下：
+
+  ```python
+  # 使用 Sink API 实例化目标表
+  tap> sink = Sink("MongoDB_Demo", table="ecom_orders")
+  # 配置目标端写入行为
+  tap> sink.keep_data()           # 保留目标表原有数据
+  tap> sink.set_write_batch(500)  # 每批次写入 500 条记录
+  tap> myflow = Flow("DataFlow_Test")  \
+            .write_to(sink)
+  ```
+
+- **save**：保存当前任务的配置，使其成为持久化的任务。调用 `save()` 后，该数据流任务即可被启动或停止。
+
+  ```python
+  # 保存并创建数据流任务
+  tap> myflow.save();
+  ```
+
+**完整示例**
+
+本示例展示了如何从 MySQL 读取多个表，配置批量写入、保留原有数据，并添加过滤节点保留订单金额大于 100 的记录。最终，将处理后的数据实时同步到 MongoDB 目标表。保存任务后，可执行 [start](../tapcli-reference.md#start) 命令来启动任务。
+
+```python
+# 引用已有数据源，设置为同步多表的数据复制任务
+source = Source('MySQL_ECommerce', table=['ecom_orders', 'ecom_customers'])
+
+# 源端高级配置
+source.initial_read_size(500) # 设置全量读取批次大小为 500 条
+
+print("数据源高级配置完成，准备创建数据流任务...")
+
+# 定义目标表
+sink = Sink('MongoDB_Demo', table=['ecom_orders', 'ecom_customers'])
+
+# 目标端高级配置
+sink.keep_data()              # 保留目标表结构和数据
+sink.set_write_batch(500)     # 每批次写入 500 条记录
+
+print("目标端写入配置完成！")
+
+# 创建数据流任务并添加处理节点
+flow = Flow("DataFlow_Advanced")  \
+          .read_from(source)      \
+          .filter("order_amount > 100")  # 添加过滤节点，保留订单金额大于 100 的数据
+          .write_to(sink)         \
+          .save()
+
+print("数据流任务配置完成！")
+```
+
+</TabItem>
+</Tabs>
+
+
+
+---
+
+
 
 ## <span id="source">源端进阶配置</span>
 

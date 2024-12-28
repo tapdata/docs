@@ -47,7 +47,7 @@ TapData 社区版包括以下主要组件：
 3. 执行以下命令启动 TapData 容器：
 
    ```bash
-   docker run -d -p 3030:3030 --restart always --name tapdata ghcr.io/tapdata/tapdata:latest
+   docker run -d -p 3030:3030 --restart always --name tapdata --privileged ghcr.io/tapdata/tapdata:latest
    ```
 
    参数解释：
@@ -56,6 +56,7 @@ TapData 社区版包括以下主要组件：
    - `-p 3030:3030`：映射容器的 3030 端口到宿主机的 3030 端口，允许您通过浏览器访问 Tapdata。
    - `--name tapdata`：为您的容器指定一个名字，本案例指定为 **tapdata**。
    - `--restart always`：重启 docker 服务时，自动启动该容器。
+   - `--privileged`：为容器提供更高权限，确保依赖组件（如内嵌 MongoDB）正常启动，建议生产环境根据需求精细配置权限。
 
    :::tip
 

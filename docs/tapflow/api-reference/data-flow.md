@@ -192,7 +192,7 @@ flowchart LR
 source = Source('MySQL_ECommerce', table=['ecom_orders', 'ecom_customers'])
 
 # 源端高级配置
-source.initial_read_size(500) # 设置全量读取批次大小为 500 条
+source.initial_read_size(500)  # 设置全量读取批次大小为 500 条
 
 print("数据源高级配置完成，准备创建数据流任务...")
 
@@ -200,17 +200,19 @@ print("数据源高级配置完成，准备创建数据流任务...")
 sink = Sink('MongoDB_Demo', table=['ecom_orders', 'ecom_customers'])
 
 # 目标端高级配置
-sink.keep_data()              # 保留目标表结构和数据
-sink.set_write_batch(500)     # 每批次写入 500 条记录
+sink.keep_data()               # 保留目标表结构和数据
+sink.set_write_batch(500)      # 每批次写入 500 条记录
 
 print("目标端写入配置完成！")
 
 # 创建数据流任务并添加处理节点
-flow = Flow("DataFlow_Advanced")  \
-          .read_from(source)      \
-          .filter("order_amount > 100")  # 添加过滤节点，保留订单金额大于 100 的数据
-          .write_to(sink)         \
-          .save()
+flow = (
+    Flow("DataFlow_Advanced")
+    .read_from(source)
+    .filter("order_amount > 100")  # 添加过滤节点，保留订单金额大于 100 的数据
+    .write_to(sink)
+    .save()
+)
 
 print("数据流任务配置完成！")
 ```

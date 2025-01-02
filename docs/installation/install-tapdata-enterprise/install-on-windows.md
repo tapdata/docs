@@ -20,7 +20,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 ## 准备工作
 
-1. 部署 MongoDB 数据库，该库将作为 TapData 存储系统运行相关数据，例如日志、元数据等，相关部署方法，可参考[官方文档](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/)。
+1. [部署 MongoDB 数据库](../../administration/production-deploy/install-replica-mongodb.md)，该库将作为 TapData 存储系统运行相关数据，例如日志、元数据等。
 
 2. 登录至待部署的设备上，安装 Java 1.8 并设置环境变量。
 

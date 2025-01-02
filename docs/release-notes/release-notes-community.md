@@ -6,6 +6,18 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.20.0
+
+### 功能优化
+
+- 任务监控页面新增日志文件下载功能，便于定位和排查故障
+- 引擎启动优化，无需 MongoDB 配置即可完成启动
+- 错误码覆盖范围进一步扩展，完善相关解决方案提示信息
+
+### 问题修复
+
+- 修复任务仅同步主键表且通过正则匹配同步时，新增无主键表后任务日志持续记录“发现新表”的问题
+
 ## 3.19.0
 
 ### 功能优化

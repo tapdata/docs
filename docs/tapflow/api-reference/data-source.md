@@ -20,16 +20,24 @@ TapFlow 支持[数十种常见数据源](../../prerequisites/supported-databases
 
 ```python
 # 查看 MySQL 数据源的必填和可选参数
-tap > h mysql
+tap> h mysql
 required config:
-    database: database_name                                                                                                                                              
-    port: database_port                                                                                                                                                  
-    host: database_host                                                                                                                                                  
-    username: database_username                                                                                                                                          
+    database: database_name (Type: string)                                                                                                        
+    port: database_port (Type: string)                                                                                                            
+    host: database_host (Type: string)                                                                                                            
+    username: database_username (Type: string)                                                                                                    
 optional config:
-    deploymentMode:                                                                                                                                                      
-    password: database_password                                                                                                                                          
-    masterSlaveAddress: 
+    deploymentMode:  (Type: string)                                                                                                               
+        Enum values: standalone, master-slave
+        Dependencies:
+            When value is standalone, requires: host, port
+            When value is master-slave, requires: masterSlaveAddress
+    password: database_password (Type: string)                                                                                                    
+    timezone:  (Type: string)                                                                                                                     
+        Enum values: -11:00, -10:00, -09:00, ...
+    additionalString: additionalString (Type: string)                                                                                               
+    masterSlaveAddress:  (Type: array)                                                                                                            
+        Array[port: number, host: string]
 ```
 
 * **required config**：必填配置，包含：
@@ -41,6 +49,7 @@ optional config:
 * **optional config**：可选配置，包含：
   - `deploymentMode`：部署模式
   - `password`：数据库密码
+  - `timezone`：时区配置，默认为 0 时区，若设置为其他时区，会影响不带时区信息的字段（如 `datetime`）的数据同步；带时区的字段（如 `timestamp`、`date` 和 `time` ）则不受影响
   - `masterSlaveAddress`：主从地址
 
 ## 配置示例
@@ -57,8 +66,18 @@ mysql_json_config = {
     'password': 'your_passwd'     # 数据库密码
 }
 
-# 创建数据源连接对象 mysql_conn，引用 mysql_json_config 配置并将其作为源库保存
-mysql_conn = DataSource('mysql', 'MySQL_ECommerce', mysql_json_config).type('source').save()
+# 初始化 MySQL 数据源对象，使用给定的配置
+mysql_conn = DataSource('mysql', 'MySQL_ECommerce', mysql_json_config)
+
+# 设置数据源的类型为 'source'（数据源）
+mysql_conn.type('source')
+
+# 保存 MySQL 数据源配置到 TapFlow 平台
+mysql_conn.save()
+
+# （可选）删除数据源配置,可以调用 delete() 方法
+# mysql_conn.delete()
+
 ```
 
 ## 输出示例
@@ -74,8 +93,6 @@ load schema status: finished
 若出现 `load schema status: error` 错误，通常是权限或配置问题，可再次使用相同名称重试，系统会提示 `database MongoDB_ECommerce exists, will update its config` 并覆盖原配置。 
 
 :::
-
-
 
 ## 扩展阅读
 

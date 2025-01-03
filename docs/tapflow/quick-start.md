@@ -29,7 +29,7 @@ import TabItem from '@theme/TabItem';
    pip install tapflow
    ```
 
-   至此已完成安装，退出命令行后再次使用 Tap Shell 前，需要先激活虚拟环境。
+   至此已完成安装，退出命令行后再次使用 Tap Shell 前，需要先激活虚拟环境。除本方法外，您也可以使用 [pipx](https://github.com/pypa/pipx) 安装 TapFlow，只需运行 `pipx install tapflow`，pipx 会自动创建并管理虚拟环境。
 
 5. 输入 `tap` 启动 Tap Shell 。
 
@@ -88,6 +88,12 @@ Mon Oct 21 15:53:50 CST 2024 Welcome to TapData Live Data Platform, Enjoy Your D
 TapData Cloud Service Running Agent: 1
 Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 ```
+
+:::tip
+
+默认情况下，TapFlow 会在 `~/.tapflow/config.ini` 生成配置文件，您可以通过编辑该文件来调整认证信息，或使用 `tap -c <filename>` 指定自定义的配置文件路径。
+
+:::
 
 ## 步骤二：创建数据流
 

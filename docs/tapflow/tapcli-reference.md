@@ -11,7 +11,7 @@ TapFlow 提供了丰富的命令来管理数据源和数据流任务，本文将
 **使用示例**：
 
 ```python
-tap > show dbs
+tap> show dbs
 id         status     database_type        name                                      
 4fa6c6     ready      MongoDB              MongoDB_ECommerce                       
 4fa6c1     ready      Mysql                MySQL_ECommerce  
@@ -24,7 +24,7 @@ id         status     database_type        name
 **使用示例**：
 
 ```python
-tap > use MySQL_ECommerce
+tap> use MySQL_ECommerce
 datasource switch to: MySQL_ECommerce
 ```
 
@@ -35,7 +35,7 @@ datasource switch to: MySQL_ECommerce
 **使用示例**：
 
 ```python
-tap > show tables
+tap> show tables
 ecom_customers        ecom_order_items      ecom_order_payments   ecom_orders           ecom_product_category 
 ecom_products         ecom_sellers   
 ```
@@ -47,7 +47,7 @@ ecom_products         ecom_sellers
 **使用示例**：
 
 ```python
-desc ecom_customers
+tap> desc ecom_customers
 {
   "customer_id": "varchar(255)",
   "customer_unique_id": "varchar(255)",
@@ -57,6 +57,20 @@ desc ecom_customers
 }
 ```
 
+### peek <table_name>
+
+**命令说明**：执行选择数据源命令后，可通过本命令查看指定表开头的若干条记录和总行数信息，默认展示 5 条记录，您也可以通过 `-n` 指定要展示的记录数。
+
+**使用示例**：
+
+```python
+tap> peek ecom_customers -n 1
+table ecom_customers has 99002 records                                                                                                         
+{'customer_unique_id': '248ffe10d632bebe4f7267f1f44844c9', 'customer_state': 'SP', 'customer_id': '00012a2ce6f8dcda20d059ce98491703', 'customer_zip_code_prefix': '06273', 'customer_city': 'CITY_osasco'}
+```
+
+
+
 ### count  <table_name>
 
 **命令说明**：执行选择数据源命令后，可通过本命令查看指定表的行数统计信息。
@@ -64,7 +78,7 @@ desc ecom_customers
 **使用示例**：
 
 ```python
-count ecom_customers
+tap> count ecom_customers
 table ecom_customers has 99002 records  
 ```
 
@@ -78,7 +92,7 @@ table ecom_customers has 99002 records
 **使用示例**：
 
 ```python
-tap > show flows
+tap> show flows
 d7c298: Oracle_Sync_Test       complete     sync/initial_sync+cdc
 ```
 
@@ -91,20 +105,20 @@ d7c298: Oracle_Sync_Test       complete     sync/initial_sync+cdc
 **使用示例**：
 
 ```python
-status MySQL_A_to_B
+tap> status MySQL_A_to_B
 job current status is: running, qps is: 31808.0, total rows: 1300000, delay is: 706ms
 ```
 
 
 
-### start <flow name/id>
+### <span id="start">start</span> <flow name/id>
 
 **命令说明**：启动指定的数据流任务，默认情况下首次启动会执行全量数据同步，完成后自动进入增量数据同步阶段。如果实时同步任务配置为仅全量则完成全量，则仅执行一次全量数据同步；如果配置为仅增量默认，则从指定的起始点或当前时间点开始同步增量数据。
 
 **使用示例**：
 
 ```python
-tap > start MySQL_A_to_B
+tap> start MySQL_A_to_B
 Task start succeed 
 ```
 
@@ -117,7 +131,7 @@ Task start succeed
 **使用示例**：
 
 ```python
-tap > stop MySQL_A_to_B
+tap> stop MySQL_A_to_B
 Task stop succeed 
 ```
 
@@ -128,7 +142,7 @@ Task stop succeed
 **命令说明**：显示指定数据流任务的日志信息。
 
 ```python
-tap > logs Oracle_Sync_Test
+tap> logs Oracle_Sync_Test
 {'id': '671f9c54cc9caf4b1cb1942b', 'customId': '638af042703dd67b8fb63af8', 'level': 'INFO', 'timestamp': 1730124884471, 'date': '2024-10-28T14:14:43.568+00:00', 'taskId': '668f197a37800f4b2a167806', 'taskRecordId': '671f9bee548ec6691e89681c', 'taskName': 'MySQL_A_to_B', 'nodeId': '4eb098ee-19f8-4e63-a7bf-9d7e726c62ea', 'nodeName': 'Region_A', 'message': 'Node Region_A[4eb098ee-19f8-4e63-a7bf-9d7e726c62ea] start preload schema,table counts: 1', 'logTags': [], 'data': [], 'user_id': '638af042c162f518b1b9bdf4'}
 ```
 
@@ -141,7 +155,7 @@ tap > logs Oracle_Sync_Test
 **使用示例**：
 
 ```python
-tap > reset MySQL_B_to_A
+tap> reset MySQL_B_to_A
 Task reset success 
 ```
 
@@ -160,7 +174,7 @@ Task reset success
 **使用示例**：
 
 ```python
-tap > delete MySQL_to_MongoDB_Order
+tap> delete MySQL_to_MongoDB_Order
 Are you sure you want to delete flow MySQL_to_MongoDB_Order (y/[n]): y
 Task deleted successfully            
 ```

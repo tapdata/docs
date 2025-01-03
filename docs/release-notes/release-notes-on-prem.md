@@ -4,7 +4,26 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
-本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)。
+本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)
+
+## 3.20.0
+
+### 新增功能
+
+- 支持设置同一账户仅允许[单次会话登录](../user-guide/other-settings/system-settings.md#login)，提升登录安全性
+
+### 功能优化
+
+- 操作日志新增记录用户创建和权限管理操作的能力
+- 优化对接 Active Directory (AD) 域场景下的登录失败提示信息，帮助用户快速排查问题
+- 任务监控页面新增日志文件下载功能，便于定位和排查故障
+- 引擎启动优化，无需 MongoDB 配置即可完成启动
+- 错误码覆盖范围进一步扩展，完善相关解决方案提示信息
+
+### 问题修复
+
+- 修复用户访问码刷新后未生效的问题
+- 修复任务仅同步主键表且通过正则匹配同步时，新增无主键表后任务日志持续记录“发现新表”的问题
 
 ## 3.19.0
 

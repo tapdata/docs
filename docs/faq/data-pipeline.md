@@ -252,6 +252,37 @@ TapData Cloud 会做 upsert 操作，如果目标已有数据，会识别出来�
 
 
 
+## MongoDB 分片集群间同步发生报错？
+
+在 MongoDB 分片集群之间创建同步任务时，选择更新条件字段为 `_id`。任务运行时发生以下报错：
+
+> **“An upsert on a sharded collection must contain the shard key and have the simple collation.”**
+
+**问题分析**
+
+在分片集群中，分片键用于确定文档的存储位置。当执行 `upsert` 操作时，如果查询条件未匹配到文档，操作会转为 `insert`。此时：
+
+1. 插入的数据必须包含分片键，否则 MongoDB 无法确定数据应该路由到哪个分片。
+2. 如果同步任务仅使用 `_id` 作为更新条件，而目标集合的分片键不是 `_id`，则会导致路由失败，从而触发报错。
+
+**解决方法**
+
+1. 在目标 MongoDB 集群中，手动创建目标集合并正确配置分片键。例如：
+
+   ```javascript
+   use my_database;
+   db.createCollection("my_collection");
+   sh.shardCollection("my_database.my_collection", { claim_id: 1 });
+   ```
+
+2. 调整 Tapdata 同步任务配置，将目标节点的**更新条件字段**选择 **分片键** 与 `_id`。
+
+   ![更新条件设置](../images/mongodb_update_condition_fields.png)
+
+3. 启动数据同步任务。
+
+   
+
 ## 数据转换任务
 
 ### 单个数据转换任务可以将数据写入多个目标表吗？

@@ -346,12 +346,6 @@ db.ClusterState.find();
 
 ## 如何确认告警邮件是否发送成功
 
-TapData 支持通过 SMTP 协议来[发送告警邮件](../case-practices/best-practice/alert-via-qqmail.md)，帮助用户及时感知运行异常，保障任务运行的稳定性和可靠性。
-
-实际运行过程中，接受端用户像管理员反馈未收到相关告警邮件，此时，我们可以登录 TapData 所依赖的 MongoDB 数据库，进入 `tapdata` 数据库并执行 ` db.Events.find().sort({_id:-1}) ` 来查看邮件发送的执行情况，例如关键词包含 `successful` 表示发送成功；关键词 `failed` 表示发送失败，此时可通过查看 `fail_message` 字段的值来分析失败原因。
-
-## 如何确认告警邮件是否发送成功
-
 TapData 支持通过 SMTP 协议[发送告警邮件](../case-practices/best-practice/alert-via-qqmail.md)，帮助用户及时了解运行异常，保障任务的稳定运行。
 
 在实际使用中，如果接收端用户反馈未收到告警邮件，作为管理员可以通过以下步骤排查邮件发送情况：

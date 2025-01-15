@@ -14,8 +14,27 @@ import TabItem from '@theme/TabItem';
 
 ```mdx-code-block
 <Tabs className="unique-tabs">
-  <TabItem value="2024 年" default>
+  <TabItem value="2025 年" default>
 ```
+
+### 2025-01-15
+
+#### 新增功能
+
+- [Sybase](../prerequisites/on-prem-databases/sybase.md) 同步 PostgreSQL 场景支持增强，新增**索引迁移**和**序列同步**功能，进一步提升迁移自动化能力，并确保序列数据的一致性
+
+#### 功能优化
+
+- 优化 Oracle 测试连接功能，增加用户名与 Schema 大小写不一致时的提示信息，提升用户体验
+
+#### 问题修复
+
+- 修复管理员用户启动的共享挖掘任务无法被其他用户正常使用的问题
+
+</TabItem>
+
+<TabItem value="2024 年">
+
 
 ### 2024-12-30
 

@@ -6,6 +6,12 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.21.0
+
+### 问题修复
+
+- 修复管理员用户配置的 Webhook 告警无法获取到所有告警数据的问题
+
 ## 3.20.0
 
 ### 功能优化

@@ -6,6 +6,21 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)
 
+## 3.21.0
+
+### 新增功能
+
+- [Sybase](../prerequisites/on-prem-databases/sybase.md) 同步 PostgreSQL 场景支持增强，新增**索引迁移**和**序列同步**功能，进一步提升迁移自动化能力，并确保序列数据的一致性
+
+### 功能优化
+
+- 优化 Oracle 测试连接功能，增加用户名与 Schema 大小写不一致时的提示信息，提升用户体验
+
+### 问题修复
+
+- 修复管理员用户配置的 Webhook 告警无法获取到所有告警数据的问题
+- 修复管理员用户启动的共享挖掘任务无法被其他用户正常使用的问题
+
 ## 3.20.0
 
 ### 新增功能

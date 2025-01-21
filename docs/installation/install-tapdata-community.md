@@ -93,13 +93,15 @@ TapData 社区版包括以下主要组件：
 
    以 3.5.6 版本为例，即为`tar -zxvf tapdata-v3.5.16-663b7b11.tar.gz && cd tapdata`
 
-3. 执行下述格式的命令，指定 MongoDB [URI 连接串信息](https://www.mongodb.com/docs/v5.0/reference/connection-string/#standard-connection-string-format)，TapData 将用其存储 TapData 元数据、任务配置等信息。
+3. [安装 MongoDB](../administration/production-deploy/install-replica-mongodb.md)（4.0 及以上版本），TapData 会将其起作为中间库存储任务和元数据信息。
+
+3. 执行下述格式的命令，指定刚刚部署的 MongoDB 的 [URI 连接串信息](https://www.mongodb.com/docs/v5.0/reference/connection-string/#standard-connection-string-format)。
 
    ```bash
    export MONGO_URI=mongodb://{admin}:{password}@{host}:{port}/{database_name}?replicaSet={replica_name}&authSource=admin
    ```
 
-   示例：`export mongodb://root:Tap123456@192.168.1.18:29917/tapdata_community?replicaSet=rs1&authSource=admin`
+   示例：`export mongodb://root:Tap123456@192.168.1.18:20017/tapdata_community?replicaSet=rs1&authSource=admin`
 
 4. 执行 `./start.sh`启动 TapData 服务，完成启动后关键日志提示如下：
 

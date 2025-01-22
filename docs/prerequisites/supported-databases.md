@@ -276,15 +276,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>10.x</td>
   </tr>
   <tr>
-    <td>MongoDB Below 3.4</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>3.4 以下版本</td>
-  </tr>
-  <tr>
     <td>Redis</td>
     <td>➖</td>
     <td>➖</td>
@@ -292,15 +283,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>➖</td>
     <td>2.8 ~ 6.0</td>
-  </tr>
-  <tr>
-    <td>Sybase</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>ASE 16.0</td>
   </tr>
   <tr>
     <td>TDengine</td>

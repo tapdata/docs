@@ -6,6 +6,16 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.22.0
+
+### 功能优化
+
+- 优化软件版本信息的获取方式，避免页面缓存导致版本信息显示与实际不一致
+
+### 问题修复
+
+- 修复心跳任务启动异常导致数据同步任务无法正常启动的问题
+
 ## 3.21.0
 
 ### 问题修复

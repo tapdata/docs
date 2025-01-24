@@ -4,7 +4,18 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
-本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)
+本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)。
+
+## 3.22.0
+
+### 功能优化
+
+- 优化软件版本信息的获取方式，避免页面缓存导致版本信息显示与实际不一致
+
+### 问题修复
+
+- 修复心跳任务启动异常导致数据同步任务无法正常启动的问题
+- 修复作为系统依赖的 MongoDB 数据库开启了 SSL 场景下，导致 API 服务无法正常工作的问题
 
 ## 3.21.0
 

@@ -28,6 +28,7 @@ TapData supports two types of synchronization: **full synchronization** and **in
   - PostgreSQL ↔ PostgreSQL
   - MongoDB ↔ MongoDB
   - PostgreSQL ↔ MySQL
+  - SQL Server ↔ SQL Server
 
 ## GA Data Sources
 

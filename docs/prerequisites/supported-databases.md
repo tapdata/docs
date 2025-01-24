@@ -31,6 +31,7 @@ TapData 支持全量和增量两种同步方式，涵盖单向同步和双向同
   - PostgreSQL ↔ PostgreSQL
   - MongoDB ↔ MongoDB
   - PostgreSQL ↔ MySQL
+  - SQL Server ↔ SQL Server
 
 ### 认证数据源
 

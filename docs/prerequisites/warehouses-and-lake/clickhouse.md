@@ -127,11 +127,12 @@ GRANT SELECT, INSERT, CREATE TABLE, ALTER TABLE, ALTER UPDATE, DROP TABLE, TRUNC
 
 ## 节点高级特性
 
-在配置数据同步/转换任务时，将 ClickHouse 作为目标节点时，可在节点的高级配置中，设定合并分区间隔以调整 [Optimize Table](https://clickhouse.com/docs/en/sql-reference/statements/optimize) 频率，从而实现性能与数据一致性间的平衡。
+在配置数据同步/转换任务时，将 ClickHouse 作为目标节点时，为更好满足业务复杂需求，最大化发挥性能，TapData 为其内置更多高级特性能力，您可以基于业务需求配置：
 
 ![ClickHouse 节点高级特性](../../images/clickhouse_node_advanced_settings.png)
 
-
+- **设定合并分区间隔**：调整 [Optimize Table](https://clickhouse.com/docs/en/sql-reference/statements/optimize) 频率，单位为分钟，实现性能与数据一致性间的平衡。
+- **混合快速写入**：默认关闭状态，启用后，TapData 会在目标表中新增 2 个字段用来记录 **修改时间** 和 **待删除标识**，对于待删除标识为 **1** 的记录将根据其修改时间和 TTL 索引自动清除，从而通过插入同主键记录实现更新和删除操作，大幅提升关系型数据源的写入性能。
 
 ## 性能测试
 

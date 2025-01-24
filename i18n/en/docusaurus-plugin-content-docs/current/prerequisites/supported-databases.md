@@ -18,6 +18,17 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
+### Synchronization Types
+
+TapData supports two types of synchronization: **full synchronization** and **incremental synchronization**, covering both one-way and two-way synchronization scenarios. It is compatible with a variety of data sources, as described below:
+
+- **One-Way Synchronization**: Data is synchronized from the source to the target data source. For detailed support information on incremental synchronization, refer to the data source support table in this document.
+- **Two-Way Synchronization**: Enables real-time bidirectional data flow between source and target data sources, ensuring data consistency on both ends. Currently, the following data sources support **Two-Way Synchronization**, applicable to both full and incremental synchronization scenarios:
+  - MySQL ↔ MySQL
+  - PostgreSQL ↔ PostgreSQL
+  - MongoDB ↔ MongoDB
+  - PostgreSQL ↔ MySQL
+
 ## GA Data Sources
 
 <table>

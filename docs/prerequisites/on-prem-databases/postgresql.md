@@ -42,7 +42,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip
 
-作为同步目标时，您可以通过任务节点的高级配置选择写入策略，如插入冲突时更新或丢弃，更新失败时插入或仅打印日志。此外，还可应用和执行源库解析的 ADD COLUMN、CHANGE COLUMN、DROP COLUMN 和 RENAME COLUMN 操作。
+作为同步目标时，您可以通过任务节点的高级配置选择写入策略，如插入冲突时更新或丢弃，更新失败时插入、启用文件写入方式等。此外，还可应用和执行源库解析的 ADD COLUMN、CHANGE COLUMN、DROP COLUMN 和 RENAME COLUMN 操作。
 
 :::
 
@@ -460,6 +460,7 @@ import TabItem from '@theme/TabItem';
   * **分区表 CDC 根表**：仅在 PostgreSQL 13 及以上版本，并选择 pgoutput 日志插件时支持配置。开启时，仅感知根表的 CDC 事件；关闭时，仅感知子表的 CDC 事件。
 * 作为目标节点
   * **忽略 NotNull**：默认关闭，即在目标库建表时忽略 NOT NULL 的限制。
+  * **启用文件输入**：默认关闭。启用后，TapData 基于 **[COPY](https://www.postgresql.org/docs/current/sql-copy.html)** 方法以文件形式高效批量写入数据，避免约束冲突导致的性能下降，显著提升大数据量同步效率。注意此场景下不支持二进制数据类型（bytea）。
 
 ## 常见问题
 

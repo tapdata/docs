@@ -7,33 +7,58 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-## 步骤一：安装 TapFlow 
+## 步骤一：初始化 TapFlow 
 
-1. [下载并安装 Python 3](https://www.python.org/downloads/)，版本为 Python 3.6 及以上。
+1. 下载并启动 Tap Shell。
 
-2. 执行下述命令创建虚拟环境，以便隔离依赖包，避免与系统 Python 环境冲突。
+   <Tabs className="unique-tabs">
+   <TabItem value="源码安装">
 
-   ```bash
-   python3 -m venv tapflow_env
-   ```
+   1. [下载并安装 Python 3](https://www.python.org/downloads/)，版本为 Python 3.6 及以上。
 
-3. 执行下述命令激活虚拟环境，安装 TapFlow 及其所需的依赖包。
+   2. 执行下述命令创建虚拟环境，以便隔离依赖包，避免与系统 Python 环境冲突。
 
-   ```bash
-   # 激活虚拟环境
-   source tapflow_env/bin/activate
+      ```bash
+      python3 -m venv tapflow_env
+      ```
+   3. 执行下述命令激活虚拟环境，安装 TapFlow 及其所需的依赖包。
+
+      ```bash
+      # 激活虚拟环境
+      source tapflow_env/bin/activate
    
-   # 安装 Tap Shell
-   pip3 install tapflow
-   # 或者
-   pip install tapflow
-   ```
+      # 安装 Tap Shell
+      pip3 install tapflow
+      # 或者
+      pip install tapflow
+      ```
 
-   至此已完成安装，退出命令行后再次使用 Tap Shell 前，需要先激活虚拟环境。除本方法外，您也可以使用 [pipx](https://github.com/pypa/pipx) 安装 TapFlow，只需运行 `pipx install tapflow`，pipx 会自动创建并管理虚拟环境。
+      至此已完成安装，退出命令行后再次使用 Tap Shell 前，需要先激活虚拟环境。除本方法外，您也可以使用 [pipx](https://github.com/pypa/pipx) 安装 TapFlow，只需运行 `pipx install tapflow`，pipx 会自动创建并管理虚拟环境。
 
-5. 输入 `tap` 启动 Tap Shell 。
+   4. 输入 `tap` 启动 Tap Shell 。
+   
+   </TabItem>
+   <TabItem value="二进制安装">
 
-6. 基于 TapData [部署方式](../quick-start/install.md)选择要连接产品系列，然后设置连接所需的认证信息，本案例以连接至 TapData Cloud 平台为例：
+   1. 根据您的操作系统选择对应的二进制包下载。
+       * [Ubuntu 20.04 +]( https://resource.tapdata.net/package/lite/tap-cli-linux-x86_64-ubuntu2004)
+       * [Windows](https://resource.tapdata.net/package/lite/tap-cli-win32-x86_64.exe)
+
+   2. 启动 Tap Shell。
+   
+      * Ubuntu 22.04 +：赋予执行权限并启动 TapShell
+   
+        ```bash
+        chmod +x tap-cli-linux-x86_64-ubuntu2004
+        ./tap-cli-linux-x86_64-ubuntu2004
+        ```
+   
+      * Windows：双击 `tap-cli-win32-x86_64.exe` 启动 TapShell。
+
+   </TabItem>
+   </Tabs>
+
+2. 基于 TapData [部署方式](../quick-start/install.md)选择要连接产品系列，然后设置连接所需的认证信息，本案例以连接至 TapData Cloud 平台为例：
 
    ```bash
    Tap Flow requires TapData Live Data Platform(LDP) cluster to run. 

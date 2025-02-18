@@ -186,5 +186,9 @@
   "sidebar.TapData.category.其他": {
     "message": "Others",
     "description": "The label for category 其他 in sidebar TapData"
+  },
+  "sidebar.TapData.category.附录": {
+    "message": "Reference",
+    "description": "The label for category 附录 in sidebar TapData"
   }
 }

@@ -190,5 +190,13 @@
   "sidebar.TapData.category.附录": {
     "message": "Reference",
     "description": "The label for category 附录 in sidebar TapData"
+  },
+  "sidebar.TapData.category.标准 JS 内置函数": {
+    "message": "Standard JS Built-in Function",
+    "description": "The label for category 标准 JS 内置函数 in sidebar TapData"
+  },
+  "sidebar.TapData.category.增强 JS 内置函数（Beta）": {
+    "message": "Enhanced JS Built-in Function",
+    "description": "The label for category 增强 JS 内置函数（Beta） in sidebar TapData"
   }
 }

@@ -1,61 +1,43 @@
-# 标准 JS 内置函数
+# Standard JS Built-in Function
+
 import Content from '../reuse-content/_all-features.md';
 
 <Content />
 
-标准 JS 节点只能对数据记录进行处理和运算，如需使用所有的系统内置函数，实现外部调用（如网络、数据库等），可使用[增强 JS 节点](enhanced-js.md)。
+Standard JS nodes can only process and operate on data records. If you require the usage of system built-in functions for external calls, such as networking or database operations, you can utilize [enhanced JS nodes](enhanced-js.md).
 
-使用方法及场景介绍，见 [JS 处理节点](../user-guide/data-pipeline/data-development/process-node#js-process)。
-
-## context
-
-### global
-
-说明：节点维度下的一个任务周期内的 hashMap 容器，可在 js 节点上自定义响应的内容。
-
-示例：
-
-```js
-let myVariable = context.global["myVariable"];
-if ("undifine" == myVariable || null == myVariable){
-  myVariable = context.global["myVariable"] = {
-      "key":1,
-      "status":false
-   }
-}
-myVariable.key++;
-```
+For information on how to use and scenarios, see [JS processing node](../user-guide/data-pipeline/data-development/process-node.md#js-process).
 
 ## DateUtil
 
 ### parse
 
-说明：将各种格式的日期字符串转换为 Date 类型。
+Description: Converts date strings in various formats to Date.
 
-示例：
+Example:
 
-* 一般用法：
+* General Usage
 
-  ```javascript
-  var dte = DateUtil.parse('2010-01-01 00:00:00'); 
-  ```
+   ```javascript
+   var dte = DateUtil.parse('2010-01-01 00:00:00');
+   ```
 
-* 高级用法：`parse(dateString, timeoffset)`，即在转换的同时指定时区偏移量。
+* Advanced usage: `parse(dateString, timeoffset)`, that is, specify the time zone offset while converting.
 
-  ```javascript
-  // 东8区
-  var dte = DateUtil.parse('2010-01-01 00:00:00', 8);
-  
-  // 0时区
-  var dte = DateUtil.parse('2010-01-01 00:00:00', 0);
-  ```
+   ```javascript
+   // UTC+08:00
+   var dte = DateUtil.parse('2010-01-01 00:00:00', 8);
+   
+   // UTC+0
+   var dte = DateUtil.parse('2010-01-01 00:00:00', 0);
+   ```
 
 
 ### determineDateFormat
 
-说明：获取日期格式。
+Description: Get the date format.
 
-示例：
+Example:
 
 ```javascript
 var format = DateUtil.determineDateFormat('2010-01-01 00:00:00');
@@ -63,9 +45,9 @@ var format = DateUtil.determineDateFormat('2010-01-01 00:00:00');
 
 ### timeStamp2Date
 
-说明：将时间戳按照指定格式转为日期字符串。
+Description: Converts the timestamp to a date string in the specified format.
 
-示例：
+Example:
 
 ```javascript
 var dteStr = DateUtil.timeStamp2Date(1592233019140, 'yyyy-MM-dd HH:mm:ss');
@@ -73,9 +55,9 @@ var dteStr = DateUtil.timeStamp2Date(1592233019140, 'yyyy-MM-dd HH:mm:ss');
 
 ### addYears/addMonths/addDays/addHours/addMinutes/addSeconds
 
-说明：对日期的年/月/日/时/分/秒进行加减运算。
+Description: Adds or subtracts the year/month/day/hour/minute/second of the date.
 
-示例：
+Example:
 
 ```javascript
 var dte = DateUtil.addYears(new Date(), 1);
@@ -84,9 +66,9 @@ dte = DateUtil.addYears(dte, -1);
 
 ### sameYear/sameMonth/sameDay/sameHour/sameMinute/sameSecond
 
-说明：对日期的年/月/日/时/分/秒进行比较运算。
+Description: Compares the year/month/day/hour/minute/second of the date.
 
-示例：
+Example:
 
 ```javascript
 if ( DataUtil.sameYear(new Date(), new Date()) ) {
@@ -98,36 +80,36 @@ if ( DataUtil.sameYear(new Date(), new Date()) ) {
 
 ### uuid
 
-说明：生成 uuid，如采用 `var str = uuid();`，即可获取随机字符串。
+Description: Generate uuid, if you use `var str = uuid();`, you can get a random string.
 
-示例：
+Example:
 
 ```javascript
-// 下述两种方法均可
+// Both methods below are available
 var uuid = idGen.uuid();
 var uuid = UUIDGenerator.uuid();
 ```
 
 ### objectId
 
-说明：生成 MongoDB ObjectId。
+Description: Generate MongoDB ObjectId.
 
-示例：
+Example:
 
 ```javascript
-// 下述两种方法均可
+// Both methods below are available
 var oid = idGen.objectId();
 var oid = UUIDGenerator.objectId();
 ```
 
 ### objectIdStr
 
-说明：生成 MongoDB ObjectId 字符串部分。
+Description: Generate MongoDB ObjectId String section.
 
-示例：
+Example:
 
 ```javascript
-// 下述两种方法均可
+// Both methods below are available
 var oidStr = idGen.objectIdStr();
 var oidStr = UUIDGenerator.objectIdStr();
 ```
@@ -138,42 +120,27 @@ var oidStr = UUIDGenerator.objectIdStr();
 
 ### put/remove
 
-说明：哈希字典。
+Description: Hash dictionary.
 
-示例：
+Example:
 
 ```javascript
 var map = new HashMap();
-map.put("name", "test");
-map.remove("name");
-```
-
-## LinkedHashMap
-
-说明：JAVA 内置有序 map 容器
-
-示例：
-
-```js
-var map = new LinkedHashMap();//创建
-map.put("key", "This is a LinkedHashMap")://向容器中加入key-value键值对
-let value = map.get("key");//根据key获取value
-let isEmpty = map.isEmpty();//判断容器是否为空
-let size = map.size();//获取容器中键值对的数目
-map.remove("key");//移出容器中指定键的键值对
+map.put(“name”, “test”);
+map.remove(“name”);
 ```
 
 ## ArrayList
 
 ### add/remove
 
-说明：数组类型。
+Description: Array type.
 
-示例：
+Example:
 
 ```javascript
 var list = new ArrayList();
-list.add("test1");
+list.add(“test1”);
 list.remove(0);
 ```
 
@@ -181,9 +148,9 @@ list.remove(0);
 
 ### add/remove
 
-说明：日期类型。
+Description: Date type.
 
-示例：
+Example:
 
 ```javascript
 var dte = new Date();
@@ -194,9 +161,9 @@ var year = dte.getYear()+1900;
 
 ### json2List/obj2Json/obj2JsonPretty/json2Map
 
-说明：JSON 格式转换。
+Description: JSON format conversion.
 
-示例：
+Example:
 
 ```javascript
 var d = new Date();
@@ -207,79 +174,79 @@ var json = JSONUtil.obj2Json(d)
 
 ### hanLPParticiple
 
-说明：汉语分词工具，括号中需要设置两个参数，格式为`(String inputString, String language)`。
+Description: Chinese word segmentation tool, two parameters need to be set in parentheses, the format is `(String inputString, String language)`.
 
-示例：
+Example:
 
 ```javascript
 var d = HanLPUtil.hanLPParticiple('你好', 'HK_T')
 ```
 
-参数说明：
+Parameter Description
 
-- **inputString**：需要进行分词的字符串。
+- **inputString**: A string that requires word segmentation.
 
-- **language**：带分词的语言类型，支持： 
-  - CH_S：简体中文。
+- **language**: the type of the language with the word segmentation, support:
+   - CH_S: Simplified Chinese.
 
-  - CH_T：繁体中文。
+   - CH_T: Traditional Chinese.
 
-  - HK_T：香港繁体。 
+   - HK_T: Traditional Chinese (Hong Kong).
 
-  - TW_T：台湾繁体。
+   - TW_T: Traditional Chinese (Taiwan).
 
-返回值：数组类型，即分词后的结果集。
+Returns: Array type, that is, the result set after word segmentation.
 
 ## split_chinese
 
-说明：汉语分词工具，括号中需要设置两个参数，格式为`(String inputString, String language)`。
+Description: Chinese word segmentation tool, two parameters need to be set in parentheses, the format is `(String inputString, String language)`.
 
-示例：
+Example:
 
 ```javascript
 var strs = split_chinese("这是一个中文句子", "CH_S");
 ```
 
-参数说明：
+Parameter Description
 
-- **inputString**：需要进行分词的字符串。
+- **inputString**: A string that requires word segmentation.
 
-- **language**：带分词的语言类型，支持： 
-  - CH_S：简体中文。
+- **language**: the type of the language with the word segmentation, support:
+   - CH_S: Simplified Chinese.
 
-  - CH_T：繁体中文。
+   - CH_T: Traditional Chinese.
 
-  - HK_T：香港繁体。 
+   - HK_T: Traditional Chinese (Hong Kong).
 
-  - TW_T：台湾繁体。
+   - TW_T: Traditional Chinese (Taiwan).
 
-返回值：数组类型，即分词后的结果集。
+Returns: Array type, that is, the result set after word segmentation.
 
 ## util
 
 ### strToBase64/base64ToStr/unwind
 
-说明：字符串格式转换。
+Description: String format conversion.
 
-示例：
+Example:
 
 ```javascript
-// 将字符串装换为 Base64 格式
+// Convert the string to Base64 format
 var b = util.strToBase64('aa');
-// 将 JSON 数组按照层级拆分
+// Split JSON arrays into hierarchy levels
 var list = util.unwind(map, 'a.b.c');
 ```
 
 ## MD5Util/MD5
 
-说明：MD5 加密工具。
+Description: MD5 encryption tool.
 
-示例：
+Example:
 
 ```javascript
-// 获取字符串的 MD5 签名，第二个参数为是否转换大写
+// Get the MD5 signature of a string, the second parameter indicates whether to convert it to uppercase
 var b = MD5Util.crypt('aa', true);
-// 或者采用下述方法
+// Or
 var b = MD5('aa', true);
 ```
 
@@ -287,14 +254,14 @@ var b = MD5('aa', true);
 
 ### sort/get/emptySet/emptyList
 
-说明：集合工具类，如排序、获取集合等。
+Description: Collection tool classes, such as sorting, getting collections, etc.
 
-示例：
+Example:
 
 ```javascript
-// 为 List 排序
+// Sort the List
 Collections.sort(list);
-// 获取空集合
+// Get an empty collection
 var set = Collections.emptySet();
 ```
 
@@ -302,23 +269,23 @@ var set = Collections.emptySet();
 
 #### getValueByKey/needSplit/removeValueByKey/containsKey/getValuePositionInMap/deepCloneMap/copyToNewMap/putValueInMap/recursiveFlatMap/obj2Map
 
-说明：字典工具类。
+Description: Dictionary tool class.
 
-示例：
+Example:
 
 ```javascript
-// 从给定的map中获取指定层级的值
+// Get the value of a specified level from a given map
 var a = MapUtil.getValueByKey(map, 'a.b.c');
 ```
 
 ## sleep
 
-说明：程序休眠指定时长，单位为毫秒。
+Description: The duration of the program hibernation is specified in milliseconds.
 
-示例：
+Example:
 
 ```javascript
-// 程序休眠 10 毫秒
+// Sleep for 10 milliseconds in the program
 sleep(10);
 ```
 

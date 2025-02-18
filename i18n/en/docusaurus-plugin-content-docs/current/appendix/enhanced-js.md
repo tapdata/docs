@@ -1,15 +1,16 @@
-# 增强 JS 内置函数（Beta）
+# Enhanced JS Built-in Function
+
 import Content from '../reuse-content/_all-features.md';
 
 <Content />
 
-增强 JS 节点（Beta）可使用所有的内置函数，实现外部调用（如网络、数据库等），如仅需对数据记录进行处理和运算，请使用[标准 JS 节点](standard-js.md)。
+Enhanced JS nodes allow you to utilize all built-in functions for external calls, such as networking and database operations. If your requirement is solely to process and operate on data records, it is recommended to use [standard JS nodes](standard-js.md).
 
-使用方法及场景介绍，见 [JS 处理节点](../user-guide/data-pipeline/data-development/process-node#js-process)。
+For detailed instructions on how to use enhanced JS nodes and explore various scenarios, please refer to the documentation and resources available for [JS processing node](../user-guide/data-pipeline/data-development/process-node.md#js-process).
 
 :::tip
 
-本功能仅支持在数据转换任务中使用。
+This feature is only supported for use in data transformation tasks.
 
 :::
 
@@ -17,32 +18,32 @@ import Content from '../reuse-content/_all-features.md';
 
 ### parse
 
-说明：将各种格式的日期字符串转换为 Date 类型。
+Description: Converts date strings in various formats to Date.
 
-示例：
+Example:
 
-* 一般用法：
+* General Usage
 
-  ```javascript
-  var dte = DateUtil.parse('2010-01-01 00:00:00'); 
-  ```
+   ```javascript
+   var dte = DateUtil.parse('2010-01-01 00:00:00');
+   ```
 
-* 高级用法：`parse(dateString, timeoffset)`，即在转换的同时指定时区偏移量。
+* Advanced usage: `parse(dateString, timeoffset)`, that is, specify the time zone offset while converting.
 
-  ```javascript
-  // 东8区
-  var dte = DateUtil.parse('2010-01-01 00:00:00', 8);
-  
-  // 0时区
-  var dte = DateUtil.parse('2010-01-01 00:00:00', 0);
-  ```
+   ```javascript
+   // UTC+08:00
+   var dte = DateUtil.parse('2010-01-01 00:00:00', 8);
+   
+   // UTC+0
+   var dte = DateUtil.parse('2010-01-01 00:00:00', 0);
+   ```
 
 
 ### determineDateFormat
 
-说明：获取日期格式。
+Description: Get the date format.
 
-示例：
+Example:
 
 ```javascript
 var format = DateUtil.determineDateFormat('2010-01-01 00:00:00');
@@ -50,9 +51,9 @@ var format = DateUtil.determineDateFormat('2010-01-01 00:00:00');
 
 ### timeStamp2Date
 
-说明：将时间戳按照指定格式转为日期字符串。
+Description: Converts the timestamp to a date string in the specified format.
 
-示例：
+Example:
 
 ```javascript
 var dteStr = DateUtil.timeStamp2Date(1592233019140, 'yyyy-MM-dd HH:mm:ss');
@@ -60,9 +61,9 @@ var dteStr = DateUtil.timeStamp2Date(1592233019140, 'yyyy-MM-dd HH:mm:ss');
 
 ### addYears/addMonths/addDays/addHours/addMinutes/addSeconds
 
-说明：对日期的年/月/日/时/分/秒进行加减运算。
+Description: Adds or subtracts the year/month/day/hour/minute/second of the date.
 
-示例：
+Example:
 
 ```javascript
 var dte = DateUtil.addYears(new Date(), 1);
@@ -71,9 +72,9 @@ dte = DateUtil.addYears(dte, -1);
 
 ### sameYear/sameMonth/sameDay/sameHour/sameMinute/sameSecond
 
-说明：对日期的年/月/日/时/分/秒进行比较运算。
+Description: Compares the year/month/day/hour/minute/second of the date.
 
-示例：
+Example:
 
 ```javascript
 if ( DataUtil.sameYear(new Date(), new Date()) ) {
@@ -85,36 +86,36 @@ if ( DataUtil.sameYear(new Date(), new Date()) ) {
 
 ### uuid
 
-说明：生成 uuid，如采用 `var str = uuid();`，即可获取随机字符串。
+Description: Generate uuid, if you use `var str = uuid();`, you can get a random string.
 
-示例：
+Example:
 
 ```javascript
-// 下述两种方法均可
+// Both methods below are available
 var uuid = idGen.uuid();
 var uuid = UUIDGenerator.uuid();
 ```
 
 ### objectId
 
-说明：生成 MongoDB ObjectId。
+Description: Generate MongoDB ObjectId.
 
-示例：
+Example:
 
 ```javascript
-// 下述两种方法均可
+// Both methods below are available
 var oid = idGen.objectId();
 var oid = UUIDGenerator.objectId();
 ```
 
 ### objectIdStr
 
-说明：生成 MongoDB ObjectId 字符串部分。
+Description: Generate MongoDB ObjectId String section.
 
-示例：
+Example:
 
 ```javascript
-// 下述两种方法均可
+// Both methods below are available
 var oidStr = idGen.objectIdStr();
 var oidStr = UUIDGenerator.objectIdStr();
 ```
@@ -123,15 +124,15 @@ var oidStr = UUIDGenerator.objectIdStr();
 
 ### GetAddress
 
-说明：网络工具，获取 IP 地址或 MAC 地址。
+Description: Network tool to get the IP address or MAC address.
 
-示例：
+Example:
 
 ```javascript
-// 获取第一张网卡的 MAC 地址
+// Get the MAC address of the first network interface
 var mac = networkUtil.GetAddress("mac");
 
-// 获取 IP 地址 
+// Get IP address
 var ip = networkUtil.GetAddress("ip");
 ```
 
@@ -139,27 +140,27 @@ var ip = networkUtil.GetAddress("ip");
 
 ### put/remove
 
-说明：哈希字典。
+Description: Hash dictionary.
 
-示例：
+Example:
 
 ```javascript
 var map = new HashMap();
-map.put("name", "test");
-map.remove("name");
+map.put(“name”, “test”);
+map.remove(“name”);
 ```
 
 ## ArrayList
 
 ### add/remove
 
-说明：数组类型。
+Note: Array type.
 
-示例：
+Example:
 
 ```javascript
 var list = new ArrayList();
-list.add("test1");
+list.add(“test1”);
 list.remove(0);
 ```
 
@@ -167,9 +168,9 @@ list.remove(0);
 
 ### add/remove
 
-说明：日期类型。
+Description: Date type.
 
-示例：
+Example:
 
 ```javascript
 var dte = new Date();
@@ -180,9 +181,9 @@ var year = dte.getYear()+1900;
 
 ### getScriptExecutor
 
-说明：获取数据源执行器。
+Description: Get the data source executor.
 
-示例：
+Example:
 
 ```javascript
 var source = ScriptExecutorsManager.getScriptExecutor('mysql-connection-name');
@@ -192,105 +193,98 @@ var source = ScriptExecutorsManager.getScriptExecutor('mysql-connection-name');
 
 ### execute
 
-说明：数据库执行操作，返回值为布尔类型，**true** 表示操作成功，**false** 表示操作失败。
+Description: When performing operations on a database, the return value is of Boolean type. **True** indicates a successful operation, while **false** indicates a failed operation.
 
 :::tip
 
-`execute` 前为 `source` 表示对源库执行操作，为 `target` 表示对目标库执行操作。
+Before executing, the **source** component indicates performing operations on the source database, while the **target** component indicates performing operations on the target database.
 
 :::
 
-示例：
+Example:
 
 ```javascript
 var result = target.execute({
-    database: "test",
-    collection: "user",
-    op: "update",
+    database: “test”,
+    collection: “user”,
+    op: “update”,
     filter: {id: 1},
-    opObject: {name: "user001", age: 20},
+    opObject: {name: “user001”, age: 20},
     upsert: true
 });
 ```
 
-参数说明：
+Parameter Description
 
-* 对于结构化数据库（如 MySQL），使用方法可参考：`var result = source.execute({sql: "update test.user set name='user001' where id = 1"});`
+* For structured databases (such as MySQL), you can refer to the method: `var result = source.execute({sql: “update test.user set name='user001' where id = 1”});`
+* For MongoDB, the available parameters are as follows:
 
-* 对于 MongoDB，可用参数如下：
-
-  - **database**：操作的数据库名称。
-
-  - **collection**：操作的集合名称。
-
-  - **op**：要执行的操作（INSERT/UPDATE/DELETE）。
-
-  - **filter**：更新或者删除的条件。
-
-  - **opObject**：新增、更新、删除的具体数据。
-
-  - **upsert**：是否采用 MongoDB 的 UPSERT 模式，即不存在进行新增，存在则更新，默认为 **false**。
-
-  - **multi**：是否更新多条记录，默认为 **false**。
+   - **database**: The name of the database on which the operation is being performed. 
+   - **collection**: The collection name.
+   - **op**: The action to be performed (INSERT/UPDATE/DELETE).
+   - **filter**: The conditions for updating or deleting data.
+   - **opObject**: The specific data for insertion, update, or deletion operations
+   - **upsert**: You can choose whether to use the UPSERT mode of MongoDB, which enables inserting data if it doesn't exist and updating it if it does. The default value is **false**.
+   - **multi**: You can specify whether to update multiple records. By default, it is set to **false**.
 
 ### executeQuery
 
-说明：数据库查询操作，返回值为数组类型，表示查询的结果集。
+Description: When performing database query operations, the return value is an array type that represents the result set of the query.
 
 :::tip
 
-`executeQuery` 前为 `source` 表示对源库执行操作，为 `target` 表示对目标库执行操作。
+Before executing, the **source** component indicates performing operations on the source database, while the **target** component indicates performing operations on the target database.
 
 :::
 
-示例：
+Example:
 
 ```javascript
 var users = target.executeQuery({
-    database: "test",
-    collection: "user",
-    filter: {age: {$gt: 10}},
+    database: “test”,
+    collection: “user”,
+    filter: {age: {$gt: 10}}，
     sort: {age: -1},
     limit: 10
 });
 ```
 
-参数说明：
+Parameter Description
 
-* 对于结构化数据库（如 MySQL），使用方法可参考：`var users = source.executeQuery({sql: "select * from test.user where age>10"});`
-* 对于 MongoDB，可用参数如下：
-  * **database**：操作的数据库名称。
-  * **collection**：操作的集合名称。
-  * **filter**：更新或者删除的条件。
-  * **sort**：排序条件 （可选）。
-  * **limit**：限制输出条数（可选）。
+* For structured databases (such as MySQL), you can refer to the method: `var users = source.executeQuery({sql: “select * from test.user where age>10”});`
+* For MongoDB, the available parameters are as follows:
+   * **database**: The name of the database being operated on.
+   * **collection**: The name of the collection on which the operation is being performed.
+   * **filter**: The conditions for updating or deleting data.
+   * **sort**:  Sorting condition (optional).
+   * **limit**: Limit on the number of output records (optional).
 
 ### call
 
-说明：执行存储过程及函数，仅结构化数据库支持使用，可执行指定的数据库存储过程及自定义函数。返回值为键值对类型，根据存储过程定义返回结果。
+Description: Executing stored procedures and functions is supported only by structured databases. This feature enables the execution of specific database stored procedures and custom functions. The return value is in the form of key-value pairs, based on the defined result of the stored procedure.
 
-示例：
+Example:
 
 ```javascript
 var result = source.call('demo' [{'param1':'aa'}])
 ```
 
-参数说明：
+Parameter Description
 
-* **funcName**：存储过程/函数名称。
-* **params**：传入的参数，支持下述参数。
-  * **mode**：入参类型，取值：**in**（默认值，传入）、**out**（传出）、**in/out**（传入并传出）。
-  * **name**: 参数名称。
-  * **value**: 参数的值。
-  * **type**: 参数类类型。
+* **funcName**: The name of the stored procedure or function.
+* **params**: The supported parameters for input.
+   * **mode**: Parameter types for input, with the following values: **in** (default, for input parameters), **out** (for output parameters), and **in/out** (for parameters that are both input and output).
+   * **name**: Parameter name.
+   * **value**: The value of the parameter.
+   * **type**: Parameter class type.
 
 ## JSONUtil
 
 ### json2List/obj2Json/obj2JsonPretty/json2Map
 
-说明：JSON 格式转换。
+Description: JSON format conversion.
 
-示例：
+Example:
 
 ```javascript
 var d = new Date();
@@ -301,79 +295,79 @@ var json = JSONUtil.obj2Json(d)
 
 ### hanLPParticiple
 
-说明：汉语分词工具，括号中需要设置两个参数，格式为`(String inputString, String language)`。
+Description: Chinese word segmentation tool, two parameters need to be set in parentheses, the format is `(String inputString, String language)`.
 
-示例：
+Example:
 
 ```javascript
 var d = HanLPUtil.hanLPParticiple('你好', 'HK_T')
 ```
 
-参数说明：
+Parameter Description
 
-- **inputString**：需要进行分词的字符串。
+- **inputString**: A string that requires word segmentation.
 
-- **language**：带分词的语言类型，支持： 
-  - CH_S：简体中文。
+- **language**: the type of the language with the word segmentation, support:
+   - CH_S: Simplified Chinese.
 
-  - CH_T：繁体中文。
+   - CH_T: Traditional Chinese.
 
-  - HK_T：香港繁体。 
+   - HK_T: Traditional Chinese (Hong Kong).
 
-  - TW_T：台湾繁体。
+   - TW_T: Traditional Chinese (Taiwan).
 
-返回值：数组类型，即分词后的结果集。
+Returns: Array type, that is, the result set after word segmentation.
 
 ## split_chinese
 
-说明：汉语分词工具，括号中需要设置两个参数，格式为`(String inputString, String language)`。
+Description: Chinese word segmentation tool, two parameters need to be set in parentheses, the format is `(String inputString, String language)`.
 
-示例：
+Example:
 
 ```javascript
 var strs = split_chinese("这是一个中文句子", "CH_S");
 ```
 
-参数说明：
+Parameter Description
 
-- **inputString**：需要进行分词的字符串。
+- **inputString**: A string that requires word segmentation.
 
-- **language**：带分词的语言类型，支持： 
-  - CH_S：简体中文。
+- **language**: the type of the language with the word segmentation, support:
+   - CH_S: Simplified Chinese.
 
-  - CH_T：繁体中文。
+   - CH_T: Traditional Chinese.
 
-  - HK_T：香港繁体。 
+   - HK_T: Traditional Chinese (Hong Kong).
 
-  - TW_T：台湾繁体。
+   - TW_T: Traditional Chinese (Taiwan).
 
-返回值：数组类型，即分词后的结果集。
+Returns: Array type, that is, the result set after word segmentation.
 
 ## util
 
 ### strToBase64/base64ToStr/unwind
 
-说明：字符串格式转换。
+Description: String format conversion.
 
-示例：
+Example:
 
 ```javascript
-// 将字符串装换为 Base64 格式
+// Convert the string to Base64 format
 var b = util.strToBase64('aa');
-// 将 JSON 数组按照层级拆分
+// Split JSON arrays into hierarchy levels
 var list = util.unwind(map, 'a.b.c');
 ```
 
 ## MD5Util/MD5
 
-说明：MD5 加密工具。
+Description: MD5 encryption tool.
 
-示例：
+Example:
 
 ```javascript
-// 获取字符串的 MD5 签名，第二个参数为是否转换大写
+// Get the MD5 signature of a string, the second parameter indicates whether to convert it to uppercase
 var b = MD5Util.crypt('aa', true);
-// 或者采用下述方法
+// Or
 var b = MD5('aa', true);
 ```
 
@@ -381,14 +375,14 @@ var b = MD5('aa', true);
 
 ### sort/get/emptySet/emptyList
 
-说明：集合工具类，如排序、获取集合等。
+Description: Collection tool classes, such as sorting, getting collections, etc.
 
-示例：
+Example:
 
 ```javascript
-// 为 List 排序
+// Sort the List
 Collections.sort(list);
-// 获取空集合
+// Get an empty collection
 var set = Collections.emptySet();
 ```
 
@@ -396,23 +390,23 @@ var set = Collections.emptySet();
 
 ### getValueByKey/needSplit/removeValueByKey/containsKey/getValuePositionInMap/deepCloneMap/copyToNewMap/putValueInMap/recursiveFlatMap/obj2Map
 
-说明：字典工具类。
+Description: Dictionary tool class.
 
-示例：
+Example:
 
 ```javascript
-// 从给定的map中获取指定层级的值
+// Get the value of a specified level from a given map
 var a = MapUtil.getValueByKey(map, 'a.b.c');
 ```
 
 ## sleep
 
-说明：程序休眠指定时长，单位为毫秒。
+Description: The program sleeps for a specified duration, measured in milliseconds.
 
-示例：
+Example:
 
 ```javascript
-// 程序休眠 10 毫秒
+// Sleep for 10 milliseconds in the program
 sleep(10);
 ```
 
@@ -420,7 +414,7 @@ sleep(10);
 
 ### get/post/patch/delete
 
-说明：调用 HTTP 的相关方法（如 Get），格式参考：
+Description: Call HTTP methods (such as Get), format reference:
 
 ```javascript
 rest.get(url, header)
@@ -429,50 +423,50 @@ rest.get(url, header, connectTimeOut, readTimeOut)
 rest.get(url, header, returnType, connectTimeOut, readTimeOut)
 ```
 
-* **returnType**：返回的结果类型，默认为 array。
-* **connectTimeOut**：连接超时时间，单位毫秒，默认为 10000 毫秒，需要指定连接超时时间时可使用该参数。
-* **readTimeOut**：读取超时时间，单位毫秒，默认为 30000 毫秒，需要指定读取超时时间时可使用该参数。
+* **returnType**: The default return result type is an array.
+* **connectTimeOut**: The connection timeout duration in milliseconds. The default value is 10,000 milliseconds (10 seconds).
+* **readTimeOut**: The read timeout duration in milliseconds. The default value is 30,000 milliseconds (30 seconds). 
 
-示例：
+Example:
 
 * Get
 
-  ```javascript
-  var result = rest.get('http://127.0.0.1:1234/users?where[user_id]=1', {status: 0}, {}, 30, 300);rest.get(url)
-  rest.get(url, headers)
-  rest.get(url, connectTimeOut, readTimeOut)
-  rest.get(url, headers, connectTimeOut, readTimeOut)
-  ```
+   ```javascript
+   var result = rest.get('http://127.0.0.1:1234/users?where[user_id]=1', {status: 0}, {}, 30, 300);rest.get(url)
+   rest.get(url, headers)
+   rest.get(url, connectTimeOut, readTimeOut)
+   rest.get(url, headers, connectTimeOut, readTimeOut)
+   ```
 
 * Post
 
-  ```javascript
-  var result = rest.post('http://127.0.0.1:1234/users?id=1', {}, '[array/object/string]', 30, 300);rest.post(url, parameters)
-  rest.post(url, parameters, headers, returnType)
-  rest.post(url, parameters, connectTimeOut, readTimeOut)
-  rest.post(url, parameters, headers, returnType, connectTimeOut, readTimeOut)
-  ```
+   ```javascript
+   var result = rest.post('http://127.0.0.1:1234/users?id=1', {}, '[array/object/string]', 30, 300);rest.post(url, parameters)
+   rest.post(url, parameters, headers, returnType)
+   rest.post(url, parameters, connectTimeOut, readTimeOut)
+   rest.post(url, parameters, headers, returnType, connectTimeOut, readTimeOut)
+   ```
 
 * Patch
 
-  ```javascript
-  var result = rest.patch('http://127.0.0.1:1234/users/find', {}, {}, '[array/object/string]', 30, 300);rest.patch(url, parameters)
-  rest.patch(url, parameters, headers)
-  rest.patch(url, parameters, connectTimeOut, readTimeOut)
-  rest.patch(url, parameters, headers, connectTimeOut, readTimeOut)
-  ```
+   ```javascript
+   var result = rest.patch('http://127.0.0.1:1234/users/find', {}, {}, '[array/object/string]', 30, 300);rest.patch(url, parameters)
+   rest.patch(url, parameters, headers)
+   rest.patch(url, parameters, connectTimeOut, readTimeOut)
+   rest.patch(url, parameters, headers, connectTimeOut, readTimeOut)
+   ```
 
 * Delete
 
-  ```javascript
-  var result = rest.delete('http://127.0.0.1:1234/users?where[user_id]=1', {}, 30, 300);
-  ```
+   ```javascript
+   var result = rest.delete('http://127.0.0.1:1234/users?where[user_id]=1', {}, 30, 300);
+   ```
 
 ## mongo
 
 ### getData/insert/update/delete
 
-说明：对 MongoDB 数据执行增删改查操作，格式参考：
+Description: Add, delete and check data in MongoDB, format reference:
 
 ```javascript
 mongo.getData(uri, collection)
@@ -480,54 +474,29 @@ mongo.getData(uri, collection, filter)
 mongo.getData(uri, collection, filter, limit, sort)
 ```
 
-示例：
+Example:
 
-* 查询数据
+* Query Data
 
-  ```javascript
-  var result = mongo.getData('mongodb://127.0.0.1:27017/test', 'users', {id: 1}, 10, {add_time: -1});mongo.insert(url, collection, inserts)
-  ```
+   ```javascript
+   var result = mongo.getData('mongodb://127.0.0.1:27017/test', 'users', {id: 1}, 10, {add_time: -1});mongo.insert(url, collection, inserts)
+   ```
 
-* 插入数据，支持传入数组或者对象
+* Insert data, supporting input of arrays or objects.
 
-  ```javascript
-  mongo.insert('mongodb://127.0.0.1:27017/test', 'users', [{id: 1, name: 'test1'}, {id: 2, name: 'test2'}]);mongo.update(url, collection, filter, update)
-  ```
+   ```javascript
+   mongo.insert('mongodb://127.0.0.1:27017/test', 'users', [{id: 1, name: 'test1'}, {id: 2, name: 'test2'}]);mongo.update(url, collection, filter, update)
+   ```
 
-* 更新数据
+* Update data
 
-  ```javascript
-  var modifyCount = mongo.update('mongodb://127.0.0.1:27017/test', 'users', {id: 1}, {name: 'test3'});mongo.delete(url, collection, filter)
-  ```
+   ```javascript
+   var modifyCount = mongo.update('mongodb://127.0.0.1:27017/test', 'users', {id: 1}, {name: 'test3'});mongo.delete(url, collection, filter)
+   ```
 
-* 删除数据
+* Delete Data
 
-  ```javascript
-  var deleteCount = mongo.delete('mongodb://127.0.0.1:27017/test', 'users', {id: 1});
-  ```
-
-
-
-### aggregate
-
-说明：内置目标节点数据库聚合操作。
-
-参数说明：
-
-* **database**：操作的数据库名称。
-* **collection**：操作的集合名称。
-* **pipeline**：聚合管道参数。
-
-返回值：数组类型，表示聚合的结果集。
-
-示例：
-
-```javascript
-var aa = ScriptExecutor.getScriptExecutor('mongo-test');
-var users = aa.aggregate({
-    database: "test",
-    collection: "user",
-    pipeline: [{'$match':{'CUSTOMER_ID':'C000026278'}}]
-});
-```
+   ```javascript
+   var deleteCount = mongo.delete('mongodb://127.0.0.1:27017/test', 'users', {id: 1});
+   ```
 

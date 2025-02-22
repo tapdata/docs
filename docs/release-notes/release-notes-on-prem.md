@@ -6,6 +6,22 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)。
 
+## 3.23.0
+
+### 新增功能
+
+- 新增对 [Sybase 同步 PostgreSQL](../prerequisites/on-prem-databases/sybase.md) 的场景支持，现支持同步默认值、枚举类型和序列
+- 支持在配置[主从合并节点](../user-guide/data-development/process-node.md#pri-sec-merged)时为无主键表定义主键，确保数据同步一致性和提高合并效率
+
+### 功能优化
+
+- 优化 Sybase 到 PostgreSQL 场景下的字段推演逻辑
+- 优化共享挖掘任务在多表并发消费场景中的 CPU 占用率
+
+### 问题修复
+
+- 修复主从合并中多层级关联键的问题，避免子表数据未正确合并
+
 ## 3.22.0
 
 ### 功能优化

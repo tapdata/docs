@@ -6,6 +6,16 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.23.0
+
+### 新增功能
+
+- 支持在配置[主从合并节点](../user-guide/data-development/process-node.md#pri-sec-merged)时为无主键表定义主键，确保数据同步一致性和提高合并效率
+
+### 问题修复
+
+- 修复主从合并中多层级关联键的问题，避免子表数据未正确合并
+
 ## 3.22.0
 
 ### 功能优化

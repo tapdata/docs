@@ -9,7 +9,7 @@ echo "{" > $output_file
 # Read lines from sidebars.js and process them
 while IFS= read -r line; do
     # Check if the line contains a path that starts with 'prerequisites/' and does not contain 'README'
-    if [[ "$line" == *"'prerequisites/"* && "$line" != *"README"* ]]; then
+    if [ -n "$(echo "$line" | grep "'prerequisites/" | grep -v "README")" ]; then
         # Extract the path
         file_path=$(echo $line | grep -o "'prerequisites/[^']*'")
         file_path=${file_path//\'/}  # Remove single quotes

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Define the output file
 output_file="./static/nav_for_docs.json"
@@ -11,11 +11,11 @@ while IFS= read -r line; do
     # Check if the line contains a path that starts with 'prerequisites/' and does not contain 'README'
     if [ -n "$(echo "$line" | grep "'prerequisites/" | grep -v "README")" ]; then
         # Extract the path
-        file_path=$(echo $line | grep -o "'prerequisites/[^']*'")
-        file_path=${file_path//\'/}  # Remove single quotes
+        file_path=$(echo "$line" | grep -o "'prerequisites/[^']*'")
+        file_path=$(echo "$file_path" | sed "s/'//g")  # Remove single quotes using sed
 
         # Remove the .md extension if present
-        file_path_no_ext=${file_path%.md}
+        file_path_no_ext=$(echo "$file_path" | sed 's/\.md$//')
 
         # Get the filename (remove the path)
         file_name=$(basename "$file_path_no_ext")
@@ -26,13 +26,16 @@ while IFS= read -r line; do
 done < sidebars.js
 
 # Remove the trailing comma from the last line and add the closing bracket
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    # macOS
-    sed -i '' -e '$s/,$//' $output_file
-else
-    # Linux and other Unix systems
-    sed -i '$s/,$//' $output_file
-fi
+case "$(uname)" in
+    Darwin*)
+        # macOS
+        sed -i '' -e '$s/,$//' "$output_file"
+        ;;
+    *)
+        # Linux and other Unix systems
+        sed -i '$s/,$//' "$output_file"
+        ;;
+esac
 
 # Add the closing bracket for the JSON object
 echo "}" >> $output_file

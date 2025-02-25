@@ -17,6 +17,21 @@ import TabItem from '@theme/TabItem';
   <TabItem value="2025 年" default>
 ```
 
+### 2025-02-21
+
+#### 新增功能
+
+- 新增对 [Sybase 同步 PostgreSQL](../prerequisites/on-prem-databases/sybase.md) 的场景支持，现支持同步默认值、枚举类型和序列
+- 支持在配置[主从合并节点](../user-guide/data-development/process-node.md#pri-sec-merged)时为无主键表定义主键，确保数据同步一致性和提高合并效率
+
+#### 功能优化
+
+- 优化 Sybase 到 PostgreSQL 场景下的字段推演逻辑
+
+#### 问题修复
+
+- 修复主从合并中多层级关联键的问题，避免子表数据未正确合并
+
 ### 2025-01-24
 
 #### 问题修复

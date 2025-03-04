@@ -22,10 +22,23 @@
 
 DML Operations: INSERT, UPDATE, DELETE
 
+:::tip
+
+When Sybase is used as a target, you can select the write strategy through the advanced settings of the task node: in case of insert conflicts, you can choose to convert to an update or discard the record; in case of update failures, you can choose to convert to an insert.
+
+:::
+
 ## Limitations
 
 - DDL event capture and application are not supported. If a DDL event occurs during synchronization, you must stop the task and re-run a full data sync.
+
 - Due to Sybase limitations, if multiple synchronization tasks are enabled on the same database, you must enable **Shared Mining** in the Sybase connection and task configurations to prevent new tasks from failing to correctly sync incremental data.
+
+- Due to Sybase's cache limitations when executing SQL statements, if you encounter the error **"Procedure cache exhausted before a query plan could be found."** while loading the schema, you can adjust the cache size by running the following command:
+
+  ```sql
+  sp_configure 'procedure cache size', 20000;
+  ```
 
 ## Considerations
 

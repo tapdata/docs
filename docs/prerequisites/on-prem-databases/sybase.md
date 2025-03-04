@@ -22,10 +22,17 @@
 
 DML 操作：INSERT、UPDATE、DELETE
 
+:::tip
+
+将 Sybase 作为同步的目标时，您还可以通过任务节点的高级配置，选择写入策略：插入冲突场景下，可选择转为更新或丢弃；更新失败场景下，可选择转为插入。
+
+:::
+
 ## 功能限制
 
 - 暂不支持 DDL 事件的采集和应用，一旦同步期间发生 DDL 事件，您需要停止任务并重新执行全量数据同步。
 - 由于 Sybase 限制，如果对同一数据库启用多个同步任务，需要在配置 Sybase 连接和任务时开启**共享挖掘** ，避免新任务无法正确同步增量数据。
+- 由于 Sybase 执行 SQL 语句时受缓存限制，若加载模型时出现 **"Procedure cache exhausted before a query plan could be found."** 错误，可通过执行 `sp_configure 'procedure cache size', 20000;` 调整缓存大小。
 
 ## 注意事项
 

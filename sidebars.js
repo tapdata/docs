@@ -357,14 +357,14 @@ const sidebars = {
     },
     {
          type: 'category',
-         label: 'TapFlow 开发者指南',
+         label: '开发者指南',
          link: {type: 'doc', id: 'tapflow/README'},
          items: [
                 'tapflow/introduction',
                 'tapflow/quick-start',
                 {
                  type: 'category',
-                 label: 'TapFlow API 参考',
+                 label: 'API 参考',
                  link: {type: 'doc', id: 'tapflow/api-reference/README'},
                  items: [
                         'tapflow/api-reference/data-source',

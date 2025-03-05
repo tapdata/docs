@@ -1,15 +1,15 @@
 # 快速入门
 
-本文将演示如何使用 TapFlow 构建最简单的数据流任务，以帮助您快速掌握数据复制和流式处理的操作流程。如需了解如何利用 TapFlow 的多表处理功能来实现更复杂的业务需求（如实时宽表），推荐阅读[典型案例](tapflow-tutorial/README.md)。
+本文将演示如何使用 TapData Shell 构建最简单的数据流任务，以帮助您快速掌握数据复制和流式处理的操作流程。如需了解如何利用 TapData Shell 的多表处理功能来实现更复杂的业务需求（如实时宽表），推荐阅读[典型案例](tapflow-tutorial/README.md)。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-## 步骤一：初始化 TapFlow 
+## 步骤一：初始化 TapData Shell 
 
-1. 下载并启动 Tap Shell。
+1. 下载并启动 TapData Shell。
 
    <Tabs className="unique-tabs">
    <TabItem value="源码安装">
@@ -19,23 +19,23 @@ import TabItem from '@theme/TabItem';
    2. 执行下述命令创建虚拟环境，以便隔离依赖包，避免与系统 Python 环境冲突。
 
       ```bash
-      python3 -m venv tapflow_env
+      python3 -m venv tapsh_env
       ```
-   3. 执行下述命令激活虚拟环境，安装 TapFlow 及其所需的依赖包。
+   3. 执行下述命令激活虚拟环境，安装 TapData Shell 及其所需的依赖包。
 
       ```bash
       # 激活虚拟环境
-      source tapflow_env/bin/activate
+      source tapsh_env/bin/activate
    
-      # 安装 Tap Shell
+      # 安装 TapData Shell
       pip3 install tapflow
       # 或者
       pip install tapflow
       ```
 
-      至此已完成安装，退出命令行后再次使用 Tap Shell 前，需要先激活虚拟环境。除本方法外，您也可以使用 [pipx](https://github.com/pypa/pipx) 安装 TapFlow，只需运行 `pipx install tapflow`，pipx 会自动创建并管理虚拟环境。
+      至此已完成安装，退出命令行后再次使用 TapData Shell 前，需要先激活虚拟环境。除本方法外，您也可以使用 [pipx](https://github.com/pypa/pipx) 安装 TapData Shell，只需运行 `pipx install tapflow`，pipx 会自动创建并管理虚拟环境。
 
-   4. 输入 `tap` 启动 Tap Shell 。
+   4. 输入 `tap` 启动 TapData Shell 。
    
    </TabItem>
    <TabItem value="二进制安装">
@@ -44,7 +44,7 @@ import TabItem from '@theme/TabItem';
        * [Ubuntu 20.04 +]( https://resource.tapdata.net/package/lite/tap-cli-linux-x86_64-ubuntu2004)
        * [Windows](https://resource.tapdata.net/package/lite/tap-cli-win32-x86_64.exe)
 
-   2. 启动 Tap Shell。
+   2. 启动 TapData Shell。
    
       * Ubuntu 22.04 +：赋予执行权限并启动 TapShell
    
@@ -70,7 +70,7 @@ import TabItem from '@theme/TabItem';
    Please enter access code
    
    (if pressed enter/C)
-   # You may obtain the keys by log onto TapFlow Cloud, and click: "User Center" on the top right, then copy & paste the accesskey and secret key pair.
+   # You may obtain the keys by log onto TapData Cloud, and click: "User Center" on the top right, then copy & paste the accesskey and secret key pair.
    # You can sign up for a new account from: https://cloud.tapdata.io if you don't have one
    # 
    Enter AK:   
@@ -116,7 +116,7 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 
 :::tip
 
-默认情况下，TapFlow 会在 `~/.tapflow/config.ini` 生成配置文件，您可以通过编辑该文件来调整认证信息，或使用 `tap -c <filename>` 指定自定义的配置文件路径。
+默认情况下，TapData Shell 会在 `~/.tapflow/config.ini` 生成配置文件，您可以通过编辑该文件来调整认证信息，或使用 `tap -c <filename>` 指定自定义的配置文件路径。
 
 :::
 
@@ -127,8 +127,8 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 - **基于交互式命令创建**：通过命令行直接交互操作，实时定义和调整数据流，适合快速验证和简单任务的构建。
 - **基于 Python 编程创建**：通过 Python 代码编程方式控制数据流逻辑，便于保存、复用和版本化管理，适合复杂场景下的动态任务构建和自动化部署。
 
-<details><summary>什么是数据流（Data Flow）？</summary>
-在 Tapdata 中，数据流（Data Flow）是一个执行单元，用于在数据源之间进行数据同步、处理和转换。它可以包含多个数据同步任务，将不同数据源的数据整合、清洗、转换后写入目标系统，实现从源到目标的高效数据流动。
+<details><summary>什么是数据流？</summary>
+在 Tapdata 中，数据流是一个执行单元，用于在数据源之间进行数据同步、处理和转换。它可以包含多个数据同步任务，将不同数据源的数据整合、清洗、转换后写入目标系统，实现从源到目标的高效数据流动。
 
 
 
@@ -144,7 +144,7 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 <TabItem value="基于交互式命令创建" default>
 ```
 
-接下来，我们通过 Tap Shell 完成数据源配置，这里我们将 MySQL 数据库作为源库，MongoDB 作为目标库。
+接下来，我们通过 TapData Shell 完成数据源配置，这里我们将 MySQL 数据库作为源库，MongoDB 作为目标库。
 
 1. 执行下述格式的命令，添加源 MySQL  数据库，名称保存为 `MySQL_ECommerce`。
 
@@ -184,7 +184,7 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 
    :::tip
 
-   - Tap Shell 支持连接[数十种常见数据源](../prerequisites/supported-databases.md)，每种数据源类型的配置参数可能略有不同，如需了解更多的权限和参数等说明，见[连接数据源](../prerequisites/README.md)。
+   - TapData 支持连接[数十种常见数据源](../prerequisites/supported-databases.md)，每种数据源类型的配置参数可能略有不同，如需了解更多的权限和参数等说明，见[连接数据源](../prerequisites/README.md)。
    - 若出现 “**load schema status: error**” 错误，通常是权限或配置问题，可再次使用相同名称重试，系统会提示 “**database MongoDB_ECommerce exists, will update its config**” 并覆盖原配置。 
 
    :::
@@ -284,7 +284,7 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
    flow.save()
    ```
 
-4. 启动数据流任务。您可以通过以下方式直接在脚本中启动任务，也可以选择通过 [Tap Shell](tapcli-reference.md) 或其他外部调度器启动以适配不同业务需求。
+4. 启动数据流任务。您可以通过以下方式直接在脚本中启动任务，也可以选择通过 [TapData Shell](tapcli-reference.md) 或其他外部调度器启动以适配不同业务需求。
 
    ```python
    # 启动数据流任务
@@ -346,8 +346,8 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 ## 进阶阅读
 
 * [典型使用案例](tapflow-tutorial/README.md)
-* [TapFlow API 参考](api-reference/README.md)
-* [Tap Shell 命令参考](tapcli-reference.md)
+* [API 参考](api-reference/README.md)
+* [命令参考](tapcli-reference.md)
 
 
 

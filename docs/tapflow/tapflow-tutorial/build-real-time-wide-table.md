@@ -1,6 +1,6 @@
-# 基于 TapFlow 构建实时宽表
+# 基于 TapData Shell 构建实时宽表
 
-TapFlow 是一个编程框架，支持实时数据复制、数据处理和物化视图创建。它提供 API、Python SDK 和命令行工具（Tap Shell），便于高效构建和管理数据同步任务。本文将演示如何使用 Tap Shell 和 Python SDK 来构建一个实时宽表，以支持电商应用中的订单信息多表联合的高效查询。
+TapData Shell 它提供了 API、Python SDK 和命令行工具，便于高效构建和管理数据同步任务，可用于实时数据处理、实时物化视图等场景。本文将演示如何使用 TapData Shell 和 Python SDK 来构建一个实时宽表，以支持电商应用中的订单信息多表联合的高效查询。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -17,36 +17,36 @@ import TabItem from '@theme/TabItem';
 
 ![典型电商样例表](../../images/er_graph.png)
 
-为了解决这些问题，企业通过 **TapFlow** 构建实时宽表，将订单、客户、支付、产品等数据整合到 MongoDB 中，为高并发的手机端 API 提供支持。具体流程如下：
+为了解决这些问题，企业通过 **TapData Shell** 构建实时宽表，将订单、客户、支付、产品等数据整合到 MongoDB 中，为高并发的手机端 API 提供支持。具体流程如下：
 
-1. **数据整合**：TapFlow 利用 CDC 技术监控源表中的实时变更，捕获订单、客户、支付等数据的更新并传输至 MongoDB。
-2. **宽表生成**：通过 TapFlow 的 Lookup 功能，将多表数据关联整合到订单宽表中，例如将客户信息、产品信息和支付详情嵌入到订单记录中，简化查询操作。
-3. **实时更新**：每当源数据发生变化，TapFlow 会将增量更新同步到 MongoDB 宽表中，确保查询内容的实时性。
+1. **数据整合**：TapData 利用 CDC 技术监控源表中的实时变更，捕获订单、客户、支付等数据的更新并传输至 MongoDB。
+2. **宽表生成**：通过 TapData 的 Lookup 功能，将多表数据关联整合到订单宽表中，例如将客户信息、产品信息和支付详情嵌入到订单记录中，简化查询操作。
+3. **实时更新**：每当源数据发生变化，TapData 会将增量更新同步到 MongoDB 宽表中，确保查询内容的实时性。
 
 ![构建实时宽表](../../images/real_time_wide_table.gif)
 
 
 
-通过 TapFlow，XYZ 电商企业实现了订单和库存信息的实时同步和快速查询，运营人员能够即时获取最新订单数据，极大提升用户体验。同时，TapFlow 将订单、客户、商品和物流信息整合为宽表存储在 MongoDB 中，以支持高并发的手机端 API 查询需求，降低跨表联查的资源消耗，显著提升查询效率和系统性能。
+通过 TapData Shell，XYZ 电商企业实现了订单和库存信息的实时同步和快速查询，运营人员能够即时获取最新订单数据，极大提升用户体验。同时，将订单、客户、商品和物流信息整合为宽表存储在 MongoDB 中，以支持高并发的手机端 API 查询需求，降低跨表联查的资源消耗，显著提升查询效率和系统性能。
 
-接下来，我们将介绍如何通过 TapFlow 完成上述需求。
+接下来，我们将介绍如何通过 TapData Shell 完成上述需求。
 
 ## 准备工作
 
-安装 Tap Shell 并添加 MySQL/MongoDB 数据源，具体操作，见[快速入门](../quick-start.md)。
+安装 TapData Shell 并添加 MySQL/MongoDB 数据源，具体操作，见[快速入门](../quick-start.md)。
 
 
 
 ## 步骤一：构建实时宽表
 
-本案例中，我们通过 Tap Shell 定义的 MySQL 数据源名称为 `MySQL_ECommerce`，MongoDB 数据源名称为 `MongoDB_ECommerce`，接下来，我们将通过命令的形式构建实时宽表。
+本案例中，我们通过 TapData Shell 定义的 MySQL 数据源名称为 `MySQL_ECommerce`，MongoDB 数据源名称为 `MongoDB_ECommerce`，接下来，我们将通过命令的形式构建实时宽表。
 
 ```mdx-code-block
 <Tabs className="unique-tabs">
 <TabItem value="基于交互式命令实现" default>
 ```
 
-1. 执行 `tap` 进入 Tap Shell 命令交互窗口。
+1. 执行 `tap` 进入 TapData Shell 命令交互窗口。
 
 2. 指定数据流任务的源表。
 
@@ -116,14 +116,14 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 <TabItem value="基于 Python 编程实现">
 
-以下是一个完整的 Python 示例代码，它展示了如何通过 TapFlow 将多个 MySQL 表实时关联生成一个 MongoDB 宽表视图，可通过 `python real_time_order_view.py` 来执行：
+以下是一个完整的 Python 示例代码，它展示了如何通过 TapData Shell 将多个 MySQL 表实时关联生成一个 MongoDB 宽表视图，可通过 `python real_time_order_view.py` 来执行：
 
 - 主表：`ecom_orders`，包含订单基本信息。
 - 关联表：`ecom_customers`（客户信息）、`ecom_order_payments`（支付信息）、`ecom_order_items`（商品信息）等。
 - 输出：MongoDB 数据库中的 `orderSingleView` 集合，包含完整订单及其关联的客户、支付、商品和卖家信息。
 
 ```python title="real-time-wide-table.py"
-# 导入 TapFlow 依赖模块
+# 导入 TapData Shell 依赖模块
 from tapflow.lib import *
 from tapflow.cli.cli import init
 
@@ -213,7 +213,7 @@ Flow updated: sink added
 
 ## 步骤二：实时效果验证
 
-电商公司 **XYZ** 需要处理用户订单，并在系统中追踪每个订单的详细信息。每当用户下单时，订单的基础信息、客户信息、订单项信息、商品信息和卖家信息都需要被记录在数据库中，并在订单完成发货时更新状态。通过 TapFlow，我们可以将这些信息实时同步到 MongoDB，供前端 API 查询，确保用户随时看到最新的订单信息。
+电商公司 **XYZ** 需要处理用户订单，并在系统中追踪每个订单的详细信息。每当用户下单时，订单的基础信息、客户信息、订单项信息、商品信息和卖家信息都需要被记录在数据库中，并在订单完成发货时更新状态。通过 TapData Shell，我们可以将这些信息实时同步到 MongoDB，供前端 API 查询，确保用户随时看到最新的订单信息。
 
 接下来，我们通过手动向 MySQL 写入数据的方式来模拟真实业务场景下的数据流转效果。
 
@@ -247,7 +247,7 @@ Flow updated: sink added
 
    :::tip
 
-   数据插入操作执行完毕后，TapFlow 将自动解析 Binlog 以获取数据实时变动，随后经过任务加工整合并写入至 MongoDB 的`orderSingleView` 集合。
+   数据插入操作执行完毕后，TapData 将自动解析 Binlog 以获取数据实时变动，随后经过任务加工整合并写入至 MongoDB 的`orderSingleView` 集合。
 
    :::
 

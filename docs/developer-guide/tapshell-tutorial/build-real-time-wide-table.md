@@ -1,6 +1,6 @@
 # 基于 TapData Shell 构建实时宽表
 
-TapData Shell 它提供了 API、Python SDK 和命令行工具，便于高效构建和管理数据同步任务，可用于实时数据处理、实时物化视图等场景。本文将演示如何使用 TapData Shell 和 Python SDK 来构建一个实时宽表，以支持电商应用中的订单信息多表联合的高效查询。
+TapData Shell 提供了强大的数据转换和处理功能，便于高效构建和管理数据同步任务，可用于实时数据处理、实时物化视图等场景。本文将演示如何使用 TapData Shell 和 Python SDK 来构建一个实时宽表，以支持电商应用中的订单信息多表联合的高效查询。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';

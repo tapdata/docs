@@ -1,6 +1,6 @@
 # 快速入门
 
-本文将演示如何使用 TapData Shell 构建最简单的数据流任务，以帮助您快速掌握数据复制和流式处理的操作流程。如需了解如何利用 TapData Shell 的多表处理功能来实现更复杂的业务需求（如实时宽表），推荐阅读[典型案例](tapflow-tutorial/README.md)。
+本文将演示如何使用 TapData Shell 构建最简单的数据流任务，以帮助您快速掌握数据复制和流式处理的操作流程。如需了解如何利用 TapData Shell 的多表处理功能来实现更复杂的业务需求（如实时宽表），推荐阅读[典型案例](tapshell-tutorial/README.md)。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 1. 下载并启动 TapData Shell。
 
    <Tabs className="unique-tabs">
-   <TabItem value="源码安装">
+   <TabItem value="源码安装（推荐）">
 
    1. [下载并安装 Python 3](https://www.python.org/downloads/)，版本为 Python 3.6 及以上。
 
@@ -345,7 +345,7 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 
 ## 进阶阅读
 
-* [典型使用案例](tapflow-tutorial/README.md)
+* [典型使用案例](tapshell-tutorial/README.md)
 * [API 参考](api-reference/README.md)
 * [命令参考](tapcli-reference.md)
 

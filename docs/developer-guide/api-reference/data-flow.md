@@ -2,7 +2,7 @@
 
 # 数据流 API
 
-本文介绍使用 TapData 提供的 API 管理数据流的完整参考，包括定义任务来源/目标、执行数据处理等操作。
+本文介绍使用 TapData Shell 提供的 API 管理数据流的完整参考，包括定义任务来源/目标、执行数据处理等操作。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';

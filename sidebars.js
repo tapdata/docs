@@ -357,29 +357,29 @@ const sidebars = {
     },
     {
          type: 'category',
-         label: 'TapFlow 开发者指南',
-         link: {type: 'doc', id: 'tapflow/README'},
+         label: '开发者指南',
+         link: {type: 'doc', id: 'developer-guide/README'},
          items: [
-                'tapflow/introduction',
-                'tapflow/quick-start',
+                'developer-guide/introduction',
+                'developer-guide/quick-start',
                 {
                  type: 'category',
-                 label: 'TapFlow API 参考',
-                 link: {type: 'doc', id: 'tapflow/api-reference/README'},
+                 label: 'API 参考',
+                 link: {type: 'doc', id: 'developer-guide/api-reference/README'},
                  items: [
-                        'tapflow/api-reference/data-source',
-                        'tapflow/api-reference/data-flow',
+                        'developer-guide/api-reference/data-source',
+                        'developer-guide/api-reference/data-flow',
                  ]
                 },
-                'tapflow/tapcli-reference',
+                'developer-guide/tapcli-reference',
                 {
                  type: 'category',
                  label: '典型案例',
-                 link: {type: 'doc', id: 'tapflow/tapflow-tutorial/README'},
+                 link: {type: 'doc', id: 'developer-guide/tapshell-tutorial/README'},
                  items: [
-                        'tapflow/tapflow-tutorial/build-real-time-wide-table',
-                        'tapflow/tapflow-tutorial/expand-mogodb-array-to-mysql',
-                        'tapflow/tapflow-tutorial/merge-inventory-to-mongodb',
+                        'developer-guide/tapshell-tutorial/build-real-time-wide-table',
+                        'developer-guide/tapshell-tutorial/expand-mogodb-array-to-mysql',
+                        'developer-guide/tapshell-tutorial/merge-inventory-to-mongodb',
                  ]
                 },
                 ]

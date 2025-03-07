@@ -1,6 +1,6 @@
-# 基于 TapFlow 实现多表合并与数据标准化
+# 基于 TapData Shell 实现多表合并与数据标准化
 
-TapFlow 提供了强大的数据转换和整合功能，能够将多个区域的 MySQL 库存表合并为 MongoDB 集合。本案例将演示如何利用 TapFlow 的数据处理能力，将不同区域的 POS（Point of Sale）库存数据表进行标准化，然后合并为 MongoDB 中的统一集合，以支持跨区域的统一库存查询和分析。
+TapData Shell 提供了强大的数据转换和整合功能，能够将多个区域的 MySQL 库存表合并为 MongoDB 集合。本案例将演示如何利用 TapData Shell 的数据处理能力，将不同区域的 POS（Point of Sale）库存数据表进行标准化，然后合并为 MongoDB 中的统一集合，以支持跨区域的统一库存查询和分析。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 - **数据整合复杂**：各区域库存表的字段格式略有不同，如 `PK_CERT_NBR` 字段，导致难以直接进行统一的分析和报告生成。
 - **实时性不足**：无法实时获取所有区域的库存变化，影响决策效率。
 
-为解决这些问题，TapFlow 提供了一种整合方案，通过 `union` 函数实现多表合并，并通过 JavaScript 节点对关键字段标准化处理，最终统一整合至 MongoDB 中，形成支持实时查询的跨区域数据视图，数据流向图如下：
+为解决这些问题，TapData 提供了一种整合方案，通过 `union` 函数实现多表合并，并通过 JavaScript 节点对关键字段标准化处理，最终统一整合至 MongoDB 中，形成支持实时查询的跨区域数据视图，数据流向图如下：
 
 ```mermaid
 %%{ init: { 'theme': 'neo', 'themeVariables': { 'primaryColor': '#1E88E5', 'edgeLabelBackground':'#F1F8E9', 'tertiaryColor': '#FAFAFA'}} }%%
@@ -76,11 +76,11 @@ flowchart LR
 <TabItem value="基于交互式命令实现" default>
 ```
 
-接下来，我们将展示如何使用 TapFlow 将不同区域的库存数据整合至 MongoDB。此过程中，我们将通过 JavaScript 处理为每条记录添加区域标识字段，并将 `PK_CERT_NBR` 字段值进行标准化处理，从而方便后续的查询和分析。
+接下来，我们将展示如何使用 TapData Shell 将不同区域的库存数据整合至 MongoDB。此过程中，我们将通过 JavaScript 处理为每条记录添加区域标识字段，并将 `PK_CERT_NBR` 字段值进行标准化处理，从而方便后续的查询和分析。
 
 
 
-1. 执行 `tap` 进入 Tap Shell 命令交互窗口。
+1. 执行 `tap` 进入 TapData Shell 命令交互窗口。
 
 2. 为数据流添加 JavaScript 处理逻辑。
 
@@ -149,14 +149,14 @@ flowchart LR
 </TabItem>
 <TabItem value="基于 Python 编程实现">
 
-以下是完整的 Python 示例代码，展示了如何通过 TapFlow 将来自多个区域的库存表合并为一个 MongoDB 集合，同时标准化字段值。运行此脚本可通过 `python inventory_merge.py` 来执行：
+以下是完整的 Python 示例代码，展示了如何通过 TapData Shell 将来自多个区域的库存表合并为一个 MongoDB 集合，同时标准化字段值。运行此脚本可通过 `python inventory_merge.py` 来执行：
 
 - **数据源**：来自 MySQL 的 `usaPOSGoldMaterial`、`canPOSGoldMaterial` 和 `sgPOSGoldMaterial` 三个区域的库存表。
 - **处理逻辑**：使用 JavaScript 对字段进行标准化，并通过 `union` 合并不同区域的数据。
 - **输出**：处理结果实时保存至 MongoDB 集合 `inventory_merge_all`，包含不同区域合并后的库存记录，每条记录带有区域标识和标准化的 `NBR` 字段。
 
 ```python title="inventory_merge.py"
-# 导入 TapFlow 依赖模块
+# 导入 TapData Shell 依赖模块
 from tapflow.lib import *
 from tapflow.cli.cli import init
 
@@ -335,7 +335,7 @@ db.inventory_merge_all.find(
 }
 ```
 
-通过 TapFlow 的实时同步与整合能力，企业成功将区域库存表整合至 MongoDB，实现了全球库存的统一管理和高效分析。统一的 `FROM` 字段提供了区域来源标识，而 `NBR` 字段的标准化则提升了查询和分析效率。这一解决方案显著优化了跨区域库存管理流程，并为实时决策提供了可靠的数据支持。
+通过 TapData Shell 的实时同步与整合能力，企业成功将区域库存表整合至 MongoDB，实现了全球库存的统一管理和高效分析。统一的 `FROM` 字段提供了区域来源标识，而 `NBR` 字段的标准化则提升了查询和分析效率。这一解决方案显著优化了跨区域库存管理流程，并为实时决策提供了可靠的数据支持。
 
 
 

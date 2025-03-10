@@ -371,7 +371,7 @@ const sidebars = {
                         'tapflow/api-reference/data-flow',
                  ]
                 },
-                'tapflow/tapcli-reference',
+                'tapflow/tapshell-reference',
                 {
                  type: 'category',
                  label: '典型案例',

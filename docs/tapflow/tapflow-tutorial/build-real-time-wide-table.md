@@ -1,6 +1,6 @@
 # 基于 TapFlow 构建实时宽表
 
-TapFlow 是一个编程框架，支持实时数据复制、数据处理和物化视图创建。它提供 API、Python SDK 和命令行工具（Tap Shell），便于高效构建和管理数据同步任务。本文将演示如何使用 Tap Shell 和 Python SDK 来构建一个实时宽表，以支持电商应用中的订单信息多表联合的高效查询。
+TapFlow 是一个编程框架，支持实时数据复制、数据处理和物化视图创建。它提供 API、Python SDK 和命令行工具（TapShell），便于高效构建和管理数据同步任务。本文将演示如何使用 TapShell 和 Python SDK 来构建一个实时宽表，以支持电商应用中的订单信息多表联合的高效查询。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -33,20 +33,20 @@ import TabItem from '@theme/TabItem';
 
 ## 准备工作
 
-安装 Tap Shell 并添加 MySQL/MongoDB 数据源，具体操作，见[快速入门](../quick-start.md)。
+安装 TapShell 并添加 MySQL/MongoDB 数据源，具体操作，见[快速入门](../quick-start.md)。
 
 
 
 ## 步骤一：构建实时宽表
 
-本案例中，我们通过 Tap Shell 定义的 MySQL 数据源名称为 `MySQL_ECommerce`，MongoDB 数据源名称为 `MongoDB_ECommerce`，接下来，我们将通过命令的形式构建实时宽表。
+本案例中，我们通过 TapShell 定义的 MySQL 数据源名称为 `MySQL_ECommerce`，MongoDB 数据源名称为 `MongoDB_ECommerce`，接下来，我们将通过命令的形式构建实时宽表。
 
 ```mdx-code-block
 <Tabs className="unique-tabs">
 <TabItem value="基于交互式命令实现" default>
 ```
 
-1. 执行 `tap` 进入 Tap Shell 命令交互窗口。
+1. 执行 `tap` 进入 TapShell 命令交互窗口。
 
 2. 指定数据流任务的源表。
 

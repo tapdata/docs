@@ -42,7 +42,7 @@ import TabItem from '@theme/TabItem';
 
 ## 准备工作
 
-安装 Tap Shell 并添加 MySQL/MongoDB 数据源，数据源名称分别命名为 **MySQL_Demo** 和 **MongoDB_Demo**，具体操作，见[快速入门](../quick-start.md)。
+安装 TapShell 并添加 MySQL/MongoDB 数据源，数据源名称分别命名为 **MySQL_Demo** 和 **MongoDB_Demo**，具体操作，见[快速入门](../quick-start.md)。
 
 ## 操作步骤
 
@@ -53,7 +53,7 @@ import TabItem from '@theme/TabItem';
 
 接下来，我们介绍如何展开 `order_payments` 数组，同时重命名字段以方便后续的业务识别。
 
-1. 执行 `tap` 进入 Tap Shell 命令交互窗口。
+1. 执行 `tap` 进入 TapShell 命令交互窗口。
 
 2. 创建名为 `MySQL_to_MongoDB_Order` 的数据流任务，并指定 `order_collection` 集合作为数据源。
 

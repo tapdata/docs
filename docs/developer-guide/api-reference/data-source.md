@@ -1,10 +1,10 @@
 # 数据源 API
 
-本文介绍如何使用 TapFlow 创建一个新的数据源连接，可为后续的流任务提供数据来源和目标。此外，您也可以[通过页面](../../prerequisites/README.md)完成数据源的管理操作，以满足不同操作习惯。
+本文介绍如何使用 TapData Shell 创建一个新的数据源连接，可为后续的流任务提供数据来源和目标。此外，您也可以[通过页面](../../prerequisites/README.md)完成数据源的管理操作，以满足不同操作习惯。
 
 :::tip
 
-TapFlow 支持[数十种常见数据源](../../prerequisites/supported-databases.md)，通过设定 `name`、`type` 和 `config` 参数即可完成数据源的配置，每种数据源类型的配置参数可能略有不同，具体的配置要求、权限和参数说明，见[连接数据源](../../prerequisites/README.md)。
+TapData 支持[数十种常见数据源](../../prerequisites/supported-databases.md)，通过设定 `name`、`type` 和 `config` 参数即可完成数据源的配置，每种数据源类型的配置参数可能略有不同，具体的配置要求、权限和参数说明，见[连接数据源](../../prerequisites/README.md)。
 
 :::
 
@@ -72,7 +72,7 @@ mysql_conn = DataSource('mysql', 'MySQL_ECommerce', mysql_json_config)
 # 设置数据源的类型为 'source'（数据源）
 mysql_conn.type('source')
 
-# 保存 MySQL 数据源配置到 TapFlow 平台
+# 保存 MySQL 数据源配置到 TapData 平台
 mysql_conn.save()
 
 # （可选）删除数据源配置,可以调用 delete() 方法
@@ -96,4 +96,4 @@ load schema status: finished
 
 ## 扩展阅读
 
-通过 [Tap Shell](../tapcli-reference) 管理数据源，例如查看数据源的状态、表结构信息、删除数据源等。
+通过 [TapData Shell](../tapcli-reference) 管理数据源，例如查看数据源的状态、表结构信息、删除数据源等。

@@ -1,6 +1,6 @@
-# 基于 TapFlow 展开文档数组至 MySQL
+# 基于 TapData Shell 展开文档数组至 MySQL
 
-TapFlow 提供强大的数据转换和处理功能，轻松将嵌套数组结构的文档模型转换为关系型表格结构。本文演示如何将 MongoDB 中的嵌套数组字段展开并实时同步至 MySQL 中的平面表，以支持高效的关系型数据库查询和数据分析。
+TapData Shell 提供强大的数据转换和处理功能，轻松将嵌套数组结构的文档模型转换为关系型表格结构。本文演示如何将 MongoDB 中的嵌套数组字段展开并实时同步至 MySQL 中的平面表，以支持高效的关系型数据库查询和数据分析。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -34,15 +34,15 @@ import TabItem from '@theme/TabItem';
 }
 ```
 
-为了更好地支持传统的关系型分析需求，我们提出了一种方案：通过 TapFlow 将 MongoDB 订单集合中的嵌套数组（如支付记录）展开为 MySQL 中的独立行，并实时同步至关系型数据库 MySQL 中。这样既保留了文档模型的灵活性，又使得分析团队可以利用 SQL 查询实现高效的报表生成和数据挖掘，流程如下：
+为了更好地支持传统的关系型分析需求，我们提出了一种方案：通过 TapData Shell 将 MongoDB 订单集合中的嵌套数组（如支付记录）展开为 MySQL 中的独立行，并实时同步至关系型数据库 MySQL 中。这样既保留了文档模型的灵活性，又使得分析团队可以利用 SQL 查询实现高效的报表生成和数据挖掘，流程如下：
 
-![通过 TapFlow 实时展开 MongoDB 数组](../../images/unwind_mongodb_array.png)
+![通过 TapData Shell 实时展开 MongoDB 数组](../../images/unwind_mongodb_array.png)
 
-此外，TapFlow 的实时同步能力也保障了 MySQL 中的数据可准确反映最新数据，不仅帮助该企业提升了查询性能，还保证了数据的时效性，使得分析团队能够随时获取最新的业务数据，支持快速而准确的业务决策。
+此外，TapData 的实时同步能力也保障了 MySQL 中的数据可准确反映最新数据，不仅帮助该企业提升了查询性能，还保证了数据的时效性，使得分析团队能够随时获取最新的业务数据，支持快速而准确的业务决策。
 
 ## 准备工作
 
-安装 Tap Shell 并添加 MySQL/MongoDB 数据源，数据源名称分别命名为 **MySQL_Demo** 和 **MongoDB_Demo**，具体操作，见[快速入门](../quick-start.md)。
+安装 TapData Shell 并添加 MySQL/MongoDB 数据源，数据源名称分别命名为 **MySQL_Demo** 和 **MongoDB_Demo**，具体操作，见[快速入门](../quick-start.md)。
 
 ## 操作步骤
 
@@ -53,7 +53,7 @@ import TabItem from '@theme/TabItem';
 
 接下来，我们介绍如何展开 `order_payments` 数组，同时重命名字段以方便后续的业务识别。
 
-1. 执行 `tap` 进入 Tap Shell 命令交互窗口。
+1. 执行 `tap` 进入 TapData Shell 命令交互窗口。
 
 2. 创建名为 `MySQL_to_MongoDB_Order` 的数据流任务，并指定 `order_collection` 集合作为数据源。
 
@@ -91,7 +91,7 @@ import TabItem from '@theme/TabItem';
    Unwind_MongoDB_Array.write_to("MySQL_Demo.unwind_order_payments", pk=["order_id", "payment_sequential"]).save()
    ```
 
-   如果目标表不存在，TapFlow 将自动创建。
+   如果目标表不存在，TapData 将自动创建。
 
 6. 启动数据流任务。
 
@@ -100,7 +100,7 @@ import TabItem from '@theme/TabItem';
    Unwind_MongoDB_Array.start()
    ```
 
-   任务启动后，TapFlow 将持续捕获源 MongoDB 的数据变动，并将数每个 `order_payments` 数组元素实时加工并同步到 MySQL 目标表中。
+   任务启动后，TapData 将持续捕获源 MongoDB 的数据变动，并将数每个 `order_payments` 数组元素实时加工并同步到 MySQL 目标表中。
 
 7. 在任务运行过程中，您可以通过 `status MySQL_to_MongoDB_Order` 命令来查看任务的状态和运行统计信息。
 
@@ -111,14 +111,14 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="基于 Python 编程实现">
 
-以下是一个完整的 Python 示例代码，展示了如何通过 TapFlow 将 MongoDB 中的 `order_payments` 数组展开并同步到 MySQL 表，同时重命名字段以方便业务使用。运行此脚本可通过 `python unwind_mongo_array.py` 来执行：
+以下是一个完整的 Python 示例代码，展示了如何通过 TapData Shell 将 MongoDB 中的 `order_payments` 数组展开并同步到 MySQL 表，同时重命名字段以方便业务使用。运行此脚本可通过 `python unwind_mongo_array.py` 来执行：
 
 - **数据源**：`MongoDB_Demo.order_collection` 集合，包含嵌套的 `order_payments` 数组字段。
 - **处理逻辑**：将数组字段的每个元素作为单独的行存储到目标表，并设置主键用于实时更新。
 - **输出**：处理结果实时保存至MySQL 数据库中的 `unwind_order_payments` 表，字段经过展开和重命名处理。
 
 ```python title="unwind_mongo_array.py"
-# 导入 TapFlow 依赖模块
+# 导入 TapData Shell 依赖模块
 from tapflow.lib import *
 from tapflow.cli.cli import init
 
@@ -187,7 +187,7 @@ while True:
 SELECT * FROM unwind_order_payments LIMIT 1;
 ```
 
-结果示例如下，可以看到 `order_payments` 数组的每个元素，已经通过 TapFlow 实时转换为关系型表结构的独立行，仅保留了所需的字段且名称清晰直观，便于后续查询与维护。
+结果示例如下，可以看到 `order_payments` 数组的每个元素，已经通过 TapData 实时转换为关系型表结构的独立行，仅保留了所需的字段且名称清晰直观，便于后续查询与维护。
 
 ```sql
 -- 查询结果示例

@@ -6,6 +6,10 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.24.0
+
+- 修复 主从合并任务中，主表关联条件变更后，目标数据出现多余的 UPDATE 前记录的问题
+
 ## 3.23.0
 
 ### 新增功能

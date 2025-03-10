@@ -17,6 +17,13 @@ import TabItem from '@theme/TabItem';
   <TabItem value="2025 年" default>
 ```
 
+### 2025-03-06
+
+#### 问题修复
+
+- 修复 Oracle 同步到 PostgreSQL 场景下，增量数据时间精度缺失的问题
+- 修复 主从合并任务中，主表关联条件变更后，目标数据出现多余的 UPDATE 前记录的问题
+
 ### 2025-02-21
 
 #### 新增功能

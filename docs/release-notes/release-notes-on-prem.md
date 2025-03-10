@@ -6,6 +6,18 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)。
 
+## 3.24.0
+
+### 功能优化
+
+- 优化登录失败时的提示信息，不再区分具体错误类型（如邮箱或密码错误），进一步提升安全性
+- 支持不同任务指定独立的告警邮件接收人，便于精准监控任务状态
+
+### 问题修复
+
+- 修复 Oracle 同步到 PostgreSQL 场景下，增量数据时间精度缺失的问题
+- 修复 主从合并任务中，主表关联条件变更后，目标数据出现多余的 UPDATE 前记录的问题
+
 ## 3.23.0
 
 ### 新增功能

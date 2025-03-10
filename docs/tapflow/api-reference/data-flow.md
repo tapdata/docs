@@ -77,7 +77,7 @@ flowchart LR
 
 **最简示例**
 
-将上述所有步骤合并成一个完整示例，用于从 MySQL 读取订单数据并写入 MongoDB，保存后可执行 [start](../tapcli-reference.md#start) 命令来启动该任务。
+将上述所有步骤合并成一个完整示例，用于从 MySQL 读取订单数据并写入 MongoDB，保存后可执行 [start](../tapshell-reference.md#start) 命令来启动该任务。
 
 ```python
 # 创建数据流任务
@@ -185,7 +185,7 @@ flowchart LR
 
 **完整示例**
 
-本示例展示了如何从 MySQL 读取多个表，配置批量写入、保留原有数据，并添加过滤节点保留订单金额大于 100 的记录。最终，将处理后的数据实时同步到 MongoDB 目标表。保存任务后，可执行 [start](../tapcli-reference.md#start) 命令来启动任务。
+本示例展示了如何从 MySQL 读取多个表，配置批量写入、保留原有数据，并添加过滤节点保留订单金额大于 100 的记录。最终，将处理后的数据实时同步到 MongoDB 目标表。保存任务后，可执行 [start](../tapshell-reference.md#start) 命令来启动任务。
 
 ```python
 # 引用已有数据源，设置为同步多表的数据复制任务
@@ -730,4 +730,4 @@ tap> flow = Flow("Python_Function")  \
 
 ## 扩展阅读
 
-通过 [Tap Shell](../tapcli-reference) 管理数据流任务，流入启停任务、查看任务状态、删除任务等操作。
+通过 [TapShell](../tapshell-reference) 管理数据流任务，流入启停任务、查看任务状态、删除任务等操作。

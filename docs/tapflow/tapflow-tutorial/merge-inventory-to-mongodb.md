@@ -80,7 +80,7 @@ flowchart LR
 
 
 
-1. 执行 `tap` 进入 Tap Shell 命令交互窗口。
+1. 执行 `tap` 进入 TapShell 命令交互窗口。
 
 2. 为数据流添加 JavaScript 处理逻辑。
 

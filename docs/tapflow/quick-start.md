@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 ## 步骤一：初始化 TapFlow 
 
-1. 下载并启动 Tap Shell。
+1. 下载并启动 TapShell。
 
    <Tabs className="unique-tabs">
    <TabItem value="源码安装">
@@ -27,15 +27,15 @@ import TabItem from '@theme/TabItem';
       # 激活虚拟环境
       source tapflow_env/bin/activate
    
-      # 安装 Tap Shell
+      # 安装 TapShell
       pip3 install tapflow
       # 或者
       pip install tapflow
       ```
 
-      至此已完成安装，退出命令行后再次使用 Tap Shell 前，需要先激活虚拟环境。除本方法外，您也可以使用 [pipx](https://github.com/pypa/pipx) 安装 TapFlow，只需运行 `pipx install tapflow`，pipx 会自动创建并管理虚拟环境。
+      至此已完成安装，退出命令行后再次使用 TapShell 前，需要先激活虚拟环境。除本方法外，您也可以使用 [pipx](https://github.com/pypa/pipx) 安装 TapFlow，只需运行 `pipx install tapflow`，pipx 会自动创建并管理虚拟环境。
 
-   4. 输入 `tap` 启动 Tap Shell 。
+   4. 输入 `tap` 启动 TapShell 。
    
    </TabItem>
    <TabItem value="二进制安装">
@@ -44,16 +44,16 @@ import TabItem from '@theme/TabItem';
        * [Ubuntu 20.04 +]( https://resource.tapdata.net/package/lite/tap-cli-linux-x86_64-ubuntu2004)
        * [Windows](https://resource.tapdata.net/package/lite/tap-cli-win32-x86_64.exe)
 
-   2. 启动 Tap Shell。
+   2. 启动 TapShell。
    
-      * Ubuntu 22.04 +：赋予执行权限并启动 TapShell
+      * Ubuntu 20.04 +：赋予执行权限并启动 TapShell
    
         ```bash
-        chmod +x tap-cli-linux-x86_64-ubuntu2004
-        ./tap-cli-linux-x86_64-ubuntu2004
+        chmod +x tap-shell
+        ./tap-shell
         ```
    
-      * Windows：双击 `tap-cli-win32-x86_64.exe` 启动 TapShell。
+      * Windows：双击 `tap-shell.exe` 启动 TapShell。
 
    </TabItem>
    </Tabs>
@@ -144,7 +144,7 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 <TabItem value="基于交互式命令创建" default>
 ```
 
-接下来，我们通过 Tap Shell 完成数据源配置，这里我们将 MySQL 数据库作为源库，MongoDB 作为目标库。
+接下来，我们通过 TapShell 完成数据源配置，这里我们将 MySQL 数据库作为源库，MongoDB 作为目标库。
 
 1. 执行下述格式的命令，添加源 MySQL  数据库，名称保存为 `MySQL_ECommerce`。
 
@@ -184,7 +184,7 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 
    :::tip
 
-   - Tap Shell 支持连接[数十种常见数据源](../prerequisites/supported-databases.md)，每种数据源类型的配置参数可能略有不同，如需了解更多的权限和参数等说明，见[连接数据源](../prerequisites/README.md)。
+   - TapData 支持连接[数十种常见数据源](../prerequisites/supported-databases.md)，每种数据源类型的配置参数可能略有不同，如需了解更多的权限和参数等说明，见[连接数据源](../prerequisites/README.md)。
    - 若出现 “**load schema status: error**” 错误，通常是权限或配置问题，可再次使用相同名称重试，系统会提示 “**database MongoDB_ECommerce exists, will update its config**” 并覆盖原配置。 
 
    :::
@@ -284,7 +284,7 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
    flow.save()
    ```
 
-4. 启动数据流任务。您可以通过以下方式直接在脚本中启动任务，也可以选择通过 [Tap Shell](tapcli-reference.md) 或其他外部调度器启动以适配不同业务需求。
+4. 启动数据流任务。您可以通过以下方式直接在脚本中启动任务，也可以选择通过 [TapShell](tapshell-reference.md) 或其他外部调度器启动以适配不同业务需求。
 
    ```python
    # 启动数据流任务
@@ -347,7 +347,7 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 
 * [典型使用案例](tapflow-tutorial/README.md)
 * [TapFlow API 参考](api-reference/README.md)
-* [Tap Shell 命令参考](tapcli-reference.md)
+* [TapShell 命令参考](tapshell-reference.md)
 
 
 

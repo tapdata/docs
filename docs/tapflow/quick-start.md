@@ -41,8 +41,8 @@ import TabItem from '@theme/TabItem';
    <TabItem value="二进制安装">
 
    1. 根据您的操作系统选择对应的二进制包下载。
-       * [Ubuntu 20.04 +]( https://resource.tapdata.net/package/lite/tap-cli-linux-x86_64-ubuntu2004)
-       * [Windows](https://resource.tapdata.net/package/lite/tap-cli-win32-x86_64.exe)
+       * [Ubuntu 20.04 +](https://resource.tapdata.net/package/lite/tapshell)
+       * [Windows](https://resource.tapdata.net/package/lite/tapshell.exe)
 
    2. 启动 TapShell。
    

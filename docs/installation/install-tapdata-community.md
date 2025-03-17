@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 
 - 硬件配置：8 核 CPU（X86 架构）、16 GB 内存
 - 存储规格：100 GB
-- 操作系统：CentOS 7 + 或 Ubuntu 16.04 +
+- 操作系统：CentOS 7 + 、Ubuntu 16.04 +、Red Hat Enterprise Linux（RHEL）7.x/8.x
 - 网络环境：可与数据目标数据库通信
 
 ## 组件介绍

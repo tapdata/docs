@@ -17,7 +17,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 * CPU：8 核
 * 内存：16 GB
 * 存储空间：100 GB
-* 操作系统：CentOS 7 + 或 Ubuntu 16.04 +
+* 操作系统：CentOS 7 + 、Ubuntu 16.04 +、Red Hat Enterprise Linux（RHEL）7.x/8.x
 
 ## 操作步骤
 

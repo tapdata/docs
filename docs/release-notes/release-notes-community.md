@@ -6,6 +6,26 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.25.0
+
+### 新增功能
+
+- [MySQL](../prerequisites/on-prem-databases/mysql.md) 到 MySQL、[PostgreSQL](../prerequisites/on-prem-databases/postgresql.md) 到 PostgreSQL 的数据同步场景下，新增对**字段默认值**、**自增列**和**外键约束**同步的支持，保障数据结构一致性
+- [Sybase](../prerequisites/on-prem-databases/sybase.md) 到 PostgreSQL 同步场景，新增对外键约束同步的支持，进一步提升数据一致性
+- 支持在[主从合并节点](../user-guide/data-development/process-node.md#pri-sec-merged)后继续连接其他处理节点的能力（支持增强  JS 节点），提高任务编排的灵活性
+
+### 功能优化
+
+- 优化 Kafka 连接器能力
+- 优化了任务里程碑的展示效果
+
+### 问题修复
+
+- 修复 MongoDB 分片配置无法自动同步的问题
+- 修复 MongoDB capped collection 无法正常同步的问题
+- 修复关联键变更功能中，合并内嵌数组数据异常的问题
+- 修复主从合并任务中，主表关联键校验失败后使用一键修复数据时任务报错的问题
+
 ## 3.24.0
 
 - 修复 主从合并任务中，主表关联条件变更后，目标数据出现多余的 UPDATE 前记录的问题

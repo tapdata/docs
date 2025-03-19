@@ -43,6 +43,8 @@ import TabItem from '@theme/TabItem';
 
 - **DDL**：ADD COLUMN、CHANGE COLUMN、DROP COLUMN、RENAME COLUMN
 
+此外，在 SQL Server 同步至 PostgreSQL 的场景下，还额外支持**字段默认值**、**自增列**和**外键约束**同步的能力。
+
 ## 注意事项
 
 * SQL Server 的增量数据采集基于 CDC，TapData 通过轮询各表的CT表获取数据变更。因此，建议单个数据同步任务中的表数量保持较少，以缩短轮询周期，降低增量数据的延迟。若数据库性能较低，为避免频繁查询CT表影响数据库性能，建议按需开启表级或字段级 CDC，只采集必要的数据，并调整CT表数据保留时间，减少磁盘占用。

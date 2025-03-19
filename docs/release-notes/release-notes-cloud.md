@@ -35,7 +35,6 @@ import TabItem from '@theme/TabItem';
 - 修复 MongoDB 分片配置无法自动同步的问题
 - 修复 MongoDB capped collection 无法正常同步的问题
 - 修复关联键变更功能中，合并内嵌数组数据异常的问题
-- 修复主从合并任务中，主表关联键校验失败后使用一键修复数据时任务报错的问题
 
 ### 2025-03-06
 

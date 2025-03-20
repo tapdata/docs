@@ -73,7 +73,7 @@ DML 操作：INSERT、UPDATE、DELETE
    
    ```sql
    sp_configure 'number of aux scan descriptors', 5000; 
-   sp_dboption database, 'ddl in tran', 'true'
+   sp_dboption <database_name>, 'ddl in tran', 'true'
    sp_role 'grant',sa_role,<username>
    sp_role 'grant',sybase_ts_role,<username>
    ```
@@ -83,16 +83,16 @@ DML 操作：INSERT、UPDATE、DELETE
    <TabItem value="作为目标库">
 
    ```sql
-   USE <database>;
+   USE <database_name>;
    sp_addalias <username>, dbo
-  ```
-   
+   ```
+
   </TabItem>
   </Tabs>
-  
-  - `<database>`：要授权的数据库名。
-  - `<username>`：要授权的用户名。
-  - `<password>`：该用户的密码。
+
+   - `<database_name>`：要授权的数据库名。
+   - `<username>`：要授权的用户名。
+   - `<password>`：该用户的密码。
 
 ## 连接 Sybase
 
@@ -141,3 +141,5 @@ DML 操作：INSERT、UPDATE、DELETE
   - **日志解析**：无需访问源库，适用于无主键或唯一索引的场景，但性能相对较低。
   - **源表反查**：通过查询源库反查 Lob 对象，性能更高，适用于存在主键或唯一索引的场景。
 - **自动编解码**：支持根据配置的字符编码对所有同步数据进行自动转换，确保字符集一致性，避免编码问题导致的数据异常。
+  
+  ```

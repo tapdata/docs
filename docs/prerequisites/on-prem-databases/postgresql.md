@@ -46,7 +46,8 @@ import TabItem from '@theme/TabItem';
 
 :::tip
 
-作为同步目标时，您可以通过任务节点的高级配置选择写入策略，如插入冲突时更新或丢弃、更新失败时插入或仅打印日志、启用文件写入方式等。此外，还可应用和执行源库解析的 ADD COLUMN、CHANGE COLUMN、DROP COLUMN 和 RENAME COLUMN 操作。
+- 作为同步目标时，您可以通过任务节点的高级配置选择写入策略，如插入冲突时更新或丢弃、更新失败时插入或仅打印日志、启用文件写入方式等。此外，还可应用和执行源库解析的 ADD COLUMN、CHANGE COLUMN、DROP COLUMN 和 RENAME COLUMN 操作。
+- 在 PostgreSQL 间数据同步的场景下，还额外支持**字段默认值**、**自增列**和**外键约束**同步的能力。
 
 :::
 

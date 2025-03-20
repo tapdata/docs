@@ -6,6 +6,11 @@ import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 [Sybase 数据库](https://infocenter.sybase.com/help/index.jsp)，又称 Adaptive Server Enterprise (ASE)，是一款高性能、可靠且可扩展的企业级关系数据库管理系统。Sybase 已进入支持的尾声，推荐尽快迁移至其他数据库以降低风险。通过 TapData，您可以轻松构建实时同步管道，将 Sybase 数据实时同步至其他数据库平台，确保业务连续性。
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## 支持版本与架构
 
 * **版本**：Sybase 16
@@ -28,7 +33,8 @@ DML 操作：INSERT、UPDATE、DELETE
 
 :::tip
 
-将 Sybase 作为同步的目标时，您还可以通过任务节点的高级配置，选择写入策略：插入冲突场景下，可选择转为更新或丢弃；更新失败场景下，可选择转为插入。
+- 将 Sybase 作为同步的目标时，您还可以通过任务节点的高级配置，选择写入策略：插入冲突场景下，可选择转为更新或丢弃；更新失败场景下，可选择转为插入。
+- 在 Sybase 同步 PostgreSQL 场景下，还额外支持**索引**、**外键约束**和**序列**的同步能力。
 
 :::
 
@@ -42,24 +48,51 @@ DML 操作：INSERT、UPDATE、DELETE
 
 - Sybase 作为源库执行实时增量同步时，TapData 会设置日志位点防止清理，且每 10 分钟推进一次，可能占用额外磁盘空间。由于暂停的增量任务会导致事务日志累积，因此建议及时删除不再需要的任务，或手动重置长时间暂停的任务。
 - 全量数据同步阶段会占用数据库和带宽资源，应确保硬件资源充足，而增量同步的负载影响通常在 5% 以内。
-- 在 Sybase 同步 PostgreSQL 场景下，还额外支持**索引迁移**和**序列同步**能力。
 
 ## <span id="prerequisites">准备工作</span>
 
 1. 使用具备 DBA 权限的用户登录 Sybase 数据库。
 
-2. 执行下述 SQL 命令创建同步任务所需用户并授予必要权限。
+2. 创建用于数据同步任务的用户。
 
    ```sql
-   create login <username> with password '<password>';
-   sp_displaylogin <username>;
-   sp_role 'grant', sa_role, <username>;
-   sp_role 'grant', replication_role, <username>;
-   sp_role 'grant', sybase_ts_role, <username>;
+   create login <username> with password <password>
+   sp_displaylogin <username>
+   sp_role 'grant',replication_role,<username>
    ```
 
-   * `<username>`：要创建的用户名。
-   * `<password>`：该用户的密码。
+   - `<username>`：要创建的用户名。
+   - `<password>`：该用户的密码。
+
+2. 执行下述格式的 SQL 命令为刚刚创建的用户授予权限。
+
+   ```mdx-code-block
+   <Tabs className="unique-tabs">
+   <TabItem value="作为源库" default>
+   ```
+   
+   ```sql
+   sp_configure 'number of aux scan descriptors', 5000; 
+   sp_dboption <database_name>, 'ddl in tran', 'true'
+   sp_role 'grant',sa_role,<username>
+   sp_role 'grant',sybase_ts_role,<username>
+   ```
+   
+   </TabItem>
+   
+   <TabItem value="作为目标库">
+
+   ```sql
+   USE <database_name>;
+   sp_addalias <username>, dbo
+   ```
+
+  </TabItem>
+  </Tabs>
+
+   - `<database_name>`：要授权的数据库名。
+   - `<username>`：要授权的用户名。
+   - `<password>`：该用户的密码。
 
 ## 连接 Sybase
 
@@ -108,3 +141,5 @@ DML 操作：INSERT、UPDATE、DELETE
   - **日志解析**：无需访问源库，适用于无主键或唯一索引的场景，但性能相对较低。
   - **源表反查**：通过查询源库反查 Lob 对象，性能更高，适用于存在主键或唯一索引的场景。
 - **自动编解码**：支持根据配置的字符编码对所有同步数据进行自动转换，确保字符集一致性，避免编码问题导致的数据异常。
+  
+  ```

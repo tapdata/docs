@@ -6,6 +6,11 @@ import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 [Sybase 数据库](https://infocenter.sybase.com/help/index.jsp)，又称 Adaptive Server Enterprise (ASE)，是一款高性能、可靠且可扩展的企业级关系数据库管理系统。Sybase 已进入支持的尾声，推荐尽快迁移至其他数据库以降低风险。通过 TapData，您可以轻松构建实时同步管道，将 Sybase 数据实时同步至其他数据库平台，确保业务连续性。
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## 支持版本与架构
 
 * **版本**：Sybase 16
@@ -48,18 +53,46 @@ DML 操作：INSERT、UPDATE、DELETE
 
 1. 使用具备 DBA 权限的用户登录 Sybase 数据库。
 
-2. 执行下述 SQL 命令创建同步任务所需用户并授予必要权限。
+2. 创建用于数据同步任务的用户。
 
    ```sql
-   create login <username> with password '<password>';
-   sp_displaylogin <username>;
-   sp_role 'grant', sa_role, <username>;
-   sp_role 'grant', replication_role, <username>;
-   sp_role 'grant', sybase_ts_role, <username>;
+   create login <username> with password <password>
+   sp_displaylogin <username>
+   sp_role 'grant',replication_role,<username>
    ```
 
-   * `<username>`：要创建的用户名。
-   * `<password>`：该用户的密码。
+   - `<username>`：要创建的用户名。
+   - `<password>`：该用户的密码。
+
+2. 执行下述格式的 SQL 命令为刚刚创建的用户授予权限。
+
+   ```mdx-code-block
+   <Tabs className="unique-tabs">
+   <TabItem value="作为源库" default>
+   ```
+   
+   ```sql
+   sp_configure 'number of aux scan descriptors', 5000; 
+   sp_dboption database, 'ddl in tran', 'true'
+   sp_role 'grant',sa_role,<username>
+   sp_role 'grant',sybase_ts_role,<username>
+   ```
+   
+   </TabItem>
+   
+   <TabItem value="作为目标库">
+
+   ```sql
+   USE <database>;
+   sp_addalias <username>, dbo
+  ```
+   
+  </TabItem>
+  </Tabs>
+  
+  - `<database>`：要授权的数据库名。
+  - `<username>`：要授权的用户名。
+  - `<password>`：该用户的密码。
 
 ## 连接 Sybase
 

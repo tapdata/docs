@@ -2,6 +2,11 @@
 
 [Sybase Database](https://infocenter.sybase.com/help/index.jsp), also known as Adaptive Server Enterprise (ASE), is a high-performance, reliable, and scalable enterprise-grade relational database management system. Sybase is nearing the end of its support lifecycle, and it is recommended to migrate to other databases to reduce risk. With TapData, you can easily build real-time synchronization pipelines to sync Sybase data to other database platforms, ensuring business continuity.
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## Supported Versions and Architectures
 
 * **Version**: Sybase 16
@@ -24,7 +29,8 @@ DML Operations: INSERT, UPDATE, DELETE
 
 :::tip
 
-When Sybase is used as a target, you can select the write strategy through the advanced settings of the task node: in case of insert conflicts, you can choose to convert to an update or discard the record; in case of update failures, you can choose to convert to an insert.
+- When Sybase is used as a target, you can select the write strategy through the advanced settings of the task node: in case of insert conflicts, you can choose to convert to an update or discard the record; in case of update failures, you can choose to convert to an insert.
+- For Sybase to PostgreSQL synchronization scenarios, extra support is provided for synchronizing **indexes**, **foreign key constraints**, and **sequences**.
 
 :::
 
@@ -49,18 +55,46 @@ When Sybase is used as a target, you can select the write strategy through the a
 
 1. Log in to the Sybase database using a user with DBA privileges.
 
-2. Run the following SQL commands to create a user for the synchronization task and grant the necessary permissions:
+2. Create a user for data synchronization tasks.
 
    ```sql
-   create login <username> with password '<password>';
-   sp_displaylogin <username>;
-   sp_role 'grant', sa_role, <username>;
-   sp_role 'grant', replication_role, <username>;
-   sp_role 'grant', sybase_ts_role, <username>;
+   create login <username> with password <password>
+   sp_displaylogin <username>
+   sp_role 'grant',replication_role,<username>
    ```
 
-   * `<username>`: The username to be created.
-   * `<password>`: The password for the user.
+   - `<username>`: The username to be created.
+   - `<password>`: The password for the user.
+
+3. Execute the following SQL commands to grant permissions to the newly created user.
+
+   ```mdx-code-block
+   <Tabs className="unique-tabs">
+   <TabItem value="As Source Database" default>
+   ```
+
+   ```sql
+   sp_configure 'number of aux scan descriptors', 5000; 
+   sp_dboption <database_name>, 'ddl in tran', 'true'
+   sp_role 'grant',sa_role,<username>
+   sp_role 'grant',sybase_ts_role,<username>
+   ```
+
+   </TabItem>
+   
+   <TabItem value="As Target Database">
+   
+   ```sql
+   USE <database_name>;
+   sp_addalias <username>, dbo
+   ```
+   </TabItem>
+   </Tabs>
+
+   - `<database_name>`: The name of the database to grant permissions.
+   - `<username>`: The username to be granted permissions.
+   - `<password>`: The password for the user.
+
 
 ## Connect to Sybase
 

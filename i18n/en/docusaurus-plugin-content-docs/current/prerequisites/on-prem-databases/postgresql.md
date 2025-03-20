@@ -42,7 +42,9 @@ When using PostgreSQL as the target database or obtaining incremental data via t
 **INSERT**, **UPDATE**, **DELETE**
 
 :::tip
-When used as a **target**, you can configure advanced write strategies in the task node settings. Options include update or discard on insert conflict, insert or log on update failure, and enable file-based writes. Additionally, you can apply and execute source-side ADD COLUMN, CHANGE COLUMN, DROP COLUMN, and RENAME COLUMN operations.
+
+- When used as a **target**, you can configure advanced write strategies in the task node settings. Options include update or discard on insert conflict, insert or log on update failure, and enable file-based writes. Additionally, you can apply and execute source-side ADD COLUMN, CHANGE COLUMN, DROP COLUMN, and RENAME COLUMN operations.
+- For data synchronization between PostgreSQL databases, extra support is provided for synchronizing **column default values**, **auto-increment columns**, and **foreign key constraints**.
 
 :::
 

@@ -35,6 +35,8 @@ import TabItem from '@theme/TabItem';
 
 - **DDL**：ADD COLUMN、CHANGE COLUMN、DROP COLUMN、RENAME COLUMN
 
+此外，在 MySQL 间数据同步的场景下，还额外支持**字段默认值**、**自增列**和**外键约束**同步的能力。
+
 ## 注意事项
 
 * 增量数据采集主要通过解析 Binlog 实现，数据变更频繁时，可能会占用数据库一定的 CPU 和磁盘 I/O 资源。

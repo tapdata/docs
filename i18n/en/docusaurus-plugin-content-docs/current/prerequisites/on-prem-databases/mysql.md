@@ -35,6 +35,8 @@ import TabItem from '@theme/TabItem';
 
 - **DDL**: ADD COLUMN, CHANGE COLUMN, DROP COLUMN, RENAME COLUMN
 
+In addition, for data synchronization between MySQL databases, extra support is provided for synchronizing **column default values**, **auto-increment columns**, and **foreign key constraints**.
+
 ## Considerations
 
 * Incremental data capture is mainly achieved through parsing the binlog, which may consume CPU and disk I/O resources if there are frequent data changes.

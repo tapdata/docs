@@ -40,6 +40,8 @@ When using SQL Server as a target database, `timestamp` is not supported.
 
 - **DDL**: ADD COLUMN, CHANGE COLUMN, DROP COLUMN, RENAME COLUMN
 
+In addition, for synchronization from SQL Server to PostgreSQL, extra support is provided for synchronizing **column default values**, **auto-increment columns**, and **foreign key constraints**.
+
 ## Considerations
 
 * Incremental data capture in SQL Server is based on Change Data Capture (CDC). TapData polls the CT (Change Tracking) tables of each synchronized table to capture data changes. It is recommended to limit the number of tables in a single sync task to reduce the polling cycle and lower the incremental data delay. For low-performance databases, to avoid frequent CT table queries affecting performance, consider enabling CDC only at the table or column level as needed and adjust CT table data retention to reduce disk usage.

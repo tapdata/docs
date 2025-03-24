@@ -1,9 +1,23 @@
+---
+keywords:
+  - SelectDB Cloud
+  - 实时数据仓库
+  - Apache Doris
+  - SelectDB 实时数据分析
+  - SelectDB 实时数据集成
+  - TapData SelectDB 连接器
+---
+
 # SelectDB
 import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
-SelectDB Cloud 是基于 Apache Doris 内核打造的全托管的云原生实时数据仓库服务。本文介绍如何在 Tapdata 中连接 SelectDB Cloud （简称 SelectDB）数据源。
+SelectDB Cloud 是基于 Apache Doris 的云原生实时数据仓库，提供高性能分析查询能力。本文介绍如何在 TapData 中添加 SelectDB Cloud （简称 SelectDB）数据源，适用于实时数据同步、实时数仓、数据分析与报表等场景。
+
+<Head>
+    <link rel="canonical" href="https://docs.tapdata.net/prerequisites/warehouses-and-lake/selectdb" />
+</Head>
 
 ## 支持的版本
 

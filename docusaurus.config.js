@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Tapdata 文档中心',
+  title: 'Tapdata 文档中心 - 实时数据集成和数据服务平台',
   tagline: '一站式实时数据平台',
   url: 'https://docs.tapdata.net',
   baseUrl: '/',

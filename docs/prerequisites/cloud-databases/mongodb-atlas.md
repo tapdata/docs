@@ -1,9 +1,24 @@
+---
+keywords:
+  - MongoDB Atlas
+  - MongoDB Atlas 实时同步
+  - MongoDB Atlas 数据集成
+  - MongoDB Atlas 增量复制
+  - MongoDB 迁移上云
+  - TapData MongoDB Atlas 连接器
+---
+
 # MongoDB Atlas
 import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
-MongoDB Atlas 是 MongoDB 提供的多云应用程序数据平台，TapData 支持将 MongoDB Atlas 作为源或目标库构建数据管道，本文介绍如何在 TapData 中添加 MongoDB Atlas 数据源。
+[MongoDB Atlas](https://www.mongodb.com/atlas) 是 MongoDB 提供的多云托管数据库平台。本文介绍如何在 TapData 中添加 MongoDB Atlas 数据源，支持实时数据同步、增量复制，可用于数据迁移、实时分析、同步至本地数据仓库等场景。
+
+<Head>
+    <link rel="canonical" href="https://docs.tapdata.net/prerequisites/cloud-databases/mongodb-atlas" />
+</Head>
+
 
 ## 支持版本
 

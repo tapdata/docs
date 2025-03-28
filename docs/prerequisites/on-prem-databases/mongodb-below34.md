@@ -1,6 +1,19 @@
+---
+keywords:
+  - MongoDB 实时同步
+  - MongoDB 数据集成
+  - MongoDB CDC
+  - NoSQL 数据集成
+  - MongoDB 数据迁移
+  - Tapdata MongoDB 连接器
+---
 # MongoDB Below 3.4
 
-[MongoDB](https://www.mongodb.com/) 是一个流行的、开源 NoSQL 数据库，以灵活/可扩展的方式存储和检索数据。本文将介绍如何在 TapData 中添加 MongoDB（3.4 及以下），后续可将其作为**源**或**目标库**来构建实时数据链路。
+[MongoDB](https://www.mongodb.com/) 是一个开源 NoSQL 数据库，以灵活/可扩展的方式存储和检索数据。本文介绍如何在 TapData 中添加 MongoDB 数据源（3.4 及以下版本），支持 MongoDB CDC 实时数据同步和增量数据复制，可将其作为源或目标库来构建数据链路，适用于实时数据加工、实时宽表、数据灾备等场景。
+
+<Head>
+    <link rel="canonical" href="https://docs.tapdata.net/prerequisites/on-prem-databases/mongodb-below34" />
+</Head>
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';

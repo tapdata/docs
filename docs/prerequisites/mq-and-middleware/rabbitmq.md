@@ -36,7 +36,7 @@ rabbitmqctl add_user username your_passwd
 rabbitmqctl set_permissions -p / username ".*" ".*" ".*"
 
 # 设置用户标签，授予管理 API 权限（供 Tapdata 使用 HTTP API）
-rabbitmqctl set_user_tags tapdata management
+rabbitmqctl set_user_tags username management
 ```
 
 - **username**：要创建的账号名。

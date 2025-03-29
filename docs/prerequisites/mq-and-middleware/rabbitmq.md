@@ -9,6 +9,21 @@ RabbitMQ 是开源轻量级消息代理，支持 AMQP 协议，适用于分布�
 
 3.8.x 及以上
 
+## 使用限制
+
+- 仅支持 JSON 对象格式的消息体，例如：`{"id":1, "name": "张三"}`。
+- 仅支持通过默认 Exchange 进行直连消息处理，暂不支持自定义 Exchange、Routing Key 或复杂的消息路由策略。
+
+## 支持数据类型
+
+- OBJECT
+- ARRAY
+- NUMBER
+- INTEGER
+- BOOLEAN
+- STRING（长度200以下）
+- TEXT
+
 ## 准备工作
 
 在使用 Tapdata 平台连接 RabbitMQ 数据源前，推荐登录 RabbitMQ 所在设备，创建具备必要权限的连接账号。该账号不仅需要具备 **AMQP** 消息访问权限，还需具备调用 **HTTP API** 的管理权限。示例如下：

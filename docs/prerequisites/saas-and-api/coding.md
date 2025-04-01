@@ -3,32 +3,75 @@ import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
-Coding 是腾讯云旗下的一站式 DevOps 研发管理平台，围绕 DevOps 理念向广大开发者及企业研发团队提供代码托管、项目协同、测试管理、持续集成、制品库、持续部署、云原生应用管理 Orbit、团队知识库等系列工具产品。
+Coding 是腾讯云旗下的一站式 DevOps 平台，支持代码托管、项目协作、持续集成等核心功能。通过接入 Tapdata，您可以实时监听 Coding 中的关键事件（如代码提交、任务变更等），并构建自动化的数据流转，实现研发数据的统一汇聚与智能分析，助力 DevOps 流程的数字化与智能化升级。
 
-完成 Agent 部署后，您可以跟随本文教程在 Tapdata 中添加 Coding 数据源，后续可将其作为源库来构建数据管道。
 
-## 数据说明
 
-支持增量轮询的任何表在执行增量轮询时都无法监听并处理删除事件（所有修改事件都以插入事件处理），如需要具体的事件区分请选择Webhook增量方式（局限于SaaS平台，并不是所有表都支持Webhook增量）
+## 增量数据获取说明
 
-* 事项表-Issues：事项表包含全部类型包括需求、迭代、任务、史诗以及自定义的类型。 其增量方式在轮询式下无法准确知道增量事件，统一作为新增事件处理。
-* 迭代表-Iterations：迭代表包含所有迭代。 受限于Coding的OpenAPI，其轮询式增量采取从头覆盖，意味着任务开始后监控上显示的增量事件数存在误差，但不会造成真实数据误差。
-* 项目成员表-ProjectMembers：此表包含当前选中的项目下的全部项目成员。
+Tapdata 支持通过 **轮询** 或 **Webhook** 两种方式从 Coding 获取增量数据，适配不同的数据同步场景：
 
-### 注意事项
+- **轮询方式**：适用于大多数表类型，但仅能识别新增或变更事件，**无法准确区分更新与删除操作**，所有变更将统一作为“插入”事件处理。更多原理说明，参见[变更数据捕获（CDC）](../../introduction/change-data-capture-mechanism.md)。
+- **Webhook 方式**：支持更精细的事件感知（插入 / 更新 / 删除），但仅适用于部分支持 Webhook 的表，且依赖 Coding SaaS 平台的支持。
 
-请不要使用同一个 OAuth 授权过多数据源，也不要使用同一个 Coding 数据源为同一张表创建过多的任务，否则可能造成 Coding 启动限流措施。
+:::tip
+更多关于数据结构与事件支持的说明，请参考 Coding 的 [Webhook 官方文档](https://coding.net/help/docs/project-settings/open/webhook.html)。
+:::
+
+## 功能限制
+
+- 为避免触发 Coding 的 API 限流策略，建议不要为多个数据源复用同一组 OAuth 授权信息，也避免在同一个 Coding 数据源上创建过多同步任务。
+- 受限于 Coding 的 API 功能限制，如采用轮询方式来获取增量数据，会对迭代表（Iterations）采用“全量覆盖”策略，可能导致平台监控中显示的增量事件数与实际变更数量不一致，但不会影响同步数据的准确性。
 
 ## 连接 Coding
 
 1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+
 2. 在左侧导航栏，单击**连接管理**。
+
 3. 单击页面右侧的**创建**。
+
 4. 在弹出的对话框中，搜索并选择 **Coding**。
-5. 在跳转到的页面，根据下述说明填写 BigQuery 的连接信息。
+
+5. 在跳转到的页面，根据下述说明填写 Coding 的连接信息。
+   
+   ![Coding 连接设置](../../images/coding_connection_settings.png)
+   
    * **连接名称**：填写具有业务意义的独有名称。
-   * **团队名称**：您可以通过 Coding 链接中直观获取到，例如链接为 **https://team_name.coding.net/** ，那么团队名称就是 team_name。填写完成后，单击**授权**，在跳转到的页面完成登录授权。
-   * **增量方式**：支持 **Webhook** 和**轮询式**，如选择 Webhook 模式，您需要单击**生成**来获取服务 URL，后续您还需要将该 URL 配置到 Coding 平台中。
+   
+   * **团队名称**：您可以通过 Coding 平台的登录链接来获取，例如链接为 **https://team_name.coding.net/** ，那么团队名称就是 **team_name**。填写完成后，单击**授权**，在跳转到的页面完成登录授权。
+   
+   * **项目名称**：完成授权操作后，即可选择要连接的项目名称。
+   
+   * **增量方式**：基于业务需求选择：
+   
+     * **轮询式**（默认）：通过定期查询数据库表中的指定列（如时间戳），然后比较时间点前后的数据来确定数据的增量变化。此方式无法跟踪删除和表结构变更操作，更多介绍，见[变更数据捕获（CDC）](../../introduction/change-data-capture-mechanism.md)。
+   
+     * **Webhook**：通过 Coding 平台提供的 Webhook 功能监听其事件信息，当事件发生变化时通过 HTTP POST 方式通知到 TapData 平台。选择此方式时，您还需要单击**生成**来获取服务 URL，然后跟随下述流程前往 Coding 平台完成配置。
+   
+       <details>
+       <summary>Coding 平台配置 Webhook</summary>
+   
+       1. 以管理员身份[登录 Coding 平台](https://e.coding.net/login)。
+   
+       2. 选择**项目设置** > **开发者选项**，然后在 **Service Hook** 页签，单击**新建 Service Hook**。
+   
+       3. 在弹出的对话框中，保持默认的 **HTTP** 方式并单击**下一步**。
+   
+          ![创建 Service Hook](../../images/create_service_hook.png)
+   
+       4. 选择要的监听的事件类型，单击**下一步**。
+   
+          ![选择事件类型](../../images/select_coding_event.png)
+   
+       5. 填写从 TapData 平台连接数据源页面生成的 Service URL，随后可以单击**发送测试 PING 事件**，确认无误后单击**完成**。
+   
+          ![设置 Service URL](../../images/set_service_URL.png)
+   
+       </details>
+   
+       
+   
 6. 单击**连接测试**，测试通过后单击**保存**。
 
    :::tip
@@ -36,36 +79,4 @@ Coding 是腾讯云旗下的一站式 DevOps 研发管理平台，围绕 DevOps 
    如提示连接测试失败，请根据页面提示进行修复。
 
    :::
-
-## 配置 Service Hook
-
-当选择增量方式为 **Webhook** 时，您还需要跟随下述步骤，在 Coding 平台完成 Service Hook 配置。
-
-1. 一键生成服务URL，并复制到剪切板。
-
-   ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/doc/coding/generate.PNG)
-
-2. 进入您的团队并选择对应的项目。
-
-   ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/doc/coding/init.PNG)
-
-3. 进入项目设置后，找到开发者选项。
-
-   ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/doc/coding/developer.PNG)
-
-4. 找到ServerHook，再找到右上角点的新建ServerHook按钮并点击。
-
-   ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/doc/coding/init-webhook.PNG)
-
-5. 进入Webhook配置，第一步我们选择Http Webhook后点击下一步。
-
-   ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/doc/coding/webhook.PNG)
-
-6.  配置我们需要的监听的事件类型。
-
-   ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/doc/coding/monitor.PNG)
-
-7.  粘贴我们最开始在创建数据源页面生成的服务URL到此。
-
-   ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/doc/coding/url.PNG)
 

@@ -66,6 +66,9 @@ import TabItem from '@theme/TabItem';
    GRANT SELECT ON database_name.* TO 'username' IDENTIFIED BY 'password';
    ```
 
+   * **database_name**：数据库名称。
+   * **username**：用户名。
+
 4. 为保障读取 OceanBase 数据库的增量数据，您还需要跟随教程，[完成 OceanBase Binlog 服务部署](https://www.oceanbase.com/docs/community-oblogproxy-doc-1000000001999434)。
 
    :::tip

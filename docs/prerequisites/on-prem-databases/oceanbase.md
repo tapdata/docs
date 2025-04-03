@@ -3,7 +3,7 @@ import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
-OceanBase 是蚂蚁集团自研的原生分布式关系型数据库，兼容 MySQL 与 Oracle 双语法，具备高可用、高性能与强一致特性。Tapdata 支持将 OceanBase（MySQL 模式） 作为源库或目标库接入，帮助您构建多源汇聚、实时写入的数据流转链路，实现异构系统间的数据同步与整合。
+OceanBase 是蚂蚁集团自研的原生分布式关系型数据库，兼容 MySQL 与 Oracle 双语法，具备高可用、高性能与强一致特性。Tapdata 支持将 OceanBase 作为源库或目标库接入，帮助您构建多源汇聚、实时写入的数据流转链路，实现异构系统间的数据同步与整合。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -131,7 +131,7 @@ import TabItem from '@theme/TabItem';
      * **账号**：租户下的数据库用户名。
      * **密码**：上述账号对应的登录密码。
      * **连接参数**：可选项，填写 JDBC 连接参数（如编码、SSL 配置等），默认为空。
-     * **RPC 端口**：OBProxy 的服务端口，用于访问 OceanBase，默认为 **2883**。
+     * **RPC 端口**：OBProxy 的服务端口，用于访问 OceanBase，默认为 **2882**。
      * **日志代理端口**：用于增量同步的日志代理服务端口（Binlog 服务端口），默认为 **2983**。
      * **时区**：默认为 UTC（0 时区）。若源库或目标库时区不同，请设置为一致的时区。该配置将影响无时区字段（如 `DATETIME`），但不影响 `TIMESTAMP`、`DATE`、`TIME` 等字段。
    * **高级设置**

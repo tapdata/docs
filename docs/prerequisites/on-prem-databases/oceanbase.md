@@ -48,9 +48,9 @@ import TabItem from '@theme/TabItem';
 <TabItem value="作为源库" default>
 ```
 
-1. 确保 TapData Agent 所属的网络已加入 OceanBase 的[租户白名单](https://www.oceanbase.com/docs/community-observer-cn-10000000000015856)中，且内网可互通。
+1. 确保 TapData Agent 所属的网络已加入 OceanBase 的[租户白名单](https://www.oceanbase.com/docs/common-oceanbase-database-standalone-1000000002701894)中，且内网可互通。
 
-2. 以 `root` 身份登录到[租户](https://www.oceanbase.com/docs/community-observer-cn-10000000000015851)，执行下述格式的命令，创建用于数据同步的用户。
+2. 以 `root` 身份登录到[租户](https://www.oceanbase.com/docs/common-oceanbase-database-standalone-1000000002701786)，执行下述格式的命令，创建用于数据同步的用户。
 
    ```sql
    CREATE USER 'username' IDENTIFIED BY 'password';
@@ -59,7 +59,7 @@ import TabItem from '@theme/TabItem';
    * **username**：用户名。
    * **password**：密码。
 
-3. 执行下述格式的命令，为刚创建的用户授予库级别读取权限，您也可以基于业务需求自定义更精细化的[权限控制](https://www.oceanbase.com/docs/community-observer-cn-10000000000014488)。
+3. 执行下述格式的命令，为刚创建的用户授予库级别读取权限，您也可以基于业务需求自定义更精细化的[权限控制](https://www.oceanbase.com/docs/common-oceanbase-database-standalone-1000000002702184)。
 
    ```sql
    -- 授予指定库的读权限
@@ -81,9 +81,9 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="作为目标库">
 
-1. 确保 TapData Agent 所属的网络已加入 OceanBase 的[租户白名单](https://www.oceanbase.com/docs/community-observer-cn-10000000000015856)中，且内网可互通。
+1. 确保 TapData Agent 所属的网络已加入 OceanBase 的[租户白名单](https://www.oceanbase.com/docs/common-oceanbase-database-standalone-1000000002701894)中，且内网可互通。
 
-2. 以 `root` 身份登录到[租户](https://www.oceanbase.com/docs/community-observer-cn-10000000000015851)，执行下述格式的命令，创建用于数据同步的用户。
+2. 以 `root` 身份登录到[租户](https://www.oceanbase.com/docs/common-oceanbase-database-standalone-1000000002701786)，执行下述格式的命令，创建用于数据同步的用户。
 
    ```sql
    CREATE USER 'username' IDENTIFIED BY 'password';
@@ -92,7 +92,7 @@ import TabItem from '@theme/TabItem';
    * **username**：用户名。
    * **password**：密码。
 
-4. 执行下述格式的命令，为刚创建的用户授予库级别所有权限，您也可以基于业务需求自定义更精细化的[权限控制](https://www.oceanbase.com/docs/community-observer-cn-10000000000014488)。
+4. 执行下述格式的命令，为刚创建的用户授予库级别所有权限，您也可以基于业务需求自定义更精细化的[权限控制](https://www.oceanbase.com/docs/common-oceanbase-database-standalone-1000000002702184)。
 
    ```sql
    -- 授予指定库的所有权限

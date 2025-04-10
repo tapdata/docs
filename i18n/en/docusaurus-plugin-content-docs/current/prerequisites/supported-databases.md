@@ -247,6 +247,15 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>➖</td>
     <td>3.4 or earlier</td>
   </tr>
+    <tr>
+    <td>OceanBase（MySQL Mode）</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>4.x</td>
+  </tr>
   <tr>
     <td>Redis</td>
     <td>➖</td>
@@ -470,15 +479,6 @@ The Alpha version of the data sources is in public preview and has passed the ba
     <td>✅</td>
     <td>➖</td>
     <td>5.x, 6.x, 7.x</td>
-  </tr>
-  <tr>
-    <td>OceanBase（MySQL Mode）</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>3.x, 4.x</td>
   </tr>
   <tr>
     <td>OpenGauss</td>

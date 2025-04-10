@@ -307,6 +307,24 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>3.4 以下版本</td>
   </tr>
   <tr>
+    <td>OceanBase（MySQL 模式）</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>4.x</td>
+  </tr>
+  <tr>
+    <td>OceanBase（Oracle 模式）</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>4.x</td>
+  </tr>
+  <tr>
     <td>Redis</td>
     <td>➖</td>
     <td>➖</td>
@@ -627,24 +645,6 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
     <td>✅</td>
     <td>✅</td>
     <td>V8R3</td>
-  </tr>
-  <tr>
-    <td>OceanBase（MySQL 模式）</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>3.x、4.x</td>
-  </tr>
-  <tr>
-    <td>OceanBase（Oracle 模式）</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>4.x</td>
   </tr>
   <tr>
     <td>OpenGauss</td>

@@ -127,6 +127,7 @@ const sidebars = {
                           'prerequisites/on-prem-databases/mysql',
                           'prerequisites/on-prem-databases/mysql-pxc',
                           'prerequisites/on-prem-databases/oceanbase',
+                          'prerequisites/on-prem-databases/oceanbase-oracle',
                           'prerequisites/on-prem-databases/opengauss',
                           'prerequisites/on-prem-databases/oracle',
                           'prerequisites/on-prem-databases/postgresql',

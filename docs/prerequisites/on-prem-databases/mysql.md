@@ -61,10 +61,22 @@ import TabItem from '@theme/TabItem';
 ```
 
 - 仅支持同步表和索引对象。不支持同步临时表、隐藏列、触发器、视图和存储过程等对象。
-- MySQL Binlog 日志需要至少保留 7 天，否则 TapData 可能因无法获取 Binlog 而导致增量同步失败。
-- 需确保 Binlog 参数配置正确：`binlog_format` 为 `ROW`，`binlog_row_image` 为 `FULL`，目标库未被包含在 `binlog-ignore-db` 中；如配置了 `binlog-do-db`，则必须显式包含目标库，否则可能导致增量数据缺失。
-- 从指定时间点启动增量同步时，如起点对应的 Binlog 已过期或被删除，将导致任务启动失败。
+
 - Tapdata 支持 MySQL 主从切换过程不中断同步，但需要确保数据库主从同步状态一致，且连接切换策略配置合理，否则可能导致短暂中断或数据缺失。
+
+- 如需实现增量数据同步，需确保 MySQL Binlog 参数配置正确：
+
+  - Binlog 日志需要至少保留 7 天，否则 TapData 可能因无法获取 Binlog 而导致增量同步失败。
+
+  - `binlog_format` 为 `ROW`，`binlog_row_image` 为 `FULL`，且目标库未被包含在 `binlog-ignore-db` 中；如配置了 `binlog-do-db`，则必须显式包含目标库，否则可能导致增量数据缺失。
+
+    :::tip
+
+    关于 Binlog 参数的详细介绍与配置说明，请参考 [MySQL 官方文档](https://dev.mysql.com/doc/refman/8.4/en/replication-options-binary-log.html)。
+
+    :::
+
+- 从指定时间点启动增量同步时，如起点对应的 Binlog 已过期或被删除，将导致任务启动失败。
 
 </TabItem>
 

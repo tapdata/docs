@@ -6,6 +6,12 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.26.0
+
+### 新增功能
+
+- 在 [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md) 到 SQL Server 的同步场景中，新增对默认值和外键的同步支持
+
 ## 3.25.0
 
 ### 新增功能

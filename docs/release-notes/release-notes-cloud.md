@@ -17,6 +17,13 @@ import TabItem from '@theme/TabItem';
   <TabItem value="2025 年" default>
 ```
 
+### 2025-04-11
+
+#### 新增功能
+
+- 新增支持同步 [SQL Server](../prerequisites/on-prem-databases/sqlserver.md) 中包含自增主键的表
+- 在 [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md) 到 SQL Server 的同步场景中，新增对默认值和外键的同步支持
+
 ### 2025-03-19
 
 #### 新增功能

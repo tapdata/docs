@@ -44,7 +44,7 @@ import TabItem from '@theme/TabItem';
 ## 支持同步方向
 
 - 单向同步
-- 双向同步（MySQL 间）
+- 双向同步
 
 ## 注意事项
 

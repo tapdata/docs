@@ -6,6 +6,20 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+### 新增功能
+
+- 首页的[集群总览页面](../user-guide/workshop.md)支持显示各节点的任务数量分布信息，帮助您更好掌握集群负载
+- [OceanBase（MySQL 模式）](../prerequisites/on-prem-databases/oceanbase.md)、[GaussDB（DWS）](../prerequisites/warehouses-and-lake/gaussdb.md)已通过 TapData 认证测试流程，升级为[认证级别数据源](../prerequisites/supported-databases.md)，提供更丰富的特性和更高的生产稳定性
+- 数据复制任务支持将多个表写入 Kafka 的同一 Topic，丰富写入场景支持度
+
+### 功能优化
+
+- 优化模型展示效果，调整主键、外键和唯一索引的展示方式，提升模型可读性与编辑效率
+
+### 问题修复
+
+- 修复多 mongos 节点场景下连接请求未均匀分发的问题，消除潜在的单点性能瓶颈
+
 ## 3.26.0
 
 ### 新增功能

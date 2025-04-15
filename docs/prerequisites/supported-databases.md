@@ -94,6 +94,15 @@ TapData 支持全量和增量两种同步方式，涵盖单向同步和双向同
     <td>✅</td>
     <td>1.2 ~ 3.0</td>
   </tr>
+    <tr>
+    <td>GaussDB（DWS）</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>8.1.3</td>
+  </tr>
   <tr>
     <td>Kafka-Enhanced</td>
     <td>✅</td>
@@ -148,6 +157,24 @@ TapData 支持全量和增量两种同步方式，涵盖单向同步和双向同
     <td>✅</td>
     <td>5.0 ~ 9</td>
   </tr>
+    <tr>
+    <td>OceanBase（MySQL 模式）</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>4.x</td>
+  </tr>
+  <tr>
+    <td>OceanBase（Oracle 模式）</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>4.x</td>
+  </tr>
   <tr>
     <td>Oracle</td>
     <td>✅</td>
@@ -195,6 +222,7 @@ TapData 支持全量和增量两种同步方式，涵盖单向同步和双向同
   </tr>
 </tbody>
 </table>
+
 
 
 
@@ -364,15 +392,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>0.11.0</td>
   </tr>
   <tr>
-    <td>GaussDB（DWS）</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>8.1.3</td>
-  </tr>
-  <tr>
     <td>SelectDB</td>
     <td>➖</td>
     <td>➖</td>
@@ -392,6 +411,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
   </tr>
 </tbody>
 </table>
+
 
 </TabItem>
 
@@ -597,24 +617,6 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
     <td>✅</td>
     <td>✅</td>
     <td>V8R3</td>
-  </tr>
-  <tr>
-    <td>OceanBase（MySQL 模式）</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>3.x、4.x</td>
-  </tr>
-  <tr>
-    <td>OceanBase（Oracle 模式）</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>4.x</td>
   </tr>
   <tr>
     <td>OpenGauss</td>

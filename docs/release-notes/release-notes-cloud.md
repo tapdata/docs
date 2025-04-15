@@ -17,7 +17,23 @@ import TabItem from '@theme/TabItem';
   <TabItem value="2025 年" default>
 ```
 
-### 2025-04-11
+### 2025-04-14
+
+#### 新增功能
+
+- 首页的[集群总览页面](../user-guide/workshop.md)支持显示各节点的任务数量分布信息，帮助您更好掌握集群负载
+- [OceanBase（MySQL 模式）](../prerequisites/on-prem-databases/oceanbase.md)、[OceanBase（Oracle 模式）](../prerequisites/on-prem-databases/oceanbase-oracle.md)、[GaussDB（DWS）](../prerequisites/warehouses-and-lake/gaussdb.md)已通过 TapData 认证测试流程，升级为[认证级别数据源](../prerequisites/supported-databases.md)，提供更丰富的特性和更高的生产稳定性
+- 数据复制任务支持将多个表写入 Kafka 的同一 Topic，丰富写入场景支持度
+
+#### 功能优化
+
+- 优化模型展示效果，调整主键、外键和唯一索引的展示方式，提升模型可读性与编辑效率
+
+#### 问题修复
+
+- 修复多 mongos 节点场景下连接请求未均匀分发的问题，消除潜在的单点性能瓶颈
+
+### 2025-04-02
 
 #### 新增功能
 

@@ -33,13 +33,60 @@ import TabItem from '@theme/TabItem';
 
   :::
 
-- **DDL**：ADD COLUMN、CHANGE COLUMN、DROP COLUMN、RENAME COLUMN
+- **DDL**：ADD COLUMN、CHANGE COLUMN（不支持自增属性）、DROP COLUMN、RENAME COLUMN
+
+此外，在 MySQL 间数据同步的场景下，还额外支持**字段默认值**、**自增列**和**外键约束**同步的能力。
+
+## 支持同步方向
+
+- 单向同步
+- 双向同步
 
 ## 注意事项
 
+* TapData Agent 与 MySQL 需部署在同一内网环境，如果通过外网连接，则需确保网络连通性。
 * 增量数据采集主要通过解析 Binlog 实现，数据变更频繁时，可能会占用数据库一定的 CPU 和磁盘 I/O 资源。
 * 在 MySQL 5.6 及更早版本中，应预处理 **TIME** 类型的时分秒为负数的数据（例如转换为合法的正值），以免增量采集发生异常。
-* 在某些基于 MySQL 内核的数据源，若使用了原生 MySQL 不支持的 Schema 或函数，可能导致增量采集出错，此类情况可联系 [TapData 技术支持](mailto:team@tapdata.io)进行适配。
+* 在某些基于 MySQL 内核的数据源，若使用了原生 MySQL 不支持的 Schema 或函数，可能导致增量采集出错，此类情况可联系 TapData 技术支持进行适配。
+
+## 功能限制
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="源端读取" default>
+```
+
+- 仅支持同步表和索引对象。不支持同步临时表、隐藏列、触发器、视图和存储过程等对象。
+- Tapdata 支持 MySQL 主从切换过程不中断同步，但需要确保数据库主从同步状态一致，且连接切换策略配置合理，否则可能导致短暂中断或数据缺失。
+- 如需实现增量数据同步，需确保 MySQL Binlog 参数配置正确：
+   - Binlog 日志需要至少保留 7 天，否则 TapData 可能因无法获取 Binlog 而导致增量同步失败。
+   - `binlog_format` 为 `ROW`，`binlog_row_image` 为 `FULL`，且目标库未被包含在 `binlog-ignore-db` 中；如配置了 `binlog-do-db`，则必须显式包含目标库，否则可能导致增量数据缺失。
+     :::tip
+     关于 Binlog 参数的详细介绍与配置说明，请参考 [MySQL 官方文档](https://dev.mysql.com/doc/refman/8.4/en/replication-options-binary-log.html)。
+     :::
+- 从指定时间点启动增量同步时，如起点对应的 Binlog 已过期或被删除，将导致任务启动失败。
+
+</TabItem>
+
+<TabItem value="目标端写入">
+
+- 如目标库已存在表结构且需保留，需确保字段顺序与源库一致，且字段类型相同或兼容，否则可能导致结构不兼容或数据写入失败。
+- 索引同步仅在首次目标库初始化 DDL 时执行，后续源库索引变更不会自动同步。
+- 首次同步时，支持初始化普通索引、唯一索引、主键索引及联合索引，对全文索引的支持有限。
+- 在异构数据源间迁移时，MySQL 中的地理类型、自定义类型及枚举集合类型将统一转为字符串，需评估目标库字段类型及语义是否符合预期。
+- MySQL 间同步时，从低版本同步至高版本通常兼容性较好；但从高版本同步至低版本时，需评估新版本特性（如更宽松的时间类型、不合法时间值等）是否可兼容，从而易导致数据写入失败。
+
+</TabItem>
+
+<TabItem value="数据一致性与冲突处理">
+
+- MySQL 间双向同步暂不支持双活冲突写入，应避免在两端同时修改相同数据。
+- 执行数据同步过程中，如存在非 TapData 的外部写入操作，可能导致数据不一致风险。
+- 在全量同步阶段，请勿对表执行 DDL 变更操作，否则可能导致数据同步失败。
+
+</TabItem>
+
+</Tabs>
 
 ## 准备工作
 

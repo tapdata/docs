@@ -35,11 +35,66 @@ import TabItem from '@theme/TabItem';
 
 - **DDL**: ADD COLUMN, CHANGE COLUMN, DROP COLUMN, RENAME COLUMN
 
+In addition, for data synchronization between MySQL databases, extra support is provided for synchronizing **column default values**, **auto-increment columns**, and **foreign key constraints**.
+
+## Supported Sync Directions
+
+- One-way sync
+- Bidirectional sync
+
 ## Considerations
 
+* The TapData Agent and MySQL instance should be deployed in the same intranet environment. If connecting over the internet, make sure the network is accessible.
 * Incremental data capture is mainly achieved through parsing the binlog, which may consume CPU and disk I/O resources if there are frequent data changes.
 * In MySQL 5.6 and earlier versions, preprocess negative values for the **TIME** type (e.g., convert to a legal positive value) to avoid issues with incremental data capture.
-* For some data sources based on the MySQL kernel, using schemas or functions not supported by native MySQL might cause errors in incremental data capture. In such cases, please contact [TapData Support](mailto:team@tapdata.io) for assistance.
+* For some data sources based on the MySQL kernel, using schemas or functions not supported by native MySQL might cause errors in incremental data capture. In such cases, please contact TapData Support for assistance.
+
+## Limitations
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="Source Side" default>
+```
+
+Applicable when MySQL is used as a source:
+
+- Only tables and indexes can be synchronized. Temporary tables, hidden columns, triggers, views, and stored procedures are not supported.
+- Tapdata supports master-slave switchovers without interrupting sync, but the replication status must be consistent and the failover strategy properly configured. Otherwise, temporary interruptions or data loss may occur.
+- To enable incremental data sync, make sure MySQL Binlog settings are correctly configured:
+   - The Binlog must be retained for **at least 7 days**, or Tapdata may fail to access it, resulting in incremental sync failures.
+   - `binlog_format` should be set to `ROW`, `binlog_row_image` to `FULL`, and the target database must **not** be included in `binlog-ignore-db`.
+   - If `binlog-do-db` is configured, the target database must be explicitly included; otherwise, incremental data may be missed.
+     :::tip
+     For detailed information on Binlog configuration and parameters, refer to the [official MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/replication-options-binary-log.html).
+     :::
+- If incremental sync starts from a specific time and the corresponding Binlog has expired or been deleted, the task will fail to start.
+
+
+</TabItem>
+
+<TabItem value="Target Side">
+
+Applicable when MySQL is used as a target:
+
+- If the target tables already exist and need to be preserved, ensure the column order and data types are consistent with the source. Otherwise, write failures may occur due to schema mismatch.
+- Indexes are synced only during initial DDL execution. Subsequent changes in source indexes will not be applied automatically.
+- Initial sync supports normal indexes, unique indexes, primary keys, and composite indexes. Full-text index support is limited.
+- When migrating between heterogeneous systems, MySQL’s spatial types, custom types, and ENUM/SET types will be converted to strings. You should verify that the target schema meets business expectations.
+- When syncing between MySQL databases:
+   - Syncing from a lower to higher version is generally compatible.
+   - Syncing from a higher to lower version may fail due to unsupported features (e.g., relaxed time formats or invalid date values).
+
+</TabItem>
+
+<TabItem value="Consistency & Conflicts">
+
+- Active-active conflict resolution is not supported in bidirectional MySQL sync. Avoid updating the same data on both sides at the same time.
+- External writes (not handled by Tapdata) during sync may cause data inconsistencies.
+- During full sync, avoid performing DDL operations on tables involved in the task, as this may lead to sync failure.
+
+</TabItem>
+
+</Tabs>
 
 ## Preparation
 

@@ -112,7 +112,7 @@ DM 7.x 和 8.x 版本（单机架构）
       
       -- 配置本地归档，DEST 指定的目录不存在时会自动创建
       -- FILE_SIZE 表示单个归档文件大小，单位为 MB；SPACE_LIMIT 表示空间大小限制，取值为 0 表示不限制，后续可通过命令定期清理
-      ALTER DATABASE ADD ARCHIVELOG 'DEST = /bak/dmdata/dameng, TYPE = local, FILE_SIZE = 1024, SPACE_LIMIT = 0';
+      ALTER DATABASE ADD ARCHIVELOG 'DEST = /bak/dmdata/dameng, TYPE = local, FILE_SIZE = 128, SPACE_LIMIT = 0';
       
       -- 开启归档模式
       ALTER DATABASE ARCHIVELOG;

@@ -6,6 +6,33 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)。
 
+## 3.27.0
+
+### 新增功能
+
+- 首页的[集群总览页面](../user-guide/workshop.md)支持显示各节点的任务数量分布信息，帮助您更好掌握集群负载
+- [OceanBase（MySQL 模式）](../prerequisites/on-prem-databases/oceanbase.md)、[OceanBase（Oracle 模式）](../prerequisites/on-prem-databases/oceanbase-oracle.md)、[GaussDB（DWS）](../prerequisites/warehouses-and-lake/gaussdb.md)已通过 TapData 认证测试流程，升级为[认证级别数据源](../prerequisites/supported-databases.md)，提供更丰富的特性和更高的生产稳定性
+- 数据复制任务支持将多个表写入 Kafka 的同一 Topic，丰富写入场景支持度
+
+### 功能优化
+
+- 优化模型展示效果，调整主键、外键和唯一索引的展示方式，提升模型可读性与编辑效率
+
+### 问题修复
+
+- 修复多 mongos 节点场景下连接请求未均匀分发的问题，消除潜在的单点性能瓶颈
+
+## 3.26.0
+
+### 新增功能
+
+- 新增支持同步 [SQL Server](../prerequisites/on-prem-databases/sqlserver.md) 中包含自增主键的表
+- 在 [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md) 到 SQL Server 的同步场景中，新增对默认值和外键的同步支持
+
+### 功能优化
+
+* 优化数据校验功能，添加快速定位和空值优先选项帮助过滤信息
+
 ## 3.25.0
 
 ### 新增功能

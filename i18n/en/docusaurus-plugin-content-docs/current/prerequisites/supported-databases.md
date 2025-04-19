@@ -149,6 +149,24 @@ TapData supports two types of synchronization: **full synchronization** and **in
     <td>5.0 ~ 9</td>
   </tr>
   <tr>
+    <td>OceanBase（MySQL Mode）</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>3.x, 4.x</td>
+  </tr>
+  <tr>
+    <td>OceanBase（Oracle Mode）</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>4.x</td>
+  </tr>
+  <tr>
     <td>Oracle</td>
     <td>✅</td>
     <td>✅</td>
@@ -302,24 +320,6 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>✅</td>
     <td>✅</td>
     <td>10.x</td>
-  </tr>
-    <tr>
-    <td>OceanBase（MySQL Mode）</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>3.x, 4.x</td>
-  </tr>
-  <tr>
-    <td>OceanBase（Oracle Mode）</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>4.x</td>
   </tr>
   <tr>
     <td>Redis</td>

@@ -152,6 +152,24 @@ TapData 支持全量和增量两种同步方式，涵盖单向同步和双向同
     <td>5.0 ~ 9</td>
   </tr>
   <tr>
+    <td>OceanBase（MySQL 模式）</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>4.x</td>
+  </tr>
+  <tr>
+    <td>OceanBase（Oracle 模式）</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>4.x</td>
+  </tr>
+  <tr>
     <td>Oracle</td>
     <td>✅</td>
     <td>✅</td>
@@ -305,24 +323,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>➖</td>
     <td>3.4 以下版本</td>
-  </tr>
-  <tr>
-    <td>OceanBase（MySQL 模式）</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>4.x</td>
-  </tr>
-  <tr>
-    <td>OceanBase（Oracle 模式）</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>4.x</td>
   </tr>
   <tr>
     <td>Redis</td>

@@ -1,10 +1,10 @@
 # 快速入门
 
-本文将指导您如何在 Tapdata 中启用 [MCP（Model Context Protocol）服务](introduction.md)，并将其对接至支持 SSE 协议的 AI Agent 工具（如 Cursor），实现结构化上下文数据的实时推送，助力大模型更准确地理解业务背景。
+本文将指导您如何在 TapData 中启用 [MCP（Model Context Protocol）服务](introduction.md)，并将其对接至支持 SSE 协议的 AI Agent 工具（如 Cursor），实现结构化上下文数据的实时推送，助力大模型更准确地理解业务背景。
 
 ## 前提条件
 
-- 已部署并运行 Tapdata 平台。
+- 已部署并运行 TapData 平台。
 - 拥有支持 MCP SSE 协议的 AI 模型服务或工具（如 Cursor）。
 
 
@@ -19,7 +19,7 @@
 
 3. 进入 **系统设置** > **用户管理**，为某个用户账号添加 `mcp` 角色，详见[管理用户](../user-guide/manage-system/manage-user.md)。
 
-4. 使用被授权的用户登录 Tapdata 平台，点击右上角用户名，选择 **个人设置**，复制其中的访问码（accessCode），后续配置时将使用。
+4. 使用被授权的用户登录 TapData 平台，点击右上角用户名，选择 **个人设置**，复制其中的访问码（accessCode），后续配置时将使用。
 
    ![获取访问码](../images/obtain_enterprise_ak.png)
 
@@ -73,7 +73,7 @@
 
 4. 保存并关闭配置文件，返回至 MCP 设置处，等待左侧状态指示灯变为绿色，说明成功连接 TapData MCP Server。
 
-5. 在 Cursor 中发起提问时，模型将自动通过 Tapdata MCP Server 获取上下文数据。你也可以通过自然语言提示词（Prompt）明确引导模型的行为，以实现更高效的数据调用与任务规划。
+5. 在 Cursor 中发起提问时，模型将自动通过 TapData MCP Server 获取上下文数据。你也可以通过自然语言提示词（Prompt）明确引导模型的行为，以实现更高效的数据调用与任务规划。
 
    ```bash
    # 角色
@@ -102,7 +102,7 @@ import TabItem from '@theme/TabItem';
 <details>
 <summary><b>了解 TapData MCP Server 原语</b></summary>
 
-Tapdata MCP Server 基于三类核心原语构建，分别是 **Prompts**、**Resources** 和 **Tools**。它们共同构成了 AI 模型与数据系统交互的基础，使模型能够识别可用资源、选择合适操作，并基于提示词获取结构化上下文，从而完成更精准、高效的推理任务。
+TapData MCP Server 基于三类核心原语构建，分别是 **Prompts**、**Resources** 和 **Tools**。它们共同构成了 AI 模型与数据系统交互的基础，使模型能够识别可用资源、选择合适操作，并基于提示词获取结构化上下文，从而完成更精准、高效的推理任务。
 
 
 
@@ -148,7 +148,7 @@ Tools 是模型可以直接调用的函数或指令，用于与结构化数据�
 
 :::tip
 
-当前 MCP 服务已支持上下文数据的读取原语，包括结构化查询、聚合分析与样例提取。Tapdata 将陆续推出 **写入能力、数据发布 API、AI Agent 分析建模** 等增强功能，持续完善 MCP 的上下文闭环能力，助力 AI 分析安全高效落地。
+当前 MCP 服务已支持上下文数据的读取原语，包括结构化查询、聚合分析与样例提取。TapData 将陆续推出 **写入能力、数据发布 API、AI Agent 分析建模** 等增强功能，持续完善 MCP 的上下文闭环能力，助力 AI 分析安全高效落地。
 
 :::
 
@@ -166,12 +166,12 @@ Tools 是模型可以直接调用的函数或指令，用于与结构化数据�
 
 - 问：AI 模型推理结果出现延迟或数据丢失，该如何排查？
 
-  建议检查 AI 模型服务端性能瓶颈、提供上下文数据的数据库是否有慢查询、Tapdata 与模型服务之间网络延迟情况。
+  建议检查 AI 模型服务端性能瓶颈、提供上下文数据的数据库是否有慢查询、TapData 与模型服务之间网络延迟情况。
 
 - 问：如何快速调试 SSE 数据连接？
 
   您可以通过使用 `curl` 或 `Postman` 直接请求 MCP 的 SSE 接口，检查返回数据；也可以使用官方提供的 [MCP Inspector 工具](https://modelcontextprotocol.io/docs/tools/inspector) 测试 MCP Server 返回的数据结构与实时推送情况。
 
-- 问：我使用的 AI Agent 工具仅支持 STDIO 协议，如何对接 Tapdata MCP 服务？
+- 问：我使用的 AI Agent 工具仅支持 STDIO 协议，如何对接 TapData MCP 服务？
 
-  可以使用 [mcp-proxy](https://github.com/sparfenyuk/mcp-proxy) 工具将 STDIO 协议转换为 SSE 协议，以实现对 Tapdata MCP 服务的接入。
+  可以使用 [mcp-proxy](https://github.com/sparfenyuk/mcp-proxy) 工具将 STDIO 协议转换为 SSE 协议，以实现对 TapData MCP 服务的接入。

@@ -73,6 +73,8 @@
 
 4. 保存并关闭配置文件，返回至 MCP 设置处，等待左侧状态指示灯变为绿色，说明成功连接 TapData MCP Server。
 
+   ![MCP 连接就绪](../images/mcp_connection_ready.png)
+
 5. 在 Cursor 中发起提问时，模型将自动通过 TapData MCP Server 获取上下文数据。你也可以通过自然语言提示词（Prompt）明确引导模型的行为，以实现更高效的数据调用与任务规划。
 
    ```bash

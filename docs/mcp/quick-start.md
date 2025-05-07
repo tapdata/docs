@@ -5,7 +5,7 @@
 ## 前提条件
 
 - 已部署并运行 TapData 平台。
-- 拥有支持 MCP SSE 协议的 AI 模型服务或工具（如 Cursor）。
+- 拥有支持 MCP SSE 协议的 AI 模型服务或工具（如 Cursor 或 Trae）。
 
 
 

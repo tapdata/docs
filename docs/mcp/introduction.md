@@ -32,8 +32,18 @@
 
   支持 100+ 主流数据库与 SaaS 系统接入，统一管理异构数据源，打通数据孤岛，为上下文生成与多场景推理提供可靠的数据基础。
 
-## 场景示例（Todo）
+## 场景示例
 
+本视频演示了如何结合 TapData MCP 自动获取业务上下文，包括结构解析、常见查询和实时宽表加速，帮助您直观了解其在性能与数据安全方面的优势。
+
+<video
+  src="/video/tapdata-mcp-demo.mp4"
+  poster="/video/tapdata-mcp-cover.jpg"   // 封面图
+  width="100%"
+  height="500"
+  controls
+  preload="none"
+  style={{borderRadius: '8px'}} />
 
 
 ## 了解更多

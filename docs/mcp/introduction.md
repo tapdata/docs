@@ -18,19 +18,19 @@
 
 * **实时加速，查询性能百倍提升**
 
-  基于 TapData 的数据缓存与物化视图能力，AI 查询无需直连源库，实现毫秒级查询响应，显著加速上下文获取与模型推理效率。
+  基于 TapData 的数据缓存与[实时物化视图](../tapflow/tapflow-tutorial/build-real-time-wide-table.md)能力，AI 查询无需直连源库，实现毫秒级查询响应，显著加速上下文获取与模型推理效率。
 
 * **安全访问，保障上下文可信可控**
 
-  支持字段级脱敏、访问隔离与权限管理，结合实时同步与增量处理机制，确保 AI 在使用过程中安全、合规地访问最新数据。
+  支持字段级[脱敏](../user-guide/advanced-settings/custom-node.md)与[权限管理](../user-guide/manage-system/manage-role.md)，结合实时同步与增量处理机制，确保 AI 在使用过程中安全、合规地访问最新数据。
 
 * **一站连接，支持上百种数据源**
 
-  仅需单个 MCP 服务即可连接 100+ 异构数据源，全面覆盖主流数据库、SaaS 系统等，打通数据孤岛，为上下文生成与多场景推理提供可靠的数据基础。
+  仅需单个 MCP 服务即可连接 [100+ 异构数据源](../prerequisites/supported-databases.md)，全面覆盖主流数据库、SaaS 系统等，打通数据孤岛，为上下文生成与多场景推理提供可靠的数据基础。
 
 * **适配智能体生态，快速集成主流模型**
 
-  提供标准化 SSE 协议以及无代码配置的 REST API 接口，兼容 Cursor、Claude 等主流智能体工具链，快速赋能 LLM 与企业数据融合。
+  提供标准化 SSE 协议以及无代码配置的 [REST API](../user-guide/data-service/README.md) 接口，兼容 Cursor、Claude 等主流智能体工具链，快速赋能 LLM 与企业数据融合。
 
 ## 场景示例
 

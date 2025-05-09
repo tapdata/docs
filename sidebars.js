@@ -358,6 +358,15 @@ const sidebars = {
     },
     {
          type: 'category',
+         label: 'MCP Server 使用指南',
+         link: {type: 'doc', id: 'mcp/README'},
+         items: [
+                'mcp/introduction',
+                'mcp/quick-start',
+                ]
+     },    
+    {
+         type: 'category',
          label: 'TapFlow 开发者指南',
          link: {type: 'doc', id: 'tapflow/README'},
          items: [

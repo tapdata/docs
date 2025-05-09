@@ -1,5 +1,9 @@
 # MCP Server 介绍
 
+import Content from '../reuse-content/_enterprise-and-community-features.md';
+
+<Content />
+
 **MCP（Model Context Protocol）** 是一种模型上下文协议，用于将结构化业务数据实时提供给 AI 模型，提升其对业务语境的理解能力。基于 **TapData** 提供的 MCP 服务，您可以将来自多个异构系统的数据整合、脱敏并发布为实时上下文视图，供 LLM（大语言模型）或 AI Agent 动态拉取。该方案特别适用于对数据时效性与合规性要求高的企业场景，如金融风控、智能客服、个性化推荐等。
 
 ## 背景介绍

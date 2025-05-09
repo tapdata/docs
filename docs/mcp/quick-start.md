@@ -1,10 +1,14 @@
 # 快速入门
 
+import Content from '../reuse-content/_enterprise-and-community-features.md';
+
+<Content />
+
 本文将指导您如何在 TapData 中启用 [MCP（Model Context Protocol）服务](introduction.md)，并将其对接至支持 SSE 协议的 AI Agent 工具（如 Cursor），实现结构化上下文数据的实时推送，助力大模型更准确地理解业务背景。
 
 ## 前提条件
 
-- 已部署并运行 TapData 平台。
+- 已[部署](../quick-start/install.md)并运行 TapData Enterprise 或 Community 版本。
 - 拥有支持 MCP SSE 协议的 AI 模型服务或工具（如 Cursor 或 Trae）。
 
 

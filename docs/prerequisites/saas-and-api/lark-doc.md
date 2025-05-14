@@ -3,35 +3,66 @@ import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content />
 
-本文介绍如何添加 Lark Doc（飞书文档）数据源。
+飞书知识库（Lark Doc）是组织用于沉淀、共享和协作知识的核心平台。Tapdata 支持将飞书知识库作为数据源接入，实时提取文档内容并同步至目标数据库、搜索引擎或数据湖。通过结构化管理和统一治理，帮助企业构建智能知识库、提升文档检索效率，支持后续的 BI 分析、问答系统构建与数据驱动决策。
 
-#### ***数据源配置***
 
-您需要前往 https://open.feishu.cn/app 找到对应的应用，并在应用的 ***凭证与基础信息*** 中找到：
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/FeiShu/doc/findApp.PNG)
 
-![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/FeiShu/doc/appIdAndSecret.PNG)
+## 注意事项
 
-1. 获取到***App ID***,并填写到此处。
-2. 获取到***App Secret***,并填写到此处。
+飞书开放平台为不同的 OpenAPI 设定了不同级别的频控控制策略，以保障系统稳定性和为开发者提供最佳性能和优质的开发体验，更多介绍，见[频控策略](https://open.feishu.cn/document/server-docs/api-call-guide/frequency-control)。
 
-#### ***飞书 WiKi/文档 权限配置***
 
-1. 您可以参阅官方文档：
 
-   详情见：如何将应用添加为知识库管理员（成员） https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/wiki-qa#b5da330b
+## <span id="prerequisite">准备工作</span>
 
-2. 您也可以按以下向导进行配置：
+1. 以管理员的身份登录[飞书开放平台](https://open.feishu.cn/app)。
 
-（1）创建或者将机器人加入到指定群聊。 ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/lark-doc/doc/robot.PNG)
+2. 在开发平台首页，进入企业自建的应用。
 
-（2）进入知识库管理界面：https://fvs22k9l2w.feishu.cn/wiki/ ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/lark-doc/doc/home.PNG)
+   :::tip
 
-（3）选择已有知识库或新建新的知识库 a. 选择已有知识库，直接进入编辑页面 ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/lark-doc/doc/chiose-wiki.PNG) b. 新建新的知识库，新建后再进入编辑页面 ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/lark-doc/doc/new-wiki.PNG)
+   关于企业自建应用的创建方法，见[开发流程](https://open.feishu.cn/document/home/introduction-to-custom-app-development/self-built-application-development-process)。
 
-（4）进入成员设置并点击添加管理员 ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/lark-doc/doc/config-1.PNG)
+   :::
 
-（5）添加将机器人所在的群 ![img](https://tapdata-bucket-01.oss-cn-beijing.aliyuncs.com/lark-doc/doc/config-2.PNG)
+3. 在左侧导航栏，单击**凭证与基础信息**，获取 App ID 和 App Secret 信息，后续将在连接数据源时使用。
 
-（6）权限配置完成。
+   ![](../../images/obtain_feishu_app_ak.png)
+   
+4. [设置应用可用范围](https://open.feishu.cn/document/develop-process/test-and-release-app/availability)，确保飞书消息的目标用户或群组已纳入飞书自建应用的可见范围，避免消息接受失败。
+
+5. 为应用开启[机器人能力](https://open.feishu.cn/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability)，注意需要应用发布后才能生效。
+
+5. [将应用设置为知识库管理员](https://open.feishu.cn/document/server-docs/docs/wiki-v2/wiki-qa#b5da330b)，保障可接收和发送通知信息。
+
+
+
+## 连接 Lark Doc
+
+1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
+
+2. 在左侧导航栏，单击**连接管理**。
+
+3. 在页面右侧，单击**创建连接**。
+
+4. 在弹出的对话框中，搜索并选择 **Lark Doc**。
+
+5. 根据下述说明完成数据源配置。
+
+   ![Lark Doc 连接设置](../../images/lark-doc_connection_setting.png)
+
+   * **连接名称**：填写具有业务意义的独有名称。
+   * **连接类型**：仅支持作为**源头**。
+   * **应用 ID**、**应用 Secret**：可通过飞书开放平台获取，具体操作，见[准备工作](#prerequisite)。
+   * **高级设置**
+     * **agent 设置**：默认为**平台自动分配**，您也可以手动指定。
+     * **模型加载频率**：数据源中模型数量大于 1 万时，Tapdata 将按照本参数的设定定期刷新模型。
+
+6. 单击**连接测试**，测试通过后单击**保存**。
+
+   :::tip
+
+   如提示连接测试失败，请根据页面提示进行修复。
+
+   :::

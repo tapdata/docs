@@ -83,7 +83,7 @@ GRANT ALL ON ALL TABLES IN DATABASE database_name TO USER your_username;
 <TabItem value="授予所有库权限">
 
 ```sql
--- 请替换真实的数据库名和用户名
+-- 请替换真实的用户名
 GRANT ALL ON ALL DATABASES TO USER your_username;
 GRANT ALL ON ALL TABLES IN ALL DATABASES TO USER your_username;
 ```

@@ -6,6 +6,8 @@ import Content from '../reuse-content/_community-features.md';
 
 本文介绍 TapData Community 近期版本的更新日志，更多早期版本，请参见 [GitHub Release 页面](https://github.com/tapdata/tapdata/releases)。
 
+## 3.27.0
+
 ### 新增功能
 
 - 首页的[集群总览页面](../user-guide/workshop.md)支持显示各节点的任务数量分布信息，帮助您更好掌握集群负载

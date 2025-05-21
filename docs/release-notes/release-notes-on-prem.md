@@ -4,7 +4,41 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
-本文介绍 TapData Enterprise V3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)。
+本文介绍 TapData Enterprise V4.x 和 3.x 的版本更新日志，早期版本请参见 [V2.x 版本更新日志](https://docs.tapdata.net/2.0/enterprise/release-notes)。
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="V4.x 版本" default>
+```
+
+## 4.0.0
+
+### 新增功能
+
+- 引入 [TapData MCP 功能](../mcp/introduction.md)，支持整合多源数据并发布为实时上下文视图，服务于 LLM 或 AI Agent 动态调用，满足对数据实时性与合规性要求高的场景（如金融风控）
+- 新增支持 StarRocks 作为目标库，帮助更快构建实时数仓以支持高并发、多维度的数据分析场景
+- 支持将数据同步至 Kafka 时选择多种标准数据结构，提升与下游系统的消费兼容性与集成效率
+
+### 功能优化
+
+- 当更新或删除事件在目标端未命中数据时，任务将记录告警日志用于排查
+- 复制任务支持按主键和唯一索引筛选表，包括仅主键、仅唯一索引、有主键或唯一索引、无主键（可选是否包含唯一索引）等类型
+- MySQL 间数据同步场景下，支持基于 text 类型字段前 N 位创建索引
+
+### 问题修复
+
+- 修复复制任务中字段处理和表处理节点分页展示异常的问题
+- 修复 Oracle 到 Doris 增量同步阶段触发 “ArrayIndexOutOfBoundsException” 的问题
+- 修复 Oracle 间数据同步时，使用 date 字段作为关联键参与校验时报错的问题
+
+</TabItem>
+<TabItem value="V3.x 版本">
 
 ## 3.27.0
 
@@ -831,3 +865,9 @@ import Content from '../reuse-content/_enterprise-features.md';
 - 增加任务编辑版本，避免多人编辑同一任务时，低版本配置覆盖高版本配置
 - 数据源配置右侧的说明文档， 支持放大图片
 - Oracle 数据源错误码实现
+
+
+
+</TabItem>
+</Tabs>
+

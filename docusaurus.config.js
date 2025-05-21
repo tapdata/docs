@@ -43,14 +43,10 @@ const config = {
           // Configuring versioning behavior and label
           lastVersion: 'current',
           versions: {
-                  current: {
-                    label: '3.x',
-                  },
-                  '2.0': {
-                         label: '2.x',
-                         path: '2.0',
-                         },
-                  },
+            current: {label: '4.x', banner: 'none' },
+            '3.0': { label: '3.x', banner: 'none' },
+            '2.0': { label: '2.x', banner: 'unmaintained' },
+          },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:

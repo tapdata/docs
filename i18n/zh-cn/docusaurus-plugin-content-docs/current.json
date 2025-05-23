@@ -1,8 +1,4 @@
 {
-  "version.label": {
-    "message": "3.x",
-    "description": "The label for version current"
-  },
   "sidebar.tutorialSidebar.category.附录": {
     "message": "附录",
     "description": "The label for category 附录 in sidebar tutorialSidebar"

@@ -9,7 +9,7 @@ import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 :::tip
 
-Kafka-Enhanced 数据源在 3.15 版本开始支持。
+Kafka-Enhanced 数据源在 3.15.0 版本开始支持。
 
 :::
 
@@ -37,7 +37,7 @@ import TabItem from '@theme/TabItem';
 | 日期/时间  | TIME、DATE、DATETIME、TIMESTAMP               |
 | 唯一标识符 | UUID（作为源库时支持）                        |
 
-## 结构模式与同步说明
+## <span id="data-model">结构模式与同步说明</span>
 
 您可以根据业务需求在配置 Kafka 连接器时选择以下两种结构模式：
 
@@ -111,6 +111,171 @@ import TabItem from '@theme/TabItem';
   - **value**：消息内容，承载实际业务数据。
 
 </TabItem>
+
+<TabItem value="Canal">
+
+**说明**：兼容开源 Canal 标准格式，支持详细的 MySQL 类型信息和结构变更（DDL/DML）。数据同步时携带详细的数据库类型、字段信息和元数据，适合对接 Canal 生态或要求保留 MySQL 原始信息的场景。
+
+**典型案例**：适合需要消费 Canal 格式数据的场景，比如 Kafka → Hudi 或 Spark Streaming 等大数据生态的实时处理链路。
+
+**样例数据**：
+
+```json
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "张三",
+      "age": "25",
+      "update_time": "2023-10-01 12:00:00"
+    }
+  ],
+  "database": "test_db",
+  "es": 1696156800000,
+  "id": 123456,
+  "isDdl": false,
+  "mysqlType": {
+    "id": "int(11)",
+    "name": "varchar(255)",
+    "age": "int(11)",
+    "update_time": "datetime"
+  },
+  "old": [
+    {
+      "age": "24"
+    }
+  ],
+  "pkNames": ["id"],
+  "sql": "",
+  "sqlType": {
+    "id": 4,
+    "name": 12,
+    "age": 4,
+    "update_time": 93
+  },
+  "table": "user",
+  "ts": 1696156800123,
+  "type": "UPDATE"
+}
+```
+
+**参数说明**：
+
+- **data**：变更后的数据内容，数组格式，包含所有变更后的字段值
+- **database**：数据库名称，标识数据所属的数据库
+- **es**：事件时间戳，毫秒级，表示事件发生的时间点
+- **id**：事件唯一标识，用于追踪事件
+- **isDdl**：是否为 DDL 操作，用于区分数据变更和结构变更
+- **mysqlType**：MySQL 字段类型信息，包含每个字段的 MySQL 类型定义
+- **old**：变更前的数据内容，数组格式，包含所有变更前的字段值
+- **pkNames**：主键字段列表，用于标识表的主键
+- **sql**：执行的 SQL 语句，记录导致变更的 SQL
+- **sqlType**：SQL 字段类型，包含每个字段的 SQL 类型代码
+- **table**：表名，标识数据所属的表
+- **ts**：事件时间戳，毫秒级，表示事件发生的时间点
+- **type**：事件类型，表示数据变更的操作类型
+
+</TabItem>
+
+<TabItem value="Debezium">
+
+**说明**：与开源 Debezium 格式兼容，完整保留源端事务信息、Schema 定义和 binlog 元数据，可用于事务数据追踪和数据校验场景。
+
+**典型案例**：适用于数据审计、实时数据验证、跨系统数据同步和质量管控等严格要求事务一致性与完整 schema 的场景。
+
+**样例数据**：
+
+```sql
+{
+  "before": {                          // 仅 UPDATE/DELETE 存在
+    "id": 1,
+    "name": "张三",
+    "age": 24,
+    "update_time": "2023-10-01 12:00:00"
+  },
+  "after": {                           // INSERT/UPDATE 后数据
+    "id": 1,
+    "name": "张三",
+    "age": 25,
+    "update_time": "2023-10-01 12:00:00"
+  },
+  "source": {
+    "version": "2.3.0",
+    "connector": "mysql",
+    "name": "dbserver1",
+    "ts_ms": 1696156800123,
+    "snapshot": "false",
+    "db": "test_db", 
+    "table": "user",
+    "server_id": 223344,
+    "file": "mysql-bin.000001",
+    "pos": 12345,
+    "row": 0,
+    "thread": 5,
+    "query": null                      // 原始 SQL（可选）
+  },
+  "op": "u",    
+  "ts_ms": 1696156800123,  
+  "transaction": {                     // 事务信息（可选）
+    "id": "123-456-789",
+    "total_order": 1,
+    "data_collection_order": 1
+  }
+}
+```
+
+**参数说明**：
+
+- **before**：变更前的数据，包含所有变更前的字段值，仅当事件为更新和删除时存在。
+- **after**：变更后的数据，包含所有变更后的字段值，仅当事件为插入和更新时存在。
+- **source**：源信息，包含详细的源系统元数据
+  - **version**：Debezium 版本信息
+  - **connector**：连接器类型，如 "mysql"
+  - **name**：逻辑服务器名称
+  - **ts_ms**：时间时间戳，单位为毫秒
+  - **snapshot**：是否为快照操作
+  - **db**：数据库名
+  - **table**：表名
+  - **server_id**：服务器ID
+  - **file**：binlog 文件名
+  - **pos**：binlog 位置
+  - **row**：行号
+  - **thread**：线程ID
+  - **query**：原始 SQL（可选）
+- **op**：操作类型，表示数据变更的操作类型，取值：**c**（创建）、**u**（更新）、**d**（删除）
+- **ts_ms**：事件时间戳，毫秒级
+- **transaction**：事务信息（可选）
+
+</TabItem>
+
+<TabItem value="Flink CDC">
+
+**说明**：兼容 Flink CDC 项目的轻量级变更数据结构，使用简单直观的操作符表示变更类型，支持与 Flink 生态系统的无缝集成，可直接用于 Flink SQL 或流式计算作业。
+
+**典型案例**：主要用于 Kafka 数据源直接接入 Flink 流式计算场景，如实时维表更新、实时数据分析与指标计算等。
+
+**样例数据**：
+
+```json
+{
+    "data": {
+        "order_id": 1,
+        "quantity": 10
+    },
+    "op": "-U"
+}
+```
+
+**参数说明**：
+
+- **data**：数据内容，包含所有字段值
+- **op**：操作类型，使用简化的符号表示
+  - **+I**：插入操作
+  - **-U**：更新前的数据
+  - **+U**：更新后的数据
+  - **-D**：删除操作
+
+</TabItem>
 </Tabs>
 
 ## 消费说明
@@ -153,10 +318,14 @@ import TabItem from '@theme/TabItem';
         * **连接名称**：填写具有业务意义的独有名称。
         * **连接类型**：支持将 Kafka 作为源或目标库。
         * **连接地址**：Kafka 连接地址，包含地址和端口号，两者之间用英文冒号（:）分隔，例如 `113.222.22.***:9092`。
-        * **结构模式**：基于业务需求选择：
+        * **结构模式**：基于业务需求选择，更多介绍，见[结构模式与同步说明](#data-model)。
           * **标准结构（默认）**：支持同步完整的 DML 操作（INSERT、UPDATE、DELETE），作为源时解析并还原 DML + DDL 事件，作用于下游；作为目标时标准化存储这些事件，便于后续任务解析。
           * **原生结构**：采用原生 Kafka 的数据同步方式，仅支持追加写入，类似 `INSERT`，作为源时处理复杂无规律的数据，传递至下游；作为目标时灵活控制分区、头信息、键和值信息，更自由地写入自定义数据。
+          * **Canal**：可携带详细的 MySQL 字段类型和结构变更（DDL/DML）信息，适合 Canal 消费生态和实时数据同步。
+          * **Debezium**：保留事务、Schema 和 binlog 元数据，适合用于事务一致性校验、审计追踪和数据质量管理。
+          * **Flink CDC**：适合 Kafka 直接对接 Flink 流式计算场景，提供简单直观的变更事件格式。
         * **键序列器**、**值序列器**：选择键和值的序列化方式，例如 Binary（默认）。
+        * **启用 SASL**：是否启用 Kafka 的 SASL（Simple Authentication and Security Layer）认证机制，启用后需配置用户名、密码及 SASL 机制（如 **SCRAM-SHA-512** 算法加密）。
     * **高级设置**
         * **ACK 确认机制**：根据业务需求选择：不确认、仅写入 Master 分区、写入大多数 ISR 分区（默认）或写入所有 ISR 分区。
         * **压缩类型**：支持 **lz4**（默认）、**gzip**、**snappy**、**zstd**，消息量较大时可开启压缩以提高传输效率。
@@ -189,6 +358,6 @@ import TabItem from '@theme/TabItem';
 * 作为目标节点
 
   - **副本数：**默认`1`，创建主题时使用，主题存在时不生效。
-
   - **分区数：**默认`3`，创建主题时使用，当配置大于对应主题的分区数时会自动扩充分区。
+  - **推送 Topic**：指定 Kafka 数据写入的目标 Topic，支持通过 `{db_name}`、`{schema_name}`、`{table_name}` 通配符动态拼接，实现按库表自动命名。
 

@@ -246,7 +246,7 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="Debezium">
 
-**说明**：与开源 Debezium 格式兼容，完整保留源端事务信息、Schema 定义和 binlog 元数据，可用于事务数据追踪和数据校验场景。
+**说明**：与开源 Debezium 格式兼容，完整保留 Schema 定义和 binlog 元数据，可用于事务数据追踪和数据校验场景。
 
 **典型案例**：适用于数据审计、实时数据验证、跨系统数据同步和质量管控等严格要求事务一致性与完整 schema 的场景。
 

@@ -90,6 +90,10 @@ import TabItem from '@theme/TabItem';
 
 关于校验任务出现失败、校验数据不一致等排查方法，见[数据校验常见问题](../faq/data-pipeline.md#check-data)。
 
+## 相关文档
+
+[增量数据校验](incremental-check.md)
+
 
 
 

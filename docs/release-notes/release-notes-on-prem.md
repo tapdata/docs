@@ -37,7 +37,7 @@ import TabItem from '@theme/TabItem';
 
 - 引入 [TapData MCP 功能](../mcp/introduction.md)，支持整合多源数据并发布为实时上下文视图，服务于 LLM 或 AI Agent 动态调用，满足对数据实时性与合规性要求高的场景（如金融风控）
 - 新增支持 StarRocks 作为目标库，帮助更快构建实时数仓以支持高并发、多维度的数据分析场景
-- 支持将数据同步至 Kafka 时选择多种标准数据结构，提升与下游系统的消费兼容性与集成效率
+- 支持将数据同步至 [Kafka-Enhanced](../prerequisites/mq-and-middleware/kafka-enhanced.md) 时选择多种数据结构（如 Flink 等），提升与下游系统的消费兼容性与集成效率
 
 ### 功能优化
 

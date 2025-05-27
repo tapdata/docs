@@ -52,4 +52,4 @@ import Content from '../reuse-content/_enterprise-features.md';
 
    单击差异条数旁的详情，可在弹出的对话框中查看差异信息的详情，包括源表中的值和目标表中的值等信息。
 
-   ![差异详情](/Users/walter/Documents/GitHub/docs/docs/images/review_incr_check_details.png)
+   ![差异详情](../images/review_incr_check_details.png)

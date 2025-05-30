@@ -17,13 +17,27 @@ import TabItem from '@theme/TabItem';
 <TabItem value="V4.x 版本" default>
 ```
 
+## 4.1.0
+
+### 新增功能
+
+- 新增支持任务内[增量数据校验](../user-guide/incremental-check.md)功能，可在同步过程中持续验证目标端数据一致性，提升数据校验效率，进一步保障数据可靠性
+
+### 功能优化
+
+- 优化数据校验的交互体验，提升校验流程的可用性与反馈清晰度
+
+### 问题修复
+
+- 修复 Oracle 创建数据源时使用不存在账号导致的报错信息不准确问题，现已明确提示账号不存在
+
 ## 4.0.0
 
 ### 新增功能
 
 - 引入 [TapData MCP 功能](../mcp/introduction.md)，支持整合多源数据并发布为实时上下文视图，服务于 LLM 或 AI Agent 动态调用，满足对数据实时性与合规性要求高的场景（如金融风控）
 - 新增支持 StarRocks 作为目标库，帮助更快构建实时数仓以支持高并发、多维度的数据分析场景
-- 支持将数据同步至 Kafka 时选择多种标准数据结构，提升与下游系统的消费兼容性与集成效率
+- 支持将数据同步至 [Kafka-Enhanced](../prerequisites/mq-and-middleware/kafka-enhanced.md) 时选择多种数据结构（如 Flink 等），提升与下游系统的消费兼容性与集成效率
 
 ### 功能优化
 

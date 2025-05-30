@@ -22,7 +22,7 @@ importers:
         version: 2.4.3(@docusaurus/types@2.4.3(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.8.3)
       '@docusaurus/theme-mermaid':
         specifier: ^2.2.0
-        version: 2.4.3(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.8.3)
+        version: 2.2.0(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.8.3)
       '@mdx-js/react':
         specifier: ^1.6.22
         version: 1.6.22(react@17.0.2)
@@ -976,8 +976,8 @@ packages:
       react: ^16.8.4 || ^17.0.0
       react-dom: ^16.8.4 || ^17.0.0
 
-  '@docusaurus/theme-mermaid@2.4.3':
-    resolution: {integrity: sha512-S1tZ3xpowtFiTrpTKmvVbRHUYGOlEG5CnPzWlO4huJT1sAwLR+pD6f9DYUlPv2+9NezF3EfUrUyW9xLH0UP58w==}
+  '@docusaurus/theme-mermaid@2.2.0':
+    resolution: {integrity: sha512-rEhVvWyZ9j9eABTvJ8nhfB5NbyiThva3U9J7iu4RxKYymjImEh9MiqbEdOrZusq6AQevbkoHB7n+9VsfmS55kg==}
     engines: {node: '>=16.14'}
     peerDependencies:
       react: ^16.8.4 || ^17.0.0
@@ -7331,13 +7331,13 @@ snapshots:
       - vue-template-compiler
       - webpack-cli
 
-  '@docusaurus/theme-mermaid@2.4.3(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.8.3)':
+  '@docusaurus/theme-mermaid@2.2.0(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.8.3)':
     dependencies:
-      '@docusaurus/core': 2.4.3(@docusaurus/types@2.4.3(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.8.3)
-      '@docusaurus/module-type-aliases': 2.4.3(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
-      '@docusaurus/theme-common': 2.4.3(@docusaurus/types@2.4.3(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.8.3)
-      '@docusaurus/types': 2.4.3(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
-      '@docusaurus/utils-validation': 2.4.3(@docusaurus/types@2.4.3(react-dom@17.0.2(react@17.0.2))(react@17.0.2))
+      '@docusaurus/core': 2.2.0(@docusaurus/types@2.2.0(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.8.3)
+      '@docusaurus/module-type-aliases': 2.2.0(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@docusaurus/theme-common': 2.2.0(@docusaurus/types@2.2.0(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.8.3)
+      '@docusaurus/types': 2.2.0(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@docusaurus/utils-validation': 2.2.0(@docusaurus/types@2.2.0(react-dom@17.0.2(react@17.0.2))(react@17.0.2))
       '@mdx-js/react': 1.6.22(react@17.0.2)
       mermaid: 9.4.3
       react: 17.0.2

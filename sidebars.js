@@ -301,6 +301,7 @@ const sidebars = {
                     'user-guide/data-development/monitor-task',
                    ]
              },
+             'user-guide/incremental-check',
              'user-guide/verify-data',
              'user-guide/pre-check',
              {

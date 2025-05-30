@@ -3,7 +3,7 @@ import Content1 from '../../reuse-content/_all-features.md';
 
 <Content1 />
 
-[Doris](https://doris.apache.org/) 适用于实时数据分析和报表，支持高并发查询和复杂分析，广泛应用于数据仓库、BI报表和数据可视化。Tapdata 支持将 Doras 作为源或目标库来构建数据管道，帮助您快速完成大数据分析场景下的数据流转。接下来，跟随本文介绍在 Tapdata 平台上连接 Doris 数据源。
+[Doris](https://doris.apache.org/) 适用于实时数据分析和报表，支持高并发查询和复杂分析，广泛应用于数据仓库、BI报表和数据可视化。Tapdata 支持将 Doris 作为源或目标库来构建数据管道，帮助您快速完成大数据分析场景下的数据流转。接下来，跟随本文介绍在 Tapdata 平台上连接 Doris 数据源。
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';

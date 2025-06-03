@@ -430,6 +430,15 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>2.0.13 及以上</td>
   </tr>
   <tr>
+    <td>StarRocks</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>3.x</td>
+  </tr>
+  <tr>
     <td>YashanDB</td>
     <td>➖</td>
     <td>➖</td>

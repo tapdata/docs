@@ -128,8 +128,7 @@ TapData 支持将 Zoho Desk 中的数据以表的形式来读取，并同步至�
           
           :::tip
           
-          - 为确保
-          - 除此方式外，您也可以通过工作流[配置 Webhook](https://help.zoho.com.cn/portal/zh/kb/crm/crmhelp/automate-business-processes/actions/articles/webhooks-workflow)。
+          除此方式外，您也可以通过工作流[配置 Webhook](https://help.zoho.com.cn/portal/zh/kb/crm/crmhelp/automate-business-processes/actions/articles/webhooks-workflow)。
           
           :::
        

@@ -451,7 +451,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>3、8.x</td>
+    <td>3.x</td>
   </tr>
   <tr>
     <td>Azure CosmosDB</td>

@@ -1,9 +1,5 @@
 # Coding
 
-import Content from '../../reuse-content/_all-features.md';
-
-<Content />
-
 **Coding** is an all-in-one DevOps platform by Tencent Cloud. It supports core features such as code hosting, project collaboration, and continuous integration. By integrating with Tapdata, you can monitor key events in Coding (e.g., code commits, task updates) in real time, build automated data pipelines, and unify R&D data for intelligent analysis—accelerating the digital and intelligent transformation of your DevOps processes.
 
 ## Incremental Data Retrieval

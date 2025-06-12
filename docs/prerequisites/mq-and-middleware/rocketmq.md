@@ -1,8 +1,4 @@
 # RocketMQ
-import Content from '../../reuse-content/_all-features.md';
-
-<Content />
-
 RocketMQ 是一款高性能的队列模型消息中间件，支持顺序消息、延迟消息、批量消息等多种场景，广泛应用于金融、电商等高并发系统。 结合 Tapdata，可快速构建稳定的实时数据通道，帮助企业实现系统解耦与数据驱动，提升整体业务响应能力。
 
 ## 支持版本

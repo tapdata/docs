@@ -1,9 +1,5 @@
 # RocketMQ
 
-import Content from '../../reuse-content/_all-features.md';
-
-<Content />
-
 
 **RocketMQ** is a high-performance message queue middleware that supports various scenarios such as ordered messaging, delayed messaging, and batch messaging. It is widely used in high-concurrency systems in finance, e-commerce, and other industries. Integrated with Tapdata, RocketMQ enables rapid construction of stable real-time data pipelines, helping enterprises achieve system decoupling and data-driven operations, thereby improving overall responsiveness.
 

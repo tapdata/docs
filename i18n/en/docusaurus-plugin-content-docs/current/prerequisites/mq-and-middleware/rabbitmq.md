@@ -1,9 +1,5 @@
 # RabbitMQ
 
-import Content from '../../reuse-content/_all-features.md';
-
-<Content />
-
 RabbitMQ is a lightweight, open-source message broker that supports the AMQP protocol. It is widely used in distributed systems for asynchronous communication, application decoupling, and traffic peak shaving (such as handling high-volume order bursts). Combined with TapData, RabbitMQ enables you to build high-performance real-time data pipelines to meet low-latency, high-throughput use cases.
 
 ## Supported Versions

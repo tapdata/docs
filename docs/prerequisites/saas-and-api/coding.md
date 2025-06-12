@@ -1,8 +1,4 @@
 # Coding
-import Content from '../../reuse-content/_all-features.md';
-
-<Content />
-
 Coding 是腾讯云旗下的一站式 DevOps 平台，支持代码托管、项目协作、持续集成等核心功能。通过接入 Tapdata，您可以实时监听 Coding 中的关键事件（如代码提交、任务变更等），并构建自动化的数据流转，实现研发数据的统一汇聚与智能分析，助力 DevOps 流程的数字化与智能化升级。
 
 

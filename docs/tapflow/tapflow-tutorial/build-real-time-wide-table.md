@@ -316,9 +316,11 @@ Flow updated: sink added
    }
    ```
 
-   ## 扩展阅读
 
-   [将数据发布为 API](../../user-guide/data-service/create-api-service.md)
+
+## 扩展阅读
+
+[将数据发布为 API](../../user-guide/data-service/create-api-service.md)
 
 
 

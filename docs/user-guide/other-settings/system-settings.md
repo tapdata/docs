@@ -143,7 +143,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 
 
-## 任务设置
+## <span id="task-setting">任务设置</span>
 
 ![任务设置](../../images/task_settings.png)
 

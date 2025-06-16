@@ -13,9 +13,13 @@ import TabItem from '@theme/TabItem';
 ## 支持版本与架构
 
 * **版本**：PostgreSQL 9.4～16
+
 * **架构**：单节点或主从架构
+  
   :::tip
+  
   主从架构下，如需读取从库的增量数据变更，需在配置数据源时选择 Walminer 插件来实现。
+  
   :::
 
 ## 支持数据类型
@@ -98,6 +102,7 @@ import TabItem from '@theme/TabItem';
       -- Grant USAGE permission to schema
       GRANT USAGE ON SCHEMA schema_name TO username;
       ```
+      
       </TabItem>
       
       <TabItem value="读取全量+增量数据">

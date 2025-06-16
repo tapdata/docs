@@ -106,7 +106,9 @@ import TabItem from '@theme/TabItem';
    </Tabs>
 
    :::tip
+   
    由于分片服务器不会向 config 数据库获取用户权限，因此，当源库为分片集群架构时，您需要在每个分片的主节点上创建相应的用户并授予权限。
+   
    :::
 
 4. 在设置 MongoDB URI 时，推荐将写关注级别设置为大多数，即 `w=majority`，否则可能因 Primary 节点异常宕机导致的数据丢失文档。

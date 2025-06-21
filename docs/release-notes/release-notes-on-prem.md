@@ -17,6 +17,22 @@ import TabItem from '@theme/TabItem';
 <TabItem value="V4.x 版本" default>
 ```
 
+## 4.2.0
+
+### 新增功能
+
+- 在[集群管理](../user-guide/manage-system/manage-cluster.md)模块新增对增量日志挖掘插件的状态监控，提升可观测性与故障排查效率
+- 支持[自定义告警邮件内容](../user-guide/other-settings/notification.md#mail-alert)，提升通知的可读性和适用性
+- 支持导入/导出[校验任务配置](../user-guide/verify-data.md)，方便在测试与生产环境之间迁移或复用任务配置
+
+### 功能优化
+
+- 优化索引同步逻辑，确保其同步到目标库后名称不变，提升索引的一致性和业务可识别性
+
+### 问题修复
+
+- 修复通过连接名称搜索共享挖掘任务式，页面报错的问题
+
 ## 4.1.0
 
 ### 新增功能

@@ -34,6 +34,8 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
    * 单击![](../../images/cluster_add_icon.png)可增加自定义的服务监控。
 
-4. 单击右上角的**组件视图**，页面将以组件分类展示其状态信息，此外，您还可以为多个同步治理服务（Agent）指定不同的标签，后续在配置数据同步/转换任务时可指定对应标签的 Agent。
+4. 单击左上角的**组件视图**，页面将以组件分类展示其状态信息，此外，您还可以为多个同步治理服务（Agent）指定不同的标签，后续在配置数据同步/转换任务时可指定对应标签的 Agent。
 
    ![组件视图](../../images/components.png)
+   
+5. 如您部署了[裸日志解析服务](../../case-practices/best-practice/raw-logs-solution.md)，可点击**日志挖掘监控**查看其所在服务器的资源占用情况（如 CPU、内存等），便于全面掌握服务运行状态。

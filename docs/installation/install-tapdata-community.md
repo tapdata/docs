@@ -101,7 +101,7 @@ TapData 社区版包括以下主要组件：
    export MONGO_URI=mongodb://{admin}:{password}@{host}:{port}/{database_name}?replicaSet={replica_name}&authSource=admin
    ```
 
-   示例：`export MONGO_URI=mongodb://root:Tap123456@192.168.1.18:20017/tapdata_community?replicaSet=rs1&authSource=admin`
+   示例：`export MONGO_URI=mongodb://root:Tap123456@192.168.1.18:27017/tapdata_community?replicaSet=rs1&authSource=admin`
 
 4. 执行 `./start.sh`启动 TapData 服务，完成启动后关键日志提示如下：
 

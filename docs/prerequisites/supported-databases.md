@@ -342,7 +342,6 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
   </tr>
 </tbody>
 </table>
-
 </TabItem>
 
 <TabItem value="数据仓库/数据湖">
@@ -525,6 +524,15 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>➖</td>
     <td>不涉及</td>
   </tr>
+    <tr>
+    <td>PolarDB MySQL</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>所有版本</td>
+  </tr>
   <tr>
     <td>Salesforce</td>
     <td>✅</td>
@@ -554,6 +562,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
   </tr>
 </tbody>
 </table>
+
 
 
 </TabItem>
@@ -809,15 +818,6 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
     <td>✅</td>
     <td>➖</td>
     <td>2008 R2、2012、2014、2016、2017、2019</td>
-  </tr>
-  <tr>
-    <td>PolarDB MySQL</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>5.6、5.7、8.0</td>
   </tr>
   <tr>
     <td>PolarDB PostgreSQL</td>

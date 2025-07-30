@@ -21,8 +21,6 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 ## 操作步骤
 
-
-
 本文以 CentOS 7 为例，演示部署流程。
 
 

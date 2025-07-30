@@ -17,6 +17,29 @@ import TabItem from '@theme/TabItem';
 <TabItem value="V4.x 版本" default>
 ```
 
+## 4.4.0
+
+### 新增功能
+
+- 支持无主键表的[增量数据校验](../user-guide/incremental-check.md)与手动修复，进一步扩大数据校验的适用范围，保障数据一致性
+- 增加任务重试时[发送告警](../user-guide/other-settings/notification.md#mail-alert)信息，确保故障场景可及时感知与响应
+- 任务编辑页面新增“节点数据预览”功能，支持在配置过程中即时查看字段样例，加快任务设计与调试效率
+
+### 功能优化
+
+- 增强数据源监控能力，新增对 **Sybase** 与 **PostgreSQL** 的连接状态与性能指标监控，提升系统可观测性
+
+## 4.3.0
+
+### 新增功能
+
+- [数据校验](../user-guide/verify-data.md)支持对校验结果不一致的时任务导出修复 SQL，现已兼容 **PostgreSQL**、**Sybase**、**SQL Server**，便于运维人员进行离线审计或手动回滚
+- JS 处理节点支持 `unset` 操作，可灵活清除 MongoDB 目标中的指定字段，满足字段清理与数据瘦身需求
+
+### 功能优化
+
+- 优化全量任务完成状态的判定逻辑，调整为以“目标端写入完成”为准，更贴近业务真实结束场景
+
 ## 4.2.0
 
 ### 新增功能

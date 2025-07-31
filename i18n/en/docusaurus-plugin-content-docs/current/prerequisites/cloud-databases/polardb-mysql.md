@@ -1,77 +1,81 @@
 # PolarDB MySQL
 
-
-
-Follow the instructions below to successfully add and use PolarDB MySQL database in TapData Cloud.
+Alibaba Cloud PolarDB for MySQL is a cloud-native distributed database that is fully compatible with MySQL. It offers high availability, high concurrency, and elastic scalability. Tapdata supports using PolarDB for MySQL as both a source and a target database. It is ideal for scenarios such as on-premises to cloud migration, cross-region disaster recovery synchronization, cloud-off backups, and real-time data services—helping enterprises build a flexible, efficient, and unified data flow architecture.
 
 ## Supported Versions
 
-PolarDB MySQL 5.7.x, 8.0.x
+All versions of PolarDB MySQL are supported.
 
-## As a Data Source
+## Supported Sync Operations
 
-* Enable the Binlog feature on the source database.
+- **DML**: INSERT, UPDATE, DELETE
 
-- Create an Account
+  :::tip
 
-  For MySQL 8 and later, password encryption is different. Make sure to use the corresponding method for your version to set the password; otherwise, incremental synchronization may fail. Use the following commands to confirm whether supplemental logging is enabled.
+  When PolarDB MySQL is used as a target database, you can configure write policies through advanced settings in the task node: for insert conflicts, you can choose to update or discard; for update failures, you can choose to insert or just log the errors.
 
-**For 5.x Versions**
+  :::
 
-```sql
-CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
-```
+- **DDL**: ADD COLUMN, CHANGE COLUMN (auto-increment not supported), DROP COLUMN, RENAME COLUMN
 
-**For 8.x Versions**
+## Prerequisites
 
-```sql
--- Create the user
-CREATE USER 'username'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
--- Change the password
-ALTER USER 'username'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-```
+1. Log in to the Alibaba Cloud console and [create a database account](https://www.alibabacloud.com/help/en/polardb/polardb-for-mysql/user-guide/create-and-manage-database-accounts) for data synchronization.
 
-### Granting Permissions
+   :::tip
 
-Grant `SELECT` permissions for a specific database:
+   - To ensure sufficient privileges for synchronization, select High-Privilege Account when creating the user.
+   - For fine-grained permission control, grant the source database **read access to the sync tables**, and grant the target database **read/write access**. For detailed syntax, see [Account Permission](https://www.alibabacloud.com/help/en/polardb/polardb-for-mysql/user-guide/account-permissions).
 
-```sql
-GRANT SELECT, SHOW VIEW, CREATE ROUTINE, LOCK TABLES ON <DATABASE_NAME>.<TABLE_NAME> TO 'tapdata' IDENTIFIED BY 'password';
-```
+   :::
 
-Grant global privileges:
+2. Enable public access if needed. If your Tapdata service is deployed in the same VPC as the PolarDB for MySQL cluster, this step can be skipped.
 
-```sql
-GRANT RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'tapdata' IDENTIFIED BY 'password';
-```
+   1. In the left navigation, go to **Database Connections**.
+   2. Click **Enable Public Address**.
+   3. In the dialog, add the public IP address of the Tapdata service to the whitelist.
+   4. Click **OK**.
 
-### Constraint Explanation
+3. If you need to connect via the public network, [apply for a public endpoint](https://www.alibabacloud.com/help/en/polardb/polardb-for-mysql/user-guide/apply-for-a-cluster-endpoint-or-a-primary-endpoint#35097e34565yw).
 
-When synchronizing from MySQL to other heterogeneous databases, if the source MySQL database has table-level cascade settings, data updates and deletes triggered by this cascade will not be propagated to the target. If you need to build cascading processing capabilities on the target side, you can use triggers or other methods to achieve this type of data synchronization.
+4. *(Optional)* To enable incremental data reading from PolarDB for MySQL, [enable Binary Logging](https://www.alibabacloud.com/help/en/polardb/polardb-for-mysql/user-guide/enable-binary-logging) (Binlog).
 
-## As a Target
+   :::tip
 
-Grant full privileges for a specific database:
+   It is recommended to set the [Binlog retention period](https://www.alibabacloud.com/help/en/polardb/polardb-for-mysql/user-guide/enable-binary-logging#7962e330893uy) to at least **7 days**. This helps prevent loss of incremental change data and ensures that incremental sync can proceed normally.
 
-```sql
-GRANT ALL PRIVILEGES ON <DATABASE_NAME>.<TABLE_NAME> TO 'tapdata' IDENTIFIED BY 'password';
-```
+   :::
 
-Grant global privileges:
+## Connect to PolarDB MySQL
 
-```sql
-GRANT PROCESS ON *.* TO 'tapdata' IDENTIFIED BY 'password';
-```
+1. Log in to Tapdata Platform.
 
-### Common Errors
+2. In the left navigation menu, click **Connections**.
 
-"Unknown error 1044"
+3. Click **Create** on the right side of the page.
 
-If permissions are granted correctly but you're still unable to pass the test connection through TapData, you can use the following steps to check and fix the issue:
+4. In the dialog box, search for and select **PolarDB MySQL**.
 
-```sql
-SELECT host, user, Grant_priv, Super_priv FROM mysql.user WHERE user='username'; 
--- Check if the value of the Grant_priv field is 'Y' 
--- If not, execute the following command 
-UPDATE mysql.user SET Grant_priv='Y' WHERE user='username'; FLUSH PRIVILEGES;
-```
+5. On the connection setup page, fill in the connection details as described below:
+
+   ![PolarDB MySQL Connection](../../images/aliyun_polardb_mysql_connection_settings.png)
+
+   - **Connection Settings**
+     - **Name**: Enter a unique name with business significance.
+     - **Type**: Support using PolarDB MySQL as either a source or target database.
+     - **Host**: The **primary address** of your PolarDB MySQL cluster (either internal or public).
+     - **Port**: Default is **3306**.
+     - **Database**: Name of the database to connect to. One connection maps to one database. For multiple databases, create separate connections.
+     - **Username**: A high-privilege user account.
+     - **Password**: Password for the above account.
+     - **Connection Parameters**: Optional; leave blank unless needed.
+     - **Time Zone**: Default is the database time zone; can be manually set if needed.
+   - **Advanced Settings**
+     - **CDC Log Caching**: Mining the source database's incremental logs. This allows multiple tasks to share the same source database’s incremental log mining process, reducing duplicate reads and minimizing the impact of incremental synchronization on the source database. After enabling this feature, you will need to select an external storage to store the incremental log information.
+     - **Contain Table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
+     - **Exclude Tables**: Once the switch is enabled, you have the option to specify tables to be excluded. You can do this by listing the table names separated by commas (,) in case there are multiple tables to be excluded.
+     - **Agent Settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
+     - **Model Load Time**: If there are less than 10,000 models in the data source, their schema will be updated every hour. But if the number of models exceeds 10,000, the refresh will take place daily at the time you have specified.
+     - **Enable Heartbeat Table**: For source/target connections, enables automatic creation of a `_tapdata_heartbeat_table` that updates every 10 seconds (requires permissions). Used to monitor connection and task health.
+
+6. Click **Test**. If successful, click **Save**.

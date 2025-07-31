@@ -33,7 +33,7 @@ TapData 支持全量和增量两种同步方式，涵盖单向同步和双向同
   - PostgreSQL ↔ MySQL
   - SQL Server ↔ SQL Server
 
-### 认证数据源
+## 认证数据源
 
 <table>
 <thead>
@@ -779,9 +779,9 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>
+    <td>✅</td>
     <td>➖</td>
-    <td>➖</td>
-    <td>5.0、5.1、5.5、5.6、5.7、8.x</td>
+    <td>3.x</td>
   </tr>
   <tr>
     <td>Aliyun AnalyticDB PostgreSQL</td>
@@ -841,10 +841,10 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
     <td>PolarDB MySQL</td>
     <td>✅</td>
     <td>✅</td>
-    <td>➖</td>
     <td>✅</td>
-    <td>➖</td>
-    <td>5.6、5.7、8.0</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>所有版本</td>
   </tr>
   <tr>
     <td>PolarDB PostgreSQL</td>

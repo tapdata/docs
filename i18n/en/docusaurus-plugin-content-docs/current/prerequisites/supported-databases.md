@@ -770,9 +770,9 @@ The Alpha version of the data sources is in public preview and has passed the ba
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>
+    <td>✅</td>
     <td>➖</td>
-    <td>➖</td>
-    <td>5.0, 5.1, 5.5, 5.6, 5.7, 8.x</td>
+    <td>3.x</td>
   </tr>
   <tr>
     <td>Aliyun AnalyticDB PostgreSQL</td>
@@ -832,10 +832,10 @@ The Alpha version of the data sources is in public preview and has passed the ba
     <td>PolarDB MySQL</td>
     <td>✅</td>
     <td>✅</td>
-    <td>➖</td>
     <td>✅</td>
-    <td>➖</td>
-    <td>5.6, 5.7, 8.0</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>All</td>
   </tr>
   <tr>
     <td>PolarDB PostgreSQL</td>

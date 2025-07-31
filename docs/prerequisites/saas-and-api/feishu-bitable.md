@@ -68,7 +68,7 @@ DML 操作：INSERT、UPDATE、DELETE
    ![Lark Doc 连接设置](../../images/feishu-bitable_connection_setting.png)
 
    * **连接名称**：填写具有业务意义的独有名称。
-   * **连接类型**：仅支持作为**源头**。
+   * **连接类型**：支持作为源头或目标。
    * **App ID**、**App Secret**：可通过飞书开放平台获取，具体操作，见[准备工作](#prerequisite)。
    * **App Token**：每个多维表格应用可视为一个独立的 App，其唯一标识为 `app_token`。获取方式，见[接入指南](https://open.feishu.cn/document/server-docs/docs/bitable-v1/notification)。
    * **Table ID**：一个多维表格应用下可包含多个数据表，每个表的唯一标识为 `table_id`。获取方式，见[接入指南](https://open.feishu.cn/document/server-docs/docs/bitable-v1/notification)，或通过调用 [List all tables](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1/app-table/list) 接口获取。

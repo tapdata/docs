@@ -3,125 +3,98 @@ import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
-请遵循以下说明以确保在 Tapdata 中成功添加和使用 PolarDB MySQL 数据库。
-
-### 支持版本
-
-PolarDB MySQL 5.6、5.7、8.0
-
-### 前提条件（作为源）
-
-#### 3.1 开启 Binlog
-
-- 必须开启 MySQL 的 binlog ，Tapdata 才能正常完成同步工作。
-- 级连删除（CASCADE DELETE），这类由数据库产生的删除不会记录在binlog内，所以不被支持。 修改 $MYSQL_HOME/mysql.cnf, 例如:
-
-```json
-server_id         = 223344
-log_bin           = mysql-bin
-expire_logs_days  = 1
-binlog_format     = row
-binlog_row_image  = full
-```
-
-配置解释：
-
-- server-id: 对于 MySQL 中的每个服务器和复制客户端必须是唯一的
-- binlog_format：必须设置为 row 或者 ROW
-- binlog_row_image：必须设置为 full
-- expire_logs_days：二进制日志文件保留的天数，到期会自动删除
-- log_bin：binlog 序列文件的基本名称
-
-#### 重启 MySQL
-
-```bash
-/etc/inint.d/mysqld restart
-```
-
-验证 binlog 已启用，请在 mysql shell 执行以下命令
-
-```sql
-show variables like 'binlog_format';
-```
-
-输出的结果中，format value 应该是"ROW"
-
-验证 binlog_row_image 参数的值是否为full:
-
-```sql
-show variables like 'binlog_row_image';
-```
-
-输出结果中，binlog_row_image value应该是"FULL"
-
-#### 创建MySQL账号
-
-Mysql8以后，对密码加密的方式不同，请注意使用对应版本的方式，设置密码，否则会导致无法进行增量同步 使用以下命令，确认 supplemental logging 是否开启
-
-**3.3.1 5.x版本**
-
-```sql
-create user 'username'@'localhost' identified by 'password';
-```
+阿里云 PolarDB for MySQL 是一款兼容 MySQL 的云原生分布式数据库，具备高可用、高并发和弹性扩展能力。TapData 支持将其作为源或目标库接入，适用于本地数据库向云端迁移、跨地域容灾同步、下云备份及实时数据服务等场景，助力企业构建灵活、高效、统一的数据流转体系。
 
 
+## 支持版本
 
-**3.3.2 8.x版本**
+PolarDB MySQL 所有版本
 
-```sql
-// 创建用户 
-create user 'username'@'localhost' identified with mysql_native_password by 'password'; 
-// 修改密码 
-alter user 'username'@'localhost' identified with mysql_native_password by 'password'; 
-```
+## 支持同步的操作
 
+- **DML**：INSERT、UPDATE、DELETE
 
+  :::tip
 
-#### 给 tapdata 账号授权
+  将 PolarDB MySQL 作为同步的目标时，您还可以通过任务节点的高级配置，选择写入策略：插入冲突场景下，可选择转为更新或丢弃；更新失败场景下，可选择转为插入或仅打印日志。
 
-对于某个数据库赋于select权限
+  :::
 
-```sql
-GRANT SELECT, SHOW VIEW, CREATE ROUTINE, LOCK TABLES ON <DATABASE_NAME>.<TABLE_NAME> TO 'tapdata' IDENTIFIED BY 'password';
-```
+- **DDL**：ADD COLUMN、CHANGE COLUMN（不支持自增属性）、DROP COLUMN、RENAME COLUMN
 
-对于全局的权限
+## 准备工作
 
-```sql
-GRANT RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'tapdata' IDENTIFIED BY 'password';
-```
+1. 登录阿里云控制台，创建用于数据同步的[数据库账号](https://help.aliyun.com/zh/polardb/polardb-for-mysql/user-guide/create-and-manage-database-accounts)。
 
+   :::tip
 
+   - 为保障拥有足够的权限完成数据同步，请在创建账号时，选择账号类型为**高权限账号**。
+   - 如需进行精细化权限控制，请为源库授予**读取同步表的权限**，为目标库授予**读写权限**。更多介绍，见 [MySQL 账号权限管理](https://help.aliyun.com/zh/dms/manage-user-permissions-on-mysql-databases)。
 
-#### 约束说明
+   :::
 
-当从MySQL同步到其他异构数据库时，如果源MySQL存在表级联设置，因该级联触发产生的数据更新和删除不会传递到目标。如需要在目标端构建级联处理能力，可以视目标情况，通过触发器等手段来实现该类型的数据同步。
+2. 开通外网访问地址。如您的 TapData 服务所部署的机器与 PolarDB MySQL 集群属于同一内网，可跳过本步骤。
 
-### **前提条件（作为目标）**
+      1. 在左侧导航栏，选择**数据库连接**。
 
-对于某个数据库赋于全部权限
+      2. 单击**开通外网地址**。
 
-```sql
-GRANT ALL PRIVILEGES ON <DATABASE_NAME>.<TABLE_NAME> TO 'tapdata' IDENTIFIED BY 'password';
-```
+      3. 在弹出的对话框中，将 TapData 服务所属的公网地址键入至白名单中。
+         
+         :::tip
+         
+         如使用 TapData 云版，则白名单固定为 **47.93.190.224** 和 **47.242.251.110**。
+         
+         :::
+         
+      4. 单击**确定**。
+      
+3. 如需通过公网连接数据库，请为集群[管理集群连接地址](https://help.aliyun.com/zh/polardb/polardb-for-mysql/user-guide/apply-for-a-cluster-endpoint-or-a-primary-endpoint)。
 
-对于全局的权限
+4. （可选）如需读取 PolarDB MySQL 数据表的增量数据，您还需要为其[开启 Binlog](https://help.aliyun.com/zh/polardb/polardb-for-mysql/user-guide/enable-binary-logging)。
 
-```sql
-GRANT PROCESS ON *.* TO 'tapdata' IDENTIFIED BY 'password';
-```
+   :::tip
 
+   推荐 Binlog 的[保留时长](https://help.aliyun.com/zh/polardb/polardb-for-mysql/user-guide/enable-binary-logging#7962e330893uy)至少设置为 7 天，避免增量变更记录数据被清理，确保增量同步正常进行。
+   
+   :::
 
+## 连接 PolarDB MySQL
 
-### **常见错误**
+1. [登录 Tapdata 平台](../../user-guide/log-in.md)。
 
-“Unknown error 1044”
+2. 在左侧导航栏，单击**连接管理**。
 
-如果权限已经授权，但是通过 tapdata 还是无法通过测试连接，可以通过下面的步骤检查并修复
+3. 单击页面右侧的**创建**。
 
-```sql
-SELECT host,user,Grant_priv,Super_priv FROM mysql.user where user='username'; 
-//查看Grant_priv字段的值是否为Y 
-//如果不是，则执行以下命令 
-UPDATE mysql.user SET Grant_priv='Y' WHERE user='username'; FLUSH PRIVILEGES;
-```
+4. 在弹出的对话框中，搜索并选择 **PolarDB MySQL**。
+
+5. 在跳转到的页面，根据下述说明填写 PolarDB MySQL 集群的连接信息。
+
+   ![连接配置示例](../../images/aliyun_polardb_mysql_connection_settings.png)
+
+   * **连接信息设置**
+     * **连接名称**：填写具有业务意义的独有名称。
+     * **连接类型**：支持作为源或目标库。
+     * **地址**：PolarDB MySQL 集群的**主地址**，即您在准备工作获取到的外网连接地址或内网连接地址。
+     * **端口**：数据库的服务端口，默认为 **3306**。
+     * **数据库**：数据库名称，即一个连接对应一个数据库，如有多个数据库则需创建多个数据连接。
+     * **账号**：具备高权限的账号名称。
+     * **密码**：数据库账号对应的密码。
+     * **连接参数**：额外的连接参数，默认为空。
+     * **时区**：默认为数据库所用的时区，您也可以根据业务需求手动指定。
+   * **高级设置**
+     * **共享挖掘**：[挖掘源库](../../user-guide/advanced-settings/share-mining.md)的增量日志，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力，开启该功能后还需要选择一个外存用来存储增量日志信息。
+     * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。
+     * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。
+     * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
+     * **模型加载时间**：如果数据源中的模型数量少于10000个，则每小时更新一次模型信息。但如果模型数量超过10000个，则刷新将在您指定的时间每天进行。
+     * **开启心跳表**：当连接类型为源头或目标时，可启用该开关。TapData 会在源库创建 `_tapdata_heartbeat_table` 心跳表，并每 10 秒更新一次（需具备相应权限），用于监测数据源连接与任务的健康状况。心跳任务在数据复制/开发任务启动后自动启动，您可在数据源编辑页面查看心跳任务。
+
+6. 单击**连接测试**，测试通过后单击**保存**。
+
+   :::tip
+
+   如提示连接测试失败，请根据页面提示进行修复。
+
+   :::

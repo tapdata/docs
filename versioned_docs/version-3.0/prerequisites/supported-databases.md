@@ -444,6 +444,15 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
 </thead>
 <tbody>
   <tr>
+    <td>Aliyun AnalyticDB MySQL</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>3.x</td>
+  </tr>
+  <tr>
     <td>Azure CosmosDB</td>
     <td>✅</td>
     <td>➖</td>
@@ -755,15 +764,6 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
     <td>✅</td>
     <td>➖</td>
     <td>5.13.9</td>
-  </tr>
-  <tr>
-    <td>Aliyun AnalyticDB MySQL</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>5.0、5.1、5.5、5.6、5.7、8.x</td>
   </tr>
   <tr>
     <td>Aliyun AnalyticDB PostgreSQL</td>

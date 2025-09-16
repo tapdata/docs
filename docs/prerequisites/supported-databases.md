@@ -489,7 +489,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>XLS/XLSX 格式，文件位置支持本地、FTP、SFTP、SMB、S3FS、OSS</td>
   </tr>
   <tr>
-    <td>Huawei's Cloud GaussDB</td>
+    <td>Huawei Cloud GaussDB</td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>

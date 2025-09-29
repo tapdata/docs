@@ -408,6 +408,7 @@ const sidebars = {
               items:[
                      'administration/production-deploy/install-tapdata-ha',
                      'administration/production-deploy/install-tapdata-ha-with-3-node',
+                     'administration/production-deploy/disaster-recovery',
                      'administration/production-deploy/install-replica-mongodb',
                     ]
              },

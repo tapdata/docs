@@ -149,9 +149,9 @@ scp <work_dir>/conf/{application.yml,agent.yml} root@192.168.2.12:<work_dir>/con
 2. **评估故障影响范围**：确认是否为整个 Zone A 故障，还是部分节点故障
 
 **备用环境验证：**
-3. **Zone S MongoDB 状态**：确认 tapdata-d、tapdata-e 节点运行正常，数据同步无延迟
-4. **Zone S TapData 配置**：验证服务配置文件已同步，依赖组件可用
-5. **网络连通性**：确认 Zone S 与外部系统的网络连接正常
+1. **Zone S MongoDB 状态**：确认 tapdata-d、tapdata-e 节点运行正常，数据同步无延迟
+2. **Zone S TapData 配置**：验证服务配置文件已同步，依赖组件可用
+3. **网络连通性**：确认 Zone S 与外部系统的网络连接正常
 
 #### 3.2.2 切换步骤 
 

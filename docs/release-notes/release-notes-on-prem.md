@@ -21,7 +21,7 @@ import TabItem from '@theme/TabItem';
 
 ### 新增功能
 
-- 支持检测目标模型结构并与实际模型进行对比，提升数据一致性保障
+- 支持检测目标模型结构并[对比实际模型](../user-guide/compare-data-model)，提升数据一致性保障
 
 ### 功能优化
 - 支持 API 服务的滚动升级能力，保障在线服务的连续性

@@ -412,6 +412,7 @@ const sidebars = {
                     ]
              },
             'administration/operation',
+            'administration/monitor-with-prometheus',
             {
               type: 'category',
               label: '故障排查',

@@ -233,11 +233,13 @@ TapData 依赖 MongoDB 存储用户配置、任务元数据等信息。为监控
 
   ![Prometheus 查询 system_cpu_usage 指标](../images/prometheus_query_demo.png)
 
-7. 访问 Grafana UI 地址 `http://192.168.1.100:3000`，登录 Grafana 后，重置默认密码并添加 Prometheus 数据源，配置地址为 `http://192.168.1.100:9090`。
+7. 访问 Grafana UI 地址 `http://192.168.1.100:3000`，登录 Grafana 后，重置默认密码并添加 Prometheus 数据源，本案例中，配置地址为 `http://192.168.1.100:9090`。
+
+  ![配置数据源](../images/grafana_add_prometheus_datasource.png)
 
   下图以监控 TapData Management 服务的磁盘总容量和可用容量为例，构建了自定义的可视化看板。更多设置介绍，见 [Grafana Dashboards 使用介绍](https://grafana.com/docs/grafana/latest/dashboards/)。
 
-  ![Grafana 添加 Prometheus 数据源](../images/grafana_add_prometheus_datasource.png)
+  ![Grafana 演示看板](../images/grafana_demo_dashboard.png)
 
   :::tip
   您也可以导入我们提供的 Grafana [仪表板模板](#grafana-仪表板模板)，快速构建专业监控视图。

@@ -145,8 +145,15 @@ TapData 依赖 MongoDB 存储用户配置、任务元数据等信息。为监控
       container_name: prometheus
       volumes:
         - ./prometheus.yml:/etc/prometheus/prometheus.yml
+        - prometheus_data:/prometheus  # 数据持久化
       ports:
         - "9090:9090"
+      command:
+        - '--config.file=/etc/prometheus/prometheus.yml'
+        - '--storage.tsdb.path=/prometheus'
+        - '--web.console.libraries=/etc/prometheus/console_libraries'
+        - '--web.console.templates=/etc/prometheus/consoles'
+        - '--storage.tsdb.retention.time=30d'  # 保留30天数据
 
     grafana:
       image: grafana/grafana:latest
@@ -156,8 +163,19 @@ TapData 依赖 MongoDB 存储用户配置、任务元数据等信息。为监控
       environment:
         - GF_SECURITY_ADMIN_USER=admin
         - GF_SECURITY_ADMIN_PASSWORD=admin
+      volumes:
+        - grafana_data:/var/lib/grafana  # 数据持久化
+  
+  volumes:
+    prometheus_data:
+    grafana_data:
   ```
-  为保障安全性，请登录 Grafana 后，修改默认密码。
+  
+  :::tips 重要提示
+    - `prometheus_data`：存储 Prometheus 采集的监控数据，避免容器重启后数据丢失
+    - `grafana_data`：存储 Grafana 的配置、仪表板、数据源等设置  
+  **如果不配置数据持久化**，执行 `docker compose down` 停止容器会删除所有数据，导致配置丢失！
+  :::
 
 3. 创建 `prometheus.yml` 文件，添加 TapData 组件及MongoDB 系统库的抓取作业，配置实例如下所示，支持多节点和自定义标签：
   ```yaml
@@ -201,23 +219,84 @@ TapData 依赖 MongoDB 存储用户配置、任务元数据等信息。为监控
             - '192.168.1.200:9216'
   ```
 
-4. 执行 `docker compose up -d` 启动 Prometheus 和 Grafana 服务。
+5. **启动容器**
 
-5. 访问 Prometheus UI 地址 `http://192.168.1.100:9090`，查询某个指标，例如 `system_cpu_usage`（系统 CPU 占用率），确认配置生效。
+  ```bash
+  docker compose up -d
+  ```
+
+  :::tip 配置持久化说明
+  上述配置已包含数据持久化，Prometheus 和 Grafana 的数据都会保存在 Docker 卷中，即使容器重启也不会丢失。
+  :::
+
+6. 访问 Prometheus UI 地址 `http://192.168.1.100:9090`，查询某个指标，例如 `system_cpu_usage`（系统 CPU 占用率），确认配置生效。
 
   ![Prometheus 查询 system_cpu_usage 指标](../images/prometheus_query_demo.png)
 
-6. 访问 Grafana UI 地址 `http://192.168.1.100:3000`，登录 Grafana 后，重置默认密码并添加 Prometheus 数据源，配置地址为 `http://192.168.1.100:9090`。
+7. 访问 Grafana UI 地址 `http://192.168.1.100:3000`，登录 Grafana 后，重置默认密码并添加 Prometheus 数据源，配置地址为 `http://192.168.1.100:9090`。
 
   下图以监控 TapData Management 服务的磁盘总容量和可用容量为例，构建了自定义的可视化看板。更多设置介绍，见 [Grafana Dashboards 使用介绍](https://grafana.com/docs/grafana/latest/dashboards/)。
 
   ![Grafana 添加 Prometheus 数据源](../images/grafana_add_prometheus_datasource.png)
 
+  :::tip
+  您也可以导入我们提供的 Grafana [仪表板模板](#grafana-仪表板模板)，快速构建专业监控视图。
+  :::
 
 
-## 附录：探活端点与指标说明
+## 附录
 
-### 探活端点
+### Grafana 仪表板模板
+
+为帮助您快速构建 TapData 监控体系，我们提供了经过实战验证的 Grafana 仪表板模板。导入后即可获得专业的监控视图，无需从零开始配置，具体如下：
+
+| 模板名称 | 监控范围 | 下载链接 |
+|---------|---------|---------|
+| **TapData 服务监控** | 任务运行状态、系统资源、组件健康度 | [TapData-Service-Template.zip](/resources/TapData_Service_Template.zip) |
+| **API 服务监控** | 请求统计、API 性能、资源使用 | [API-Service-Template.zip](/resources/API_Service_Template.zip) |
+| **MongoDB 监控** | 查询性能、Oplog、集合统计 | [Percona MongoDB 仪表板](https://github.com/percona/grafana-dashboards/tree/main/dashboards/MongoDB) |
+
+**使用方法**
+
+1. **下载模板**：点击上方链接获取 JSON 文件
+2. **导入 Grafana**：Grafana → 右上角 + 图标 → Import dashboard
+3. **配置数据源**：选择已添加的 Prometheus 数据源
+4. **调整变量**：根据实际环境修改变量查询语句
+
+**效果预览**
+
+<Tabs>
+<TabItem value="tapdata" label="TapData 监控">
+
+![TapData 服务监控面板](../images/TapData_Service_Grafana.png)
+
+*包含：任务延迟、节点状态、资源使用率等关键指标*
+
+</TabItem>
+<TabItem value="api" label="API 监控">
+
+![API 服务监控面板](../images/API_Service_Grafana.png)
+
+*包含：请求量、响应时间、错误率等 API 核心指标*
+
+</TabItem>
+<TabItem value="mongodb" label="MongoDB 监控">
+
+![MongoDB 监控面板](../images/MongoDB_Grafana.png)
+
+*包含：查询性能、连接数、Oplog 状态等数据库指标*
+
+</TabItem>
+</Tabs>
+
+:::tip 常见问题
+如导入后无数据显示，请检查、Prometheus 数据源是否配置正确、变量查询语句是否匹配实际标签名、指标采集端点是否可访问。
+
+:::
+
+### 探活端点与指标说明
+
+#### 探活端点
 
 所有 TapData 组件提供无需认证的 HTTP GET 探活端点，用于检查服务健康状态。返回 200 状态码表示服务正常，否则表示异常。以下是各组件的探活端点：
 
@@ -278,7 +357,7 @@ TapData 依赖 MongoDB 存储用户配置、任务元数据等信息。为监控
     ```
 
 
-### 可用指标
+#### 可用指标
 
 TapData 以 Prometheus 格式暴露指标，支持各类采集工具分析与告警。各组件的指标端点如下：
 

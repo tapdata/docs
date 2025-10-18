@@ -177,7 +177,7 @@ TapData 依赖 MongoDB 存储用户配置、任务元数据等信息。为监控
   **如果不配置数据持久化**，执行 `docker compose down` 停止容器会删除所有数据，导致配置丢失！
   :::
 
-3. 创建 `prometheus.yml` 文件，添加 TapData 组件及MongoDB 系统库的抓取作业，配置实例如下所示，支持多节点和自定义标签：
+3. 创建 `prometheus.yml` 文件，添加 TapData 组件及MongoDB 系统库的指标抓取作业，配置实例如下所示，支持多节点和自定义标签：
   ```yaml
     scrape_configs:
       - job_name: 'tapdata-management'

@@ -1,5 +1,9 @@
 #  在华为云 CCE（云容器引擎）上部署 TapData
 
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 云容器引擎（Cloud Container Engine，简称CCE）提供高度可扩展的、高性能的企业级Kubernetes集群。借助云容器引擎，您可以在华为云的 CCE 集群中轻松部署和管理 TapData 服务。
 
 ## 准备工作

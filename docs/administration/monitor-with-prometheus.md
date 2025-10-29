@@ -1,5 +1,9 @@
 # 对接 Prometheus 监控
 
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
+
 TapData 支持将运行时监控指标以 Prometheus 格式对外暴露，便于用户将 TapData 纳入自建监控体系中，实现统一的运行状态观测、趋势分析和告警配置。本文介绍如何启用监控、采集各组件指标并集成 Prometheus，同时可结合 Grafana 自定义可视化看板。
 
 ```mdx-code-block
@@ -18,6 +22,9 @@ TapData 是一款实时数据同步与融合平台，支持多种异构数据源
 
 通过结合上述两种方法，帮助用户快速构建起完整的监控体系，覆盖 TapData 服务本身及其关键依赖组件，有效提升平台可观测性和运维响应效率。
 
+## 前提条件
+
+TapData 为 4.9.0 及以上版本
 
 ## 步骤一：启用监控
 

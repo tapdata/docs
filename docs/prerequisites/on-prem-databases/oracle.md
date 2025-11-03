@@ -138,10 +138,15 @@ CREATE USER username IDENTIFIED BY password CONTAINER=all;
 ```
 ```sql
 -- 替换下述命令中的 username 为真实的用户名
+-- 授予 V_$DATABASE 视图权限
+GRANT 
+    SELECT ON V_$DATABASE 
+TO username;
+
 -- 用户自身 Schema 下
 GRANT 
     CREATE SESSION
-    TO username;
+TO username;
 
 -- 其它 Schema 下（推荐）
 GRANT
@@ -156,6 +161,11 @@ TO username;
 
 ```sql
 -- 替换下述命令中的 username 为真实的用户名
+-- 授予 V_$DATABASE 视图权限
+GRANT 
+    SELECT ON V_$DATABASE 
+TO username;
+
 GRANT CREATE SESSION,
       ALTER SESSION,
       EXECUTE_CATALOG_ROLE,

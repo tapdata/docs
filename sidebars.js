@@ -410,6 +410,7 @@ const sidebars = {
                      'administration/production-deploy/install-tapdata-ha',
                      'administration/production-deploy/install-tapdata-ha-with-3-node',
                      'administration/production-deploy/install-replica-mongodb',
+                     'administration/production-deploy/deploy-on-huawei-k8s',
                     ]
              },
             'administration/operation',

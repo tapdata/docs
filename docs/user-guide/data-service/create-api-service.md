@@ -43,7 +43,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
    ![调试 API](../../images/try_query_api.png)
 
-7. （可选）对于已创建的数据服务，您可以将其<span id="release330-export-api">选中并导出</span>备份或分享给其他团队成员，您也可以导入数据服务。
+7. （可选）对于已创建的数据服务，您可以将其<span id="release330-export-api">复制、选中并导出</span>备份或分享给其他团队成员，您也可以导入数据服务。
 
    ![导入/导出 API 服务](../../images/import_export_api.png)
 

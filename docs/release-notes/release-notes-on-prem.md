@@ -17,6 +17,26 @@ import TabItem from '@theme/TabItem';
 <TabItem value="V4.x 版本" default>
 ```
 
+## 4.9.0
+
+### 新增功能
+
+- [新增 Prometheus 集成能力](../administration/monitor-with-prometheus.md)，可接入至自建监控体系，同时结合 Grafana 自定义可视化看板
+- 新增 API 监控指标并支持[邮件告警设置](../user-guide/other-settings/notification.md#mail-alert)
+- 支持[一键复制 API](../user-guide/data-service/create-api-service.md#release330-export-api)，方便快速创建相同配置的 API 服务
+- 新增通过标签[设置任务启动优先级](../user-guide/copy-data/manage-task.md)，批量启动任务时将按优先级顺序执行
+
+
+### 功能优化
+- [创建 API](../user-guide/data-service/create-api-service.md) 时，参数匹配新增支持 IN 操作符（如：caseType IN ('I','A')）；自定义查询支持参数必填/选填设置及字段过滤
+- 任务监控页面的 QPS 指标展示优化，可展示 CPU/ 内存资源的占用趋势图
+- 优化页面 UI 显示效果，提升用户体验
+
+### 问题修复
+
+- 修复用户管理功能中设置分组 tag，可能导致用户状态变为 Reject 的问题
+- 修复多节点部署场景下，前端更新 License 时无法同步到所有节点的问题
+
 ## 4.8.0
 
 ### 新增功能

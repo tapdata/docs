@@ -66,8 +66,11 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
    tar -zxvf 安装包名&&cd tapdata
    ```
 
-   例如：`tar -zxvf tapdata-release-v2.14.tar.gz&&cd tapdata `
-
+   例如：`tar -zxvf tapdata-release-v2.14.tar.gz&&cd tapdata`
+   
+   :::tip
+   如需将解压后的程序文件复制到其他目录进行部署，请使用 `cp -a` 命令复制整个目录，避免使用 `*` 通配符匹配文件，以免遗漏隐藏文件导致启动失败。
+   :::
 
 
 ## 服务器 A 部署流程

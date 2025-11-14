@@ -152,6 +152,9 @@ import TabItem from '@theme/TabItem';
      CREATE PUBLICATION dbz_publication_root FOR ALL TABLES WITH (publish_via_partition_root = TRUE);
      CREATE PUBLICATION dbz_publication FOR ALL TABLES;
      ```
+     :::tip
+     此外，在创建连接时选择 Pgoutput 插件，可开启**部分订阅**功能，避免无主键表必须设置 REPLICA IDENTITY FULL 才能更新/删除的限制；注意用于同步的账号需具备 `CREATE PUBLICATION` 和目标表的 `OWNER` 权限。
+     :::
 
    - [Decoderbufs](https://github.com/debezium/postgres-decoderbufs)：适用于 PostgreSQL 9.6 及以上，利用 Google Protocol Buffers 解析 WAL 日志，但配置较为复杂。
 
@@ -442,6 +445,7 @@ import TabItem from '@theme/TabItem';
       * **账号**：数据库的账号。
       * **密码**：数据库账号对应的密码。
       * **日志插件**：如需读取 PostgreSQL 的数据变更，实现增量数据同步，您需要根据[准备工作](#prerequisites)的指引，完成插件的选择和安装。
+      * **部分订阅**：仅在**日志插件**选择为**Pgoutput**时，支持开启该功能。开启后会为每张采集表独立创建 publication，避免全局 publication 造成无主键表必须设置 `REPLICA IDENTITY FULL` 才能更新/删除的限制，但需数据库账号具备 `CREATE PUBLICATION` 权限及目标表的 `OWNER` 权限。
    * **高级设置**
       * **额外参数**：额外的连接参数，默认为空。
       * **时区**：默认为 0 时区，如果更改为其他时区，不带时区的字段（如 TIMESTAMP）会受到影响，而带时区的字段（如 TIMESTAMP WITH TIME ZONE）和 DATE 类型则不会受到影响。
@@ -471,6 +475,7 @@ import TabItem from '@theme/TabItem';
   * **哈希分片**：开启后，全表数据将在全量同步阶段按哈希值拆分为多个分片，并发读取数据，显著提升读取性能，但也会增加数据库负载，最大分片数可在启用开关后手动设置。
   * **分区表 CDC 根表**：仅在 PostgreSQL 13 及以上版本，并选择 pgoutput 日志插件时支持配置。开启时，仅感知根表的 CDC 事件；关闭时，仅感知子表的 CDC 事件。
   * **最大队列大小**：指定 PostgreSQL 读取增量数据队列大小，默认为 **8000**，如果下游同步较慢或表的单条数据过大，请调低此配置。
+  * **修改唯一键拆分**：默认开启。用于处理唯一键字段更新时，将 UPDATE 拆分为 DELETE + INSERT 事件，增强对目标端兼容性；如需保留原始 UPDATE 事件（例如用于审计或变更追踪），可手动关闭。
 * 作为目标节点
   * **忽略 NotNull**：默认关闭，即在目标库建表时忽略 NOT NULL 的限制。
   * **指定表所有者**：同步至 PostgreSQL 时，可指定自动创建表的拥有者，需确保用于数据同步的账号具备相应的权限。如未授权，可以通过管理员身份登录数据库，执行 `ALTER USER <tapdataUser> INHERIT;` 以及 `GRANT <tableOwner> TO <tapdataUser>;`。

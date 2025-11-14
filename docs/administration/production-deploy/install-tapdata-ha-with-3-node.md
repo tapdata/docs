@@ -82,6 +82,9 @@ import Content from '../../reuse-content/_enterprise-features.md';
    # 解压安装包，需替换安装包名称为真实名称
    tar -zxvf 安装包名 -C /data/tapdata
    ```
+   :::tip
+   如需将解压后的程序文件复制到其他目录进行部署，请使用 `cp -a` 命令复制整个目录，避免使用 `*` 通配符匹配文件，以免遗漏隐藏文件导致启动失败。
+   :::
 
 4. 进入解压后的目录，执行 `./tapdata start` 命令启动 Tapdata 部署程序，然后跟随命令行提示，依次设置 TapData 的登录地址、API 服务端口、MongoDB 连接认证等信息，示例及说明如下：
 

@@ -88,7 +88,7 @@ import TabItem from '@theme/TabItem';
 
    1. [部署 OBProxy](https://www.oceanbase.com/docs/common-odp-doc-cn-1000000002024070)（OceanBase 数据库代理服务），用于客户端接入和负载均衡。
 
-   2. [部署 oblogproxy](https://www.oceanbase.com/docs/community-obd-cn-1000000002691301)（增量日志代理服务），用以与 OceanBase 建立连接并拉取增量日志。
+   2. 联系 OceanBase 技术支持，获取并安装企业版 obcdc 组件以完成事务日志转换。
 
    3. 联系 [Tapdata 团队](../../appendix/support.md) 获取 `OB-Log-Decoder` 安装包。
    

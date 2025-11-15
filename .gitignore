@@ -25,5 +25,3 @@ yarn-error.log*
 .idea/workspace.xml
 .idea/workspace.xml
 .obsidian
-
-/static/nav_for_docs.json

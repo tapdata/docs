@@ -260,7 +260,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
 </thead>
 <tbody>
   <tr>
-    <td>Db2</td>
+    <td>Db2 for i</td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>

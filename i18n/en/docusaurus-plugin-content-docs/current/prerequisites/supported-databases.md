@@ -250,6 +250,15 @@ The beta version of the data sources is in public preview and has passed the bas
 </thead>
 <tbody>
   <tr>
+    <td>Db2 for i</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>IBM AS400 v7r4</td>
+  </tr>
+  <tr>
     <td>Custom Connection</td>
     <td>✅</td>
     <td>✅</td>

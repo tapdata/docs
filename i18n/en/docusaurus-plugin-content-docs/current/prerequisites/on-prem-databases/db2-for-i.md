@@ -38,6 +38,7 @@ When Db2 for i is used as the target, insert conflicts can be converted to updat
 
 - When Db2 for i is the source and incremental reading is enabled, provide TapData with a dedicated Library to temporarily store journal data. If the connection user has `CRTLIB` privilege, TapData will automatically create the Library during connection testing or when a task starts. You can also create it manually with:
   ```cl
+  # The library name is fixed as TAPLIB and cannot be changed
   CRTLIB LIB(TAPLIB) TEXT('TapData journal transit station')
   ```
 - During incremental capture, Db2 for i commands and SQL statements are executed with multiple threads to read journal logs. This adds some load to the database and consumes network bandwidth and disk I/O.
@@ -48,7 +49,7 @@ Before connecting to Db2 for i, complete account creation and authorization. The
 
 ### As a Source
 
-1. In the IBM i command line (5250 session or ACS terminal), run the following CL commands to create a user:
+1. In the IBM i command-line environment (accessible via a 5250 terminal session or IBM ACS terminal), run the following CL command to create the user:
    ```bash
    # Replace the account and password with actual values
    CRTUSRPRF USRPRF(TAPDATA) PASSWORD(Password) 
@@ -62,7 +63,7 @@ Before connecting to Db2 for i, complete account creation and authorization. The
    <TabItem value="Full Data Sync">
    ```
 
-   In the IBM i command line (5250 session or ACS terminal), run the following CL commands to grant privileges on the business library and its objects (replace `TESTCDC` with your actual library name):
+   In the IBM i command-line environment (accessible via a 5250 terminal session or IBM ACS terminal), run the following CL command to grant privileges on the business library and its objects (replace `TESTCDC` with your actual library name):
 
    ```bash
    # Grant USE privilege on the library
@@ -74,7 +75,7 @@ Before connecting to Db2 for i, complete account creation and authorization. The
 
    <TabItem value="Incremental Data Sync">
 
-   First, log in to IBM i and, in the command line (5250 session or ACS terminal), create the TapData working library and configure privileges:
+   First, In the IBM i command-line environment (accessible via a 5250 terminal session or IBM ACS terminal), create the TapData working library and configure privileges:
 
    ```bash
    CRTLIB LIB(TAPLIB) TEXT('TapData Working Library')
@@ -98,7 +99,7 @@ Before connecting to Db2 for i, complete account creation and authorization. The
 
 ### As a Target
 
-1. Log in to IBM i and, in the command line (5250 session or ACS terminal), run the following CL commands to create a user:
+1. In the IBM i command-line environment (accessible via a 5250 terminal session or IBM ACS terminal), run the following CL command to create a user:
    ```bash
    # Replace the account and password with actual values
    CRTUSRPRF USRPRF(TAPDATA) PASSWORD(Password) 

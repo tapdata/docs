@@ -43,6 +43,7 @@ import TabItem from '@theme/TabItem';
 
 - 当 Db2 for i 作为源库并启用增量读取时，需要为 TapData 提供一个用于中转 Journal 数据的专用 Library。如果连接用户具备执行 `CRTLIB` 权限，测试连接或启动任务时会自动创建该 Library，您也可手动执行如下命令创建该 Library，TapData 会自动识别并启用：
     ```cl
+    # Library 名称固定为 TAPLIB，暂不支持自定义
     CRTLIB LIB(TAPLIB) TEXT('TapData journal transit station')
     ```
 
@@ -54,7 +55,7 @@ import TabItem from '@theme/TabItem';
 
 ### 作为源库
 
-1. 在 IBM i 命令行（5250 会话或 ACS 终端）执行下述 CL 命令，创建用户。
+1. 在 IBM i 的命令行环境中（可通过 5250 终端会话或 IBM ACS 终端访问），执行以下 CL 命令创建用户。
 
     ```bash
     # 请基于真实情况替换下述命令中的账号和密码
@@ -69,7 +70,7 @@ import TabItem from '@theme/TabItem';
       <TabItem value="全量数据同步">
       ```
       
-      在 IBM i 命令行（5250 会话或 ACS 终端）执行下述 CL 命令，为业务库与对象赋权（请将 `TESTCDC` 替换为实际业务库名）。
+      在 IBM i 的命令行环境中（可通过 5250 终端会话或 IBM ACS 终端访问），执行以下 CL 命令为业务库与对象赋权（请将 `TESTCDC` 替换为实际业务库名）。
 
       ```bash
       # 授予系统基础表读取权限
@@ -81,7 +82,16 @@ import TabItem from '@theme/TabItem';
 
       <TabItem value="增量数据同步">
 
-      首先，登录至 IBM i 系统，在命令行（5250 会话或 ACS 终端）执行下述 CL 命令，创建 TapData 工作库并配置权限。
+      首先，在 IBM i 的命令行环境中（可通过 5250 终端会话或 IBM ACS 终端访问），执行以下 CL 命令创建用户。
+
+      ```bash
+      # 请基于真实情况替换下述命令中的账号和密码
+      CRTUSRPRF USRPRF(TAPDATA) PASSWORD(Password) 
+      USRCLS(*USER) TEXT('TapData Connector User') SPCAUT(*AUDIT) INLPGM(*NONE)
+      INLMNU(*SIGNOFF) LMTCPB(*YES)
+      ```
+
+      随后，执行以下 CL 命令创建 TapData 工作库并配置权限。
 
       ```bash
       CRTLIB LIB(TAPLIB) TEXT('TapData Working Library')
@@ -105,7 +115,7 @@ import TabItem from '@theme/TabItem';
 
 ### 作为目标库
 
-1. 登录至 IBM i 系统，在命令行（5250 会话或 ACS 终端）执行下述 CL 命令，创建用户。
+1. 在 IBM i 的命令行环境中（可通过 5250 终端会话或 IBM ACS 终端访问），执行以下 CL 命令创建用户。
 
     ```bash
     # 请基于真实情况替换下述命令中的账号和密码

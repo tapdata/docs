@@ -17,11 +17,22 @@ while IFS= read -r line; do
         # Remove the .md extension if present
         file_path_no_ext=$(echo "$file_path" | sed 's/\.md$//')
 
-        # Get the filename (remove the path)
+        # Get the filename (remove the path) as fallback
         file_name=$(basename "$file_path_no_ext")
 
+        # Try to extract pdkId from front matter
+        json_key="$file_name"
+        # Check for file with .md extension
+        if [ -f "docs/${file_path}.md" ]; then
+            # Extract pdkId from front matter (between --- markers)
+            pdkId=$(sed -n '/^---$/,/^---$/p' "docs/${file_path}.md" | grep "^pdkId:" | sed 's/pdkId:[[:space:]]*//')
+            if [ -n "$pdkId" ]; then
+                json_key="$pdkId"
+            fi
+        fi
+
         # Add to the JSON object
-        echo "  \"$file_name\": \"$file_path_no_ext\"," >> $output_file
+        echo "  \"$json_key\": \"$file_path_no_ext\"," >> $output_file
     fi
 done < sidebars.js
 

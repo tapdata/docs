@@ -1,3 +1,8 @@
+---
+pdkId: db2i
+---
+
+
 # Db2 for i
 
 **Db2 for i** is the relational database built into IBM i, providing enterprise-grade data management. TapData leverages QSQJRN journals together with the JT400 toolkit to deliver efficient data synchronization, continuously integrating mission‑critical data running on Db2 for i into modern data platforms.

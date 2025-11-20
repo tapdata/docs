@@ -1,3 +1,7 @@
+---
+pdkId: db2i
+---
+
 # Db2 for i
 
 import Content from '../../reuse-content/_enterprise-features.md';

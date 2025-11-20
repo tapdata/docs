@@ -13,7 +13,7 @@
   "yashandb": "prerequisites/warehouses-and-lake/yashandb",
   "dameng": "prerequisites/on-prem-databases/dameng",
   "db2": "prerequisites/on-prem-databases/db2",
-  "db2-for-i": "prerequisites/on-prem-databases/db2-for-i",
+  "db2i": "prerequisites/on-prem-databases/db2-for-i",
   "elasticsearch": "prerequisites/on-prem-databases/elasticsearch",
   "gbase-8a": "prerequisites/on-prem-databases/gbase-8a",
   "gbase-8s": "prerequisites/on-prem-databases/gbase-8s",

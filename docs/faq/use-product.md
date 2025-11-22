@@ -120,3 +120,12 @@ import Content2 from '../reuse-content/_enterprise-features.md';
 4. 完成目标节点的设置后，单击页面右上角的设置，将同步类型设置为**全量**，随后基于对实时性的要求设置定期调度的策略。
 
 5. 启动任务，等待任务运行完毕后再基于新表[创建并发布 API 服务](../user-guide/data-service/create-api-service.md)。
+
+
+## TapData 社区版如何添加/注册数据源？
+
+TapData 社区版内置 MySQL、PostgreSQL、MongoDB 等常用数据源，完整列表请参考 [支持的数据源](../prerequisites/supported-databases.md)。
+
+如需更多数据源，可克隆 [TapData Connectors](https://github.com/tapdata/tapdata-connectors) 仓库，按教程编译后注册到本地社区版。
+
+您也可参考源码开发自定义数据源，欢迎提交 PR，帮助更多用户使用 TapData。

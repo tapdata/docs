@@ -140,4 +140,5 @@ TapData 社区版包括以下主要组件：
 
 ## 下一步
 
-[连接数据库](../quick-start/connect-database.md)
+- [连接数据库](../quick-start/connect-database.md)
+- [添加/注册数据源](../faq/use-product.md#tapdata-社区版如何添加注册数据源)

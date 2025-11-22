@@ -407,6 +407,7 @@ const sidebars = {
               label: '生产部署',
               link: {type: 'doc', id: 'administration/production-deploy/README'},
               items:[
+                     'administration/production-deploy/capacity-planning',
                      'administration/production-deploy/install-tapdata-ha',
                      'administration/production-deploy/install-tapdata-ha-with-3-node',
                      'administration/production-deploy/disaster-recovery',

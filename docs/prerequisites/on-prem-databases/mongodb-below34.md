@@ -1,4 +1,5 @@
 ---
+pdkId: mongodb3
 keywords:
   - MongoDB 实时同步
   - MongoDB 数据集成
@@ -7,6 +8,7 @@ keywords:
   - MongoDB 数据迁移
   - Tapdata MongoDB 连接器
 ---
+
 # MongoDB Below 3.4
 
 [MongoDB](https://www.mongodb.com/) 是一个开源 NoSQL 数据库，以灵活/可扩展的方式存储和检索数据。本文介绍如何在 TapData 中添加 MongoDB 数据源（3.4 及以下版本），支持 MongoDB CDC 实时数据同步和增量数据复制，可将其作为源或目标库来构建数据链路，适用于实时数据加工、实时宽表、数据灾备等场景。

@@ -1,3 +1,7 @@
+---
+pdkId: gbase8s
+---
+
 # GBase 8s
 import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 

@@ -1,3 +1,7 @@
+---
+pdkId: quickapi
+---
+
 # Quick API
 import Content from '../../reuse-content/_all-features.md';
 

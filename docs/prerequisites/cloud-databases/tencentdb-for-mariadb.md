@@ -1,3 +1,7 @@
+---
+pdkId: tencent-db-mariadb
+---
+
 # TencentDB for MariaDB
 import Content from '../../reuse-content/_all-features.md';
 

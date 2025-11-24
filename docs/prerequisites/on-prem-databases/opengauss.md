@@ -1,3 +1,7 @@
+---
+pdkId: open-gauss
+---
+
 # openGauss
 import Content from '../../reuse-content/_all-features.md';
 

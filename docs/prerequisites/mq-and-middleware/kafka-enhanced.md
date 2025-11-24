@@ -1,3 +1,7 @@
+---
+pdkId: kafka_enhanced
+---
+
 # Kafka-Enhanced
 import Content from '../../reuse-content/_all-features.md';
 

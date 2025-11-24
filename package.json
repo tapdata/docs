@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "concurrently \"npm run remark:watch\" \"npm run typecheck:watch\" \"docusaurus start\"",
-    "build": "docusaurus build && node static/js/modify-sitemap.js",
+    "build": "sh convert_sidebars_to_json.sh && docusaurus build && node static/js/modify-sitemap.js",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",

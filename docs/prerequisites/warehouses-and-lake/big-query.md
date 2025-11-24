@@ -1,3 +1,7 @@
+---
+pdkId: bigquery
+---
+
 # BigQuery
 import Content from '../../reuse-content/_all-features.md';
 

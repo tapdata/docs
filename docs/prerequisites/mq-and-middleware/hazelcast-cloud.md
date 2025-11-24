@@ -1,3 +1,7 @@
+---
+pdkId: hazelcast
+---
+
 # Hazelcast
 import Content from '../../reuse-content/_all-features.md';
 

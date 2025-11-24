@@ -1,3 +1,7 @@
+---
+pdkId: postgres
+---
+
 # PostgreSQL
 import Content from '../../reuse-content/_all-features.md';
 

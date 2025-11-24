@@ -1,3 +1,7 @@
+---
+pdkId: aliyun-adb-postgres
+---
+
 # Aliyun ADB PostgreSQL
 import Content from '../../reuse-content/_all-features.md';
 

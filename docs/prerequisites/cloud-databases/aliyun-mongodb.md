@@ -1,3 +1,7 @@
+---
+pdkId: aliyun-db-mongodb
+---
+
 # MongoDB
 import Content from '../../reuse-content/_all-features.md';
 

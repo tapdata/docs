@@ -1,3 +1,7 @@
+---
+pdkId: aliyun-rds-sqlserver
+---
+
 # Aliyun RDS for SQL Server
 
 import Content from '../../reuse-content/_enterprise-and-cloud-features.md';

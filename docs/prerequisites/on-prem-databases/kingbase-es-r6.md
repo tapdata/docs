@@ -1,3 +1,7 @@
+---
+pdkId: kingbaser6
+---
+
 # KingbaseES-R6
 import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
 

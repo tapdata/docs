@@ -1,3 +1,7 @@
+---
+pdkId: ali1688
+---
+
 # Alibaba 1688
 import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 

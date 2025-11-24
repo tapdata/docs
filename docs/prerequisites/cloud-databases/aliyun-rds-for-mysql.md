@@ -1,3 +1,7 @@
+---
+pdkId: aliyun-rds-mysql
+---
+
 # Aliyun RDS for MySQL
 import Content from '../../reuse-content/_all-features.md';
 

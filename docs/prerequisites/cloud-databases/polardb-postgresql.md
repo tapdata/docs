@@ -1,3 +1,6 @@
+---
+pdkId: polar-db-postgres
+---
 # PolarDB PostgreSQL
 import Content from '../../reuse-content/_all-features.md';
 

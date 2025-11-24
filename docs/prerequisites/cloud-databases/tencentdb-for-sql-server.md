@@ -1,3 +1,7 @@
+---
+pdkId: tencent-db-sqlserver
+---
+
 # TencentDB for SQL Server
 import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 

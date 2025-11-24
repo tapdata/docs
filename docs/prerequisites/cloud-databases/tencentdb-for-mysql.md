@@ -1,3 +1,7 @@
+---
+pdkId: tencent-db-mysql
+---
+
 # TencentDB for MySQL
 import Content from '../../reuse-content/_all-features.md';
 

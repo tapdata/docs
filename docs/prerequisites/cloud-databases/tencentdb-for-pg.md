@@ -1,3 +1,7 @@
+---
+pdkId: tencent-db-postgres
+---
+
 # TencentDB for PG
 
 

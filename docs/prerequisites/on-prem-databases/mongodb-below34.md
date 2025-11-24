@@ -1,3 +1,7 @@
+---
+pdkId: mongodb3
+---
+
 # MongoDB Below 3.4
 
 [MongoDB](https://www.mongodb.com/) 是一个流行的、开源 NoSQL 数据库，以灵活/可扩展的方式存储和检索数据。本文将介绍如何在 TapData 中添加 MongoDB（3.4 及以下），后续可将其作为**源**或**目标库**来构建实时数据链路。

@@ -1,3 +1,7 @@
+---
+pdkId: aliyun-rds-mariadb
+---
+
 # Aliyun RDS for MariaDB
 
 

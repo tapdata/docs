@@ -1,3 +1,7 @@
+---
+pdkId: custom
+---
+
 # Custom Connection
 
 

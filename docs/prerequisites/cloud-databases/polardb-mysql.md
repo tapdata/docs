@@ -1,3 +1,7 @@
+---
+pdkId: polar-db-mysql
+---
+
 # PolarDB MySQL
 import Content from '../../reuse-content/_all-features.md';
 

@@ -1,3 +1,7 @@
+---
+pdkId: tencent-db-mongodb
+---
+
 # TencentDB for MongoDB
 
 

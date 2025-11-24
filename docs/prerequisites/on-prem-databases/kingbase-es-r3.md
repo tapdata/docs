@@ -1,3 +1,7 @@
+---
+pdkId: kingbaser3
+---
+
 # KingbaseES-R3
 
 

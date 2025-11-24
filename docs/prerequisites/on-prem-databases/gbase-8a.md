@@ -1,3 +1,7 @@
+---
+pdkId: gbase8a
+---
+
 # GBase 8a
 GBase 8a 数据库是一款由南大通用开发的分析型数据库，高度兼容 MySQL 的语法、特性、字段类型。TapData 支持将 GBase 8a 作为目标库，帮助您快速构建实时数据同步链路。接下来，我们将介绍如何在 TapData 中添加 GBase 8a 数据源。
 

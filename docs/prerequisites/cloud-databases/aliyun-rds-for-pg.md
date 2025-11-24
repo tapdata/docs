@@ -1,3 +1,7 @@
+---
+pdkId: aliyun-rds-postgres
+---
+
 # Aliyun RDS for PostgreSQL
 
 

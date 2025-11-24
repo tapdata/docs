@@ -1,3 +1,7 @@
+---
+pdkId: tencent-db-mysql
+---
+
 # TencentDB for MySQL
 
 

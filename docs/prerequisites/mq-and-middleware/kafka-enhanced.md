@@ -1,3 +1,7 @@
+---
+pdkId: kafka_enhanced
+---
+
 # Kafka-Enhanced
 [Apache Kafka](https://kafka.apache.org/) 是一个分布式数据流处理平台，可以实时发布、订阅、存储和处理数据流。Kafka-Enhanced 是一款升级版的 Kafka 连接器，支持标准、原生 Kafka、Flink、Canal、Debezium 数据结构进行数据传输，突破旧版 Kafka 连接器仅支持 JSON Object 的限制，可将非 JSON Object 结构数据加载到应用中进行处理，同时提供更可靠的断点续传机制。
 

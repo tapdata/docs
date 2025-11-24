@@ -1,3 +1,7 @@
+---
+pdkId: gbase8s
+---
+
 # GBase 8s
 GBase 8s 数据库是一款基于 Informix 研发的数据库，保留了大部分原生的语法、特性及字段类型，并且引入了大量 Oracle 的优势特性。TapData 支持将 GBase 8s 作为目标库，帮助您快速构建实时数据同步链路。接下来，我们将介绍如何在 TapData 中添加 GBase 8s 数据源。
 

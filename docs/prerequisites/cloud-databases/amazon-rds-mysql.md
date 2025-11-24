@@ -1,3 +1,7 @@
+---
+pdkId: aws-rds-mysql
+---
+
 # Amazon RDS for MySQL
 
 

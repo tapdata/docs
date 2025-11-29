@@ -49,3 +49,22 @@ RESTful API 是遵循 REST 架构规范的应用编程接口（API 或 Web API�
    TapData 支持在 URL 查询字符串中添加查询条件，从而查询结果的快速过滤，具体操作，见 [API 查询参数说明](api-query-params.md)。
    
    :::
+
+## 常见响应码
+
+| 响应码 | 消息 | 说明|
+| --- | --- | --- |
+| 200 | OK | 正常请求 |
+| 401 | Unauthorized error: token expired| 令牌已过期，请重新生成令牌 |
+| 404 | Not Found error: endpoint not found| API不存在。可能是API地址错误或API尚未成功发布，请检查请求的API地址，或等待一段时间直到API发布后再重新请求。 |
+| 429 | Rate limit exceeded. Maximum \${api limit} requests per second allowed | 由于访问频率超过API允许的最大访问频率，请求受到限制。请等待片刻后重新访问，或调整API配置页面的访问频率限制。 |
+
+## 常见问题
+
+* Q：API 返回数据很慢怎么办？
+
+   A：先确认 API 使用的数据源配置，再检查对应字段是否都有索引；若未建索引，请在数据源上为相关参数补充索引以提升查询性能。
+
+* Q：API 返回的数据不符合预期怎么办？
+
+   A：检查 API 使用的数据源模型及其对应的表，确认模型数据是否正常、字段合并逻辑是否符合预期。

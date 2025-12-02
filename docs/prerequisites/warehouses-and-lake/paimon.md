@@ -24,6 +24,12 @@ Paimon 0.6+ 版本（推荐 0.8.2+）
 
 支持 Paimon 0.6+ 版本的所有数据类型，为保障数据精度，建议参考[官方文档](https://paimon.apache.org/docs/master/concepts/spec/fileformat/)设置表列类型映射，如 Parquet 格式下 DATE 类型推荐使用 INT32 存储。
 
+:::tip
+
+您可以通过增加类型修改的[处理节点](../../user-guide/data-development/process-node.md#类型修改)，来修改目标 Paimon 表的类型，从而实现数据类型的转换。
+
+:::
+
 ## 注意事项
 
 - 为避免并发冲突和降低 Compaction 压力，将数据同步到 Paimon 时，为任务的目标节点建议关闭多线程写入，同时将单次写入数据量改大到 1,000，超时时间改为 1,000。

@@ -43,7 +43,6 @@ When Db2 for i is used as the target, insert conflicts can be converted to updat
 
 - When Db2 for i is the source and incremental reading is enabled, provide TapData with a dedicated Library to temporarily store journal data. If the connection user has `CRTLIB` privilege, TapData will automatically create the Library during connection testing or when a task starts. You can also create it manually with:
   ```cl
-  # The library name is fixed as TAPLIB and cannot be changed
   CRTLIB LIB(TAPLIB) TEXT('TapData journal transit station')
   ```
 - During incremental capture, Db2 for i commands and SQL statements are executed with multiple threads to read journal logs. This adds some load to the database and consumes network bandwidth and disk I/O.

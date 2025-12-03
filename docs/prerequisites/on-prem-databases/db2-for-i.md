@@ -47,7 +47,6 @@ import TabItem from '@theme/TabItem';
 
 - 当 Db2 for i 作为源库并启用增量读取时，需要为 TapData 提供一个用于中转 Journal 数据的专用 Library。如果连接用户具备执行 `CRTLIB` 权限，测试连接或启动任务时会自动创建该 Library，您也可手动执行如下命令创建该 Library，TapData 会自动识别并启用：
     ```cl
-    # Library 名称固定为 TAPLIB，暂不支持自定义
     CRTLIB LIB(TAPLIB) TEXT('TapData journal transit station')
     ```
 

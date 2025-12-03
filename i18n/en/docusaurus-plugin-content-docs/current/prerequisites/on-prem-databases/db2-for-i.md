@@ -76,23 +76,38 @@ Before connecting to Db2 for i, complete account creation and authorization. The
    # Grant USE privilege on all objects in the library
    GRTOBJAUT OBJ(TESTCDC/*ALL) OBJTYPE(*ALL) USER(TAPDATA) AUT(*USE)
    ```
+
+   Then, in an SQL client or STRSQL, grant the account read access to the system-catalog tables and functions used for journaling.
+
+   ```sql
+   -- Replace TAPDATA with the account you created earlier
+   GRANT SELECT ON QSYS2.OBJECT_PRIVILEGES TO TAPDATA;
+   GRANT SELECT ON QSYS2.SYSTABLES TO TAPDATA;
+   GRANT SELECT ON QSYS2.SYSCOLUMNS TO TAPDATA;
+   GRANT SELECT ON QSYS2.SYSKEYCST TO TAPDATA;
+   GRANT SELECT ON QSYS2.SYSINDEXES TO TAPDATA;
+   ```
+
    </TabItem>
 
    <TabItem value="Incremental Data Sync">
 
-   First, In the IBM i command-line environment (accessible via a 5250 terminal session or IBM ACS terminal), create the TapData working library and configure privileges:
+   First, from the IBM i command line (5250 or IBM ACS terminal), run these CL commands to create the TapData work library and set permissions.
 
    ```bash
+   # Create the TapData work library
    CRTLIB LIB(TAPLIB) TEXT('TapData Working Library')
    GRTOBJAUT OBJ(TAPLIB) OBJTYPE(*LIB) USER(TAPDATA) AUT(*ALL)
    CHGOBJOWN OBJ(TAPLIB) OBJTYPE(*LIB) NEWOWN(TAPDATA)
+   # Replace TESTCDC/QSQJRN with the Library and Journal that hold the journal receiver
    GRTOBJAUT OBJ(TESTCDC/QSQJRN) OBJTYPE(*JRN) USER(TAPDATA) AUT(*ALL)
    GRTOBJAUT OBJ(QSYS/DSPJRN) OBJTYPE(*CMD) USER(TAPDATA) AUT(*USE)
    ```
 
-   Then, in an SQL client or STRSQL, grant privileges to read system journal‑related tables and execute functions:
-
+   Then, in an SQL client or STRSQL, grant the account read access to the journal-catalog tables and functions.
+      
    ```sql
+   -- Replace TAPDATA with the account you created
    GRANT SELECT ON QSYS2.SYSSCHEMAS TO TAPDATA;
    GRANT SELECT ON QSYS2.JOURNAL_INFO TO TAPDATA;
    GRANT SELECT ON QSYS2.JOURNAL_RECEIVER_INFO TO TAPDATA;
@@ -137,6 +152,13 @@ Before connecting to Db2 for i, complete account creation and authorization. The
      - **Port**: The service port for the database, default is 8471.
      - **Service Name**: Enter the database (Library) name.
      - **User**, **Password**: Enter the database username and password.
+     - **Journal Name**: The journal object (JRN) that captures changes; defaults to QSQJRN in the current library.
+         - Libraries created with CREATE SCHEMA or CREATE DATABASE already have QSQJRN—leave blank.
+         - Libraries created with CRTLIB do not—enter the custom journal name.
+     - **Library Storing Journal**: The library that owns the journal object; must match the library portion of Journal Name.
+         - Libraries created with CREATE SCHEMA or CREATE DATABASE already have QSQJRN—leave blank.
+         - Libraries created with CRTLIB do not—enter the library that contains your custom journal.
+     - **TapData Work Library**: Temporary library used to stage incremental data; defaults to TAPLIB. It must be readable and writable by the TapData user. Create it as described in [Prerequisites](#as-a-source) or supply another name.
 
    - **Advanced Settings**
      - **Other Connection String Parameters**: Optional additional parameters; default empty.

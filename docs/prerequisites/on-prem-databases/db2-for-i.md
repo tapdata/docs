@@ -44,7 +44,7 @@ import TabItem from '@theme/TabItem';
 
 - 当 Db2 for i 作为源库并启用增量读取时，需要为 TapData 提供一个用于中转 Journal 数据的专用 Library。如果连接用户具备执行 `CRTLIB` 权限，测试连接或启动任务时会自动创建该 Library，您也可手动执行如下命令创建该 Library，TapData 会自动识别并启用：
     ```cl
-    # Library 名称固定为 TAPLIB，暂不支持自定义
+    # 默认创建连接时，TAPLIB 为默认的 Library 名称
     CRTLIB LIB(TAPLIB) TEXT('TapData journal transit station')
     ```
 
@@ -79,25 +79,30 @@ import TabItem from '@theme/TabItem';
       # 授予业务库所有对象的使用权限
       GRTOBJAUT OBJ(TESTCDC/*ALL) OBJTYPE(*ALL) USER(TAPDATA) AUT(*USE)
       ```
+      
+      随后，在 SQL 客户端或 STRSQL 中执行下述 SQL 语句，为账号授予读取系统日志相关表与函数的权限。
+
+      ```sql
+      -- 替换 TAPDATA 为您之前创建的账号
+      GRANT SELECT ON QSYS2.OBJECT_PRIVILEGES TO TAPDATA;
+      GRANT SELECT ON QSYS2.SYSTABLES TO TAPDATA;
+      GRANT SELECT ON QSYS2.SYSCOLUMNS TO TAPDATA;
+      GRANT SELECT ON QSYS2.SYSKEYCST TO TAPDATA;
+      GRANT SELECT ON QSYS2.SYSINDEXES TO TAPDATA;
+      ```
+
       </TabItem>
 
       <TabItem value="增量数据同步">
 
-      首先，在 IBM i 的命令行环境中（可通过 5250 终端会话或 IBM ACS 终端访问），执行以下 CL 命令创建用户。
+      首先，在 IBM i 的命令行环境中（可通过 5250 终端会话或 IBM ACS 终端访问），执行以下 CL 命令创建 TapData 工作库并配置权限。
 
       ```bash
-      # 请基于真实情况替换下述命令中的账号和密码
-      CRTUSRPRF USRPRF(TAPDATA) PASSWORD(Password) 
-      USRCLS(*USER) TEXT('TapData Connector User') SPCAUT(*AUDIT) INLPGM(*NONE)
-      INLMNU(*SIGNOFF) LMTCPB(*YES)
-      ```
-
-      随后，执行以下 CL 命令创建 TapData 工作库并配置权限。
-
-      ```bash
+      # 创建 TAPDATA 工作库
       CRTLIB LIB(TAPLIB) TEXT('TapData Working Library')
       GRTOBJAUT OBJ(TAPLIB) OBJTYPE(*LIB) USER(TAPDATA) AUT(*ALL)
       CHGOBJOWN OBJ(TAPLIB) OBJTYPE(*LIB) NEWOWN(TAPDATA)
+      # 替换 TESTCDC/QSQJRN 为存放 Journal 的 Library 和 Journal 名称
       GRTOBJAUT OBJ(TESTCDC/QSQJRN) OBJTYPE(*JRN) USER(TAPDATA) AUT(*ALL)
       GRTOBJAUT OBJ(QSYS/DSPJRN) OBJTYPE(*CMD) USER(TAPDATA) AUT(*USE)
       ```
@@ -105,6 +110,7 @@ import TabItem from '@theme/TabItem';
       随后，在 SQL 客户端或 STRSQL 中执行下述 SQL 语句，为账号授予读取系统日志相关表与函数的权限。
       
       ```sql
+      -- 替换 TAPDATA 为您之前创建的账号
       GRANT SELECT ON QSYS2.SYSSCHEMAS TO TAPDATA;
       GRANT SELECT ON QSYS2.JOURNAL_INFO TO TAPDATA;
       GRANT SELECT ON QSYS2.JOURNAL_RECEIVER_INFO TO TAPDATA;
@@ -155,6 +161,11 @@ import TabItem from '@theme/TabItem';
      * **端口**：数据库的服务端口，默认为 8471。
      * **服务名**：填写数据库（Library）名称。
      * **账号**、**密码**：数据库的账号及对应的密码。
+     * **日志名称**：采集增量日志的日志名称（JRN 对象名称，默认使用当前库的 QSQJRN）。
+        - 通过 CREATE SCHEMA 或 CREATE DATABASE 创建的 Library 默认启用 QSQJRN 日志，无需填写。
+        - 使用 CRTLIB 等 CL 命令创建的 Library 默认未启用 QSQJRN 日志，需填写自定义日志名称。
+     * **存储日志的库名称**：日志（Journal）对象存放的 Library 名称，与日志名称中的库名保持一致
+     * **TapData 工作库名称**：用于中转增量数据的临时 Library，默认使用 “TAPLIB”，需具备读写权限，可参照[准备工作](#作为源库)中的介绍创建，也可指定其他名称。
 
    * **高级设置**
 

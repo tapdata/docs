@@ -61,30 +61,33 @@ StarRocks 3.x (no restrictions on deployment architecture)
 
 2. Grant permissions to the created user account. You may also apply fine-grained access control based on your needs.
 
-```mdx-code-block
-<Tabs className="unique-tabs">
-<TabItem value="Grant access to a specific database">
-```
+    ```mdx-code-block
+    <Tabs className="unique-tabs">
+    <TabItem value="Grant access to a specific database">
+    ```
 
-```sql
--- Replace with your actual database name and username
-GRANT ALL ON DATABASE your_db_name TO USER your_username;
-GRANT ALL ON ALL TABLES IN DATABASE database_name TO USER your_username;
-```
+    ```sql
+    -- Replace with your actual database name and username
+    GRANT ALL ON DATABASE your_db_name TO USER your_username;
+    GRANT ALL ON ALL TABLES IN DATABASE database_name TO USER your_username;
+    ```
 
-</TabItem>
+    </TabItem>
 
-<TabItem value="Grant access to a all databases">
+    <TabItem value="Grant access to a all databases">
 
-```sql
--- Replace with your actual username
-GRANT ALL ON ALL DATABASES TO USER your_username;
-GRANT ALL ON ALL TABLES IN ALL DATABASES TO USER your_username;
-```
+    ```sql
+    -- Replace with your actual username
+    GRANT ALL ON ALL DATABASES TO USER your_username;
+    GRANT ALL ON ALL TABLES IN ALL DATABASES TO USER your_username;
+    ```
 
-</TabItem>
-</Tabs>
+    </TabItem>
+    </Tabs>
 
+3. If a firewall protects the StarRocks cluster, allow inbound traffic to these ports so TapData can connect:
+   - FE nodes: 8030 (HTTP/web services), 9030 (MySQL client protocol)
+   - BE nodes: 8040 (HTTP/web services)
 
 
 

@@ -67,37 +67,39 @@ StarRocks 3.x（部署架构无限制）
 
 2. 为刚创建的账号授予权限，您也可以基于业务需求设置更精细化的权限控制。
 
-```mdx-code-block
-<Tabs className="unique-tabs">
-<TabItem value="授予指定库权限">
-```
+     ```mdx-code-block
+     <Tabs className="unique-tabs">
+     <TabItem value="授予指定库权限">
+     ```
 
-```sql
--- 请替换真实的数据库名和用户名
-GRANT ALL ON DATABASE your_db_name TO USER your_username;
-GRANT ALL ON ALL TABLES IN DATABASE database_name TO USER your_username;
-```
+     ```sql
+     -- 请替换真实的数据库名和用户名
+     GRANT ALL ON DATABASE your_db_name TO USER your_username;
+     GRANT ALL ON ALL TABLES IN DATABASE database_name TO USER your_username;
+    ```
 
-</TabItem>
+     </TabItem>
 
-<TabItem value="授予所有库权限">
+     <TabItem value="授予所有库权限">
 
-```sql
--- 请替换真实的用户名
-GRANT ALL ON ALL DATABASES TO USER your_username;
-GRANT ALL ON ALL TABLES IN ALL DATABASES TO USER your_username;
-```
+     ```sql
+     -- 请替换真实的用户名
+     GRANT ALL ON ALL DATABASES TO USER your_username;
+     GRANT ALL ON ALL TABLES IN ALL DATABASES TO USER your_username;
+    ```
 
-</TabItem>
-</Tabs>
+     </TabItem>
+    </Tabs>
 
-:::tip
+    :::tip
 
-如果数据库位于非默认的数据目录，您需要执行 `SET CATALOG <catelog_name>;` 之后再执行授权命令，您可以通过 [SHOW CATALOGS](https://docs.starrocks.io/zh/docs/sql-reference/sql-statements/Catalog/SHOW_CATALOGS/) 命令查看已创建的数据目录。更多介绍，见[数据目录](https://docs.mirrorship.cn/zh/docs/data_source/catalog/catalog_overview/)。
+    如果数据库位于非默认的数据目录，您需要执行 `SET CATALOG <catelog_name>;` 之后再执行授权命令，您可以通过 [SHOW CATALOGS](https://docs.starrocks.io/zh/docs/sql-reference/sql-statements/Catalog/SHOW_CATALOGS/) 命令查看已创建的数据目录。更多介绍，见[数据目录](https://docs.mirrorship.cn/zh/docs/data_source/catalog/catalog_overview/)。
 
-:::
+    :::
 
-
+3. 如果 StarRocks 所属的服务器设置了防火墙，请确保开放以下端口，以便 TapData 服务可以正常访问 StarRocks 数据库：
+   - FE 服务：8030（请求端口）、9030（查询端口）
+   - BE 服务：8040（协同处理端口）
 
 ## 连接 StarRocks
 

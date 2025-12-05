@@ -56,9 +56,12 @@ Before connecting to Db2 for i, complete account creation and authorization. The
 1. In the IBM i command-line environment (accessible via a 5250 terminal session or IBM ACS terminal), run the following CL command to create the user:
    ```bash
    # Replace the account and password with actual values
-   CRTUSRPRF USRPRF(TAPDATA) PASSWORD(Password) 
-   USRCLS(*USER) TEXT('TapData Connector User') SPCAUT(*AUDIT) INLPGM(*NONE)
+   CRTUSRPRF USRPRF(TAPDATA) PASSWORD(Your_Password) 
+   USRCLS(*USER) TEXT('Test User') SPCAUT(*NONE) INLPGM(*NONE)
    INLMNU(*SIGNOFF) LMTCPB(*YES)
+   
+   # Optional: Delete the user if no longer needed
+   # DLTUSRPRF USRPRF(TAPDATA) OWNOBJOPT(*DLT)
    ```
 2. Grant privileges to the newly created user.
 

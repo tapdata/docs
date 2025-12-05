@@ -60,9 +60,12 @@ import TabItem from '@theme/TabItem';
 
     ```bash
     # 请基于真实情况替换下述命令中的账号和密码
-    CRTUSRPRF USRPRF(TAPDATA) PASSWORD(Password) 
-    USRCLS(*USER) TEXT('TapData Connector User') SPCAUT(*AUDIT) INLPGM(*NONE)
+    CRTUSRPRF USRPRF(TAPDATA) PASSWORD(Your_Password) 
+    USRCLS(*USER) TEXT('Test User') SPCAUT(*NONE) INLPGM(*NONE)
     INLMNU(*SIGNOFF) LMTCPB(*YES)
+   
+   # 可选: 不再需要改用户时可删除
+   # DLTUSRPRF USRPRF(TAPDATA) OWNOBJOPT(*DLT)
     ```
 2. 为刚创建的账号授予权限。
 

@@ -427,6 +427,15 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>8.1.3</td>
   </tr>
   <tr>
+    <td>Paimon</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>0.6 and above</td>
+  </tr>
+  <tr>
     <td>SelectDB</td>
     <td>➖</td>
     <td>➖</td>

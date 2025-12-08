@@ -36,6 +36,7 @@ const sidebars = {
             'prerequisites/warehouses-and-lake/gaussdb',
             'prerequisites/warehouses-and-lake/greenplum',
             'prerequisites/warehouses-and-lake/hudi',
+            'prerequisites/warehouses-and-lake/paimon',
             'prerequisites/warehouses-and-lake/selectdb',
             'prerequisites/warehouses-and-lake/starrocks',
             'prerequisites/warehouses-and-lake/tablestore',

@@ -1,3 +1,7 @@
+---
+pdkId: paimon
+---
+
 # Paimon
 
 Apache Paimon（简称 Paimon） 一种 Lake 格式，支持使用 Flink 和 Spark 构建实时 Lakehouse 架构，用于流式和批处理操作。 Tapdata 支持将数据实时写入 Paimon 表，用于实时数据湖构建。

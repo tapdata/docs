@@ -17,6 +17,17 @@ import TabItem from '@theme/TabItem';
 <TabItem value="V4.x 版本" default>
 ```
 
+## 4.10.0
+
+### 新增功能
+- 支持 [API](../user-guide/data-service/README.md) 多节点高可用，提升 API 服务稳定性。
+- [实时数据中心模式](../user-guide/real-time-data-hub/daas-mode/daas-mode-dashboard.md)下，表详情页面新增血缘任务流延迟信息展示，帮助用户快速了解数据加工链路的延迟情况
+- [增量数据校验功能](../user-guide/incremental-check.md)新增生成自定义修复 SQL 的能力，可将差异转化为 SQL 提供给 DBA 评估和选择性执行修复
+
+### 功能优化
+- PostgreSQL 作为源场景下，如果表没有主键但存在多个唯一索引，设置 Replica Identity 后，任务将自动使用该索引作为关联条件，并在界面上显示为 coreUnique
+- 优化 PostgreSQL 连接器主键更新逻辑，支持用户选择将主键更新事件拆分为删除和更新事件
+
 ## 4.9.0
 
 ### 新增功能

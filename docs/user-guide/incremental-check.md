@@ -59,3 +59,7 @@ import Content from '../reuse-content/_enterprise-features.md';
    单击差异条数旁的详情，可在弹出的对话框中查看差异信息的详情，包括源表中的值和目标表中的值等信息。
 
    ![差异详情](../images/review_incr_check_details.png)
+
+   :::tip
+   发现差异时，可点击右上角“生成自定义修复 SQL”，一键导出差异 SQL 供 DBA 评估与精准修复。
+   :::

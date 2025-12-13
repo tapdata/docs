@@ -137,6 +137,21 @@ Before connecting to Db2 for i, complete account creation and authorization. The
    GRTOBJAUT OBJ(TESTCDC/*ALL) OBJTYPE(*FILE) USER(TAPDATA) AUT(*ALL)
    ```
 
+### Enable TLS/SSL
+
+1. [Turn on TLS/SSL](https://www.ibm.com/docs/en/ibm-mq/9.4.x?topic=ssltls-working-i) for the Db2 for i database server.
+
+   Db2 for i listens on two ports by default: 8471 (clear) and 9471 (TLS/SSL). Be sure the firewall allows both, and enable TLS/SSL for the Database Server, Remote Command Server, and Signon Server.
+
+2. Import the server certificate to the TapData host to prevent man-in-the-middle attacks:
+
+   ```bash
+   # Import the exported db2i.cert into a new PKCS12 file
+   keytool -import -alias DB2ICERT -file db2i.cert -keystore DB2I_TAP.p12 -deststoretype PKCS12
+   # List the imported certificate
+   keytool -list -v -keystore DB2I_TAP.p12 -storetype PKCS12 -storepass changeit
+   ```
+
 ## Connect to Db2 for i
 
 1. Log in to TapData platform.
@@ -163,7 +178,7 @@ Before connecting to Db2 for i, complete account creation and authorization. The
      - **TapData Work Library**: Temporary library used to stage incremental data; defaults to TAPLIB. It must be readable and writable by the TapData user. Create it as described in [Prerequisites](#as-a-source) or supply another name.
 
    - **Advanced Settings**
-     - **Other Connection String Parameters**: Optional additional parameters; default empty.
+     - **Other Connection String Parameters**: Optional extra parameters. If TLS/SSL is enabled, complete the [prep steps](#enable-tlsssl) and add `secure=true;tls truststore=/DB2I_TAP.p12;tls truststore password=changeit`, replacing `/DB2I_TAP.p12` with the real PKCS12 path.
      - **CDC Log Caching**: Extract the incremental logs from the source database. This allows multiple tasks to share the incremental log extraction process from the same source, reducing the load on the source database. When enabled, you also need to select a storage location for the incremental log information.
      - **Include Tables**: By default, all tables are included. You can choose to customize and specify the tables to include, separated by commas.
      - **Exclude Tables**: When enabled, you can specify tables to exclude, separated by commas.

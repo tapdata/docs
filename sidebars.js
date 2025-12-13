@@ -114,6 +114,7 @@ const sidebars = {
                   items: [
                           'prerequisites/on-prem-databases/dameng',
                           'prerequisites/on-prem-databases/db2',
+                          'prerequisites/on-prem-databases/db2-for-i',
                           'prerequisites/on-prem-databases/elasticsearch',
                           'prerequisites/on-prem-databases/gbase-8a',
                           'prerequisites/on-prem-databases/gbase-8s',

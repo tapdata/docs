@@ -142,6 +142,24 @@ import TabItem from '@theme/TabItem';
     GRTOBJAUT OBJ(TESTCDC/*ALL) OBJTYPE(*FILE) USER(TAPDATA) AUT(*ALL)
     ```
 
+### 启用 TLS/SSL 连接
+
+1. 为 Db2 for i 数据库服务[启用 TLS/SSL](https://www.ibm.com/docs/en/ibm-mq/9.4.x?topic=ssltls-working-i)。
+
+   Db2 for i 的数据库服务默认会启用两个端口：8471（非 TLS/SSL）与 9471（TLS/SSL），请注意防火墙设置需允许其通信，另外 Database Server、Remote Command Server、Signon Server 服务均需开启 TLS/SSL。
+
+2. 将 SSL 证书导入到 TapData 所属服务器。
+
+   在 TapData 所属服务器上，执行下述命令将 Db2 for i 证书导入 JDK 默认 truststore 或自定义 PKCS12 文件，该方案可防止中间人攻击，提升安全性。
+
+   ```bash
+   # 将 Db2 for i 导出的证书文件 db2i.cert 导入新建 PKCS12 文件
+   keytool -import -alias DB2ICERT -file db2i.cert -keystore DB2I_TAP.p12 -deststoretype PKCS12
+   # 查看已导入的证书
+   keytool -list -v -keystore DB2I_TAP.p12 -storetype PKCS12 -storepass changeit
+   ```
+
+
 ## 连接 Db2 for i
 
 1. 登录 TapData 平台。
@@ -172,7 +190,7 @@ import TabItem from '@theme/TabItem';
 
    * **高级设置**
 
-      * **其他连接串参数**：额外的连接参数，默认为空。
+      * **其他连接串参数**：额外的连接参数，默认为空。如数据库启用了TLS/SSL 连接，需完成[准备工作](#启用-tlsssl-连接)，并添加 `secure=true;tls truststore=/DB2I_TAP.p12;tls truststore password=changeit` 参数，注意替换 `/DB2I_TAP.p12` 为实际的 PKCS12 文件路径。
       * **时区**：默认为 0 时区，您也可以根据业务需求手动指定，当配置为其他时区时，会影响不带时区的字段，例如 DATE、TIMESTAMP。
       * **使用共享挖掘**：[挖掘源库](../../user-guide/advanced-settings/share-mining.md)的增量日志，可为多个任务共享源库的增量日志，避免重复读取，从而最大程度上减轻增量同步对源库的压力，开启该功能后还需要选择一个外存用来存储增量日志信息。
       * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。

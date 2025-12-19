@@ -49,7 +49,7 @@ In addition, for synchronization from SQL Server to PostgreSQL, extra support is
   ```sql
   -- Set CT table data retention to 24 hours, default is 3 days
   EXEC sys.sp_cdc_change_job @job_type = N'cleanup', 
-                             @retention = 24;
+                             @retention = 2880;
   ```
 
 * SQL Server's CDC solution has limited support for DDL capture. Implicitly committed DDLs are not recorded in the `cdc.ddl_history` table, which may affect synchronization. Additionally, after executing DDL operations, the CT table does not update automatically, and TapData relies on polling to detect and rebuild the CT table. Therefore, if DDL and DML occur simultaneously or within a short period, it may lead to DML data loss.

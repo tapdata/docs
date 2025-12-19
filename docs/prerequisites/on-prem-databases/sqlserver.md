@@ -48,7 +48,7 @@ import TabItem from '@theme/TabItem';
   ```sql
   -- 设置 CT 表数据保留时间为24小时，默认3天
   EXEC sys.sp_cdc_change_job @job_type = N'cleanup', 
-                             @retention = 24;
+                             @retention = 2880;
   ```
 
 * SQL Server 的 CDC 方案对 DDL 采集支持较弱，隐式提交的 DDL 不会记录在 cdc.ddl_history 表中，可能影响同步。此外，执行 DDL 操作后，CT 表不会自动更新，系统通过轮询检测并重建 CT 表，因此 DDL 和 DML 在短时间内或同一事务中同时发生，可能导致 DML 数据丢失。

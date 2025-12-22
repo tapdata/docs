@@ -423,6 +423,7 @@ const sidebars = {
               label: '故障排查',
               link: {type: 'doc', id: 'administration/troubleshooting/README'},
               items: [
+                     'administration/troubleshooting/task-troubleshooting',
                      'administration/troubleshooting/error-code',
                      'administration/troubleshooting/error-and-solutions',
                      ]

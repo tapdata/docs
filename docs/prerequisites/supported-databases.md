@@ -260,6 +260,15 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
 </thead>
 <tbody>
   <tr>
+    <td>Db2 for i</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>IBM AS400 v7r4</td>
+  </tr>
+  <tr>
     <td>Custom Connection</td>
     <td>✅</td>
     <td>✅</td>

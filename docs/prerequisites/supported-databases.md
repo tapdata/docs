@@ -88,7 +88,7 @@ TapData 支持全量和增量两种同步方式，涵盖单向同步和双向同
   <tr>
     <td>Doris</td>
     <td>✅</td>
-    <td>✅</td>
+    <td>➖</td>
     <td>➖</td>
     <td>✅</td>
     <td>✅</td>

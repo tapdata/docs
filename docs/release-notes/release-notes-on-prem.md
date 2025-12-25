@@ -17,6 +17,29 @@ import TabItem from '@theme/TabItem';
 <TabItem value="V4.x 版本" default>
 ```
 
+## 4.11.0
+
+### 新增功能
+
+- 发布 [Db2 for i 连接器](../prerequisites/on-prem-databases/db2-for-i.md)，支持主流数据源的实时同步与数据写入，助力企业级数据集成
+- [增量数据校验功能](../user-guide/incremental-check.md)新增批量手动校验与修复能力，支持灵活配置校验范围，可指定忽略特定表，满足个性化业务需求
+- [主从合并节点](../user-guide/data-development/process-node.md#主从合并)新增子表缓存重建功能，可快速修复缓存数据不一致问题，保障数据质量
+- [数据复制任务](../user-guide/copy-data/create-task.md)扩展精确一次写入能力，新增支持 MongoDB、Sybase 作为目标端，确保数据写入的幂等性和一致性
+- [任务日志](../user-guide/copy-data/monitor-task.md#-任务日志展示区)增强审计功能，新增 DDL 语句输出，便于问题排查和操作审计
+- 智能优化增量读取性能，支持自动调节读取批次大小，动态平衡系统吞吐量与运行稳定性
+
+
+### 功能优化
+
+- [API 审计日志](../user-guide/data-service/audit-api.md)详情优化，新增记录数据库响应时间
+- API 性能优化，提升整体请求处理效率
+- API 调试页面结果展示方式优化，提升用户可读性与调试体验
+- 优化主从合并任务进入增量阶段的判断逻辑，提升任务切换准确性
+
+### 问题修复
+
+- 修复特定场景下可能出现的内存泄露问题，提升系统稳定性
+
 ## 4.10.0
 
 ### 新增功能

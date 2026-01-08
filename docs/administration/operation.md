@@ -63,7 +63,7 @@ Subsystem:
 
 ## 如何备份/恢复 TapData？
 
-TapData 运行期间，所有任务配置、共享缓存等关键数据均保存在 MongoDB 中。为保证升级或迁移安全，请按下列流程对元数据库及工作目录进行备份，并在需要时快速恢复。
+TapData 运行期间，所有任务配置、共享缓存等关键数据均保存在 MongoDB 中。为保证升级或迁移安全，请通过 [MongoDB 备份工具](https://www.mongodb.com/docs/database-tools/mongodump/)按下列流程对元数据库及工作目录进行备份，并在需要时快速恢复。
 
 **备份流程**
 
@@ -77,11 +77,13 @@ TapData 运行期间，所有任务配置、共享缓存等关键数据均保存
 2. 执行下述格式的命令备份元数据库。
 
    ```bash
-   mongodump --uri "mongodb://<username>:<password>@<mongodb_host>:<mongodb_port>/<database_name>?authSource=admin" -o /backup/tapdata_db_$(date +%F)
+   mongodump --uri "mongodb://<username>:<password>@<mongodb_host>:<mongodb_port>/<database_name>?authSource=admin" --gzip --excludeCollection="collection_name"  -o /backup/tapdata_db_$(date +%F)
    ```
    - `<username>`、`<password>`：MongoDB 实例的用户名及密码。
    - `<mongodb_host>`、`<mongodb_port>`：MongoDB 实例地址及端口（默认 27017）。
    - `<database_name>`：数据库名（默认 tapdata，如自定义请以实际为准）。
+   - `--gzip`：压缩备份文件，可有效减少备份文件大小。
+   - `--excludeCollection="collection_name"`：指定无需备份的集合（如系统日志），从而进一步节约备份耗时和所需的存储空间，可重复指定多个，推荐设置为 `--excludeCollection="AgentMeasurementV2" --excludeCollection="AlarmInfo" --excludeCollection="ApiCall" --excludeCollection="fs.files" --excludeCollection="fs.chunks" --excludeCollection="Message" --excludeCollection="monitoringLogs" --excludeCollection="InspectDetails" --excludeCollection="DDlTaskHistories" --excludeCollection="Logs"`
    
 3. （可选）如需完整备份，例如用于整机迁移场景，可额外备份 TapData 工作目录，示例命令如下：
    ```bash

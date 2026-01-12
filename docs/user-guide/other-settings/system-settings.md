@@ -12,6 +12,11 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 在页面右上角，单击![](../../images/setting.png)图标，然后单击**系统设置**。
 
+## 外观
+
+![外观设置](../../images/set_environment_tag.png)
+
+打开**环境标签**开关，为不同部署环境设置自定义的**名称**与**颜色**，保存后即可在产品顶部展示环境标签，帮助您快速识别当前环境，降低误操作风险。
 
 
 ## 日志设置

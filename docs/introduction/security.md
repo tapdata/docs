@@ -14,8 +14,12 @@ import Content1 from '../reuse-content/_cloud-features.md';
 - **安全可靠的运行环境**：TapData 选择 Google Cloud 作为首选部署平台，所有核心组件运行在虚拟局域网（VPC）中，与公网完全隔离，同时，对入站和出站流量实施严格的防火墙控制，进一步保障数据安全。
 - **自动化的云端部署**：在 TapData 的技术架构中，Agent 扮演着至关重要的角色，主要负责数据同步工作的执行，TapData 为用户提供了在 Google Cloud、Alibaba Cloud 等云平台上一键部署 Agent 的能力，通过统一可控的服务地址，有效避免外部风险，为您提供全面可靠的安全保障。
 
-<details><summary>Agent 有什么作用？</summary>
+<details>
+
+<summary>Agent 有什么作用？</summary>
+
 Agent 是数据同步、数据异构、数据开发场景中的关键程序，负责通过流式技术从源库获取数据、处理转换数据并发送到目标库，由云上的管理端统一管理。
+
 </details>
 
 

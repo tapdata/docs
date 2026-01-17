@@ -11,7 +11,9 @@ openGauss 是一款支持 SQL 2003 标准语法，支持主备部署的高可用
 OpenGauss 3.0.0 及以上
 
 ## 支持字段类型
+
 <details>
+
 <summary><b>单击展开查看详细</b></summary>
 
 - smallint

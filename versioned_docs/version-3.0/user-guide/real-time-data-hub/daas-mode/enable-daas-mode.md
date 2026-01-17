@@ -65,7 +65,10 @@ TapData 默认处于数据集成模式，接下来，我们将介绍如何开启
 
    - **规格**：选择 MongoDB Atlas 的**规格**和**存储大小**。
 
-     <details><summary>规格说明</summary>
+     <details>
+
+     <summary>规格说明</summary>
+
      <ul>
      <li>M10: 2 vCPUs, 2 GB RAM</li>
      <li>M20: 2 vCPUs, 4 GB RAM</li>
@@ -74,6 +77,7 @@ TapData 默认处于数据集成模式，接下来，我们将介绍如何开启
      <li>M50: 8 vCPUs, 32 GB RAM</li>
      <li>M60: 16 vCPUs, 64 GB RAM</li>
      </ul>
+     
      </details>
 
    - **订阅周期**：选择所需的订阅周期，支持**连续包年**和**连续包月**。

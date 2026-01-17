@@ -52,6 +52,7 @@ Tapdata 支持通过 **轮询** 或 **Webhook** 两种方式从 Coding 获取增
      * **Webhook**：通过 Coding 平台提供的 Webhook 功能监听其事件信息，当事件发生变化时通过 HTTP POST 方式通知到 TapData 平台。选择此方式时，您还需要单击**生成**来获取服务 URL，然后跟随下述流程前往 Coding 平台完成配置。
    
        <details>
+       
        <summary>Coding 平台配置 Webhook</summary>
    
        1. 以管理员身份[登录 Coding 平台](https://e.coding.net/login)。

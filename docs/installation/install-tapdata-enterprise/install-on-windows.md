@@ -152,7 +152,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlayer.tsx';
 
-<AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install_tapdata.cast" rows={20} idleTimeLimit={3} preload={true} />
+
 
 
 <AsciinemaPlayer

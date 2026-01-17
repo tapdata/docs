@@ -79,7 +79,9 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 ## 附录
 
-<details><summary>rcbc-deploy-mongo.yaml 配置样例</summary>
+<details>
+
+<summary>rcbc-deploy-mongo.yaml 配置样例</summary>
 
 ```yaml
 kind: ConfigMap
@@ -261,7 +263,9 @@ spec:
 </details>
 
 
-<details><summary>rcbc-deploy-tapdata.yaml 配置样例</summary>
+<details>
+
+<summary>rcbc-deploy-tapdata.yaml 配置样例</summary>
 
 :::tip 配置说明
 在部署前，请注意以下重要配置项：

@@ -25,8 +25,8 @@ import Content from '../../reuse-content/_enterprise-features.md';
    * **权限范围**：选择该 API 服务可由哪个角色调用，更多介绍，见[角色管理](../manage-system/manage-role.md)。
    * **所属应用**：选择此 API 所属的业务应用，有助于清晰地对 API 进行分类。更多介绍，见[应用管理](manage-app.md)。
    * **连接类型**、**连接名称**、**对象名称**：选择数据源及其对象（例如 orders-wide-view 这样的视图），作为 API 查询的目标。
-   * **访问路径设置**：API 路径遵循 /api/{version}/{prefix}/{base_path} 的格式。
-     * `version` 和 `prefix` 可选，用于版本控制或业务标识（如 /api/v1/orders/summary）。
+   * **访问路径设置**：API 路径遵循 `/api/{version}/{prefix}/{base_path}` 的格式。
+     * `version` 和 `prefix` 可选，用于版本控制或业务标识（如 `/api/v1/orders/summary`）。
      * `base_path` 必填，用于唯一标识端点，如未填写则会自动生成。
     * **请求参数**：定义客户端在调用 API 时可传入的参数。
       * 选择为**默认查询**时，系统会自动包含三个内置参数：page、limit 和 filter。客户端可通过这些参数动态控制分页和过滤；不支持自定义参数。

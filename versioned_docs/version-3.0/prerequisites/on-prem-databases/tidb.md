@@ -173,7 +173,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, DROP ON *.* TO 'username';
 
   1. 将下载后的文件解压，然后进入解压后的目录执行 `make` 命令进行编译。
 
-  2. 找到生成的 **cdc** 二进制文件，将其放置在 TapData 引擎所属机器的 **{tapData-dir}/run-resource/ti-db/tool** 目录下（如有则替换）。
+  2. 找到生成的 **cdc** 二进制文件，将其放置在 TapData 引擎所属机器的 `{tapData-dir}/run-resource/ti-db/tool/` 目录下（如有则替换）。
 
   3. 通过 chmod 命令，为该目录下的文件授予可读可写可执行权限。
 

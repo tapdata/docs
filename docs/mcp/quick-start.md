@@ -106,6 +106,7 @@ import TabItem from '@theme/TabItem';
 ```
 
 <details>
+
 <summary><b>了解 TapData MCP Server 原语</b></summary>
 
 TapData MCP Server 基于三类核心原语构建，分别是 **Prompts**、**Resources** 和 **Tools**。它们共同构成了 AI 模型与数据系统交互的基础，使模型能够识别可用资源、选择合适操作，并基于提示词获取结构化上下文，从而完成更精准、高效的推理任务。

@@ -7,7 +7,10 @@ import Content from '../reuse-content/_cloud-features.md';
 
 TapData Cloud 支持对 Agent 的可视化运维管理，您可以通过页面管理已安装的 Agent，也可以通过命令行管理。
 
-
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
 
 ## 通过页面管理 Agent
 
@@ -35,86 +38,63 @@ TapData Cloud 支持对 Agent 的可视化运维管理，您可以通过页面�
 
 根据 Agent 安装的平台选择，查看相关命令介绍：
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
+```mdx-code-block
 <Tabs className="unique-tabs">
-    <TabItem value="linux" label="Linux 平台" default>
-    <p>进入 Agent 的安装目录，选择执行下述命令：</p>
-    <ul>
-    <li>查看命令帮助：<code>./tapdata help</code>
-    </li>
-    <li>查看 Agent 状态：<code>./tapdata status</code>
-    </li>
-    <li>启动 Agent：<code>./tapdata start</code>
-    </li>
-    <li>停止 Agent：<code>./tapdata stop</code>
-    </li>
-    </ul>
-   </TabItem>
-   <TabItem value="windows" label="Windows 平台">
-    <p>进入 Agent 的安装目录，选择执行下述操作：</p>
-    <ul>
-    <li>查看 Agent 状态：双击应用程序 <b>sstatus.bat</b>
-    </li>
-    <li>启动 Agent：双击应用程序 <b>start.bat</b> 或 <b>tapdata.exe</b>
-    </li>
-    <li>停止 Agent：双击应用程序 <b>stop.bat</b>
-    </li>
-    </ul>
-   </TabItem>
-   <TabItem value="dockerandmac" label="Docker/Mac（M1 芯片） 平台">
-    <ol>
-    <li>执行 <code>docker ps</code> 获取容器 ID。
-    </li>
-    <p></p>
-    <li>执行下述格式的命令进入容器命令行。
-    <pre>
-    docker exec -it 容器ID /bin/bash</pre>
-    <p>需替换命令中的容器 ID，例如 <code>docker exec -it 1dbee41b4adc /bin/bash</code>。</p>
-    </li>
-    <li>在容器命令行中，进入 Agent 的安装目录，然后选择执行下述命令：
-    <ul>
-    <li>查看命令帮助：<code>./tapdata help</code>
-    </li>
-    <li>查看 Agent 状态：<code>./tapdata status</code>
-    </li>
-    <li>启动 Agent：<code>./tapdata start</code>
-    </li>
-    <li>停止 Agent：<code>./tapdata stop</code>
-    </li>
-    </ul>
-    </li>
-    </ol>
-   </TabItem>
-   <TabItem value="computenest" label="阿里云计算巢">
-    <ol>
-    <li>登录阿里云并进入<a href="https://computenest.console.aliyun.com/">计算巢控制台</a>。
-    </li>
-    <p></p>
-    <li>找到您的计算巢实例并单击其 ID，进入概览页面。
-    </li>
-    <p></p>
-    <li>单击<b>资源</b >页签，找到 Agent 安装到的 ECS 示例（名称包含 <b>tapdata</b>），单击其右侧的<b>远程连接</b>。
-    <p></p>
-    <img src='https://docs.tapdata.io/img/login_compute_nest_cn.png'></img>
-    </li>
-    <p></p>
-    <li>在跳转到的命令窗口中，执行 <code>cd /data/tapdata</code> 进入 Agent 安装目录，然后选择执行下述命令：
-    <ul>
-    <li>查看命令帮助：<code>./tapdata help</code>
-    </li>
-    <li>查看 Agent 状态：<code>./tapdata status</code>
-    </li>
-    <li>启动 Agent：<code>./tapdata start</code>
-    </li>
-    <li>停止 Agent：<code>./tapdata stop</code>
-    </li>
-    </ul>
-    </li>
-    </ol>
-   </TabItem>
-  </Tabs>
+<TabItem value="Linux 平台">
+```
+进入 Agent 的安装目录，选择执行下述命令：
+
+- 查看命令帮助：`./tapdata help`
+- 查看 Agent 状态：`./tapdata status`
+- 启动 Agent：`./tapdata start`
+- 停止 Agent：`./tapdata stop`
+
+</TabItem>
+
+<TabItem value="Windows 平台">
+
+ 进入 Agent 的安装目录，选择执行下述操作：
+
+-  查看 Agent 状态：双击应用程序 **status.bat**
+-  启动 Agent：双击应用程序 **start.bat** 或 **tapdata.exe**
+-  停止 Agent：双击应用程序 **stop.bat**
+
+</TabItem>
+
+<TabItem value="Docker/Mac（M1 芯片） 平台">
+
+1. 执行 `docker ps` 获取容器 ID。
+2. 执行下述格式的命令进入容器命令行。
+    ```bash
+    docker exec -it 容器ID /bin/bash
+    ```
+    需替换命令中的容器 ID，例如 `docker exec -it 1dbee41b4adc /bin/bash`。
+3. 在容器命令行中，进入 Agent 的安装目录，然后选择执行下述命令：
+    - 查看命令帮助：`./tapdata help`
+    - 查看 Agent 状态：`./tapdata status`
+    - 启动 Agent：`./tapdata start`
+    - 停止 Agent：`./tapdata stop`
+
+</TabItem>
+
+<TabItem value="阿里云计算巢">
+
+1. 登录阿里云并进入[计算巢控制台](https://computenest.console.aliyun.com/)。
+
+2. 找到您的计算巢实例并单击其 ID，进入概览页面。
+
+3. 单击**资源**页签，找到 Agent 安装到的 ECS 示例（名称包含 **tapdata**），单击其右侧的**远程连接**。
+
+    ![](https://docs.tapdata.io/img/login_compute_nest_cn.png)
+
+4. 在跳转到的命令窗口中，执行 `cd /data/tapdata` 进入 Agent 安装目录，然后选择执行下述命令：
+    - 查看命令帮助：`./tapdata help`
+    - 查看 Agent 状态：`./tapdata status`
+    - 启动 Agent：`./tapdata start`
+    - 停止 Agent：`./tapdata stop`
+
+</TabItem>
+</Tabs>
 
 ### Agent 目录说明
 Agent 在安装和执行任务的过程中，会自动在安装目录中生成一些文件，用于存放任务信息、日志、配置文件、数据源证书等信息，详细介绍如下：

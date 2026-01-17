@@ -17,7 +17,7 @@ Tapdata 支持在开发任务中添加处理节点，满足对数据进行过滤
 
 筛选出50岁以上的男性或者收入一万以下的30岁以上的人
 
-( record.gender == 0&& record.age > 50) || ( record.age >= 30&& record.salary <= 10000)
+`( record.gender == 0&& record.age > 50) || ( record.age >= 30&& record.salary <= 10000)`
 
 ![](../../../images/process_node_1.png)
 

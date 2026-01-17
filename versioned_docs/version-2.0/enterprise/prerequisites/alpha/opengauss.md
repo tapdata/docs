@@ -9,7 +9,9 @@
 OpenGauss 3.0.0 及以上
 
 ## 支持字段类型
+
 <details>
+
 <summary><b>单击展开查看详细</b></summary>
 
 - smallint

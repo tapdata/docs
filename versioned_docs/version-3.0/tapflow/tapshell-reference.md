@@ -17,7 +17,7 @@ id         status     database_type        name
 4fa6c1     ready      Mysql                MySQL_ECommerce  
 ```
 
-### use <db_name>
+### use &lt;db_name&gt;
 
 **命令说明**：选择要操作的数据源，后续可对其执行查看表等操作。
 
@@ -40,7 +40,7 @@ ecom_customers        ecom_order_items      ecom_order_payments   ecom_orders   
 ecom_products         ecom_sellers   
 ```
 
-### desc <table_name>
+### desc &lt;table_name&gt;
 
 **命令说明**：执行选择数据源命令后，可通过本命令查看指定表的 Schema 信息（如列类型）。
 
@@ -57,7 +57,7 @@ tap> desc ecom_customers
 }
 ```
 
-### peek <table_name>
+### peek &lt;table_name&gt;
 
 **命令说明**：执行选择数据源命令后，可通过本命令查看指定表开头的若干条记录和总行数信息，默认展示 5 条记录，您也可以通过 `-n` 指定要展示的记录数。
 
@@ -71,7 +71,7 @@ table ecom_customers has 99002 records
 
 
 
-### count  <table_name>
+### count  &lt;table_name&gt;
 
 **命令说明**：执行选择数据源命令后，可通过本命令查看指定表的行数统计信息。
 
@@ -98,7 +98,7 @@ d7c298: Oracle_Sync_Test       complete     sync/initial_sync+cdc
 
 
 
-### **status <flow name/id>**
+### status &lt;flow name/id&gt;
 
 **命令说明**：显示数据流任务的运行统计信息。
 
@@ -111,7 +111,7 @@ job current status is: running, qps is: 31808.0, total rows: 1300000, delay is: 
 
 
 
-### <span id="start">start</span> <flow name/id>
+### start &lt;flow name/id&gt;
 
 **命令说明**：启动指定的数据流任务，默认情况下首次启动会执行全量数据同步，完成后自动进入增量数据同步阶段。如果实时同步任务配置为仅全量则完成全量，则仅执行一次全量数据同步；如果配置为仅增量默认，则从指定的起始点或当前时间点开始同步增量数据。
 
@@ -124,7 +124,7 @@ Task start succeed
 
 
 
-### stop <flow name/id>
+### stop &lt;flow name/id&gt;
 
 **命令说明**：停止指定的数据流任务，停止任务后，下次启动将基于上次停止的增量时间点继续同步数据。
 
@@ -137,7 +137,7 @@ Task stop succeed
 
 
 
-### **logs <flow name/id>**
+### logs &lt;flow name/id&gt;
 
 **命令说明**：显示指定数据流任务的日志信息。
 
@@ -148,7 +148,7 @@ tap> logs Oracle_Sync_Test
 
 
 
-### reset  <flow name/id>
+### reset  &lt;flow name/id&gt;
 
 **命令说明**：清除数据流任务的数据同步进度，下次启动将重新执行任务。
 
@@ -161,7 +161,7 @@ Task reset success
 
 
 
-### delete <flow name/id>
+### delete &lt;flow name/id&gt;
 
 **命令说明**：删除指定的数据流任务。
 

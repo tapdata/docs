@@ -5,8 +5,10 @@ import Content from '../../reuse-content/_all-features.md';
 
 Dummy 是测试数据源，可以生成测试数据。本文介绍如何在 Tapdata 中添加 Dummy 数据源。
 
-<details><summary>支持的生成字段类型</summary>
 
+<details>
+
+<summary>支持的生成字段类型</summary>
 
 | 类型                      | 说明                   | 参数                                                         |
 | ------------------------- | ---------------------- | ------------------------------------------------------------ |

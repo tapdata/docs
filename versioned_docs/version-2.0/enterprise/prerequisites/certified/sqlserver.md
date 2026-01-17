@@ -6,6 +6,10 @@ SQL Server 数据库是 Microsoft 开发设计的一个关系数据库智能管�
 
 SQL Server 2005、2008、2008 R2、2012、2014、2016、2017
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
 
 
 ## 作为源库
@@ -19,89 +23,174 @@ SQL Server 2005、2008、2008 R2、2012、2014、2016、2017
 
 :::
 
-1. 以 sysadmin 的身份登录到 SQLServer Management Studio 或 sqlcmd。
+1. 以管理员（例如 **sa**）身份，登录到 SQL Server Management Studio 或 sqlcmd。
 
-2. 查找 mssql-conf 工具并开启代理服务。
-
-   ```bash
-   mssql-conf set sqlagent.enabled true
-   ```
-
-3. 执行下述命令，启用数据库、数据表的增量复制。
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs className="unique-tabs">
-    <TabItem value="dbcdc" label="为数据库启用增量复制" default>
-    <pre>--启用增量复制<br />
-   use [数据库名称]<br />
-   go<br />
-   EXEC sys.sp_cdc_enable_db<br />
-   go
-   <br />
-   <br />
-   --查看是否启用增量复制<br />
-   SELECT [name], database_id, is_cdc_enabled<br />
-   FROM sys.databases<br />
-   WHERE [name] = N'[数据库名称]'<br />
-   go</pre>
-   </TabItem>
-   <TabItem value="tablecdc" label="为数据表启用增量复制">
-    <pre>--启用增量复制<br />
-    use [数据库名称]<br />
-go
-EXEC sys.sp_cdc_enable_table<br />
-@source_schema = N'[Schema]',<br />
-@source_name = N'[Table]',<br />
-@role_name = N'[Role]'<br />
-go<br />
-<br />
---查看是否启用增量复制<br />
-use [数据库名称]<br />
-go<br />
-SELECT [name],is_tracked_by_cdc<br />
-FROM sys.tables<br />
-WHERE [name] = N'[table]'<br />
-go</pre>
-<ul>
-<li>Schema：Schema 名称，例如 dbo。</li>
-<li>Table：数据表的名称。</li>
-<li>Role：可以访问更改数据的角色，如不希望使用设置角色，可将其设置为 NULL。</li>
-</ul>
-<p>如果在启用增量复制时指定了角色，则需确保数据库用户具有适当的角色，以便 Tapdata 可以访问增量复制表。</p>
-   </TabItem>
-  </Tabs>
-
-4. 如果对增量同步表的字段执行了 DDL 操作（如增加字段），您需要执行下述操作重启 CDC，否则可能出现数据无法同步或报错等情况。
+2. 依次执行下述格式的命令，创建用于数据复制/转换任务的用户。
 
    ```sql
-   --关闭该表的 CDC
-   go
-   EXEC sys.sp_cdc_disable_table
-   @source_schema = N'[Schema]',
-   @source_name = N'[Table]',
-   @capture_instance = N'[Schema_Table]'
-   go
-   // capture_instance一般为schema_table的格式拼接而成，可以通过以下命令，查询实际的值
-   exec sys.sp_cdc_help_change_data_capture
-   @source_schema = N'[Schema]',
-   @source_name = N'[Table]';
+   -- 创建登录账户
+   CREATE LOGIN login_name WITH PASSWORD='passwd', default_database=database_name;
    
+   -- 创建数据库操作用户
+   CREATE USER login_name FOR LOGIN login_name with default_schema=schema_name;
    
-   --启动该表的 CDC
-   use [数据库名称]
-   go
-   EXEC sys.sp_cdc_enable_table
-   @source_schema = N'[Schema]',
-   @source_name = N'[Table]',
-   @role_name = N'[Role]'
-   go
    ```
 
-5. （可选）如需向从节点读取增量数据以实现数据同步，您需要为从节点设置上述步骤。
+   * **login_name**：登录名，即用户名。
+   * **passwd**：用户密码。
+   * **database_name**：与登录关联的默认数据库，即要登录的数据库名。
+   * **schema_name**：数据库架构名称（例如 **dbo**），它充当对象（例如表、视图、过程和函数）的命名空间或容器。相关资料，见[创建数据库架构](https://learn.microsoft.com/zh-cn/sql/relational-databases/security/authentication-access/create-a-database-schema?view=sql-server-ver16)。
 
-6. 创建用于数据同步/开发任务的账号并授予 sysadmin 权限，具体操作，见 [CREATE USER](https://docs.microsoft.com/zh-cn/sql/t-sql/statements/create-user-transact-sql?view=sql-server-2017)。
+   下述示例表示创建一个名为 **tapdata** 的用户，指定登录的数据库为 **demodata**，架构为 **dbo**：
+
+   ```sql
+   -- 创建登录账户
+   CREATE LOGIN tapdata WITH password='Tap@123456', default_database=demodata;
+   
+   -- 创建数据库操作用户
+   CREATE USER tapdata FOR LOGIN tapdata with default_schema=dbo;
+   ```
+
+3. 为刚创建的账号授予权限，您也可以基于业务需求自定义权限控制。
+
+   ```mdx-code-block
+   <Tabs className="unique-tabs">
+   <TabItem value="仅读取全量数据">
+   ```
+   ```sql
+   -- 授予读取指定架构下所有表的权限
+   GRANT SELECT ON SCHEMA::schema_name TO login_name;
+   ```
+   </TabItem>
+
+   <TabItem value="读取全量+增量数据">
+
+   ```sql
+   -- 授予读取指定架构下所有表的权限
+   GRANT SELECT ON SCHEMA::schema_name TO login_name;
+   
+   -- 授予读取变更数据捕获的权限，其 Schema 固定为 cdc
+   GRANT SELECT ON SCHEMA::cdc TO login_name;
+   ```
+   </TabItem>
+   </Tabs>
+
+   * **login_name**：登录名，即用户名。
+   * **schema_name**：数据库架构名称（例如 **dbo**），它充当对象（例如表、视图、过程和函数）的命名空间或容器。
+
+   下述示例表示授予 **tapdata** 用户，拥有 **dbo** 架构和 **cdc** 架构下所有表的读取权限。
+
+   ```sql
+   GRANT SELECT ON SCHEMA::dbo TO tapdata;
+   GRANT SELECT ON SCHEMA::cdc TO tapdata;
+   ```
+
+4. 如果您需要获取源库的数据变更以实现增量同步，您还需要跟随下述步骤完成数据库设置。
+
+   1. [启用 SQL Server 代理服务](https://learn.microsoft.com/zh-cn/sql/ssms/agent/start-stop-or-pause-the-sql-server-agent-service?view=sql-server-ver16)。 
+
+   2. 确定数据库的日志文件大小限制，可通过 [sys.master_files 官方文档](https://learn.microsoft.com/zh-cn/sql/relational-databases/system-catalog-views/sys-master-files-transact-sql?view=sql-server-ver16) 进行查询。
+
+      如果日志文件大小设置过小，可能导致日志无法继续增长，进而影响 CDC 功能的正常运行。
+
+   3. 选择执行下述命令，启用变更数据捕获能力。
+   
+      * 启用数据库级别的 CDC，在执行命令时CREATE LOGIN ，您需要替换 **database_name** 为真实的数据库名。
+   
+        ```sql
+        -- 启用变更数据捕获能力
+        USE database_name
+        GO
+        EXEC sys.sp_cdc_enable_db
+        GO
+        
+        -- 查看是否启用变更数据捕获，is_cdc_enabled 值为 1 即表示已启用该功能
+        SELECT [name], database_id, is_cdc_enabled
+        FROM sys.databases
+        WHERE [name] = N'database_name'
+        GO
+        ```
+   
+      * 启用表级别的 CDC。
+   
+        ```sql
+        USE database_name
+        -- 有主键表
+        GO
+        EXEC sys.sp_cdc_enable_table 
+        @source_schema = N'schema_name', 
+        @source_name   = N'table_name',
+        @capture_instance = NULL,
+        @role_name     = N'role_name',
+        @supports_net_changes = 1
+        GO
+        
+        -- 无主键表
+        GO
+        EXEC sys.sp_cdc_enable_table 
+        @source_schema = N'schema_name', 
+        @source_name   = N'table_name',
+        @capture_instance = NULL,
+        @role_name     = N'role_name',
+        @supports_net_changes = 0
+        GO
+        ```
+   
+        - **database_name**：数据库名称。
+        - **schema_name**：架构名称，例如 **dbo**。
+        - **table_name**：数据表的名称。
+        - **role_name**：可以访问更改数据的角色，如不希望使用设置角色，可将其设置为 NULL，如果在启用增量复制时指定了角色，则需确保数据库用户具有适当的角色，以便 TapData 可以访问增量复制表。
+        - **capture_instance**：默认值为 NULL，由系统自动生成。如果存在残留的 CDC 资源，可能会因 **capture_instance** 冲突导致无法启动表的 CDC。此时可以通过指定一个新的 capture_instance 来启用。
+
+## 作为目标库
+
+1. 以管理员（例如 **sa**）身份，登录到 SQL Server Management Studio 或 sqlcmd。
+
+2. 依次执行下述格式的命令，创建用于数据复制/转换任务的用户。
+
+   ```sql
+   -- 创建登录账户
+   CREATE LOGIN login_name WITH PASSWORD='passwd', default_database=database_name;
+   
+   -- 创建数据库操作用户
+   CREATE USER login_name FOR LOGIN login_name with default_schema=schema_name;
+   ```
+   
+   * **login_name**：登录名，即用户名。
+   * **passwd**：用户密码。
+   * **database_name**：与登录关联的默认数据库，即要登录的数据库名。
+   * **schema_name**：数据库架构名称（例如 **dbo**），它充当对象（例如表、视图、过程和函数）的命名空间或容器。相关资料，见[创建数据库架构](https://learn.microsoft.com/zh-cn/sql/relational-databases/security/authentication-access/create-a-database-schema?view=sql-server-ver16)。
+   
+   下述示例表示创建一个名为 **tapdata** 的用户，指定登录的数据库为 **demodata**，架构为 **dbo**：
+   
+   ```sql
+   -- 创建登录账户
+   CREATE LOGIN tapdata WITH password='Tap@123456', default_database=demodata;
+   
+   -- 创建数据库操作用户
+   CREATE USER tapdata FOR LOGIN tapdata with default_schema=dbo;
+   ```
+   
+3. 为刚创建的账号授予权限，您也可以基于业务需求自定义权限控制。
+
+   ```sql
+   -- 授予建表权限
+   GRANT CREATE TABLE TO login_name;
+   
+   -- 授予增删改查所有表的权限
+   GRANT ALTER, DELETE, INSERT, SELECT, UPDATE ON SCHEMA::schema_name TO login_name;
+   ```
+   
+   * **login_name**：登录名，即用户名。
+   * **schema_name**：数据库架构名称（例如 **dbo**），它充当对象（例如表、视图、过程和函数）的命名空间或容器。
+   
+   下述示例表示授予 **tapdata** 用户，在 **dbo** 架构建表并对所有表执行增删改查的权限：
+   
+   ```sql
+   GRANT CREATE TABLE TO tapdata
+   GRANT ALTER, DELETE, INSERT, SELECT, UPDATE ON SCHEMA::dbo TO tapdata;
+   ```
+
 
 
 

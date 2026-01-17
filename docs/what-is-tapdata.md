@@ -9,7 +9,7 @@ slug: /
 
 <video
   src="https://20778419.s21v.faiusr.com/58/2/ABUIABA6GAAg-NP9pQYokaGd7AE.mp4"
-  poster="/video/tapdata-cover.png"   // 封面图
+  poster="/video/tapdata-cover.png" 
   width="100%"
   height="600"
   controls

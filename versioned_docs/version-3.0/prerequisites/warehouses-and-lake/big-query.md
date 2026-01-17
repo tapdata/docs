@@ -22,31 +22,32 @@ import Content from '../../reuse-content/_all-features.md';
    3. 在弹出的对话框中，依次搜索并授予下述权限。
    
    <details>
-    <summary>最小权限列表（单击展开）</summary>
-  <div>
-    <div>
-    bigquery.datasets.create<br/>
-      bigquery.datasets.get<br/>
-      bigquery.datasets.update<br/>
-      bigquery.jobs.create<br/>
-      bigquery.jobs.get<br/>
-      bigquery.jobs.list<br/>
-      bigquery.jobs.listAll<br/>
-      bigquery.jobs.delete<br/>
-      bigquery.jobs.update<br/>
-      bigquery.routines.list<br/>
-      bigquery.routines.get<br/>
-      bigquery.tables.create<br/>
-      bigquery.tables.delete<br/>
-      bigquery.tables.get<br/>
-      bigquery.tables.getData<br/>
-      bigquery.tables.list<br/>
-      bigquery.tables.setCategory<br/>
-      bigquery.tables.update<br/>
-      bigquery.tables.updateData
-    </div>
-  </div>
-</details>
+
+   <summary>最小权限列表（单击展开）</summary>
+
+   ```bash
+   bigquery.datasets.create
+   bigquery.datasets.get
+   bigquery.datasets.update
+   bigquery.jobs.create
+   bigquery.jobs.get
+   bigquery.jobs.list
+   bigquery.jobs.listAll
+   bigquery.jobs.delete
+   bigquery.jobs.update
+   bigquery.routines.list
+   bigquery.routines.get
+   bigquery.tables.create
+   bigquery.tables.delete
+   bigquery.tables.get
+   bigquery.tables.getData
+   bigquery.tables.list
+   bigquery.tables.setCategory
+   bigquery.tables.update
+   bigquery.tables.updateData
+   ```
+   
+   </details>
 
    4. 权限选择完成后，单击**创建**。
 

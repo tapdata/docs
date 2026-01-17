@@ -53,6 +53,7 @@ import TabItem from '@theme/TabItem';
 * 若源端存在超出 GaussDB（DWS）限制的操作（如修改分布列），DWS 会将更新事件转为**先删除后插入**。此操作要求源端更新事件的 `After` 数据字段齐全，例如 Oracle 需开启**全字段补全日志**功能。
 
 <details>
+
 <summary><b>什么是分布列</b></summary>
 
 在 GaussDB（DWS） 中，分布列是指分布表中用于数据分布的列，它决定了数据在分布式存储中的分布方式并影响查询性能。更多介绍，见[分布列选择最佳实践](https://support.huaweicloud.com/performance-dws/dws_10_0042.html)。

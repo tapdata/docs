@@ -66,18 +66,16 @@ DML 操作：INSERT、UPDATE、DELETE
 
 2. 执行下述格式的 SQL 命令为刚刚创建的用户授予权限。
 
-   ```mdx-code-block
    <Tabs className="unique-tabs">
    <TabItem value="作为源库" default>
-   ```
-   
+
    ```sql
    sp_configure 'number of aux scan descriptors', 5000; 
    sp_dboption <database_name>, 'ddl in tran', 'true'
    sp_role 'grant',sa_role,<username>
    sp_role 'grant',sybase_ts_role,<username>
    ```
-   
+
    </TabItem>
    
    <TabItem value="作为目标库">
@@ -87,8 +85,8 @@ DML 操作：INSERT、UPDATE、DELETE
    sp_addalias <username>, dbo
    ```
 
-  </TabItem>
-  </Tabs>
+   </TabItem>
+   </Tabs>
 
    - `<database_name>`：要授权的数据库名。
    - `<username>`：要授权的用户名。
@@ -142,4 +140,3 @@ DML 操作：INSERT、UPDATE、DELETE
   - **源表反查**：通过查询源库反查 Lob 对象，性能更高，适用于存在主键或唯一索引的场景。
 - **自动编解码**：支持根据配置的字符编码对所有同步数据进行自动转换，确保字符集一致性，避免编码问题导致的数据异常。
   
-  ```

@@ -42,7 +42,7 @@ import Content from '../reuse-content/_enterprise-and-community-features.md';
 
 <video
   src="/video/tapdata-mcp-demo.mp4"
-  poster="/video/tapdata-mcp-cover.jpg"   // 封面图
+  poster="/video/tapdata-mcp-cover.jpg"
   width="100%"
   height="500"
   controls

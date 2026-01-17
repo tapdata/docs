@@ -355,7 +355,7 @@ TO  username CONTAINER=all;
    ```
 
 
-3. 执行下述命令，生成 jks 文件，需更换 {password} 为对应的密码。
+3. 执行下述命令，生成 jks 文件，需更换 `{password}` 为对应的密码。
 
    ```bash
    $ORACLE_HOME/bin/orapki wallet pkcs12_to_jks -wallet /opt/oracle/wallet -pwd {password} -jksKeyStoreLoc /opt/oracle/wallet/oracle12c_ks.jks -jksKeyStorepwd {password} -jksTrustStoreLoc /opt/oracle/wallet/oracle12c_ts.jks -jksTrustStorepwd {password}

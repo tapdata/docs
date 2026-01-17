@@ -60,6 +60,7 @@ import TabItem from '@theme/TabItem';
 * SQL Server 作为源库时，如果对增量同步表的字段执行了 DDL 操作（如增加字段），您需要执行下述操作重启变更数据捕获，否则可能出现数据无法同步或报错等情况。
 
 <details>
+
 <summary>重启对应表的变更数据捕获</summary>
 
 ```sql
@@ -364,8 +365,11 @@ import TabItem from '@theme/TabItem';
   答：2005 版 SQL Server 尚未支持 CDC 功能，因此增量需要使用[字段轮询](../../introduction/change-data-capture-mechanism.md)方案，或采用下述方式：
   
   <details>
+
   <summary>SQL Server 2005 作为源库解决方案</summary>
+
   由于 CDC 支持从 SQLServer 2008 开始支持，对于较早的版本，您需要使用 Custom SQL 功能来模拟更改数据捕获，在从旧版本复制数据时，源表必须有一个更改跟踪列，比如 <b>LAST_UPDATED_TIME</b>，它在每次插入或更新记录时都会更新；随后在创建数据复制任务时，任务的同步类型选择为<b>全量</b>，将<b>重复运行自定义 SQL</b>设置为 <b>True</b>，同时在映射设计上提供适当的自定义 SQL。
+  
   </details>
 
 * 问：SQL Server 中个别表无法启用 CDC，但其他表正常使用，如何在不执行库级重启的前提下进行修复？

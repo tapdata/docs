@@ -2,6 +2,11 @@
 
 Oracle Database（简称 Oracle）是甲骨文公司的一款关系数据库管理系统。在创建 Oracle 连接前，您需要在跟随本文完成前置准备工作，完成操作后即可创建连接并在数据复制/开发任务中使用该数据源。
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## 支持版本 
 
 Oracle 9i、10g、11g、12c、19c
@@ -27,128 +32,244 @@ Oracle 9i、10g、11g、12c、19c
 
 1. 以具有 DBA 权限的用户身份登录 Oracle 数据库。
 
-2. 开启数据库归档模式（ARCHIVELOG）。
+2. 依次执行下述格式的命令，创建用于数据复制/转换任务的用户。
 
-   :::tip
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="Oracle 标准模式">
+```
+```sql
+CREATE USER username IDENTIFIED BY password;
+```
+</TabItem>
 
-   您也可以执行 `select log_mode from v$database;` 命令来查看是否已开启该功能，返回结果为 **ARCHIVELOG** 表示已开启，可跳过本步骤。
+<TabItem value="Oracle 多租户模式">
 
-   :::
+```sql
+-- 切换至根容器
+ALTER SESSION SET CONTAINER=cdb$root;
 
-   1. 执行下述命令，关闭数据库，请务必在业务低峰期操作，以免影响业务运行。
+-- 创建用户
+CREATE USER username IDENTIFIED BY password CONTAINER=all;
+```
+</TabItem>
+</Tabs>
+
+   - **username**：用户名，当 Oracle 处于多租户模式下时，用户名需增加 `C##` 前缀。
+   - **password**：密码。
+
+
+3. 为刚创建的账号授予权限，您也可以基于业务需求自定义权限控制。
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="仅读取全量数据">
+```
+```sql
+-- 替换下述命令中的 username 为真实的用户名
+-- 授予 V_$DATABASE 视图权限
+GRANT 
+    SELECT ON V_$DATABASE 
+TO username;
+
+-- 用户自身 Schema 下
+GRANT 
+    CREATE SESSION
+TO username;
+
+-- 其它 Schema 下（推荐）
+GRANT
+    CREATE SESSION,
+    SELECT ANY TABLE,
+TO username;   
+-- 如为多租户模式，命令结尾需要需要指定容器，例如 CONTAINER=all
+```
+</TabItem>
+
+<TabItem value="读取全量+增量数据">
+
+```sql
+-- 替换下述命令中的 username 为真实的用户名
+-- 授予 V_$DATABASE 视图权限
+GRANT 
+    SELECT ON V_$DATABASE 
+TO username;
+
+GRANT CREATE SESSION,
+      ALTER SESSION,
+      EXECUTE_CATALOG_ROLE,
+      SELECT ANY DICTIONARY,
+      SELECT ANY TRANSACTION,
+      SELECT ANY TABLE
+TO username;
+```
+:::tip
+当 Oracle 版本为 12c 及以上时，您还需要执行 `GRANT LOGMINING TO username;` 格式的命令授予 `LOGMINING` 权限。
+:::
+</TabItem>
+</Tabs>
+
+
+4. 如果您需要获取源库的数据变更以实现增量同步，您还需要以 DBA 身份登录数据库完成下述数据库设置。
+
+   1. 开启数据库归档模式（ARCHIVELOG），由于涉及重启数据库，请在业务低峰期操作。
+
+      :::tip
+
+      您也可以执行 `SELECT log_mode FROM v$database;` 命令来查看是否已开启该功能，返回结果为 **ARCHIVELOG** 表示已开启，可跳过本步骤。
+
+      :::
 
       ```sql
-      shutdown immediate;
+      -- 关闭数据库
+      SHUTDOWN IMMEDIATE;
+      
+      -- 启动并挂载数据库
+      STARTUP MOUNT;
+      
+      -- 开启归档并打开数据库
+      ALTER DATABASE archivelog;
+      ALTER DATABASE OPEN;
       ```
 
-   2. 执行下述命令，启动并挂载数据库。
-
+   2. 开启补充日志（Supplemental Logging）。
       ```sql
-      startup mount;
+      -- 为库级开启主键补充日志，如需关闭，将 ADD 替换为 DROP
+      ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (PRIMARY KEY) COLUMNS;
+      
+      
+      -- 为单个表开启主键补充日志，需替换命令中 Schema 名称和 表名称
+      ALTER TABLE Schema名称.表名称 ADD SUPPLEMENTAL LOG DATA (PRIMARY KEY) COLUMNS;
+      ```
+   
+      :::tip
+
+      如日志磁盘存储空间相对充裕，可执行 `ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;` 命令开启库级的全补充日志，简化操作流程。
+
+      :::
+   
+   3. 如存在无主键表，您还需要选择执行下述命令，为单个表或所有表开启全补充日志（full supplemental logging）。
+   
+      ```sql
+      -- 为单个表开启，需替换命令中 Schema名称和表名称
+      ALTER TABLE Schema名称.表名称 ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
+      
+      -- 为所有表开启
+      ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
       ```
 
-   3. 执行下述命令，开启存档并打开数据。
+      :::tip
+
+      如果 Oracle 处于多租户模式，推荐为指定的容器开启，即在执行上述命令前先执行 `ALTER SESSION SET CONTAINER=PDB名称;` 格式的命令，将更改应用于容器。
+
+      :::
+   
+   4. 提交更改。
+   
+      ```sql
+      ALTER SYSTEM SWITCH LOGFILE;
+      ```
+
+   5. 如果 Oracle 处于多租户模式，您还需要执行下述命令打开可插拔数据库。
 
       ```sql
-      alter database archivelog;
-      alter database open;
+      ALTER PLUGGABLE DATABASE ALL OPEN;
+      ```
 
-3. 开启补充日志（Supplemental Logging）。
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs className="unique-tabs">
-    <TabItem value="9i" label="Oracle 9i" default>
-    <pre>ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (PRIMARY KEY) COLUMNS;</pre>
-   </TabItem>
-   <TabItem value="10g11g" label="Oracle 10g、11g">
-    <pre>ALTER DATABASE ADD SUPPLEMENTAL LOG DATA;<br />
-ALTER system switch logfile;<br />
-ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;</pre>
-   </TabItem>
-   <TabItem value="12c" label="Oracle 12c">
-    <pre>/* 执行下述命令，确认 supplemental logging 是否开启 */<br />
-    SELECT supplemental_log_data_min, supplemental_log_data_pk, supplemental_log_data_all FROM v$database;
-</pre>
-<p>如果返回的前两列是 Yes 或 Implicit ，则表示只开启了 identification key logging（标识键日志），还需要开启 full supplemental logging（全补充日志）。 </p>
-   </TabItem>
-  </Tabs>
-
-4. 开启标识键日志（identification key）。
-
-   :::tip
-
-   当使用 12c 的 PDB 时，推荐为容器的表开启日志，您可以执行先执行命令 `ALTER SESSION SET CONTAINER=<pdb>;`，将更改应用于容器。
-
-   :::
-
-   * **为单个表开启**
-
-     ```sql
-     ALTER DATABASE ADD SUPPLEMENTAL LOG DATA;
-     ALTER TABLE <schema name>.<table name> ADD SUPPLEMENTAL LOG DATA (PRIMARY KEY) COLUMNS;
-     ```
-
-   * **为所有表开启**
-
-     ```sql
-     ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (PRIMARY KEY) COLUMNS;
-     ```
-
-5. 开启全补充日志（full supplemental logging）。
-
-   * **为单个表开启**
-
-     ```sql
-     ALTER DATABASE ADD SUPPLEMENTAL LOG DATA;
-     ALTER TABLE <schema name>.<table name> ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
-     ```
-
-   * **为所有表开启**
-
-     ```sql
-     ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
-     ```
-
-6. 提交更改。
-
-   ```sql
-   ALTER SYSTEM SWITCH LOGFILE;
-   ```
-
-7. 创建用于数据同步/开发任务的账号。
-
-<Tabs className="unique-tabs">
-    <TabItem value="account10g11g" label="Oracle 10g、11g" default>
-    <pre>CREATE USER username IDENTIFIED BY password;<br />
-GRANT create session, alter session, execute_catalog_role, select any dictionary, select any transaction, select any table, create any table, create any index, unlimited tablespace to user name;</pre>
-   </TabItem>
-   <TabItem value="account12c-m" label="Oracle 12c（多租户模式）">
-    <pre>/* 在 Oracle 12c 的多租户环境下创建用户，必须在 cdb 中创建，并且命名格式约定为 c##name */<br />
-    ALTER SESSION SET CONTAINER=cdb$root;<br />
-CREATE USER username IDENTIFIED BY password CONTAINER=all;<br />
-GRANT create session, alter session, set container, select any dictionary, select any transaction, logmining, execute_catalog_role, create any table, create any index, unlimited tablespace TO username CONTAINER=all;<br />
-ALTER SESSION SET CONTAINER=pdb;</pre>
-    <p>根据您对表的权限需求，重复执行最后一个命令来赋予 select 权限。当您配置的是源库连接时，请使用此用户来通过 JDBC 的身份验证。 注意必须使用整个用户名（包含 c ##）作为JDBC连接的用户名。</p>
-   </TabItem>
-   <TabItem value="account12c-s" label="Oracle 12c（标准模式）">
-    <pre>/* 执行下述命令，确认 supplemental logging 是否开启 */<br />
-    CREATE USER username IDENTIFIED BY password;<br />
-GRANT create session, alter session, select any dictionary, select any transaction, logmining, execute_catalog_role, create any table, create any index, unlimited tablespace TO username;
-</pre>
-<p>根据您对表的权限需求，重复执行最后一个命令来赋予 select 权限。 </p>
-   </TabItem>
-  </Tabs>
 
 
 
 ## 作为目标库
+
 1. 以具有 DBA 权限的用户身份登录 Oracle 数据库。
 
-2. 创建用于数据同步/开发任务的账号，该账号拥有 schema 的 owner权限。
+2. 依次执行下述格式的命令，创建用于数据复制/转换任务的用户。
 
-   具体操作，见 [CREATE USER](https://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_8003.htm) 和 [GRANT](https://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_9013.htm)。
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="Oracle 标准模式">
+```
+```sql
+CREATE USER username IDENTIFIED BY password;
+```
+</TabItem>
+
+<TabItem value="Oracle 多租户模式">
+
+```sql
+-- 切换至根容器
+ALTER SESSION SET CONTAINER=cdb$root;
+
+-- 创建用户
+CREATE USER username IDENTIFIED BY password CONTAINER=all;
+```
+</TabItem>
+</Tabs>
+
+   - **username**：用户名，当 Oracle 处于多租户模式下时，用户名需增加 `C##` 前缀。
+   - **password**：密码。
+
+
+3. 为刚创建的账号授予权限，您也可以基于业务需求自定义权限控制。
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="Oracle 标准模式">
+```
+```sql
+-- 替换下述命令中的 username 为真实的用户名
+-- 用户自身 Schema 下
+GRANT 
+    CREATE SESSION,
+    CREATE ANY TABLE,
+    UNLIMITED TABLESPACE
+TO username;
+
+-- 其它 Schema 下
+GRANT
+    CREATE SESSION,
+    CREATE ANY TABLE,
+    DELETE ANY TABLE,
+    DROP ANY TABLE,
+    INSERT ANY TABLE,
+    SELECT ANY TABLE,
+    UPDATE ANY TABLE,
+    ALTER ANY INDEX,
+    CREATE ANY INDEX,
+    DROP ANY INDEX,
+    UNLIMITED TABLESPACE
+TO username;
+```
+</TabItem>
+
+<TabItem value="Oracle 多租户模式">
+
+```sql
+-- 替换下述命令中的 username 为真实的用户名
+-- 用户自身 Schema 下
+GRANT 
+    CREATE SESSION,
+    CREATE ANY TABLE,
+    UNLIMITED TABLESPACE
+TO username;
+
+-- 其它 Schema 下
+GRANT
+    CREATE SESSION,
+    CREATE ANY TABLE,
+    DELETE ANY TABLE,
+    DROP ANY TABLE,
+    INSERT ANY TABLE,
+    SELECT ANY TABLE,
+    UPDATE ANY TABLE,
+    ALTER ANY INDEX,
+    CREATE ANY INDEX,
+    DROP ANY INDEX,
+    UNLIMITED TABLESPACE
+TO  username CONTAINER=all;
+```
+</TabItem>
+</Tabs>
 
 
 

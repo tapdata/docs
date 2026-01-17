@@ -227,6 +227,7 @@ markdown: {
       },
     },
   ],
+  onBrokenAnchors: 'log',
 };
 
 module.exports = config;

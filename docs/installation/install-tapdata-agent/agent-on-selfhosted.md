@@ -7,8 +7,11 @@ import Content from '../../reuse-content/_cloud-features.md';
 TapData Agent 是数据同步、数据异构、数据管道场景的重要组件，您可以将其部署在云端，由 TapData Cloud 提供 Agent 运行所需的计算/存储资源并自动部署，同时提供统一的运行维护和资源监控以提升运行可靠性，免去部署和运维精力，专注业务本身；您也可以选购半托管实例，充分利用自有的硬件资源，获得更低的价格的同时，进一步提升安全性。
 
 <details>
-  <summary>Agent 介绍</summary>
-  Agent 是数据同步、数据异构、数据开发场景中的关键程序，负责通过流式技术从源系统获取数据、处理转换数据并发送到目标系统，由云上的管理端统一管理，由 Agent 处理的数据不会上传或存储在 TapData Cloud 中，充分保障数据安全性。
+
+<summary>Agent 介绍</summary>
+
+Agent 是数据同步、数据异构、数据开发场景中的关键程序，负责通过流式技术从源系统获取数据、处理转换数据并发送到目标系统，由云上的管理端统一管理，由 Agent 处理的数据不会上传或存储在 TapData Cloud 中，充分保障数据安全性。
+
 </details>
 
 
@@ -62,13 +65,17 @@ TapData Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，您可
    
    ![Agent 启动成功](../../images/select_agent_platform.png)
    
-   <details><summary>环境要求</summary>
+   <details>
+
+   <summary>环境要求</summary>
+
      <ul>
        <li>硬件环境：x86 架构处理器</li>
        <li>操作系统：64 位</li>
        <li>网络环境：可连通公网，且可与源/目标数据库通信</li>
        <li>软件依赖：Linux 平台依赖 Java 1.8 版本，可执行 java -version 命令查看版本，手动安装命令：yum -y install java-1.8.0-openjdk</li>
      </ul>
+
    </details>
    
    
@@ -118,6 +125,7 @@ TapData Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，您可
 
 
 <details>
+
 <summary>需要在 Mac（M1 芯片）上安装 Agent？</summary>
 
 1. 打开 Mac 的命令行终端，依次执行下述命令下载并启动 JDK 镜像。

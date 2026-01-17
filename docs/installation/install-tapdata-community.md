@@ -71,7 +71,7 @@ TapData 社区版包括以下主要组件：
    All Done, Please Visit http://localhost:3030
    ```
 
-5. 通过浏览器登录 TapData 平台，本机的登录地址为 http://localhost:3030，默认账号为 admin@admin.com，密码为 admin，首次登录请及时修改密码以保障安全性。
+5. 通过浏览器登录 TapData 平台，本机的登录地址为 `http://localhost:3030`，默认账号为 admin@admin.com，密码为 admin，首次登录请及时修改密码以保障安全性。
 
    :::tip
 
@@ -124,7 +124,7 @@ TapData 社区版包括以下主要组件：
    All Done, Please Visit http://localhost:3030
    ```
 
-5. 通过浏览器登录 TapData 平台，本机的登录地址为 http://localhost:3030，默认账号为 admin@admin.com，密码为 admin，首次登录请及时修改密码以保障安全性。
+5. 通过浏览器登录 TapData 平台，本机的登录地址为 `http://localhost:3030`，默认账号为 admin@admin.com，密码为 admin，首次登录请及时修改密码以保障安全性。
 
    :::tip
 

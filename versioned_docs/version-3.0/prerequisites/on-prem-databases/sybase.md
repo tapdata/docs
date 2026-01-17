@@ -66,10 +66,8 @@ DML 操作：INSERT、UPDATE、DELETE
 
 2. 执行下述格式的 SQL 命令为刚刚创建的用户授予权限。
 
-   ```mdx-code-block
    <Tabs className="unique-tabs">
    <TabItem value="作为源库" default>
-   ```
    
    ```sql
    sp_configure 'number of aux scan descriptors', 5000; 
@@ -81,14 +79,13 @@ DML 操作：INSERT、UPDATE、DELETE
    </TabItem>
    
    <TabItem value="作为目标库">
-
    ```sql
    USE <database_name>;
    sp_addalias <username>, dbo
    ```
 
-  </TabItem>
-  </Tabs>
+   </TabItem>
+   </Tabs>
 
    - `<database_name>`：要授权的数据库名。
    - `<username>`：要授权的用户名。

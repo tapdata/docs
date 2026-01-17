@@ -12,8 +12,12 @@ import Content from '../reuse-content/_cloud-features.md';
 
 :::
 
-<details><summary>Agent 有什么作用？</summary>
+<details>
+
+<summary>Agent 有什么作用？</summary>
+
 Agent 是数据同步、数据异构、数据开发场景中的关键程序，负责通过流式技术从源库获取数据、处理转换数据并发送到目标库，由云上的管理端统一管理。
+
 </details>
 
 ## 通过 TapData Cloud 订阅实例（推荐）

@@ -25,7 +25,8 @@ import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
   ```
 
 <details>
-  <summary>字段说明</summary>
+
+<summary>字段说明</summary>
 
 
   | 字段名          | 含义                                                         |
@@ -36,7 +37,8 @@ import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
   | **content**     | 消息体内容，需为字符串化后的 JSON 格式                       |
 
   更多字段介绍，见[官方文档](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/im-v1/message/create_json)。
-  </details>
+
+</details>
 
 
 

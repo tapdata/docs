@@ -82,6 +82,7 @@ import TabItem from '@theme/TabItem';
    * 输入 `L`：即连接至本地部署的 TapData Enterprise 平台，此时需要请输入服务器地址和访问码。
 
      <details>
+
      <summary>如何获取访问密钥？</summary>
 
      <Tabs className="unique-tabs">
@@ -127,10 +128,11 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
 - **基于交互式命令创建**：通过命令行直接交互操作，实时定义和调整数据流，适合快速验证和简单任务的构建。
 - **基于 Python 编程创建**：通过 Python 代码编程方式控制数据流逻辑，便于保存、复用和版本化管理，适合复杂场景下的动态任务构建和自动化部署。
 
-<details><summary>什么是数据流（Data Flow）？</summary>
+<details>
+
+<summary>什么是数据流（Data Flow）？</summary>
+
 在 Tapdata 中，数据流（Data Flow）是一个执行单元，用于在数据源之间进行数据同步、处理和转换。它可以包含多个数据同步任务，将不同数据源的数据整合、清洗、转换后写入目标系统，实现从源到目标的高效数据流动。
-
-
 
 而数据流任务是比单一的实时同步任务更上层，适合定义复杂的数据管道，可以满足多表关联、数据聚合等需求，是 Tapdata 实现实时数据处理的基础。
 
@@ -330,7 +332,9 @@ Agent name: agent-192*****67, ip: 172.17.0.3, cpu usage: 16%
    
 
 
-<details><summary>进一步优化</summary>
+<details>
+
+<summary>进一步优化</summary>
 
    - **配置管理**：将数据源配置提取到配置文件或环境变量中，保护敏感信息。
    - **异常处理**：添加异常捕获，处理可能出现的连接错误或运行时错误。

@@ -57,7 +57,7 @@ RESTful API 是遵循 REST 架构规范的应用编程接口（API 或 Web API�
 | 200 | OK | 正常请求 |
 | 401 | Unauthorized error: token expired| 令牌已过期，请重新生成令牌 |
 | 404 | Not Found error: endpoint not found| API不存在。可能是API地址错误或API尚未成功发布，请检查请求的API地址，或等待一段时间直到API发布后再重新请求。 |
-| 429 | Rate limit exceeded. Maximum \${api limit} requests per second allowed | 由于访问频率超过API允许的最大访问频率，请求受到限制。请等待片刻后重新访问，或调整API配置页面的访问频率限制。 |
+| 429 | Rate limit exceeded. Maximum \$\{api limit\} requests per second allowed | 由于访问频率超过API允许的最大访问频率，请求受到限制。请等待片刻后重新访问，或调整API配置页面的访问频率限制。 |
 
 ## 常见问题
 

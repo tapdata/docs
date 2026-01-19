@@ -79,7 +79,7 @@ import TabItem from '@theme/TabItem';
 
 3. 单击页面右侧的**创建**。
 
-4. 在弹出的对话框中，搜索并选择 **TDSQL MySQL**。
+4. 在弹出的对话框中，搜索并选择 **TDSQL（MySQL Edition）**。
 
 5. 在跳转到的页面，根据下述说明填写 TDSQL MySQL 的连接信息。
 

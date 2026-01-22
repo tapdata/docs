@@ -147,7 +147,7 @@ When using PostgreSQL as the target database or obtaining incremental data via t
 
    - [Decoderbufs](https://github.com/debezium/postgres-decoderbufs): Suitable for PostgreSQL 9.6 and above, uses Google Protocol Buffers to parse WAL logs but requires more complex configuration.
 
-   - [Walminer](https://gitee.com/movead/XLogMiner/tree/master/): Does not rely on logical replication, doesn't require setting `wal_level` to `logical`, or adjusting replication slot configuration, but requires superuser permissions.
+   - [Walminer](https://gitee.com/movead/XLogMiner/tree/master/): Does not rely on logical replication, doesn't require setting `wal_level` to `logical`, or adjusting replication slot configuration, but requires superuser permissions. When PostgreSQL uses a **primary-standby architecture**, we recommend using the **Walminer** plugin to read incremental data to ensure data integrity during primary-standby switchover.
 
    Next, we will demonstrate the installation process using **Wal2json** as an example.
 

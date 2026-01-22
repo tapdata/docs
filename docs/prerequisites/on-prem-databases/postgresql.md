@@ -150,7 +150,7 @@ import TabItem from '@theme/TabItem';
 
    - [Decoderbufs](https://github.com/debezium/postgres-decoderbufs)：适用于 PostgreSQL 9.6 及以上，利用 Google Protocol Buffers 解析 WAL 日志，但配置较为复杂。
 
-   - [Walminer](https://gitee.com/movead/XLogMiner/tree/master/)：不依赖逻辑复制，无需设置 `wal_level` 为 `logical`，也不需要调整复制槽配置，但需授予超级管理员权限。
+   - [Walminer](https://gitee.com/movead/XLogMiner/tree/master/)：不依赖逻辑复制，无需设置 `wal_level` 为 `logical`，也不需要调整复制槽配置，但需授予超级管理员权限。此外，当 PostgreSQL 采用**主从架构**时，推荐使用 **Walminer** 插件读取增量数据，以保障主从切换过程中数据的完整性。
 
    接下来，我们以 **Wal2json** 为例演示安装流程。
 

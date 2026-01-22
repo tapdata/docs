@@ -580,6 +580,15 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>不涉及</td>
   </tr>
   <tr>
+    <td>TDSQL (MySQL Edition)</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>5.7、8.0</td>
+  </tr>
+  <tr>
     <td>Zoho-CRM</td>
     <td>✅</td>
     <td>➖</td>
@@ -890,15 +899,6 @@ Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚�
     <td>✅</td>
     <td>➖</td>
     <td>3.2、3.4、3.6、4.0、4.2</td>
-  </tr>
-  <tr>
-    <td>TencentDB MySQL</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>5.5、5.6、5.7、8.x</td>
   </tr>
   <tr>
     <td>TencentDB PostgreSQL</td>

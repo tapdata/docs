@@ -98,9 +98,9 @@ const sidebars = {
             'prerequisites/cloud-databases/polardb-postgresql',
             'prerequisites/cloud-databases/tencentdb-for-mariadb',
             'prerequisites/cloud-databases/tencentdb-for-mongodb',
+            'prerequisites/cloud-databases/tencentdb-for-mysql',
             'prerequisites/cloud-databases/tencentdb-for-pg',
             'prerequisites/cloud-databases/tencentdb-for-sql-server',
-            'prerequisites/cloud-databases/tencentdb-td-mysql',
           ],
         },
         {

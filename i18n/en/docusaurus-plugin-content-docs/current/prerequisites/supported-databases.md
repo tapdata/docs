@@ -577,6 +577,15 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>N/A</td>
   </tr>
   <tr>
+    <td>TDSQL (MySQL Edition)</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>5.7, 8.0</td>
+  </tr>
+  <tr>
     <td>Zoho-CRM</td>
     <td>✅</td>
     <td>➖</td>
@@ -881,15 +890,6 @@ The Alpha version of the data sources is in public preview and has passed the ba
     <td>✅</td>
     <td>➖</td>
     <td>3.2, 3.4, 3.6, 4.0, 4.2</td>
-  </tr>
-  <tr>
-    <td>TencentDB MySQL</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>5.5, 5.6, 5.7, 8.x</td>
   </tr>
   <tr>
     <td>TencentDB PostgreSQL</td>

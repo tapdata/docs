@@ -36,10 +36,10 @@ import Content from '../../reuse-content/_enterprise-features.md';
    sed -i "s/enforcing/disabled/g" /etc/selinux/config 
    ```
 
-2. 执行下述命令安装 Java 1.8 版本，安装环境依赖。
+2. 执行下述命令安装 Java 17 版本，安装环境依赖。
 
    ```bash
-   yum -y install java-1.8.0-openjdk
+   yum -y install java-17-openjdk
    ```
 
 3. 设置机器时间与时区，保持一致。
@@ -121,7 +121,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
    System initialized. To start Tapdata, run: tapdata start
    WORK DIR:/data/tapdata/tapdata_work
    Testing JDK...
-   java version:1.8
+   java version:17
    Java environment OK.
    Unpack the files...
    frontend server started.begin deploy init

@@ -184,10 +184,10 @@ TapData 运行期间，所有任务配置、共享缓存等关键数据均保存
       sed -i "s/enforcing/disabled/g" /etc/selinux/config 
       ```
 
-   2. 安装  Java 1.8 版本。
+   2. 安装  Java 17 版本。
 
       ```bash
-      yum -y install java-1.8.0-openjdk
+      yum -y install java-17-openjdk
       ```
 
    3. 设置系统时间。

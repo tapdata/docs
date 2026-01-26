@@ -39,10 +39,10 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 2. 安装环境依赖。
 
-   1. 执行下述命令安装 Java 1.8 版本。
+   1. 执行下述命令安装 Java 17 版本。
 
       ```bash
-      yum -y install java-1.8.0-openjdk
+      yum -y install java-17-openjdk
       ```
 
    2. [安装 MongoDB](../../administration/production-deploy/install-replica-mongodb.md)（4.0 及以上版本），该库将作为中间库存储任务等数据。
@@ -55,7 +55,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
    tar -zxvf 安装包名&&cd tapdata
    ```
 
-   例如：`tar -zxvf tapdata-release-v2.14.tar.gz&&cd tapdata`
+   例如：`tar -zxvf tapdata-release-v4.10.tar.gz&&cd tapdata`
 
    :::tip
    如需将解压后的程序文件复制到其他目录进行部署，请使用 `cp -a` 命令复制整个目录，避免使用 `*` 通配符匹配文件，以免遗漏隐藏文件导致启动失败。
@@ -104,7 +104,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
    System initialized. To start Tapdata, run: tapdata start
    WORK DIR:/root/tapdata
    Testing JDK...
-   java version:1.8
+   java version:17
    Java environment OK.
    Unpack the files...
    Restart TapdataAgent ...:

@@ -50,10 +50,10 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
 
 2. 安装环境依赖。
 
-   1. 执行下述命令安装 Java 1.8 版本。
+   1. 执行下述命令安装 Java 17 版本。
 
       ```bash
-      yum -y install java-1.8.0-openjdk
+      yum -y install java-17-openjdk
       ```
 
    2. 安装 MongoDB（4.0 及以上版本），该库将作为中间库存储任务等数据，具体操作，见[官方文档](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/)。
@@ -66,7 +66,7 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
    tar -zxvf 安装包名&&cd tapdata
    ```
 
-   例如：`tar -zxvf tapdata-release-v2.14.tar.gz&&cd tapdata`
+   例如：`tar -zxvf tapdata-release-v4.10.tar.gz&&cd tapdata`
    
    :::tip
    如需将解压后的程序文件复制到其他目录进行部署，请使用 `cp -a` 命令复制整个目录，避免使用 `*` 通配符匹配文件，以免遗漏隐藏文件导致启动失败。
@@ -118,7 +118,7 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
    System initialized. To start Tapdata, run: tapdata start
    WORK DIR:/root/tapdata
    Testing JDK...
-   java version:1.8
+   java version:17
    Java environment OK.
    Unpack the files...
    Restart TapdataAgent ...:
@@ -235,7 +235,7 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
    System initialized. To start Tapdata, run: tapdata start
    WORK DIR:/root/tapdata
    Testing JDK...
-   java version:1.8
+   java version:17
    Java environment OK.
    Unpack the files...
    frontend server started.begin deploy init

@@ -73,7 +73,7 @@ TapData Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，您可
        <li>硬件环境：x86 架构处理器</li>
        <li>操作系统：64 位</li>
        <li>网络环境：可连通公网，且可与源/目标数据库通信</li>
-       <li>软件依赖：Linux 平台依赖 Java 1.8 版本，可执行 java -version 命令查看版本，手动安装命令：yum -y install java-1.8.0-openjdk</li>
+       <li>软件依赖：Linux 平台依赖 Java 17 版本，可执行 java -version 命令查看版本，手动安装命令：yum -y install java-17-openjdk</li>
      </ul>
 
    </details>

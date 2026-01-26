@@ -22,9 +22,9 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 1. [部署 MongoDB 数据库](../../administration/production-deploy/install-replica-mongodb.md)，该库将作为 TapData 存储系统运行相关数据，例如日志、元数据等。
 
-2. 登录至待部署的设备上，安装 Java 1.8 并设置环境变量。
+2. 登录至待部署的设备上，安装 Java 17 并设置环境变量。
 
-   1. [下载 Java 1.8](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html) 并根据提示完成安装。
+   1. [下载 Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) 并根据提示完成安装。
 
    2. 进入**控制面板** > **系统和安全** > **系统**。
 
@@ -37,7 +37,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
       ![添加变量](../../images/add_system_env.png)
    
       * **变量名**：`JAVA_HOME`
-      * **变量值**：JDK 的安装路径，本例为 `C:\Program Files\Java\jdk1.8.0_202`
+      * **变量值**：JDK 的安装路径，本例为 `C:\Program Files\Java\jdk-17`
    
    5. 在**系统变量**区域框中，找到并双击名为 **Path** 的变量，然后在弹出的对话框中，分别新建下述环境变量，最后单击**确定**。
    
@@ -54,9 +54,9 @@ import Content from '../../reuse-content/_enterprise-features.md';
    7. （可选）打开命令行，执行`java -version` 命令验证环境变量有效性，执行成功后示例如下：
 
       ```bash
-      java version "1.8.0_202"
-      Java(TM) SE Runtime Environment (build 1.8.0_202-b08)
-      Java HotSpot(TM) 64-Bit Server VM (build 25.202-b08, mixed mode)
+      java version "17.0.x"
+      Java(TM) SE Runtime Environment (build 17.0.x+xx)
+      Java HotSpot(TM) 64-Bit Server VM (build 17.0.x+xx, mixed mode)
       ```
    
       
@@ -114,7 +114,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
    System initialized. To start Tapdata, run: tapdata start
    WORK DIR:/root/tapdata
    Testing JDK...
-   java version:1.8
+   java version:17
    Java environment OK.
    Unpack the files...
    Restart TapdataAgent ...:

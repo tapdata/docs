@@ -495,11 +495,11 @@ data:
 
     setup_java() {
         if [[ -z "$JAVA_VERSION" || $JAVA_VERSION == "java8" ]]; then
-            daas_log INFO "Setting up java version: java8"
-            update-alternatives --set java /usr/java/jdk1.8.0_311/bin/java
-            update-alternatives --set javac /usr/java/jdk1.8.0_311/bin/javac
-            update-alternatives --set jar /usr/java/jdk1.8.0_311/bin/jar
-            echo 'export PATH="/usr/java/jdk1.8.0_311/bin:$PATH"' >> /etc/profile && . /etc/profile
+            daas_log INFO "Setting up java version: java17"
+            update-alternatives --set java /usr/java/jdk-17.0.12/bin/java
+            update-alternatives --set javac /usr/java/jdk-17.0.12/bin/javac
+            update-alternatives --set jar /usr/java/jdk-17.0.12/bin/jar
+            echo 'export PATH="/usr/java/jdk-17.0.12/bin:$PATH"' >> /etc/profile && . /etc/profile
         elif [[ $JAVA_VERSION == "java11" ]]; then
             daas_log INFO "Setting up java version: java11"
             update-alternatives --set java /usr/java/jdk-11.0.25/bin/java

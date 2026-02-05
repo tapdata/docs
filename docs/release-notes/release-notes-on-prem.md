@@ -17,6 +17,21 @@ import TabItem from '@theme/TabItem';
 <TabItem value="V4.x 版本" default>
 ```
 
+## 4.13.0
+
+### 缺陷修复
+
+- 修复 API 服务 Token 有效期过短的问题
+- 修复 API Server 不支持排序参数 `"order": "effectiveStartDate desc"` 的问题
+- 修复增量校验中校验时间与自动二次校验时间异常一致的问题
+- 修复主从合并节点子表合并类型选择数组（ARRAY）时，模型错误推演为文档（DOCUMENT）类型的问题
+- 修复新建外存后，对主从合并任务缓存重建失败的问题
+- 修复大规模数据同步场景下，可能出现的内存泄漏问题，提升系统长时间运行稳定性
+- 修复 PostgreSQL 同步到 SQL Server 分区表时，模型对比提示空指针异常的问题
+- 修复 PostgreSQL 作为源库且不可用时，重试逻辑不符合预期的问题
+- 修复 PostgreSQL 作为源端时，共享挖掘任务 slot 未自动清理导致积累过多的问题
+
+
 ## 4.12.0
 
 ### 新增功能

@@ -188,101 +188,236 @@ var year = dte.getYear()+1900;
 var source = ScriptExecutorsManager.getScriptExecutor('mysql-connection-name');
 ```
 
+
 ## ScriptExecutor
 
-### execute
 
-说明：数据库执行操作，返回值为布尔类型，**true** 表示操作成功，**false** 表示操作失败。
+<details>
+
+<summary>准备工作（可选）</summary>
+
+为便于后续演示，我们提前在数据库中执行了以下 SQL 语句，创建订单表 Orders 和存储过程模拟真实的业务场景。
+
+```sql
+-- 1. 创建订单表
+CREATE TABLE Orders (
+    order_id VARCHAR(20) PRIMARY KEY,
+    order_date DATETIME,
+    total_amount DECIMAL(10, 2),
+    status INT DEFAULT 0, -- 0:待支付, 1:已支付, 2:已发货, 9:已关闭
+    points INT DEFAULT 0  -- 订单积分
+);
+
+-- 初始化测试数据
+INSERT INTO Orders (order_id, order_date, total_amount, status, points) VALUES 
+('ORD_001', NOW(), 100.00, 0, 0),
+('ORD_002', NOW(), 5000.00, 1, 0), 
+('ORD_003', '2023-01-01 10:00:00', 50.00, 0, 0); -- 一条旧数据用于演示自动关闭
+
+-- 2. 存储过程1（无入参）：批量关闭过期订单
+-- 作用：模拟定时任务，将所有 30 天前的未支付订单标记为 '9'(已关闭)
+DELIMITER $$
+CREATE PROCEDURE sp_close_expired_orders()
+BEGIN
+    UPDATE Orders SET status = 9 WHERE status = 0 AND order_date < DATE_SUB(NOW(), INTERVAL 30 DAY);
+END$$
+DELIMITER ;
+
+-- 3. 存储过程2（带入参）：订单发货
+-- 作用：将指定订单的状态更新为 '2'(已发货)
+DELIMITER $$
+CREATE PROCEDURE sp_ship_order(IN p_order_id VARCHAR(20))
+BEGIN
+    UPDATE Orders SET status = 2 WHERE order_id = p_order_id;
+END$$
+DELIMITER ;
+
+-- 4. 存储过程3（复杂场景）：计算订单积分（含输入、输出参数）
+-- 作用：输入订单金额，返回该订单可获得的积分
+-- 规则：金额 < 1000，每 10 元积 1 分；金额 >= 1000，每 10 元积 2 分
+DELIMITER $$
+CREATE PROCEDURE sp_calculate_points(
+    IN p_amount DECIMAL(10,2), 
+    OUT p_points INT
+)
+BEGIN
+    IF p_amount < 1000 THEN
+        SET p_points = FLOOR(p_amount / 10);
+    ELSE
+        SET p_points = FLOOR(p_amount / 10) * 2;
+    END IF;
+END$$
+DELIMITER ;
+```
+
+</details>
+
+### execute / executeQuery
+
+说明：通过 `ScriptExecutorsManager` 获取特定数据源的脚本执行器，随后调用本方法执行 SQL 语句或 NoSQL 操作，简单场景下推荐使用本方法。
+
+* **executeQuery**：主要用于查询（SELECT），返回值为数组类型（结果集），具备试运行效果（可预览结果）。
+* **execute**：用于执行 DML（INSERT/UPDATE/DELETE）或 DDL，返回值为布尔类型（true/false），不具备试运行数据预览效果。
 
 :::tip
 
-`execute` 前为 `source` 表示对源库执行操作，为 `target` 表示对目标库执行操作。
+`execute` 或 `executeQuery` 前的对象为 `source` 表示对源库执行操作，为 `target` 表示对目标库执行操作。
 
 :::
 
+#### 结构化数据库（如 MySQL）
+
 示例：
 
-```javascript
-var result = target.execute({
-    database: "test",
-    collection: "user",
-    op: "update",
-    filter: {id: 1},
-    opObject: {name: "user001", age: 20},
-    upsert: true
-});
-```
+* 使用 execute 执行 DML
 
-参数说明：
+  ```javascript
+  // 获取源库连接（请替换为您实际的源连接名称，如 'Source_MySQL'）
+  var source = ScriptExecutorsManager.getScriptExecutor('Source_MySQL');
+  // 简单执行 SQL，例如把订单状态为 0(待支付) 的更新为 9(已关闭)
+  var result = source.execute({
+      "sql": "UPDATE Orders SET status = 9 WHERE order_id = 'ORD_001'"
+  });
+  log.info("Update result: " + result); 
+  ```
 
-* 对于结构化数据库（如 MySQL），使用方法可参考：`var result = source.execute({sql: "update test.user set name='user001' where id = 1"});`
+* 使用 executeQuery 执行查询
 
-* 对于 MongoDB，可用参数如下：
+  ```javascript
+  var source = ScriptExecutorsManager.getScriptExecutor('Source_MySQL');
+  // 查询所有大额订单（金额 > 1000）
+  var result = source.executeQuery({
+      "sql": "SELECT * FROM Orders WHERE total_amount > 1000"
+  });
+  log.info("High value orders: " + result);
+  ```
 
-  - **database**：操作的数据库名称。
+* 使用 execute 调用存储过程（无入参）
 
-  - **collection**：操作的集合名称。
+  ```javascript
+  var source = ScriptExecutorsManager.getScriptExecutor('Source_MySQL');
+  // 调用批量关闭过期订单的存储过程
+  // 等价于 source.call("sp_close_expired_orders", [])
+  var result = source.execute({
+      "sql": "CALL sp_close_expired_orders()"
+  });
+  ```
 
-  - **op**：要执行的操作（INSERT/UPDATE/DELETE）。
+* 使用 execute 调用存储过程（有入参）
 
-  - **filter**：更新或者删除的条件。
-
-  - **opObject**：新增、更新、删除的具体数据。
-
-  - **upsert**：是否采用 MongoDB 的 UPSERT 模式，即不存在进行新增，存在则更新，默认为 **false**。
-
-  - **multi**：是否更新多条记录，默认为 **false**。
-
-### executeQuery
-
-说明：数据库查询操作，返回值为数组类型，表示查询的结果集。
+  ```javascript
+  var source = ScriptExecutorsManager.getScriptExecutor('Source_MySQL');
+  // 调用发货存储过程（需自行拼接 SQL 参数）
+  // 等价于 source.call("sp_ship_order", [...])
+  var result = source.execute({
+      "sql": "CALL sp_ship_order('ORD_002')"
+  });
+  ```
 
 :::tip
 
-`executeQuery` 前为 `source` 表示对源库执行操作，为 `target` 表示对目标库执行操作。
+`execute` 和 `executeQuery` **不支持**直接获取存储过程的 `OUT`（输出）或 `INOUT`（输入输出）参数，也不支持获取非查询类的返回值。对于此类复杂场景，请使用本文的 `call` 方法。
 
 :::
 
-示例：
-
-```javascript
-var users = target.executeQuery({
-    database: "test",
-    collection: "user",
-    filter: {age: {$gt: 10}},
-    sort: {age: -1},
-    limit: 10
-});
-```
+#### NoSQL 数据库（如 MongoDB）
 
 参数说明：
 
-* 对于结构化数据库（如 MySQL），使用方法可参考：`var users = source.executeQuery({sql: "select * from test.user where age>10"});`
-* 对于 MongoDB，可用参数如下：
-  * **database**：操作的数据库名称。
-  * **collection**：操作的集合名称。
-  * **filter**：更新或者删除的条件。
-  * **sort**：排序条件 （可选）。
-  * **limit**：限制输出条数（可选）。
+* **database**：操作的数据库名称。
+* **collection**：操作的集合名称。
+* **op**：要执行的操作（INSERT/UPDATE/DELETE，仅 execute）。
+* **filter**：查询、更新或者删除的条件。
+* **opObject**：新增、更新的具体数据。
+* **upsert**：是否采用 MongoDB 的 UPSERT 模式（不存在则新增），默认为 **false**。
+* **multi**：是否更新多条记录，默认为 **false**。
+* **sort**：排序条件（仅 executeQuery）。
+* **limit**：限制输出条数（仅 executeQuery）。
+
+示例：
+
+* 使用 execute 执行更新
+
+  ```javascript
+  var result = target.execute({
+      database: "test",
+      collection: "user",
+      op: "update",
+      filter: {id: 1},
+      opObject: {name: "user001", age: 20},
+      upsert: true
+  });
+  ```
+
+* 使用 executeQuery 执行查询
+
+  ```javascript
+  var users = target.executeQuery({
+      database: "test",
+      collection: "user",
+      filter: {age: {$gt: 10}},
+      sort: {age: -1},
+      limit: 10
+  });
+  ```
 
 ### call
 
-说明：执行存储过程及函数，仅结构化数据库支持使用，可执行指定的数据库存储过程及自定义函数。返回值为键值对类型，根据存储过程定义返回结果。
+说明：调用数据库中自定义的存储过程，支持复杂的输入/输出参数及返回值。对于包含多结果集或复杂参数（IN/OUT/RETURN）的存储过程，推荐使用本方法。
 
-示例：
+:::tip
 
-```javascript
-var result = source.call('demo' [{'param1':'aa'}])
-```
+本方法基于 JDBC 通用接口实现，建议参数类型尽量使用基础类型（如 `int`, `double`, `varchar`），避免使用数据库特有的复杂类型，以最大程度兼容不同数据库系统。
+
+:::
 
 参数说明：
 
-* **funcName**：存储过程/函数名称。
-* **params**：传入的参数，支持下述参数。
-  * **mode**：入参类型，取值：**in**（默认值，传入）、**out**（传出）、**in/out**（传入并传出）。
-  * **name**: 参数名称。
-  * **value**: 参数的值。
-  * **type**: 参数类类型。
+`call(procedureName, parameters)`
+
+* **procedureName**：存储过程名称。
+* **parameters**：参数数组，严格按照参数顺序排列，包含以下属性：
+    * **mode**：参数模式，可选 `in` | `out` | `in/out` | `return`。
+    * **type**：数据类型，支持 `int` | `double` | `varchar` 等常用类型。
+    * **value**：入参的具体值。
+    * **name**：参数名称（可选，指定后返回结果中该参数的 Key 将使用此名称，否则自动生成）。
+
+示例：
+
+* 简单调用（无入参）
+
+  ```javascript
+  var source = ScriptExecutorsManager.getScriptExecutor('Source_MySQL');
+  // 调用无参存储过程：批量关闭过期订单
+  source.call("sp_close_expired_orders", []);
+  ```
+
+* 带入参调用
+
+  ```javascript
+  var source = ScriptExecutorsManager.getScriptExecutor('Source_MySQL');
+  // 调用有参存储过程：发货（更新订单 ORD_002 的状态为 2）
+  source.call("sp_ship_order", [
+      {"mode": "in", "type": "varchar", "value": 'ORD_002'}
+  ]);
+  ```
+
+* 复杂调用（含返回值、出参）
+
+  ```javascript
+  var source = ScriptExecutorsManager.getScriptExecutor('Source_MySQL');
+  // 场景：计算订单积分
+  // 输入：订单金额 5000 (in)
+  // 输出：获得积分 (out)
+  var result = source.call("sp_calculate_points", [
+      {"mode": "in",  "type": "decimal", "value": 5000.00},
+      {"name": "points", "mode": "out", "type": "int"}
+  ]);
+  
+  // 结果以 Map 形式返回
+  // 例如：{points=1000}
+  log.info("Points earned: " + result.points);
+  ```
 
 ## JSONUtil
 

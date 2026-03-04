@@ -257,7 +257,7 @@ DELIMITER ;
 说明：通过 `ScriptExecutorsManager` 获取特定数据源的脚本执行器，随后调用本方法执行 SQL 语句或 NoSQL 操作，简单场景下推荐使用本方法。
 
 * **executeQuery**：主要用于查询（SELECT），返回值为数组类型（结果集），具备试运行效果（可预览结果）。
-* **execute**：用于执行 DML（INSERT/UPDATE/DELETE）或 DDL，返回值为布尔类型（true/false），不具备试运行数据预览效果。
+* **execute**：用于执行 SQL 语句，可返回多个结果集，相当于普通数据库工具的执行效果，对于简单查询场景，可使用本方法获取结果集，但需注意本方法不具备试运行数据预览效果。
 
 :::tip
 
@@ -665,4 +665,3 @@ var users = aa.aggregate({
     pipeline: [{'$match':{'CUSTOMER_ID':'C000026278'}}]
 });
 ```
-

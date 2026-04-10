@@ -17,6 +17,40 @@ import TabItem from '@theme/TabItem';
 <TabItem value="V4.x 版本" default>
 ```
 
+## 4.16.0
+
+### 新增功能
+
+- 在[创建 API](../user-guide/data-service/create-api-service.md) 时，支持为指定参数配置脱敏规则，开启后，该参数在 API 审计日志中将以掩码形式展示，有效提升敏感数据的安全性
+- 支持在[主数据模型（MDM）](../user-guide/real-time-data-hub/daas-mode/create-daas-task.md)中基于 MongoDB 聚合管道（Aggregation Pipeline）构建和管理逻辑视图
+
+### 功能优化
+
+- 移除告警设置中不再适用的“当校验任务出错时”和“数据源无法连接网络时”选项，精简告警设置
+- 优化 MongoDB 同步至 SQL Server 的处理逻辑，支持将对象（Object）和数组（Array）类型直接写入 Text 类型字段
+
+### 缺陷修复
+
+- 修复较低版本 MongoDB 不支持 `allowDiskUse` 属性导致 API 服务调试报错的问题
+- 修复 Tapdata 中间库中 API 相关表的慢查询问题，提升系统响应速度
+- 修复 API Server 返回结果中，数组对象内的属性类型被错误转换为数组的问题
+- 修复 MongoDB 存在事务报错场景时，数据同步可能受阻的问题
+- 修复启动 MongoDB 挖掘任务时可能出现的内存溢出问题
+- 修复单节点 Oracle 任务指定增量时间点启动时，可能因日志文件匹配异常导致无法运行的问题
+- 修复 Oracle 为源时，同步 Blob/Clob 字段至 MySQL 可能出现的数据不一致问题
+- 修复 PostgreSQL 同步至 MongoDB 分片集合时，因更新分片键导致任务失败的问题
+- 修复 PostgreSQL 同步至 StarRocks 时，部分更新操作可能导致其他列数据为空的问题
+- 修复 StarRocks 目标端在特定场景下无法正确推进断点的问题
+- 修复高级 JS 节点代码最后一行是注释时，调试面板显示格式错误的问题
+- 修复增量任务配置了增量时间点后，重新添加节点会导致该时间点设置被还原的问题
+- 修复模型比较功能无法开启忽略大小写选项的问题
+- 修复角色管理中权限分配和覆盖逻辑异常的问题
+- 修复任务重建缓存后，增量任务异常重跑全量数据的问题
+- 修复共享挖掘任务中，数据处理的输入输出变更量统计不一致的问题
+- 修复 AD 服务器重启后，Kafka 至 StarRocks 同步任务无法自动恢复认证的问题
+- 修复升级至 3.27 版本后，部分连接器可能需要手动重新注册的问题
+
+
 ## 4.15.0
 
 ### 新增功能

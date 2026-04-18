@@ -26,8 +26,7 @@ import TabItem from '@theme/TabItem';
 
 ## 支持同步的操作
 
-* **DML**：INSERT、UPDATE、DELETE
-* **DDL**（仅在作为目标时支持）：ADD COLUMN、CHANGE COLUMN、DROP COLUMN、RENAME COLUMN
+INSERT、UPDATE、DELETE
 
 :::tip
 

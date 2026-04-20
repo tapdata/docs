@@ -16,7 +16,6 @@ import TabItem from '@theme/TabItem';
 
 | 类别    | 数据类型                         |
 | ----- | ---------------------------- |
-| 整数    | BIGINT                       |
 | 数值    | NUMBER、FLOAT                 |
 | 字符串   | TEXT                         |
 | 二进制   | BINARY、FILE                  |

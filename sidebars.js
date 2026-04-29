@@ -318,6 +318,16 @@ const sidebars = {
                      'user-guide/advanced-settings/custom-node',
                      'user-guide/advanced-settings/share-mining',
                      'user-guide/advanced-settings/manage-external-storage',
+                     {
+                     type: 'category',
+                     label: '管理项目',
+                     link: {type: 'doc', id: 'user-guide/advanced-settings/manage-project/README'},
+                     items:[
+                            'user-guide/advanced-settings/manage-project/introduction',
+                            'user-guide/advanced-settings/manage-project/setup-pipeline',
+                            'user-guide/advanced-settings/manage-project/deploy-project',
+                           ]
+                    },
                     ]
              },
              {

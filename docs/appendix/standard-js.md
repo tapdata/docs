@@ -94,23 +94,6 @@ if ( DataUtil.sameYear(new Date(), new Date()) ) {
 }
 ```
 
-### getFullYear/getMonth/getDate/getHours/getMinutes/getSeconds/getMilliSeconds
-
-说明：从日期中提取年/月/日/时/分/秒/毫秒。
-
-示例：
-
-```javascript
-var dte = new Date();
-var year = DateUtil.getFullYear(dte);    // 4位数年份
-var month = DateUtil.getMonth(dte);      // 月份（1-12）
-var day = DateUtil.getDate(dte);         // 日期（1-31）
-var hours = DateUtil.getHours(dte);      // 小时（0-23）
-var minutes = DateUtil.getMinutes(dte);  // 分钟（0-59）
-var seconds = DateUtil.getSeconds(dte);  // 秒（0-59）
-var millis = DateUtil.getMilliSeconds(dte); // 毫秒
-```
-
 :::tip
 
 以下方法在 **4.18 版本**后可用。

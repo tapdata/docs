@@ -5,6 +5,7 @@ import Content from '../../reuse-content/_all-features.md';
 
 TapData 支持在数据复制/开发任务中添加处理节点，满足对数据进行过滤、字段调整等需求。
 
+
 ## 行过滤器
 
 主要用来对表数据进行过滤，可以设置过滤条件和执行动作。
@@ -215,7 +216,11 @@ mysql> select * from student_merge;
 ```
 
 
+## 聚合计算
 
+聚合计算（Aggregate）节点用于对 MongoDB 源端的明细或模型数据进行分组、汇总和派生计算，适合生成用户画像、订单汇总、运营看板等可复用的结果集合。
+
+如需了解适用条件、配置方式及示例 Pipeline，见[聚合计算节点](aggregate-computing-node.md)。
 
 
 ## <span id="date-calculation">时间运算</span>
@@ -496,7 +501,6 @@ TapModelDeclare.removeIndex(tapTable, 'indexName')
 
 * [标准 JS 内置函数](../../appendix/standard-js.md)：可对数据记录进行处理与运算，如将日期字符串转换为 Date 类型。
 * [增强 JS 内置函数（Beta）](../../appendix/enhanced-js.md)：支持标准 JS 内置函数的基础上，可实现外部调用（如网络、数据库等）。
-
 
 
 

@@ -301,6 +301,7 @@ const sidebars = {
                     'user-guide/data-development/create-materialized-view',
                     'user-guide/data-development/manage-task',
                     'user-guide/data-development/process-node',
+                    'user-guide/data-development/aggregate-computing-node',
                     'user-guide/data-development/monitor-task',
                    ]
              },

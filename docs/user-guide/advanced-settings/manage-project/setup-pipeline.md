@@ -112,6 +112,8 @@ TapData 导出的配置文件在导出时自动脱敏，代码仓库中只存放
 
 4. 在 **Secrets** 标签卡下添加以下内容（加密存储）：
 
+   ![配置 GitHub Actions Secrets 和 Variables](../../../images/github_actions_secrets_variables.png)
+   
    | Secret 名称 | 内容说明 |
    | ----------- | ---- |
    | `GH_DEPLOY_TOKEN` | 刚刚在第一步中申请并保存的 PAT。 |
@@ -128,6 +130,8 @@ TapData 导出的配置文件在导出时自动脱敏，代码仓库中只存放
    | `PROD_TAPDATA_URL` | 生产环境地址 |
    | `{ENV}_TAPDATA_URL` | 可选，如启用中间环境，按环境代码补充对应地址，例如 `DEV_TAPDATA_URL`。 |
 
+   完成配置后，可参考下图确认 Secrets 和 Variables 的配置位置及命名。
+
    :::tip
    如需获取 TapData Access Code，可使用管理员身份登录对应环境的 TapData 平台，进入**系统设置 → 用户管理**查看对应用户信息；部分场景下，也可由该用户登录后在右上角的**个人设置**中复制访问码。
    :::
@@ -137,6 +141,11 @@ TapData 导出的配置文件在导出时自动脱敏，代码仓库中只存放
 1. 进入租户仓库的 **Settings → Environments**。
 2. 至少创建 `sit`、`prod` 和 `deploy` 三个 Environment，其中 `sit` 和 `prod` 对应测试、生产业务环境，`deploy` 作为资源导入审批门。
 3. 为 `deploy` 配置 **Required reviewers**，作为资源导入审批门。
+
+   下图展示为 `deploy` Environment 配置审批人的位置。
+
+   ![配置 GitHub Environment 审批人](../../../images/github_environments_required_reviewers.png)
+
 4. 如需对用户验收或生产发布流程本身增加环境级审批，可在 `aat` 或 `prod` Environment 中另行配置 **Required reviewers**。
 5. 如需开发验证、性能验证或用户验收等中间环境，再按实际流程创建对应 Environment。
 6. 为测试、生产及其他实际启用环境配置对应环境下的真实连接信息，连接信息通常有两种保存方式：

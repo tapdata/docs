@@ -130,8 +130,6 @@ TapData 导出的配置文件在导出时自动脱敏，代码仓库中只存放
    | `PROD_TAPDATA_URL` | 生产环境地址 |
    | `{ENV}_TAPDATA_URL` | 可选，如启用中间环境，按环境代码补充对应地址，例如 `DEV_TAPDATA_URL`。 |
 
-   完成配置后，可参考下图确认 Secrets 和 Variables 的配置位置及命名。
-
    :::tip
    如需获取 TapData Access Code，可使用管理员身份登录对应环境的 TapData 平台，进入**系统设置 → 用户管理**查看对应用户信息；部分场景下，也可由该用户登录后在右上角的**个人设置**中复制访问码。
    :::

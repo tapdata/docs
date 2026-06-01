@@ -17,6 +17,44 @@ import TabItem from '@theme/TabItem';
 <TabItem value="V4.x 版本" default>
 ```
 
+## 4.18.0
+
+### 新增功能
+
+- [API 监控](../user-guide/data-service/monitor-api-request.md)新增连接数指标，可查看 API Server 与 API 数据库之间的连接状态
+- [Db2](../prerequisites/on-prem-databases/db2.md) 连接支持 TLS 加密配置，提升数据库访问链路的安全性
+- [Kafka-Enhanced](../prerequisites/mq-and-middleware/kafka-enhanced.md) 目标端支持事务写入，增强精确一次写入能力
+
+### 功能优化
+
+- 优化[聚合计算节点](../user-guide/data-development/aggregate-computing-node.md)处理能力，支持多线程并发执行
+- 优化 API 发布模型配置，支持加载单表模型、合并模型，并可手动增删和调整字段
+- 优化任务列表展示，支持自定义显示列并查看任务延迟状态
+
+### 缺陷修复
+
+- 修复引擎或集群管理服务停止后，工作台集群概览状态未及时更新的问题
+- 修复多节点集群中节点异常停止后，未正常发送邮件通知的问题
+- 修复任务重试告警中未能正确显示任务名称的问题
+- 修复管理端在特定场景下持续输出异常日志的问题
+- 修复开启全量断点续传后，任务在特定情况下可能报错的问题
+- 修复时间运算节点处理日期字段时，可能导致任务报错的问题
+- 修复主从合并任务中，主表与子表关联键变更后，未能正确清理子表过期数据的问题
+- 修复重建缓存完成后，任务状态仍长时间显示为“运行中”的问题
+- 修复按“单次校验”类型筛选校验任务时，查询结果为空的问题
+- 修复查看 MongoDB 数据源详情时，部分连接串未正确显示的问题
+- 修复 MongoDB 分片集群间进行数据转换时，在特定场景下可能出现数据不一致的问题
+- 修复 MongoDB 挖掘任务在特定负载场景下可能频繁出现读取超时的问题
+- 修复共享挖掘任务中，合并连接列表显示为空的问题
+- 修复 OceanBase（Oracle 模式）作为目标端连接时配置无法保存的问题
+- 修复 SQL Server 开启心跳检测后，CDC 异常未能成功触发告警的问题
+- 修复 SQL Server 同步至 SQL Server 增量复制时，Date 类型字段值可能产生偏差的问题
+- 修复 PostgreSQL 同步至 SQL Server 时，通过模型比较修正字段长度未能正常生效的问题
+- 修复 PostgreSQL 同步至 Oracle 时，全空值记录的数据校验结果误报不一致的问题
+- 修复 Oracle 增量同步在 SCN 小幅回退场景下，任务可能卡住的问题
+- 修复数据校验任务在特定场景下连接 SQL Server 失败的问题
+- 修复 API 服务中，`fields` 参数对内嵌文档字段过滤不生效的问题
+
 ## 4.17.0
 
 ### 新增功能
@@ -1194,4 +1232,3 @@ import TabItem from '@theme/TabItem';
 
 </TabItem>
 </Tabs>
-

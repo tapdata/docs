@@ -410,8 +410,8 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
   </tr>
   <tr>
     <td>Paimon</td>
-    <td>➖</td>
-    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>

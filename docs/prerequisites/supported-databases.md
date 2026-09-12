@@ -1,7 +1,3 @@
-git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
-git: error: couldn't create cache file '/tmp/xcrun_db-kYfNSnlv' (errno=Operation not permitted)
-git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
-git: error: couldn't create cache file '/tmp/xcrun_db-zyTVRNB5' (errno=Operation not permitted)
 # 支持的数据源
 import Content from '../reuse-content/_all-features.md';
 

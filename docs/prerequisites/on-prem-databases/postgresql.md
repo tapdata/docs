@@ -1,7 +1,3 @@
-git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
-git: error: couldn't create cache file '/tmp/xcrun_db-X3sRZZiI' (errno=Operation not permitted)
-git: warning: confstr() failed with code 5: couldn't get path of DARWIN_USER_TEMP_DIR; using /tmp instead
-git: error: couldn't create cache file '/tmp/xcrun_db-XyHWH38z' (errno=Operation not permitted)
 ---
 pdkId: postgres
 ---

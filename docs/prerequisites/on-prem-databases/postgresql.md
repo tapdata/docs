@@ -445,20 +445,13 @@ PHYSICAL 是 TapData 基于 PostgreSQL 官方物理复制槽和流复制协议�
 
    :::tip 关于变更前旧值（Before Image）
 
-   在 `wal_level = replica` 模式下，旧值恢复依赖完整页面镜像和缓存，冷页或缓存淘汰可能导致旧值缺失。若业务场景强依赖可靠的 UPDATE/DELETE 旧值，建议将 `wal_level` 设为 `logical`，并在下一步为采集表设置 `REPLICA IDENTITY FULL`。
+   在 `wal_level = replica` 模式下，旧值恢复依赖完整页面镜像和缓存，冷页或缓存淘汰可能导致旧值缺失。PHYSICAL 方案不以 `REPLICA IDENTITY FULL` 作为完整旧值的保证条件。若业务场景强依赖可靠的 UPDATE/DELETE 旧值，请改用逻辑复制槽，将 `wal_level` 设为 `logical`，再按逻辑复制槽步骤为采集表设置 `REPLICA IDENTITY FULL`。
 
    :::
 
    同时确认 `max_replication_slots` 和 `max_wal_senders` 能容纳现有主从复制、CDC 任务及连接测试所需连接，容量不足时调大。主从架构下，应在每个候选节点配置访问规则；如果配置从库作为 WAL 发送节点，还需确保其可接受 replication 连接且 WAL 已追平。物理槽需与实际连接节点一致：若 TapData 直接从某节点（如从库）接收 WAL，槽就在该节点创建或由平台自动管理。
 
-2. 需要 UPDATE/DELETE 的完整旧值，或希望降低 PHYSICAL 在 `wal_level=replica` 下对页面缓存回溯的依赖时，由表所有者在主库对每张采集表执行：
-
-   ```sql
-   -- 替换为实际 schema 和表名
-   ALTER TABLE schema_name.table_name REPLICA IDENTITY FULL;
-   ```
-
-3. 在 `pg_hba.conf` 中加入以下规则，替换数据库名、账号及 Agent 出口 IP，认证方式沿用实际环境设置：
+2. 在 `pg_hba.conf` 中加入以下规则，替换数据库名、账号及 Agent 出口 IP，认证方式沿用实际环境设置：
 
    ```text
    host    database_name    username    192.0.2.10/32    md5
@@ -467,7 +460,7 @@ PHYSICAL 是 TapData 基于 PostgreSQL 官方物理复制槽和流复制协议�
 
    主从架构下，对每个候选节点配置访问规则。从库还需允许只读查询。两条规则分别用于普通 SQL 连接和物理复制连接，详见 [PostgreSQL 认证配置](https://www.postgresql.org/docs/17/auth-pg-hba-conf.html)。
 
-4. 如果修改了需重启生效的日志或复制参数，在业务低峰期按现有部署方式重启对应数据库服务；如果仅修改 `pg_hba.conf`，由 DBA 执行 `SELECT pg_reload_conf();` 即可。随后重新执行步骤 1 中的 `SHOW` 命令，确认参数已生效。
+3. 如果修改了需重启生效的日志或复制参数，在业务低峰期按现有部署方式重启对应数据库服务；如果仅修改 `pg_hba.conf`，由 DBA 执行 `SELECT pg_reload_conf();` 即可。随后重新执行步骤 1 中的 `SHOW` 命令，确认参数已生效。
 
    从 Agent 所在网络使用同步账号连接待采集数据库，替换实际 Schema 和表名后执行以下 SQL，确认能够读取表并判断主从状态：
 
@@ -487,7 +480,7 @@ PHYSICAL 是 TapData 基于 PostgreSQL 官方物理复制槽和流复制协议�
 
    启用连接中的 **检查CDC优先从库** 并配置候选节点后，PHYSICAL 会探测候选节点的时间线，在主从切换时重新建立流；上线前仍需用实际切换测试验证续传和切换窗口内的 WAL 连续性。
 
-5. （可选）如果当前连接器版本支持归档补读，配置 WAL 归档，以便在线日志不可用时恢复采集。
+4. （可选）如果当前连接器版本支持归档补读，配置 WAL 归档，以便在线日志不可用时恢复采集。
 
    <span id="物理-wal-故障恢复与归档可选"></span>
    <span id="physical-归档恢复配置参考"></span>
@@ -676,7 +669,7 @@ PostgreSQL 9.6 及以上如需在连接器首次连接前立即预留 WAL，可�
       * **EDB TDE 密钥密码**：用于解开包装后的密钥；上传已解开的原始密钥时可留空。
       * **TDE 密钥包装算法**：默认 Auto，按顺序尝试 AES-256-CBC、AES-128-CBC，也可按 EDB 包装配置指定。此项控制密钥解包方式，不代表所有数据库加密方案均适用。
       * **WAL归档目录**：仅在已安装连接器版本的连接表单提供该字段时可配置，且仅 PHYSICAL 使用。填写 Agent 可读的归档目录；需先完成[PHYSICAL 准备步骤](postgresql.md?cdc=physical#物理复制槽physical)中的归档配置。文件可直接存放在目录下，也可放在以 8 位十六进制 timeline 编号命名的子目录中。
-      * **WAL归档恢复命令**：仅在已安装连接器版本的连接表单提供该字段时可配置，且仅 PHYSICAL 使用。Agent 在本地查找失败后通过 `/bin/sh` 执行：`%f` 为文件名，`%p` 为目标本地路径，`%t` 为 timeline 编号。确保所用工具可用、目标目录可写；命令须返回 0 并生成目标文件。目录与命令示例见[PHYSICAL 准备步骤](postgresql.md?cdc=physical#物理复制槽physical)中的第 5 步。
+      * **WAL归档恢复命令**：仅在已安装连接器版本的连接表单提供该字段时可配置，且仅 PHYSICAL 使用。Agent 在本地查找失败后通过 `/bin/sh` 执行：`%f` 为文件名，`%p` 为目标本地路径，`%t` 为 timeline 编号。确保所用工具可用、目标目录可写；命令须返回 0 并生成目标文件。目录与命令示例见[PHYSICAL 准备步骤](postgresql.md?cdc=physical#物理复制槽physical)中的第 4 步。
 
    * **高级设置**
       * **额外参数**：额外的连接参数，默认为空。

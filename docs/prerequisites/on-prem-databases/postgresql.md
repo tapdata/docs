@@ -421,7 +421,7 @@ import TabItem from '@theme/TabItem';
 
 #### 物理复制槽（PHYSICAL）
 
-PHYSICAL 是 TapData 基于 PostgreSQL 官方物理复制槽和流复制协议实现的 WAL 解析方式：将原始 WAL 发送到 Agent，再由 TapData 解析为数据变更事件，详见 [PostgreSQL 流复制协议](https://www.postgresql.org/docs/17/protocol-replication.html)和[物理复制槽说明](https://www.postgresql.org/docs/17/warm-standby.html#STREAMING-REPLICATION-SLOTS)。
+PHYSICAL 方案仅支持 PostgreSQL 12 及以上版本，是 TapData 基于 PostgreSQL 官方物理复制槽和流复制协议实现的 WAL 解析方式：将原始 WAL 发送到 Agent，再由 TapData 解析为数据变更事件，详见 [PostgreSQL 流复制协议](https://www.postgresql.org/docs/17/protocol-replication.html)和[物理复制槽说明](https://www.postgresql.org/docs/17/warm-standby.html#STREAMING-REPLICATION-SLOTS)。
 
 完成前面的账号授权后，由 DBA 配置以下数据库条件。
 
@@ -505,7 +505,7 @@ SELECT * FROM pg_create_physical_replication_slot('tapdata_physical_slot');
 
 确认该槽的 `slot_type` 为 `physical`（物理槽的 `database` 为 `NULL`），并且未被其他消费者占用；否则留空即可由 TapData 创建。
 
-PostgreSQL 9.6 及以上如需在连接器首次连接前立即预留 WAL，可将第二个参数设为 `true`：`pg_create_physical_replication_slot('tapdata_physical_slot', true)`；PostgreSQL 9.4/9.5 按上面的单参数形式执行。
+如需在连接器首次连接前立即预留 WAL，可将第二个参数设为 `true`：`pg_create_physical_replication_slot('tapdata_physical_slot', true)`。
 
 </TabItem>
 

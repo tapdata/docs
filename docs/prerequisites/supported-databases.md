@@ -409,13 +409,13 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>0.11.0</td>
   </tr>
   <tr>
-    <td>Paimon</td>
-    <td>➖</td>
-    <td>➖</td>
+    <td>Paimon Plus</td>
+    <td>✅</td>
+    <td>✅</td>
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>0.6 及以上</td>
+    <td>0.8.2 及以上</td>
   </tr>
   <tr>
     <td>SelectDB</td>

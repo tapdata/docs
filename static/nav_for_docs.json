@@ -7,7 +7,7 @@
   "dws": "prerequisites/warehouses-and-lake/gaussdb",
   "greenplum": "prerequisites/warehouses-and-lake/greenplum",
   "hudi": "prerequisites/warehouses-and-lake/hudi",
-  "paimon": "prerequisites/warehouses-and-lake/paimon",
+  "paimon-plus": "prerequisites/warehouses-and-lake/paimon",
   "selectdb": "prerequisites/warehouses-and-lake/selectdb",
   "snowflake": "prerequisites/warehouses-and-lake/snowflake",
   "starrocks": "prerequisites/warehouses-and-lake/starrocks",

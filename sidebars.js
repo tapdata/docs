@@ -356,6 +356,7 @@ const sidebars = {
               items:[
                      'user-guide/manage-system/manage-role',
                      'user-guide/manage-system/manage-user',
+                     'user-guide/manage-system/configure-sso',
                      'user-guide/manage-system/manage-cluster',
                     ]
              },

@@ -20,9 +20,12 @@ TapData Enterprise 支持部署至本地数据中心，适合对数据敏感性�
 
 ![登录 TapData Enterprise](../images/login-on-prem.png)
 
+管理员启用 SAML 单点登录后，访问平台会跳转至企业身份认证页面；如页面显示**单点登录**按钮，可单击后按提示认证。认证成功后返回 TapData，并按 TapData 账号关联的角色访问功能。
+
+如需配置单点登录，见[配置单点登录（SSO）](manage-system/configure-sso.md)。企业认证服务暂时不可用时，已设置本地密码的用户可使用[本地账号登录入口](manage-system/configure-sso.md#常见问题)。
+
 ## TapData Community
 
 TapData Community 是一个开源的数据集成平台，提供基础的数据同步和转换功能，可通过 Docker 一键部署，帮助您快速探索和实施数据集成项目。默认登录账号为 admin@admin.com，默认密码为 admin，登录后请及时修改密码以保障安全性，您也可以基于业务需求为其他用户[分配账号](../user-guide/manage-system/manage-user.md)。
 
 ![登录 TapData Enterprise](../images/login-on-prem.png)
-

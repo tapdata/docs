@@ -35,3 +35,5 @@ TapData 部署完成后，会自动创建一个名为 `admin@admin.com`  的系�
      :::caution   
      用户被删除后不可恢复，请谨慎操作。   
      :::
+
+当您启用了 SAML 单点登录后，如需通过 Excel 预创建用户并分配角色，请参见[批量导入 SSO 用户](configure-sso.md#批量导入-sso-用户)。

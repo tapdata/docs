@@ -192,6 +192,10 @@ TapData 支持对接 LDAP（轻量级目录访问协议）进行用户登录认�
 
 
 
+## SAML 登录设置
+
+通过 SAML 2.0 对接企业身份认证平台，让用户使用企业账号登录。配置入口位于系统设置中的 **SAML 登录设置**；以 AD FS 为例的配置步骤、账号预创建要求和本地登录入口，见[配置单点登录（SSO）](../manage-system/configure-sso.md)。
+
 ## <span id="login">登录设置</span>
 
 ![登录设置](../../images/login_settings.png)

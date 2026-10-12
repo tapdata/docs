@@ -10,7 +10,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 * CPU：8 核
 * 内存：16 GB
 * 存储空间：100 GB
-* 操作系统：CentOS 7 + 、Ubuntu 16.04 +、Red Hat Enterprise Linux（RHEL）7.x/8.x
+* 操作系统：推荐 Ubuntu 22.04/24.04 LTS 或 Red Hat Enterprise Linux（RHEL）9.x。
 
 import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlayer.tsx';
 
@@ -30,7 +30,7 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
 
 
 
-本文以 CentOS 7 为例，演示服务器 A 和 服务器 B 的部署流程。
+下述系统配置和软件安装命令以 RHEL 9 为例；使用 Ubuntu 时，请采用对应的软件包管理和系统配置命令。部署操作需在服务器 A 和服务器 B 上分别执行。
 
 ## 准备工作
 

@@ -11,7 +11,9 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 ![部署架构](../../images/tapdata_ha_with_3_node.png)
 
-本案例中，机器配置为 **16 核 CPU + 32 GB 内存**，推荐最低配置为 8 核 CPU + 16 GB 内存，操作系统为 CentOS 7 + 或 Ubuntu 16.04 +。
+本案例中，机器配置为 **16 核 CPU + 32 GB 内存**，推荐最低配置为 8 核 CPU + 16 GB 内存。
+
+* 操作系统：推荐 Ubuntu 22.04/24.04 LTS 或 Red Hat Enterprise Linux（RHEL）9.x。
 
 | 部署服务     | 服务端口 | 角色说明                                                     | 资源规划说明                                            |
 | ------------ | -------- | ------------------------------------------------------------ | ------------------------------------------------------- |
@@ -22,7 +24,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 ## 准备工作
 
-在部署前，我们需要为这三台服务器执行分别下述操作，本文以 CentOS 7 为例，演示具体的部署流程。
+在部署前，我们需要为这三台服务器分别执行下述操作。系统配置和软件安装命令以 RHEL 9 为例；使用 Ubuntu 时，请采用对应的软件包管理和系统配置命令。
 
 1. 登录至服务器，依次执行下述命令完成文件访问数、防火墙等系统参数设置。
 
@@ -44,11 +46,11 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 3. 设置机器时间与时区，保持一致。
 
-4. [部署 MongoDB 副本集](install-replica-mongodb.md)，用于存储 Tapdata 服务运行所产生的任务必要配置、共享缓存等信息。
+4. 部署 MongoDB 副本集，用于存储 TapData 运行所需的配置、共享缓存等信息。选择与所用 TapData 版本兼容且支持目标操作系统的 MongoDB 版本，按官方 [RHEL 安装指南](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-red-hat/)或 [Ubuntu 安装指南](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-ubuntu/)安装，再[配置副本集](https://www.mongodb.com/docs/v8.0/tutorial/deploy-replica-set/)。请将官方文档切换至所选 MongoDB 版本。
 
    :::tip
 
-   您需要基于机器规格调整 MongoDB 的资源配置，本案例中通过其配置文件，设置的 `cacheSizeGB` 为 `10`，`oplogSizeMB` 为 `512000`，更多配置说明，见 [MongoDB 配置文件选项](https://www.mongodb.com/docs/v4.4/reference/configuration-options)。
+   您需要基于机器规格调整 MongoDB 的资源配置，本案例中通过其配置文件，设置的 `cacheSizeGB` 为 `10`，`oplogSizeMB` 为 `512000`，更多配置说明，见 [MongoDB 配置文件选项](https://www.mongodb.com/docs/v8.0/reference/configuration-options/)，请切换至所选 MongoDB 版本。
 
    :::
 

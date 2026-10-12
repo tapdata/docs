@@ -10,7 +10,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
 * CPU：8 核
 * 内存：16 GB
 * 存储空间：100 GB
-* 操作系统：CentOS 7 + 、Ubuntu 16.04 +、Red Hat Enterprise Linux（RHEL）7.x/8.x
+* 操作系统：推荐 Ubuntu 22.04/24.04 LTS 或 Red Hat Enterprise Linux（RHEL）9.x。
 
 import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlayer.tsx';
 
@@ -22,7 +22,7 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
 
 :::tip
 
-此环境中，我们已完成了  [MongoDB 副本集](install-replica-mongodb.md)的部署，可为 TapData 服务提供运行数据的存储服务。
+此环境中，我们已完成了 [MongoDB 副本集](https://www.mongodb.com/docs/v8.0/tutorial/deploy-replica-set/)的部署，可为 TapData 服务提供运行数据的存储服务。MongoDB 版本需与所用 TapData 版本及目标操作系统兼容，请将官方文档切换至所选 MongoDB 版本。
 
 :::
 
@@ -30,7 +30,7 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
 
 
 
-本文以 CentOS 7 为例，演示服务器 A 和 服务器 B 的部署流程。
+下述系统配置和软件安装命令以 RHEL 9 为例；使用 Ubuntu 时，请采用对应的软件包管理和系统配置命令。部署操作需在服务器 A 和服务器 B 上分别执行。
 
 ## 准备工作
 
@@ -56,7 +56,7 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
       yum -y install java-17-openjdk
       ```
 
-   2. 安装 MongoDB（4.0 及以上版本），该库将作为中间库存储任务等数据，具体操作，见[官方文档](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/)。
+   2. 安装 MongoDB，用于存储任务等数据。选择 4.0 及以上、与所用 TapData 版本兼容且支持目标操作系统的 MongoDB 版本，按官方 [RHEL 安装指南](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-red-hat/)或 [Ubuntu 安装指南](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-ubuntu/)安装。请将官方文档切换至所选 MongoDB 版本。
 
 3. 下载 TapData 安装包（可[联系我们](mailto:team@tapdata.io)获取），将其上传至待部署的设备中。
 

@@ -46,11 +46,11 @@ import Content from '../../reuse-content/_enterprise-features.md';
 
 3. 设置机器时间与时区，保持一致。
 
-4. [部署 MongoDB 副本集](install-replica-mongodb.md)，用于存储 Tapdata 服务运行所产生的任务必要配置、共享缓存等信息。
+4. 部署 MongoDB 副本集，用于存储 TapData 运行所需的配置、共享缓存等信息。选择与所用 TapData 版本兼容且支持目标操作系统的 MongoDB 版本，按官方 [RHEL 安装指南](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-red-hat/)或 [Ubuntu 安装指南](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-ubuntu/)安装，再[配置副本集](https://www.mongodb.com/docs/v8.0/tutorial/deploy-replica-set/)。请将官方文档切换至所选 MongoDB 版本。
 
    :::tip
 
-   您需要基于机器规格调整 MongoDB 的资源配置，本案例中通过其配置文件，设置的 `cacheSizeGB` 为 `10`，`oplogSizeMB` 为 `512000`，更多配置说明，见 [MongoDB 配置文件选项](https://www.mongodb.com/docs/v4.4/reference/configuration-options)。
+   您需要基于机器规格调整 MongoDB 的资源配置，本案例中通过其配置文件，设置的 `cacheSizeGB` 为 `10`，`oplogSizeMB` 为 `512000`，更多配置说明，见 [MongoDB 配置文件选项](https://www.mongodb.com/docs/v8.0/reference/configuration-options/)，请切换至所选 MongoDB 版本。
 
    :::
 

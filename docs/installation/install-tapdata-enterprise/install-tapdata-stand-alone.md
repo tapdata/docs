@@ -45,7 +45,7 @@ import Content from '../../reuse-content/_enterprise-features.md';
       yum -y install java-17-openjdk
       ```
 
-   2. [安装 MongoDB](../../administration/production-deploy/install-replica-mongodb.md)（4.0 及以上版本），该库将作为中间库存储任务等数据。
+   2. 安装 MongoDB，用于存储任务等数据。选择 4.0 及以上、与所用 TapData 版本兼容且支持目标操作系统的 MongoDB 版本，按官方 [RHEL 安装指南](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-red-hat/)或 [Ubuntu 安装指南](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-ubuntu/)安装，再[配置副本集](https://www.mongodb.com/docs/v8.0/tutorial/deploy-replica-set/)。请将官方文档切换至所选 MongoDB 版本。
 
 3. 下载 TapData 安装包（可[联系我们](mailto:team@tapdata.io)获取），将其上传至待部署的设备中。
 

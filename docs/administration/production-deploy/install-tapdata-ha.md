@@ -22,7 +22,7 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
 
 :::tip
 
-此环境中，我们已完成了  [MongoDB 副本集](install-replica-mongodb.md)的部署，可为 TapData 服务提供运行数据的存储服务。
+此环境中，我们已完成了 [MongoDB 副本集](https://www.mongodb.com/docs/v8.0/tutorial/deploy-replica-set/)的部署，可为 TapData 服务提供运行数据的存储服务。MongoDB 版本需与所用 TapData 版本及目标操作系统兼容，请将官方文档切换至所选 MongoDB 版本。
 
 :::
 
@@ -56,7 +56,7 @@ import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlaye
       yum -y install java-17-openjdk
       ```
 
-   2. 安装 MongoDB（4.0 及以上版本），该库将作为中间库存储任务等数据，具体操作，见[官方文档](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/)。
+   2. 安装 MongoDB，用于存储任务等数据。选择 4.0 及以上、与所用 TapData 版本兼容且支持目标操作系统的 MongoDB 版本，按官方 [RHEL 安装指南](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-red-hat/)或 [Ubuntu 安装指南](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-ubuntu/)安装。请将官方文档切换至所选 MongoDB 版本。
 
 3. 下载 TapData 安装包（可[联系我们](mailto:team@tapdata.io)获取），将其上传至待部署的设备中。
 

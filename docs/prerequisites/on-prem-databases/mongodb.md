@@ -64,7 +64,9 @@ import TabItem from '@theme/TabItem';
 2. 配置充足的 Oplog 存储空间，至少需要容纳 24 小时的 Oplog。
    具体操作，见[修改 Oplog 大小](https://docs.mongodb.com/manual/tutorial/change-oplog-size/)。
 
-3. 根据权限管控需求选择下述步骤，创建用于数据同步/开发任务的账号并授予读权限、clusterMonitor 权限（用于验证数据）。
+3. 根据权限管控需求选择下述方式，创建用于数据同步或数据开发任务的账号，并授予源数据库的读权限以及 `clusterMonitor` 角色（用于验证数据）。
+
+   MongoDB 4.0 及以上版本通过 Change Stream 进行增量同步，需要 `find` 和 `changeStream` 权限。下述内置 `read`、`readAnyDatabase` 角色已包含这两项权限；使用自定义角色时，除满足其他读取要求外，还需对源数据库的所有非系统集合授予这两项权限。
 
    ```mdx-code-block
    <Tabs className="unique-tabs">
@@ -105,10 +107,73 @@ import TabItem from '@theme/TabItem';
    </TabItem>
    </Tabs>
 
+   **文档原像权限说明**
+
+   新建 MongoDB 6.0 及以上版本的源节点时，**文档原像**默认开启。请为同步账号授予 `collMod` 权限，或由 DBA 提前开启集合原像。
+
+   ```mdx-code-block
+   <Tabs className="unique-tabs" defaultValue="tapdata-auto">
+   <TabItem value="tapdata-auto" label="授予 collMod 权限">
+   ```
+
+   由管理员执行以下命令，为同步账号补充 `collMod` 权限。示例账号 `tapdata` 创建于 `admin` 库，请替换库名和用户名。
+
+   ```javascript
+   use admin
+
+   db.createRole({
+     role: "tapdataPreImageRole",
+     privileges: [
+       {
+         resource: { db: "database_name", collection: "" },
+         actions: ["collMod"]
+       }
+     ],
+     roles: []
+   })
+
+   db.grantRolesToUser(
+     "tapdata",
+     [{ role: "tapdataPreImageRole", db: "admin" }]
+   )
+   ```
+
+   示例授权指定库的所有非系统集合。仅授权部分集合时，将 `collection: ""` 替换为集合名；涉及多个库或集合时，在 `privileges` 中添加对应条目。
+
+   </TabItem>
+
+   <TabItem value="dba-preconfigured" label="DBA 预先开启原像">
+
+   由具有 `collMod` 权限的 DBA 对每个需要同步的已有集合执行以下命令，替换库名和集合名：
+
+   ```javascript
+   use database_name
+
+   db.runCommand({
+     collMod: "collection_name",
+     changeStreamPreAndPostImages: { enabled: true }
+   })
+   ```
+
+   同步账号需具有源库的 `listCollections` 权限（上述内置角色已包含），以便确认原像配置，无需授予 `collMod`。
+
+   使用同步账号检查配置，结果应为 `{ enabled: true }`：
+
+   ```javascript
+   use database_name
+
+   db.getCollectionInfos({ name: "collection_name" })[0].options.changeStreamPreAndPostImages
+   ```
+
+   新增或重建的集合也需由 DBA 开启原像。
+
+   </TabItem>
+   </Tabs>
+
    :::tip
-   
-   由于分片服务器不会向 config 数据库获取用户权限，因此，当源库为分片集群架构时，您需要在每个分片的主节点上创建相应的用户并授予权限。
-   
+
+   当源库为分片集群时，需在每个分片的主节点上创建同步账号并授权。更多介绍，参考 MongoDB 官方文档：[Change Streams](https://www.mongodb.com/docs/manual/changestreams/)、[collMod 命令](https://www.mongodb.com/docs/manual/reference/command/collmod/)和[内置角色](https://www.mongodb.com/docs/manual/reference/built-in-roles/?deployment-type=self)。
+
    :::
 
 4. 在设置 MongoDB URI 时，推荐将写关注级别设置为大多数，即 `w=majority`，否则可能因 Primary 节点异常宕机导致的数据丢失文档。
@@ -193,8 +258,8 @@ db.createUser(
 
 | **配置**                   | **说明**                                                     |
 | -------------------------- | ------------------------------------------------------------ |
-| **文档原像**               | 默认关闭，[文档原像](https://www.mongodb.com/zh-cn/docs/manual/changeStreams/#change-streams-with-document-pre--and-post-images)（也称前映像）是指被替换、更新或删除之前的文档，仅在 MongoDB 6.0 及以上支持并显示该配置，打开后 UPDATE/DELETE 事件会记录原像，TapData 将基于该信息进行数据同步。 |
-| **补充更新数据的完整字段** | 默认开启，启用后会在 **UPDATE** 事件中自动填充完整字段。     |
+| **文档原像**               | 仅在 MongoDB 6.0 及以上版本中显示，新建源节点时默认开启。用于读取更新、替换或删除前的文档，权限要求见[源库准备工作](#作为源库)。与**补充更新数据的完整字段**不能同时开启。 |
+| **补充更新数据的完整字段** | MongoDB 6.0 及以上版本默认关闭，较低版本默认开启。启用后补全 **UPDATE** 事件的字段，与**文档原像**不能同时开启。 |
 | **禁用游标超时**           | 默认关闭，开启后 MongoDB 会禁用游标超时，防止数据同步过程中出现超时错误。 |
 | **补充时跳过已删除的事件** | 默认开启，关闭此功能时，以下情况可能导致增量异常：任务使用非 `_id` 字段作为业务判断；源字段类型为子文档并修改属性；源字段类型为内嵌数组且执行 PULL 操作。 |
 | **写入确认**               | 设置[写关注级别](https://www.mongodb.com/zh-cn/docs/manual/reference/write-concern/)，在分片群集中，`mongos` 会将写关注传递给分片，默认值为 **w1**，可选值如下：<br />●  **w0 / Unacknowledged**：不等待写入确认，最快，但无法确认写入是否成功。<br />●  **w1 / Acknowledged**：确认主节点写入成功，适合大多数场景，性能与安全性的平衡。<br />●  **w3**：确认写入成功至 3 个节点，提高数据安全性。<br />●  **majority**：确认写入已成功至大多数节点，安全性高，但节点较多时性能相对较差。 |

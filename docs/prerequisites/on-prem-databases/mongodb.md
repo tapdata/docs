@@ -111,6 +111,8 @@ import TabItem from '@theme/TabItem';
 
    新建 MongoDB 6.0 及以上版本的源节点时，**文档原像**默认开启。请为同步账号授予 `collMod` 权限，或由 DBA 提前开启集合原像。
 
+   文档原像会增加存储开销，默认随对应 Oplog 记录过期。DBA 可通过 [`changeStreamOptions.preAndPostImages.expireAfterSeconds`](https://www.mongodb.com/docs/manual/changestreams/#change-streams-with-document-pre--and-post-images) 调整保留期，并考虑任务延迟和恢复需求。
+
    ```mdx-code-block
    <Tabs className="unique-tabs" defaultValue="tapdata-auto">
    <TabItem value="tapdata-auto" label="授予 collMod 权限">

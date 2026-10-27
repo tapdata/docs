@@ -14,7 +14,7 @@ TapData 支持自定义系统和告警设置，同时支持通过 Webhook 对接
 
 ## 通知设置
 
-[登录 TapData 平台](../log-in.md)后，单击右上角的 ![setting_icon](../../images/setting_icon.png) > **个人设置**，然后再页面左侧选择**通知设置**，即可自定义通知规则设置，自动触发通知发送流程，主要包括任务运行通知和 Agent 通知两种类型，具体包含的通知项如下所示：
+[登录 TapData 平台](../log-in.md)后，单击右上角的 ![setting_icon](../../images/setting_icon.png) > **通知设置**，即可自定义通知规则设置，自动触发通知发送流程，主要包括任务运行通知和 Agent 通知两种类型，具体包含的通知项如下所示：
 
 ![](../../images/system_notification_1.png)
 
@@ -57,6 +57,8 @@ TapData 支持自定义系统和告警设置，同时支持通过 Webhook 对接
 ![](../../images/system_notification_2.png)
 
 :::tip
+
+如需批量修改任务告警规则或接收对象，可在任务列表中操作，详见[管理数据复制任务](../copy-data/manage-task.md)或[管理数据转换任务](../data-development/manage-task.md)。
 
 相关邮件告警实践案例，见[通过 QQ 邮箱发送告警信息](../../case-practices/best-practice/alert-via-qqmail.md)。
 

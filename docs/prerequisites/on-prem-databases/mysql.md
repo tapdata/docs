@@ -29,17 +29,18 @@ import TabItem from '@theme/TabItem';
 
 ## 支持同步的操作
 
+对于 MySQL 表，TapData 支持同步以下数据和结构变更：
+
 - **DML**：INSERT、UPDATE、DELETE
-
-  :::tip
-
-  将 MySQL 作为同步的目标时，您还可以通过任务节点的高级配置，选择写入策略：插入冲突场景下，可选择转为更新或丢弃；更新失败场景下，可选择转为插入或仅打印日志。
-
-  :::
-
 - **DDL**：ADD COLUMN、CHANGE COLUMN（不支持自增属性）、DROP COLUMN、RENAME COLUMN
 
-此外，在 MySQL 间数据同步的场景下，还额外支持**字段默认值**、**自增列**和**外键约束**同步的能力。
+在 MySQL 间同步表时，还支持同步**字段默认值**、**自增列**和**外键约束**，此外，MySQL 作为源库时，也支持读取视图数据，可执行全量同步或通过[字段轮询](../../faq/data-pipeline.md#polling-sync)方式同步增量数据。
+
+:::tip
+
+将 MySQL 作为同步的目标时，您还可以通过任务节点的高级配置，选择写入策略：插入冲突场景下，可选择转为更新或丢弃；更新失败场景下，可选择转为插入或仅打印日志。
+
+:::
 
 ## 支持同步方向
 
@@ -49,7 +50,7 @@ import TabItem from '@theme/TabItem';
 ## 注意事项
 
 * TapData Agent 与 MySQL 需部署在同一内网环境，如果通过外网连接，则需确保网络连通性。
-* 增量数据采集主要通过解析 Binlog 实现，数据变更频繁时，可能会占用数据库一定的 CPU 和磁盘 I/O 资源。
+* 通过 Binlog 采集表的增量数据时，频繁的数据变更可能会占用数据库一定的 CPU 和磁盘 I/O 资源。
 * 在 MySQL 5.6 及更早版本中，应预处理 **TIME** 类型的时分秒为负数的数据（例如转换为合法的正值），以免增量采集发生异常。
 * 在某些基于 MySQL 内核的数据源，若使用了原生 MySQL 不支持的 Schema 或函数，可能导致增量采集出错，此类情况可联系 [TapData 技术支持](../../appendix/support.md)进行适配。
 
@@ -60,11 +61,11 @@ import TabItem from '@theme/TabItem';
 <TabItem value="源端读取" default>
 ```
 
-- 仅支持同步表和索引对象。不支持同步临时表、隐藏列、触发器、视图和存储过程等对象。
+- 支持同步表和索引对象，以及读取视图数据。不支持同步临时表、隐藏列、触发器和存储过程等对象。
 
 - Tapdata 支持 MySQL 主从切换过程不中断同步，但需要确保数据库主从同步状态一致，且连接切换策略配置合理，否则可能导致短暂中断或数据缺失。
 
-- 如需实现增量数据同步，需确保 MySQL Binlog 参数配置正确：
+- 通过 Binlog 采集表的增量数据时，需确保 MySQL Binlog 参数配置正确：
   - Binlog 日志需要至少保留 7 天，否则 TapData 可能因无法获取 Binlog 而导致增量同步失败。
   
   - `binlog_format` 为 `ROW`，`binlog_row_image` 为 `FULL`，且目标库未被包含在 `binlog-ignore-db` 中；如配置了 `binlog-do-db`，则必须显式包含目标库，否则可能导致增量数据缺失。
@@ -139,7 +140,7 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'yourpasswd';
 
 ```mdx-code-block
 <Tabs className="unique-tabs">
-<TabItem value="仅读取全量数据" default>
+<TabItem value="读取全量或字段轮询数据" default>
 ```
 
 ```sql
@@ -148,7 +149,7 @@ GRANT SELECT ON database_name.* TO 'username' IDENTIFIED BY 'password';
 ```
 
    </TabItem>
-   <TabItem value="读取全量+增量数据">
+   <TabItem value="读取全量及 Binlog 增量数据">
 
 ```sql
 -- 授予指定库的读权限
@@ -164,7 +165,7 @@ GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY '
 * **username**：用户名。
 * **password**：密码。
 
-3. 为保障读取 MySQL 数据库的增量数据，您还需要跟随下述步骤开启 Binlog。
+3. 如需通过 Binlog 采集表的增量数据，请跟随下述步骤开启 Binlog；仅执行全量同步或字段轮询时，无需执行本步骤。
 
    1. 使用 `vim` 命令，修改 `$MYSQL_HOME/mysql.cnf` 中的配置，例如：
 
